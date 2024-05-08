@@ -55,7 +55,7 @@ Other parameters are passed through a pointer to a apiGetUserSourcesRequest stru
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

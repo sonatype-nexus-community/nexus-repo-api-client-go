@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -128,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -196,7 +196,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -255,7 +255,7 @@ Other parameters are passed through a pointer to a apiGetContentSelectorsRequest
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

@@ -58,7 +58,7 @@ Other parameters are passed through a pointer to a apiForceReleaseRequest struct
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -117,7 +117,7 @@ Other parameters are passed through a pointer to a apiFreezeRequest struct via t
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -176,7 +176,7 @@ Other parameters are passed through a pointer to a apiGetRequest struct via the 
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -235,7 +235,7 @@ Other parameters are passed through a pointer to a apiReleaseRequest struct via 
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

@@ -289,8 +289,8 @@ Class | Method | HTTP request | Description
 *SecurityManagementLDAPAPI* | [**GetLdapServer**](docs/SecurityManagementLDAPAPI.md#getldapserver) | **Get** /v1/security/ldap/{name} | Get LDAP server
 *SecurityManagementLDAPAPI* | [**GetLdapServers**](docs/SecurityManagementLDAPAPI.md#getldapservers) | **Get** /v1/security/ldap | List LDAP servers
 *SecurityManagementLDAPAPI* | [**UpdateLdapServer**](docs/SecurityManagementLDAPAPI.md#updateldapserver) | **Put** /v1/security/ldap/{name} | Update LDAP server
-*SecurityManagementPrivilegesAPI* | [**CreatePrivilege**](docs/SecurityManagementPrivilegesAPI.md#createprivilege) | **Post** /v1/security/privileges/application | Create an application type privilege.
-*SecurityManagementPrivilegesAPI* | [**CreatePrivilege1**](docs/SecurityManagementPrivilegesAPI.md#createprivilege1) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
+*SecurityManagementPrivilegesAPI* | [**CreatePrivilege**](docs/SecurityManagementPrivilegesAPI.md#createprivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
+*SecurityManagementPrivilegesAPI* | [**CreatePrivilege1**](docs/SecurityManagementPrivilegesAPI.md#createprivilege1) | **Post** /v1/security/privileges/application | Create an application type privilege.
 *SecurityManagementPrivilegesAPI* | [**CreatePrivilege2**](docs/SecurityManagementPrivilegesAPI.md#createprivilege2) | **Post** /v1/security/privileges/repository-content-selector | Create a repository content selector type privilege.
 *SecurityManagementPrivilegesAPI* | [**CreatePrivilege3**](docs/SecurityManagementPrivilegesAPI.md#createprivilege3) | **Post** /v1/security/privileges/repository-admin | Create a repository admin type privilege.
 *SecurityManagementPrivilegesAPI* | [**CreatePrivilege4**](docs/SecurityManagementPrivilegesAPI.md#createprivilege4) | **Post** /v1/security/privileges/repository-view | Create a repository view type privilege.
@@ -298,8 +298,8 @@ Class | Method | HTTP request | Description
 *SecurityManagementPrivilegesAPI* | [**DeletePrivilege**](docs/SecurityManagementPrivilegesAPI.md#deleteprivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
 *SecurityManagementPrivilegesAPI* | [**GetPrivilege**](docs/SecurityManagementPrivilegesAPI.md#getprivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
 *SecurityManagementPrivilegesAPI* | [**GetPrivileges**](docs/SecurityManagementPrivilegesAPI.md#getprivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
-*SecurityManagementPrivilegesAPI* | [**UpdatePrivilege**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
-*SecurityManagementPrivilegesAPI* | [**UpdatePrivilege1**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege1) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
+*SecurityManagementPrivilegesAPI* | [**UpdatePrivilege**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
+*SecurityManagementPrivilegesAPI* | [**UpdatePrivilege1**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege1) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
 *SecurityManagementPrivilegesAPI* | [**UpdatePrivilege2**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege2) | **Put** /v1/security/privileges/repository-view/{privilegeName} | Update a repository view type privilege.
 *SecurityManagementPrivilegesAPI* | [**UpdatePrivilege3**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege3) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
 *SecurityManagementPrivilegesAPI* | [**UpdatePrivilege4**](docs/SecurityManagementPrivilegesAPI.md#updateprivilege4) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
@@ -509,7 +509,21 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Authorization
 
-Endpoints do not require authorization.
+
+Authentication schemes defined for the API:
+### BasicAuth
+
+- **Type**: HTTP basic authentication
+
+Example
+
+```go
+auth := context.WithValue(context.Background(), sonatyperepo.ContextBasicAuth, sonatyperepo.BasicAuth{
+	UserName: "username",
+	Password: "password",
+})
+r, err := client.Service.Operation(auth, args)
+```
 
 
 ## Documentation for Utility Methods

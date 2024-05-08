@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiDisableIqRequest struct vi
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiEnableIqRequest struct via
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ Other parameters are passed through a pointer to a apiVerifyConnectionRequest st
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

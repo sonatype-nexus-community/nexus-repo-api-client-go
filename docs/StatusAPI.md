@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiGetSystemStatusChecksReque
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiIsAvailableRequest struct 
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiIsWritableRequest struct v
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
