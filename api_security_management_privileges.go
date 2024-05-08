@@ -26,11 +26,11 @@ type SecurityManagementPrivilegesAPIService service
 type ApiCreatePrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeApplicationRequest
+	body *ApiPrivilegeWildcardRequest
 }
 
 // The privilege to create.
-func (r ApiCreatePrivilegeRequest) Body(body ApiPrivilegeApplicationRequest) ApiCreatePrivilegeRequest {
+func (r ApiCreatePrivilegeRequest) Body(body ApiPrivilegeWildcardRequest) ApiCreatePrivilegeRequest {
 	r.body = &body
 	return r
 }
@@ -40,7 +40,7 @@ func (r ApiCreatePrivilegeRequest) Execute() (*http.Response, error) {
 }
 
 /*
-CreatePrivilege Create an application type privilege.
+CreatePrivilege Create a wildcard type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreatePrivilegeRequest
@@ -65,7 +65,7 @@ func (a *SecurityManagementPrivilegesAPIService) CreatePrivilegeExecute(r ApiCre
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges/application"
+	localVarPath := localBasePath + "/v1/security/privileges/wildcard"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -121,11 +121,11 @@ func (a *SecurityManagementPrivilegesAPIService) CreatePrivilegeExecute(r ApiCre
 type ApiCreatePrivilege1Request struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeWildcardRequest
+	body *ApiPrivilegeApplicationRequest
 }
 
 // The privilege to create.
-func (r ApiCreatePrivilege1Request) Body(body ApiPrivilegeWildcardRequest) ApiCreatePrivilege1Request {
+func (r ApiCreatePrivilege1Request) Body(body ApiPrivilegeApplicationRequest) ApiCreatePrivilege1Request {
 	r.body = &body
 	return r
 }
@@ -135,7 +135,7 @@ func (r ApiCreatePrivilege1Request) Execute() (*http.Response, error) {
 }
 
 /*
-CreatePrivilege1 Create a wildcard type privilege.
+CreatePrivilege1 Create an application type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @return ApiCreatePrivilege1Request
@@ -160,7 +160,7 @@ func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege1Execute(r ApiCr
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges/wildcard"
+	localVarPath := localBasePath + "/v1/security/privileges/application"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -885,11 +885,11 @@ type ApiUpdatePrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
 	privilegeName string
-	body *ApiPrivilegeApplicationRequest
+	body *ApiPrivilegeWildcardRequest
 }
 
 // The privilege to update.
-func (r ApiUpdatePrivilegeRequest) Body(body ApiPrivilegeApplicationRequest) ApiUpdatePrivilegeRequest {
+func (r ApiUpdatePrivilegeRequest) Body(body ApiPrivilegeWildcardRequest) ApiUpdatePrivilegeRequest {
 	r.body = &body
 	return r
 }
@@ -899,7 +899,7 @@ func (r ApiUpdatePrivilegeRequest) Execute() (*http.Response, error) {
 }
 
 /*
-UpdatePrivilege Update an application type privilege.
+UpdatePrivilege Update a wildcard type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param privilegeName The name of the privilege to update.
@@ -926,7 +926,7 @@ func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilegeExecute(r ApiUpd
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges/application/{privilegeName}"
+	localVarPath := localBasePath + "/v1/security/privileges/wildcard/{privilegeName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
@@ -984,11 +984,11 @@ type ApiUpdatePrivilege1Request struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
 	privilegeName string
-	body *ApiPrivilegeWildcardRequest
+	body *ApiPrivilegeApplicationRequest
 }
 
 // The privilege to update.
-func (r ApiUpdatePrivilege1Request) Body(body ApiPrivilegeWildcardRequest) ApiUpdatePrivilege1Request {
+func (r ApiUpdatePrivilege1Request) Body(body ApiPrivilegeApplicationRequest) ApiUpdatePrivilege1Request {
 	r.body = &body
 	return r
 }
@@ -998,7 +998,7 @@ func (r ApiUpdatePrivilege1Request) Execute() (*http.Response, error) {
 }
 
 /*
-UpdatePrivilege1 Update a wildcard type privilege.
+UpdatePrivilege1 Update an application type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param privilegeName The name of the privilege to update.
@@ -1025,7 +1025,7 @@ func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege1Execute(r ApiUp
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges/wildcard/{privilegeName}"
+	localVarPath := localBasePath + "/v1/security/privileges/application/{privilegeName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)

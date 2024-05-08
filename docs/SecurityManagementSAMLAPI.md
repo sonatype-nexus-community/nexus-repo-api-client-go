@@ -57,7 +57,7 @@ Other parameters are passed through a pointer to a apiDeleteSamlConfigurationReq
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -114,7 +114,7 @@ Other parameters are passed through a pointer to a apiGetMetadataRequest struct 
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -171,7 +171,7 @@ Other parameters are passed through a pointer to a apiGetPublicCertificateInPemF
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -228,7 +228,7 @@ Other parameters are passed through a pointer to a apiGetSamlConfigurationReques
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 
@@ -290,7 +290,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[BasicAuth](../README.md#BasicAuth)
 
 ### HTTP request headers
 

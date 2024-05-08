@@ -4,6 +4,8 @@ info:
   version: 3.67.1-01
 servers:
 - url: /service/rest/
+security:
+- BasicAuth: []
 tags:
 - name: "Security Management: Anonymous Access"
 - name: Security management
@@ -6533,7 +6535,7 @@ paths:
       - "Security management: privileges"
   /v1/security/privileges/application:
     post:
-      operationId: createPrivilege
+      operationId: createPrivilege_1
       requestBody:
         content:
           application/json:
@@ -6554,7 +6556,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/application/{privilegeName}:
     put:
-      operationId: updatePrivilege
+      operationId: updatePrivilege_1
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -6803,7 +6805,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/wildcard:
     post:
-      operationId: createPrivilege_1
+      operationId: createPrivilege
       requestBody:
         content:
           application/json:
@@ -6824,7 +6826,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/wildcard/{privilegeName}:
     put:
-      operationId: updatePrivilege_1
+      operationId: updatePrivilege
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -15778,4 +15780,8 @@ components:
           description: yum Tag
           type: string
       type: object
+  securitySchemes:
+    BasicAuth:
+      scheme: basic
+      type: http
 x-original-swagger-version: "2.0"
