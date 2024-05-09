@@ -29,6 +29,7 @@ type MavenHostedApiRepository struct {
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage HostedStorageAttributes `json:"storage"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _MavenHostedApiRepository MavenHostedApiRepository
@@ -221,6 +222,38 @@ func (o *MavenHostedApiRepository) SetStorage(v HostedStorageAttributes) {
 	o.Storage = v
 }
 
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *MavenHostedApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenHostedApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *MavenHostedApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *MavenHostedApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o MavenHostedApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -243,6 +276,9 @@ func (o MavenHostedApiRepository) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 
