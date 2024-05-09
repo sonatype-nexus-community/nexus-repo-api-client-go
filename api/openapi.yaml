@@ -1,6 +1,15 @@
 openapi: 3.0.1
 info:
-  title: Nexus Repository Manager REST API
+  contact:
+    name: Sonatype Community Maintainers
+    url: https://github.com/sonatype-nexus-community
+  description: "This documents the available APIs into [Sonatype Nexus Repository\
+    \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
+    \ version 3.67.1-01."
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  title: Sonatype Nexus Repository Manager
   version: 3.67.1-01
 servers:
 - url: /service/rest/
@@ -997,7 +1006,7 @@ paths:
       - Read-only
   /v1/repositories:
     get:
-      operationId: getRepositories_1
+      operationId: getAllRepositories
       responses:
         "200":
           content:
@@ -1012,7 +1021,7 @@ paths:
       - Repository Management
   /v1/repositories/apt/hosted:
     post:
-      operationId: createRepository_3
+      operationId: createAptHostedRepository
       requestBody:
         content:
           application/json:
@@ -1038,7 +1047,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/apt/hosted/{repositoryName}:
     get:
-      operationId: getRepository_4
+      operationId: getAptHostedRepository
       parameters:
       - explode: false
         in: path
@@ -1058,7 +1067,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_3
+      operationId: updateAptHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1096,7 +1105,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/apt/proxy:
     post:
-      operationId: createRepository_4
+      operationId: createAptProxyRepository
       requestBody:
         content:
           application/json:
@@ -1122,7 +1131,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/apt/proxy/{repositoryName}:
     get:
-      operationId: getRepository_5
+      operationId: getAptProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1142,7 +1151,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_4
+      operationId: updateAptProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1180,7 +1189,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/group:
     post:
-      operationId: createRepository_38
+      operationId: createBowerGroupRepository
       requestBody:
         content:
           application/json:
@@ -1203,7 +1212,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/group/{repositoryName}:
     get:
-      operationId: getRepository_39
+      operationId: getBowerGroupRepository
       parameters:
       - explode: false
         in: path
@@ -1223,7 +1232,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_38
+      operationId: updateBowerGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1255,7 +1264,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/hosted:
     post:
-      operationId: createRepository_39
+      operationId: createBowerHostedRepository
       requestBody:
         content:
           application/json:
@@ -1278,7 +1287,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/hosted/{repositoryName}:
     get:
-      operationId: getRepository_40
+      operationId: getBowerHostedRepository
       parameters:
       - explode: false
         in: path
@@ -1298,7 +1307,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_39
+      operationId: updateBowerHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1330,7 +1339,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/proxy:
     post:
-      operationId: createRepository_40
+      operationId: createBowerProxyRepository
       requestBody:
         content:
           application/json:
@@ -1353,7 +1362,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/bower/proxy/{repositoryName}:
     get:
-      operationId: getRepository_41
+      operationId: getBowerProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1373,7 +1382,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_40
+      operationId: updateBowerProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1405,7 +1414,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/cocoapods/proxy:
     post:
-      operationId: createRepository_32
+      operationId: createCocoapodsProxyRepository
       requestBody:
         content:
           application/json:
@@ -1431,7 +1440,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/cocoapods/proxy/{repositoryName}:
     get:
-      operationId: getRepository_33
+      operationId: getCocoapodsProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1451,7 +1460,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_32
+      operationId: updateCocoapodsProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1486,7 +1495,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/conan/proxy:
     post:
-      operationId: createRepository_27
+      operationId: createConanProxyRepository
       requestBody:
         content:
           application/json:
@@ -1512,7 +1521,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/conan/proxy/{repositoryName}:
     get:
-      operationId: getRepository_28
+      operationId: getConanProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1532,7 +1541,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_27
+      operationId: updateConanProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1570,7 +1579,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/conda/proxy:
     post:
-      operationId: createRepository_26
+      operationId: createCondaProxyRepository
       requestBody:
         content:
           application/json:
@@ -1596,7 +1605,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/conda/proxy/{repositoryName}:
     get:
-      operationId: getRepository_27
+      operationId: getCondaProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1616,7 +1625,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_26
+      operationId: updateCondaProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1651,7 +1660,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/group:
     post:
-      operationId: createRepository_20
+      operationId: createDockerGroupRepository
       requestBody:
         content:
           application/json:
@@ -1674,7 +1683,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/group/{repositoryName}:
     get:
-      operationId: getRepository_21
+      operationId: getDockerGroupRepository
       parameters:
       - explode: false
         in: path
@@ -1694,7 +1703,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_20
+      operationId: updateDockerGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1732,7 +1741,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/hosted:
     post:
-      operationId: createRepository_21
+      operationId: createDockerHostedRepository
       requestBody:
         content:
           application/json:
@@ -1755,7 +1764,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/hosted/{repositoryName}:
     get:
-      operationId: getRepository_22
+      operationId: getDockerHostedRepository
       parameters:
       - explode: false
         in: path
@@ -1775,7 +1784,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_21
+      operationId: updateDockerHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1813,7 +1822,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/proxy:
     post:
-      operationId: createRepository_22
+      operationId: createDockerProxyRepository
       requestBody:
         content:
           application/json:
@@ -1836,7 +1845,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/docker/proxy/{repositoryName}:
     get:
-      operationId: getRepository_23
+      operationId: getDockerProxyRepository
       parameters:
       - explode: false
         in: path
@@ -1856,7 +1865,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_22
+      operationId: updateDockerProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1894,7 +1903,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/gitlfs/hosted:
     post:
-      operationId: createRepository_28
+      operationId: createGitlfsHostedRepository
       requestBody:
         content:
           application/json:
@@ -1917,7 +1926,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/gitlfs/hosted/{repositoryName}:
     get:
-      operationId: getRepository_29
+      operationId: getGitlfsHostedRepository
       parameters:
       - explode: false
         in: path
@@ -1937,7 +1946,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_28
+      operationId: updateGitlfsHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -1972,7 +1981,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/go/group:
     post:
-      operationId: createRepository_33
+      operationId: createGoGroupRepository
       requestBody:
         content:
           application/json:
@@ -1998,7 +2007,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/go/group/{repositoryName}:
     get:
-      operationId: getRepository_34
+      operationId: getGoGroupRepository
       parameters:
       - explode: false
         in: path
@@ -2018,7 +2027,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_33
+      operationId: updateGoGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2056,7 +2065,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/go/proxy:
     post:
-      operationId: createRepository_34
+      operationId: createGoProxyRepository
       requestBody:
         content:
           application/json:
@@ -2082,7 +2091,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/go/proxy/{repositoryName}:
     get:
-      operationId: getRepository_35
+      operationId: getGoProxyRepository
       parameters:
       - explode: false
         in: path
@@ -2102,7 +2111,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_34
+      operationId: updateGoProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2140,7 +2149,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/helm/hosted:
     post:
-      operationId: createRepository_36
+      operationId: createHelmHostedRepository
       requestBody:
         content:
           application/json:
@@ -2166,7 +2175,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/helm/hosted/{repositoryName}:
     get:
-      operationId: getRepository_37
+      operationId: getHelmHostedRepository
       parameters:
       - explode: false
         in: path
@@ -2186,7 +2195,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_36
+      operationId: updateHelmHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2221,7 +2230,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/helm/proxy:
     post:
-      operationId: createRepository_37
+      operationId: createHelmProxyRepository
       requestBody:
         content:
           application/json:
@@ -2247,7 +2256,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/helm/proxy/{repositoryName}:
     get:
-      operationId: getRepository_38
+      operationId: getHelmProxyRepository
       parameters:
       - explode: false
         in: path
@@ -2267,7 +2276,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_37
+      operationId: updateHelmProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2302,7 +2311,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/group:
     post:
-      operationId: createRepository
+      operationId: createMavenGroupRepository
       requestBody:
         content:
           application/json:
@@ -2325,7 +2334,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/group/{repositoryName}:
     get:
-      operationId: getRepository_1
+      operationId: getMavenGroupRepository
       parameters:
       - explode: false
         in: path
@@ -2345,7 +2354,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository
+      operationId: updateMavenGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2380,7 +2389,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/hosted:
     post:
-      operationId: createRepository_1
+      operationId: createMavenHostedRepository
       requestBody:
         content:
           application/json:
@@ -2403,7 +2412,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/hosted/{repositoryName}:
     get:
-      operationId: getRepository_2
+      operationId: getMavenHostedRepository
       parameters:
       - explode: false
         in: path
@@ -2423,7 +2432,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_1
+      operationId: updateMavenHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2458,7 +2467,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/proxy:
     post:
-      operationId: createRepository_2
+      operationId: createMavenProxyRepository
       requestBody:
         content:
           application/json:
@@ -2481,7 +2490,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/maven/proxy/{repositoryName}:
     get:
-      operationId: getRepository_3
+      operationId: getMavenProxyRepository
       parameters:
       - explode: false
         in: path
@@ -2501,7 +2510,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_2
+      operationId: updateMavenProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2536,7 +2545,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/group:
     post:
-      operationId: createRepository_8
+      operationId: createNpmGroupRepository
       requestBody:
         content:
           application/json:
@@ -2559,7 +2568,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/group/{repositoryName}:
     get:
-      operationId: getRepository_9
+      operationId: getNpmGroupRepository
       parameters:
       - explode: false
         in: path
@@ -2579,7 +2588,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_8
+      operationId: updateNpmGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2614,7 +2623,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/hosted:
     post:
-      operationId: createRepository_9
+      operationId: createNpmHostedRepository
       requestBody:
         content:
           application/json:
@@ -2637,7 +2646,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/hosted/{repositoryName}:
     get:
-      operationId: getRepository_10
+      operationId: getNpmHostedRepository
       parameters:
       - explode: false
         in: path
@@ -2657,7 +2666,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_9
+      operationId: updateNpmHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2692,7 +2701,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/proxy:
     post:
-      operationId: createRepository_10
+      operationId: createNpmProxyRepository
       requestBody:
         content:
           application/json:
@@ -2715,7 +2724,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/npm/proxy/{repositoryName}:
     get:
-      operationId: getRepository_11
+      operationId: getNpmProxyRepository
       parameters:
       - explode: false
         in: path
@@ -2735,7 +2744,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_10
+      operationId: updateNpmProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2770,7 +2779,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/group:
     post:
-      operationId: createRepository_11
+      operationId: createNugetGroupRepository
       requestBody:
         content:
           application/json:
@@ -2793,7 +2802,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/group/{repositoryName}:
     get:
-      operationId: getRepository_12
+      operationId: getNugetGroupRepository
       parameters:
       - explode: false
         in: path
@@ -2813,7 +2822,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_11
+      operationId: updateNugetGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2848,7 +2857,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/hosted:
     post:
-      operationId: createRepository_12
+      operationId: createNugetHostedRepository
       requestBody:
         content:
           application/json:
@@ -2871,7 +2880,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/hosted/{repositoryName}:
     get:
-      operationId: getRepository_13
+      operationId: getNugetHostedRepository
       parameters:
       - explode: false
         in: path
@@ -2891,7 +2900,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_12
+      operationId: updateNugetHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -2926,7 +2935,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/proxy:
     post:
-      operationId: createRepository_13
+      operationId: createNugetProxyRepository
       requestBody:
         content:
           application/json:
@@ -2949,7 +2958,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/nuget/proxy/{repositoryName}:
     get:
-      operationId: getRepository_14
+      operationId: getNugetProxyRepository
       parameters:
       - explode: false
         in: path
@@ -2969,7 +2978,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_13
+      operationId: updateNugetProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3004,7 +3013,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/p2/proxy:
     post:
-      operationId: createRepository_35
+      operationId: createP2ProxyRepository
       requestBody:
         content:
           application/json:
@@ -3030,7 +3039,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/p2/proxy/{repositoryName}:
     get:
-      operationId: getRepository_36
+      operationId: getP2ProxyRepository
       parameters:
       - explode: false
         in: path
@@ -3050,7 +3059,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_35
+      operationId: updateP2ProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3085,7 +3094,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/group:
     post:
-      operationId: createRepository_23
+      operationId: createPypiGroupRepository
       requestBody:
         content:
           application/json:
@@ -3108,7 +3117,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/group/{repositoryName}:
     get:
-      operationId: getRepository_24
+      operationId: getPypiGroupRepository
       parameters:
       - explode: false
         in: path
@@ -3128,7 +3137,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_23
+      operationId: updatePypiGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3163,7 +3172,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/hosted:
     post:
-      operationId: createRepository_24
+      operationId: createPypiHostedRepository
       requestBody:
         content:
           application/json:
@@ -3186,7 +3195,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/hosted/{repositoryName}:
     get:
-      operationId: getRepository_25
+      operationId: getPypiHostedRepository
       parameters:
       - explode: false
         in: path
@@ -3206,7 +3215,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_24
+      operationId: updatePypiHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3241,7 +3250,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/proxy:
     post:
-      operationId: createRepository_25
+      operationId: createPypiProxyRepository
       requestBody:
         content:
           application/json:
@@ -3264,7 +3273,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/pypi/proxy/{repositoryName}:
     get:
-      operationId: getRepository_26
+      operationId: getPypiProxyRepository
       parameters:
       - explode: false
         in: path
@@ -3284,7 +3293,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_25
+      operationId: updatePypiProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3319,7 +3328,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/group:
     post:
-      operationId: createRepository_29
+      operationId: createRGroupRepository
       requestBody:
         content:
           application/json:
@@ -3345,7 +3354,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/group/{repositoryName}:
     get:
-      operationId: getRepository_30
+      operationId: getRGroupRepository
       parameters:
       - explode: false
         in: path
@@ -3365,7 +3374,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_29
+      operationId: updateRGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3400,7 +3409,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/hosted:
     post:
-      operationId: createRepository_30
+      operationId: createRHostedRepository
       requestBody:
         content:
           application/json:
@@ -3426,7 +3435,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/hosted/{repositoryName}:
     get:
-      operationId: getRepository_31
+      operationId: getRHostedRepository
       parameters:
       - explode: false
         in: path
@@ -3446,7 +3455,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_30
+      operationId: updateRHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3481,7 +3490,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/proxy:
     post:
-      operationId: createRepository_31
+      operationId: createRProxyRepository
       requestBody:
         content:
           application/json:
@@ -3507,7 +3516,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/r/proxy/{repositoryName}:
     get:
-      operationId: getRepository_32
+      operationId: getRProxyRepository
       parameters:
       - explode: false
         in: path
@@ -3527,7 +3536,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_31
+      operationId: updateRProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3565,7 +3574,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/group:
     post:
-      operationId: createRepository_5
+      operationId: createRawGroupRepository
       requestBody:
         content:
           application/json:
@@ -3588,7 +3597,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/group/{repositoryName}:
     get:
-      operationId: getRepository_6
+      operationId: getRawGroupRepository
       parameters:
       - explode: false
         in: path
@@ -3608,7 +3617,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_5
+      operationId: updateRawGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3643,7 +3652,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/hosted:
     post:
-      operationId: createRepository_6
+      operationId: createRawHostedRepository
       requestBody:
         content:
           application/json:
@@ -3666,7 +3675,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/hosted/{repositoryName}:
     get:
-      operationId: getRepository_7
+      operationId: getRawHostedRepository
       parameters:
       - explode: false
         in: path
@@ -3686,7 +3695,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_6
+      operationId: updateRawHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3721,7 +3730,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/proxy:
     post:
-      operationId: createRepository_7
+      operationId: createRawProxyRepository
       requestBody:
         content:
           application/json:
@@ -3744,7 +3753,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/raw/proxy/{repositoryName}:
     get:
-      operationId: getRepository_8
+      operationId: getRawProxyRepository
       parameters:
       - explode: false
         in: path
@@ -3764,7 +3773,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_7
+      operationId: updateRawProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3799,7 +3808,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/group:
     post:
-      operationId: createRepository_14
+      operationId: createRubygemsGroupRepository
       requestBody:
         content:
           application/json:
@@ -3822,7 +3831,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/group/{repositoryName}:
     get:
-      operationId: getRepository_15
+      operationId: getRubygemsGroupRepository
       parameters:
       - explode: false
         in: path
@@ -3842,7 +3851,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_14
+      operationId: updateRubygemsGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3877,7 +3886,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/hosted:
     post:
-      operationId: createRepository_15
+      operationId: createRubygemsHostedRepository
       requestBody:
         content:
           application/json:
@@ -3900,7 +3909,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/hosted/{repositoryName}:
     get:
-      operationId: getRepository_16
+      operationId: getRubygemsHostedRepository
       parameters:
       - explode: false
         in: path
@@ -3920,7 +3929,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_15
+      operationId: updateRubygemsHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -3955,7 +3964,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/proxy:
     post:
-      operationId: createRepository_16
+      operationId: createRubygemsProxyRepository
       requestBody:
         content:
           application/json:
@@ -3978,7 +3987,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/rubygems/proxy/{repositoryName}:
     get:
-      operationId: getRepository_17
+      operationId: getRubygemsProxyRepository
       parameters:
       - explode: false
         in: path
@@ -3998,7 +4007,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_16
+      operationId: updateRubygemsProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -4033,7 +4042,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/group:
     post:
-      operationId: createRepository_17
+      operationId: createYumGroupRepository
       requestBody:
         content:
           application/json:
@@ -4056,7 +4065,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/group/{repositoryName}:
     get:
-      operationId: getRepository_18
+      operationId: getYumGroupRepository
       parameters:
       - explode: false
         in: path
@@ -4076,7 +4085,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_17
+      operationId: updateYumGroupRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -4111,7 +4120,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/hosted:
     post:
-      operationId: createRepository_18
+      operationId: createYumHostedRepository
       requestBody:
         content:
           application/json:
@@ -4134,7 +4143,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/hosted/{repositoryName}:
     get:
-      operationId: getRepository_19
+      operationId: getYumHostedRepository
       parameters:
       - explode: false
         in: path
@@ -4154,7 +4163,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_18
+      operationId: updateYumHostedRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -4189,7 +4198,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/proxy:
     post:
-      operationId: createRepository_19
+      operationId: createYumProxyRepository
       requestBody:
         content:
           application/json:
@@ -4212,7 +4221,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/repositories/yum/proxy/{repositoryName}:
     get:
-      operationId: getRepository_20
+      operationId: getYumProxyRepository
       parameters:
       - explode: false
         in: path
@@ -4232,7 +4241,7 @@ paths:
       tags:
       - Repository Management
     put:
-      operationId: updateRepository_19
+      operationId: updateYumProxyRepository
       parameters:
       - description: Name of the repository to update
         explode: false
@@ -4352,7 +4361,7 @@ paths:
       tags:
       - Repository Management
     post:
-      operationId: enableRepositoryHealthCheck
+      operationId: "create{repositoryname}Health-checkRepository"
       parameters:
       - description: Name of the repository to enable Repository Health Check for
         explode: false
@@ -4384,7 +4393,7 @@ paths:
       - Repository Management
   /v1/repositories/{repositoryName}/invalidate-cache:
     post:
-      operationId: invalidateCache
+      operationId: "create{repositoryname}Invalidate-cacheRepository"
       parameters:
       - description: Name of the repository to invalidate cache
         explode: false
@@ -4415,7 +4424,7 @@ paths:
       - Repository Management
   /v1/repositories/{repositoryName}/rebuild-index:
     post:
-      operationId: rebuildIndex
+      operationId: "create{repositoryname}Rebuild-indexRepository"
       parameters:
       - description: Name of the repository to rebuild index
         explode: false

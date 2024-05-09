@@ -1,5 +1,5 @@
 /*
-Nexus Repository Manager REST API
+Sonatype Nexus Repository Manager
 
 Testing TagsAPIService
 

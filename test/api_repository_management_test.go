@@ -1,5 +1,5 @@
 /*
-Nexus Repository Manager REST API
+Sonatype Nexus Repository Manager
 
 Testing RepositoryManagementAPIService
 
@@ -22,451 +22,490 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateAptHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateAptHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository1", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateAptProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository1(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateAptProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository10", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateBowerGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository10(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository11", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateBowerHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository11(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository12", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateBowerProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository12(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository13", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateCocoapodsProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository13(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCocoapodsProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository14", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateConanProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository14(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateConanProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository15", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateCondaProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository15(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCondaProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository16", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateDockerGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository16(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateDockerGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository17", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateDockerHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository17(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateDockerHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository18", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateDockerProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository18(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateDockerProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository19", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateGitlfsHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository19(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateGitlfsHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository2", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateGoGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository2(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateGoGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository20", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateGoProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository20(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateGoProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository21", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateHelmHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository21(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateHelmHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository22", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateHelmProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository22(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateHelmProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository23", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateMavenGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository23(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateMavenGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository24", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateMavenHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository24(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateMavenHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository25", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateMavenProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository25(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateMavenProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository26", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNpmGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository26(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNpmGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository27", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNpmHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository27(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNpmHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository28", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNpmProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository28(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNpmProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository29", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNugetGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository29(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNugetGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository3", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNugetHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository3(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNugetHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository30", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateNugetProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository30(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateNugetProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository31", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateP2ProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository31(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateP2ProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository32", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreatePypiGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository32(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePypiGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository33", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreatePypiHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository33(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePypiHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository34", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreatePypiProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository34(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePypiProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository35", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository35(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository36", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository36(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository37", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository37(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository38", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRawGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository38(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRawGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository39", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRawHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository39(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRawHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository4", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRawProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository4(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRawProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository40", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRubygemsGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository40(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRubygemsGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository5", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRubygemsHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository5(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRubygemsHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository6", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateRubygemsProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository6(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateRubygemsProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository7", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateYumGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository7(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateYumGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository8", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateYumHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository8(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateYumHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateRepository9", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateYumProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateRepository9(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateYumProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreaterepositorynameHealthCheckRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreaterepositorynameHealthCheckRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreaterepositorynameInvalidateCacheRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreaterepositorynameInvalidateCacheRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreaterepositorynameRebuildIndexRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreaterepositorynameRebuildIndexRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -499,15 +538,504 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService EnableRepositoryHealthCheck", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetAllRepositories", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetAllRepositories(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetAptHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.EnableRepositoryHealthCheck(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetAptHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetAptProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetAptProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetBowerGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetBowerHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetBowerProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetCocoapodsProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCocoapodsProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetConanProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetConanProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetCondaProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCondaProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetDockerGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetDockerGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetDockerHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetDockerHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetDockerProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetDockerProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetGitlfsHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetGitlfsHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetGoGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetGoGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetGoProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetGoProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetHelmHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetHelmHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetHelmProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetHelmProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetMavenGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetMavenGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetMavenHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetMavenHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetMavenProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetMavenProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNpmGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNpmGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNpmHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNpmHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNpmProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNpmProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNugetGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNugetGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNugetHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNugetHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetNugetProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetNugetProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetP2ProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetP2ProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPypiGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPypiGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPypiHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPypiHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPypiProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPypiProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRawGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRawGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRawHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRawHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetRawProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRawProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -517,18 +1045,6 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepositories1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepositories1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -550,27 +1066,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository1", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetRubygemsGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository1(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository10", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository10(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRubygemsGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -578,27 +1080,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository11", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetRubygemsHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository11(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository12", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository12(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRubygemsHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -606,27 +1094,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository13", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetRubygemsProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository13(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository14", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository14(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRubygemsProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -634,27 +1108,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository15", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetYumGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository15(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository16", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository16(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetYumGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -662,27 +1122,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository17", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetYumHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository17(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository18", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository18(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetYumHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -690,27 +1136,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository19", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetYumProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository19(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository2", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository2(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetYumProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -718,965 +1150,533 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository20", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateAptHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository20(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateAptHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository21", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateAptProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository21(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateAptProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository22", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateBowerGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository22(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository23", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateBowerHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository23(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository24", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateBowerProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository24(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository25", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateCocoapodsProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository25(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCocoapodsProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository26", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateConanProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository26(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateConanProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository27", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateCondaProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository27(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCondaProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository28", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateDockerGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository28(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateDockerGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository29", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateDockerHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository29(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateDockerHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository3", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateDockerProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository3(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateDockerProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository30", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateGitlfsHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository30(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateGitlfsHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository31", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateGoGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository31(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateGoGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository32", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateGoProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository32(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateGoProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository33", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateHelmHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository33(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateHelmHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository34", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateHelmProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository34(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateHelmProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository35", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateMavenGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository35(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateMavenGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository36", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateMavenHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository36(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateMavenHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository37", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateMavenProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository37(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateMavenProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository38", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNpmGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository38(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNpmGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository39", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNpmHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository39(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNpmHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository4", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNpmProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository4(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNpmProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository40", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNugetGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository40(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNugetGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository41", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNugetHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository41(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNugetHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository5", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateNugetProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository5(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNugetProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository6", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateP2ProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository6(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateP2ProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository7", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdatePypiGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository7(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePypiGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository8", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdatePypiHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository8(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePypiHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetRepository9", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdatePypiProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository9(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePypiProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService InvalidateCache", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.InvalidateCache(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService RebuildIndex", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.RebuildIndex(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository1", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRawGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository1(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRawGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository10", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRawHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository10(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRawHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository11", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRawProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository11(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRawProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository12", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRubygemsGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository12(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRubygemsGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository13", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRubygemsHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository13(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRubygemsHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository14", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateRubygemsProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository14(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRubygemsProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository15", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateYumGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository15(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateYumGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository16", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateYumHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository16(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateYumHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateRepository17", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateYumProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository17(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository18", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository18(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository19", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository19(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository2", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository2(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository20", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository20(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository21", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository21(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository22", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository22(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository23", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository23(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository24", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository24(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository25", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository25(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository26", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository26(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository27", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository27(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository28", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository28(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository29", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository29(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository3", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository3(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository30", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository30(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository31", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository31(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository32", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository32(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository33", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository33(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository34", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository34(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository35", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository35(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository36", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository36(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository37", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository37(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository38", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository38(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository39", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository39(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository4", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository4(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository40", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository40(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository5", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository5(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository6", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository6(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository7", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository7(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository8", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository8(context.Background(), repositoryName).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService UpdateRepository9", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var repositoryName string
-
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRepository9(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateYumProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
