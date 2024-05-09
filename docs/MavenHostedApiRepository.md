@@ -6,10 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
+**Format** | Pointer to **string** |  | [optional] [default to "maven2"]
 **Maven** | [**MavenAttributes**](MavenAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
 **Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -80,6 +82,31 @@ SetComponent sets Component field to given value.
 `func (o *MavenHostedApiRepository) HasComponent() bool`
 
 HasComponent returns a boolean if a field has been set.
+
+### GetFormat
+
+`func (o *MavenHostedApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *MavenHostedApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *MavenHostedApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *MavenHostedApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetMaven
 
@@ -165,6 +192,31 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *MavenHostedApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *MavenHostedApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *MavenHostedApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *MavenHostedApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

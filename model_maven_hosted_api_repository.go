@@ -23,12 +23,14 @@ var _ MappedNullable = &MavenHostedApiRepository{}
 type MavenHostedApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
 	Component *ComponentAttributes `json:"component,omitempty"`
+	Format *string `json:"format,omitempty"`
 	Maven MavenAttributes `json:"maven"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage HostedStorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
 	Url *string `json:"url,omitempty"`
 }
 
@@ -40,9 +42,13 @@ type _MavenHostedApiRepository MavenHostedApiRepository
 // will change when the set of required properties is changed
 func NewMavenHostedApiRepository(maven MavenAttributes, online bool, storage HostedStorageAttributes) *MavenHostedApiRepository {
 	this := MavenHostedApiRepository{}
+	var format string = "maven2"
+	this.Format = &format
 	this.Maven = maven
 	this.Online = online
 	this.Storage = storage
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -51,6 +57,10 @@ func NewMavenHostedApiRepository(maven MavenAttributes, online bool, storage Hos
 // but it doesn't guarantee that properties required by API are set
 func NewMavenHostedApiRepositoryWithDefaults() *MavenHostedApiRepository {
 	this := MavenHostedApiRepository{}
+	var format string = "maven2"
+	this.Format = &format
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -116,6 +126,38 @@ func (o *MavenHostedApiRepository) HasComponent() bool {
 // SetComponent gets a reference to the given ComponentAttributes and assigns it to the Component field.
 func (o *MavenHostedApiRepository) SetComponent(v ComponentAttributes) {
 	o.Component = &v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *MavenHostedApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenHostedApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *MavenHostedApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *MavenHostedApiRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetMaven returns the Maven field value
@@ -222,6 +264,38 @@ func (o *MavenHostedApiRepository) SetStorage(v HostedStorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *MavenHostedApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenHostedApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *MavenHostedApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *MavenHostedApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
 // GetUrl returns the Url field value if set, zero value otherwise.
 func (o *MavenHostedApiRepository) GetUrl() string {
 	if o == nil || IsNil(o.Url) {
@@ -270,12 +344,18 @@ func (o MavenHostedApiRepository) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Component) {
 		toSerialize["component"] = o.Component
 	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["maven"] = o.Maven
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}
