@@ -10321,6 +10321,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         apt:
@@ -10413,6 +10414,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         apt:
@@ -10652,6 +10654,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -10749,6 +10752,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         bower:
           rewritePackageUrls: true
@@ -10823,6 +10827,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         bower:
           rewritePackageUrls: true
@@ -10909,6 +10914,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -11043,6 +11049,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -11113,6 +11120,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -11471,6 +11479,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         docker:
           httpPort: 8082
@@ -11511,6 +11520,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         docker:
           httpPort: 8082
@@ -11712,6 +11722,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         docker:
           httpPort: 8082
@@ -11832,6 +11843,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         docker:
           httpPort: 8082
@@ -11996,6 +12008,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -12058,6 +12071,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -12281,6 +12295,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -12608,6 +12623,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -12768,6 +12784,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -12846,6 +12863,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -12919,6 +12937,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -13019,6 +13038,7 @@ components:
           removeQuarantined: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -13093,6 +13113,7 @@ components:
           removeQuarantined: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -13153,6 +13174,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -13250,6 +13272,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         nugetProxy:
           nugetVersion: V3
@@ -13326,6 +13349,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         nugetProxy:
           nugetVersion: V3
@@ -13402,6 +13426,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -13660,6 +13685,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -13759,6 +13785,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -13800,6 +13827,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -13897,6 +13925,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -13950,6 +13979,7 @@ components:
           contentDisposition: ATTACHMENT
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -14055,6 +14085,7 @@ components:
           contentDisposition: ATTACHMENT
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -14453,6 +14484,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -14550,6 +14582,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -14824,6 +14857,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -14857,6 +14891,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -14952,6 +14987,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:
@@ -15002,6 +15038,7 @@ components:
     StorageAttributes:
       example:
         strictContentTypeValidation: true
+        writePolicy: allow_once
         blobStoreName: default
       properties:
         blobStoreName:
@@ -15013,6 +15050,14 @@ components:
             for the repository format
           example: true
           type: boolean
+        writePolicy:
+          description: Controls if deployments of and updates to assets are allowed
+          enum:
+          - allow
+          - allow_once
+          - deny
+          example: allow_once
+          type: string
       required:
       - blobStoreName
       - strictContentTypeValidation
@@ -15454,6 +15499,7 @@ components:
           passphrase: passphrase
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
         group:
           memberNames:
@@ -15602,6 +15648,7 @@ components:
           passphrase: passphrase
         storage:
           strictContentTypeValidation: true
+          writePolicy: allow_once
           blobStoreName: default
       properties:
         cleanup:

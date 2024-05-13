@@ -25,6 +25,8 @@ type StorageAttributes struct {
 	BlobStoreName string `json:"blobStoreName"`
 	// Whether to validate uploaded content's MIME type appropriate for the repository format
 	StrictContentTypeValidation bool `json:"strictContentTypeValidation"`
+	// Controls if deployments of and updates to assets are allowed
+	WritePolicy *string `json:"writePolicy,omitempty"`
 }
 
 type _StorageAttributes StorageAttributes
@@ -96,6 +98,38 @@ func (o *StorageAttributes) SetStrictContentTypeValidation(v bool) {
 	o.StrictContentTypeValidation = v
 }
 
+// GetWritePolicy returns the WritePolicy field value if set, zero value otherwise.
+func (o *StorageAttributes) GetWritePolicy() string {
+	if o == nil || IsNil(o.WritePolicy) {
+		var ret string
+		return ret
+	}
+	return *o.WritePolicy
+}
+
+// GetWritePolicyOk returns a tuple with the WritePolicy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *StorageAttributes) GetWritePolicyOk() (*string, bool) {
+	if o == nil || IsNil(o.WritePolicy) {
+		return nil, false
+	}
+	return o.WritePolicy, true
+}
+
+// HasWritePolicy returns a boolean if a field has been set.
+func (o *StorageAttributes) HasWritePolicy() bool {
+	if o != nil && !IsNil(o.WritePolicy) {
+		return true
+	}
+
+	return false
+}
+
+// SetWritePolicy gets a reference to the given string and assigns it to the WritePolicy field.
+func (o *StorageAttributes) SetWritePolicy(v string) {
+	o.WritePolicy = &v
+}
+
 func (o StorageAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -108,6 +142,9 @@ func (o StorageAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["blobStoreName"] = o.BlobStoreName
 	toSerialize["strictContentTypeValidation"] = o.StrictContentTypeValidation
+	if !IsNil(o.WritePolicy) {
+		toSerialize["writePolicy"] = o.WritePolicy
+	}
 	return toSerialize, nil
 }
 
