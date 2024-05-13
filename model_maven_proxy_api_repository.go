@@ -22,6 +22,7 @@ var _ MappedNullable = &MavenProxyApiRepository{}
 // MavenProxyApiRepository struct for MavenProxyApiRepository
 type MavenProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Format *string `json:"format,omitempty"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	Maven MavenAttributes `json:"maven"`
 	// A unique identifier for this repository
@@ -34,6 +35,7 @@ type MavenProxyApiRepository struct {
 	// The name of the routing rule assigned to this repository
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
 	Url *string `json:"url,omitempty"`
 }
 
@@ -45,12 +47,16 @@ type _MavenProxyApiRepository MavenProxyApiRepository
 // will change when the set of required properties is changed
 func NewMavenProxyApiRepository(httpClient HttpClientAttributes, maven MavenAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes) *MavenProxyApiRepository {
 	this := MavenProxyApiRepository{}
+	var format string = "maven2"
+	this.Format = &format
 	this.HttpClient = httpClient
 	this.Maven = maven
 	this.NegativeCache = negativeCache
 	this.Online = online
 	this.Proxy = proxy
 	this.Storage = storage
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -59,6 +65,10 @@ func NewMavenProxyApiRepository(httpClient HttpClientAttributes, maven MavenAttr
 // but it doesn't guarantee that properties required by API are set
 func NewMavenProxyApiRepositoryWithDefaults() *MavenProxyApiRepository {
 	this := MavenProxyApiRepository{}
+	var format string = "maven2"
+	this.Format = &format
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -92,6 +102,38 @@ func (o *MavenProxyApiRepository) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *MavenProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *MavenProxyApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenProxyApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *MavenProxyApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *MavenProxyApiRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetHttpClient returns the HttpClient field value
@@ -334,6 +376,38 @@ func (o *MavenProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *MavenProxyApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenProxyApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *MavenProxyApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *MavenProxyApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
 // GetUrl returns the Url field value if set, zero value otherwise.
 func (o *MavenProxyApiRepository) GetUrl() string {
 	if o == nil || IsNil(o.Url) {
@@ -379,6 +453,9 @@ func (o MavenProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
 	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["httpClient"] = o.HttpClient
 	toSerialize["maven"] = o.Maven
 	if !IsNil(o.Name) {
@@ -394,6 +471,9 @@ func (o MavenProxyApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
 	if !IsNil(o.Url) {
 		toSerialize["url"] = o.Url
 	}

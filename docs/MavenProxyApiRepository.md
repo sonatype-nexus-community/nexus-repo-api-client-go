@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Format** | Pointer to **string** |  | [optional] [default to "maven2"]
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Maven** | [**MavenAttributes**](MavenAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
@@ -14,6 +15,7 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
 **Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -59,6 +61,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *MavenProxyApiRepository) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFormat
+
+`func (o *MavenProxyApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *MavenProxyApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *MavenProxyApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *MavenProxyApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -254,6 +281,31 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *MavenProxyApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *MavenProxyApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *MavenProxyApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *MavenProxyApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

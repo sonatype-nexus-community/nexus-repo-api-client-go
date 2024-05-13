@@ -12764,32 +12764,37 @@ components:
             type: username
             ntlmHost: ntlmHost
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        maven:
+          layoutPolicy: STRICT
+          contentDisposition: ATTACHMENT
+          versionPolicy: MIXED
+        format: maven2
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: hosted
+        url: url
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         routingRuleName: routingRuleName
         cleanup:
           policyNames:
           - policyNames
           - policyNames
-        maven:
-          layoutPolicy: STRICT
-          contentDisposition: ATTACHMENT
-          versionPolicy: MIXED
         name: internal
         online: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
-        url: url
       properties:
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: maven2
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         maven:
@@ -12814,6 +12819,9 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: hosted
+          type: string
         url:
           type: string
       required:
