@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -253,6 +254,31 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetUrl
+
+`func (o *MavenProxyApiRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *MavenProxyApiRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *MavenProxyApiRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *MavenProxyApiRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

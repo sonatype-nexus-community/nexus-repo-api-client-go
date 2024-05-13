@@ -34,6 +34,7 @@ type MavenProxyApiRepository struct {
 	// The name of the routing rule assigned to this repository
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _MavenProxyApiRepository MavenProxyApiRepository
@@ -333,6 +334,38 @@ func (o *MavenProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *MavenProxyApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MavenProxyApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *MavenProxyApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *MavenProxyApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o MavenProxyApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -361,6 +394,9 @@ func (o MavenProxyApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 
