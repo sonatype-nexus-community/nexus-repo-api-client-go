@@ -21,12 +21,15 @@ var _ MappedNullable = &SimpleApiGroupRepository{}
 
 // SimpleApiGroupRepository struct for SimpleApiGroupRepository
 type SimpleApiGroupRepository struct {
+	Format *string `json:"format,omitempty"`
 	Group GroupAttributes `json:"group"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _SimpleApiGroupRepository SimpleApiGroupRepository
@@ -37,9 +40,13 @@ type _SimpleApiGroupRepository SimpleApiGroupRepository
 // will change when the set of required properties is changed
 func NewSimpleApiGroupRepository(group GroupAttributes, online bool, storage StorageAttributes) *SimpleApiGroupRepository {
 	this := SimpleApiGroupRepository{}
+	var format string = "maven2"
+	this.Format = &format
 	this.Group = group
 	this.Online = online
 	this.Storage = storage
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -48,7 +55,43 @@ func NewSimpleApiGroupRepository(group GroupAttributes, online bool, storage Sto
 // but it doesn't guarantee that properties required by API are set
 func NewSimpleApiGroupRepositoryWithDefaults() *SimpleApiGroupRepository {
 	this := SimpleApiGroupRepository{}
+	var format string = "maven2"
+	this.Format = &format
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *SimpleApiGroupRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleApiGroupRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *SimpleApiGroupRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *SimpleApiGroupRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetGroup returns the Group field value
@@ -155,6 +198,70 @@ func (o *SimpleApiGroupRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *SimpleApiGroupRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleApiGroupRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *SimpleApiGroupRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *SimpleApiGroupRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *SimpleApiGroupRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SimpleApiGroupRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *SimpleApiGroupRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *SimpleApiGroupRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o SimpleApiGroupRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -165,12 +272,21 @@ func (o SimpleApiGroupRepository) MarshalJSON() ([]byte, error) {
 
 func (o SimpleApiGroupRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["group"] = o.Group
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 

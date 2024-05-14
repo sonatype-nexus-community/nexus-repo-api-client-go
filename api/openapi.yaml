@@ -14898,17 +14898,23 @@ components:
       type: object
     SimpleApiGroupRepository:
       example:
+        format: maven2
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        type: hosted
+        url: url
         group:
           memberNames:
           - memberNames
           - memberNames
       properties:
+        format:
+          default: maven2
+          type: string
         group:
           $ref: '#/components/schemas/GroupAttributes'
         name:
@@ -14922,6 +14928,11 @@ components:
           type: boolean
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: hosted
+          type: string
+        url:
+          type: string
       required:
       - group
       - online

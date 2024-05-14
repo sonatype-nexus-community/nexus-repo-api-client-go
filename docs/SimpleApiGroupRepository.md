@@ -4,10 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Format** | Pointer to **string** |  | [optional] [default to "maven2"]
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -27,6 +30,31 @@ will change when the set of required properties is changed
 NewSimpleApiGroupRepositoryWithDefaults instantiates a new SimpleApiGroupRepository object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetFormat
+
+`func (o *SimpleApiGroupRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *SimpleApiGroupRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *SimpleApiGroupRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *SimpleApiGroupRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -112,6 +140,56 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *SimpleApiGroupRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *SimpleApiGroupRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *SimpleApiGroupRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *SimpleApiGroupRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *SimpleApiGroupRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *SimpleApiGroupRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *SimpleApiGroupRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *SimpleApiGroupRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
