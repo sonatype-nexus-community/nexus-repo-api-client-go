@@ -10301,6 +10301,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -10394,6 +10395,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -10735,6 +10737,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -10810,6 +10813,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -10897,6 +10901,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -11032,6 +11037,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -11103,6 +11109,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -11698,6 +11705,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -11819,6 +11827,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -12054,6 +12063,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -12278,6 +12288,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -12373,6 +12384,7 @@ components:
           ntlmDomain: ntlmDomain
           type: username
           ntlmHost: ntlmHost
+          preemptive: false
           username: username
       properties:
         authentication:
@@ -12476,6 +12488,7 @@ components:
         ntlmDomain: ntlmDomain
         type: username
         ntlmHost: ntlmHost
+        preemptive: false
         username: username
       properties:
         ntlmDomain:
@@ -12484,6 +12497,11 @@ components:
           type: string
         password:
           type: string
+        preemptive:
+          description: Whether to use pre-emptive authentication. Use with caution.
+            Defaults to false.
+          example: false
+          type: boolean
         type:
           description: Authentication type
           enum:
@@ -12763,6 +12781,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         negativeCache:
           timeToLive: 1440
@@ -13030,6 +13049,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13105,6 +13125,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13266,6 +13287,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13343,6 +13365,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13420,6 +13443,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13777,6 +13801,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -13919,6 +13944,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -14077,6 +14103,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -14576,6 +14603,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -14992,6 +15020,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440
@@ -15650,6 +15679,7 @@ components:
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
+            preemptive: false
             username: username
         proxy:
           contentMaxAge: 1440

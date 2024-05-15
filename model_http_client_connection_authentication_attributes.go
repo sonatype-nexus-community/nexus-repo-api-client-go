@@ -22,6 +22,8 @@ type HttpClientConnectionAuthenticationAttributes struct {
 	NtlmDomain *string `json:"ntlmDomain,omitempty"`
 	NtlmHost *string `json:"ntlmHost,omitempty"`
 	Password *string `json:"password,omitempty"`
+	// Whether to use pre-emptive authentication. Use with caution. Defaults to false.
+	Preemptive *bool `json:"preemptive,omitempty"`
 	// Authentication type
 	Type *string `json:"type,omitempty"`
 	Username *string `json:"username,omitempty"`
@@ -140,6 +142,38 @@ func (o *HttpClientConnectionAuthenticationAttributes) SetPassword(v string) {
 	o.Password = &v
 }
 
+// GetPreemptive returns the Preemptive field value if set, zero value otherwise.
+func (o *HttpClientConnectionAuthenticationAttributes) GetPreemptive() bool {
+	if o == nil || IsNil(o.Preemptive) {
+		var ret bool
+		return ret
+	}
+	return *o.Preemptive
+}
+
+// GetPreemptiveOk returns a tuple with the Preemptive field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *HttpClientConnectionAuthenticationAttributes) GetPreemptiveOk() (*bool, bool) {
+	if o == nil || IsNil(o.Preemptive) {
+		return nil, false
+	}
+	return o.Preemptive, true
+}
+
+// HasPreemptive returns a boolean if a field has been set.
+func (o *HttpClientConnectionAuthenticationAttributes) HasPreemptive() bool {
+	if o != nil && !IsNil(o.Preemptive) {
+		return true
+	}
+
+	return false
+}
+
+// SetPreemptive gets a reference to the given bool and assigns it to the Preemptive field.
+func (o *HttpClientConnectionAuthenticationAttributes) SetPreemptive(v bool) {
+	o.Preemptive = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *HttpClientConnectionAuthenticationAttributes) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -222,6 +256,9 @@ func (o HttpClientConnectionAuthenticationAttributes) ToMap() (map[string]interf
 	}
 	if !IsNil(o.Password) {
 		toSerialize["password"] = o.Password
+	}
+	if !IsNil(o.Preemptive) {
+		toSerialize["preemptive"] = o.Preemptive
 	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type

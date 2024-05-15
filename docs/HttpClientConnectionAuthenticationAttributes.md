@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **NtlmDomain** | Pointer to **string** |  | [optional] 
 **NtlmHost** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
+**Preemptive** | Pointer to **bool** | Whether to use pre-emptive authentication. Use with caution. Defaults to false. | [optional] 
 **Type** | Pointer to **string** | Authentication type | [optional] 
 **Username** | Pointer to **string** |  | [optional] 
 
@@ -103,6 +104,31 @@ SetPassword sets Password field to given value.
 `func (o *HttpClientConnectionAuthenticationAttributes) HasPassword() bool`
 
 HasPassword returns a boolean if a field has been set.
+
+### GetPreemptive
+
+`func (o *HttpClientConnectionAuthenticationAttributes) GetPreemptive() bool`
+
+GetPreemptive returns the Preemptive field if non-nil, zero value otherwise.
+
+### GetPreemptiveOk
+
+`func (o *HttpClientConnectionAuthenticationAttributes) GetPreemptiveOk() (*bool, bool)`
+
+GetPreemptiveOk returns a tuple with the Preemptive field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreemptive
+
+`func (o *HttpClientConnectionAuthenticationAttributes) SetPreemptive(v bool)`
+
+SetPreemptive sets Preemptive field to given value.
+
+### HasPreemptive
+
+`func (o *HttpClientConnectionAuthenticationAttributes) HasPreemptive() bool`
+
+HasPreemptive returns a boolean if a field has been set.
 
 ### GetType
 
