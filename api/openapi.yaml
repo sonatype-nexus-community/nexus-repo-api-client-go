@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.67.1-01."
+    \ version 3.68.1-02."
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.67.1-01
+  version: 3.68.1-02
 servers:
 - url: /service/rest/
 security:
@@ -469,7 +469,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/blobstores/s3:
     post:
-      operationId: createBlobStore
+      operationId: CreateS3BlobStore
       requestBody:
         content:
           application/json:
@@ -492,7 +492,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/blobstores/s3/{name}:
     get:
-      operationId: getBlobStore
+      operationId: GetS3BlobStore
       parameters:
       - description: Name of the blob store configuration to fetch
         explode: false
@@ -522,7 +522,7 @@ paths:
       tags:
       - Blob store
     put:
-      operationId: updateBlobStore
+      operationId: UpdateS3BlobStore
       parameters:
       - description: Name of the blob store to update
         explode: false

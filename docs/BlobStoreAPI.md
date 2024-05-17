@@ -5,21 +5,21 @@ All URIs are relative to *http://localhost/service/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ConvertBlobStoreToGroup**](BlobStoreAPI.md#ConvertBlobStoreToGroup) | **Post** /v1/blobstores/group/convert/{name}/{newNameForOriginal} | Convert a blob store to a group blob store
-[**CreateBlobStore**](BlobStoreAPI.md#CreateBlobStore) | **Post** /v1/blobstores/s3 | Create an S3 blob store
 [**CreateBlobStore1**](BlobStoreAPI.md#CreateBlobStore1) | **Post** /v1/blobstores/azure | Create an Azure blob store
 [**CreateFileBlobStore**](BlobStoreAPI.md#CreateFileBlobStore) | **Post** /v1/blobstores/file | Create a file blob store
 [**CreateGroupBlobStore**](BlobStoreAPI.md#CreateGroupBlobStore) | **Post** /v1/blobstores/group | Create a group blob store
+[**CreateS3BlobStore**](BlobStoreAPI.md#CreateS3BlobStore) | **Post** /v1/blobstores/s3 | Create an S3 blob store
 [**DeleteBlobStore**](BlobStoreAPI.md#DeleteBlobStore) | **Delete** /v1/blobstores/{name} | Delete a blob store by name
-[**GetBlobStore**](BlobStoreAPI.md#GetBlobStore) | **Get** /v1/blobstores/s3/{name} | Get a S3 blob store configuration by name
 [**GetBlobStore1**](BlobStoreAPI.md#GetBlobStore1) | **Get** /v1/blobstores/azure/{name} | Get an Azure blob store configuration by name
 [**GetFileBlobStoreConfiguration**](BlobStoreAPI.md#GetFileBlobStoreConfiguration) | **Get** /v1/blobstores/file/{name} | Get a file blob store configuration by name
 [**GetGroupBlobStoreConfiguration**](BlobStoreAPI.md#GetGroupBlobStoreConfiguration) | **Get** /v1/blobstores/group/{name} | Get a group blob store configuration by name
+[**GetS3BlobStore**](BlobStoreAPI.md#GetS3BlobStore) | **Get** /v1/blobstores/s3/{name} | Get a S3 blob store configuration by name
 [**ListBlobStores**](BlobStoreAPI.md#ListBlobStores) | **Get** /v1/blobstores | List the blob stores
 [**QuotaStatus**](BlobStoreAPI.md#QuotaStatus) | **Get** /v1/blobstores/{name}/quota-status | Get quota status for a given blob store
-[**UpdateBlobStore**](BlobStoreAPI.md#UpdateBlobStore) | **Put** /v1/blobstores/s3/{name} | Update an S3 blob store configuration by name
 [**UpdateBlobStore1**](BlobStoreAPI.md#UpdateBlobStore1) | **Put** /v1/blobstores/azure/{name} | Update an Azure blob store configuration by name
 [**UpdateFileBlobStore**](BlobStoreAPI.md#UpdateFileBlobStore) | **Put** /v1/blobstores/file/{name} | Update a file blob store configuration by name
 [**UpdateGroupBlobStore**](BlobStoreAPI.md#UpdateGroupBlobStore) | **Put** /v1/blobstores/group/{name} | Update a group blob store configuration by name
+[**UpdateS3BlobStore**](BlobStoreAPI.md#UpdateS3BlobStore) | **Put** /v1/blobstores/s3/{name} | Update an S3 blob store configuration by name
 
 
 
@@ -88,68 +88,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateBlobStore
-
-> CreateBlobStore(ctx).Body(body).Execute()
-
-Create an S3 blob store
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
-)
-
-func main() {
-	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.BlobStoreAPI.CreateBlobStore(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.CreateBlobStore``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateBlobStoreRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**S3BlobStoreApiModel**](S3BlobStoreApiModel.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -342,6 +280,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateS3BlobStore
+
+> CreateS3BlobStore(ctx).Body(body).Execute()
+
+Create an S3 blob store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.BlobStoreAPI.CreateS3BlobStore(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.CreateS3BlobStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateS3BlobStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**S3BlobStoreApiModel**](S3BlobStoreApiModel.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## DeleteBlobStore
 
 > DeleteBlobStore(ctx, name).Execute()
@@ -402,74 +402,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetBlobStore
-
-> S3BlobStoreApiModel GetBlobStore(ctx, name).Execute()
-
-Get a S3 blob store configuration by name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
-)
-
-func main() {
-	name := "name_example" // string | Name of the blob store configuration to fetch
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.BlobStoreAPI.GetBlobStore(context.Background(), name).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.GetBlobStore``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetBlobStore`: S3BlobStoreApiModel
-	fmt.Fprintf(os.Stdout, "Response from `BlobStoreAPI.GetBlobStore`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** | Name of the blob store configuration to fetch | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetBlobStoreRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**S3BlobStoreApiModel**](S3BlobStoreApiModel.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -680,6 +612,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetS3BlobStore
+
+> S3BlobStoreApiModel GetS3BlobStore(ctx, name).Execute()
+
+Get a S3 blob store configuration by name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	name := "name_example" // string | Name of the blob store configuration to fetch
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.BlobStoreAPI.GetS3BlobStore(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.GetS3BlobStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetS3BlobStore`: S3BlobStoreApiModel
+	fmt.Fprintf(os.Stdout, "Response from `BlobStoreAPI.GetS3BlobStore`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the blob store configuration to fetch | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetS3BlobStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**S3BlobStoreApiModel**](S3BlobStoreApiModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListBlobStores
 
 > []GenericBlobStoreApiResponse ListBlobStores(ctx).Execute()
@@ -801,74 +801,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UpdateBlobStore
-
-> UpdateBlobStore(ctx, name).Body(body).Execute()
-
-Update an S3 blob store configuration by name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
-)
-
-func main() {
-	name := "name_example" // string | Name of the blob store to update
-	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.BlobStoreAPI.UpdateBlobStore(context.Background(), name).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.UpdateBlobStore``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** | Name of the blob store to update | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiUpdateBlobStoreRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | [**S3BlobStoreApiModel**](S3BlobStoreApiModel.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1060,6 +992,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**GroupBlobStoreApiUpdateRequest**](GroupBlobStoreApiUpdateRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateS3BlobStore
+
+> UpdateS3BlobStore(ctx, name).Body(body).Execute()
+
+Update an S3 blob store configuration by name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	name := "name_example" // string | Name of the blob store to update
+	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.BlobStoreAPI.UpdateS3BlobStore(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.UpdateS3BlobStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | Name of the blob store to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateS3BlobStoreRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**S3BlobStoreApiModel**](S3BlobStoreApiModel.md) |  | 
 
 ### Return type
 
