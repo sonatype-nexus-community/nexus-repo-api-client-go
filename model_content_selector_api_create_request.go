@@ -24,7 +24,7 @@ type ContentSelectorApiCreateRequest struct {
 	// The expression used to identify content
 	Expression *string `json:"expression,omitempty"`
 	// The content selector name cannot be changed after creation
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 }
 
 // NewContentSelectorApiCreateRequest instantiates a new ContentSelectorApiCreateRequest object

@@ -376,10 +376,10 @@ func (a *SecurityManagementUsersAPIService) GetUsersExecute(r ApiGetUsersRequest
 	localVarFormParams := url.Values{}
 
 	if r.userId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "userId", r.userId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "userId", r.userId, "form", "")
 	}
 	if r.source != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

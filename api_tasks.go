@@ -175,7 +175,7 @@ func (a *TasksAPIService) GetTasksExecute(r ApiGetTasksRequest) (*PageTaskXO, *h
 	localVarFormParams := url.Values{}
 
 	if r.type_ != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "type", r.type_, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

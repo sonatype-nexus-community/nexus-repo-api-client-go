@@ -24,7 +24,7 @@ type RoutingRuleXO struct {
 	Matchers []string `json:"matchers,omitempty"`
 	// Determines what should be done with requests when their path matches any of the matchers
 	Mode *string `json:"mode,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 }
 
 // NewRoutingRuleXO instantiates a new RoutingRuleXO object

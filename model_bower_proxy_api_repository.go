@@ -25,7 +25,7 @@ type BowerProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	// A unique identifier for this repository
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	NegativeCache NegativeCacheAttributes `json:"negativeCache"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`

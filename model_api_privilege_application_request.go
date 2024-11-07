@@ -25,7 +25,7 @@ type ApiPrivilegeApplicationRequest struct {
 	// The domain (i.e. 'blobstores', 'capabilities' or even '*' for all) that this privilege is granting access to.  Note that creating new privileges with a domain is only necessary when using plugins that define their own domain(s).
 	Domain *string `json:"domain,omitempty"`
 	// The name of the privilege.  This value cannot be changed.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 }
 
 // NewApiPrivilegeApplicationRequest instantiates a new ApiPrivilegeApplicationRequest object

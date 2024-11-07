@@ -426,160 +426,160 @@ func (a *TagsAPIService) AssociateExecute(r ApiAssociateRequest) (*http.Response
 	localVarFormParams := url.Values{}
 
 	if r.wait != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "wait", r.wait, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "wait", r.wait, "form", "")
 	} else {
 		var defaultValue bool = true
 		r.wait = &defaultValue
 	}
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.repository != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "form", "")
 	}
 	if r.format != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "form", "")
 	}
 	if r.group != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "form", "")
 	}
 	if r.name != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
 	}
 	if r.version != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "version", r.version, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "version", r.version, "form", "")
 	}
 	if r.prerelease != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "prerelease", r.prerelease, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "prerelease", r.prerelease, "form", "")
 	}
 	if r.md5 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "md5", r.md5, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "md5", r.md5, "form", "")
 	}
 	if r.sha1 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha1", r.sha1, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha1", r.sha1, "form", "")
 	}
 	if r.sha256 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha256", r.sha256, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha256", r.sha256, "form", "")
 	}
 	if r.sha512 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha512", r.sha512, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha512", r.sha512, "form", "")
 	}
 	if r.conanBaseVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.baseVersion", r.conanBaseVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.baseVersion", r.conanBaseVersion, "form", "")
 	}
 	if r.conanChannel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.channel", r.conanChannel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.channel", r.conanChannel, "form", "")
 	}
 	if r.conanRevision != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.revision", r.conanRevision, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.revision", r.conanRevision, "form", "")
 	}
 	if r.conanPackageId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageId", r.conanPackageId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageId", r.conanPackageId, "form", "")
 	}
 	if r.conanPackageRevision != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageRevision", r.conanPackageRevision, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageRevision", r.conanPackageRevision, "form", "")
 	}
 	if r.dockerImageName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageName", r.dockerImageName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageName", r.dockerImageName, "form", "")
 	}
 	if r.dockerImageTag != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageTag", r.dockerImageTag, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageTag", r.dockerImageTag, "form", "")
 	}
 	if r.dockerLayerId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.layerId", r.dockerLayerId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.layerId", r.dockerLayerId, "form", "")
 	}
 	if r.dockerContentDigest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.contentDigest", r.dockerContentDigest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.contentDigest", r.dockerContentDigest, "form", "")
 	}
 	if r.mavenGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.groupId", r.mavenGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.groupId", r.mavenGroupId, "form", "")
 	}
 	if r.mavenArtifactId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.artifactId", r.mavenArtifactId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.artifactId", r.mavenArtifactId, "form", "")
 	}
 	if r.mavenBaseVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.baseVersion", r.mavenBaseVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.baseVersion", r.mavenBaseVersion, "form", "")
 	}
 	if r.mavenExtension != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.extension", r.mavenExtension, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.extension", r.mavenExtension, "form", "")
 	}
 	if r.mavenClassifier != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.classifier", r.mavenClassifier, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.classifier", r.mavenClassifier, "form", "")
 	}
 	if r.gavec != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gavec", r.gavec, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "gavec", r.gavec, "form", "")
 	}
 	if r.npmScope != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.scope", r.npmScope, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.scope", r.npmScope, "form", "")
 	}
 	if r.npmAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.author", r.npmAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.author", r.npmAuthor, "form", "")
 	}
 	if r.npmDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.description", r.npmDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.description", r.npmDescription, "form", "")
 	}
 	if r.npmKeywords != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.keywords", r.npmKeywords, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.keywords", r.npmKeywords, "form", "")
 	}
 	if r.npmLicense != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.license", r.npmLicense, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.license", r.npmLicense, "form", "")
 	}
 	if r.npmTaggedIs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_is", r.npmTaggedIs, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_is", r.npmTaggedIs, "form", "")
 	}
 	if r.npmTaggedNot != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_not", r.npmTaggedNot, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_not", r.npmTaggedNot, "form", "")
 	}
 	if r.nugetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.id", r.nugetId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.id", r.nugetId, "form", "")
 	}
 	if r.nugetTags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.tags", r.nugetTags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.tags", r.nugetTags, "form", "")
 	}
 	if r.nugetTitle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.title", r.nugetTitle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.title", r.nugetTitle, "form", "")
 	}
 	if r.nugetAuthors != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.authors", r.nugetAuthors, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.authors", r.nugetAuthors, "form", "")
 	}
 	if r.nugetDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.description", r.nugetDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.description", r.nugetDescription, "form", "")
 	}
 	if r.nugetSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.summary", r.nugetSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.summary", r.nugetSummary, "form", "")
 	}
 	if r.p2PluginName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "p2.pluginName", r.p2PluginName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "p2.pluginName", r.p2PluginName, "form", "")
 	}
 	if r.pypiClassifiers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.classifiers", r.pypiClassifiers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.classifiers", r.pypiClassifiers, "form", "")
 	}
 	if r.pypiDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.description", r.pypiDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.description", r.pypiDescription, "form", "")
 	}
 	if r.pypiKeywords != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.keywords", r.pypiKeywords, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.keywords", r.pypiKeywords, "form", "")
 	}
 	if r.pypiSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.summary", r.pypiSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.summary", r.pypiSummary, "form", "")
 	}
 	if r.rubygemsDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.description", r.rubygemsDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.description", r.rubygemsDescription, "form", "")
 	}
 	if r.rubygemsPlatform != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.platform", r.rubygemsPlatform, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.platform", r.rubygemsPlatform, "form", "")
 	}
 	if r.rubygemsSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.summary", r.rubygemsSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.summary", r.rubygemsSummary, "form", "")
 	}
 	if r.tag != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tag", r.tag, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tag", r.tag, "form", "")
 	}
 	if r.yumArchitecture != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.architecture", r.yumArchitecture, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.architecture", r.yumArchitecture, "form", "")
 	}
 	if r.yumName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.name", r.yumName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.name", r.yumName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1206,154 +1206,154 @@ func (a *TagsAPIService) DisassociateExecute(r ApiDisassociateRequest) (*http.Re
 	localVarFormParams := url.Values{}
 
 	if r.q != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
 	}
 	if r.repository != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "form", "")
 	}
 	if r.format != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "format", r.format, "form", "")
 	}
 	if r.group != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "group", r.group, "form", "")
 	}
 	if r.name != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name", r.name, "form", "")
 	}
 	if r.version != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "version", r.version, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "version", r.version, "form", "")
 	}
 	if r.prerelease != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "prerelease", r.prerelease, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "prerelease", r.prerelease, "form", "")
 	}
 	if r.md5 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "md5", r.md5, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "md5", r.md5, "form", "")
 	}
 	if r.sha1 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha1", r.sha1, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha1", r.sha1, "form", "")
 	}
 	if r.sha256 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha256", r.sha256, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha256", r.sha256, "form", "")
 	}
 	if r.sha512 != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "sha512", r.sha512, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "sha512", r.sha512, "form", "")
 	}
 	if r.conanBaseVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.baseVersion", r.conanBaseVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.baseVersion", r.conanBaseVersion, "form", "")
 	}
 	if r.conanChannel != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.channel", r.conanChannel, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.channel", r.conanChannel, "form", "")
 	}
 	if r.conanRevision != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.revision", r.conanRevision, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.revision", r.conanRevision, "form", "")
 	}
 	if r.conanPackageId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageId", r.conanPackageId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageId", r.conanPackageId, "form", "")
 	}
 	if r.conanPackageRevision != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageRevision", r.conanPackageRevision, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "conan.packageRevision", r.conanPackageRevision, "form", "")
 	}
 	if r.dockerImageName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageName", r.dockerImageName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageName", r.dockerImageName, "form", "")
 	}
 	if r.dockerImageTag != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageTag", r.dockerImageTag, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.imageTag", r.dockerImageTag, "form", "")
 	}
 	if r.dockerLayerId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.layerId", r.dockerLayerId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.layerId", r.dockerLayerId, "form", "")
 	}
 	if r.dockerContentDigest != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.contentDigest", r.dockerContentDigest, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "docker.contentDigest", r.dockerContentDigest, "form", "")
 	}
 	if r.mavenGroupId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.groupId", r.mavenGroupId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.groupId", r.mavenGroupId, "form", "")
 	}
 	if r.mavenArtifactId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.artifactId", r.mavenArtifactId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.artifactId", r.mavenArtifactId, "form", "")
 	}
 	if r.mavenBaseVersion != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.baseVersion", r.mavenBaseVersion, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.baseVersion", r.mavenBaseVersion, "form", "")
 	}
 	if r.mavenExtension != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.extension", r.mavenExtension, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.extension", r.mavenExtension, "form", "")
 	}
 	if r.mavenClassifier != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.classifier", r.mavenClassifier, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "maven.classifier", r.mavenClassifier, "form", "")
 	}
 	if r.gavec != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gavec", r.gavec, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "gavec", r.gavec, "form", "")
 	}
 	if r.npmScope != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.scope", r.npmScope, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.scope", r.npmScope, "form", "")
 	}
 	if r.npmAuthor != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.author", r.npmAuthor, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.author", r.npmAuthor, "form", "")
 	}
 	if r.npmDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.description", r.npmDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.description", r.npmDescription, "form", "")
 	}
 	if r.npmKeywords != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.keywords", r.npmKeywords, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.keywords", r.npmKeywords, "form", "")
 	}
 	if r.npmLicense != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.license", r.npmLicense, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.license", r.npmLicense, "form", "")
 	}
 	if r.npmTaggedIs != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_is", r.npmTaggedIs, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_is", r.npmTaggedIs, "form", "")
 	}
 	if r.npmTaggedNot != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_not", r.npmTaggedNot, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "npm.tagged_not", r.npmTaggedNot, "form", "")
 	}
 	if r.nugetId != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.id", r.nugetId, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.id", r.nugetId, "form", "")
 	}
 	if r.nugetTags != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.tags", r.nugetTags, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.tags", r.nugetTags, "form", "")
 	}
 	if r.nugetTitle != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.title", r.nugetTitle, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.title", r.nugetTitle, "form", "")
 	}
 	if r.nugetAuthors != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.authors", r.nugetAuthors, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.authors", r.nugetAuthors, "form", "")
 	}
 	if r.nugetDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.description", r.nugetDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.description", r.nugetDescription, "form", "")
 	}
 	if r.nugetSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.summary", r.nugetSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "nuget.summary", r.nugetSummary, "form", "")
 	}
 	if r.p2PluginName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "p2.pluginName", r.p2PluginName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "p2.pluginName", r.p2PluginName, "form", "")
 	}
 	if r.pypiClassifiers != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.classifiers", r.pypiClassifiers, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.classifiers", r.pypiClassifiers, "form", "")
 	}
 	if r.pypiDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.description", r.pypiDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.description", r.pypiDescription, "form", "")
 	}
 	if r.pypiKeywords != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.keywords", r.pypiKeywords, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.keywords", r.pypiKeywords, "form", "")
 	}
 	if r.pypiSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.summary", r.pypiSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "pypi.summary", r.pypiSummary, "form", "")
 	}
 	if r.rubygemsDescription != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.description", r.rubygemsDescription, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.description", r.rubygemsDescription, "form", "")
 	}
 	if r.rubygemsPlatform != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.platform", r.rubygemsPlatform, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.platform", r.rubygemsPlatform, "form", "")
 	}
 	if r.rubygemsSummary != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.summary", r.rubygemsSummary, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "rubygems.summary", r.rubygemsSummary, "form", "")
 	}
 	if r.tag != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "tag", r.tag, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "tag", r.tag, "form", "")
 	}
 	if r.yumArchitecture != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.architecture", r.yumArchitecture, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.architecture", r.yumArchitecture, "form", "")
 	}
 	if r.yumName != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.name", r.yumName, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "yum.name", r.yumName, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
@@ -1552,7 +1552,7 @@ func (a *TagsAPIService) GetTagsExecute(r ApiGetTagsRequest) (*PageTagXO, *http.
 	localVarFormParams := url.Values{}
 
 	if r.continuationToken != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

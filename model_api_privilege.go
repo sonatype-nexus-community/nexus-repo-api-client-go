@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiPrivilege{}
 type ApiPrivilege struct {
 	Description *string `json:"description,omitempty"`
 	// The name of the privilege.  This value cannot be changed.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Indicates whether the privilege can be changed. External values supplied to this will be ignored by the system.
 	ReadOnly *bool `json:"readOnly,omitempty"`
 	// The type of privilege, each type covers different portions of the system. External values supplied to this will be ignored by the system.

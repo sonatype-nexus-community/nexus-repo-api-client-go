@@ -275,9 +275,9 @@ func (a *AssetsAPIService) GetAssetsExecute(r ApiGetAssetsRequest) (*PageAssetXO
 	}
 
 	if r.continuationToken != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "form", "")
 	}
-	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 

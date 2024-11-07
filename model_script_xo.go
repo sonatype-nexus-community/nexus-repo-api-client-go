@@ -20,7 +20,7 @@ var _ MappedNullable = &ScriptXO{}
 // ScriptXO struct for ScriptXO
 type ScriptXO struct {
 	Content *string `json:"content,omitempty"`
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	Type *string `json:"type,omitempty"`
 }
 

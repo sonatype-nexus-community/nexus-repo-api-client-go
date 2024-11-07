@@ -276,9 +276,9 @@ func (a *ComponentsAPIService) GetComponentsExecute(r ApiGetComponentsRequest) (
 	}
 
 	if r.continuationToken != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "continuationToken", r.continuationToken, "form", "")
 	}
-	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}
 
@@ -692,7 +692,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		return nil, reportError("repository is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "repository", r.repository, "form", "")
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{"multipart/form-data"}
 
@@ -726,7 +726,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: aptAssetLocalVarFileBytes, fileName: aptAssetLocalVarFileName, formFileName: aptAssetLocalVarFormFileName})
 	}
 	if r.aptTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "apt.tag", r.aptTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "apt.tag", r.aptTag, "", "")
 	}
 	var dockerAssetLocalVarFormFileName string
 	var dockerAssetLocalVarFileName     string
@@ -744,7 +744,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: dockerAssetLocalVarFileBytes, fileName: dockerAssetLocalVarFileName, formFileName: dockerAssetLocalVarFormFileName})
 	}
 	if r.dockerTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "docker.tag", r.dockerTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "docker.tag", r.dockerTag, "", "")
 	}
 	var helmAssetLocalVarFormFileName string
 	var helmAssetLocalVarFileName     string
@@ -762,10 +762,10 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: helmAssetLocalVarFileBytes, fileName: helmAssetLocalVarFileName, formFileName: helmAssetLocalVarFormFileName})
 	}
 	if r.helmTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "helm.tag", r.helmTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "helm.tag", r.helmTag, "", "")
 	}
 	if r.maven2ArtifactId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.artifactId", r.maven2ArtifactId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.artifactId", r.maven2ArtifactId, "", "")
 	}
 	var maven2Asset1LocalVarFormFileName string
 	var maven2Asset1LocalVarFileName     string
@@ -783,10 +783,10 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: maven2Asset1LocalVarFileBytes, fileName: maven2Asset1LocalVarFileName, formFileName: maven2Asset1LocalVarFormFileName})
 	}
 	if r.maven2Asset1Classifier != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset1.classifier", r.maven2Asset1Classifier, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset1.classifier", r.maven2Asset1Classifier, "", "")
 	}
 	if r.maven2Asset1Extension != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset1.extension", r.maven2Asset1Extension, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset1.extension", r.maven2Asset1Extension, "", "")
 	}
 	var maven2Asset2LocalVarFormFileName string
 	var maven2Asset2LocalVarFileName     string
@@ -804,10 +804,10 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: maven2Asset2LocalVarFileBytes, fileName: maven2Asset2LocalVarFileName, formFileName: maven2Asset2LocalVarFormFileName})
 	}
 	if r.maven2Asset2Classifier != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset2.classifier", r.maven2Asset2Classifier, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset2.classifier", r.maven2Asset2Classifier, "", "")
 	}
 	if r.maven2Asset2Extension != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset2.extension", r.maven2Asset2Extension, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset2.extension", r.maven2Asset2Extension, "", "")
 	}
 	var maven2Asset3LocalVarFormFileName string
 	var maven2Asset3LocalVarFileName     string
@@ -825,25 +825,25 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: maven2Asset3LocalVarFileBytes, fileName: maven2Asset3LocalVarFileName, formFileName: maven2Asset3LocalVarFormFileName})
 	}
 	if r.maven2Asset3Classifier != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset3.classifier", r.maven2Asset3Classifier, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset3.classifier", r.maven2Asset3Classifier, "", "")
 	}
 	if r.maven2Asset3Extension != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset3.extension", r.maven2Asset3Extension, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.asset3.extension", r.maven2Asset3Extension, "", "")
 	}
 	if r.maven2GeneratePom != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.generate-pom", r.maven2GeneratePom, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.generate-pom", r.maven2GeneratePom, "", "")
 	}
 	if r.maven2GroupId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.groupId", r.maven2GroupId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.groupId", r.maven2GroupId, "", "")
 	}
 	if r.maven2Packaging != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.packaging", r.maven2Packaging, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.packaging", r.maven2Packaging, "", "")
 	}
 	if r.maven2Tag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.tag", r.maven2Tag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.tag", r.maven2Tag, "", "")
 	}
 	if r.maven2Version != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.version", r.maven2Version, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "maven2.version", r.maven2Version, "", "")
 	}
 	var npmAssetLocalVarFormFileName string
 	var npmAssetLocalVarFileName     string
@@ -861,7 +861,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: npmAssetLocalVarFileBytes, fileName: npmAssetLocalVarFileName, formFileName: npmAssetLocalVarFormFileName})
 	}
 	if r.npmTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "npm.tag", r.npmTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "npm.tag", r.npmTag, "", "")
 	}
 	var nugetAssetLocalVarFormFileName string
 	var nugetAssetLocalVarFileName     string
@@ -879,7 +879,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: nugetAssetLocalVarFileBytes, fileName: nugetAssetLocalVarFileName, formFileName: nugetAssetLocalVarFormFileName})
 	}
 	if r.nugetTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "nuget.tag", r.nugetTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "nuget.tag", r.nugetTag, "", "")
 	}
 	var pypiAssetLocalVarFormFileName string
 	var pypiAssetLocalVarFileName     string
@@ -897,7 +897,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: pypiAssetLocalVarFileBytes, fileName: pypiAssetLocalVarFileName, formFileName: pypiAssetLocalVarFormFileName})
 	}
 	if r.pypiTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "pypi.tag", r.pypiTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "pypi.tag", r.pypiTag, "", "")
 	}
 	var rAssetLocalVarFormFileName string
 	var rAssetLocalVarFileName     string
@@ -915,10 +915,10 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: rAssetLocalVarFileBytes, fileName: rAssetLocalVarFileName, formFileName: rAssetLocalVarFormFileName})
 	}
 	if r.rAssetPathId != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "r.asset.pathId", r.rAssetPathId, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "r.asset.pathId", r.rAssetPathId, "", "")
 	}
 	if r.rTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "r.tag", r.rTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "r.tag", r.rTag, "", "")
 	}
 	var rawAsset1LocalVarFormFileName string
 	var rawAsset1LocalVarFileName     string
@@ -936,7 +936,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: rawAsset1LocalVarFileBytes, fileName: rawAsset1LocalVarFileName, formFileName: rawAsset1LocalVarFormFileName})
 	}
 	if r.rawAsset1Filename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset1.filename", r.rawAsset1Filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset1.filename", r.rawAsset1Filename, "", "")
 	}
 	var rawAsset2LocalVarFormFileName string
 	var rawAsset2LocalVarFileName     string
@@ -954,7 +954,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: rawAsset2LocalVarFileBytes, fileName: rawAsset2LocalVarFileName, formFileName: rawAsset2LocalVarFormFileName})
 	}
 	if r.rawAsset2Filename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset2.filename", r.rawAsset2Filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset2.filename", r.rawAsset2Filename, "", "")
 	}
 	var rawAsset3LocalVarFormFileName string
 	var rawAsset3LocalVarFileName     string
@@ -972,13 +972,13 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: rawAsset3LocalVarFileBytes, fileName: rawAsset3LocalVarFileName, formFileName: rawAsset3LocalVarFormFileName})
 	}
 	if r.rawAsset3Filename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset3.filename", r.rawAsset3Filename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "raw.asset3.filename", r.rawAsset3Filename, "", "")
 	}
 	if r.rawDirectory != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "raw.directory", r.rawDirectory, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "raw.directory", r.rawDirectory, "", "")
 	}
 	if r.rawTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "raw.tag", r.rawTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "raw.tag", r.rawTag, "", "")
 	}
 	var rubygemsAssetLocalVarFormFileName string
 	var rubygemsAssetLocalVarFileName     string
@@ -996,7 +996,7 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: rubygemsAssetLocalVarFileBytes, fileName: rubygemsAssetLocalVarFileName, formFileName: rubygemsAssetLocalVarFormFileName})
 	}
 	if r.rubygemsTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "rubygems.tag", r.rubygemsTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "rubygems.tag", r.rubygemsTag, "", "")
 	}
 	var yumAssetLocalVarFormFileName string
 	var yumAssetLocalVarFileName     string
@@ -1014,13 +1014,13 @@ func (a *ComponentsAPIService) UploadComponentExecute(r ApiUploadComponentReques
 		formFiles = append(formFiles, formFile{fileBytes: yumAssetLocalVarFileBytes, fileName: yumAssetLocalVarFileName, formFileName: yumAssetLocalVarFormFileName})
 	}
 	if r.yumAssetFilename != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "yum.asset.filename", r.yumAssetFilename, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "yum.asset.filename", r.yumAssetFilename, "", "")
 	}
 	if r.yumDirectory != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "yum.directory", r.yumDirectory, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "yum.directory", r.yumDirectory, "", "")
 	}
 	if r.yumTag != nil {
-		parameterAddToHeaderOrQuery(localVarFormParams, "yum.tag", r.yumTag, "")
+		parameterAddToHeaderOrQuery(localVarFormParams, "yum.tag", r.yumTag, "", "")
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {

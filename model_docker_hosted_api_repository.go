@@ -25,7 +25,7 @@ type DockerHostedApiRepository struct {
 	Component *ComponentAttributes `json:"component,omitempty"`
 	Docker DockerAttributes `json:"docker"`
 	// A unique identifier for this repository
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage HostedStorageAttributes `json:"storage"`

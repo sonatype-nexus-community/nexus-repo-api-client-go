@@ -24,7 +24,7 @@ type AbstractApiRepository struct {
 	// Component format held in this repository
 	Format *string `json:"format,omitempty"`
 	// A unique identifier for this repository
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	// Controls if deployments of and updates to artifacts are allowed

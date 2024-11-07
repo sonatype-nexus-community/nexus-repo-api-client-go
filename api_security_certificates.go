@@ -383,15 +383,15 @@ func (a *SecurityCertificatesAPIService) RetrieveCertificateExecute(r ApiRetriev
 		return localVarReturnValue, nil, reportError("host is required and must be specified")
 	}
 
-	parameterAddToHeaderOrQuery(localVarQueryParams, "host", r.host, "")
+	parameterAddToHeaderOrQuery(localVarQueryParams, "host", r.host, "form", "")
 	if r.port != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "port", r.port, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "port", r.port, "form", "")
 	} else {
 		var defaultValue int32 = 443
 		r.port = &defaultValue
 	}
 	if r.protocolHint != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "protocolHint", r.protocolHint, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "protocolHint", r.protocolHint, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

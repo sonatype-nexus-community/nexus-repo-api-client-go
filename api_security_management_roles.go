@@ -277,7 +277,7 @@ func (a *SecurityManagementRolesAPIService) GetRoleExecute(r ApiGetRoleRequest) 
 	localVarFormParams := url.Values{}
 
 	if r.source != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "form", "")
 	} else {
 		var defaultValue string = "default"
 		r.source = &defaultValue
@@ -387,7 +387,7 @@ func (a *SecurityManagementRolesAPIService) GetRolesExecute(r ApiGetRolesRequest
 	localVarFormParams := url.Values{}
 
 	if r.source != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "")
+		parameterAddToHeaderOrQuery(localVarQueryParams, "source", r.source, "form", "")
 	}
 	// to determine the Content-Type header
 	localVarHTTPContentTypes := []string{}

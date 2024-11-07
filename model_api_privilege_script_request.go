@@ -23,7 +23,7 @@ type ApiPrivilegeScriptRequest struct {
 	Actions []string `json:"actions,omitempty"`
 	Description *string `json:"description,omitempty"`
 	// The name of the privilege.  This value cannot be changed.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// The name of a script to give access to.
 	ScriptName *string `json:"scriptName,omitempty"`
 }

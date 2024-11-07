@@ -23,7 +23,7 @@ var _ MappedNullable = &BowerGroupRepositoryApiRequest{}
 type BowerGroupRepositoryApiRequest struct {
 	Group GroupAttributes `json:"group"`
 	// A unique identifier for this repository
-	Name string `json:"name"`
+	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage StorageAttributes `json:"storage"`

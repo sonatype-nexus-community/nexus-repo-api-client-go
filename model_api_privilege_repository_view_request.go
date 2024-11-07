@@ -25,7 +25,7 @@ type ApiPrivilegeRepositoryViewRequest struct {
 	// The repository format (i.e 'nuget', 'npm') this privilege will grant access to (or * for all).
 	Format *string `json:"format,omitempty"`
 	// The name of the privilege.  This value cannot be changed.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// The name of the repository this privilege will grant access to (or * for all).
 	Repository *string `json:"repository,omitempty"`
 }

@@ -25,7 +25,7 @@ type TagXO struct {
 	Attributes map[string]map[string]interface{} `json:"attributes,omitempty"`
 	FirstCreated *time.Time `json:"firstCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
-	Name string `json:"name"`
+	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 }
 
 type _TagXO TagXO

@@ -25,7 +25,7 @@ type AzureBlobStoreApiBucketConfiguration struct {
 	AccountName string `json:"accountName"`
 	Authentication AzureBlobStoreApiAuthentication `json:"authentication"`
 	// The name of an existing container to be used for storage.
-	ContainerName string `json:"containerName"`
+	ContainerName string `json:"containerName" validate:"regexp=^[a-z0-9][a-z0-9-]{2,62}$"`
 }
 
 type _AzureBlobStoreApiBucketConfiguration AzureBlobStoreApiBucketConfiguration

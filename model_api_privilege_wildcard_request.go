@@ -21,7 +21,7 @@ var _ MappedNullable = &ApiPrivilegeWildcardRequest{}
 type ApiPrivilegeWildcardRequest struct {
 	Description *string `json:"description,omitempty"`
 	// The name of the privilege.  This value cannot be changed.
-	Name *string `json:"name,omitempty"`
+	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// A colon separated list of parts that create a permission string.
 	Pattern *string `json:"pattern,omitempty"`
 }
