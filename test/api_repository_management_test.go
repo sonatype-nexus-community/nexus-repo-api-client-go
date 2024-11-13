@@ -44,33 +44,33 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateBowerGroupRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateCargoGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerGroupRepository(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCargoGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateBowerHostedRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateCargoHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerHostedRepository(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCargoHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService CreateBowerProxyRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService CreateCargoProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RepositoryManagementAPI.CreateBowerProxyRepository(context.Background()).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCargoProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -82,6 +82,17 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.RepositoryManagementAPI.CreateCocoapodsProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateConanHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateConanHostedRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -578,13 +589,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetBowerGroupRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetCargoGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerGroupRepository(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCargoGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -592,13 +603,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetBowerHostedRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetCargoHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerHostedRepository(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCargoHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -606,13 +617,13 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService GetBowerProxyRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService GetCargoProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetBowerProxyRepository(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCargoProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -627,6 +638,20 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCocoapodsProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetConanHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetConanHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1176,39 +1201,39 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateBowerGroupRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateCargoGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerGroupRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCargoGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateBowerHostedRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateCargoHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerHostedRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCargoHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService UpdateBowerProxyRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService UpdateCargoProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.UpdateBowerProxyRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCargoProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -1222,6 +1247,19 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCocoapodsProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateConanHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateConanHostedRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

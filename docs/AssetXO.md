@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlobCreated** | Pointer to **time.Time** |  | [optional] 
+**BlobStoreName** | Pointer to **string** |  | [optional] 
 **Checksum** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **ContentType** | Pointer to **string** |  | [optional] 
 **DownloadUrl** | Pointer to **string** |  | [optional] 
@@ -61,6 +62,31 @@ SetBlobCreated sets BlobCreated field to given value.
 `func (o *AssetXO) HasBlobCreated() bool`
 
 HasBlobCreated returns a boolean if a field has been set.
+
+### GetBlobStoreName
+
+`func (o *AssetXO) GetBlobStoreName() string`
+
+GetBlobStoreName returns the BlobStoreName field if non-nil, zero value otherwise.
+
+### GetBlobStoreNameOk
+
+`func (o *AssetXO) GetBlobStoreNameOk() (*string, bool)`
+
+GetBlobStoreNameOk returns a tuple with the BlobStoreName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobStoreName
+
+`func (o *AssetXO) SetBlobStoreName(v string)`
+
+SetBlobStoreName sets BlobStoreName field to given value.
+
+### HasBlobStoreName
+
+`func (o *AssetXO) HasBlobStoreName() bool`
+
+HasBlobStoreName returns a boolean if a field has been set.
 
 ### GetChecksum
 

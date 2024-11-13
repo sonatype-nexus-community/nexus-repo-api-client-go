@@ -6,10 +6,11 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CreateAptHostedRepository**](RepositoryManagementAPI.md#CreateAptHostedRepository) | **Post** /v1/repositories/apt/hosted | Create APT hosted repository
 [**CreateAptProxyRepository**](RepositoryManagementAPI.md#CreateAptProxyRepository) | **Post** /v1/repositories/apt/proxy | Create APT proxy repository
-[**CreateBowerGroupRepository**](RepositoryManagementAPI.md#CreateBowerGroupRepository) | **Post** /v1/repositories/bower/group | Create Bower group repository
-[**CreateBowerHostedRepository**](RepositoryManagementAPI.md#CreateBowerHostedRepository) | **Post** /v1/repositories/bower/hosted | Create Bower hosted repository
-[**CreateBowerProxyRepository**](RepositoryManagementAPI.md#CreateBowerProxyRepository) | **Post** /v1/repositories/bower/proxy | Create Bower proxy repository
+[**CreateCargoGroupRepository**](RepositoryManagementAPI.md#CreateCargoGroupRepository) | **Post** /v1/repositories/cargo/group | Create cargo group repository
+[**CreateCargoHostedRepository**](RepositoryManagementAPI.md#CreateCargoHostedRepository) | **Post** /v1/repositories/cargo/hosted | Create cargo hosted repository
+[**CreateCargoProxyRepository**](RepositoryManagementAPI.md#CreateCargoProxyRepository) | **Post** /v1/repositories/cargo/proxy | Create cargo proxy repository
 [**CreateCocoapodsProxyRepository**](RepositoryManagementAPI.md#CreateCocoapodsProxyRepository) | **Post** /v1/repositories/cocoapods/proxy | Create Cocoapods proxy repository
+[**CreateConanHostedRepository**](RepositoryManagementAPI.md#CreateConanHostedRepository) | **Post** /v1/repositories/conan/hosted | Create Conan hosted repository
 [**CreateConanProxyRepository**](RepositoryManagementAPI.md#CreateConanProxyRepository) | **Post** /v1/repositories/conan/proxy | Create Conan proxy repository
 [**CreateCondaProxyRepository**](RepositoryManagementAPI.md#CreateCondaProxyRepository) | **Post** /v1/repositories/conda/proxy | Create conda proxy repository
 [**CreateDockerGroupRepository**](RepositoryManagementAPI.md#CreateDockerGroupRepository) | **Post** /v1/repositories/docker/group | Create Docker group repository
@@ -53,10 +54,11 @@ Method | HTTP request | Description
 [**GetAllRepositories**](RepositoryManagementAPI.md#GetAllRepositories) | **Get** /v1/repositories | List repositories
 [**GetAptHostedRepository**](RepositoryManagementAPI.md#GetAptHostedRepository) | **Get** /v1/repositories/apt/hosted/{repositoryName} | Get repository
 [**GetAptProxyRepository**](RepositoryManagementAPI.md#GetAptProxyRepository) | **Get** /v1/repositories/apt/proxy/{repositoryName} | Get repository
-[**GetBowerGroupRepository**](RepositoryManagementAPI.md#GetBowerGroupRepository) | **Get** /v1/repositories/bower/group/{repositoryName} | Get repository
-[**GetBowerHostedRepository**](RepositoryManagementAPI.md#GetBowerHostedRepository) | **Get** /v1/repositories/bower/hosted/{repositoryName} | Get repository
-[**GetBowerProxyRepository**](RepositoryManagementAPI.md#GetBowerProxyRepository) | **Get** /v1/repositories/bower/proxy/{repositoryName} | Get repository
+[**GetCargoGroupRepository**](RepositoryManagementAPI.md#GetCargoGroupRepository) | **Get** /v1/repositories/cargo/group/{repositoryName} | Get repository
+[**GetCargoHostedRepository**](RepositoryManagementAPI.md#GetCargoHostedRepository) | **Get** /v1/repositories/cargo/hosted/{repositoryName} | Get repository
+[**GetCargoProxyRepository**](RepositoryManagementAPI.md#GetCargoProxyRepository) | **Get** /v1/repositories/cargo/proxy/{repositoryName} | Get repository
 [**GetCocoapodsProxyRepository**](RepositoryManagementAPI.md#GetCocoapodsProxyRepository) | **Get** /v1/repositories/cocoapods/proxy/{repositoryName} | Get repository
+[**GetConanHostedRepository**](RepositoryManagementAPI.md#GetConanHostedRepository) | **Get** /v1/repositories/conan/hosted/{repositoryName} | Get repository
 [**GetConanProxyRepository**](RepositoryManagementAPI.md#GetConanProxyRepository) | **Get** /v1/repositories/conan/proxy/{repositoryName} | Get repository
 [**GetCondaProxyRepository**](RepositoryManagementAPI.md#GetCondaProxyRepository) | **Get** /v1/repositories/conda/proxy/{repositoryName} | Get repository
 [**GetDockerGroupRepository**](RepositoryManagementAPI.md#GetDockerGroupRepository) | **Get** /v1/repositories/docker/group/{repositoryName} | Get repository
@@ -96,10 +98,11 @@ Method | HTTP request | Description
 [**GetYumProxyRepository**](RepositoryManagementAPI.md#GetYumProxyRepository) | **Get** /v1/repositories/yum/proxy/{repositoryName} | Get repository
 [**UpdateAptHostedRepository**](RepositoryManagementAPI.md#UpdateAptHostedRepository) | **Put** /v1/repositories/apt/hosted/{repositoryName} | Update APT hosted repository
 [**UpdateAptProxyRepository**](RepositoryManagementAPI.md#UpdateAptProxyRepository) | **Put** /v1/repositories/apt/proxy/{repositoryName} | Update APT proxy repository
-[**UpdateBowerGroupRepository**](RepositoryManagementAPI.md#UpdateBowerGroupRepository) | **Put** /v1/repositories/bower/group/{repositoryName} | Update Bower group repository
-[**UpdateBowerHostedRepository**](RepositoryManagementAPI.md#UpdateBowerHostedRepository) | **Put** /v1/repositories/bower/hosted/{repositoryName} | Update Bower hosted repository
-[**UpdateBowerProxyRepository**](RepositoryManagementAPI.md#UpdateBowerProxyRepository) | **Put** /v1/repositories/bower/proxy/{repositoryName} | Update Bower proxy repository
+[**UpdateCargoGroupRepository**](RepositoryManagementAPI.md#UpdateCargoGroupRepository) | **Put** /v1/repositories/cargo/group/{repositoryName} | Update cargo group repository
+[**UpdateCargoHostedRepository**](RepositoryManagementAPI.md#UpdateCargoHostedRepository) | **Put** /v1/repositories/cargo/hosted/{repositoryName} | Update cargo hosted repository
+[**UpdateCargoProxyRepository**](RepositoryManagementAPI.md#UpdateCargoProxyRepository) | **Put** /v1/repositories/cargo/proxy/{repositoryName} | Update cargo proxy repository
 [**UpdateCocoapodsProxyRepository**](RepositoryManagementAPI.md#UpdateCocoapodsProxyRepository) | **Put** /v1/repositories/cocoapods/proxy/{repositoryName} | Update Cocoapods proxy repository
+[**UpdateConanHostedRepository**](RepositoryManagementAPI.md#UpdateConanHostedRepository) | **Put** /v1/repositories/conan/hosted/{repositoryName} | Update Conan hosted repository
 [**UpdateConanProxyRepository**](RepositoryManagementAPI.md#UpdateConanProxyRepository) | **Put** /v1/repositories/conan/proxy/{repositoryName} | Update Conan proxy repository
 [**UpdateCondaProxyRepository**](RepositoryManagementAPI.md#UpdateCondaProxyRepository) | **Put** /v1/repositories/conda/proxy/{repositoryName} | Update conda proxy repository
 [**UpdateDockerGroupRepository**](RepositoryManagementAPI.md#UpdateDockerGroupRepository) | **Put** /v1/repositories/docker/group/{repositoryName} | Update Docker group repository
@@ -262,11 +265,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateBowerGroupRepository
+## CreateCargoGroupRepository
 
-> CreateBowerGroupRepository(ctx).Body(body).Execute()
+> CreateCargoGroupRepository(ctx).Body(body).Execute()
 
-Create Bower group repository
+Create cargo group repository
 
 ### Example
 
@@ -281,13 +284,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewBowerGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // BowerGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateBowerGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoGroupRepository(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateBowerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -299,12 +302,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateBowerGroupRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCargoGroupRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BowerGroupRepositoryApiRequest**](BowerGroupRepositoryApiRequest.md) |  | 
+ **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -324,11 +327,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateBowerHostedRepository
+## CreateCargoHostedRepository
 
-> CreateBowerHostedRepository(ctx).Body(body).Execute()
+> CreateCargoHostedRepository(ctx).Body(body).Execute()
 
-Create Bower hosted repository
+Create cargo hosted repository
 
 ### Example
 
@@ -343,13 +346,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewBowerHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // BowerHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateBowerHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoHostedRepository(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateBowerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -361,12 +364,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateBowerHostedRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCargoHostedRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BowerHostedRepositoryApiRequest**](BowerHostedRepositoryApiRequest.md) |  | 
+ **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -386,11 +389,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateBowerProxyRepository
+## CreateCargoProxyRepository
 
-> CreateBowerProxyRepository(ctx).Body(body).Execute()
+> CreateCargoProxyRepository(ctx).Body(body).Execute()
 
-Create Bower proxy repository
+Create cargo proxy repository
 
 ### Example
 
@@ -405,13 +408,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewBowerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // BowerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateBowerProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoProxyRepository(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateBowerProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -423,12 +426,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateBowerProxyRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCargoProxyRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**BowerProxyRepositoryApiRequest**](BowerProxyRepositoryApiRequest.md) |  | 
+ **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -491,6 +494,68 @@ Other parameters are passed through a pointer to a apiCreateCocoapodsProxyReposi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateConanHostedRepository
+
+> CreateConanHostedRepository(ctx).Body(body).Execute()
+
+Create Conan hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateConanHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateConanHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateConanHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3205,9 +3270,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBowerGroupRepository
+## GetCargoGroupRepository
 
-> SimpleApiGroupRepository GetBowerGroupRepository(ctx, repositoryName).Execute()
+> SimpleApiGroupRepository GetCargoGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -3228,13 +3293,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RepositoryManagementAPI.GetBowerGroupRepository(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetCargoGroupRepository(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetBowerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCargoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBowerGroupRepository`: SimpleApiGroupRepository
-	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetBowerGroupRepository`: %v\n", resp)
+	// response from `GetCargoGroupRepository`: SimpleApiGroupRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCargoGroupRepository`: %v\n", resp)
 }
 ```
 
@@ -3248,7 +3313,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBowerGroupRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCargoGroupRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3273,9 +3338,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBowerHostedRepository
+## GetCargoHostedRepository
 
-> SimpleApiHostedRepository GetBowerHostedRepository(ctx, repositoryName).Execute()
+> SimpleApiHostedRepository GetCargoHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -3296,13 +3361,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RepositoryManagementAPI.GetBowerHostedRepository(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetCargoHostedRepository(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetBowerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBowerHostedRepository`: SimpleApiHostedRepository
-	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetBowerHostedRepository`: %v\n", resp)
+	// response from `GetCargoHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCargoHostedRepository`: %v\n", resp)
 }
 ```
 
@@ -3316,7 +3381,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBowerHostedRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCargoHostedRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3341,9 +3406,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetBowerProxyRepository
+## GetCargoProxyRepository
 
-> BowerProxyApiRepository GetBowerProxyRepository(ctx, repositoryName).Execute()
+> SimpleApiProxyRepository GetCargoProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -3364,13 +3429,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RepositoryManagementAPI.GetBowerProxyRepository(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetCargoProxyRepository(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetBowerProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCargoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetBowerProxyRepository`: BowerProxyApiRepository
-	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetBowerProxyRepository`: %v\n", resp)
+	// response from `GetCargoProxyRepository`: SimpleApiProxyRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCargoProxyRepository`: %v\n", resp)
 }
 ```
 
@@ -3384,7 +3449,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetBowerProxyRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCargoProxyRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3393,7 +3458,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**BowerProxyApiRepository**](BowerProxyApiRepository.md)
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
 
 ### Authorization
 
@@ -3462,6 +3527,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetConanHostedRepository
+
+> SimpleApiHostedRepository GetConanHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetConanHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetConanHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetConanHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetConanHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetConanHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
 
 ### Authorization
 
@@ -6120,11 +6253,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateBowerGroupRepository
+## UpdateCargoGroupRepository
 
-> UpdateBowerGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoGroupRepository(ctx, repositoryName).Body(body).Execute()
 
-Update Bower group repository
+Update cargo group repository
 
 ### Example
 
@@ -6140,13 +6273,13 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewBowerGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // BowerGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateBowerGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoGroupRepository(context.Background(), repositoryName).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateBowerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -6162,13 +6295,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateBowerGroupRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCargoGroupRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerGroupRepositoryApiRequest**](BowerGroupRepositoryApiRequest.md) |  | 
+ **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -6188,11 +6321,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateBowerHostedRepository
+## UpdateCargoHostedRepository
 
-> UpdateBowerHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoHostedRepository(ctx, repositoryName).Body(body).Execute()
 
-Update Bower hosted repository
+Update cargo hosted repository
 
 ### Example
 
@@ -6208,13 +6341,13 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewBowerHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // BowerHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateBowerHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoHostedRepository(context.Background(), repositoryName).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateBowerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -6230,13 +6363,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateBowerHostedRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCargoHostedRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerHostedRepositoryApiRequest**](BowerHostedRepositoryApiRequest.md) |  | 
+ **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -6256,11 +6389,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateBowerProxyRepository
+## UpdateCargoProxyRepository
 
-> UpdateBowerProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoProxyRepository(ctx, repositoryName).Body(body).Execute()
 
-Update Bower proxy repository
+Update cargo proxy repository
 
 ### Example
 
@@ -6276,13 +6409,13 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewBowerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // BowerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateBowerProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoProxyRepository(context.Background(), repositoryName).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateBowerProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -6298,13 +6431,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateBowerProxyRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCargoProxyRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**BowerProxyRepositoryApiRequest**](BowerProxyRepositoryApiRequest.md) |  | 
+ **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -6373,6 +6506,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateConanHostedRepository
+
+> UpdateConanHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Conan hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateConanHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateConanHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateConanHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 

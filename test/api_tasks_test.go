@@ -22,6 +22,30 @@ func Test_sonatyperepo_TasksAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
+	t.Run("Test TasksAPIService CreateTask", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.TasksAPI.CreateTask(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TasksAPIService DeleteTaskById", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var id string
+
+		httpRes, err := apiClient.TasksAPI.DeleteTaskById(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test TasksAPIService GetTaskById", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -29,6 +53,32 @@ func Test_sonatyperepo_TasksAPIService(t *testing.T) {
 		var id string
 
 		resp, httpRes, err := apiClient.TasksAPI.GetTaskById(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TasksAPIService GetTaskTemplate", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var typeId string
+
+		resp, httpRes, err := apiClient.TasksAPI.GetTaskTemplate(context.Background(), typeId).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TasksAPIService GetTaskTemplates", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.TasksAPI.GetTaskTemplates(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -68,6 +118,19 @@ func Test_sonatyperepo_TasksAPIService(t *testing.T) {
 		var id string
 
 		httpRes, err := apiClient.TasksAPI.Stop(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TasksAPIService UpdateTask", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var taskId string
+
+		httpRes, err := apiClient.TasksAPI.UpdateTask(context.Background(), taskId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

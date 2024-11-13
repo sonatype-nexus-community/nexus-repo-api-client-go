@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AccessKeyId** | Pointer to **string** | An IAM access key ID for granting access to the S3 bucket | [optional] 
-**Role** | Pointer to **string** | An IAM role to assume in order to access the S3 bucket | [optional] 
+**AccessKeyId** | Pointer to **string** | An IAM access key ID for granting access to the S3 bucket | [optional] [readonly] 
+**Role** | Pointer to **string** | An IAM role to assume in order to access the S3 bucket | [optional] [readonly] 
 **SecretAccessKey** | Pointer to **string** | The secret access key associated with the specified IAM access key ID | [optional] 
-**SessionToken** | Pointer to **string** | An AWS STS session token associated with temporary security credentials which grant access to the S3 bucket | [optional] 
+**SessionToken** | Pointer to **string** | An AWS STS session token associated with temporary security credentials which grant access to the S3 bucket | [optional] [readonly] 
 
 ## Methods
 

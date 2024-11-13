@@ -6,17 +6,21 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ConvertBlobStoreToGroup**](BlobStoreAPI.md#ConvertBlobStoreToGroup) | **Post** /v1/blobstores/group/convert/{name}/{newNameForOriginal} | Convert a blob store to a group blob store
 [**CreateBlobStore1**](BlobStoreAPI.md#CreateBlobStore1) | **Post** /v1/blobstores/azure | Create an Azure blob store
+[**CreateBlobStore2**](BlobStoreAPI.md#CreateBlobStore2) | **Post** /v1/blobstores/google | Create a Google Cloud blob store
 [**CreateFileBlobStore**](BlobStoreAPI.md#CreateFileBlobStore) | **Post** /v1/blobstores/file | Create a file blob store
 [**CreateGroupBlobStore**](BlobStoreAPI.md#CreateGroupBlobStore) | **Post** /v1/blobstores/group | Create a group blob store
 [**CreateS3BlobStore**](BlobStoreAPI.md#CreateS3BlobStore) | **Post** /v1/blobstores/s3 | Create an S3 blob store
 [**DeleteBlobStore**](BlobStoreAPI.md#DeleteBlobStore) | **Delete** /v1/blobstores/{name} | Delete a blob store by name
 [**GetBlobStore1**](BlobStoreAPI.md#GetBlobStore1) | **Get** /v1/blobstores/azure/{name} | Get an Azure blob store configuration by name
+[**GetBlobStore2**](BlobStoreAPI.md#GetBlobStore2) | **Get** /v1/blobstores/google/{name} | Get the configuration for a Google Cloud blob store
 [**GetFileBlobStoreConfiguration**](BlobStoreAPI.md#GetFileBlobStoreConfiguration) | **Get** /v1/blobstores/file/{name} | Get a file blob store configuration by name
 [**GetGroupBlobStoreConfiguration**](BlobStoreAPI.md#GetGroupBlobStoreConfiguration) | **Get** /v1/blobstores/group/{name} | Get a group blob store configuration by name
+[**GetRegionsByProjectId**](BlobStoreAPI.md#GetRegionsByProjectId) | **Get** /v1/blobstores/google/regions/{projectId} | Get the project regions by project&#39;s id
 [**GetS3BlobStore**](BlobStoreAPI.md#GetS3BlobStore) | **Get** /v1/blobstores/s3/{name} | Get a S3 blob store configuration by name
 [**ListBlobStores**](BlobStoreAPI.md#ListBlobStores) | **Get** /v1/blobstores | List the blob stores
 [**QuotaStatus**](BlobStoreAPI.md#QuotaStatus) | **Get** /v1/blobstores/{name}/quota-status | Get quota status for a given blob store
 [**UpdateBlobStore1**](BlobStoreAPI.md#UpdateBlobStore1) | **Put** /v1/blobstores/azure/{name} | Update an Azure blob store configuration by name
+[**UpdateBlobStore2**](BlobStoreAPI.md#UpdateBlobStore2) | **Put** /v1/blobstores/google/{name} | Update a Google Cloud blob store
 [**UpdateFileBlobStore**](BlobStoreAPI.md#UpdateFileBlobStore) | **Put** /v1/blobstores/file/{name} | Update a file blob store configuration by name
 [**UpdateGroupBlobStore**](BlobStoreAPI.md#UpdateGroupBlobStore) | **Put** /v1/blobstores/group/{name} | Update a group blob store configuration by name
 [**UpdateS3BlobStore**](BlobStoreAPI.md#UpdateS3BlobStore) | **Put** /v1/blobstores/s3/{name} | Update an S3 blob store configuration by name
@@ -137,6 +141,68 @@ Other parameters are passed through a pointer to a apiCreateBlobStore1Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**AzureBlobStoreApiModel**](AzureBlobStoreApiModel.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateBlobStore2
+
+> CreateBlobStore2(ctx).Body(body).Execute()
+
+Create a Google Cloud blob store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.BlobStoreAPI.CreateBlobStore2(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.CreateBlobStore2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateBlobStore2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GoogleCloudBlobstoreApiModel**](GoogleCloudBlobstoreApiModel.md) |  | 
 
 ### Return type
 
@@ -476,6 +542,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetBlobStore2
+
+> GoogleCloudBlobstoreApiModel GetBlobStore2(ctx, name).Execute()
+
+Get the configuration for a Google Cloud blob store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	name := "name_example" // string | the name of the blob store
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.BlobStoreAPI.GetBlobStore2(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.GetBlobStore2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetBlobStore2`: GoogleCloudBlobstoreApiModel
+	fmt.Fprintf(os.Stdout, "Response from `BlobStoreAPI.GetBlobStore2`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | the name of the blob store | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetBlobStore2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**GoogleCloudBlobstoreApiModel**](GoogleCloudBlobstoreApiModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetFileBlobStoreConfiguration
 
 > FileBlobStoreApiModel GetFileBlobStoreConfiguration(ctx, name).Execute()
@@ -597,6 +731,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**GroupBlobStoreApiModel**](GroupBlobStoreApiModel.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetRegionsByProjectId
+
+> []string GetRegionsByProjectId(ctx, projectId).Execute()
+
+Get the project regions by project's id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	projectId := "projectId_example" // string | projectId
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.BlobStoreAPI.GetRegionsByProjectId(context.Background(), projectId).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.GetRegionsByProjectId``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetRegionsByProjectId`: []string
+	fmt.Fprintf(os.Stdout, "Response from `BlobStoreAPI.GetRegionsByProjectId`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**projectId** | **string** | projectId | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetRegionsByProjectIdRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+**[]string**
 
 ### Authorization
 
@@ -856,6 +1058,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**AzureBlobStoreApiModel**](AzureBlobStoreApiModel.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateBlobStore2
+
+> UpdateBlobStore2(ctx, name).Body(body).Execute()
+
+Update a Google Cloud blob store
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+)
+
+func main() {
+	name := "name_example" // string | the name of the blobstore
+	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.BlobStoreAPI.UpdateBlobStore2(context.Background(), name).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `BlobStoreAPI.UpdateBlobStore2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** | the name of the blobstore | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateBlobStore2Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**GoogleCloudBlobstoreApiModel**](GoogleCloudBlobstoreApiModel.md) |  | 
 
 ### Return type
 

@@ -1,4 +1,4 @@
-# BowerGroupRepositoryApiRequest
+# CargoGroupRepositoryApiRequest
 
 ## Properties
 
@@ -11,99 +11,99 @@ Name | Type | Description | Notes
 
 ## Methods
 
-### NewBowerGroupRepositoryApiRequest
+### NewCargoGroupRepositoryApiRequest
 
-`func NewBowerGroupRepositoryApiRequest(group GroupAttributes, name string, online bool, storage StorageAttributes, ) *BowerGroupRepositoryApiRequest`
+`func NewCargoGroupRepositoryApiRequest(group GroupAttributes, name string, online bool, storage StorageAttributes, ) *CargoGroupRepositoryApiRequest`
 
-NewBowerGroupRepositoryApiRequest instantiates a new BowerGroupRepositoryApiRequest object
+NewCargoGroupRepositoryApiRequest instantiates a new CargoGroupRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBowerGroupRepositoryApiRequestWithDefaults
+### NewCargoGroupRepositoryApiRequestWithDefaults
 
-`func NewBowerGroupRepositoryApiRequestWithDefaults() *BowerGroupRepositoryApiRequest`
+`func NewCargoGroupRepositoryApiRequestWithDefaults() *CargoGroupRepositoryApiRequest`
 
-NewBowerGroupRepositoryApiRequestWithDefaults instantiates a new BowerGroupRepositoryApiRequest object
+NewCargoGroupRepositoryApiRequestWithDefaults instantiates a new CargoGroupRepositoryApiRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *BowerGroupRepositoryApiRequest) GetGroup() GroupAttributes`
+`func (o *CargoGroupRepositoryApiRequest) GetGroup() GroupAttributes`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *BowerGroupRepositoryApiRequest) GetGroupOk() (*GroupAttributes, bool)`
+`func (o *CargoGroupRepositoryApiRequest) GetGroupOk() (*GroupAttributes, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *BowerGroupRepositoryApiRequest) SetGroup(v GroupAttributes)`
+`func (o *CargoGroupRepositoryApiRequest) SetGroup(v GroupAttributes)`
 
 SetGroup sets Group field to given value.
 
 
 ### GetName
 
-`func (o *BowerGroupRepositoryApiRequest) GetName() string`
+`func (o *CargoGroupRepositoryApiRequest) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *BowerGroupRepositoryApiRequest) GetNameOk() (*string, bool)`
+`func (o *CargoGroupRepositoryApiRequest) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *BowerGroupRepositoryApiRequest) SetName(v string)`
+`func (o *CargoGroupRepositoryApiRequest) SetName(v string)`
 
 SetName sets Name field to given value.
 
 
 ### GetOnline
 
-`func (o *BowerGroupRepositoryApiRequest) GetOnline() bool`
+`func (o *CargoGroupRepositoryApiRequest) GetOnline() bool`
 
 GetOnline returns the Online field if non-nil, zero value otherwise.
 
 ### GetOnlineOk
 
-`func (o *BowerGroupRepositoryApiRequest) GetOnlineOk() (*bool, bool)`
+`func (o *CargoGroupRepositoryApiRequest) GetOnlineOk() (*bool, bool)`
 
 GetOnlineOk returns a tuple with the Online field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOnline
 
-`func (o *BowerGroupRepositoryApiRequest) SetOnline(v bool)`
+`func (o *CargoGroupRepositoryApiRequest) SetOnline(v bool)`
 
 SetOnline sets Online field to given value.
 
 
 ### GetStorage
 
-`func (o *BowerGroupRepositoryApiRequest) GetStorage() StorageAttributes`
+`func (o *CargoGroupRepositoryApiRequest) GetStorage() StorageAttributes`
 
 GetStorage returns the Storage field if non-nil, zero value otherwise.
 
 ### GetStorageOk
 
-`func (o *BowerGroupRepositoryApiRequest) GetStorageOk() (*StorageAttributes, bool)`
+`func (o *CargoGroupRepositoryApiRequest) GetStorageOk() (*StorageAttributes, bool)`
 
 GetStorageOk returns a tuple with the Storage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorage
 
-`func (o *BowerGroupRepositoryApiRequest) SetStorage(v StorageAttributes)`
+`func (o *CargoGroupRepositoryApiRequest) SetStorage(v StorageAttributes)`
 
 SetStorage sets Storage field to given value.
 

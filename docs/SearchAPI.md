@@ -12,9 +12,11 @@ Method | HTTP request | Description
 
 ## Search
 
-> PageComponentXO Search(ctx).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> PageComponentXO Search(ctx).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Search components
+
+
 
 ### Example
 
@@ -49,6 +51,13 @@ func main() {
 	conanRevision := "conanRevision_example" // string | Conan recipe revision (optional)
 	conanPackageId := "conanPackageId_example" // string | Conan package id (optional)
 	conanPackageRevision := "conanPackageRevision_example" // string | Conan package revision (optional)
+	conanBaseVersionStrict := "conanBaseVersionStrict_example" // string | Conan base version strict (optional)
+	conanRevisionLatest := "conanRevisionLatest_example" // string | Return latest revision (optional)
+	conanSettingsArch := "conanSettingsArch_example" // string | Conan arch (optional)
+	conanSettingsOs := "conanSettingsOs_example" // string | Conan os (optional)
+	conanSettingsCompiler := "conanSettingsCompiler_example" // string | Conan compiler (optional)
+	conanSettingsCompilerVersion := "conanSettingsCompilerVersion_example" // string | Conan compiler version (optional)
+	conanSettingsCompilerRuntime := "conanSettingsCompilerRuntime_example" // string | Conan compiler runtime (optional)
 	dockerImageName := "dockerImageName_example" // string | Docker image name (optional)
 	dockerImageTag := "dockerImageTag_example" // string | Docker image tag (optional)
 	dockerLayerId := "dockerLayerId_example" // string | Docker layer ID (optional)
@@ -86,7 +95,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SearchAPI.Search(context.Background()).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	resp, r, err := apiClient.SearchAPI.Search(context.Background()).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SearchAPI.Search``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -127,6 +136,13 @@ Name | Type | Description  | Notes
  **conanRevision** | **string** | Conan recipe revision | 
  **conanPackageId** | **string** | Conan package id | 
  **conanPackageRevision** | **string** | Conan package revision | 
+ **conanBaseVersionStrict** | **string** | Conan base version strict | 
+ **conanRevisionLatest** | **string** | Return latest revision | 
+ **conanSettingsArch** | **string** | Conan arch | 
+ **conanSettingsOs** | **string** | Conan os | 
+ **conanSettingsCompiler** | **string** | Conan compiler | 
+ **conanSettingsCompilerVersion** | **string** | Conan compiler version | 
+ **conanSettingsCompilerRuntime** | **string** | Conan compiler runtime | 
  **dockerImageName** | **string** | Docker image name | 
  **dockerImageTag** | **string** | Docker image tag | 
  **dockerLayerId** | **string** | Docker layer ID | 
@@ -182,7 +198,7 @@ Name | Type | Description  | Notes
 
 ## SearchAndDownloadAssets
 
-> SearchAndDownloadAssets(ctx).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> SearchAndDownloadAssets(ctx).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Search and download asset
 
@@ -220,6 +236,13 @@ func main() {
 	conanRevision := "conanRevision_example" // string | Conan recipe revision (optional)
 	conanPackageId := "conanPackageId_example" // string | Conan package id (optional)
 	conanPackageRevision := "conanPackageRevision_example" // string | Conan package revision (optional)
+	conanBaseVersionStrict := "conanBaseVersionStrict_example" // string | Conan base version strict (optional)
+	conanRevisionLatest := "conanRevisionLatest_example" // string | Return latest revision (optional)
+	conanSettingsArch := "conanSettingsArch_example" // string | Conan arch (optional)
+	conanSettingsOs := "conanSettingsOs_example" // string | Conan os (optional)
+	conanSettingsCompiler := "conanSettingsCompiler_example" // string | Conan compiler (optional)
+	conanSettingsCompilerVersion := "conanSettingsCompilerVersion_example" // string | Conan compiler version (optional)
+	conanSettingsCompilerRuntime := "conanSettingsCompilerRuntime_example" // string | Conan compiler runtime (optional)
 	dockerImageName := "dockerImageName_example" // string | Docker image name (optional)
 	dockerImageTag := "dockerImageTag_example" // string | Docker image tag (optional)
 	dockerLayerId := "dockerLayerId_example" // string | Docker layer ID (optional)
@@ -257,7 +280,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SearchAPI.SearchAndDownloadAssets(context.Background()).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	r, err := apiClient.SearchAPI.SearchAndDownloadAssets(context.Background()).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SearchAPI.SearchAndDownloadAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -295,6 +318,13 @@ Name | Type | Description  | Notes
  **conanRevision** | **string** | Conan recipe revision | 
  **conanPackageId** | **string** | Conan package id | 
  **conanPackageRevision** | **string** | Conan package revision | 
+ **conanBaseVersionStrict** | **string** | Conan base version strict | 
+ **conanRevisionLatest** | **string** | Return latest revision | 
+ **conanSettingsArch** | **string** | Conan arch | 
+ **conanSettingsOs** | **string** | Conan os | 
+ **conanSettingsCompiler** | **string** | Conan compiler | 
+ **conanSettingsCompilerVersion** | **string** | Conan compiler version | 
+ **conanSettingsCompilerRuntime** | **string** | Conan compiler runtime | 
  **dockerImageName** | **string** | Docker image name | 
  **dockerImageTag** | **string** | Docker image tag | 
  **dockerLayerId** | **string** | Docker layer ID | 
@@ -350,9 +380,11 @@ Name | Type | Description  | Notes
 
 ## SearchAssets
 
-> PageAssetXO SearchAssets(ctx).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> PageAssetXO SearchAssets(ctx).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Search assets
+
+
 
 ### Example
 
@@ -387,6 +419,13 @@ func main() {
 	conanRevision := "conanRevision_example" // string | Conan recipe revision (optional)
 	conanPackageId := "conanPackageId_example" // string | Conan package id (optional)
 	conanPackageRevision := "conanPackageRevision_example" // string | Conan package revision (optional)
+	conanBaseVersionStrict := "conanBaseVersionStrict_example" // string | Conan base version strict (optional)
+	conanRevisionLatest := "conanRevisionLatest_example" // string | Return latest revision (optional)
+	conanSettingsArch := "conanSettingsArch_example" // string | Conan arch (optional)
+	conanSettingsOs := "conanSettingsOs_example" // string | Conan os (optional)
+	conanSettingsCompiler := "conanSettingsCompiler_example" // string | Conan compiler (optional)
+	conanSettingsCompilerVersion := "conanSettingsCompilerVersion_example" // string | Conan compiler version (optional)
+	conanSettingsCompilerRuntime := "conanSettingsCompilerRuntime_example" // string | Conan compiler runtime (optional)
 	dockerImageName := "dockerImageName_example" // string | Docker image name (optional)
 	dockerImageTag := "dockerImageTag_example" // string | Docker image tag (optional)
 	dockerLayerId := "dockerLayerId_example" // string | Docker layer ID (optional)
@@ -424,7 +463,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SearchAPI.SearchAssets(context.Background()).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	resp, r, err := apiClient.SearchAPI.SearchAssets(context.Background()).ContinuationToken(continuationToken).Sort(sort).Direction(direction).Timeout(timeout).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).ConanBaseVersionStrict(conanBaseVersionStrict).ConanRevisionLatest(conanRevisionLatest).ConanSettingsArch(conanSettingsArch).ConanSettingsOs(conanSettingsOs).ConanSettingsCompiler(conanSettingsCompiler).ConanSettingsCompilerVersion(conanSettingsCompilerVersion).ConanSettingsCompilerRuntime(conanSettingsCompilerRuntime).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).P2PluginName(p2PluginName).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).Tag(tag).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SearchAPI.SearchAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -465,6 +504,13 @@ Name | Type | Description  | Notes
  **conanRevision** | **string** | Conan recipe revision | 
  **conanPackageId** | **string** | Conan package id | 
  **conanPackageRevision** | **string** | Conan package revision | 
+ **conanBaseVersionStrict** | **string** | Conan base version strict | 
+ **conanRevisionLatest** | **string** | Return latest revision | 
+ **conanSettingsArch** | **string** | Conan arch | 
+ **conanSettingsOs** | **string** | Conan os | 
+ **conanSettingsCompiler** | **string** | Conan compiler | 
+ **conanSettingsCompilerVersion** | **string** | Conan compiler version | 
+ **conanSettingsCompilerRuntime** | **string** | Conan compiler runtime | 
  **dockerImageName** | **string** | Docker image name | 
  **dockerImageTag** | **string** | Docker image tag | 
  **dockerLayerId** | **string** | Docker layer ID | 

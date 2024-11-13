@@ -4,8 +4,8 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePrivilege**](SecurityManagementPrivilegesAPI.md#CreatePrivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
-[**CreatePrivilege1**](SecurityManagementPrivilegesAPI.md#CreatePrivilege1) | **Post** /v1/security/privileges/application | Create an application type privilege.
+[**CreatePrivilege**](SecurityManagementPrivilegesAPI.md#CreatePrivilege) | **Post** /v1/security/privileges/application | Create an application type privilege.
+[**CreatePrivilege1**](SecurityManagementPrivilegesAPI.md#CreatePrivilege1) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
 [**CreatePrivilege2**](SecurityManagementPrivilegesAPI.md#CreatePrivilege2) | **Post** /v1/security/privileges/repository-content-selector | Create a repository content selector type privilege.
 [**CreatePrivilege3**](SecurityManagementPrivilegesAPI.md#CreatePrivilege3) | **Post** /v1/security/privileges/repository-admin | Create a repository admin type privilege.
 [**CreatePrivilege4**](SecurityManagementPrivilegesAPI.md#CreatePrivilege4) | **Post** /v1/security/privileges/repository-view | Create a repository view type privilege.
@@ -13,8 +13,8 @@ Method | HTTP request | Description
 [**DeletePrivilege**](SecurityManagementPrivilegesAPI.md#DeletePrivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
 [**GetPrivilege**](SecurityManagementPrivilegesAPI.md#GetPrivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
 [**GetPrivileges**](SecurityManagementPrivilegesAPI.md#GetPrivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
-[**UpdatePrivilege**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
-[**UpdatePrivilege1**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege1) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
+[**UpdatePrivilege**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
+[**UpdatePrivilege1**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege1) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
 [**UpdatePrivilege2**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege2) | **Put** /v1/security/privileges/repository-view/{privilegeName} | Update a repository view type privilege.
 [**UpdatePrivilege3**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege3) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
 [**UpdatePrivilege4**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege4) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 > CreatePrivilege(ctx).Body(body).Execute()
 
-Create a wildcard type privilege.
+Create an application type privilege.
 
 ### Example
 
@@ -41,7 +41,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to create. (optional)
+	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to create. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreatePrivilegeRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
+ **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > CreatePrivilege1(ctx).Body(body).Execute()
 
-Create an application type privilege.
+Create a wildcard type privilege.
 
 ### Example
 
@@ -103,7 +103,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to create. (optional)
+	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to create. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiCreatePrivilege1Request st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
+ **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -591,7 +591,7 @@ Other parameters are passed through a pointer to a apiGetPrivilegesRequest struc
 
 > UpdatePrivilege(ctx, privilegeName).Body(body).Execute()
 
-Update a wildcard type privilege.
+Update an application type privilege.
 
 ### Example
 
@@ -607,7 +607,7 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -635,7 +635,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilegeRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 > UpdatePrivilege1(ctx, privilegeName).Body(body).Execute()
 
-Update an application type privilege.
+Update a wildcard type privilege.
 
 ### Example
 
@@ -675,7 +675,7 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -703,7 +703,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilege1Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
 
 ### Return type
 
