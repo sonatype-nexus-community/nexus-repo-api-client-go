@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**ConanProxy** | Pointer to [**ConanProxyAttributes**](ConanProxyAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
@@ -57,6 +58,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *ConanProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetConanProxy
+
+`func (o *ConanProxyRepositoryApiRequest) GetConanProxy() ConanProxyAttributes`
+
+GetConanProxy returns the ConanProxy field if non-nil, zero value otherwise.
+
+### GetConanProxyOk
+
+`func (o *ConanProxyRepositoryApiRequest) GetConanProxyOk() (*ConanProxyAttributes, bool)`
+
+GetConanProxyOk returns a tuple with the ConanProxy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConanProxy
+
+`func (o *ConanProxyRepositoryApiRequest) SetConanProxy(v ConanProxyAttributes)`
+
+SetConanProxy sets ConanProxy field to given value.
+
+### HasConanProxy
+
+`func (o *ConanProxyRepositoryApiRequest) HasConanProxy() bool`
+
+HasConanProxy returns a boolean if a field has been set.
 
 ### GetHttpClient
 

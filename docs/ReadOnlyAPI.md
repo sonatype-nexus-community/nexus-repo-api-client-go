@@ -4,10 +4,10 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ForceRelease**](ReadOnlyAPI.md#ForceRelease) | **Post** /v1/read-only/force-release | Forcibly release read-only and allow changes to embedded OrientDB
-[**Freeze**](ReadOnlyAPI.md#Freeze) | **Post** /v1/read-only/freeze | Prevent changes to embedded OrientDB
-[**Get**](ReadOnlyAPI.md#Get) | **Get** /v1/read-only | Get read-only state
-[**Release**](ReadOnlyAPI.md#Release) | **Post** /v1/read-only/release | Release read-only and allow changes to embedded OrientDB
+[**ForceRelease**](ReadOnlyAPI.md#ForceRelease) | **Post** /v1/read-only/force-release | Forcibly release read-only and allow changes to the database
+[**Freeze**](ReadOnlyAPI.md#Freeze) | **Post** /v1/read-only/freeze | Prevent changes to the database
+[**Get3**](ReadOnlyAPI.md#Get3) | **Get** /v1/read-only | Get read-only state
+[**Release**](ReadOnlyAPI.md#Release) | **Post** /v1/read-only/release | Release read-only and allow changes to the database
 
 
 
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 > ForceRelease(ctx).Execute()
 
-Forcibly release read-only and allow changes to embedded OrientDB
+Forcibly release read-only and allow changes to the database
 
 
 
@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -74,7 +74,7 @@ Other parameters are passed through a pointer to a apiForceReleaseRequest struct
 
 > Freeze(ctx).Execute()
 
-Prevent changes to embedded OrientDB
+Prevent changes to the database
 
 
 
@@ -87,7 +87,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -129,9 +129,9 @@ Other parameters are passed through a pointer to a apiFreezeRequest struct via t
 [[Back to README]](../README.md)
 
 
-## Get
+## Get3
 
-> ReadOnlyState Get(ctx).Execute()
+> ReadOnlyState Get3(ctx).Execute()
 
 Get read-only state
 
@@ -144,20 +144,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ReadOnlyAPI.Get(context.Background()).Execute()
+	resp, r, err := apiClient.ReadOnlyAPI.Get3(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ReadOnlyAPI.Get``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ReadOnlyAPI.Get3``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get`: ReadOnlyState
-	fmt.Fprintf(os.Stdout, "Response from `ReadOnlyAPI.Get`: %v\n", resp)
+	// response from `Get3`: ReadOnlyState
+	fmt.Fprintf(os.Stdout, "Response from `ReadOnlyAPI.Get3`: %v\n", resp)
 }
 ```
 
@@ -167,7 +167,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGet3Request struct via the builder pattern
 
 
 ### Return type
@@ -192,7 +192,7 @@ Other parameters are passed through a pointer to a apiGetRequest struct via the 
 
 > Release(ctx).Execute()
 
-Release read-only and allow changes to embedded OrientDB
+Release read-only and allow changes to the database
 
 
 
@@ -205,7 +205,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {

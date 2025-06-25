@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ChangePassword**](SecurityManagementUsersAPI.md#ChangePassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
 [**CreateUser**](SecurityManagementUsersAPI.md#CreateUser) | **Post** /v1/security/users | Create a new user in the default source.
 [**DeleteUser**](SecurityManagementUsersAPI.md#DeleteUser) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users. Note if the source is not &#39;default&#39; the response is limited to 100 users.
+[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users.
 [**Reset**](SecurityManagementUsersAPI.md#Reset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
 [**UpdateUser**](SecurityManagementUsersAPI.md#UpdateUser) | **Put** /v1/security/users/{userId} | Update an existing user.
 
@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -96,7 +96,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ## DeleteUser
 
-> DeleteUser(ctx, userId).Execute()
+> DeleteUser(ctx, userId).Realm(realm).Execute()
 
 Delete a user.
 
@@ -160,15 +160,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	userId := "userId_example" // string | The userid the request should apply to.
+	realm := "realm_example" // string | The realm the request should apply to. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.DeleteUser(context.Background(), userId).Execute()
+	r, err := apiClient.SecurityManagementUsersAPI.DeleteUser(context.Background(), userId).Realm(realm).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteUser``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -192,6 +193,7 @@ Other parameters are passed through a pointer to a apiDeleteUserRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **realm** | **string** | The realm the request should apply to. | 
 
 ### Return type
 
@@ -215,7 +217,7 @@ Name | Type | Description  | Notes
 
 > []ApiUser GetUsers(ctx).UserId(userId).Source(source).Execute()
 
-Retrieve a list of users. Note if the source is not 'default' the response is limited to 100 users.
+Retrieve a list of users.
 
 ### Example
 
@@ -226,7 +228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -294,7 +296,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -363,7 +365,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**Browse**](ScriptAPI.md#Browse) | **Get** /v1/script | List all stored scripts
 [**Delete1**](ScriptAPI.md#Delete1) | **Delete** /v1/script/{name} | Delete stored script by name
 [**Edit**](ScriptAPI.md#Edit) | **Put** /v1/script/{name} | Update stored script by name
-[**Read1**](ScriptAPI.md#Read1) | **Get** /v1/script/{name} | Read stored script by name
+[**Read**](ScriptAPI.md#Read) | **Get** /v1/script/{name} | Read stored script by name
 [**Run1**](ScriptAPI.md#Run1) | **Post** /v1/script/{name}/run | Run stored script by name
 
 
@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -90,7 +90,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -149,7 +149,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -215,7 +215,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -268,9 +268,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Read1
+## Read
 
-> ScriptXO Read1(ctx, name).Execute()
+> ScriptXO Read(ctx, name).Execute()
 
 Read stored script by name
 
@@ -283,7 +283,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -291,13 +291,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScriptAPI.Read1(context.Background(), name).Execute()
+	resp, r, err := apiClient.ScriptAPI.Read(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Read1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Read``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read1`: ScriptXO
-	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.Read1`: %v\n", resp)
+	// response from `Read`: ScriptXO
+	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.Read`: %v\n", resp)
 }
 ```
 
@@ -311,7 +311,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRead1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiReadRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -351,7 +351,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {

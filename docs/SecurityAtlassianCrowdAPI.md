@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**ClearCache**](SecurityAtlassianCrowdAPI.md#ClearCache) | **Post** /v1/security/atlassian-crowd/clear-cache | Clear Atlassian Crowd cache
 [**ReadSettings**](SecurityAtlassianCrowdAPI.md#ReadSettings) | **Get** /v1/security/atlassian-crowd | Retrieve Atlassian Crowd settings configured in Nexus Repository Manager
 [**UpdateSettings**](SecurityAtlassianCrowdAPI.md#UpdateSettings) | **Put** /v1/security/atlassian-crowd | Update Atlassian Crowd settings configured in Nexus Repository Manager
-[**VerifyConnection1**](SecurityAtlassianCrowdAPI.md#VerifyConnection1) | **Post** /v1/security/atlassian-crowd/verify-connection | Verify connection using supplied Atlassian Crowd settings
+[**VerifyConnection**](SecurityAtlassianCrowdAPI.md#VerifyConnection) | **Post** /v1/security/atlassian-crowd/verify-connection | Verify connection using supplied Atlassian Crowd settings
 
 
 
@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -83,7 +83,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -140,7 +140,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -187,9 +187,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## VerifyConnection1
+## VerifyConnection
 
-> VerifyConnection1(ctx).Body(body).Execute()
+> VerifyConnection(ctx).Body(body).Execute()
 
 Verify connection using supplied Atlassian Crowd settings
 
@@ -202,7 +202,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -210,9 +210,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection1(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.VerifyConnection1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.VerifyConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -224,7 +224,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyConnection1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

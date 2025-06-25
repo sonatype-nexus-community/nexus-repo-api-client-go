@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VerifyConnection2**](AzureBlobStoreAPI.md#VerifyConnection2) | **Post** /v1/azureblobstore/test-connection | Verify connection using supplied Azure Blob Store settings
+[**VerifyConnection1**](AzureBlobStoreAPI.md#VerifyConnection1) | **Post** /v1/azureblobstore/test-connection | Verify connection using supplied Azure Blob Store settings
 
 
 
-## VerifyConnection2
+## VerifyConnection1
 
-> VerifyConnection2(ctx).Body(body).Execute()
+> VerifyConnection1(ctx).Body(body).Execute()
 
 Verify connection using supplied Azure Blob Store settings
 
@@ -23,7 +23,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -31,9 +31,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.AzureBlobStoreAPI.VerifyConnection2(context.Background()).Body(body).Execute()
+	r, err := apiClient.AzureBlobStoreAPI.VerifyConnection1(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AzureBlobStoreAPI.VerifyConnection2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AzureBlobStoreAPI.VerifyConnection1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -45,7 +45,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyConnection2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyConnection1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

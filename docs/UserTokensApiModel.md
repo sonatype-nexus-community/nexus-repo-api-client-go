@@ -5,6 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | Whether or not User Tokens feature is enabled | [optional] 
+**ExpirationDays** | Pointer to **int32** | Set user token expiration days (E.g., 1-999) | [optional] 
+**ExpirationEnabled** | Pointer to **bool** | Enable user tokens expiration | [optional] 
 **ProtectContent** | Pointer to **bool** | Additionally require user tokens for repository authentication | [optional] 
 
 ## Methods
@@ -50,6 +52,56 @@ SetEnabled sets Enabled field to given value.
 `func (o *UserTokensApiModel) HasEnabled() bool`
 
 HasEnabled returns a boolean if a field has been set.
+
+### GetExpirationDays
+
+`func (o *UserTokensApiModel) GetExpirationDays() int32`
+
+GetExpirationDays returns the ExpirationDays field if non-nil, zero value otherwise.
+
+### GetExpirationDaysOk
+
+`func (o *UserTokensApiModel) GetExpirationDaysOk() (*int32, bool)`
+
+GetExpirationDaysOk returns a tuple with the ExpirationDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationDays
+
+`func (o *UserTokensApiModel) SetExpirationDays(v int32)`
+
+SetExpirationDays sets ExpirationDays field to given value.
+
+### HasExpirationDays
+
+`func (o *UserTokensApiModel) HasExpirationDays() bool`
+
+HasExpirationDays returns a boolean if a field has been set.
+
+### GetExpirationEnabled
+
+`func (o *UserTokensApiModel) GetExpirationEnabled() bool`
+
+GetExpirationEnabled returns the ExpirationEnabled field if non-nil, zero value otherwise.
+
+### GetExpirationEnabledOk
+
+`func (o *UserTokensApiModel) GetExpirationEnabledOk() (*bool, bool)`
+
+GetExpirationEnabledOk returns a tuple with the ExpirationEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExpirationEnabled
+
+`func (o *UserTokensApiModel) SetExpirationEnabled(v bool)`
+
+SetExpirationEnabled sets ExpirationEnabled field to given value.
+
+### HasExpirationEnabled
+
+`func (o *UserTokensApiModel) HasExpirationEnabled() bool`
+
+HasExpirationEnabled returns a boolean if a field has been set.
 
 ### GetProtectContent
 

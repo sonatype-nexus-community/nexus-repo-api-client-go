@@ -4,20 +4,20 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreatePrivilege**](SecurityManagementPrivilegesAPI.md#CreatePrivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
-[**CreatePrivilege1**](SecurityManagementPrivilegesAPI.md#CreatePrivilege1) | **Post** /v1/security/privileges/application | Create an application type privilege.
-[**CreatePrivilege2**](SecurityManagementPrivilegesAPI.md#CreatePrivilege2) | **Post** /v1/security/privileges/repository-content-selector | Create a repository content selector type privilege.
-[**CreatePrivilege3**](SecurityManagementPrivilegesAPI.md#CreatePrivilege3) | **Post** /v1/security/privileges/repository-admin | Create a repository admin type privilege.
-[**CreatePrivilege4**](SecurityManagementPrivilegesAPI.md#CreatePrivilege4) | **Post** /v1/security/privileges/repository-view | Create a repository view type privilege.
+[**CreatePrivilege**](SecurityManagementPrivilegesAPI.md#CreatePrivilege) | **Post** /v1/security/privileges/repository-view | Create a repository view type privilege.
+[**CreatePrivilege1**](SecurityManagementPrivilegesAPI.md#CreatePrivilege1) | **Post** /v1/security/privileges/repository-content-selector | Create a repository content selector type privilege.
+[**CreatePrivilege2**](SecurityManagementPrivilegesAPI.md#CreatePrivilege2) | **Post** /v1/security/privileges/repository-admin | Create a repository admin type privilege.
+[**CreatePrivilege3**](SecurityManagementPrivilegesAPI.md#CreatePrivilege3) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
+[**CreatePrivilege4**](SecurityManagementPrivilegesAPI.md#CreatePrivilege4) | **Post** /v1/security/privileges/application | Create an application type privilege.
 [**CreatePrivilege5**](SecurityManagementPrivilegesAPI.md#CreatePrivilege5) | **Post** /v1/security/privileges/script | Create a script type privilege.
 [**DeletePrivilege**](SecurityManagementPrivilegesAPI.md#DeletePrivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
 [**GetPrivilege**](SecurityManagementPrivilegesAPI.md#GetPrivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
-[**GetPrivileges**](SecurityManagementPrivilegesAPI.md#GetPrivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
-[**UpdatePrivilege**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
-[**UpdatePrivilege1**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege1) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
-[**UpdatePrivilege2**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege2) | **Put** /v1/security/privileges/repository-view/{privilegeName} | Update a repository view type privilege.
-[**UpdatePrivilege3**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege3) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
-[**UpdatePrivilege4**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege4) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
+[**GetPrivileges1**](SecurityManagementPrivilegesAPI.md#GetPrivileges1) | **Get** /v1/security/privileges | Retrieve a list of privileges.
+[**UpdatePrivilege**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege) | **Put** /v1/security/privileges/repository-view/{privilegeName} | Update a repository view type privilege.
+[**UpdatePrivilege1**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege1) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
+[**UpdatePrivilege2**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege2) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
+[**UpdatePrivilege3**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege3) | **Put** /v1/security/privileges/wildcard/{privilegeName} | Update a wildcard type privilege.
+[**UpdatePrivilege4**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege4) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
 [**UpdatePrivilege5**](SecurityManagementPrivilegesAPI.md#UpdatePrivilege5) | **Put** /v1/security/privileges/script/{privilegeName} | Update a script type privilege.
 
 
@@ -26,7 +26,7 @@ Method | HTTP request | Description
 
 > CreatePrivilege(ctx).Body(body).Execute()
 
-Create a wildcard type privilege.
+Create a repository view type privilege.
 
 ### Example
 
@@ -37,11 +37,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to create. (optional)
+	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to create. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreatePrivilegeRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
+ **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -88,7 +88,7 @@ Name | Type | Description  | Notes
 
 > CreatePrivilege1(ctx).Body(body).Execute()
 
-Create an application type privilege.
+Create a repository content selector type privilege.
 
 ### Example
 
@@ -99,11 +99,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to create. (optional)
+	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to create. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -122,68 +122,6 @@ func main() {
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiCreatePrivilege1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreatePrivilege2
-
-> CreatePrivilege2(ctx).Body(body).Execute()
-
-Create a repository content selector type privilege.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
-)
-
-func main() {
-	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to create. (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege2(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreatePrivilege2``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreatePrivilege2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -208,9 +146,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreatePrivilege3
+## CreatePrivilege2
 
-> CreatePrivilege3(ctx).Body(body).Execute()
+> CreatePrivilege2(ctx).Body(body).Execute()
 
 Create a repository admin type privilege.
 
@@ -223,7 +161,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -231,9 +169,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege3(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege2(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreatePrivilege3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreatePrivilege2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -245,7 +183,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreatePrivilege3Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreatePrivilege2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -270,11 +208,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreatePrivilege4
+## CreatePrivilege3
 
-> CreatePrivilege4(ctx).Body(body).Execute()
+> CreatePrivilege3(ctx).Body(body).Execute()
 
-Create a repository view type privilege.
+Create a wildcard type privilege.
 
 ### Example
 
@@ -285,11 +223,73 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to create. (optional)
+	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to create. (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege3(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreatePrivilege3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePrivilege3Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePrivilege4
+
+> CreatePrivilege4(ctx).Body(body).Execute()
+
+Create an application type privilege.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to create. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -312,7 +312,7 @@ Other parameters are passed through a pointer to a apiCreatePrivilege4Request st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to create. | 
+ **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -347,7 +347,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -409,7 +409,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -475,7 +475,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
@@ -528,9 +528,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetPrivileges
+## GetPrivileges1
 
-> []ApiPrivilege GetPrivileges(ctx).Execute()
+> []ApiPrivilege GetPrivileges1(ctx).Execute()
 
 Retrieve a list of privileges.
 
@@ -543,20 +543,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivileges(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivileges1(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivileges``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivileges1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPrivileges`: []ApiPrivilege
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivileges`: %v\n", resp)
+	// response from `GetPrivileges1`: []ApiPrivilege
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivileges1`: %v\n", resp)
 }
 ```
 
@@ -566,7 +566,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetPrivilegesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetPrivileges1Request struct via the builder pattern
 
 
 ### Return type
@@ -591,7 +591,7 @@ Other parameters are passed through a pointer to a apiGetPrivilegesRequest struc
 
 > UpdatePrivilege(ctx, privilegeName).Body(body).Execute()
 
-Update a wildcard type privilege.
+Update a repository view type privilege.
 
 ### Example
 
@@ -602,12 +602,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -635,7 +635,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilegeRequest str
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -659,7 +659,7 @@ Name | Type | Description  | Notes
 
 > UpdatePrivilege1(ctx, privilegeName).Body(body).Execute()
 
-Update an application type privilege.
+Update a repository content selector type privilege.
 
 ### Example
 
@@ -670,12 +670,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -703,7 +703,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilege1Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -727,7 +727,7 @@ Name | Type | Description  | Notes
 
 > UpdatePrivilege2(ctx, privilegeName).Body(body).Execute()
 
-Update a repository view type privilege.
+Update a repository admin type privilege.
 
 ### Example
 
@@ -738,12 +738,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest() // ApiPrivilegeRepositoryAdminRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -771,7 +771,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilege2Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -795,7 +795,7 @@ Name | Type | Description  | Notes
 
 > UpdatePrivilege3(ctx, privilegeName).Body(body).Execute()
 
-Update a repository content selector type privilege.
+Update a wildcard type privilege.
 
 ### Example
 
@@ -806,12 +806,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -839,7 +839,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilege3Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -863,7 +863,7 @@ Name | Type | Description  | Notes
 
 > UpdatePrivilege4(ctx, privilegeName).Body(body).Execute()
 
-Update a repository admin type privilege.
+Update an application type privilege.
 
 ### Example
 
@@ -874,12 +874,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest() // ApiPrivilegeRepositoryAdminRequest | The privilege to update. (optional)
+	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to update. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -907,7 +907,7 @@ Other parameters are passed through a pointer to a apiUpdatePrivilege4Request st
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to update. | 
+ **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -942,7 +942,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
 func main() {

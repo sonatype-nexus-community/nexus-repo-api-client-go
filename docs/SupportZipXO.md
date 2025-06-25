@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **File** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
-**Size** | Pointer to **string** |  | [optional] 
+**Size** | Pointer to **int64** |  | [optional] 
 **Truncated** | Pointer to **bool** |  | [optional] 
 
 ## Methods
@@ -80,20 +80,20 @@ HasName returns a boolean if a field has been set.
 
 ### GetSize
 
-`func (o *SupportZipXO) GetSize() string`
+`func (o *SupportZipXO) GetSize() int64`
 
 GetSize returns the Size field if non-nil, zero value otherwise.
 
 ### GetSizeOk
 
-`func (o *SupportZipXO) GetSizeOk() (*string, bool)`
+`func (o *SupportZipXO) GetSizeOk() (*int64, bool)`
 
 GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSize
 
-`func (o *SupportZipXO) SetSize(v string)`
+`func (o *SupportZipXO) SetSize(v int64)`
 
 SetSize sets Size field to given value.
 

@@ -1,260 +1,255 @@
-# BowerProxyApiRepository
+# CargoProxyRepositoryApiRequest
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Bower** | Pointer to [**BowerAttributes**](BowerAttributes.md) |  | [optional] 
+**Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
+**RoutingRule** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
 ## Methods
 
-### NewBowerProxyApiRepository
+### NewCargoProxyRepositoryApiRequest
 
-`func NewBowerProxyApiRepository(httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *BowerProxyApiRepository`
+`func NewCargoProxyRepositoryApiRequest(httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *CargoProxyRepositoryApiRequest`
 
-NewBowerProxyApiRepository instantiates a new BowerProxyApiRepository object
+NewCargoProxyRepositoryApiRequest instantiates a new CargoProxyRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewBowerProxyApiRepositoryWithDefaults
+### NewCargoProxyRepositoryApiRequestWithDefaults
 
-`func NewBowerProxyApiRepositoryWithDefaults() *BowerProxyApiRepository`
+`func NewCargoProxyRepositoryApiRequestWithDefaults() *CargoProxyRepositoryApiRequest`
 
-NewBowerProxyApiRepositoryWithDefaults instantiates a new BowerProxyApiRepository object
+NewCargoProxyRepositoryApiRequestWithDefaults instantiates a new CargoProxyRepositoryApiRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetBower
+### GetCargo
 
-`func (o *BowerProxyApiRepository) GetBower() BowerAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetCargo() CargoAttributes`
 
-GetBower returns the Bower field if non-nil, zero value otherwise.
+GetCargo returns the Cargo field if non-nil, zero value otherwise.
 
-### GetBowerOk
+### GetCargoOk
 
-`func (o *BowerProxyApiRepository) GetBowerOk() (*BowerAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetCargoOk() (*CargoAttributes, bool)`
 
-GetBowerOk returns a tuple with the Bower field if it's non-nil, zero value otherwise
+GetCargoOk returns a tuple with the Cargo field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetBower
+### SetCargo
 
-`func (o *BowerProxyApiRepository) SetBower(v BowerAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetCargo(v CargoAttributes)`
 
-SetBower sets Bower field to given value.
+SetCargo sets Cargo field to given value.
 
-### HasBower
+### HasCargo
 
-`func (o *BowerProxyApiRepository) HasBower() bool`
+`func (o *CargoProxyRepositoryApiRequest) HasCargo() bool`
 
-HasBower returns a boolean if a field has been set.
+HasCargo returns a boolean if a field has been set.
 
 ### GetCleanup
 
-`func (o *BowerProxyApiRepository) GetCleanup() CleanupPolicyAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetCleanup() CleanupPolicyAttributes`
 
 GetCleanup returns the Cleanup field if non-nil, zero value otherwise.
 
 ### GetCleanupOk
 
-`func (o *BowerProxyApiRepository) GetCleanupOk() (*CleanupPolicyAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetCleanupOk() (*CleanupPolicyAttributes, bool)`
 
 GetCleanupOk returns a tuple with the Cleanup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCleanup
 
-`func (o *BowerProxyApiRepository) SetCleanup(v CleanupPolicyAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetCleanup(v CleanupPolicyAttributes)`
 
 SetCleanup sets Cleanup field to given value.
 
 ### HasCleanup
 
-`func (o *BowerProxyApiRepository) HasCleanup() bool`
+`func (o *CargoProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
 
 ### GetHttpClient
 
-`func (o *BowerProxyApiRepository) GetHttpClient() HttpClientAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributes`
 
 GetHttpClient returns the HttpClient field if non-nil, zero value otherwise.
 
 ### GetHttpClientOk
 
-`func (o *BowerProxyApiRepository) GetHttpClientOk() (*HttpClientAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributes, bool)`
 
 GetHttpClientOk returns a tuple with the HttpClient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpClient
 
-`func (o *BowerProxyApiRepository) SetHttpClient(v HttpClientAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributes)`
 
 SetHttpClient sets HttpClient field to given value.
 
 
 ### GetName
 
-`func (o *BowerProxyApiRepository) GetName() string`
+`func (o *CargoProxyRepositoryApiRequest) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *BowerProxyApiRepository) GetNameOk() (*string, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *BowerProxyApiRepository) SetName(v string)`
+`func (o *CargoProxyRepositoryApiRequest) SetName(v string)`
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *BowerProxyApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNegativeCache
 
-`func (o *BowerProxyApiRepository) GetNegativeCache() NegativeCacheAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetNegativeCache() NegativeCacheAttributes`
 
 GetNegativeCache returns the NegativeCache field if non-nil, zero value otherwise.
 
 ### GetNegativeCacheOk
 
-`func (o *BowerProxyApiRepository) GetNegativeCacheOk() (*NegativeCacheAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetNegativeCacheOk() (*NegativeCacheAttributes, bool)`
 
 GetNegativeCacheOk returns a tuple with the NegativeCache field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNegativeCache
 
-`func (o *BowerProxyApiRepository) SetNegativeCache(v NegativeCacheAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetNegativeCache(v NegativeCacheAttributes)`
 
 SetNegativeCache sets NegativeCache field to given value.
 
 
 ### GetOnline
 
-`func (o *BowerProxyApiRepository) GetOnline() bool`
+`func (o *CargoProxyRepositoryApiRequest) GetOnline() bool`
 
 GetOnline returns the Online field if non-nil, zero value otherwise.
 
 ### GetOnlineOk
 
-`func (o *BowerProxyApiRepository) GetOnlineOk() (*bool, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetOnlineOk() (*bool, bool)`
 
 GetOnlineOk returns a tuple with the Online field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOnline
 
-`func (o *BowerProxyApiRepository) SetOnline(v bool)`
+`func (o *CargoProxyRepositoryApiRequest) SetOnline(v bool)`
 
 SetOnline sets Online field to given value.
 
 
 ### GetProxy
 
-`func (o *BowerProxyApiRepository) GetProxy() ProxyAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetProxy() ProxyAttributes`
 
 GetProxy returns the Proxy field if non-nil, zero value otherwise.
 
 ### GetProxyOk
 
-`func (o *BowerProxyApiRepository) GetProxyOk() (*ProxyAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetProxyOk() (*ProxyAttributes, bool)`
 
 GetProxyOk returns a tuple with the Proxy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetProxy
 
-`func (o *BowerProxyApiRepository) SetProxy(v ProxyAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetProxy(v ProxyAttributes)`
 
 SetProxy sets Proxy field to given value.
 
 
 ### GetReplication
 
-`func (o *BowerProxyApiRepository) GetReplication() ReplicationAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetReplication() ReplicationAttributes`
 
 GetReplication returns the Replication field if non-nil, zero value otherwise.
 
 ### GetReplicationOk
 
-`func (o *BowerProxyApiRepository) GetReplicationOk() (*ReplicationAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetReplicationOk() (*ReplicationAttributes, bool)`
 
 GetReplicationOk returns a tuple with the Replication field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReplication
 
-`func (o *BowerProxyApiRepository) SetReplication(v ReplicationAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetReplication(v ReplicationAttributes)`
 
 SetReplication sets Replication field to given value.
 
 ### HasReplication
 
-`func (o *BowerProxyApiRepository) HasReplication() bool`
+`func (o *CargoProxyRepositoryApiRequest) HasReplication() bool`
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRuleName
+### GetRoutingRule
 
-`func (o *BowerProxyApiRepository) GetRoutingRuleName() string`
+`func (o *CargoProxyRepositoryApiRequest) GetRoutingRule() string`
 
-GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
+GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
 
-### GetRoutingRuleNameOk
+### GetRoutingRuleOk
 
-`func (o *BowerProxyApiRepository) GetRoutingRuleNameOk() (*string, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
 
-GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
+GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRuleName
+### SetRoutingRule
 
-`func (o *BowerProxyApiRepository) SetRoutingRuleName(v string)`
+`func (o *CargoProxyRepositoryApiRequest) SetRoutingRule(v string)`
 
-SetRoutingRuleName sets RoutingRuleName field to given value.
+SetRoutingRule sets RoutingRule field to given value.
 
-### HasRoutingRuleName
+### HasRoutingRule
 
-`func (o *BowerProxyApiRepository) HasRoutingRuleName() bool`
+`func (o *CargoProxyRepositoryApiRequest) HasRoutingRule() bool`
 
-HasRoutingRuleName returns a boolean if a field has been set.
+HasRoutingRule returns a boolean if a field has been set.
 
 ### GetStorage
 
-`func (o *BowerProxyApiRepository) GetStorage() StorageAttributes`
+`func (o *CargoProxyRepositoryApiRequest) GetStorage() StorageAttributes`
 
 GetStorage returns the Storage field if non-nil, zero value otherwise.
 
 ### GetStorageOk
 
-`func (o *BowerProxyApiRepository) GetStorageOk() (*StorageAttributes, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetStorageOk() (*StorageAttributes, bool)`
 
 GetStorageOk returns a tuple with the Storage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorage
 
-`func (o *BowerProxyApiRepository) SetStorage(v StorageAttributes)`
+`func (o *CargoProxyRepositoryApiRequest) SetStorage(v StorageAttributes)`
 
 SetStorage sets Storage field to given value.
 

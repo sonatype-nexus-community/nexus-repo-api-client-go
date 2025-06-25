@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**BearerToken** | Pointer to **string** |  | [optional] 
 **NtlmDomain** | Pointer to **string** |  | [optional] 
 **NtlmHost** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
@@ -29,6 +30,31 @@ will change when the set of required properties is changed
 NewHttpClientConnectionAuthenticationAttributesWithPreemptiveWithDefaults instantiates a new HttpClientConnectionAuthenticationAttributesWithPreemptive object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) GetBearerToken() string`
+
+GetBearerToken returns the BearerToken field if non-nil, zero value otherwise.
+
+### GetBearerTokenOk
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) GetBearerTokenOk() (*string, bool)`
+
+GetBearerTokenOk returns a tuple with the BearerToken field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) SetBearerToken(v string)`
+
+SetBearerToken sets BearerToken field to given value.
+
+### HasBearerToken
+
+`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) HasBearerToken() bool`
+
+HasBearerToken returns a boolean if a field has been set.
 
 ### GetNtlmDomain
 
