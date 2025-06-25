@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ArchivedLog** | Pointer to **int32** |  | [optional] 
 **AuditLog** | Pointer to **bool** |  | [optional] 
 **Configuration** | Pointer to **bool** |  | [optional] 
 **Hostname** | Pointer to **string** |  | [optional] 
@@ -36,6 +37,31 @@ will change when the set of required properties is changed
 NewSupportZipGeneratorRequestWithDefaults instantiates a new SupportZipGeneratorRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetArchivedLog
+
+`func (o *SupportZipGeneratorRequest) GetArchivedLog() int32`
+
+GetArchivedLog returns the ArchivedLog field if non-nil, zero value otherwise.
+
+### GetArchivedLogOk
+
+`func (o *SupportZipGeneratorRequest) GetArchivedLogOk() (*int32, bool)`
+
+GetArchivedLogOk returns a tuple with the ArchivedLog field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetArchivedLog
+
+`func (o *SupportZipGeneratorRequest) SetArchivedLog(v int32)`
+
+SetArchivedLog sets ArchivedLog field to given value.
+
+### HasArchivedLog
+
+`func (o *SupportZipGeneratorRequest) HasArchivedLog() bool`
+
+HasArchivedLog returns a boolean if a field has been set.
 
 ### GetAuditLog
 

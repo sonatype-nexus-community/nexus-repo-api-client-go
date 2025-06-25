@@ -88,6 +88,28 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService CreateComposerProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateComposerProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateConanGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateConanGroupRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService CreateConanHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -203,6 +225,17 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.RepositoryManagementAPI.CreateHelmProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateHuggingfaceProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateHuggingfaceProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -645,6 +678,34 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService GetComposerProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetComposerProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetConanGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetConanGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService GetConanHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -792,6 +853,20 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetHelmProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetHuggingfaceProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetHuggingfaceProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1253,6 +1328,32 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService UpdateComposerProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateComposerProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateConanGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateConanGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService UpdateConanHostedRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1390,6 +1491,19 @@ func Test_sonatyperepo_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateHelmProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateHuggingfaceProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateHuggingfaceProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

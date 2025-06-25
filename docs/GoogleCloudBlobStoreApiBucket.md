@@ -7,13 +7,13 @@ Name | Type | Description | Notes
 **Name** | **string** | The name of the GC Storage bucket | 
 **Prefix** | Pointer to **string** | The GC Storage blob store (i.e GC Storage object) key prefix | [optional] [readonly] 
 **ProjectId** | Pointer to **string** | GCP Project ID | [optional] [readonly] 
-**Region** | **string** | The GCP region to create a new GC Storage bucket in or an existing GC Storage bucket&#39;s region | 
+**Region** | Pointer to **string** | The GCP region to create a new GC Storage bucket in or an existing GC Storage bucket&#39;s region. Should be the same as Nexus deployment region. | [optional] 
 
 ## Methods
 
 ### NewGoogleCloudBlobStoreApiBucket
 
-`func NewGoogleCloudBlobStoreApiBucket(name string, region string, ) *GoogleCloudBlobStoreApiBucket`
+`func NewGoogleCloudBlobStoreApiBucket(name string, ) *GoogleCloudBlobStoreApiBucket`
 
 NewGoogleCloudBlobStoreApiBucket instantiates a new GoogleCloudBlobStoreApiBucket object
 This constructor will assign default values to properties that have it defined,
@@ -117,6 +117,11 @@ and a boolean to check if the value has been set.
 
 SetRegion sets Region field to given value.
 
+### HasRegion
+
+`func (o *GoogleCloudBlobStoreApiBucket) HasRegion() bool`
+
+HasRegion returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

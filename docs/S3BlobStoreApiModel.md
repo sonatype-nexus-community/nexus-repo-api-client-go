@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BucketConfiguration** | [**S3BlobStoreApiBucketConfiguration**](S3BlobStoreApiBucketConfiguration.md) |  | 
-**Name** | **string** | The name of the S3 blob store. | [readonly] 
+**Name** | **string** | The name of the S3 blob store. | 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
 **Type** | Pointer to **string** | The blob store type. | [optional] [readonly] 
 

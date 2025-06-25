@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlobCreated** | Pointer to **time.Time** |  | [optional] 
 **BlobStoreName** | Pointer to **string** |  | [optional] 
-**Checksum** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**Checksum** | Pointer to **map[string]string** |  | [optional] 
 **ContentType** | Pointer to **string** |  | [optional] 
 **DownloadUrl** | Pointer to **string** |  | [optional] 
 **FileSize** | Pointer to **int64** |  | [optional] 
@@ -90,20 +90,20 @@ HasBlobStoreName returns a boolean if a field has been set.
 
 ### GetChecksum
 
-`func (o *AssetXO) GetChecksum() map[string]map[string]interface{}`
+`func (o *AssetXO) GetChecksum() map[string]string`
 
 GetChecksum returns the Checksum field if non-nil, zero value otherwise.
 
 ### GetChecksumOk
 
-`func (o *AssetXO) GetChecksumOk() (*map[string]map[string]interface{}, bool)`
+`func (o *AssetXO) GetChecksumOk() (*map[string]string, bool)`
 
 GetChecksumOk returns a tuple with the Checksum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChecksum
 
-`func (o *AssetXO) SetChecksum(v map[string]map[string]interface{})`
+`func (o *AssetXO) SetChecksum(v map[string]string)`
 
 SetChecksum sets Checksum field to given value.
 

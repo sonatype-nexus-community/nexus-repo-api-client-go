@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## Supportzippath
 
-> SupportZipXO Supportzippath(ctx).Body(body).Execute()
+> Supportzippath(ctx).Body(body).Execute()
 
 Creates a support zip and returns the path
 
@@ -94,13 +94,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SupportAPI.Supportzippath(context.Background()).Body(body).Execute()
+	r, err := apiClient.SupportAPI.Supportzippath(context.Background()).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SupportAPI.Supportzippath``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Supportzippath`: SupportZipXO
-	fmt.Fprintf(os.Stdout, "Response from `SupportAPI.Supportzippath`: %v\n", resp)
 }
 ```
 
@@ -119,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SupportZipXO**](SupportZipXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -128,7 +126,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

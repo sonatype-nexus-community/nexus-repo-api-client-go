@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewCargoGroupRepositoryApiRequestWithDefaults instantiates a new CargoGroupRepositoryApiRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCargo
+
+`func (o *CargoGroupRepositoryApiRequest) GetCargo() CargoAttributes`
+
+GetCargo returns the Cargo field if non-nil, zero value otherwise.
+
+### GetCargoOk
+
+`func (o *CargoGroupRepositoryApiRequest) GetCargoOk() (*CargoAttributes, bool)`
+
+GetCargoOk returns a tuple with the Cargo field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCargo
+
+`func (o *CargoGroupRepositoryApiRequest) SetCargo(v CargoAttributes)`
+
+SetCargo sets Cargo field to given value.
+
+### HasCargo
+
+`func (o *CargoGroupRepositoryApiRequest) HasCargo() bool`
+
+HasCargo returns a boolean if a field has been set.
 
 ### GetGroup
 

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**Delete**](SecurityManagementRolesAPI.md#Delete) | **Delete** /v1/security/roles/{id} | Delete role
 [**GetRole**](SecurityManagementRolesAPI.md#GetRole) | **Get** /v1/security/roles/{id} | Get role
 [**GetRoles**](SecurityManagementRolesAPI.md#GetRoles) | **Get** /v1/security/roles | List roles
-[**Update1**](SecurityManagementRolesAPI.md#Update1) | **Put** /v1/security/roles/{id} | Update role
+[**Update**](SecurityManagementRolesAPI.md#Update) | **Put** /v1/security/roles/{id} | Update role
 
 
 
@@ -276,9 +276,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Update1
+## Update
 
-> Update1(ctx, id).Body(body).Execute()
+> Update(ctx, id).Body(body).Execute()
 
 Update role
 
@@ -300,9 +300,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.Update1(context.Background(), id).Body(body).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.Update(context.Background(), id).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.Update1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.Update``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -318,7 +318,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdate1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

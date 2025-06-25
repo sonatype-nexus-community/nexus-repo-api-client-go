@@ -22,11 +22,11 @@ func Test_sonatyperepo_StagingAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test StagingAPIService Delete3", func(t *testing.T) {
+	t.Run("Test StagingAPIService Delete2", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.StagingAPI.Delete3(context.Background()).Execute()
+		httpRes, err := apiClient.StagingAPI.Delete2(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

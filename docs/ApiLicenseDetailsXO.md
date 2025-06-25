@@ -13,6 +13,8 @@ Name | Type | Description | Notes
 **Fingerprint** | Pointer to **string** |  | [optional] 
 **LicenseType** | Pointer to **string** |  | [optional] 
 **LicensedUsers** | Pointer to **string** |  | [optional] 
+**MaxRepoComponents** | Pointer to **int64** |  | [optional] 
+**MaxRepoRequests** | Pointer to **int64** |  | [optional] 
 
 ## Methods
 
@@ -257,6 +259,56 @@ SetLicensedUsers sets LicensedUsers field to given value.
 `func (o *ApiLicenseDetailsXO) HasLicensedUsers() bool`
 
 HasLicensedUsers returns a boolean if a field has been set.
+
+### GetMaxRepoComponents
+
+`func (o *ApiLicenseDetailsXO) GetMaxRepoComponents() int64`
+
+GetMaxRepoComponents returns the MaxRepoComponents field if non-nil, zero value otherwise.
+
+### GetMaxRepoComponentsOk
+
+`func (o *ApiLicenseDetailsXO) GetMaxRepoComponentsOk() (*int64, bool)`
+
+GetMaxRepoComponentsOk returns a tuple with the MaxRepoComponents field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRepoComponents
+
+`func (o *ApiLicenseDetailsXO) SetMaxRepoComponents(v int64)`
+
+SetMaxRepoComponents sets MaxRepoComponents field to given value.
+
+### HasMaxRepoComponents
+
+`func (o *ApiLicenseDetailsXO) HasMaxRepoComponents() bool`
+
+HasMaxRepoComponents returns a boolean if a field has been set.
+
+### GetMaxRepoRequests
+
+`func (o *ApiLicenseDetailsXO) GetMaxRepoRequests() int64`
+
+GetMaxRepoRequests returns the MaxRepoRequests field if non-nil, zero value otherwise.
+
+### GetMaxRepoRequestsOk
+
+`func (o *ApiLicenseDetailsXO) GetMaxRepoRequestsOk() (*int64, bool)`
+
+GetMaxRepoRequestsOk returns a tuple with the MaxRepoRequests field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaxRepoRequests
+
+`func (o *ApiLicenseDetailsXO) SetMaxRepoRequests(v int64)`
+
+SetMaxRepoRequests sets MaxRepoRequests field to given value.
+
+### HasMaxRepoRequests
+
+`func (o *ApiLicenseDetailsXO) HasMaxRepoRequests() bool`
+
+HasMaxRepoRequests returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 [**GetConfiguration**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetConfiguration) | **Get** /v1/iq | Get Sonatype Repository Firewall configuration
 [**ManageAudit**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#ManageAudit) | **Put** /v1/iq/audit | Manage audit
 [**UpdateConfiguration**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#UpdateConfiguration) | **Put** /v1/iq | Update Sonatype Repository Firewall configuration
-[**VerifyConnection**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#VerifyConnection) | **Post** /v1/iq/verify-connection | Verify Sonatype Repository Firewall connection
+[**VerifyConnection2**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#VerifyConnection2) | **Post** /v1/iq/verify-connection | Verify Sonatype Repository Firewall connection
 
 
 
@@ -435,9 +435,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## VerifyConnection
+## VerifyConnection2
 
-> VerifyConnection(ctx).Execute()
+> VerifyConnection2(ctx).Execute()
 
 Verify Sonatype Repository Firewall connection
 
@@ -457,9 +457,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyConnection(context.Background()).Execute()
+	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyConnection2(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyConnection2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -471,7 +471,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiVerifyConnection2Request struct via the builder pattern
 
 
 ### Return type

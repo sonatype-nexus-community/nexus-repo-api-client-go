@@ -71,13 +71,13 @@ func Test_sonatyperepo_ScriptAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ScriptAPIService Read1", func(t *testing.T) {
+	t.Run("Test ScriptAPIService Read", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		resp, httpRes, err := apiClient.ScriptAPI.Read1(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.ScriptAPI.Read(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

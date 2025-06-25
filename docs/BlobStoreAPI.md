@@ -179,7 +179,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
+	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -365,7 +365,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
+	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket("Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1097,7 +1097,7 @@ import (
 
 func main() {
 	name := "name_example" // string | the name of the blobstore
-	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example", "us-central1")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
+	body := *sonatyperepo.NewGoogleCloudBlobstoreApiModel(*sonatyperepo.NewGoogleCloudBlobStoreApiBucketConfiguration(*sonatyperepo.NewGoogleCloudBlobStoreApiBucket("Name_example")), "gc_storage") // GoogleCloudBlobstoreApiModel |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1301,7 +1301,7 @@ import (
 
 func main() {
 	name := "name_example" // string | Name of the blob store to update
-	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket(int32(3), "Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
+	body := *sonatyperepo.NewS3BlobStoreApiModel(*sonatyperepo.NewS3BlobStoreApiBucketConfiguration(*sonatyperepo.NewS3BlobStoreApiBucket("Name_example", "DEFAULT")), "s3") // S3BlobStoreApiModel |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

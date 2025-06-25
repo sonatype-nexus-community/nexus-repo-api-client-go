@@ -22,11 +22,11 @@ func Test_sonatyperepo_CleanupPoliciesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test CleanupPoliciesAPIService Create2", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService Create1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.Create2(context.Background()).Execute()
+		httpRes, err := apiClient.CleanupPoliciesAPI.Create1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -70,13 +70,13 @@ func Test_sonatyperepo_CleanupPoliciesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test CleanupPoliciesAPIService Update2", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService Update1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var policyName string
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.Update2(context.Background(), policyName).Execute()
+		httpRes, err := apiClient.CleanupPoliciesAPI.Update1(context.Background(), policyName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

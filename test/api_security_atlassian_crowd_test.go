@@ -55,11 +55,11 @@ func Test_sonatyperepo_SecurityAtlassianCrowdAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityAtlassianCrowdAPIService VerifyConnection1", func(t *testing.T) {
+	t.Run("Test SecurityAtlassianCrowdAPIService VerifyConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

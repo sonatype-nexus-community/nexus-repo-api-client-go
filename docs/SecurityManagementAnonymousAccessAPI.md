@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Read**](SecurityManagementAnonymousAccessAPI.md#Read) | **Get** /v1/security/anonymous | Get Anonymous Access settings
-[**Update**](SecurityManagementAnonymousAccessAPI.md#Update) | **Put** /v1/security/anonymous | Update Anonymous Access settings
+[**Read1**](SecurityManagementAnonymousAccessAPI.md#Read1) | **Get** /v1/security/anonymous | Get Anonymous Access settings
+[**Update2**](SecurityManagementAnonymousAccessAPI.md#Update2) | **Put** /v1/security/anonymous | Update Anonymous Access settings
 
 
 
-## Read
+## Read1
 
-> AnonymousAccessSettingsXO Read(ctx).Execute()
+> AnonymousAccessSettingsXO Read1(ctx).Execute()
 
 Get Anonymous Access settings
 
@@ -31,13 +31,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Read(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Read1(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Read``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Read1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Read`: AnonymousAccessSettingsXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Read`: %v\n", resp)
+	// response from `Read1`: AnonymousAccessSettingsXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Read1`: %v\n", resp)
 }
 ```
 
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReadRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiRead1Request struct via the builder pattern
 
 
 ### Return type
@@ -68,9 +68,9 @@ Other parameters are passed through a pointer to a apiReadRequest struct via the
 [[Back to README]](../README.md)
 
 
-## Update
+## Update2
 
-> AnonymousAccessSettingsXO Update(ctx).Body(body).Execute()
+> AnonymousAccessSettingsXO Update2(ctx).Body(body).Execute()
 
 Update Anonymous Access settings
 
@@ -91,13 +91,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Update(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Update2(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Update``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Update2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update`: AnonymousAccessSettingsXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Update`: %v\n", resp)
+	// response from `Update2`: AnonymousAccessSettingsXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Update2`: %v\n", resp)
 }
 ```
 
@@ -107,7 +107,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdate2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

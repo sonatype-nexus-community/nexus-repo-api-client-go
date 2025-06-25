@@ -5,54 +5,56 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.74.0-05."
+    \ version 3.81.1-01."
   license:
     name: Apache 2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.74.0-05
+  version: 3.81.1-01
 servers:
 - url: /service/rest/
 security:
 - BasicAuth: []
 tags:
-- name: "Security Management: Anonymous Access"
-- name: Security management
-- name: "Security management: users"
-- name: "Security management: JWT"
-- name: "Security management: privileges"
-- name: "Security management: realms"
-- name: "Security management: roles"
-- name: Tasks
-- name: Blob store
-- name: Lifecycle
 - name: "System: Nodes"
-- name: Read-only
-- name: "Security management: secrets encryption"
-- name: "Security: certificates"
-- name: Email
 - name: Status
-- name: Support
 - name: assets
 - name: components
 - name: Repository Management
 - name: Content selectors
 - name: Routing rules
-- name: Formats
 - name: Search
+- name: "Security management: privileges"
+- name: Tasks
+- name: Security management
+- name: "Security management: users"
+- name: "Security management: roles"
 - name: Script
-- name: "Security management: LDAP"
-- name: Tags
-- name: Manage Sonatype Repository Firewall configuration
-- name: Malicious Risk On Disk
-- name: "Security management: user tokens"
-- name: Product licensing
-- name: "Security: Atlassian Crowd"
-- name: Staging
-- name: Azure blob store
-- name: "Security management: SAML"
 - name: Cleanup policies
+- name: Manage Sonatype Repository Firewall configuration
+- name: "Security: Atlassian Crowd"
+- name: "Security management: LDAP"
+- name: Product licensing
+- name: Monthly Metrics
+- name: "Security management: SAML"
+- name: Staging
+- name: Tags
+- name: "Security management: user tokens"
+- name: Blob store
+- name: Email
+- name: Formats
+- name: Read-only
+- name: Lifecycle
+- name: "Security Management: Anonymous Access"
+- name: Community Edition Eula
+- name: "Security management: JWT"
+- name: "Security management: realms"
+- name: "Security management: secrets encryption"
+- name: Support
+- name: Azure blob store
 - name: Manage Sonatype HTTP System Settings
+- name: Malicious Risk On Disk
+- name: "Security: certificates"
 paths:
   /beta/status/check/cluster:
     get:
@@ -206,7 +208,7 @@ paths:
       - assets
   /v1/azureblobstore/test-connection:
     post:
-      operationId: verifyConnection_2
+      operationId: verifyConnection_1
       requestBody:
         content:
           application/json:
@@ -788,7 +790,7 @@ paths:
       tags:
       - Cleanup policies
     post:
-      operationId: create_2
+      operationId: create_1
       requestBody:
         content:
           application/json:
@@ -849,7 +851,7 @@ paths:
       - Cleanup policies
   /v1/cleanup-policies/{policyName}:
     put:
-      operationId: update_2
+      operationId: update_1
       parameters:
       - explode: false
         in: path
@@ -1258,7 +1260,7 @@ paths:
       - Manage Sonatype Repository Firewall configuration
   /v1/iq/verify-connection:
     post:
-      operationId: verifyConnection
+      operationId: verifyConnection_2
       responses:
         "200":
           content: {}
@@ -1348,9 +1350,26 @@ paths:
       summary: Get Malicious Risk On Disk Count
       tags:
       - Malicious Risk On Disk
+  /v1/monthly-metrics:
+    get:
+      operationId: getLast12MonthsMetrics
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+              - componentCount: 0
+                metricDate: 2025-03-01T00:00:00Z
+                percentageChangeComponent: N/A
+                percentageChangeRequest: N/A
+                requestCount: 0
+          description: Successful response
+      summary: Get the last 12 months of metrics.
+      tags:
+      - Monthly Metrics
   /v1/read-only:
     get:
-      operationId: get
+      operationId: get_3
       responses:
         "200":
           content:
@@ -1376,7 +1395,7 @@ paths:
         "404":
           content: {}
           description: No change to read-only state
-      summary: Forcibly release read-only and allow changes to embedded OrientDB
+      summary: Forcibly release read-only and allow changes to the database
       tags:
       - Read-only
   /v1/read-only/freeze:
@@ -1394,7 +1413,7 @@ paths:
         "404":
           content: {}
           description: No change to read-only state
-      summary: Prevent changes to embedded OrientDB
+      summary: Prevent changes to the database
       tags:
       - Read-only
   /v1/read-only/release:
@@ -1412,7 +1431,7 @@ paths:
         "404":
           content: {}
           description: No change to read-only state
-      summary: Release read-only and allow changes to embedded OrientDB
+      summary: Release read-only and allow changes to the database
       tags:
       - Read-only
   /v1/repositories:
@@ -1637,7 +1656,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: '#/components/schemas/CargoGroupApiRepository'
           description: successful operation
       summary: Get repository
       tags:
@@ -1793,7 +1812,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: '#/components/schemas/CargoProxyApiRepository'
           description: successful operation
       summary: Get repository
       tags:
@@ -1910,6 +1929,162 @@ paths:
           content: {}
           description: Insufficient permissions
       summary: Update Cocoapods proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/composer/proxy:
+    post:
+      operationId: createComposerProxyRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComposerProxyRepositoryApiRequest'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create composer proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/composer/proxy/{repositoryName}:
+    get:
+      operationId: getComposerProxyRepository
+      parameters:
+      - explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleApiProxyRepository'
+          description: successful operation
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      operationId: updateComposerProxyRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ComposerProxyRepositoryApiRequest'
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Update composer proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/conan/group:
+    post:
+      operationId: createConanGroupRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConanGroupRepositoryApiRequest'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create Conan group repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/conan/group/{repositoryName}:
+    get:
+      operationId: getConanGroupRepository
+      parameters:
+      - explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleApiGroupRepository'
+          description: successful operation
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      operationId: updateConanGroupRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ConanGroupRepositoryApiRequest'
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Update Conan group repository
       tags:
       - Repository Management
       x-codegen-request-body-name: body
@@ -2807,6 +2982,84 @@ paths:
           content: {}
           description: Insufficient permissions
       summary: Update Helm proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/huggingface/proxy:
+    post:
+      operationId: createHuggingfaceProxyRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HuggingFaceProxyRepositoryApiRequest'
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create huggingface proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/huggingface/proxy/{repositoryName}:
+    get:
+      operationId: getHuggingfaceProxyRepository
+      parameters:
+      - explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/SimpleApiProxyRepository'
+          description: successful operation
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      operationId: updateHuggingfaceProxyRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/HuggingFaceProxyRepositoryApiRequest'
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Update huggingface proxy repository
       tags:
       - Repository Management
       x-codegen-request-body-name: body
@@ -5162,7 +5415,7 @@ paths:
       tags:
       - Script
     get:
-      operationId: read_1
+      operationId: read
       parameters:
       - explode: false
         in: path
@@ -5393,6 +5646,30 @@ paths:
         explode: true
         in: query
         name: sha512
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
         required: false
         schema:
           type: string
@@ -5920,6 +6197,30 @@ paths:
         schema:
           type: string
         style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Conan base version
         explode: true
         in: query
@@ -6432,6 +6733,30 @@ paths:
         schema:
           type: string
         style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Conan base version
         explode: true
         in: query
@@ -6844,7 +7169,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/anonymous:
     get:
-      operationId: read
+      operationId: read_1
       responses:
         "200":
           content:
@@ -6859,7 +7184,7 @@ paths:
       tags:
       - "Security Management: Anonymous Access"
     put:
-      operationId: update
+      operationId: update_2
       requestBody:
         content:
           application/json:
@@ -6936,7 +7261,7 @@ paths:
       - "Security: Atlassian Crowd"
   /v1/security/atlassian-crowd/verify-connection:
     post:
-      operationId: verifyConnection_1
+      operationId: verifyConnection
       requestBody:
         content:
           '*/*':
@@ -7249,7 +7574,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges:
     get:
-      operationId: getPrivileges
+      operationId: getPrivileges_1
       responses:
         "200":
           content:
@@ -7267,7 +7592,7 @@ paths:
       - "Security management: privileges"
   /v1/security/privileges/application:
     post:
-      operationId: createPrivilege
+      operationId: createPrivilege_4
       requestBody:
         content:
           application/json:
@@ -7288,7 +7613,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/application/{privilegeName}:
     put:
-      operationId: updatePrivilege
+      operationId: updatePrivilege_4
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -7321,7 +7646,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-admin:
     post:
-      operationId: createPrivilege_3
+      operationId: createPrivilege_2
       requestBody:
         content:
           application/json:
@@ -7342,7 +7667,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-admin/{privilegeName}:
     put:
-      operationId: updatePrivilege_4
+      operationId: updatePrivilege_2
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -7375,7 +7700,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-content-selector:
     post:
-      operationId: createPrivilege_2
+      operationId: createPrivilege_1
       requestBody:
         content:
           application/json:
@@ -7396,7 +7721,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-content-selector/{privilegeName}:
     put:
-      operationId: updatePrivilege_3
+      operationId: updatePrivilege_1
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -7429,7 +7754,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-view:
     post:
-      operationId: createPrivilege_4
+      operationId: createPrivilege
       requestBody:
         content:
           application/json:
@@ -7450,7 +7775,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/repository-view/{privilegeName}:
     put:
-      operationId: updatePrivilege_2
+      operationId: updatePrivilege
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -7537,7 +7862,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/wildcard:
     post:
-      operationId: createPrivilege_1
+      operationId: createPrivilege_3
       requestBody:
         content:
           application/json:
@@ -7558,7 +7883,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges/wildcard/{privilegeName}:
     put:
-      operationId: updatePrivilege_1
+      operationId: updatePrivilege_3
       parameters:
       - description: The name of the privilege to update.
         explode: false
@@ -7807,7 +8132,7 @@ paths:
       tags:
       - "Security management: roles"
     put:
-      operationId: update_1
+      operationId: update
       parameters:
       - description: The id of the role to update
         explode: false
@@ -8312,7 +8637,7 @@ paths:
       - "Security management: users"
   /v1/staging/delete:
     post:
-      operationId: delete_3
+      operationId: delete_2
       parameters:
       - description: Query by keyword
         explode: true
@@ -8398,6 +8723,30 @@ paths:
         explode: true
         in: query
         name: sha512
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
         required: false
         schema:
           type: string
@@ -8888,6 +9237,30 @@ paths:
         schema:
           type: string
         style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Conan base version
         explode: true
         in: query
@@ -9328,9 +9701,12 @@ paths:
               $ref: '#/components/schemas/SupportZipGeneratorRequest'
         required: false
       responses:
-        default:
+        "200":
           content: {}
           description: successful operation
+        "403":
+          content: {}
+          description: Insufficient permissions to generate support zip
       summary: Creates and downloads a support zip
       tags:
       - Support
@@ -9346,14 +9722,51 @@ paths:
         required: false
       responses:
         "200":
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/SupportZipXO'
+          content: {}
           description: successful operation
+        "403":
+          content: {}
+          description: Insufficient permissions to generate support zip
       summary: Creates a support zip and returns the path
       tags:
       - Support
+      x-codegen-request-body-name: body
+  /v1/system/eula:
+    get:
+      operationId: getCommunityEulaStatus
+      responses:
+        "200":
+          content:
+            application/json:
+              example:
+                accepted: false
+                disclaimer: "Use of Sonatype Nexus Repository - Community Edition\
+                  \ is governed by the End User License Agreement at https://links.sonatype.com/products/nxrm/ce-eula.\
+                  \ By returning the value from ‘accepted:false’ to ‘accepted:true’\
+                  , you acknowledge that you have read and agree to the End User License\
+                  \ Agreement at https://links.sonatype.com/products/nxrm/ce-eula."
+          description: Successful response
+      summary: Get the current Community Eula status.
+      tags:
+      - Community Edition Eula
+    post:
+      operationId: setEulaAcceptedCE
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EulaStatus'
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: EULA status set successfully
+        "500":
+          content: {}
+          description: Incorrect EULA Status
+      summary: Set the Community Eula status.
+      tags:
+      - Community Edition Eula
       x-codegen-request-body-name: body
   /v1/system/license:
     delete:
@@ -9447,7 +9860,7 @@ paths:
       tags:
       - Tags
     post:
-      operationId: create_1
+      operationId: create_2
       requestBody:
         content:
           application/json:
@@ -9480,6 +9893,15 @@ paths:
         schema:
           type: string
         style: simple
+      - description: The query waits until the indexing is complete
+        explode: true
+        in: query
+        name: wait
+        required: false
+        schema:
+          default: true
+          type: boolean
+        style: form
       - description: Query by keyword
         explode: true
         in: query
@@ -9564,6 +9986,30 @@ paths:
         explode: true
         in: query
         name: sha512
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
         required: false
         schema:
           type: string
@@ -10054,6 +10500,30 @@ paths:
         schema:
           type: string
         style: form
+      - description: Vendor
+        explode: true
+        in: query
+        name: composer.vendor
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Package
+        explode: true
+        in: query
+        name: composer.package
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Version
+        explode: true
+        in: query
+        name: composer.version
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Conan base version
         explode: true
         in: query
@@ -10434,7 +10904,7 @@ paths:
       - Tags
   /v1/tags/{name}:
     delete:
-      operationId: delete_2
+      operationId: delete_3
       parameters:
       - description: Name of the tag to delete
         explode: false
@@ -10455,7 +10925,7 @@ paths:
       tags:
       - Tags
     get:
-      operationId: get_3
+      operationId: get
       parameters:
       - description: Name of the tag to retrieve
         explode: false
@@ -10909,9 +11379,11 @@ components:
         contactCompany: contactCompany
         features: features
         licenseType: licenseType
+        maxRepoRequests: 6
         contactEmail: contactEmail
         contactName: contactName
         fingerprint: fingerprint
+        maxRepoComponents: 0
         effectiveDate: 2000-01-23T04:56:07.000+00:00
         expirationDate: 2000-01-23T04:56:07.000+00:00
         licensedUsers: licensedUsers
@@ -10936,6 +11408,12 @@ components:
           type: string
         licensedUsers:
           type: string
+        maxRepoComponents:
+          format: int64
+          type: integer
+        maxRepoRequests:
+          format: int64
+          type: integer
       type: object
     ApiPrivilege:
       example:
@@ -11382,6 +11860,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11456,8 +11935,6 @@ components:
           description: Whether this repository is flat
           example: false
           type: boolean
-      required:
-      - flat
       type: object
     AptProxyRepositoryApiRequest:
       example:
@@ -11476,6 +11953,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11561,7 +12039,7 @@ components:
         fileSize: 0
         uploader: uploader
         checksum:
-          key: "{}"
+          key: checksum
         id: id
         lastModified: 2000-01-23T04:56:07.000+00:00
         lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -11575,8 +12053,7 @@ components:
           type: string
         checksum:
           additionalProperties:
-            properties: {}
-            type: object
+            type: string
           type: object
         contentType:
           type: string
@@ -11755,6 +12232,52 @@ components:
         message:
           type: string
       type: object
+    CargoAttributes:
+      example:
+        requireAuthentication: false
+      properties:
+        requireAuthentication:
+          description: Indicates if this repository requires authentication overriding
+            anonymous access.
+          example: false
+          type: boolean
+      type: object
+    CargoGroupApiRepository:
+      example:
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        cargo:
+          requireAuthentication: false
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
+          writableMember: writableMember
+      properties:
+        cargo:
+          $ref: '#/components/schemas/CargoAttributes'
+        group:
+          $ref: '#/components/schemas/GroupDeployAttributes'
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+      required:
+      - group
+      - online
+      - storage
+      type: object
     CargoGroupRepositoryApiRequest:
       example:
         name: internal
@@ -11763,11 +12286,15 @@ components:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        cargo:
+          requireAuthentication: false
         group:
           memberNames:
           - memberNames
           - memberNames
       properties:
+        cargo:
+          $ref: '#/components/schemas/CargoAttributes'
         group:
           $ref: '#/components/schemas/GroupAttributes'
         name:
@@ -11822,6 +12349,83 @@ components:
       - online
       - storage
       type: object
+    CargoProxyApiRepository:
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        routingRuleName: routingRuleName
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        cargo:
+          requireAuthentication: false
+      properties:
+        cargo:
+          $ref: '#/components/schemas/CargoAttributes'
+        cleanup:
+          $ref: '#/components/schemas/CleanupPolicyAttributes'
+        httpClient:
+          $ref: '#/components/schemas/HttpClientAttributes'
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: '#/components/schemas/NegativeCacheAttributes'
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        proxy:
+          $ref: '#/components/schemas/ProxyAttributes'
+        replication:
+          $ref: '#/components/schemas/ReplicationAttributes'
+        routingRuleName:
+          description: The name of the routing rule assigned to this repository
+          type: string
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+      required:
+      - httpClient
+      - negativeCache
+      - online
+      - proxy
+      - storage
+      type: object
     CargoProxyRepositoryApiRequest:
       example:
         replication:
@@ -11839,6 +12443,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -11862,7 +12467,11 @@ components:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        cargo:
+          requireAuthentication: false
       properties:
+        cargo:
+          $ref: '#/components/schemas/CargoAttributes'
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
         httpClient:
@@ -11977,6 +12586,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12053,7 +12663,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -12068,7 +12678,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -12097,6 +12707,112 @@ components:
           type: string
         version:
           type: string
+      type: object
+    ComposerProxyRepositoryApiRequest:
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        routingRule: routingRule
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+      properties:
+        cleanup:
+          $ref: '#/components/schemas/CleanupPolicyAttributes'
+        httpClient:
+          $ref: '#/components/schemas/HttpClientAttributes'
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: '#/components/schemas/NegativeCacheAttributes'
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        proxy:
+          $ref: '#/components/schemas/ProxyAttributes'
+        replication:
+          $ref: '#/components/schemas/ReplicationAttributes'
+        routingRule:
+          type: string
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+      required:
+      - httpClient
+      - name
+      - negativeCache
+      - online
+      - proxy
+      - storage
+      type: object
+    ConanGroupRepositoryApiRequest:
+      example:
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
+          writableMember: writableMember
+      properties:
+        group:
+          $ref: '#/components/schemas/GroupDeployAttributes'
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+      required:
+      - group
+      - name
+      - online
+      - storage
       type: object
     ConanHostedRepositoryApiRequest:
       example:
@@ -12162,6 +12878,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12238,6 +12955,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12834,6 +13552,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -12922,8 +13641,6 @@ components:
             layers
           type: boolean
         foreignLayerUrlWhitelist:
-          description: Regular expressions used to identify URLs that are allowed
-            for foreign layer requests
           items:
             type: string
           type: array
@@ -12956,6 +13673,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13030,6 +13748,16 @@ components:
       - proxy
       - storage
       type: object
+    EulaStatus:
+      example:
+        accepted: true
+        disclaimer: disclaimer
+      properties:
+        accepted:
+          type: boolean
+        disclaimer:
+          type: string
+      type: object
     FileBlobStoreApiCreateRequest:
       example:
         path: path
@@ -13041,9 +13769,7 @@ components:
         name:
           type: string
         path:
-          description: The path to the blobstore contents. This can be an absolute
-            path to anywhere on the system Nexus Repository Manager has access to
-            or it can be a path relative to the sonatype-work directory.
+          description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
           $ref: '#/components/schemas/BlobStoreApiSoftQuota'
@@ -13056,9 +13782,7 @@ components:
           type: spaceRemainingQuota
       properties:
         path:
-          description: The path to the blobstore contents. This can be an absolute
-            path to anywhere on the system Nexus Repository Manager has access to
-            or it can be a path relative to the sonatype-work directory.
+          description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
           $ref: '#/components/schemas/BlobStoreApiSoftQuota'
@@ -13071,9 +13795,7 @@ components:
           type: spaceRemainingQuota
       properties:
         path:
-          description: The path to the blobstore contents. This can be an absolute
-            path to anywhere on the system Nexus Repository Manager has access to
-            or it can be a path relative to the sonatype-work directory.
+          description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
           $ref: '#/components/schemas/BlobStoreApiSoftQuota'
@@ -13230,6 +13952,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13306,12 +14029,11 @@ components:
           type: string
         region:
           description: The GCP region to create a new GC Storage bucket in or an existing
-            GC Storage bucket's region
+            GC Storage bucket's region. Should be the same as Nexus deployment region.
           example: us-central1
           type: string
       required:
       - name
-      - region
       type: object
     GoogleCloudBlobStoreApiBucketAuthentication:
       example:
@@ -13340,13 +14062,33 @@ components:
         bucketSecurity:
           authenticationMethod: applicationDefault
           accountKey: accountKey
+        encryption:
+          encryptionType: default
+          encryptionKey: encryptionKey
       properties:
         bucket:
           $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucket'
         bucketSecurity:
           $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucketAuthentication'
+        encryption:
+          $ref: '#/components/schemas/GoogleCloudBlobStoreApiEncryption'
       required:
       - bucket
+      type: object
+    GoogleCloudBlobStoreApiEncryption:
+      example:
+        encryptionType: default
+        encryptionKey: encryptionKey
+      properties:
+        encryptionKey:
+          description: CryptoKey ID for KMS encryption.
+          type: string
+        encryptionType:
+          description: The type of GCP server side encryption to use.
+          enum:
+          - default
+          - kmsManagedEncryption
+          type: string
       type: object
     GoogleCloudBlobstoreApiModel:
       example:
@@ -13364,6 +14106,9 @@ components:
           bucketSecurity:
             authenticationMethod: applicationDefault
             accountKey: accountKey
+          encryption:
+            encryptionType: default
+            encryptionKey: encryptionKey
       properties:
         bucketConfiguration:
           $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucketConfiguration'
@@ -13552,6 +14297,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -13648,6 +14394,7 @@ components:
           timeout: 60
         authentication:
           password: password
+          bearerToken: bearerToken
           ntlmDomain: ntlmDomain
           type: username
           ntlmHost: ntlmHost
@@ -13684,6 +14431,7 @@ components:
           timeout: 60
         authentication:
           password: password
+          bearerToken: bearerToken
           ntlmDomain: ntlmDomain
           type: username
           ntlmHost: ntlmHost
@@ -13752,12 +14500,15 @@ components:
     HttpClientConnectionAuthenticationAttributes:
       example:
         password: password
+        bearerToken: bearerToken
         ntlmDomain: ntlmDomain
         type: username
         ntlmHost: ntlmHost
         preemptive: false
         username: username
       properties:
+        bearerToken:
+          type: string
         ntlmDomain:
           type: string
         ntlmHost:
@@ -13774,6 +14525,7 @@ components:
           enum:
           - username
           - ntlm
+          - bearerToken
           type: string
         username:
           type: string
@@ -13781,12 +14533,15 @@ components:
     HttpClientConnectionAuthenticationAttributesWithPreemptive:
       example:
         password: password
+        bearerToken: bearerToken
         ntlmDomain: ntlmDomain
         type: username
         ntlmHost: ntlmHost
         preemptive: false
         username: username
       properties:
+        bearerToken:
+          type: string
         ntlmDomain:
           type: string
         ntlmHost:
@@ -13803,6 +14558,7 @@ components:
           enum:
           - username
           - ntlm
+          - bearerToken
           type: string
         username:
           type: string
@@ -13866,6 +14622,79 @@ components:
       - retries
       - timeout
       - userAgent
+      type: object
+    HuggingFaceProxyRepositoryApiRequest:
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        routingRule: routingRule
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+      properties:
+        cleanup:
+          $ref: '#/components/schemas/CleanupPolicyAttributes'
+        httpClient:
+          $ref: '#/components/schemas/HttpClientAttributes'
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: '#/components/schemas/NegativeCacheAttributes'
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        proxy:
+          $ref: '#/components/schemas/ProxyAttributes'
+        replication:
+          $ref: '#/components/schemas/ReplicationAttributes'
+        routingRule:
+          type: string
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+      required:
+      - httpClient
+      - name
+      - negativeCache
+      - online
+      - proxy
+      - storage
       type: object
     InputStream:
       type: object
@@ -13972,6 +14801,7 @@ components:
           - INLINE
           - ATTACHMENT
           example: ATTACHMENT
+          pattern: INLINE|ATTACHMENT
           type: string
         layoutPolicy:
           description: Validate that all paths are maven artifact or metadata paths
@@ -13979,6 +14809,7 @@ components:
           - STRICT
           - PERMISSIVE
           example: STRICT
+          pattern: STRICT|PERMISSIVE
           type: string
         versionPolicy:
           description: What type of artifacts does this repository store?
@@ -13987,6 +14818,7 @@ components:
           - SNAPSHOT
           - MIXED
           example: MIXED
+          pattern: RELEASE|SNAPSHOT|MIXED
           type: string
       type: object
     MavenGroupRepositoryApiRequest:
@@ -14132,6 +14964,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14222,6 +15055,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14407,6 +15241,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14483,6 +15318,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14645,6 +15481,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14723,6 +15560,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14801,6 +15639,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -14878,7 +15717,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -14893,7 +15732,7 @@ components:
           fileSize: 0
           uploader: uploader
           checksum:
-            key: "{}"
+            key: checksum
           id: id
           lastModified: 2000-01-23T04:56:07.000+00:00
           lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -14921,7 +15760,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -14936,7 +15775,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -14958,7 +15797,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -14973,7 +15812,7 @@ components:
             fileSize: 0
             uploader: uploader
             checksum:
-              key: "{}"
+              key: checksum
             id: id
             lastModified: 2000-01-23T04:56:07.000+00:00
             lastDownloaded: 2000-01-23T04:56:07.000+00:00
@@ -15194,6 +16033,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -15337,6 +16177,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -15496,6 +16337,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -16008,6 +16850,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -16073,55 +16916,39 @@ components:
         endpoint:
           description: A custom endpoint URL for third party object stores using the
             S3 API.
-          readOnly: true
           type: string
         forcePathStyle:
           description: Setting this flag will result in path-style access being used
             for all requests.
-          readOnly: true
           type: boolean
         maxConnectionPoolSize:
           description: Setting this value will override the default connection pool
             size of Nexus of the s3 client for this blobstore.
           format: int32
-          readOnly: true
           type: integer
         signerType:
           description: An API signature version which may be required for third party
             object stores using the S3 API.
-          readOnly: true
           type: string
       type: object
     S3BlobStoreApiBucket:
       example:
         prefix: prefix
         name: name
-        expiration: 3
         region: DEFAULT
       properties:
-        expiration:
-          description: How many days until deleted blobs are finally removed from
-            the S3 bucket (-1 to disable)
-          example: 3
-          format: int32
-          readOnly: true
-          type: integer
         name:
           description: The name of the S3 bucket
-          readOnly: true
           type: string
         prefix:
           description: The S3 blob store (i.e S3 object) key prefix
-          readOnly: true
           type: string
         region:
           description: The AWS region to create a new S3 bucket in or an existing
             S3 bucket's region
           example: DEFAULT
-          readOnly: true
           type: string
       required:
-      - expiration
       - name
       - region
       type: object
@@ -16130,7 +16957,6 @@ components:
         bucket:
           prefix: prefix
           name: name
-          expiration: 3
           region: DEFAULT
         bucketSecurity:
           accessKeyId: accessKeyId
@@ -16150,6 +16976,7 @@ components:
           maxConnectionPoolSize: 0
           signerType: signerType
           forcePathStyle: true
+        preSignedUrlEnabled: true
         activeRegion: activeRegion
       properties:
         activeRegion:
@@ -16171,6 +16998,10 @@ components:
           items:
             $ref: '#/components/schemas/S3BlobStoreApiFailoverBucket'
           type: array
+        preSignedUrlEnabled:
+          description: Whether pre assigned URL is enabled or not.
+          example: true
+          type: boolean
       required:
       - bucket
       type: object
@@ -16183,11 +17014,9 @@ components:
       properties:
         accessKeyId:
           description: An IAM access key ID for granting access to the S3 bucket
-          readOnly: true
           type: string
         role:
           description: An IAM role to assume in order to access the S3 bucket
-          readOnly: true
           type: string
         secretAccessKey:
           description: The secret access key associated with the specified IAM access
@@ -16196,7 +17025,6 @@ components:
         sessionToken:
           description: An AWS STS session token associated with temporary security
             credentials which grant access to the S3 bucket
-          readOnly: true
           type: string
       type: object
     S3BlobStoreApiEncryption:
@@ -16206,14 +17034,12 @@ components:
       properties:
         encryptionKey:
           description: The encryption key.
-          readOnly: true
           type: string
         encryptionType:
           description: The type of S3 server side encryption to use.
           enum:
           - s3ManagedEncryption
           - kmsManagedEncryption
-          readOnly: true
           type: string
       type: object
     S3BlobStoreApiFailoverBucket:
@@ -16244,7 +17070,6 @@ components:
           bucket:
             prefix: prefix
             name: name
-            expiration: 3
             region: DEFAULT
           bucketSecurity:
             accessKeyId: accessKeyId
@@ -16264,6 +17089,7 @@ components:
             maxConnectionPoolSize: 0
             signerType: signerType
             forcePathStyle: true
+          preSignedUrlEnabled: true
           activeRegion: activeRegion
       properties:
         bucketConfiguration:
@@ -16271,7 +17097,6 @@ components:
         name:
           description: The name of the S3 blob store.
           example: s3
-          readOnly: true
           type: string
         softQuota:
           $ref: '#/components/schemas/BlobStoreApiSoftQuota'
@@ -16479,6 +17304,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost
@@ -16594,9 +17420,13 @@ components:
         hostname: hostname
         security: true
         jmx: true
+        archivedLog: 0
         systemInformation: true
         metrics: true
       properties:
+        archivedLog:
+          format: int32
+          type: integer
         auditLog:
           type: boolean
         configuration:
@@ -16625,18 +17455,14 @@ components:
           type: boolean
       type: object
     SupportZipXO:
-      example:
-        file: file
-        size: size
-        name: name
-        truncated: true
       properties:
         file:
           type: string
         name:
           type: string
         size:
-          type: string
+          format: int64
+          type: integer
         truncated:
           type: boolean
       type: object
@@ -17238,6 +18064,7 @@ components:
             timeout: 60
           authentication:
             password: password
+            bearerToken: bearerToken
             ntlmDomain: ntlmDomain
             type: username
             ntlmHost: ntlmHost

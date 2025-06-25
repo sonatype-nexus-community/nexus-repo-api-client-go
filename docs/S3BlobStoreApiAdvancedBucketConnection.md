@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Endpoint** | Pointer to **string** | A custom endpoint URL for third party object stores using the S3 API. | [optional] [readonly] 
-**ForcePathStyle** | Pointer to **bool** | Setting this flag will result in path-style access being used for all requests. | [optional] [readonly] 
-**MaxConnectionPoolSize** | Pointer to **int32** | Setting this value will override the default connection pool size of Nexus of the s3 client for this blobstore. | [optional] [readonly] 
-**SignerType** | Pointer to **string** | An API signature version which may be required for third party object stores using the S3 API. | [optional] [readonly] 
+**Endpoint** | Pointer to **string** | A custom endpoint URL for third party object stores using the S3 API. | [optional] 
+**ForcePathStyle** | Pointer to **bool** | Setting this flag will result in path-style access being used for all requests. | [optional] 
+**MaxConnectionPoolSize** | Pointer to **int32** | Setting this value will override the default connection pool size of Nexus of the s3 client for this blobstore. | [optional] 
+**SignerType** | Pointer to **string** | An API signature version which may be required for third party object stores using the S3 API. | [optional] 
 
 ## Methods
 

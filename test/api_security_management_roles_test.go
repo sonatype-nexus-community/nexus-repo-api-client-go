@@ -73,13 +73,13 @@ func Test_sonatyperepo_SecurityManagementRolesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementRolesAPIService Update1", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService Update", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.SecurityManagementRolesAPI.Update1(context.Background(), id).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.Update(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

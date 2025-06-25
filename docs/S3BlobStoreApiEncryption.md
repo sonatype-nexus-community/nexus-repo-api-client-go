@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EncryptionKey** | Pointer to **string** | The encryption key. | [optional] [readonly] 
-**EncryptionType** | Pointer to **string** | The type of S3 server side encryption to use. | [optional] [readonly] 
+**EncryptionKey** | Pointer to **string** | The encryption key. | [optional] 
+**EncryptionType** | Pointer to **string** | The type of S3 server side encryption to use. | [optional] 
 
 ## Methods
 

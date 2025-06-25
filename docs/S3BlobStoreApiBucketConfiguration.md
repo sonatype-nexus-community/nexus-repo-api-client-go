@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **BucketSecurity** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 **Encryption** | Pointer to [**S3BlobStoreApiEncryption**](S3BlobStoreApiEncryption.md) |  | [optional] 
 **FailoverBuckets** | Pointer to [**[]S3BlobStoreApiFailoverBucket**](S3BlobStoreApiFailoverBucket.md) | A list of secondary buckets which have bidirectional replication enabled and should be used when Nexus is running in the region | [optional] 
+**PreSignedUrlEnabled** | Pointer to **bool** | Whether pre assigned URL is enabled or not. | [optional] 
 
 ## Methods
 
@@ -174,6 +175,31 @@ SetFailoverBuckets sets FailoverBuckets field to given value.
 `func (o *S3BlobStoreApiBucketConfiguration) HasFailoverBuckets() bool`
 
 HasFailoverBuckets returns a boolean if a field has been set.
+
+### GetPreSignedUrlEnabled
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetPreSignedUrlEnabled() bool`
+
+GetPreSignedUrlEnabled returns the PreSignedUrlEnabled field if non-nil, zero value otherwise.
+
+### GetPreSignedUrlEnabledOk
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetPreSignedUrlEnabledOk() (*bool, bool)`
+
+GetPreSignedUrlEnabledOk returns a tuple with the PreSignedUrlEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreSignedUrlEnabled
+
+`func (o *S3BlobStoreApiBucketConfiguration) SetPreSignedUrlEnabled(v bool)`
+
+SetPreSignedUrlEnabled sets PreSignedUrlEnabled field to given value.
+
+### HasPreSignedUrlEnabled
+
+`func (o *S3BlobStoreApiBucketConfiguration) HasPreSignedUrlEnabled() bool`
+
+HasPreSignedUrlEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

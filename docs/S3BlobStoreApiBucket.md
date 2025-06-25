@@ -4,16 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Expiration** | **int32** | How many days until deleted blobs are finally removed from the S3 bucket (-1 to disable) | [readonly] 
-**Name** | **string** | The name of the S3 bucket | [readonly] 
-**Prefix** | Pointer to **string** | The S3 blob store (i.e S3 object) key prefix | [optional] [readonly] 
-**Region** | **string** | The AWS region to create a new S3 bucket in or an existing S3 bucket&#39;s region | [readonly] 
+**Name** | **string** | The name of the S3 bucket | 
+**Prefix** | Pointer to **string** | The S3 blob store (i.e S3 object) key prefix | [optional] 
+**Region** | **string** | The AWS region to create a new S3 bucket in or an existing S3 bucket&#39;s region | 
 
 ## Methods
 
 ### NewS3BlobStoreApiBucket
 
-`func NewS3BlobStoreApiBucket(expiration int32, name string, region string, ) *S3BlobStoreApiBucket`
+`func NewS3BlobStoreApiBucket(name string, region string, ) *S3BlobStoreApiBucket`
 
 NewS3BlobStoreApiBucket instantiates a new S3BlobStoreApiBucket object
 This constructor will assign default values to properties that have it defined,
@@ -27,26 +26,6 @@ will change when the set of required properties is changed
 NewS3BlobStoreApiBucketWithDefaults instantiates a new S3BlobStoreApiBucket object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetExpiration
-
-`func (o *S3BlobStoreApiBucket) GetExpiration() int32`
-
-GetExpiration returns the Expiration field if non-nil, zero value otherwise.
-
-### GetExpirationOk
-
-`func (o *S3BlobStoreApiBucket) GetExpirationOk() (*int32, bool)`
-
-GetExpirationOk returns a tuple with the Expiration field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetExpiration
-
-`func (o *S3BlobStoreApiBucket) SetExpiration(v int32)`
-
-SetExpiration sets Expiration field to given value.
-
 
 ### GetName
 
