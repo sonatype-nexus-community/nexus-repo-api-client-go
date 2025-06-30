@@ -94,7 +94,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "GroupType_example", "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // CreateLdapServerXo |  (optional)
+	body := *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // CreateLdapServerXo |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -350,7 +350,7 @@ import (
 
 func main() {
 	name := "name_example" // string | Name of the LDAP server to update
-	body := *sonatyperepo.NewUpdateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "GroupType_example", "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // UpdateLdapServerXo | Updated values of LDAP server (optional)
+	body := *sonatyperepo.NewUpdateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // UpdateLdapServerXo | Updated values of LDAP server (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

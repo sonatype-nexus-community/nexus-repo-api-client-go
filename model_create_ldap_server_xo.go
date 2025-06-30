@@ -46,7 +46,7 @@ type CreateLdapServerXo struct {
 	// Are groups located in structures below the group base DN
 	GroupSubtree *bool `json:"groupSubtree,omitempty"`
 	// Defines a type of groups used: static (a group contains a list of users) or dynamic (a user contains a list of groups). Required if ldapGroupsAsRoles is true.
-	GroupType string `json:"groupType"`
+	GroupType *string `json:"groupType,omitempty"`
 	// LDAP server connection hostname
 	Host string `json:"host"`
 	// Denotes whether LDAP assigned roles are used as Nexus Repository Manager roles
@@ -89,13 +89,12 @@ type _CreateLdapServerXo CreateLdapServerXo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCreateLdapServerXo(authPassword string, authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, groupType string, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string) *CreateLdapServerXo {
+func NewCreateLdapServerXo(authPassword string, authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string) *CreateLdapServerXo {
 	this := CreateLdapServerXo{}
 	this.AuthPassword = authPassword
 	this.AuthScheme = authScheme
 	this.ConnectionRetryDelaySeconds = connectionRetryDelaySeconds
 	this.ConnectionTimeoutSeconds = connectionTimeoutSeconds
-	this.GroupType = groupType
 	this.Host = host
 	this.MaxIncidentsCount = maxIncidentsCount
 	this.Name = name
@@ -465,28 +464,36 @@ func (o *CreateLdapServerXo) SetGroupSubtree(v bool) {
 	o.GroupSubtree = &v
 }
 
-// GetGroupType returns the GroupType field value
+// GetGroupType returns the GroupType field value if set, zero value otherwise.
 func (o *CreateLdapServerXo) GetGroupType() string {
-	if o == nil {
+	if o == nil || IsNil(o.GroupType) {
 		var ret string
 		return ret
 	}
-
-	return o.GroupType
+	return *o.GroupType
 }
 
-// GetGroupTypeOk returns a tuple with the GroupType field value
+// GetGroupTypeOk returns a tuple with the GroupType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CreateLdapServerXo) GetGroupTypeOk() (*string, bool) {
-	if o == nil {
+	if o == nil || IsNil(o.GroupType) {
 		return nil, false
 	}
-	return &o.GroupType, true
+	return o.GroupType, true
 }
 
-// SetGroupType sets field value
+// HasGroupType returns a boolean if a field has been set.
+func (o *CreateLdapServerXo) HasGroupType() bool {
+	if o != nil && !IsNil(o.GroupType) {
+		return true
+	}
+
+	return false
+}
+
+// SetGroupType gets a reference to the given string and assigns it to the GroupType field.
 func (o *CreateLdapServerXo) SetGroupType(v string) {
-	o.GroupType = v
+	o.GroupType = &v
 }
 
 // GetHost returns the Host field value
@@ -1023,7 +1030,9 @@ func (o CreateLdapServerXo) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.GroupSubtree) {
 		toSerialize["groupSubtree"] = o.GroupSubtree
 	}
-	toSerialize["groupType"] = o.GroupType
+	if !IsNil(o.GroupType) {
+		toSerialize["groupType"] = o.GroupType
+	}
 	toSerialize["host"] = o.Host
 	if !IsNil(o.LdapGroupsAsRoles) {
 		toSerialize["ldapGroupsAsRoles"] = o.LdapGroupsAsRoles
@@ -1075,7 +1084,6 @@ func (o *CreateLdapServerXo) UnmarshalJSON(data []byte) (err error) {
 		"authScheme",
 		"connectionRetryDelaySeconds",
 		"connectionTimeoutSeconds",
-		"groupType",
 		"host",
 		"maxIncidentsCount",
 		"name",

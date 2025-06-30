@@ -13263,7 +13263,6 @@ components:
       - authScheme
       - connectionRetryDelaySeconds
       - connectionTimeoutSeconds
-      - groupType
       - host
       - maxIncidentsCount
       - name
@@ -16607,10 +16606,10 @@ components:
           description: Are users located in structures below the user base DN?
           type: boolean
       required:
+      - authPassword
       - authScheme
       - connectionRetryDelaySeconds
       - connectionTimeoutSeconds
-      - groupType
       - host
       - maxIncidentsCount
       - name
@@ -17855,7 +17854,6 @@ components:
       - authScheme
       - connectionRetryDelaySeconds
       - connectionTimeoutSeconds
-      - groupType
       - host
       - maxIncidentsCount
       - name

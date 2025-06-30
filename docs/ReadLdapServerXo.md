@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **GroupMemberFormat** | Pointer to **string** | The format of user ID stored in the group member attribute. Required if groupType is static | [optional] 
 **GroupObjectClass** | Pointer to **string** | LDAP class for group objects. Required if groupType is static | [optional] 
 **GroupSubtree** | Pointer to **bool** | Are groups located in structures below the group base DN | [optional] 
-**GroupType** | **string** | Defines a type of groups used: static (a group contains a list of users) or dynamic (a user contains a list of groups). Required if ldapGroupsAsRoles is true. | 
+**GroupType** | Pointer to **string** | Defines a type of groups used: static (a group contains a list of users) or dynamic (a user contains a list of groups). Required if ldapGroupsAsRoles is true. | [optional] 
 **Host** | **string** | LDAP server connection hostname | 
 **Id** | Pointer to **string** | LDAP server ID | [optional] 
 **LdapGroupsAsRoles** | Pointer to **bool** | Denotes whether LDAP assigned roles are used as Nexus Repository Manager roles | [optional] 
@@ -40,7 +40,7 @@ Name | Type | Description | Notes
 
 ### NewReadLdapServerXo
 
-`func NewReadLdapServerXo(authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, groupType string, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, ) *ReadLdapServerXo`
+`func NewReadLdapServerXo(authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, ) *ReadLdapServerXo`
 
 NewReadLdapServerXo instantiates a new ReadLdapServerXo object
 This constructor will assign default values to properties that have it defined,
@@ -334,6 +334,11 @@ and a boolean to check if the value has been set.
 
 SetGroupType sets GroupType field to given value.
 
+### HasGroupType
+
+`func (o *ReadLdapServerXo) HasGroupType() bool`
+
+HasGroupType returns a boolean if a field has been set.
 
 ### GetHost
 
