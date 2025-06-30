@@ -205,7 +205,7 @@ Name | Type | Description  | Notes
 
 ## GetLdapServer
 
-> GetLdapServer(ctx, name).Execute()
+> ReadLdapServerXo GetLdapServer(ctx, name).Execute()
 
 Get LDAP server
 
@@ -226,11 +226,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetLdapServer``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetLdapServer`: ReadLdapServerXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetLdapServer`: %v\n", resp)
 }
 ```
 
@@ -253,7 +255,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ReadLdapServerXo**](ReadLdapServerXo.md)
 
 ### Authorization
 
@@ -262,7 +264,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -271,7 +273,7 @@ Name | Type | Description  | Notes
 
 ## GetLdapServers
 
-> GetLdapServers(ctx).Execute()
+> []ReadLdapServerXo GetLdapServers(ctx).Execute()
 
 List LDAP servers
 
@@ -291,11 +293,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetLdapServers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetLdapServers`: []ReadLdapServerXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetLdapServers`: %v\n", resp)
 }
 ```
 
@@ -310,7 +314,7 @@ Other parameters are passed through a pointer to a apiGetLdapServersRequest stru
 
 ### Return type
 
- (empty response body)
+[**[]ReadLdapServerXo**](ReadLdapServerXo.md)
 
 ### Authorization
 
@@ -319,7 +323,7 @@ Other parameters are passed through a pointer to a apiGetLdapServersRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

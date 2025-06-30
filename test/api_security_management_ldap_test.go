@@ -63,9 +63,10 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 		var name string
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -74,9 +75,10 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

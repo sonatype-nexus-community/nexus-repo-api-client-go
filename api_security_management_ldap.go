@@ -308,7 +308,7 @@ type ApiGetLdapServerRequest struct {
 	name string
 }
 
-func (r ApiGetLdapServerRequest) Execute() (*http.Response, error) {
+func (r ApiGetLdapServerRequest) Execute() (*ReadLdapServerXo, *http.Response, error) {
 	return r.ApiService.GetLdapServerExecute(r)
 }
 
@@ -328,16 +328,18 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServer(ctx context.Context, na
 }
 
 // Execute executes the request
-func (a *SecurityManagementLDAPAPIService) GetLdapServerExecute(r ApiGetLdapServerRequest) (*http.Response, error) {
+//  @return ReadLdapServerXo
+func (a *SecurityManagementLDAPAPIService) GetLdapServerExecute(r ApiGetLdapServerRequest) (*ReadLdapServerXo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *ReadLdapServerXo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementLDAPAPIService.GetLdapServer")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/security/ldap/{name}"
@@ -357,7 +359,7 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServerExecute(r ApiGetLdapServ
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -366,19 +368,19 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServerExecute(r ApiGetLdapServ
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -386,10 +388,19 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServerExecute(r ApiGetLdapServ
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiGetLdapServersRequest struct {
@@ -397,7 +408,7 @@ type ApiGetLdapServersRequest struct {
 	ApiService *SecurityManagementLDAPAPIService
 }
 
-func (r ApiGetLdapServersRequest) Execute() (*http.Response, error) {
+func (r ApiGetLdapServersRequest) Execute() ([]ReadLdapServerXo, *http.Response, error) {
 	return r.ApiService.GetLdapServersExecute(r)
 }
 
@@ -415,16 +426,18 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServers(ctx context.Context) A
 }
 
 // Execute executes the request
-func (a *SecurityManagementLDAPAPIService) GetLdapServersExecute(r ApiGetLdapServersRequest) (*http.Response, error) {
+//  @return []ReadLdapServerXo
+func (a *SecurityManagementLDAPAPIService) GetLdapServersExecute(r ApiGetLdapServersRequest) ([]ReadLdapServerXo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []ReadLdapServerXo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementLDAPAPIService.GetLdapServers")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/security/ldap"
@@ -443,7 +456,7 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServersExecute(r ApiGetLdapSer
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -452,19 +465,19 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServersExecute(r ApiGetLdapSer
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -472,10 +485,19 @@ func (a *SecurityManagementLDAPAPIService) GetLdapServersExecute(r ApiGetLdapSer
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiUpdateLdapServerRequest struct {

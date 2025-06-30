@@ -7423,7 +7423,12 @@ paths:
       operationId: getLdapServers
       responses:
         "200":
-          content: {}
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: '#/components/schemas/ReadLdapServerXo'
+                type: array
           description: LDAP server list returned
         "401":
           content: {}
@@ -7523,7 +7528,10 @@ paths:
         style: simple
       responses:
         "200":
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ReadLdapServerXo'
           description: LDAP server returned
         "401":
           content: {}
@@ -16410,6 +16418,38 @@ components:
           type: string
       type: object
     ReadLdapServerXo:
+      example:
+        groupType: static
+        connectionRetryDelaySeconds: 0
+        userLdapFilter: (|(mail=*@example.com)(uid=dom*))
+        groupSubtree: true
+        groupMemberAttribute: memberUid
+        searchBase: "dc=example,dc=com"
+        groupIdAttribute: cn
+        userRealNameAttribute: cn
+        maxIncidentsCount: 0
+        authRealm: example.com
+        protocol: ldap
+        connectionTimeoutSeconds: 1
+        host: host
+        id: id
+        authScheme: NONE
+        useTrustStore: true
+        groupObjectClass: posixGroup
+        order: 1
+        userMemberOfAttribute: memberOf
+        userObjectClass: inetOrgPerson
+        userIdAttribute: uid
+        userEmailAddressAttribute: mail
+        userSubtree: true
+        groupBaseDn: ou=Group
+        ldapGroupsAsRoles: true
+        userPasswordAttribute: userPasswordAttribute
+        authUsername: authUsername
+        groupMemberFormat: "uid=${username},ou=people,dc=example,dc=com"
+        port: 636
+        name: name
+        userBaseDn: ou=people
       properties:
         authRealm:
           description: The SASL realm to bind to. Required if authScheme is CRAM_MD5
