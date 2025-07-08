@@ -15274,6 +15274,7 @@ components:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        url: url
       properties:
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
@@ -15301,6 +15302,8 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        url:
+          type: string
       required:
       - httpClient
       - negativeCache
