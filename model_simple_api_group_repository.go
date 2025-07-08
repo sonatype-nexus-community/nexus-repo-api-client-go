@@ -40,12 +40,10 @@ type _SimpleApiGroupRepository SimpleApiGroupRepository
 // will change when the set of required properties is changed
 func NewSimpleApiGroupRepository(group GroupAttributes, online bool, storage StorageAttributes) *SimpleApiGroupRepository {
 	this := SimpleApiGroupRepository{}
-	var format string = "maven2"
-	this.Format = &format
 	this.Group = group
 	this.Online = online
 	this.Storage = storage
-	var type_ string = "hosted"
+	var type_ string = "group"
 	this.Type = &type_
 	return &this
 }
@@ -55,9 +53,7 @@ func NewSimpleApiGroupRepository(group GroupAttributes, online bool, storage Sto
 // but it doesn't guarantee that properties required by API are set
 func NewSimpleApiGroupRepositoryWithDefaults() *SimpleApiGroupRepository {
 	this := SimpleApiGroupRepository{}
-	var format string = "maven2"
-	this.Format = &format
-	var type_ string = "hosted"
+	var type_ string = "group"
 	this.Type = &type_
 	return &this
 }

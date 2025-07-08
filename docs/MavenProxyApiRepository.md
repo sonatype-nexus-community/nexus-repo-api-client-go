@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
+**Type** | Pointer to **string** |  | [optional] [default to "proxy"]
 **Url** | Pointer to **string** |  | [optional] 
 
 ## Methods

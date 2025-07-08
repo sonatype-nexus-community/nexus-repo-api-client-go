@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** |  | [optional] [default to "maven2"]
+**Format** | Pointer to **string** |  | [optional] 
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
+**Type** | Pointer to **string** |  | [optional] [default to "group"]
 **Url** | Pointer to **string** |  | [optional] 
 
 ## Methods

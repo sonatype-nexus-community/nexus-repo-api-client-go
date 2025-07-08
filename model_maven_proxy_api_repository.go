@@ -55,7 +55,7 @@ func NewMavenProxyApiRepository(httpClient HttpClientAttributes, maven MavenAttr
 	this.Online = online
 	this.Proxy = proxy
 	this.Storage = storage
-	var type_ string = "hosted"
+	var type_ string = "proxy"
 	this.Type = &type_
 	return &this
 }
@@ -67,7 +67,7 @@ func NewMavenProxyApiRepositoryWithDefaults() *MavenProxyApiRepository {
 	this := MavenProxyApiRepository{}
 	var format string = "maven2"
 	this.Format = &format
-	var type_ string = "hosted"
+	var type_ string = "proxy"
 	this.Type = &type_
 	return &this
 }

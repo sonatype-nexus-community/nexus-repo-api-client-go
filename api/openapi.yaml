@@ -14989,7 +14989,7 @@ components:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
-        type: hosted
+        type: proxy
         url: url
         proxy:
           contentMaxAge: 1440
@@ -15033,7 +15033,7 @@ components:
         storage:
           $ref: '#/components/schemas/StorageAttributes'
         type:
-          default: hosted
+          default: proxy
           type: string
         url:
           type: string
@@ -15254,13 +15254,22 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: npm
+        npm:
+          removeQuarantined: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         routingRuleName: routingRuleName
         cleanup:
           policyNames:
@@ -15268,16 +15277,12 @@ components:
           - policyNames
         name: internal
         online: true
-        npm:
-          removeQuarantined: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
-        url: url
       properties:
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: npm
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         name:
@@ -15302,6 +15307,9 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: proxy
+          type: string
         url:
           type: string
       required:
@@ -17255,14 +17263,14 @@ components:
       type: object
     SimpleApiGroupRepository:
       example:
-        format: maven2
+        format: format
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
-        type: hosted
+        type: group
         url: url
         group:
           memberNames:
@@ -17270,7 +17278,6 @@ components:
           - memberNames
       properties:
         format:
-          default: maven2
           type: string
         group:
           $ref: '#/components/schemas/GroupAttributes'
@@ -17286,7 +17293,7 @@ components:
         storage:
           $ref: '#/components/schemas/StorageAttributes'
         type:
-          default: hosted
+          default: group
           type: string
         url:
           type: string
