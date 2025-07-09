@@ -8093,6 +8093,9 @@ paths:
           type: string
         style: simple
       responses:
+        "204":
+          content: {}
+          description: Success
         "403":
           content: {}
           description: Insufficient permissions to delete role
