@@ -387,7 +387,7 @@ type ApiGetConfigurationRequest struct {
 	ApiService *ManageSonatypeRepositoryFirewallConfigurationAPIService
 }
 
-func (r ApiGetConfigurationRequest) Execute() (*http.Response, error) {
+func (r ApiGetConfigurationRequest) Execute() (*IqConnectionXo, *http.Response, error) {
 	return r.ApiService.GetConfigurationExecute(r)
 }
 
@@ -405,16 +405,18 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurati
 }
 
 // Execute executes the request
-func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*http.Response, error) {
+//  @return IqConnectionXo
+func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurationExecute(r ApiGetConfigurationRequest) (*IqConnectionXo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *IqConnectionXo
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManageSonatypeRepositoryFirewallConfigurationAPIService.GetConfiguration")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/iq"
@@ -433,7 +435,7 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurati
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -442,19 +444,19 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurati
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -462,10 +464,19 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) GetConfigurati
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiManageAuditRequest struct {

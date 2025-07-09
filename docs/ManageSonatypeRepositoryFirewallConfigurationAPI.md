@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ## GetConfiguration
 
-> GetConfiguration(ctx).Execute()
+> IqConnectionXo GetConfiguration(ctx).Execute()
 
 Get Sonatype Repository Firewall configuration
 
@@ -276,11 +276,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration(context.Background()).Execute()
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetConfiguration`: IqConnectionXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration`: %v\n", resp)
 }
 ```
 
@@ -295,7 +297,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 
 ### Return type
 
- (empty response body)
+[**IqConnectionXo**](IqConnectionXo.md)
 
 ### Authorization
 
@@ -304,7 +306,7 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

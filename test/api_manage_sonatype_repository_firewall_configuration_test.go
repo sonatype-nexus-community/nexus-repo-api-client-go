@@ -73,9 +73,10 @@ func Test_v3_ManageSonatypeRepositoryFirewallConfigurationAPIService(t *testing.
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
