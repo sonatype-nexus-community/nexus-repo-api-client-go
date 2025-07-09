@@ -17229,18 +17229,23 @@ components:
       type: object
     SimpleApiGroupDeployRepository:
       example:
+        format: format
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        type: group
+        url: url
         group:
           memberNames:
           - memberNames
           - memberNames
           writableMember: writableMember
       properties:
+        format:
+          type: string
         group:
           $ref: '#/components/schemas/GroupDeployAttributes'
         name:
@@ -17256,6 +17261,11 @@ components:
           type: boolean
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: group
+          type: string
+        url:
+          type: string
       required:
       - group
       - online
