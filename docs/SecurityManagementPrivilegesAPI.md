@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ## GetAllPrivileges
 
-> []GetAllPrivileges200ResponseInner GetAllPrivileges(ctx).Execute()
+> ApiPrivilegeRequest GetAllPrivileges(ctx).Execute()
 
 Retrieve a list of privileges.
 
@@ -487,7 +487,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetAllPrivileges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllPrivileges`: []GetAllPrivileges200ResponseInner
+	// response from `GetAllPrivileges`: ApiPrivilegeRequest
 	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetAllPrivileges`: %v\n", resp)
 }
 ```
@@ -503,7 +503,7 @@ Other parameters are passed through a pointer to a apiGetAllPrivilegesRequest st
 
 ### Return type
 
-[**[]GetAllPrivileges200ResponseInner**](GetAllPrivileges200ResponseInner.md)
+[**ApiPrivilegeRequest**](ApiPrivilegeRequest.md)
 
 ### Authorization
 
@@ -521,7 +521,7 @@ Other parameters are passed through a pointer to a apiGetAllPrivilegesRequest st
 
 ## GetPrivilege
 
-> GetAllPrivileges200ResponseInner GetPrivilege(ctx, privilegeName).Execute()
+> ApiPrivilegeRequest GetPrivilege(ctx, privilegeName).Execute()
 
 Retrieve a privilege by name.
 
@@ -547,7 +547,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPrivilege`: GetAllPrivileges200ResponseInner
+	// response from `GetPrivilege`: ApiPrivilegeRequest
 	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivilege`: %v\n", resp)
 }
 ```
@@ -571,7 +571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAllPrivileges200ResponseInner**](GetAllPrivileges200ResponseInner.md)
+[**ApiPrivilegeRequest**](ApiPrivilegeRequest.md)
 
 ### Authorization
 

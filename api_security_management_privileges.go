@@ -688,7 +688,7 @@ type ApiGetAllPrivilegesRequest struct {
 	ApiService *SecurityManagementPrivilegesAPIService
 }
 
-func (r ApiGetAllPrivilegesRequest) Execute() ([]GetAllPrivileges200ResponseInner, *http.Response, error) {
+func (r ApiGetAllPrivilegesRequest) Execute() (*ApiPrivilegeRequest, *http.Response, error) {
 	return r.ApiService.GetAllPrivilegesExecute(r)
 }
 
@@ -706,13 +706,13 @@ func (a *SecurityManagementPrivilegesAPIService) GetAllPrivileges(ctx context.Co
 }
 
 // Execute executes the request
-//  @return []GetAllPrivileges200ResponseInner
-func (a *SecurityManagementPrivilegesAPIService) GetAllPrivilegesExecute(r ApiGetAllPrivilegesRequest) ([]GetAllPrivileges200ResponseInner, *http.Response, error) {
+//  @return ApiPrivilegeRequest
+func (a *SecurityManagementPrivilegesAPIService) GetAllPrivilegesExecute(r ApiGetAllPrivilegesRequest) (*ApiPrivilegeRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []GetAllPrivileges200ResponseInner
+		localVarReturnValue  *ApiPrivilegeRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetAllPrivileges")
@@ -786,7 +786,7 @@ type ApiGetPrivilegeRequest struct {
 	privilegeName string
 }
 
-func (r ApiGetPrivilegeRequest) Execute() (*GetAllPrivileges200ResponseInner, *http.Response, error) {
+func (r ApiGetPrivilegeRequest) Execute() (*ApiPrivilegeRequest, *http.Response, error) {
 	return r.ApiService.GetPrivilegeExecute(r)
 }
 
@@ -806,13 +806,13 @@ func (a *SecurityManagementPrivilegesAPIService) GetPrivilege(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return GetAllPrivileges200ResponseInner
-func (a *SecurityManagementPrivilegesAPIService) GetPrivilegeExecute(r ApiGetPrivilegeRequest) (*GetAllPrivileges200ResponseInner, *http.Response, error) {
+//  @return ApiPrivilegeRequest
+func (a *SecurityManagementPrivilegesAPIService) GetPrivilegeExecute(r ApiGetPrivilegeRequest) (*ApiPrivilegeRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *GetAllPrivileges200ResponseInner
+		localVarReturnValue  *ApiPrivilegeRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetPrivilege")
