@@ -101,13 +101,11 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService GetPrivilege", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService GetAllPrivileges", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var privilegeName string
-
-		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivilege(context.Background(), privilegeName).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetAllPrivileges(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -115,11 +113,13 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService GetPrivileges1", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService GetPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivileges1(context.Background()).Execute()
+		var privilegeName string
+
+		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

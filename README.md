@@ -331,8 +331,8 @@ Class | Method | HTTP request | Description
 *SecurityManagementPrivilegesAPI* | [**CreateScriptPrivilege**](docs/SecurityManagementPrivilegesAPI.md#createscriptprivilege) | **Post** /v1/security/privileges/script | Create a script type privilege.
 *SecurityManagementPrivilegesAPI* | [**CreateWildcardPrivilege**](docs/SecurityManagementPrivilegesAPI.md#createwildcardprivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
 *SecurityManagementPrivilegesAPI* | [**DeletePrivilege**](docs/SecurityManagementPrivilegesAPI.md#deleteprivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
+*SecurityManagementPrivilegesAPI* | [**GetAllPrivileges**](docs/SecurityManagementPrivilegesAPI.md#getallprivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
 *SecurityManagementPrivilegesAPI* | [**GetPrivilege**](docs/SecurityManagementPrivilegesAPI.md#getprivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
-*SecurityManagementPrivilegesAPI* | [**GetPrivileges1**](docs/SecurityManagementPrivilegesAPI.md#getprivileges1) | **Get** /v1/security/privileges | Retrieve a list of privileges.
 *SecurityManagementPrivilegesAPI* | [**UpdateApplicationPrivilege**](docs/SecurityManagementPrivilegesAPI.md#updateapplicationprivilege) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
 *SecurityManagementPrivilegesAPI* | [**UpdateRepositoryAdminPrivilege**](docs/SecurityManagementPrivilegesAPI.md#updaterepositoryadminprivilege) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
 *SecurityManagementPrivilegesAPI* | [**UpdateRepositoryContentSelectorPrivilege**](docs/SecurityManagementPrivilegesAPI.md#updaterepositorycontentselectorprivilege) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
@@ -463,6 +463,7 @@ Class | Method | HTTP request | Description
  - [FileBlobStoreApiUpdateRequest](docs/FileBlobStoreApiUpdateRequest.md)
  - [FrequencyXO](docs/FrequencyXO.md)
  - [GenericBlobStoreApiResponse](docs/GenericBlobStoreApiResponse.md)
+ - [GetAllPrivileges200ResponseInner](docs/GetAllPrivileges200ResponseInner.md)
  - [GitLfsHostedRepositoryApiRequest](docs/GitLfsHostedRepositoryApiRequest.md)
  - [GolangGroupRepositoryApiRequest](docs/GolangGroupRepositoryApiRequest.md)
  - [GolangProxyRepositoryApiRequest](docs/GolangProxyRepositoryApiRequest.md)

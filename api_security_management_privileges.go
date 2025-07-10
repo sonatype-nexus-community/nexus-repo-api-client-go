@@ -683,48 +683,44 @@ func (a *SecurityManagementPrivilegesAPIService) DeletePrivilegeExecute(r ApiDel
 	return localVarHTTPResponse, nil
 }
 
-type ApiGetPrivilegeRequest struct {
+type ApiGetAllPrivilegesRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
-	privilegeName string
 }
 
-func (r ApiGetPrivilegeRequest) Execute() (*ApiPrivilege, *http.Response, error) {
-	return r.ApiService.GetPrivilegeExecute(r)
+func (r ApiGetAllPrivilegesRequest) Execute() ([]GetAllPrivileges200ResponseInner, *http.Response, error) {
+	return r.ApiService.GetAllPrivilegesExecute(r)
 }
 
 /*
-GetPrivilege Retrieve a privilege by name.
+GetAllPrivileges Retrieve a list of privileges.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param privilegeName The name of the privilege to retrieve.
- @return ApiGetPrivilegeRequest
+ @return ApiGetAllPrivilegesRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) GetPrivilege(ctx context.Context, privilegeName string) ApiGetPrivilegeRequest {
-	return ApiGetPrivilegeRequest{
+func (a *SecurityManagementPrivilegesAPIService) GetAllPrivileges(ctx context.Context) ApiGetAllPrivilegesRequest {
+	return ApiGetAllPrivilegesRequest{
 		ApiService: a,
 		ctx: ctx,
-		privilegeName: privilegeName,
 	}
 }
 
 // Execute executes the request
-//  @return ApiPrivilege
-func (a *SecurityManagementPrivilegesAPIService) GetPrivilegeExecute(r ApiGetPrivilegeRequest) (*ApiPrivilege, *http.Response, error) {
+//  @return []GetAllPrivileges200ResponseInner
+func (a *SecurityManagementPrivilegesAPIService) GetAllPrivilegesExecute(r ApiGetAllPrivilegesRequest) ([]GetAllPrivileges200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiPrivilege
+		localVarReturnValue  []GetAllPrivileges200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetPrivilege")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetAllPrivileges")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges/{privilegeName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
+	localVarPath := localBasePath + "/v1/security/privileges"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -784,44 +780,48 @@ func (a *SecurityManagementPrivilegesAPIService) GetPrivilegeExecute(r ApiGetPri
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiGetPrivileges1Request struct {
+type ApiGetPrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
+	privilegeName string
 }
 
-func (r ApiGetPrivileges1Request) Execute() ([]ApiPrivilege, *http.Response, error) {
-	return r.ApiService.GetPrivileges1Execute(r)
+func (r ApiGetPrivilegeRequest) Execute() (*GetAllPrivileges200ResponseInner, *http.Response, error) {
+	return r.ApiService.GetPrivilegeExecute(r)
 }
 
 /*
-GetPrivileges1 Retrieve a list of privileges.
+GetPrivilege Retrieve a privilege by name.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiGetPrivileges1Request
+ @param privilegeName The name of the privilege to retrieve.
+ @return ApiGetPrivilegeRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) GetPrivileges1(ctx context.Context) ApiGetPrivileges1Request {
-	return ApiGetPrivileges1Request{
+func (a *SecurityManagementPrivilegesAPIService) GetPrivilege(ctx context.Context, privilegeName string) ApiGetPrivilegeRequest {
+	return ApiGetPrivilegeRequest{
 		ApiService: a,
 		ctx: ctx,
+		privilegeName: privilegeName,
 	}
 }
 
 // Execute executes the request
-//  @return []ApiPrivilege
-func (a *SecurityManagementPrivilegesAPIService) GetPrivileges1Execute(r ApiGetPrivileges1Request) ([]ApiPrivilege, *http.Response, error) {
+//  @return GetAllPrivileges200ResponseInner
+func (a *SecurityManagementPrivilegesAPIService) GetPrivilegeExecute(r ApiGetPrivilegeRequest) (*GetAllPrivileges200ResponseInner, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  []ApiPrivilege
+		localVarReturnValue  *GetAllPrivileges200ResponseInner
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetPrivileges1")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetPrivilege")
 	if err != nil {
 		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/v1/security/privileges"
+	localVarPath := localBasePath + "/v1/security/privileges/{privilegeName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

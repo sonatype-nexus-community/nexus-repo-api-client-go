@@ -11,8 +11,8 @@ Method | HTTP request | Description
 [**CreateScriptPrivilege**](SecurityManagementPrivilegesAPI.md#CreateScriptPrivilege) | **Post** /v1/security/privileges/script | Create a script type privilege.
 [**CreateWildcardPrivilege**](SecurityManagementPrivilegesAPI.md#CreateWildcardPrivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
 [**DeletePrivilege**](SecurityManagementPrivilegesAPI.md#DeletePrivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
+[**GetAllPrivileges**](SecurityManagementPrivilegesAPI.md#GetAllPrivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
 [**GetPrivilege**](SecurityManagementPrivilegesAPI.md#GetPrivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
-[**GetPrivileges1**](SecurityManagementPrivilegesAPI.md#GetPrivileges1) | **Get** /v1/security/privileges | Retrieve a list of privileges.
 [**UpdateApplicationPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateApplicationPrivilege) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
 [**UpdateRepositoryAdminPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateRepositoryAdminPrivilege) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
 [**UpdateRepositoryContentSelectorPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateRepositoryContentSelectorPrivilege) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
@@ -460,9 +460,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetAllPrivileges
+
+> []GetAllPrivileges200ResponseInner GetAllPrivileges(ctx).Execute()
+
+Retrieve a list of privileges.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetAllPrivileges(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetAllPrivileges``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAllPrivileges`: []GetAllPrivileges200ResponseInner
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetAllPrivileges`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAllPrivilegesRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]GetAllPrivileges200ResponseInner**](GetAllPrivileges200ResponseInner.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetPrivilege
 
-> ApiPrivilege GetPrivilege(ctx, privilegeName).Execute()
+> GetAllPrivileges200ResponseInner GetPrivilege(ctx, privilegeName).Execute()
 
 Retrieve a privilege by name.
 
@@ -488,7 +547,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPrivilege`: ApiPrivilege
+	// response from `GetPrivilege`: GetAllPrivileges200ResponseInner
 	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivilege`: %v\n", resp)
 }
 ```
@@ -512,66 +571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiPrivilege**](ApiPrivilege.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetPrivileges1
-
-> []ApiPrivilege GetPrivileges1(ctx).Execute()
-
-Retrieve a list of privileges.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivileges1(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivileges1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetPrivileges1`: []ApiPrivilege
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivileges1`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetPrivileges1Request struct via the builder pattern
-
-
-### Return type
-
-[**[]ApiPrivilege**](ApiPrivilege.md)
+[**GetAllPrivileges200ResponseInner**](GetAllPrivileges200ResponseInner.md)
 
 ### Authorization
 

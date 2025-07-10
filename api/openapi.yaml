@@ -7585,14 +7585,14 @@ paths:
       x-codegen-request-body-name: body
   /v1/security/privileges:
     get:
-      operationId: getPrivileges_1
+      operationId: getAllPrivileges
       responses:
         "200":
           content:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ApiPrivilege'
+                  $ref: '#/components/schemas/getAllPrivileges_200_response_inner'
                 type: array
           description: successful operation
         "403":
@@ -8002,7 +8002,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiPrivilege'
+                $ref: '#/components/schemas/getAllPrivileges_200_response_inner'
           description: successful operation
         "403":
           content: {}
@@ -11472,11 +11472,6 @@ components:
           type: integer
       type: object
     ApiPrivilege:
-      example:
-        name: name
-        description: description
-        readOnly: true
-        type: type
       properties:
         description:
           type: string
@@ -18404,6 +18399,15 @@ components:
           description: yum Tag
           type: string
       type: object
+    getAllPrivileges_200_response_inner:
+      oneOf:
+      - $ref: '#/components/schemas/ApiPrivilegeApplicationRequest'
+      - $ref: '#/components/schemas/ApiPrivilegeRepositoryAdminRequest'
+      - $ref: '#/components/schemas/ApiPrivilegeRepositoryContentSelectorRequest'
+      - $ref: '#/components/schemas/ApiPrivilegeRepositoryViewRequest'
+      - $ref: '#/components/schemas/ApiPrivilegeScriptRequest'
+      - $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
+      - $ref: '#/components/schemas/ApiPrivilege'
   securitySchemes:
     BasicAuth:
       scheme: basic
