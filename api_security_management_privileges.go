@@ -23,424 +23,44 @@ import (
 // SecurityManagementPrivilegesAPIService SecurityManagementPrivilegesAPI service
 type SecurityManagementPrivilegesAPIService service
 
-type ApiCreatePrivilegeRequest struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeRepositoryViewRequest
-}
-
-// The privilege to create.
-func (r ApiCreatePrivilegeRequest) Body(body ApiPrivilegeRepositoryViewRequest) ApiCreatePrivilegeRequest {
-	r.body = &body
-	return r
-}
-
-func (r ApiCreatePrivilegeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilegeExecute(r)
-}
-
-/*
-CreatePrivilege Create a repository view type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilegeRequest
-*/
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege(ctx context.Context) ApiCreatePrivilegeRequest {
-	return ApiCreatePrivilegeRequest{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilegeExecute(r ApiCreatePrivilegeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-view"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiCreatePrivilege1Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeRepositoryContentSelectorRequest
-}
-
-// The privilege to create.
-func (r ApiCreatePrivilege1Request) Body(body ApiPrivilegeRepositoryContentSelectorRequest) ApiCreatePrivilege1Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiCreatePrivilege1Request) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilege1Execute(r)
-}
-
-/*
-CreatePrivilege1 Create a repository content selector type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilege1Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege1(ctx context.Context) ApiCreatePrivilege1Request {
-	return ApiCreatePrivilege1Request{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege1Execute(r ApiCreatePrivilege1Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege1")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-content-selector"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiCreatePrivilege2Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeRepositoryAdminRequest
-}
-
-// The privilege to create.
-func (r ApiCreatePrivilege2Request) Body(body ApiPrivilegeRepositoryAdminRequest) ApiCreatePrivilege2Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiCreatePrivilege2Request) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilege2Execute(r)
-}
-
-/*
-CreatePrivilege2 Create a repository admin type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilege2Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege2(ctx context.Context) ApiCreatePrivilege2Request {
-	return ApiCreatePrivilege2Request{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege2Execute(r ApiCreatePrivilege2Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege2")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-admin"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiCreatePrivilege3Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeWildcardRequest
-}
-
-// The privilege to create.
-func (r ApiCreatePrivilege3Request) Body(body ApiPrivilegeWildcardRequest) ApiCreatePrivilege3Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiCreatePrivilege3Request) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilege3Execute(r)
-}
-
-/*
-CreatePrivilege3 Create a wildcard type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilege3Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege3(ctx context.Context) ApiCreatePrivilege3Request {
-	return ApiCreatePrivilege3Request{
-		ApiService: a,
-		ctx: ctx,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege3Execute(r ApiCreatePrivilege3Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPost
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege3")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/wildcard"
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiCreatePrivilege4Request struct {
+type ApiCreateApplicationPrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
 	body *ApiPrivilegeApplicationRequest
 }
 
 // The privilege to create.
-func (r ApiCreatePrivilege4Request) Body(body ApiPrivilegeApplicationRequest) ApiCreatePrivilege4Request {
+func (r ApiCreateApplicationPrivilegeRequest) Body(body ApiPrivilegeApplicationRequest) ApiCreateApplicationPrivilegeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreatePrivilege4Request) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilege4Execute(r)
+func (r ApiCreateApplicationPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateApplicationPrivilegeExecute(r)
 }
 
 /*
-CreatePrivilege4 Create an application type privilege.
+CreateApplicationPrivilege Create an application type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilege4Request
+ @return ApiCreateApplicationPrivilegeRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege4(ctx context.Context) ApiCreatePrivilege4Request {
-	return ApiCreatePrivilege4Request{
+func (a *SecurityManagementPrivilegesAPIService) CreateApplicationPrivilege(ctx context.Context) ApiCreateApplicationPrivilegeRequest {
+	return ApiCreateApplicationPrivilegeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege4Execute(r ApiCreatePrivilege4Request) (*http.Response, error) {
+func (a *SecurityManagementPrivilegesAPIService) CreateApplicationPrivilegeExecute(r ApiCreateApplicationPrivilegeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege4")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateApplicationPrivilege")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -498,49 +118,429 @@ func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege4Execute(r ApiCr
 	return localVarHTTPResponse, nil
 }
 
-type ApiCreatePrivilege5Request struct {
+type ApiCreateRepositoryAdminPrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
-	body *ApiPrivilegeScriptRequest
+	body *ApiPrivilegeRepositoryAdminRequest
 }
 
 // The privilege to create.
-func (r ApiCreatePrivilege5Request) Body(body ApiPrivilegeScriptRequest) ApiCreatePrivilege5Request {
+func (r ApiCreateRepositoryAdminPrivilegeRequest) Body(body ApiPrivilegeRepositoryAdminRequest) ApiCreateRepositoryAdminPrivilegeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiCreatePrivilege5Request) Execute() (*http.Response, error) {
-	return r.ApiService.CreatePrivilege5Execute(r)
+func (r ApiCreateRepositoryAdminPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateRepositoryAdminPrivilegeExecute(r)
 }
 
 /*
-CreatePrivilege5 Create a script type privilege.
+CreateRepositoryAdminPrivilege Create a repository admin type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiCreatePrivilege5Request
+ @return ApiCreateRepositoryAdminPrivilegeRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege5(ctx context.Context) ApiCreatePrivilege5Request {
-	return ApiCreatePrivilege5Request{
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryAdminPrivilege(ctx context.Context) ApiCreateRepositoryAdminPrivilegeRequest {
+	return ApiCreateRepositoryAdminPrivilegeRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) CreatePrivilege5Execute(r ApiCreatePrivilege5Request) (*http.Response, error) {
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryAdminPrivilegeExecute(r ApiCreateRepositoryAdminPrivilegeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreatePrivilege5")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateRepositoryAdminPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-admin"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiCreateRepositoryContentSelectorPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	body *ApiPrivilegeRepositoryContentSelectorRequest
+}
+
+// The privilege to create.
+func (r ApiCreateRepositoryContentSelectorPrivilegeRequest) Body(body ApiPrivilegeRepositoryContentSelectorRequest) ApiCreateRepositoryContentSelectorPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiCreateRepositoryContentSelectorPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateRepositoryContentSelectorPrivilegeExecute(r)
+}
+
+/*
+CreateRepositoryContentSelectorPrivilege Create a repository content selector type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateRepositoryContentSelectorPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryContentSelectorPrivilege(ctx context.Context) ApiCreateRepositoryContentSelectorPrivilegeRequest {
+	return ApiCreateRepositoryContentSelectorPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryContentSelectorPrivilegeExecute(r ApiCreateRepositoryContentSelectorPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateRepositoryContentSelectorPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-content-selector"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiCreateRepositoryViewPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	body *ApiPrivilegeRepositoryViewRequest
+}
+
+// The privilege to create.
+func (r ApiCreateRepositoryViewPrivilegeRequest) Body(body ApiPrivilegeRepositoryViewRequest) ApiCreateRepositoryViewPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiCreateRepositoryViewPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateRepositoryViewPrivilegeExecute(r)
+}
+
+/*
+CreateRepositoryViewPrivilege Create a repository view type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateRepositoryViewPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryViewPrivilege(ctx context.Context) ApiCreateRepositoryViewPrivilegeRequest {
+	return ApiCreateRepositoryViewPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) CreateRepositoryViewPrivilegeExecute(r ApiCreateRepositoryViewPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateRepositoryViewPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-view"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiCreateScriptPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	body *ApiPrivilegeScriptRequest
+}
+
+// The privilege to create.
+func (r ApiCreateScriptPrivilegeRequest) Body(body ApiPrivilegeScriptRequest) ApiCreateScriptPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiCreateScriptPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateScriptPrivilegeExecute(r)
+}
+
+/*
+CreateScriptPrivilege Create a script type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateScriptPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) CreateScriptPrivilege(ctx context.Context) ApiCreateScriptPrivilegeRequest {
+	return ApiCreateScriptPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) CreateScriptPrivilegeExecute(r ApiCreateScriptPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateScriptPrivilege")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/security/privileges/script"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiCreateWildcardPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	body *ApiPrivilegeWildcardRequest
+}
+
+// The privilege to create.
+func (r ApiCreateWildcardPrivilegeRequest) Body(body ApiPrivilegeWildcardRequest) ApiCreateWildcardPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiCreateWildcardPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.CreateWildcardPrivilegeExecute(r)
+}
+
+/*
+CreateWildcardPrivilege Create a wildcard type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @return ApiCreateWildcardPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) CreateWildcardPrivilege(ctx context.Context) ApiCreateWildcardPrivilegeRequest {
+	return ApiCreateWildcardPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) CreateWildcardPrivilegeExecute(r ApiCreateWildcardPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPost
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.CreateWildcardPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/wildcard"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -881,403 +881,7 @@ func (a *SecurityManagementPrivilegesAPIService) GetPrivileges1Execute(r ApiGetP
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
-type ApiUpdatePrivilegeRequest struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	privilegeName string
-	body *ApiPrivilegeRepositoryViewRequest
-}
-
-// The privilege to update.
-func (r ApiUpdatePrivilegeRequest) Body(body ApiPrivilegeRepositoryViewRequest) ApiUpdatePrivilegeRequest {
-	r.body = &body
-	return r
-}
-
-func (r ApiUpdatePrivilegeRequest) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilegeExecute(r)
-}
-
-/*
-UpdatePrivilege Update a repository view type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilegeRequest
-*/
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege(ctx context.Context, privilegeName string) ApiUpdatePrivilegeRequest {
-	return ApiUpdatePrivilegeRequest{
-		ApiService: a,
-		ctx: ctx,
-		privilegeName: privilegeName,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilegeExecute(r ApiUpdatePrivilegeRequest) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-view/{privilegeName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiUpdatePrivilege1Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	privilegeName string
-	body *ApiPrivilegeRepositoryContentSelectorRequest
-}
-
-// The privilege to update.
-func (r ApiUpdatePrivilege1Request) Body(body ApiPrivilegeRepositoryContentSelectorRequest) ApiUpdatePrivilege1Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiUpdatePrivilege1Request) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilege1Execute(r)
-}
-
-/*
-UpdatePrivilege1 Update a repository content selector type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilege1Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege1(ctx context.Context, privilegeName string) ApiUpdatePrivilege1Request {
-	return ApiUpdatePrivilege1Request{
-		ApiService: a,
-		ctx: ctx,
-		privilegeName: privilegeName,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege1Execute(r ApiUpdatePrivilege1Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege1")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-content-selector/{privilegeName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiUpdatePrivilege2Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	privilegeName string
-	body *ApiPrivilegeRepositoryAdminRequest
-}
-
-// The privilege to update.
-func (r ApiUpdatePrivilege2Request) Body(body ApiPrivilegeRepositoryAdminRequest) ApiUpdatePrivilege2Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiUpdatePrivilege2Request) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilege2Execute(r)
-}
-
-/*
-UpdatePrivilege2 Update a repository admin type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilege2Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege2(ctx context.Context, privilegeName string) ApiUpdatePrivilege2Request {
-	return ApiUpdatePrivilege2Request{
-		ApiService: a,
-		ctx: ctx,
-		privilegeName: privilegeName,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege2Execute(r ApiUpdatePrivilege2Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege2")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/repository-admin/{privilegeName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiUpdatePrivilege3Request struct {
-	ctx context.Context
-	ApiService *SecurityManagementPrivilegesAPIService
-	privilegeName string
-	body *ApiPrivilegeWildcardRequest
-}
-
-// The privilege to update.
-func (r ApiUpdatePrivilege3Request) Body(body ApiPrivilegeWildcardRequest) ApiUpdatePrivilege3Request {
-	r.body = &body
-	return r
-}
-
-func (r ApiUpdatePrivilege3Request) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilege3Execute(r)
-}
-
-/*
-UpdatePrivilege3 Update a wildcard type privilege.
-
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilege3Request
-*/
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege3(ctx context.Context, privilegeName string) ApiUpdatePrivilege3Request {
-	return ApiUpdatePrivilege3Request{
-		ApiService: a,
-		ctx: ctx,
-		privilegeName: privilegeName,
-	}
-}
-
-// Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege3Execute(r ApiUpdatePrivilege3Request) (*http.Response, error) {
-	var (
-		localVarHTTPMethod   = http.MethodPut
-		localVarPostBody     interface{}
-		formFiles            []formFile
-	)
-
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege3")
-	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
-	}
-
-	localVarPath := localBasePath + "/v1/security/privileges/wildcard/{privilegeName}"
-	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
-
-	localVarHeaderParams := make(map[string]string)
-	localVarQueryParams := url.Values{}
-	localVarFormParams := url.Values{}
-
-	// to determine the Content-Type header
-	localVarHTTPContentTypes := []string{"application/json"}
-
-	// set Content-Type header
-	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
-	if localVarHTTPContentType != "" {
-		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
-	}
-
-	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
-
-	// set Accept header
-	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
-	if localVarHTTPHeaderAccept != "" {
-		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
-	}
-	// body params
-	localVarPostBody = r.body
-	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
-	if err != nil {
-		return nil, err
-	}
-
-	localVarHTTPResponse, err := a.client.callAPI(req)
-	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
-	}
-
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
-	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
-	if err != nil {
-		return localVarHTTPResponse, err
-	}
-
-	if localVarHTTPResponse.StatusCode >= 300 {
-		newErr := &GenericOpenAPIError{
-			body:  localVarBody,
-			error: localVarHTTPResponse.Status,
-		}
-		return localVarHTTPResponse, newErr
-	}
-
-	return localVarHTTPResponse, nil
-}
-
-type ApiUpdatePrivilege4Request struct {
+type ApiUpdateApplicationPrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
 	privilegeName string
@@ -1285,24 +889,24 @@ type ApiUpdatePrivilege4Request struct {
 }
 
 // The privilege to update.
-func (r ApiUpdatePrivilege4Request) Body(body ApiPrivilegeApplicationRequest) ApiUpdatePrivilege4Request {
+func (r ApiUpdateApplicationPrivilegeRequest) Body(body ApiPrivilegeApplicationRequest) ApiUpdateApplicationPrivilegeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdatePrivilege4Request) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilege4Execute(r)
+func (r ApiUpdateApplicationPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateApplicationPrivilegeExecute(r)
 }
 
 /*
-UpdatePrivilege4 Update an application type privilege.
+UpdateApplicationPrivilege Update an application type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilege4Request
+ @return ApiUpdateApplicationPrivilegeRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege4(ctx context.Context, privilegeName string) ApiUpdatePrivilege4Request {
-	return ApiUpdatePrivilege4Request{
+func (a *SecurityManagementPrivilegesAPIService) UpdateApplicationPrivilege(ctx context.Context, privilegeName string) ApiUpdateApplicationPrivilegeRequest {
+	return ApiUpdateApplicationPrivilegeRequest{
 		ApiService: a,
 		ctx: ctx,
 		privilegeName: privilegeName,
@@ -1310,14 +914,14 @@ func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege4(ctx context.Co
 }
 
 // Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege4Execute(r ApiUpdatePrivilege4Request) (*http.Response, error) {
+func (a *SecurityManagementPrivilegesAPIService) UpdateApplicationPrivilegeExecute(r ApiUpdateApplicationPrivilegeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege4")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateApplicationPrivilege")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
@@ -1376,32 +980,32 @@ func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege4Execute(r ApiUp
 	return localVarHTTPResponse, nil
 }
 
-type ApiUpdatePrivilege5Request struct {
+type ApiUpdateRepositoryAdminPrivilegeRequest struct {
 	ctx context.Context
 	ApiService *SecurityManagementPrivilegesAPIService
 	privilegeName string
-	body *ApiPrivilegeScriptRequest
+	body *ApiPrivilegeRepositoryAdminRequest
 }
 
 // The privilege to update.
-func (r ApiUpdatePrivilege5Request) Body(body ApiPrivilegeScriptRequest) ApiUpdatePrivilege5Request {
+func (r ApiUpdateRepositoryAdminPrivilegeRequest) Body(body ApiPrivilegeRepositoryAdminRequest) ApiUpdateRepositoryAdminPrivilegeRequest {
 	r.body = &body
 	return r
 }
 
-func (r ApiUpdatePrivilege5Request) Execute() (*http.Response, error) {
-	return r.ApiService.UpdatePrivilege5Execute(r)
+func (r ApiUpdateRepositoryAdminPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateRepositoryAdminPrivilegeExecute(r)
 }
 
 /*
-UpdatePrivilege5 Update a script type privilege.
+UpdateRepositoryAdminPrivilege Update a repository admin type privilege.
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
  @param privilegeName The name of the privilege to update.
- @return ApiUpdatePrivilege5Request
+ @return ApiUpdateRepositoryAdminPrivilegeRequest
 */
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege5(ctx context.Context, privilegeName string) ApiUpdatePrivilege5Request {
-	return ApiUpdatePrivilege5Request{
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryAdminPrivilege(ctx context.Context, privilegeName string) ApiUpdateRepositoryAdminPrivilegeRequest {
+	return ApiUpdateRepositoryAdminPrivilegeRequest{
 		ApiService: a,
 		ctx: ctx,
 		privilegeName: privilegeName,
@@ -1409,19 +1013,415 @@ func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege5(ctx context.Co
 }
 
 // Execute executes the request
-func (a *SecurityManagementPrivilegesAPIService) UpdatePrivilege5Execute(r ApiUpdatePrivilege5Request) (*http.Response, error) {
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryAdminPrivilegeExecute(r ApiUpdateRepositoryAdminPrivilegeRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPut
 		localVarPostBody     interface{}
 		formFiles            []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdatePrivilege5")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateRepositoryAdminPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-admin/{privilegeName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiUpdateRepositoryContentSelectorPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	privilegeName string
+	body *ApiPrivilegeRepositoryContentSelectorRequest
+}
+
+// The privilege to update.
+func (r ApiUpdateRepositoryContentSelectorPrivilegeRequest) Body(body ApiPrivilegeRepositoryContentSelectorRequest) ApiUpdateRepositoryContentSelectorPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateRepositoryContentSelectorPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateRepositoryContentSelectorPrivilegeExecute(r)
+}
+
+/*
+UpdateRepositoryContentSelectorPrivilege Update a repository content selector type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param privilegeName The name of the privilege to update.
+ @return ApiUpdateRepositoryContentSelectorPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryContentSelectorPrivilege(ctx context.Context, privilegeName string) ApiUpdateRepositoryContentSelectorPrivilegeRequest {
+	return ApiUpdateRepositoryContentSelectorPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+		privilegeName: privilegeName,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryContentSelectorPrivilegeExecute(r ApiUpdateRepositoryContentSelectorPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateRepositoryContentSelectorPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-content-selector/{privilegeName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiUpdateRepositoryViewPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	privilegeName string
+	body *ApiPrivilegeRepositoryViewRequest
+}
+
+// The privilege to update.
+func (r ApiUpdateRepositoryViewPrivilegeRequest) Body(body ApiPrivilegeRepositoryViewRequest) ApiUpdateRepositoryViewPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateRepositoryViewPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateRepositoryViewPrivilegeExecute(r)
+}
+
+/*
+UpdateRepositoryViewPrivilege Update a repository view type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param privilegeName The name of the privilege to update.
+ @return ApiUpdateRepositoryViewPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryViewPrivilege(ctx context.Context, privilegeName string) ApiUpdateRepositoryViewPrivilegeRequest {
+	return ApiUpdateRepositoryViewPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+		privilegeName: privilegeName,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) UpdateRepositoryViewPrivilegeExecute(r ApiUpdateRepositoryViewPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateRepositoryViewPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/repository-view/{privilegeName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiUpdateScriptPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	privilegeName string
+	body *ApiPrivilegeScriptRequest
+}
+
+// The privilege to update.
+func (r ApiUpdateScriptPrivilegeRequest) Body(body ApiPrivilegeScriptRequest) ApiUpdateScriptPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateScriptPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateScriptPrivilegeExecute(r)
+}
+
+/*
+UpdateScriptPrivilege Update a script type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param privilegeName The name of the privilege to update.
+ @return ApiUpdateScriptPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) UpdateScriptPrivilege(ctx context.Context, privilegeName string) ApiUpdateScriptPrivilegeRequest {
+	return ApiUpdateScriptPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+		privilegeName: privilegeName,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) UpdateScriptPrivilegeExecute(r ApiUpdateScriptPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateScriptPrivilege")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/security/privileges/script/{privilegeName}"
+	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.body
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiUpdateWildcardPrivilegeRequest struct {
+	ctx context.Context
+	ApiService *SecurityManagementPrivilegesAPIService
+	privilegeName string
+	body *ApiPrivilegeWildcardRequest
+}
+
+// The privilege to update.
+func (r ApiUpdateWildcardPrivilegeRequest) Body(body ApiPrivilegeWildcardRequest) ApiUpdateWildcardPrivilegeRequest {
+	r.body = &body
+	return r
+}
+
+func (r ApiUpdateWildcardPrivilegeRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UpdateWildcardPrivilegeExecute(r)
+}
+
+/*
+UpdateWildcardPrivilege Update a wildcard type privilege.
+
+ @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+ @param privilegeName The name of the privilege to update.
+ @return ApiUpdateWildcardPrivilegeRequest
+*/
+func (a *SecurityManagementPrivilegesAPIService) UpdateWildcardPrivilege(ctx context.Context, privilegeName string) ApiUpdateWildcardPrivilegeRequest {
+	return ApiUpdateWildcardPrivilegeRequest{
+		ApiService: a,
+		ctx: ctx,
+		privilegeName: privilegeName,
+	}
+}
+
+// Execute executes the request
+func (a *SecurityManagementPrivilegesAPIService) UpdateWildcardPrivilegeExecute(r ApiUpdateWildcardPrivilegeRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod   = http.MethodPut
+		localVarPostBody     interface{}
+		formFiles            []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.UpdateWildcardPrivilege")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/v1/security/privileges/wildcard/{privilegeName}"
 	localVarPath = strings.Replace(localVarPath, "{"+"privilegeName"+"}", url.PathEscape(parameterValueToString(r.privilegeName, "privilegeName")), -1)
 
 	localVarHeaderParams := make(map[string]string)

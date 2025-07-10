@@ -22,66 +22,66 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateApplicationPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateApplicationPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege1", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateRepositoryAdminPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryAdminPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege2", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateRepositoryContentSelectorPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege2(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryContentSelectorPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege3", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateRepositoryViewPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege3(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryViewPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege4", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateScriptPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege4(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateScriptPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService CreatePrivilege5", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService CreateWildcardPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreatePrivilege5(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.CreateWildcardPrivilege(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -127,78 +127,78 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateApplicationPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateApplicationPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege1", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateRepositoryAdminPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege1(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryAdminPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege2", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateRepositoryContentSelectorPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege2(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryContentSelectorPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege3", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateRepositoryViewPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege3(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryViewPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege4", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateScriptPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege4(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateScriptPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService UpdatePrivilege5", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService UpdateWildcardPrivilege", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdatePrivilege5(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.UpdateWildcardPrivilege(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
