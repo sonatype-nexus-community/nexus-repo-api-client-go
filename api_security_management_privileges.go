@@ -688,7 +688,7 @@ type ApiGetAllPrivilegesRequest struct {
 	ApiService *SecurityManagementPrivilegesAPIService
 }
 
-func (r ApiGetAllPrivilegesRequest) Execute() (*ApiPrivilegeRequest, *http.Response, error) {
+func (r ApiGetAllPrivilegesRequest) Execute() ([]ApiPrivilegeRequest, *http.Response, error) {
 	return r.ApiService.GetAllPrivilegesExecute(r)
 }
 
@@ -706,13 +706,13 @@ func (a *SecurityManagementPrivilegesAPIService) GetAllPrivileges(ctx context.Co
 }
 
 // Execute executes the request
-//  @return ApiPrivilegeRequest
-func (a *SecurityManagementPrivilegesAPIService) GetAllPrivilegesExecute(r ApiGetAllPrivilegesRequest) (*ApiPrivilegeRequest, *http.Response, error) {
+//  @return []ApiPrivilegeRequest
+func (a *SecurityManagementPrivilegesAPIService) GetAllPrivilegesExecute(r ApiGetAllPrivilegesRequest) ([]ApiPrivilegeRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ApiPrivilegeRequest
+		localVarReturnValue  []ApiPrivilegeRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SecurityManagementPrivilegesAPIService.GetAllPrivileges")

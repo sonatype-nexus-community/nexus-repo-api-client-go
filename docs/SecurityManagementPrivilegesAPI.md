@@ -462,7 +462,7 @@ Name | Type | Description  | Notes
 
 ## GetAllPrivileges
 
-> ApiPrivilegeRequest GetAllPrivileges(ctx).Execute()
+> []ApiPrivilegeRequest GetAllPrivileges(ctx).Execute()
 
 Retrieve a list of privileges.
 
@@ -487,7 +487,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetAllPrivileges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllPrivileges`: ApiPrivilegeRequest
+	// response from `GetAllPrivileges`: []ApiPrivilegeRequest
 	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetAllPrivileges`: %v\n", resp)
 }
 ```
@@ -503,7 +503,7 @@ Other parameters are passed through a pointer to a apiGetAllPrivilegesRequest st
 
 ### Return type
 
-[**ApiPrivilegeRequest**](ApiPrivilegeRequest.md)
+[**[]ApiPrivilegeRequest**](ApiPrivilegeRequest.md)
 
 ### Authorization
 

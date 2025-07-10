@@ -7591,7 +7591,9 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiPrivilegeRequest'
+                items:
+                  $ref: '#/components/schemas/ApiPrivilegeRequest'
+                type: array
           description: successful operation
         "403":
           content: {}
