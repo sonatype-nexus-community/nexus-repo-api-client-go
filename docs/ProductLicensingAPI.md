@@ -147,7 +147,7 @@ import (
 )
 
 func main() {
-	body := map[string]interface{}{ ... } // map[string]interface{} |  (optional)
+	body := os.NewFile(1234, "some_file") // *os.File |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -172,7 +172,7 @@ Other parameters are passed through a pointer to a apiSetLicenseRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **map[string]interface{}** |  | 
+ **body** | ***os.File** |  | 
 
 ### Return type
 

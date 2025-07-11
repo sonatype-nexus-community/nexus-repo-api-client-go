@@ -14833,7 +14833,8 @@ components:
       - storage
       type: object
     InputStream:
-      type: object
+      format: binary
+      type: string
     IqAuditXo:
       example:
         enabledQuarantine: true

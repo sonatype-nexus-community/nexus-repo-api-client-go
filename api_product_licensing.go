@@ -16,6 +16,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 )
 
 
@@ -208,11 +209,11 @@ func (a *ProductLicensingAPIService) RemoveLicenseExecute(r ApiRemoveLicenseRequ
 type ApiSetLicenseRequest struct {
 	ctx context.Context
 	ApiService *ProductLicensingAPIService
-	body *map[string]interface{}
+	body *os.File
 }
 
-func (r ApiSetLicenseRequest) Body(body map[string]interface{}) ApiSetLicenseRequest {
-	r.body = &body
+func (r ApiSetLicenseRequest) Body(body *os.File) ApiSetLicenseRequest {
+	r.body = body
 	return r
 }
 
