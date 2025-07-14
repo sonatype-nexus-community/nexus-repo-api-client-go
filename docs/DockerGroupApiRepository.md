@@ -5,10 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
+**Format** | Pointer to **string** |  | [optional] [default to "docker"]
 **Group** | [**GroupDeployAttributes**](GroupDeployAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "group"]
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -48,6 +51,31 @@ and a boolean to check if the value has been set.
 
 SetDocker sets Docker field to given value.
 
+
+### GetFormat
+
+`func (o *DockerGroupApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *DockerGroupApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *DockerGroupApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *DockerGroupApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -133,6 +161,56 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *DockerGroupApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *DockerGroupApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *DockerGroupApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *DockerGroupApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *DockerGroupApiRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *DockerGroupApiRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *DockerGroupApiRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *DockerGroupApiRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

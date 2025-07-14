@@ -22,12 +22,15 @@ var _ MappedNullable = &DockerGroupApiRepository{}
 // DockerGroupApiRepository struct for DockerGroupApiRepository
 type DockerGroupApiRepository struct {
 	Docker DockerAttributes `json:"docker"`
+	Format *string `json:"format,omitempty"`
 	Group GroupDeployAttributes `json:"group"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _DockerGroupApiRepository DockerGroupApiRepository
@@ -39,9 +42,13 @@ type _DockerGroupApiRepository DockerGroupApiRepository
 func NewDockerGroupApiRepository(docker DockerAttributes, group GroupDeployAttributes, online bool, storage StorageAttributes) *DockerGroupApiRepository {
 	this := DockerGroupApiRepository{}
 	this.Docker = docker
+	var format string = "docker"
+	this.Format = &format
 	this.Group = group
 	this.Online = online
 	this.Storage = storage
+	var type_ string = "group"
+	this.Type = &type_
 	return &this
 }
 
@@ -50,6 +57,10 @@ func NewDockerGroupApiRepository(docker DockerAttributes, group GroupDeployAttri
 // but it doesn't guarantee that properties required by API are set
 func NewDockerGroupApiRepositoryWithDefaults() *DockerGroupApiRepository {
 	this := DockerGroupApiRepository{}
+	var format string = "docker"
+	this.Format = &format
+	var type_ string = "group"
+	this.Type = &type_
 	return &this
 }
 
@@ -75,6 +86,38 @@ func (o *DockerGroupApiRepository) GetDockerOk() (*DockerAttributes, bool) {
 // SetDocker sets field value
 func (o *DockerGroupApiRepository) SetDocker(v DockerAttributes) {
 	o.Docker = v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *DockerGroupApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerGroupApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *DockerGroupApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *DockerGroupApiRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetGroup returns the Group field value
@@ -181,6 +224,70 @@ func (o *DockerGroupApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *DockerGroupApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerGroupApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *DockerGroupApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *DockerGroupApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *DockerGroupApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerGroupApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *DockerGroupApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *DockerGroupApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o DockerGroupApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -192,12 +299,21 @@ func (o DockerGroupApiRepository) MarshalJSON() ([]byte, error) {
 func (o DockerGroupApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["docker"] = o.Docker
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["group"] = o.Group
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 

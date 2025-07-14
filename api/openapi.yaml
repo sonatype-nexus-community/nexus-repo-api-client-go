@@ -13490,12 +13490,15 @@ components:
       type: object
     DockerGroupApiRepository:
       example:
+        format: docker
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        type: group
+        url: url
         docker:
           httpPort: 8082
           subdomain: docker-a
@@ -13510,6 +13513,9 @@ components:
       properties:
         docker:
           $ref: '#/components/schemas/DockerAttributes'
+        format:
+          default: docker
+          type: string
         group:
           $ref: '#/components/schemas/GroupDeployAttributes'
         name:
@@ -13523,6 +13529,11 @@ components:
           type: boolean
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: group
+          type: string
+        url:
+          type: string
       required:
       - docker
       - group
