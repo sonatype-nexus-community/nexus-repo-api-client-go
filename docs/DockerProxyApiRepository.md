@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
 **DockerProxy** | [**DockerProxyAttributes**](DockerProxyAttributes.md) |  | 
+**Format** | Pointer to **string** |  | [optional] [default to "docker"]
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
@@ -15,6 +16,8 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "proxy"]
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -99,6 +102,31 @@ and a boolean to check if the value has been set.
 
 SetDockerProxy sets DockerProxy field to given value.
 
+
+### GetFormat
+
+`func (o *DockerProxyApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *DockerProxyApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *DockerProxyApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *DockerProxyApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -274,6 +302,56 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *DockerProxyApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *DockerProxyApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *DockerProxyApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *DockerProxyApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *DockerProxyApiRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *DockerProxyApiRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *DockerProxyApiRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *DockerProxyApiRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

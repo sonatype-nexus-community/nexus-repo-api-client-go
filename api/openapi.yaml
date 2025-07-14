@@ -13579,12 +13579,16 @@ components:
           policyNames:
           - policyNames
           - policyNames
+        format: docker
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
+          latestPolicy: true
           writePolicy: allow_once
           blobStoreName: default
+        type: hosted
+        url: url
         docker:
           httpPort: 8082
           subdomain: docker-a
@@ -13598,6 +13602,9 @@ components:
           $ref: '#/components/schemas/ComponentAttributes'
         docker:
           $ref: '#/components/schemas/DockerAttributes'
+        format:
+          default: docker
+          type: string
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13608,7 +13615,12 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: '#/components/schemas/DockerHostedStorageAttributes'
+        type:
+          default: hosted
+          type: string
+        url:
+          type: string
       required:
       - docker
       - online
@@ -13716,13 +13728,26 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: docker
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
+        docker:
+          httpPort: 8082
+          subdomain: docker-a
+          v1Enabled: false
+          forceBasicAuth: true
+          httpsPort: 8083
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         dockerProxy:
           indexType: HUB
           cacheForeignLayers: true
@@ -13737,16 +13762,6 @@ components:
           - policyNames
         name: internal
         online: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
-        docker:
-          httpPort: 8082
-          subdomain: docker-a
-          v1Enabled: false
-          forceBasicAuth: true
-          httpsPort: 8083
       properties:
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
@@ -13754,6 +13769,9 @@ components:
           $ref: '#/components/schemas/DockerAttributes'
         dockerProxy:
           $ref: '#/components/schemas/DockerProxyAttributes'
+        format:
+          default: docker
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         name:
@@ -13776,6 +13794,11 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: proxy
+          type: string
+        url:
+          type: string
       required:
       - docker
       - dockerProxy

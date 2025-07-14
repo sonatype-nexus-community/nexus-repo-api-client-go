@@ -24,11 +24,14 @@ type DockerHostedApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
 	Component *ComponentAttributes `json:"component,omitempty"`
 	Docker DockerAttributes `json:"docker"`
+	Format *string `json:"format,omitempty"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
-	Storage HostedStorageAttributes `json:"storage"`
+	Storage DockerHostedStorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _DockerHostedApiRepository DockerHostedApiRepository
@@ -37,11 +40,15 @@ type _DockerHostedApiRepository DockerHostedApiRepository
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDockerHostedApiRepository(docker DockerAttributes, online bool, storage HostedStorageAttributes) *DockerHostedApiRepository {
+func NewDockerHostedApiRepository(docker DockerAttributes, online bool, storage DockerHostedStorageAttributes) *DockerHostedApiRepository {
 	this := DockerHostedApiRepository{}
 	this.Docker = docker
+	var format string = "docker"
+	this.Format = &format
 	this.Online = online
 	this.Storage = storage
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -50,6 +57,10 @@ func NewDockerHostedApiRepository(docker DockerAttributes, online bool, storage 
 // but it doesn't guarantee that properties required by API are set
 func NewDockerHostedApiRepositoryWithDefaults() *DockerHostedApiRepository {
 	this := DockerHostedApiRepository{}
+	var format string = "docker"
+	this.Format = &format
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -141,6 +152,38 @@ func (o *DockerHostedApiRepository) SetDocker(v DockerAttributes) {
 	o.Docker = v
 }
 
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *DockerHostedApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerHostedApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *DockerHostedApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *DockerHostedApiRepository) SetFormat(v string) {
+	o.Format = &v
+}
+
 // GetName returns the Name field value if set, zero value otherwise.
 func (o *DockerHostedApiRepository) GetName() string {
 	if o == nil || IsNil(o.Name) {
@@ -198,9 +241,9 @@ func (o *DockerHostedApiRepository) SetOnline(v bool) {
 }
 
 // GetStorage returns the Storage field value
-func (o *DockerHostedApiRepository) GetStorage() HostedStorageAttributes {
+func (o *DockerHostedApiRepository) GetStorage() DockerHostedStorageAttributes {
 	if o == nil {
-		var ret HostedStorageAttributes
+		var ret DockerHostedStorageAttributes
 		return ret
 	}
 
@@ -209,7 +252,7 @@ func (o *DockerHostedApiRepository) GetStorage() HostedStorageAttributes {
 
 // GetStorageOk returns a tuple with the Storage field value
 // and a boolean to check if the value has been set.
-func (o *DockerHostedApiRepository) GetStorageOk() (*HostedStorageAttributes, bool) {
+func (o *DockerHostedApiRepository) GetStorageOk() (*DockerHostedStorageAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -217,8 +260,72 @@ func (o *DockerHostedApiRepository) GetStorageOk() (*HostedStorageAttributes, bo
 }
 
 // SetStorage sets field value
-func (o *DockerHostedApiRepository) SetStorage(v HostedStorageAttributes) {
+func (o *DockerHostedApiRepository) SetStorage(v DockerHostedStorageAttributes) {
 	o.Storage = v
+}
+
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *DockerHostedApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerHostedApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *DockerHostedApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *DockerHostedApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *DockerHostedApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *DockerHostedApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *DockerHostedApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *DockerHostedApiRepository) SetUrl(v string) {
+	o.Url = &v
 }
 
 func (o DockerHostedApiRepository) MarshalJSON() ([]byte, error) {
@@ -238,11 +345,20 @@ func (o DockerHostedApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["component"] = o.Component
 	}
 	toSerialize["docker"] = o.Docker
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 
