@@ -11890,15 +11890,18 @@ components:
           policyNames:
           - policyNames
           - policyNames
+        format: apt
         name: internal
         online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
+        type: hosted
         aptSigning:
           keypair: keypair
           passphrase: passphrase
+        url: url
       properties:
         apt:
           $ref: '#/components/schemas/AptHostedRepositoriesAttributes'
@@ -11908,6 +11911,9 @@ components:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
         component:
           $ref: '#/components/schemas/ComponentAttributes'
+        format:
+          default: apt
+          type: string
         name:
           description: A unique identifier for this repository
           example: internal
@@ -11919,6 +11925,11 @@ components:
           type: boolean
         storage:
           $ref: '#/components/schemas/HostedStorageAttributes'
+        type:
+          default: hosted
+          type: string
+        url:
+          type: string
       required:
       - apt
       - aptSigning
@@ -12003,32 +12014,38 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        apt:
+          flat: false
+          distribution: bionic
+        format: apt
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         routingRuleName: routingRuleName
-        apt:
-          flat: false
-          distribution: bionic
         cleanup:
           policyNames:
           - policyNames
           - policyNames
         name: internal
         online: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
       properties:
         apt:
           $ref: '#/components/schemas/AptProxyRepositoriesAttributes'
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: apt
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         name:
@@ -12051,6 +12068,11 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: proxy
+          type: string
+        url:
+          type: string
       required:
       - apt
       - httpClient

@@ -8,9 +8,12 @@ Name | Type | Description | Notes
 **AptSigning** | [**AptSigningRepositoriesAttributes**](AptSigningRepositoriesAttributes.md) |  | 
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
+**Format** | Pointer to **string** |  | [optional] [default to "apt"]
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -121,6 +124,31 @@ SetComponent sets Component field to given value.
 
 HasComponent returns a boolean if a field has been set.
 
+### GetFormat
+
+`func (o *AptHostedApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *AptHostedApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *AptHostedApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *AptHostedApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
+
 ### GetName
 
 `func (o *AptHostedApiRepository) GetName() string`
@@ -185,6 +213,56 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *AptHostedApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *AptHostedApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *AptHostedApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *AptHostedApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *AptHostedApiRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *AptHostedApiRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *AptHostedApiRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *AptHostedApiRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
