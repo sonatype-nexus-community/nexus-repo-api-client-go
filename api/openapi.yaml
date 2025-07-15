@@ -16179,13 +16179,13 @@ components:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
         cleanup:
           policyNames:
           - policyNames
           - policyNames
         pypi:
           removeQuarantined: true
-        routingRule: routingRule
         name: name
         online: true
       properties:
@@ -16211,7 +16211,7 @@ components:
           $ref: '#/components/schemas/PyPiProxyAttributes'
         replication:
           $ref: '#/components/schemas/ReplicationAttributes'
-        routingRule:
+        routingRuleName:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'

@@ -32,7 +32,7 @@ type PyPiProxyApiRepository struct {
 	Proxy ProxyAttributes `json:"proxy"`
 	Pypi PyPiProxyAttributes `json:"pypi"`
 	Replication *ReplicationAttributes `json:"replication,omitempty"`
-	RoutingRule *string `json:"routingRule,omitempty"`
+	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
 	Type string `json:"type"`
 	Url string `json:"url"`
@@ -303,36 +303,36 @@ func (o *PyPiProxyApiRepository) SetReplication(v ReplicationAttributes) {
 	o.Replication = &v
 }
 
-// GetRoutingRule returns the RoutingRule field value if set, zero value otherwise.
-func (o *PyPiProxyApiRepository) GetRoutingRule() string {
-	if o == nil || IsNil(o.RoutingRule) {
+// GetRoutingRuleName returns the RoutingRuleName field value if set, zero value otherwise.
+func (o *PyPiProxyApiRepository) GetRoutingRuleName() string {
+	if o == nil || IsNil(o.RoutingRuleName) {
 		var ret string
 		return ret
 	}
-	return *o.RoutingRule
+	return *o.RoutingRuleName
 }
 
-// GetRoutingRuleOk returns a tuple with the RoutingRule field value if set, nil otherwise
+// GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetRoutingRuleOk() (*string, bool) {
-	if o == nil || IsNil(o.RoutingRule) {
+func (o *PyPiProxyApiRepository) GetRoutingRuleNameOk() (*string, bool) {
+	if o == nil || IsNil(o.RoutingRuleName) {
 		return nil, false
 	}
-	return o.RoutingRule, true
+	return o.RoutingRuleName, true
 }
 
-// HasRoutingRule returns a boolean if a field has been set.
-func (o *PyPiProxyApiRepository) HasRoutingRule() bool {
-	if o != nil && !IsNil(o.RoutingRule) {
+// HasRoutingRuleName returns a boolean if a field has been set.
+func (o *PyPiProxyApiRepository) HasRoutingRuleName() bool {
+	if o != nil && !IsNil(o.RoutingRuleName) {
 		return true
 	}
 
 	return false
 }
 
-// SetRoutingRule gets a reference to the given string and assigns it to the RoutingRule field.
-func (o *PyPiProxyApiRepository) SetRoutingRule(v string) {
-	o.RoutingRule = &v
+// SetRoutingRuleName gets a reference to the given string and assigns it to the RoutingRuleName field.
+func (o *PyPiProxyApiRepository) SetRoutingRuleName(v string) {
+	o.RoutingRuleName = &v
 }
 
 // GetStorage returns the Storage field value
@@ -430,8 +430,8 @@ func (o PyPiProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Replication) {
 		toSerialize["replication"] = o.Replication
 	}
-	if !IsNil(o.RoutingRule) {
-		toSerialize["routingRule"] = o.RoutingRule
+	if !IsNil(o.RoutingRuleName) {
+		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
 	toSerialize["type"] = o.Type

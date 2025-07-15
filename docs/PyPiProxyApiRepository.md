@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Pypi** | [**PyPiProxyAttributes**](PyPiProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 **Type** | **string** |  | [default to "pypi"]
 **Url** | **string** |  | 
@@ -227,30 +227,30 @@ SetReplication sets Replication field to given value.
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRule
+### GetRoutingRuleName
 
-`func (o *PyPiProxyApiRepository) GetRoutingRule() string`
+`func (o *PyPiProxyApiRepository) GetRoutingRuleName() string`
 
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
 
-### GetRoutingRuleOk
+### GetRoutingRuleNameOk
 
-`func (o *PyPiProxyApiRepository) GetRoutingRuleOk() (*string, bool)`
+`func (o *PyPiProxyApiRepository) GetRoutingRuleNameOk() (*string, bool)`
 
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRule
+### SetRoutingRuleName
 
-`func (o *PyPiProxyApiRepository) SetRoutingRule(v string)`
+`func (o *PyPiProxyApiRepository) SetRoutingRuleName(v string)`
 
-SetRoutingRule sets RoutingRule field to given value.
+SetRoutingRuleName sets RoutingRuleName field to given value.
 
-### HasRoutingRule
+### HasRoutingRuleName
 
-`func (o *PyPiProxyApiRepository) HasRoutingRule() bool`
+`func (o *PyPiProxyApiRepository) HasRoutingRuleName() bool`
 
-HasRoutingRule returns a boolean if a field has been set.
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 
