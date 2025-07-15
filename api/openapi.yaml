@@ -4368,7 +4368,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: '#/components/schemas/RawGroupApiRepository'
           description: successful operation
       summary: Get repository
       tags:
@@ -4446,7 +4446,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: '#/components/schemas/RawHostedApiRepository'
           description: successful operation
       summary: Get repository
       tags:
@@ -4524,7 +4524,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: '#/components/schemas/RawProxyApiRepository'
           description: successful operation
       summary: Get repository
       tags:
@@ -16184,7 +16184,7 @@ components:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
-        type: pypi
+        type: proxy
         url: url
         proxy:
           contentMaxAge: 1440
@@ -16227,7 +16227,7 @@ components:
         storage:
           $ref: '#/components/schemas/StorageAttributes'
         type:
-          default: pypi
+          default: proxy
           type: string
         url:
           type: string
@@ -16550,6 +16550,54 @@ components:
           example: ATTACHMENT
           type: string
       type: object
+    RawGroupApiRepository:
+      example:
+        format: raw
+        name: name
+        online: true
+        raw:
+          contentDisposition: ATTACHMENT
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: group
+        url: url
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
+      properties:
+        format:
+          default: raw
+          type: string
+        group:
+          $ref: '#/components/schemas/GroupAttributes'
+        name:
+          description: A unique identifier for this repository
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          type: boolean
+        raw:
+          $ref: '#/components/schemas/RawAttributes'
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: group
+          type: string
+        url:
+          type: string
+      required:
+      - format
+      - group
+      - name
+      - online
+      - raw
+      - storage
+      - type
+      - url
     RawGroupRepositoryApiRequest:
       example:
         name: internal
@@ -16586,6 +16634,57 @@ components:
       - online
       - storage
       type: object
+    RawHostedApiRepository:
+      example:
+        component:
+          proprietaryComponents: true
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        format: raw
+        name: name
+        online: true
+        raw:
+          contentDisposition: ATTACHMENT
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: hosted
+        url: url
+      properties:
+        cleanup:
+          $ref: '#/components/schemas/CleanupPolicyAttributes'
+        component:
+          $ref: '#/components/schemas/ComponentAttributes'
+        format:
+          default: raw
+          type: string
+        name:
+          description: A unique identifier for this repository
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          type: boolean
+        raw:
+          $ref: '#/components/schemas/RawAttributes'
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: hosted
+          type: string
+        url:
+          type: string
+      required:
+      - format
+      - name
+      - online
+      - raw
+      - storage
+      - type
+      - url
     RawHostedRepositoryApiRequest:
       example:
         component:
@@ -16625,6 +16724,95 @@ components:
       - online
       - storage
       type: object
+    RawProxyApiRepository:
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: pypi
+        raw:
+          contentDisposition: ATTACHMENT
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: raw
+        url: url
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        name: name
+        online: true
+      properties:
+        cleanup:
+          $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: pypi
+          type: string
+        httpClient:
+          $ref: '#/components/schemas/HttpClientAttributes'
+        name:
+          description: A unique identifier for this repository
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: '#/components/schemas/NegativeCacheAttributes'
+        online:
+          description: Whether this repository accepts incoming requests
+          type: boolean
+        proxy:
+          $ref: '#/components/schemas/ProxyAttributes'
+        raw:
+          $ref: '#/components/schemas/RawAttributes'
+        replication:
+          $ref: '#/components/schemas/ReplicationAttributes'
+        routingRuleName:
+          type: string
+        storage:
+          $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: raw
+          type: string
+        url:
+          type: string
+      required:
+      - format
+      - httpClient
+      - name
+      - negativeCache
+      - online
+      - proxy
+      - raw
+      - storage
+      - type
+      - url
     RawProxyRepositoryApiRequest:
       example:
         replication:

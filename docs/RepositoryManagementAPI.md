@@ -5779,7 +5779,7 @@ Name | Type | Description  | Notes
 
 ## GetRawGroupRepository
 
-> SimpleApiGroupRepository GetRawGroupRepository(ctx, repositoryName).Execute()
+> RawGroupApiRepository GetRawGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5805,7 +5805,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRawGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRawGroupRepository`: SimpleApiGroupRepository
+	// response from `GetRawGroupRepository`: RawGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRawGroupRepository`: %v\n", resp)
 }
 ```
@@ -5829,7 +5829,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**RawGroupApiRepository**](RawGroupApiRepository.md)
 
 ### Authorization
 
@@ -5847,7 +5847,7 @@ Name | Type | Description  | Notes
 
 ## GetRawHostedRepository
 
-> SimpleApiHostedRepository GetRawHostedRepository(ctx, repositoryName).Execute()
+> RawHostedApiRepository GetRawHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5873,7 +5873,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRawHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRawHostedRepository`: SimpleApiHostedRepository
+	// response from `GetRawHostedRepository`: RawHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRawHostedRepository`: %v\n", resp)
 }
 ```
@@ -5897,7 +5897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**RawHostedApiRepository**](RawHostedApiRepository.md)
 
 ### Authorization
 
@@ -5915,7 +5915,7 @@ Name | Type | Description  | Notes
 
 ## GetRawProxyRepository
 
-> SimpleApiProxyRepository GetRawProxyRepository(ctx, repositoryName).Execute()
+> RawProxyApiRepository GetRawProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5941,7 +5941,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRawProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRawProxyRepository`: SimpleApiProxyRepository
+	// response from `GetRawProxyRepository`: RawProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRawProxyRepository`: %v\n", resp)
 }
 ```
@@ -5965,7 +5965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**RawProxyApiRepository**](RawProxyApiRepository.md)
 
 ### Authorization
 

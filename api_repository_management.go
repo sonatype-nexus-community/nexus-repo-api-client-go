@@ -8442,7 +8442,7 @@ type ApiGetRawGroupRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetRawGroupRepositoryRequest) Execute() (*SimpleApiGroupRepository, *http.Response, error) {
+func (r ApiGetRawGroupRepositoryRequest) Execute() (*RawGroupApiRepository, *http.Response, error) {
 	return r.ApiService.GetRawGroupRepositoryExecute(r)
 }
 
@@ -8462,13 +8462,13 @@ func (a *RepositoryManagementAPIService) GetRawGroupRepository(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return SimpleApiGroupRepository
-func (a *RepositoryManagementAPIService) GetRawGroupRepositoryExecute(r ApiGetRawGroupRepositoryRequest) (*SimpleApiGroupRepository, *http.Response, error) {
+//  @return RawGroupApiRepository
+func (a *RepositoryManagementAPIService) GetRawGroupRepositoryExecute(r ApiGetRawGroupRepositoryRequest) (*RawGroupApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiGroupRepository
+		localVarReturnValue  *RawGroupApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetRawGroupRepository")
@@ -8543,7 +8543,7 @@ type ApiGetRawHostedRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetRawHostedRepositoryRequest) Execute() (*SimpleApiHostedRepository, *http.Response, error) {
+func (r ApiGetRawHostedRepositoryRequest) Execute() (*RawHostedApiRepository, *http.Response, error) {
 	return r.ApiService.GetRawHostedRepositoryExecute(r)
 }
 
@@ -8563,13 +8563,13 @@ func (a *RepositoryManagementAPIService) GetRawHostedRepository(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return SimpleApiHostedRepository
-func (a *RepositoryManagementAPIService) GetRawHostedRepositoryExecute(r ApiGetRawHostedRepositoryRequest) (*SimpleApiHostedRepository, *http.Response, error) {
+//  @return RawHostedApiRepository
+func (a *RepositoryManagementAPIService) GetRawHostedRepositoryExecute(r ApiGetRawHostedRepositoryRequest) (*RawHostedApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiHostedRepository
+		localVarReturnValue  *RawHostedApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetRawHostedRepository")
@@ -8644,7 +8644,7 @@ type ApiGetRawProxyRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetRawProxyRepositoryRequest) Execute() (*SimpleApiProxyRepository, *http.Response, error) {
+func (r ApiGetRawProxyRepositoryRequest) Execute() (*RawProxyApiRepository, *http.Response, error) {
 	return r.ApiService.GetRawProxyRepositoryExecute(r)
 }
 
@@ -8664,13 +8664,13 @@ func (a *RepositoryManagementAPIService) GetRawProxyRepository(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return SimpleApiProxyRepository
-func (a *RepositoryManagementAPIService) GetRawProxyRepositoryExecute(r ApiGetRawProxyRepositoryRequest) (*SimpleApiProxyRepository, *http.Response, error) {
+//  @return RawProxyApiRepository
+func (a *RepositoryManagementAPIService) GetRawProxyRepositoryExecute(r ApiGetRawProxyRepositoryRequest) (*RawProxyApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiProxyRepository
+		localVarReturnValue  *RawProxyApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetRawProxyRepository")

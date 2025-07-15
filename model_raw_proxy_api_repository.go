@@ -16,11 +16,11 @@ import (
 	"fmt"
 )
 
-// checks if the PyPiProxyApiRepository type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PyPiProxyApiRepository{}
+// checks if the RawProxyApiRepository type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RawProxyApiRepository{}
 
-// PyPiProxyApiRepository struct for PyPiProxyApiRepository
-type PyPiProxyApiRepository struct {
+// RawProxyApiRepository struct for RawProxyApiRepository
+type RawProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
 	Format string `json:"format"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
@@ -30,7 +30,7 @@ type PyPiProxyApiRepository struct {
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Proxy ProxyAttributes `json:"proxy"`
-	Pypi PyPiProxyAttributes `json:"pypi"`
+	Raw RawAttributes `json:"raw"`
 	Replication *ReplicationAttributes `json:"replication,omitempty"`
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
@@ -38,41 +38,41 @@ type PyPiProxyApiRepository struct {
 	Url string `json:"url"`
 }
 
-type _PyPiProxyApiRepository PyPiProxyApiRepository
+type _RawProxyApiRepository RawProxyApiRepository
 
-// NewPyPiProxyApiRepository instantiates a new PyPiProxyApiRepository object
+// NewRawProxyApiRepository instantiates a new RawProxyApiRepository object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPyPiProxyApiRepository(format string, httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, pypi PyPiProxyAttributes, storage StorageAttributes, type_ string, url string) *PyPiProxyApiRepository {
-	this := PyPiProxyApiRepository{}
+func NewRawProxyApiRepository(format string, httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, raw RawAttributes, storage StorageAttributes, type_ string, url string) *RawProxyApiRepository {
+	this := RawProxyApiRepository{}
 	this.Format = format
 	this.HttpClient = httpClient
 	this.Name = name
 	this.NegativeCache = negativeCache
 	this.Online = online
 	this.Proxy = proxy
-	this.Pypi = pypi
+	this.Raw = raw
 	this.Storage = storage
 	this.Type = type_
 	this.Url = url
 	return &this
 }
 
-// NewPyPiProxyApiRepositoryWithDefaults instantiates a new PyPiProxyApiRepository object
+// NewRawProxyApiRepositoryWithDefaults instantiates a new RawProxyApiRepository object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewPyPiProxyApiRepositoryWithDefaults() *PyPiProxyApiRepository {
-	this := PyPiProxyApiRepository{}
+func NewRawProxyApiRepositoryWithDefaults() *RawProxyApiRepository {
+	this := RawProxyApiRepository{}
 	var format string = "pypi"
 	this.Format = format
-	var type_ string = "proxy"
+	var type_ string = "raw"
 	this.Type = type_
 	return &this
 }
 
 // GetCleanup returns the Cleanup field value if set, zero value otherwise.
-func (o *PyPiProxyApiRepository) GetCleanup() CleanupPolicyAttributes {
+func (o *RawProxyApiRepository) GetCleanup() CleanupPolicyAttributes {
 	if o == nil || IsNil(o.Cleanup) {
 		var ret CleanupPolicyAttributes
 		return ret
@@ -82,7 +82,7 @@ func (o *PyPiProxyApiRepository) GetCleanup() CleanupPolicyAttributes {
 
 // GetCleanupOk returns a tuple with the Cleanup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetCleanupOk() (*CleanupPolicyAttributes, bool) {
+func (o *RawProxyApiRepository) GetCleanupOk() (*CleanupPolicyAttributes, bool) {
 	if o == nil || IsNil(o.Cleanup) {
 		return nil, false
 	}
@@ -90,7 +90,7 @@ func (o *PyPiProxyApiRepository) GetCleanupOk() (*CleanupPolicyAttributes, bool)
 }
 
 // HasCleanup returns a boolean if a field has been set.
-func (o *PyPiProxyApiRepository) HasCleanup() bool {
+func (o *RawProxyApiRepository) HasCleanup() bool {
 	if o != nil && !IsNil(o.Cleanup) {
 		return true
 	}
@@ -99,12 +99,12 @@ func (o *PyPiProxyApiRepository) HasCleanup() bool {
 }
 
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
-func (o *PyPiProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
+func (o *RawProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
 }
 
 // GetFormat returns the Format field value
-func (o *PyPiProxyApiRepository) GetFormat() string {
+func (o *RawProxyApiRepository) GetFormat() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -115,7 +115,7 @@ func (o *PyPiProxyApiRepository) GetFormat() string {
 
 // GetFormatOk returns a tuple with the Format field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetFormatOk() (*string, bool) {
+func (o *RawProxyApiRepository) GetFormatOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -123,12 +123,12 @@ func (o *PyPiProxyApiRepository) GetFormatOk() (*string, bool) {
 }
 
 // SetFormat sets field value
-func (o *PyPiProxyApiRepository) SetFormat(v string) {
+func (o *RawProxyApiRepository) SetFormat(v string) {
 	o.Format = v
 }
 
 // GetHttpClient returns the HttpClient field value
-func (o *PyPiProxyApiRepository) GetHttpClient() HttpClientAttributes {
+func (o *RawProxyApiRepository) GetHttpClient() HttpClientAttributes {
 	if o == nil {
 		var ret HttpClientAttributes
 		return ret
@@ -139,7 +139,7 @@ func (o *PyPiProxyApiRepository) GetHttpClient() HttpClientAttributes {
 
 // GetHttpClientOk returns a tuple with the HttpClient field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetHttpClientOk() (*HttpClientAttributes, bool) {
+func (o *RawProxyApiRepository) GetHttpClientOk() (*HttpClientAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -147,12 +147,12 @@ func (o *PyPiProxyApiRepository) GetHttpClientOk() (*HttpClientAttributes, bool)
 }
 
 // SetHttpClient sets field value
-func (o *PyPiProxyApiRepository) SetHttpClient(v HttpClientAttributes) {
+func (o *RawProxyApiRepository) SetHttpClient(v HttpClientAttributes) {
 	o.HttpClient = v
 }
 
 // GetName returns the Name field value
-func (o *PyPiProxyApiRepository) GetName() string {
+func (o *RawProxyApiRepository) GetName() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -163,7 +163,7 @@ func (o *PyPiProxyApiRepository) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetNameOk() (*string, bool) {
+func (o *RawProxyApiRepository) GetNameOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -171,12 +171,12 @@ func (o *PyPiProxyApiRepository) GetNameOk() (*string, bool) {
 }
 
 // SetName sets field value
-func (o *PyPiProxyApiRepository) SetName(v string) {
+func (o *RawProxyApiRepository) SetName(v string) {
 	o.Name = v
 }
 
 // GetNegativeCache returns the NegativeCache field value
-func (o *PyPiProxyApiRepository) GetNegativeCache() NegativeCacheAttributes {
+func (o *RawProxyApiRepository) GetNegativeCache() NegativeCacheAttributes {
 	if o == nil {
 		var ret NegativeCacheAttributes
 		return ret
@@ -187,7 +187,7 @@ func (o *PyPiProxyApiRepository) GetNegativeCache() NegativeCacheAttributes {
 
 // GetNegativeCacheOk returns a tuple with the NegativeCache field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetNegativeCacheOk() (*NegativeCacheAttributes, bool) {
+func (o *RawProxyApiRepository) GetNegativeCacheOk() (*NegativeCacheAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -195,12 +195,12 @@ func (o *PyPiProxyApiRepository) GetNegativeCacheOk() (*NegativeCacheAttributes,
 }
 
 // SetNegativeCache sets field value
-func (o *PyPiProxyApiRepository) SetNegativeCache(v NegativeCacheAttributes) {
+func (o *RawProxyApiRepository) SetNegativeCache(v NegativeCacheAttributes) {
 	o.NegativeCache = v
 }
 
 // GetOnline returns the Online field value
-func (o *PyPiProxyApiRepository) GetOnline() bool {
+func (o *RawProxyApiRepository) GetOnline() bool {
 	if o == nil {
 		var ret bool
 		return ret
@@ -211,7 +211,7 @@ func (o *PyPiProxyApiRepository) GetOnline() bool {
 
 // GetOnlineOk returns a tuple with the Online field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetOnlineOk() (*bool, bool) {
+func (o *RawProxyApiRepository) GetOnlineOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -219,12 +219,12 @@ func (o *PyPiProxyApiRepository) GetOnlineOk() (*bool, bool) {
 }
 
 // SetOnline sets field value
-func (o *PyPiProxyApiRepository) SetOnline(v bool) {
+func (o *RawProxyApiRepository) SetOnline(v bool) {
 	o.Online = v
 }
 
 // GetProxy returns the Proxy field value
-func (o *PyPiProxyApiRepository) GetProxy() ProxyAttributes {
+func (o *RawProxyApiRepository) GetProxy() ProxyAttributes {
 	if o == nil {
 		var ret ProxyAttributes
 		return ret
@@ -235,7 +235,7 @@ func (o *PyPiProxyApiRepository) GetProxy() ProxyAttributes {
 
 // GetProxyOk returns a tuple with the Proxy field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetProxyOk() (*ProxyAttributes, bool) {
+func (o *RawProxyApiRepository) GetProxyOk() (*ProxyAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -243,36 +243,36 @@ func (o *PyPiProxyApiRepository) GetProxyOk() (*ProxyAttributes, bool) {
 }
 
 // SetProxy sets field value
-func (o *PyPiProxyApiRepository) SetProxy(v ProxyAttributes) {
+func (o *RawProxyApiRepository) SetProxy(v ProxyAttributes) {
 	o.Proxy = v
 }
 
-// GetPypi returns the Pypi field value
-func (o *PyPiProxyApiRepository) GetPypi() PyPiProxyAttributes {
+// GetRaw returns the Raw field value
+func (o *RawProxyApiRepository) GetRaw() RawAttributes {
 	if o == nil {
-		var ret PyPiProxyAttributes
+		var ret RawAttributes
 		return ret
 	}
 
-	return o.Pypi
+	return o.Raw
 }
 
-// GetPypiOk returns a tuple with the Pypi field value
+// GetRawOk returns a tuple with the Raw field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetPypiOk() (*PyPiProxyAttributes, bool) {
+func (o *RawProxyApiRepository) GetRawOk() (*RawAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.Pypi, true
+	return &o.Raw, true
 }
 
-// SetPypi sets field value
-func (o *PyPiProxyApiRepository) SetPypi(v PyPiProxyAttributes) {
-	o.Pypi = v
+// SetRaw sets field value
+func (o *RawProxyApiRepository) SetRaw(v RawAttributes) {
+	o.Raw = v
 }
 
 // GetReplication returns the Replication field value if set, zero value otherwise.
-func (o *PyPiProxyApiRepository) GetReplication() ReplicationAttributes {
+func (o *RawProxyApiRepository) GetReplication() ReplicationAttributes {
 	if o == nil || IsNil(o.Replication) {
 		var ret ReplicationAttributes
 		return ret
@@ -282,7 +282,7 @@ func (o *PyPiProxyApiRepository) GetReplication() ReplicationAttributes {
 
 // GetReplicationOk returns a tuple with the Replication field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetReplicationOk() (*ReplicationAttributes, bool) {
+func (o *RawProxyApiRepository) GetReplicationOk() (*ReplicationAttributes, bool) {
 	if o == nil || IsNil(o.Replication) {
 		return nil, false
 	}
@@ -290,7 +290,7 @@ func (o *PyPiProxyApiRepository) GetReplicationOk() (*ReplicationAttributes, boo
 }
 
 // HasReplication returns a boolean if a field has been set.
-func (o *PyPiProxyApiRepository) HasReplication() bool {
+func (o *RawProxyApiRepository) HasReplication() bool {
 	if o != nil && !IsNil(o.Replication) {
 		return true
 	}
@@ -299,12 +299,12 @@ func (o *PyPiProxyApiRepository) HasReplication() bool {
 }
 
 // SetReplication gets a reference to the given ReplicationAttributes and assigns it to the Replication field.
-func (o *PyPiProxyApiRepository) SetReplication(v ReplicationAttributes) {
+func (o *RawProxyApiRepository) SetReplication(v ReplicationAttributes) {
 	o.Replication = &v
 }
 
 // GetRoutingRuleName returns the RoutingRuleName field value if set, zero value otherwise.
-func (o *PyPiProxyApiRepository) GetRoutingRuleName() string {
+func (o *RawProxyApiRepository) GetRoutingRuleName() string {
 	if o == nil || IsNil(o.RoutingRuleName) {
 		var ret string
 		return ret
@@ -314,7 +314,7 @@ func (o *PyPiProxyApiRepository) GetRoutingRuleName() string {
 
 // GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetRoutingRuleNameOk() (*string, bool) {
+func (o *RawProxyApiRepository) GetRoutingRuleNameOk() (*string, bool) {
 	if o == nil || IsNil(o.RoutingRuleName) {
 		return nil, false
 	}
@@ -322,7 +322,7 @@ func (o *PyPiProxyApiRepository) GetRoutingRuleNameOk() (*string, bool) {
 }
 
 // HasRoutingRuleName returns a boolean if a field has been set.
-func (o *PyPiProxyApiRepository) HasRoutingRuleName() bool {
+func (o *RawProxyApiRepository) HasRoutingRuleName() bool {
 	if o != nil && !IsNil(o.RoutingRuleName) {
 		return true
 	}
@@ -331,12 +331,12 @@ func (o *PyPiProxyApiRepository) HasRoutingRuleName() bool {
 }
 
 // SetRoutingRuleName gets a reference to the given string and assigns it to the RoutingRuleName field.
-func (o *PyPiProxyApiRepository) SetRoutingRuleName(v string) {
+func (o *RawProxyApiRepository) SetRoutingRuleName(v string) {
 	o.RoutingRuleName = &v
 }
 
 // GetStorage returns the Storage field value
-func (o *PyPiProxyApiRepository) GetStorage() StorageAttributes {
+func (o *RawProxyApiRepository) GetStorage() StorageAttributes {
 	if o == nil {
 		var ret StorageAttributes
 		return ret
@@ -347,7 +347,7 @@ func (o *PyPiProxyApiRepository) GetStorage() StorageAttributes {
 
 // GetStorageOk returns a tuple with the Storage field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetStorageOk() (*StorageAttributes, bool) {
+func (o *RawProxyApiRepository) GetStorageOk() (*StorageAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -355,12 +355,12 @@ func (o *PyPiProxyApiRepository) GetStorageOk() (*StorageAttributes, bool) {
 }
 
 // SetStorage sets field value
-func (o *PyPiProxyApiRepository) SetStorage(v StorageAttributes) {
+func (o *RawProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
 // GetType returns the Type field value
-func (o *PyPiProxyApiRepository) GetType() string {
+func (o *RawProxyApiRepository) GetType() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -371,7 +371,7 @@ func (o *PyPiProxyApiRepository) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetTypeOk() (*string, bool) {
+func (o *RawProxyApiRepository) GetTypeOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -379,12 +379,12 @@ func (o *PyPiProxyApiRepository) GetTypeOk() (*string, bool) {
 }
 
 // SetType sets field value
-func (o *PyPiProxyApiRepository) SetType(v string) {
+func (o *RawProxyApiRepository) SetType(v string) {
 	o.Type = v
 }
 
 // GetUrl returns the Url field value
-func (o *PyPiProxyApiRepository) GetUrl() string {
+func (o *RawProxyApiRepository) GetUrl() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -395,7 +395,7 @@ func (o *PyPiProxyApiRepository) GetUrl() string {
 
 // GetUrlOk returns a tuple with the Url field value
 // and a boolean to check if the value has been set.
-func (o *PyPiProxyApiRepository) GetUrlOk() (*string, bool) {
+func (o *RawProxyApiRepository) GetUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -403,11 +403,11 @@ func (o *PyPiProxyApiRepository) GetUrlOk() (*string, bool) {
 }
 
 // SetUrl sets field value
-func (o *PyPiProxyApiRepository) SetUrl(v string) {
+func (o *RawProxyApiRepository) SetUrl(v string) {
 	o.Url = v
 }
 
-func (o PyPiProxyApiRepository) MarshalJSON() ([]byte, error) {
+func (o RawProxyApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -415,7 +415,7 @@ func (o PyPiProxyApiRepository) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o PyPiProxyApiRepository) ToMap() (map[string]interface{}, error) {
+func (o RawProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
@@ -426,7 +426,7 @@ func (o PyPiProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize["negativeCache"] = o.NegativeCache
 	toSerialize["online"] = o.Online
 	toSerialize["proxy"] = o.Proxy
-	toSerialize["pypi"] = o.Pypi
+	toSerialize["raw"] = o.Raw
 	if !IsNil(o.Replication) {
 		toSerialize["replication"] = o.Replication
 	}
@@ -439,7 +439,7 @@ func (o PyPiProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *PyPiProxyApiRepository) UnmarshalJSON(data []byte) (err error) {
+func (o *RawProxyApiRepository) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -450,7 +450,7 @@ func (o *PyPiProxyApiRepository) UnmarshalJSON(data []byte) (err error) {
 		"negativeCache",
 		"online",
 		"proxy",
-		"pypi",
+		"raw",
 		"storage",
 		"type",
 		"url",
@@ -470,53 +470,53 @@ func (o *PyPiProxyApiRepository) UnmarshalJSON(data []byte) (err error) {
 		}
 	}
 
-	varPyPiProxyApiRepository := _PyPiProxyApiRepository{}
+	varRawProxyApiRepository := _RawProxyApiRepository{}
 
 	decoder := json.NewDecoder(bytes.NewReader(data))
 	decoder.DisallowUnknownFields()
-	err = decoder.Decode(&varPyPiProxyApiRepository)
+	err = decoder.Decode(&varRawProxyApiRepository)
 
 	if err != nil {
 		return err
 	}
 
-	*o = PyPiProxyApiRepository(varPyPiProxyApiRepository)
+	*o = RawProxyApiRepository(varRawProxyApiRepository)
 
 	return err
 }
 
-type NullablePyPiProxyApiRepository struct {
-	value *PyPiProxyApiRepository
+type NullableRawProxyApiRepository struct {
+	value *RawProxyApiRepository
 	isSet bool
 }
 
-func (v NullablePyPiProxyApiRepository) Get() *PyPiProxyApiRepository {
+func (v NullableRawProxyApiRepository) Get() *RawProxyApiRepository {
 	return v.value
 }
 
-func (v *NullablePyPiProxyApiRepository) Set(val *PyPiProxyApiRepository) {
+func (v *NullableRawProxyApiRepository) Set(val *RawProxyApiRepository) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullablePyPiProxyApiRepository) IsSet() bool {
+func (v NullableRawProxyApiRepository) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullablePyPiProxyApiRepository) Unset() {
+func (v *NullableRawProxyApiRepository) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullablePyPiProxyApiRepository(val *PyPiProxyApiRepository) *NullablePyPiProxyApiRepository {
-	return &NullablePyPiProxyApiRepository{value: val, isSet: true}
+func NewNullableRawProxyApiRepository(val *RawProxyApiRepository) *NullableRawProxyApiRepository {
+	return &NullableRawProxyApiRepository{value: val, isSet: true}
 }
 
-func (v NullablePyPiProxyApiRepository) MarshalJSON() ([]byte, error) {
+func (v NullableRawProxyApiRepository) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullablePyPiProxyApiRepository) UnmarshalJSON(src []byte) error {
+func (v *NullableRawProxyApiRepository) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }
