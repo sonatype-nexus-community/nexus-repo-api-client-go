@@ -22,6 +22,7 @@ var _ MappedNullable = &NugetProxyApiRepository{}
 // NugetProxyApiRepository struct for NugetProxyApiRepository
 type NugetProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Format *string `json:"format,omitempty"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
@@ -34,6 +35,8 @@ type NugetProxyApiRepository struct {
 	// The name of the routing rule assigned to this repository
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _NugetProxyApiRepository NugetProxyApiRepository
@@ -44,12 +47,16 @@ type _NugetProxyApiRepository NugetProxyApiRepository
 // will change when the set of required properties is changed
 func NewNugetProxyApiRepository(httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, nugetProxy NugetAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes) *NugetProxyApiRepository {
 	this := NugetProxyApiRepository{}
+	var format string = "nuget"
+	this.Format = &format
 	this.HttpClient = httpClient
 	this.NegativeCache = negativeCache
 	this.NugetProxy = nugetProxy
 	this.Online = online
 	this.Proxy = proxy
 	this.Storage = storage
+	var type_ string = "proxy"
+	this.Type = &type_
 	return &this
 }
 
@@ -58,6 +65,10 @@ func NewNugetProxyApiRepository(httpClient HttpClientAttributes, negativeCache N
 // but it doesn't guarantee that properties required by API are set
 func NewNugetProxyApiRepositoryWithDefaults() *NugetProxyApiRepository {
 	this := NugetProxyApiRepository{}
+	var format string = "nuget"
+	this.Format = &format
+	var type_ string = "proxy"
+	this.Type = &type_
 	return &this
 }
 
@@ -91,6 +102,38 @@ func (o *NugetProxyApiRepository) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *NugetProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *NugetProxyApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NugetProxyApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *NugetProxyApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *NugetProxyApiRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetHttpClient returns the HttpClient field value
@@ -333,6 +376,70 @@ func (o *NugetProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *NugetProxyApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NugetProxyApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *NugetProxyApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *NugetProxyApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *NugetProxyApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NugetProxyApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *NugetProxyApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *NugetProxyApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o NugetProxyApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -345,6 +452,9 @@ func (o NugetProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
+	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
 	}
 	toSerialize["httpClient"] = o.HttpClient
 	if !IsNil(o.Name) {
@@ -361,6 +471,12 @@ func (o NugetProxyApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 

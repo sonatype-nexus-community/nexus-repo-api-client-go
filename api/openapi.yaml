@@ -15691,13 +15691,23 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: nuget
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        nugetProxy:
+          nugetVersion: V3
+          queryCacheItemMaxAge: 3600
+        url: url
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         routingRuleName: routingRuleName
         cleanup:
           policyNames:
@@ -15705,16 +15715,12 @@ components:
           - policyNames
         name: internal
         online: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
-        nugetProxy:
-          nugetVersion: V3
-          queryCacheItemMaxAge: 3600
       properties:
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: nuget
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         name:
@@ -15739,6 +15745,11 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: proxy
+          type: string
+        url:
+          type: string
       required:
       - httpClient
       - negativeCache
