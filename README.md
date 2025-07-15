@@ -518,6 +518,7 @@ Class | Method | HTTP request | Description
  - [PageTaskXO](docs/PageTaskXO.md)
  - [ProxyAttributes](docs/ProxyAttributes.md)
  - [ProxySettingsXo](docs/ProxySettingsXo.md)
+ - [PyPiProxyApiRepository](docs/PyPiProxyApiRepository.md)
  - [PyPiProxyAttributes](docs/PyPiProxyAttributes.md)
  - [PypiGroupRepositoryApiRequest](docs/PypiGroupRepositoryApiRequest.md)
  - [PypiHostedRepositoryApiRequest](docs/PypiHostedRepositoryApiRequest.md)
