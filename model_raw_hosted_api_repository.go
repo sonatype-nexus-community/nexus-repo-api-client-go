@@ -29,7 +29,7 @@ type RawHostedApiRepository struct {
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Raw RawAttributes `json:"raw"`
-	Storage StorageAttributes `json:"storage"`
+	Storage HostedStorageAttributes `json:"storage"`
 	Type string `json:"type"`
 	Url string `json:"url"`
 }
@@ -40,7 +40,7 @@ type _RawHostedApiRepository RawHostedApiRepository
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRawHostedApiRepository(format string, name string, online bool, raw RawAttributes, storage StorageAttributes, type_ string, url string) *RawHostedApiRepository {
+func NewRawHostedApiRepository(format string, name string, online bool, raw RawAttributes, storage HostedStorageAttributes, type_ string, url string) *RawHostedApiRepository {
 	this := RawHostedApiRepository{}
 	this.Format = format
 	this.Name = name
@@ -225,9 +225,9 @@ func (o *RawHostedApiRepository) SetRaw(v RawAttributes) {
 }
 
 // GetStorage returns the Storage field value
-func (o *RawHostedApiRepository) GetStorage() StorageAttributes {
+func (o *RawHostedApiRepository) GetStorage() HostedStorageAttributes {
 	if o == nil {
-		var ret StorageAttributes
+		var ret HostedStorageAttributes
 		return ret
 	}
 
@@ -236,7 +236,7 @@ func (o *RawHostedApiRepository) GetStorage() StorageAttributes {
 
 // GetStorageOk returns a tuple with the Storage field value
 // and a boolean to check if the value has been set.
-func (o *RawHostedApiRepository) GetStorageOk() (*StorageAttributes, bool) {
+func (o *RawHostedApiRepository) GetStorageOk() (*HostedStorageAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -244,7 +244,7 @@ func (o *RawHostedApiRepository) GetStorageOk() (*StorageAttributes, bool) {
 }
 
 // SetStorage sets field value
-func (o *RawHostedApiRepository) SetStorage(v StorageAttributes) {
+func (o *RawHostedApiRepository) SetStorage(v HostedStorageAttributes) {
 	o.Storage = v
 }
 

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Raw** | [**RawAttributes**](RawAttributes.md) |  | 
-**Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
 **Type** | **string** |  | [default to "hosted"]
 **Url** | **string** |  | 
 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewRawHostedApiRepository
 
-`func NewRawHostedApiRepository(format string, name string, online bool, raw RawAttributes, storage StorageAttributes, type_ string, url string, ) *RawHostedApiRepository`
+`func NewRawHostedApiRepository(format string, name string, online bool, raw RawAttributes, storage HostedStorageAttributes, type_ string, url string, ) *RawHostedApiRepository`
 
 NewRawHostedApiRepository instantiates a new RawHostedApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -165,20 +165,20 @@ SetRaw sets Raw field to given value.
 
 ### GetStorage
 
-`func (o *RawHostedApiRepository) GetStorage() StorageAttributes`
+`func (o *RawHostedApiRepository) GetStorage() HostedStorageAttributes`
 
 GetStorage returns the Storage field if non-nil, zero value otherwise.
 
 ### GetStorageOk
 
-`func (o *RawHostedApiRepository) GetStorageOk() (*StorageAttributes, bool)`
+`func (o *RawHostedApiRepository) GetStorageOk() (*HostedStorageAttributes, bool)`
 
 GetStorageOk returns a tuple with the Storage field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStorage
 
-`func (o *RawHostedApiRepository) SetStorage(v StorageAttributes)`
+`func (o *RawHostedApiRepository) SetStorage(v HostedStorageAttributes)`
 
 SetStorage sets Storage field to given value.
 
