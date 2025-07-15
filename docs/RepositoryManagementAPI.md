@@ -2029,7 +2029,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8576,7 +8576,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

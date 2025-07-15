@@ -16254,9 +16254,10 @@ components:
           memberNames:
           - memberNames
           - memberNames
+          writableMember: writableMember
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: '#/components/schemas/GroupDeployAttributes'
         name:
           description: A unique identifier for this repository
           example: internal

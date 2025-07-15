@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
+**Group** | [**GroupDeployAttributes**](GroupDeployAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewPypiGroupRepositoryApiRequest
 
-`func NewPypiGroupRepositoryApiRequest(group GroupAttributes, name string, online bool, storage StorageAttributes, ) *PypiGroupRepositoryApiRequest`
+`func NewPypiGroupRepositoryApiRequest(group GroupDeployAttributes, name string, online bool, storage StorageAttributes, ) *PypiGroupRepositoryApiRequest`
 
 NewPypiGroupRepositoryApiRequest instantiates a new PypiGroupRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -30,20 +30,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetGroup
 
-`func (o *PypiGroupRepositoryApiRequest) GetGroup() GroupAttributes`
+`func (o *PypiGroupRepositoryApiRequest) GetGroup() GroupDeployAttributes`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *PypiGroupRepositoryApiRequest) GetGroupOk() (*GroupAttributes, bool)`
+`func (o *PypiGroupRepositoryApiRequest) GetGroupOk() (*GroupDeployAttributes, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *PypiGroupRepositoryApiRequest) SetGroup(v GroupAttributes)`
+`func (o *PypiGroupRepositoryApiRequest) SetGroup(v GroupDeployAttributes)`
 
 SetGroup sets Group field to given value.
 

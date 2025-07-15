@@ -21,7 +21,7 @@ var _ MappedNullable = &PypiGroupRepositoryApiRequest{}
 
 // PypiGroupRepositoryApiRequest struct for PypiGroupRepositoryApiRequest
 type PypiGroupRepositoryApiRequest struct {
-	Group GroupAttributes `json:"group"`
+	Group GroupDeployAttributes `json:"group"`
 	// A unique identifier for this repository
 	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
@@ -35,7 +35,7 @@ type _PypiGroupRepositoryApiRequest PypiGroupRepositoryApiRequest
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPypiGroupRepositoryApiRequest(group GroupAttributes, name string, online bool, storage StorageAttributes) *PypiGroupRepositoryApiRequest {
+func NewPypiGroupRepositoryApiRequest(group GroupDeployAttributes, name string, online bool, storage StorageAttributes) *PypiGroupRepositoryApiRequest {
 	this := PypiGroupRepositoryApiRequest{}
 	this.Group = group
 	this.Name = name
@@ -53,9 +53,9 @@ func NewPypiGroupRepositoryApiRequestWithDefaults() *PypiGroupRepositoryApiReque
 }
 
 // GetGroup returns the Group field value
-func (o *PypiGroupRepositoryApiRequest) GetGroup() GroupAttributes {
+func (o *PypiGroupRepositoryApiRequest) GetGroup() GroupDeployAttributes {
 	if o == nil {
-		var ret GroupAttributes
+		var ret GroupDeployAttributes
 		return ret
 	}
 
@@ -64,7 +64,7 @@ func (o *PypiGroupRepositoryApiRequest) GetGroup() GroupAttributes {
 
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
-func (o *PypiGroupRepositoryApiRequest) GetGroupOk() (*GroupAttributes, bool) {
+func (o *PypiGroupRepositoryApiRequest) GetGroupOk() (*GroupDeployAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -72,7 +72,7 @@ func (o *PypiGroupRepositoryApiRequest) GetGroupOk() (*GroupAttributes, bool) {
 }
 
 // SetGroup sets field value
-func (o *PypiGroupRepositoryApiRequest) SetGroup(v GroupAttributes) {
+func (o *PypiGroupRepositoryApiRequest) SetGroup(v GroupDeployAttributes) {
 	o.Group = v
 }
 
