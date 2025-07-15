@@ -5371,7 +5371,7 @@ Name | Type | Description  | Notes
 
 ## GetPypiGroupRepository
 
-> SimpleApiGroupRepository GetPypiGroupRepository(ctx, repositoryName).Execute()
+> SimpleApiGroupDeployRepository GetPypiGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5397,7 +5397,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPypiGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPypiGroupRepository`: SimpleApiGroupRepository
+	// response from `GetPypiGroupRepository`: SimpleApiGroupDeployRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPypiGroupRepository`: %v\n", resp)
 }
 ```
@@ -5421,7 +5421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**SimpleApiGroupDeployRepository**](SimpleApiGroupDeployRepository.md)
 
 ### Authorization
 

@@ -7836,7 +7836,7 @@ type ApiGetPypiGroupRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetPypiGroupRepositoryRequest) Execute() (*SimpleApiGroupRepository, *http.Response, error) {
+func (r ApiGetPypiGroupRepositoryRequest) Execute() (*SimpleApiGroupDeployRepository, *http.Response, error) {
 	return r.ApiService.GetPypiGroupRepositoryExecute(r)
 }
 
@@ -7856,13 +7856,13 @@ func (a *RepositoryManagementAPIService) GetPypiGroupRepository(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return SimpleApiGroupRepository
-func (a *RepositoryManagementAPIService) GetPypiGroupRepositoryExecute(r ApiGetPypiGroupRepositoryRequest) (*SimpleApiGroupRepository, *http.Response, error) {
+//  @return SimpleApiGroupDeployRepository
+func (a *RepositoryManagementAPIService) GetPypiGroupRepositoryExecute(r ApiGetPypiGroupRepositoryRequest) (*SimpleApiGroupDeployRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiGroupRepository
+		localVarReturnValue  *SimpleApiGroupDeployRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetPypiGroupRepository")
