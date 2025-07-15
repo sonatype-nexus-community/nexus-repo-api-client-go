@@ -8038,7 +8038,7 @@ type ApiGetPypiProxyRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetPypiProxyRepositoryRequest) Execute() (*SimpleApiProxyRepository, *http.Response, error) {
+func (r ApiGetPypiProxyRepositoryRequest) Execute() (*PypiProxyRepositoryApiRequest, *http.Response, error) {
 	return r.ApiService.GetPypiProxyRepositoryExecute(r)
 }
 
@@ -8058,13 +8058,13 @@ func (a *RepositoryManagementAPIService) GetPypiProxyRepository(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return SimpleApiProxyRepository
-func (a *RepositoryManagementAPIService) GetPypiProxyRepositoryExecute(r ApiGetPypiProxyRepositoryRequest) (*SimpleApiProxyRepository, *http.Response, error) {
+//  @return PypiProxyRepositoryApiRequest
+func (a *RepositoryManagementAPIService) GetPypiProxyRepositoryExecute(r ApiGetPypiProxyRepositoryRequest) (*PypiProxyRepositoryApiRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiProxyRepository
+		localVarReturnValue  *PypiProxyRepositoryApiRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetPypiProxyRepository")

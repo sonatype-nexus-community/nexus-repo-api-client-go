@@ -5507,7 +5507,7 @@ Name | Type | Description  | Notes
 
 ## GetPypiProxyRepository
 
-> SimpleApiProxyRepository GetPypiProxyRepository(ctx, repositoryName).Execute()
+> PypiProxyRepositoryApiRequest GetPypiProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5533,7 +5533,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPypiProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPypiProxyRepository`: SimpleApiProxyRepository
+	// response from `GetPypiProxyRepository`: PypiProxyRepositoryApiRequest
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPypiProxyRepository`: %v\n", resp)
 }
 ```
@@ -5557,7 +5557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**PypiProxyRepositoryApiRequest**](PypiProxyRepositoryApiRequest.md)
 
 ### Authorization
 
