@@ -5,16 +5,19 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
-**Group** | [**GroupDeployAttributes**](GroupDeployAttributes.md) |  | 
+**Format** | Pointer to **string** |  | [optional] [default to "cargo"]
+**Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Type** | Pointer to **string** |  | [optional] [default to "group"]
+**Url** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewCargoGroupApiRepository
 
-`func NewCargoGroupApiRepository(group GroupDeployAttributes, online bool, storage StorageAttributes, ) *CargoGroupApiRepository`
+`func NewCargoGroupApiRepository(group GroupAttributes, online bool, storage StorageAttributes, ) *CargoGroupApiRepository`
 
 NewCargoGroupApiRepository instantiates a new CargoGroupApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -54,22 +57,47 @@ SetCargo sets Cargo field to given value.
 
 HasCargo returns a boolean if a field has been set.
 
+### GetFormat
+
+`func (o *CargoGroupApiRepository) GetFormat() string`
+
+GetFormat returns the Format field if non-nil, zero value otherwise.
+
+### GetFormatOk
+
+`func (o *CargoGroupApiRepository) GetFormatOk() (*string, bool)`
+
+GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormat
+
+`func (o *CargoGroupApiRepository) SetFormat(v string)`
+
+SetFormat sets Format field to given value.
+
+### HasFormat
+
+`func (o *CargoGroupApiRepository) HasFormat() bool`
+
+HasFormat returns a boolean if a field has been set.
+
 ### GetGroup
 
-`func (o *CargoGroupApiRepository) GetGroup() GroupDeployAttributes`
+`func (o *CargoGroupApiRepository) GetGroup() GroupAttributes`
 
 GetGroup returns the Group field if non-nil, zero value otherwise.
 
 ### GetGroupOk
 
-`func (o *CargoGroupApiRepository) GetGroupOk() (*GroupDeployAttributes, bool)`
+`func (o *CargoGroupApiRepository) GetGroupOk() (*GroupAttributes, bool)`
 
 GetGroupOk returns a tuple with the Group field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGroup
 
-`func (o *CargoGroupApiRepository) SetGroup(v GroupDeployAttributes)`
+`func (o *CargoGroupApiRepository) SetGroup(v GroupAttributes)`
 
 SetGroup sets Group field to given value.
 
@@ -138,6 +166,56 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetType
+
+`func (o *CargoGroupApiRepository) GetType() string`
+
+GetType returns the Type field if non-nil, zero value otherwise.
+
+### GetTypeOk
+
+`func (o *CargoGroupApiRepository) GetTypeOk() (*string, bool)`
+
+GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetType
+
+`func (o *CargoGroupApiRepository) SetType(v string)`
+
+SetType sets Type field to given value.
+
+### HasType
+
+`func (o *CargoGroupApiRepository) HasType() bool`
+
+HasType returns a boolean if a field has been set.
+
+### GetUrl
+
+`func (o *CargoGroupApiRepository) GetUrl() string`
+
+GetUrl returns the Url field if non-nil, zero value otherwise.
+
+### GetUrlOk
+
+`func (o *CargoGroupApiRepository) GetUrlOk() (*string, bool)`
+
+GetUrlOk returns a tuple with the Url field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUrl
+
+`func (o *CargoGroupApiRepository) SetUrl(v string)`
+
+SetUrl sets Url field to given value.
+
+### HasUrl
+
+`func (o *CargoGroupApiRepository) HasUrl() bool`
+
+HasUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

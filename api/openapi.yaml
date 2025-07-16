@@ -12403,6 +12403,7 @@ components:
       type: object
     CargoGroupApiRepository:
       example:
+        format: cargo
         name: internal
         online: true
         storage:
@@ -12411,16 +12412,20 @@ components:
           blobStoreName: default
         cargo:
           requireAuthentication: false
+        type: group
+        url: url
         group:
           memberNames:
           - memberNames
           - memberNames
-          writableMember: writableMember
       properties:
         cargo:
           $ref: '#/components/schemas/CargoAttributes'
+        format:
+          default: cargo
+          type: string
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: '#/components/schemas/GroupAttributes'
         name:
           description: A unique identifier for this repository
           example: internal
@@ -12432,6 +12437,11 @@ components:
           type: boolean
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: group
+          type: string
+        url:
+          type: string
       required:
       - group
       - online
@@ -12531,13 +12541,20 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: cargo
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
-        negativeCache:
-          timeToLive: 1440
-          enabled: true
         routingRuleName: routingRuleName
         cleanup:
           policyNames:
@@ -12545,10 +12562,6 @@ components:
           - policyNames
         name: internal
         online: true
-        storage:
-          strictContentTypeValidation: true
-          writePolicy: allow_once
-          blobStoreName: default
         cargo:
           requireAuthentication: false
       properties:
@@ -12556,6 +12569,9 @@ components:
           $ref: '#/components/schemas/CargoAttributes'
         cleanup:
           $ref: '#/components/schemas/CleanupPolicyAttributes'
+        format:
+          default: cargo
+          type: string
         httpClient:
           $ref: '#/components/schemas/HttpClientAttributes'
         name:
@@ -12578,6 +12594,11 @@ components:
           type: string
         storage:
           $ref: '#/components/schemas/StorageAttributes'
+        type:
+          default: proxy
+          type: string
+        url:
+          type: string
       required:
       - httpClient
       - negativeCache

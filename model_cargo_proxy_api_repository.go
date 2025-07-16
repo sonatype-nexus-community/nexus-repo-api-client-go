@@ -23,6 +23,7 @@ var _ MappedNullable = &CargoProxyApiRepository{}
 type CargoProxyApiRepository struct {
 	Cargo *CargoAttributes `json:"cargo,omitempty"`
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Format *string `json:"format,omitempty"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
@@ -34,6 +35,8 @@ type CargoProxyApiRepository struct {
 	// The name of the routing rule assigned to this repository
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _CargoProxyApiRepository CargoProxyApiRepository
@@ -44,11 +47,15 @@ type _CargoProxyApiRepository CargoProxyApiRepository
 // will change when the set of required properties is changed
 func NewCargoProxyApiRepository(httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes) *CargoProxyApiRepository {
 	this := CargoProxyApiRepository{}
+	var format string = "cargo"
+	this.Format = &format
 	this.HttpClient = httpClient
 	this.NegativeCache = negativeCache
 	this.Online = online
 	this.Proxy = proxy
 	this.Storage = storage
+	var type_ string = "proxy"
+	this.Type = &type_
 	return &this
 }
 
@@ -57,6 +64,10 @@ func NewCargoProxyApiRepository(httpClient HttpClientAttributes, negativeCache N
 // but it doesn't guarantee that properties required by API are set
 func NewCargoProxyApiRepositoryWithDefaults() *CargoProxyApiRepository {
 	this := CargoProxyApiRepository{}
+	var format string = "cargo"
+	this.Format = &format
+	var type_ string = "proxy"
+	this.Type = &type_
 	return &this
 }
 
@@ -122,6 +133,38 @@ func (o *CargoProxyApiRepository) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *CargoProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *CargoProxyApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoProxyApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *CargoProxyApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *CargoProxyApiRepository) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetHttpClient returns the HttpClient field value
@@ -340,6 +383,70 @@ func (o *CargoProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *CargoProxyApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoProxyApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *CargoProxyApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *CargoProxyApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *CargoProxyApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoProxyApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *CargoProxyApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *CargoProxyApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o CargoProxyApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -356,6 +463,9 @@ func (o CargoProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
 	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["httpClient"] = o.HttpClient
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
@@ -370,6 +480,12 @@ func (o CargoProxyApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 

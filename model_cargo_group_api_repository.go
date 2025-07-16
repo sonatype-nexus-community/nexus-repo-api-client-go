@@ -22,12 +22,15 @@ var _ MappedNullable = &CargoGroupApiRepository{}
 // CargoGroupApiRepository struct for CargoGroupApiRepository
 type CargoGroupApiRepository struct {
 	Cargo *CargoAttributes `json:"cargo,omitempty"`
-	Group GroupDeployAttributes `json:"group"`
+	Format *string `json:"format,omitempty"`
+	Group GroupAttributes `json:"group"`
 	// A unique identifier for this repository
 	Name *string `json:"name,omitempty" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage StorageAttributes `json:"storage"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _CargoGroupApiRepository CargoGroupApiRepository
@@ -36,11 +39,15 @@ type _CargoGroupApiRepository CargoGroupApiRepository
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCargoGroupApiRepository(group GroupDeployAttributes, online bool, storage StorageAttributes) *CargoGroupApiRepository {
+func NewCargoGroupApiRepository(group GroupAttributes, online bool, storage StorageAttributes) *CargoGroupApiRepository {
 	this := CargoGroupApiRepository{}
+	var format string = "cargo"
+	this.Format = &format
 	this.Group = group
 	this.Online = online
 	this.Storage = storage
+	var type_ string = "group"
+	this.Type = &type_
 	return &this
 }
 
@@ -49,6 +56,10 @@ func NewCargoGroupApiRepository(group GroupDeployAttributes, online bool, storag
 // but it doesn't guarantee that properties required by API are set
 func NewCargoGroupApiRepositoryWithDefaults() *CargoGroupApiRepository {
 	this := CargoGroupApiRepository{}
+	var format string = "cargo"
+	this.Format = &format
+	var type_ string = "group"
+	this.Type = &type_
 	return &this
 }
 
@@ -84,10 +95,42 @@ func (o *CargoGroupApiRepository) SetCargo(v CargoAttributes) {
 	o.Cargo = &v
 }
 
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *CargoGroupApiRepository) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoGroupApiRepository) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *CargoGroupApiRepository) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *CargoGroupApiRepository) SetFormat(v string) {
+	o.Format = &v
+}
+
 // GetGroup returns the Group field value
-func (o *CargoGroupApiRepository) GetGroup() GroupDeployAttributes {
+func (o *CargoGroupApiRepository) GetGroup() GroupAttributes {
 	if o == nil {
-		var ret GroupDeployAttributes
+		var ret GroupAttributes
 		return ret
 	}
 
@@ -96,7 +139,7 @@ func (o *CargoGroupApiRepository) GetGroup() GroupDeployAttributes {
 
 // GetGroupOk returns a tuple with the Group field value
 // and a boolean to check if the value has been set.
-func (o *CargoGroupApiRepository) GetGroupOk() (*GroupDeployAttributes, bool) {
+func (o *CargoGroupApiRepository) GetGroupOk() (*GroupAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -104,7 +147,7 @@ func (o *CargoGroupApiRepository) GetGroupOk() (*GroupDeployAttributes, bool) {
 }
 
 // SetGroup sets field value
-func (o *CargoGroupApiRepository) SetGroup(v GroupDeployAttributes) {
+func (o *CargoGroupApiRepository) SetGroup(v GroupAttributes) {
 	o.Group = v
 }
 
@@ -188,6 +231,70 @@ func (o *CargoGroupApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *CargoGroupApiRepository) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoGroupApiRepository) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *CargoGroupApiRepository) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *CargoGroupApiRepository) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *CargoGroupApiRepository) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CargoGroupApiRepository) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *CargoGroupApiRepository) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *CargoGroupApiRepository) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o CargoGroupApiRepository) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -201,12 +308,21 @@ func (o CargoGroupApiRepository) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Cargo) {
 		toSerialize["cargo"] = o.Cargo
 	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["group"] = o.Group
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
 	}
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 
