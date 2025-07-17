@@ -3807,7 +3807,7 @@ Name | Type | Description  | Notes
 
 ## GetConanGroupRepository
 
-> SimpleApiGroupRepository GetConanGroupRepository(ctx, repositoryName).Execute()
+> SimpleApiGroupDeployRepository GetConanGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -3833,7 +3833,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetConanGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConanGroupRepository`: SimpleApiGroupRepository
+	// response from `GetConanGroupRepository`: SimpleApiGroupDeployRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetConanGroupRepository`: %v\n", resp)
 }
 ```
@@ -3857,7 +3857,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**SimpleApiGroupDeployRepository**](SimpleApiGroupDeployRepository.md)
 
 ### Authorization
 

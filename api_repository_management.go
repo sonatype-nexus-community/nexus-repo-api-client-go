@@ -5513,7 +5513,7 @@ type ApiGetConanGroupRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetConanGroupRepositoryRequest) Execute() (*SimpleApiGroupRepository, *http.Response, error) {
+func (r ApiGetConanGroupRepositoryRequest) Execute() (*SimpleApiGroupDeployRepository, *http.Response, error) {
 	return r.ApiService.GetConanGroupRepositoryExecute(r)
 }
 
@@ -5533,13 +5533,13 @@ func (a *RepositoryManagementAPIService) GetConanGroupRepository(ctx context.Con
 }
 
 // Execute executes the request
-//  @return SimpleApiGroupRepository
-func (a *RepositoryManagementAPIService) GetConanGroupRepositoryExecute(r ApiGetConanGroupRepositoryRequest) (*SimpleApiGroupRepository, *http.Response, error) {
+//  @return SimpleApiGroupDeployRepository
+func (a *RepositoryManagementAPIService) GetConanGroupRepositoryExecute(r ApiGetConanGroupRepositoryRequest) (*SimpleApiGroupDeployRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiGroupRepository
+		localVarReturnValue  *SimpleApiGroupDeployRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetConanGroupRepository")
