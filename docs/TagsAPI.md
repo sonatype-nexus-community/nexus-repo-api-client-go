@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**Create2**](TagsAPI.md#Create2) | **Post** /v1/tags | Create a tag
 [**Delete3**](TagsAPI.md#Delete3) | **Delete** /v1/tags/{name} | Delete a tag
 [**Disassociate**](TagsAPI.md#Disassociate) | **Delete** /v1/tags/associate/{tagName} | Disassociate components from a tag
-[**Get**](TagsAPI.md#Get) | **Get** /v1/tags/{name} | Get a tag
+[**Get3**](TagsAPI.md#Get3) | **Get** /v1/tags/{name} | Get a tag
 [**GetTags**](TagsAPI.md#GetTags) | **Get** /v1/tags | List tags
 [**Replace**](TagsAPI.md#Replace) | **Put** /v1/tags/{name} | Update a tags attributes
 
@@ -494,9 +494,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Get
+## Get3
 
-> TagXO Get(ctx, name).Execute()
+> TagXO Get3(ctx, name).Execute()
 
 Get a tag
 
@@ -517,13 +517,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TagsAPI.Get(context.Background(), name).Execute()
+	resp, r, err := apiClient.TagsAPI.Get3(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.Get``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.Get3``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get`: TagXO
-	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.Get`: %v\n", resp)
+	// response from `Get3`: TagXO
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.Get3`: %v\n", resp)
 }
 ```
 
@@ -537,7 +537,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGet3Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

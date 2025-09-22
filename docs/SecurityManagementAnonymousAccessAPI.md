@@ -5,7 +5,7 @@ All URIs are relative to *http://localhost/service/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Read1**](SecurityManagementAnonymousAccessAPI.md#Read1) | **Get** /v1/security/anonymous | Get Anonymous Access settings
-[**Update3**](SecurityManagementAnonymousAccessAPI.md#Update3) | **Put** /v1/security/anonymous | Update Anonymous Access settings
+[**Update1**](SecurityManagementAnonymousAccessAPI.md#Update1) | **Put** /v1/security/anonymous | Update Anonymous Access settings
 
 
 
@@ -68,9 +68,9 @@ Other parameters are passed through a pointer to a apiRead1Request struct via th
 [[Back to README]](../README.md)
 
 
-## Update3
+## Update1
 
-> AnonymousAccessSettingsXO Update3(ctx).Body(body).Execute()
+> AnonymousAccessSettingsXO Update1(ctx).Body(body).Execute()
 
 Update Anonymous Access settings
 
@@ -91,13 +91,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Update3(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.SecurityManagementAnonymousAccessAPI.Update1(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Update3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAnonymousAccessAPI.Update1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Update3`: AnonymousAccessSettingsXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Update3`: %v\n", resp)
+	// response from `Update1`: AnonymousAccessSettingsXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAnonymousAccessAPI.Update1`: %v\n", resp)
 }
 ```
 
@@ -107,7 +107,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdate3Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdate1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

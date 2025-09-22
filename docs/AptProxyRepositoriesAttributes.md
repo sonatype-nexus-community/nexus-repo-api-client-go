@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Distribution** | Pointer to **string** | Distribution to fetch | [optional] 
-**Flat** | Pointer to **bool** | Whether this repository is flat | [optional] 
+**Flat** | **bool** | Whether this repository is flat | 
 
 ## Methods
 
 ### NewAptProxyRepositoriesAttributes
 
-`func NewAptProxyRepositoriesAttributes() *AptProxyRepositoriesAttributes`
+`func NewAptProxyRepositoriesAttributes(flat bool, ) *AptProxyRepositoriesAttributes`
 
 NewAptProxyRepositoriesAttributes instantiates a new AptProxyRepositoriesAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -70,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetFlat sets Flat field to given value.
 
-### HasFlat
-
-`func (o *AptProxyRepositoriesAttributes) HasFlat() bool`
-
-HasFlat returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

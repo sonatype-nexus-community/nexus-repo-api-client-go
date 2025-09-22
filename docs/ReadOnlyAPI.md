@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ForceRelease**](ReadOnlyAPI.md#ForceRelease) | **Post** /v1/read-only/force-release | Forcibly release read-only and allow changes to the database
 [**Freeze**](ReadOnlyAPI.md#Freeze) | **Post** /v1/read-only/freeze | Prevent changes to the database
-[**Get3**](ReadOnlyAPI.md#Get3) | **Get** /v1/read-only | Get read-only state
+[**Get**](ReadOnlyAPI.md#Get) | **Get** /v1/read-only | Get read-only state
 [**Release**](ReadOnlyAPI.md#Release) | **Post** /v1/read-only/release | Release read-only and allow changes to the database
 
 
@@ -129,9 +129,9 @@ Other parameters are passed through a pointer to a apiFreezeRequest struct via t
 [[Back to README]](../README.md)
 
 
-## Get3
+## Get
 
-> ReadOnlyState Get3(ctx).Execute()
+> ReadOnlyState Get(ctx).Execute()
 
 Get read-only state
 
@@ -151,13 +151,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ReadOnlyAPI.Get3(context.Background()).Execute()
+	resp, r, err := apiClient.ReadOnlyAPI.Get(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ReadOnlyAPI.Get3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ReadOnlyAPI.Get``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get3`: ReadOnlyState
-	fmt.Fprintf(os.Stdout, "Response from `ReadOnlyAPI.Get3`: %v\n", resp)
+	// response from `Get`: ReadOnlyState
+	fmt.Fprintf(os.Stdout, "Response from `ReadOnlyAPI.Get`: %v\n", resp)
 }
 ```
 
@@ -167,7 +167,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGet3Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRequest struct via the builder pattern
 
 
 ### Return type

@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**DeletePolicyByName**](CleanupPoliciesAPI.md#DeletePolicyByName) | **Delete** /v1/cleanup-policies/{name} | Delete cleanup policy
 [**GetAll**](CleanupPoliciesAPI.md#GetAll) | **Get** /v1/cleanup-policies | Get a list of existing policies
 [**GetCleanupPolicyByName**](CleanupPoliciesAPI.md#GetCleanupPolicyByName) | **Get** /v1/cleanup-policies/{name} | Get a policy by name
-[**Update1**](CleanupPoliciesAPI.md#Update1) | **Put** /v1/cleanup-policies/{policyName} | Update existing policy
+[**Update2**](CleanupPoliciesAPI.md#Update2) | **Put** /v1/cleanup-policies/{policyName} | Update existing policy
 
 
 
@@ -263,9 +263,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Update1
+## Update2
 
-> Update1(ctx, policyName).Body(body).Execute()
+> Update2(ctx, policyName).Body(body).Execute()
 
 Update existing policy
 
@@ -287,9 +287,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CleanupPoliciesAPI.Update1(context.Background(), policyName).Body(body).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.Update2(context.Background(), policyName).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.Update1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.Update2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -305,7 +305,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdate1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdate2Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

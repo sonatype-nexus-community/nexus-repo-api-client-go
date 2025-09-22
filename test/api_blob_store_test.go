@@ -37,22 +37,22 @@ func Test_v3_BlobStoreAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BlobStoreAPIService CreateBlobStore", func(t *testing.T) {
+	t.Run("Test BlobStoreAPIService CreateBlobStore1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.BlobStoreAPI.CreateBlobStore(context.Background()).Execute()
+		httpRes, err := apiClient.BlobStoreAPI.CreateBlobStore1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test BlobStoreAPIService CreateBlobStore1", func(t *testing.T) {
+	t.Run("Test BlobStoreAPIService CreateBlobStore2", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.BlobStoreAPI.CreateBlobStore1(context.Background()).Execute()
+		httpRes, err := apiClient.BlobStoreAPI.CreateBlobStore2(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -105,20 +105,6 @@ func Test_v3_BlobStoreAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BlobStoreAPIService GetBlobStore", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		resp, httpRes, err := apiClient.BlobStoreAPI.GetBlobStore(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test BlobStoreAPIService GetBlobStore1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -126,6 +112,20 @@ func Test_v3_BlobStoreAPIService(t *testing.T) {
 		var name string
 
 		resp, httpRes, err := apiClient.BlobStoreAPI.GetBlobStore1(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test BlobStoreAPIService GetBlobStore2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		resp, httpRes, err := apiClient.BlobStoreAPI.GetBlobStore2(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -215,19 +215,6 @@ func Test_v3_BlobStoreAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test BlobStoreAPIService UpdateBlobStore", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		httpRes, err := apiClient.BlobStoreAPI.UpdateBlobStore(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
 	t.Run("Test BlobStoreAPIService UpdateBlobStore1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -235,6 +222,19 @@ func Test_v3_BlobStoreAPIService(t *testing.T) {
 		var name string
 
 		httpRes, err := apiClient.BlobStoreAPI.UpdateBlobStore1(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test BlobStoreAPIService UpdateBlobStore2", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		httpRes, err := apiClient.BlobStoreAPI.UpdateBlobStore2(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.82.0-08."
+    \ version 3.84.0-03."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.82.0-08
+  version: 3.84.0-03
 servers:
 - url: /service/rest/
 security:
@@ -24,38 +24,76 @@ tags:
 - name: Search
 - name: "Security management: privileges"
 - name: Tasks
-- name: Security management
-- name: "Security management: users"
 - name: "Security management: roles"
+- name: "Security management: users"
 - name: Script
-- name: Cleanup policies
-- name: Manage Sonatype Repository Firewall configuration
-- name: "Security: Atlassian Crowd"
 - name: "Security management: LDAP"
+- name: Status
+- name: Read-only
+- name: Formats
+- name: "System: Nodes"
+- name: Email
+- name: Lifecycle
+- name: Community Edition Eula
+- name: "Security management: realms"
+- name: "Security Management: Anonymous Access"
+- name: Security management
+- name: "Security management: secrets encryption"
+- name: "Security management: api keys principals encryption"
+- name: Blob store
+- name: Support
+- name: Manage Sonatype Repository Firewall configuration
+- name: Cleanup policies
+- name: Reconcile Plan
+- name: "Security: Atlassian Crowd"
 - name: Product licensing
+- name: Data Store
 - name: "Security management: SAML"
 - name: Staging
 - name: Tags
 - name: "Security management: user tokens"
-- name: Blob store
 - name: Azure blob store
-- name: Status
-- name: Capabilities
-- name: Monthly Metrics
 - name: Malicious Risk On Disk
-- name: Email
-- name: Formats
-- name: Read-only
-- name: Lifecycle
-- name: "System: Nodes"
-- name: "Security Management: Anonymous Access"
-- name: Community Edition Eula
-- name: "Security management: realms"
-- name: "Security management: secrets encryption"
-- name: Support
-- name: Manage Sonatype HTTP System Settings
+- name: Capabilities
 - name: "Security: certificates"
+- name: Manage Sonatype HTTP System Settings
+- name: Monthly Metrics
 paths:
+  /beta/data-store:
+    get:
+      operationId: getDataStore
+      responses:
+        "200":
+          content: {}
+          description: Data Store configuration returned
+        "403":
+          content: {}
+          description: Authentication required
+      summary: Get the data store
+      tags:
+      - Data Store
+    put:
+      operationId: updateDataStore
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataStoreApiUpdateXO'
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Data Store configuration updated
+        "400":
+          content: {}
+          description: Update Failed
+        "403":
+          content: {}
+          description: Authentication required
+      summary: Update the data store
+      tags:
+      - Data Store
+      x-codegen-request-body-name: body
   /beta/status/check/cluster:
     get:
       operationId: getClusterSystemStatusChecks
@@ -111,6 +149,36 @@ paths:
       summary: Get information about all nodes
       tags:
       - "System: Nodes"
+  /v1/apikeys/encryption/re-encrypt:
+    put:
+      description: "Ensure all nodes have access to the key, and they use the same\
+        \ key"
+      operationId: reEncrypt_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiKeysReEncryptionRequestApiXO'
+        required: false
+      responses:
+        "202":
+          content: {}
+          description: Re-encrypt task successfully submitted
+        "400":
+          content: {}
+          description: "Invalid request. See the response for more information. Possible\
+            \ causes: The key is not available to all nodes, upgrade needed or empty\
+            \ key id."
+        "403":
+          content: {}
+          description: Insufficient permissions to re-encrypt secrets
+        "409":
+          content: {}
+          description: Re-encryption task in progress.
+      summary: Re-encrypt api keys principals using the specified configuration
+      tags:
+      - "Security management: api keys principals encryption"
+      x-codegen-request-body-name: body
   /v1/assets:
     get:
       operationId: getAssets
@@ -249,7 +317,7 @@ paths:
       - Blob store
   /v1/blobstores/azure:
     post:
-      operationId: createBlobStore
+      operationId: createBlobStore_1
       requestBody:
         content:
           application/json:
@@ -272,7 +340,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/blobstores/azure/{name}:
     get:
-      operationId: getBlobStore
+      operationId: getBlobStore_1
       parameters:
       - description: Name of the blob store configuration to fetch
         explode: false
@@ -302,7 +370,7 @@ paths:
       tags:
       - Blob store
     put:
-      operationId: updateBlobStore
+      operationId: updateBlobStore_1
       parameters:
       - description: Name of the blob store to update
         explode: false
@@ -417,7 +485,7 @@ paths:
       x-codegen-request-body-name: body
   /v1/blobstores/google:
     post:
-      operationId: createBlobStore_1
+      operationId: createBlobStore_2
       requestBody:
         content:
           application/json:
@@ -473,7 +541,7 @@ paths:
       - Blob store
   /v1/blobstores/google/{name}:
     get:
-      operationId: getBlobStore_1
+      operationId: getBlobStore_2
       parameters:
       - description: the name of the blob store
         explode: false
@@ -503,7 +571,7 @@ paths:
       tags:
       - Blob store
     put:
-      operationId: updateBlobStore_1
+      operationId: updateBlobStore_2
       parameters:
       - description: the name of the blobstore
         explode: false
@@ -833,7 +901,7 @@ paths:
       tags:
       - Capabilities
     put:
-      operationId: update_2
+      operationId: update_3
       parameters:
       - description: capabilityId
         explode: false
@@ -930,7 +998,7 @@ paths:
       - Cleanup policies
   /v1/cleanup-policies/{policyName}:
     put:
-      operationId: update_1
+      operationId: update_2
       parameters:
       - explode: false
         in: path
@@ -1449,9 +1517,297 @@ paths:
       summary: Get the last 12 months of metrics.
       tags:
       - Monthly Metrics
+  /v1/plan:
+    delete:
+      operationId: deleteAllPlans
+      responses:
+        "204":
+          content: {}
+          description: Reconciliation plans deleted
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Plan not found
+      summary: Delete all non executed reconciliation plans
+      tags:
+      - Reconcile Plan
+    get:
+      operationId: getAvailablePlans
+      parameters:
+      - description: "A token returned by a prior request. If present, the next page\
+          \ of results are returned"
+        explode: true
+        in: query
+        name: continuationToken
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content: {}
+          description: List of plans found
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Get list of currently available plans
+      tags:
+      - Reconcile Plan
+    post:
+      operationId: createReconciliationPlans
+      parameters:
+      - allowEmptyValue: true
+        description: repository(ies) which should be processed with high priority
+        explode: true
+        in: query
+        name: repositories
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - allowEmptyValue: true
+        explode: true
+        in: query
+        name: blobStores
+        required: false
+        schema:
+          items:
+            type: string
+          type: array
+        style: form
+      - explode: true
+        in: query
+        name: startDate
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: endDate
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: sinceDays
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sinceHours
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: sinceMinutes
+        required: false
+        schema:
+          default: 30
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "204":
+          content: {}
+          description: Reconciliation plans created and executed
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Reconciliation plan not found
+      summary: Create reconciliation plans with selected parameters
+      tags:
+      - Reconcile Plan
+    put:
+      operationId: executeReconcileTasks
+      responses:
+        "204":
+          content: {}
+          description: Reconciliation plans executed
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Reconciliation plan not found
+      summary: Execute all non executed reconciliation plans
+      tags:
+      - Reconcile Plan
+  /v1/plan/details:
+    get:
+      operationId: getPlanDetails
+      parameters:
+      - description: Id of the plan
+        explode: true
+        in: query
+        name: planId
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - explode: true
+        in: query
+        name: state
+        required: false
+        schema:
+          type: string
+        style: form
+      - explode: true
+        in: query
+        name: repository
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "A token returned by a prior request. If present, the next page\
+          \ of results are returned"
+        explode: true
+        in: query
+        name: continuationToken
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content: {}
+          description: Reconciliation plan details found
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Get reconciliation plan details
+      tags:
+      - Reconcile Plan
+  /v1/plan/{planId}:
+    delete:
+      operationId: deletePlan
+      parameters:
+      - description: Id of the plan to delete
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: Reconciliation plan deleted
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Plan not found
+      summary: Delete a reconciliation plan based on its Id
+      tags:
+      - Reconcile Plan
+    get:
+      operationId: getSinglePlanWithDetails
+      parameters:
+      - description: Id of the plan
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      - explode: true
+        in: query
+        name: repository
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "A token returned by a prior request. If present, the next page\
+          \ of results are returned"
+        explode: true
+        in: query
+        name: continuationToken
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content: {}
+          description: Reconciliation plan found
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Get single reconciliation plan with details
+      tags:
+      - Reconcile Plan
+    put:
+      operationId: executeReconcileTaskById
+      parameters:
+      - description: Id of the plan to execute
+        explode: false
+        in: path
+        name: planId
+        required: true
+        schema:
+          format: int32
+          type: integer
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: Reconciliation plans executed
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Reconciliation plan not found
+      summary: Execute a reconciliation plan based on its Id
+      tags:
+      - Reconcile Plan
   /v1/read-only:
     get:
-      operationId: get_3
+      operationId: get
       responses:
         "200":
           content:
@@ -7112,7 +7468,7 @@ paths:
       tags:
       - "Security Management: Anonymous Access"
     put:
-      operationId: update_3
+      operationId: update_1
       requestBody:
         content:
           application/json:
@@ -8205,6 +8561,16 @@ paths:
   /v1/security/saml/pem:
     get:
       operationId: getPublicCertificateInPemFormat
+      parameters:
+      - description: "Type of certificate to return: 'signing' or 'decryption'. Defaults\
+          \ to 'signing' if not provided."
+        explode: true
+        in: query
+        name: type
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         "200":
           content: {}
@@ -8218,7 +8584,7 @@ paths:
         "404":
           content: {}
           description: PEM file not found
-      summary: Get service provider signing certificate in PEM format
+      summary: Get service provider signing or decryption certificate in PEM format
       tags:
       - "Security management: SAML"
   /v1/security/ssl:
@@ -10700,7 +11066,7 @@ paths:
       tags:
       - Tags
     get:
-      operationId: get
+      operationId: get_3
       parameters:
       - description: Name of the tag to retrieve
         explode: false
@@ -11148,6 +11514,18 @@ components:
           type: string
         success:
           type: boolean
+      type: object
+    ApiKeysReEncryptionRequestApiXO:
+      example:
+        algorithmForDecryption: algorithmForDecryption
+        notifyEmail: notifyEmail
+      properties:
+        algorithmForDecryption:
+          description: Optional - The algorithm to be used to decrypt the principals
+          type: string
+        notifyEmail:
+          description: Optional - Email to notify when task finishes
+          type: string
       type: object
     ApiLicenseDetailsXO:
       example:
@@ -11813,6 +12191,8 @@ components:
           description: Whether this repository is flat
           example: false
           type: boolean
+      required:
+      - flat
       type: object
     AptProxyRepositoryApiRequest:
       example:
@@ -13214,10 +13594,79 @@ components:
       - enabled
       - realmActive
       type: object
+    DataStoreApiUpdateXO:
+      example:
+        schema: schema
+        password: password
+        advanced: advanced
+        jdbcUrl: jdbcUrl
+        name: name
+        source: local
+        type: jdbc
+        username: username
+      properties:
+        advanced:
+          type: string
+        jdbcUrl:
+          description: The JDBC connection URL for the data store.
+          type: string
+        name:
+          description: The name of the data store.
+          type: string
+        password:
+          description: The password to use for the JDBC connection.
+          type: string
+        schema:
+          type: string
+        source:
+          description: The source of the data store.
+          enum:
+          - local
+          type: string
+        type:
+          description: The type of the data store.
+          enum:
+          - jdbc
+          type: string
+        username:
+          description: The username to use for the JDBC connection.
+          type: string
+      required:
+      - jdbcUrl
+      type: object
+    DataStoreApiXO:
+      properties:
+        advanced:
+          type: string
+        jdbcUrl:
+          description: The JDBC connection URL for the data store.
+          type: string
+        name:
+          description: The name of the data store.
+          type: string
+        schema:
+          type: string
+        source:
+          description: The source of the data store.
+          enum:
+          - local
+          type: string
+        type:
+          description: The type of the data store.
+          enum:
+          - jdbc
+          type: string
+        username:
+          description: The username to use for the JDBC connection.
+          type: string
+      required:
+      - jdbcUrl
+      type: object
     DockerAttributes:
       example:
         httpPort: 8082
         subdomain: docker-a
+        pathEnabled: true
         v1Enabled: false
         forceBasicAuth: true
         httpsPort: 8083
@@ -13237,6 +13686,10 @@ components:
           example: 8083
           format: int32
           type: integer
+        pathEnabled:
+          description: Allows to use repository name in Docker image paths
+          example: true
+          type: boolean
         subdomain:
           description: Allows to use subdomain
           example: docker-a
@@ -13264,6 +13717,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -13313,6 +13767,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -13365,6 +13820,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -13417,6 +13873,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -13514,6 +13971,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -13595,6 +14053,8 @@ components:
             layers
           type: boolean
         foreignLayerUrlWhitelist:
+          description: Regular expressions used to identify URLs that are allowed
+            for foreign layer requests
           items:
             type: string
           type: array
@@ -13661,6 +14121,7 @@ components:
         docker:
           httpPort: 8082
           subdomain: docker-a
+          pathEnabled: true
           v1Enabled: false
           forceBasicAuth: true
           httpsPort: 8083
@@ -15810,6 +16271,24 @@ components:
             $ref: '#/components/schemas/ComponentXO'
           type: array
       type: object
+    PageReconcilePlanDetailsXO:
+      properties:
+        continuationToken:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ReconcilePlanDetailsXO'
+          type: array
+      type: object
+    PageReconcilePlanXO:
+      properties:
+        continuationToken:
+          type: string
+        items:
+          items:
+            $ref: '#/components/schemas/ReconcilePlanXO'
+          type: array
+      type: object
     PageTagXO:
       example:
         items:
@@ -16886,6 +17365,76 @@ components:
         id:
           type: string
         name:
+          type: string
+      type: object
+    ReconcilePlanDetailsXO:
+      properties:
+        action:
+          type: string
+        assetName:
+          type: string
+        blobId:
+          type: string
+        datePathRef:
+          type: string
+        id:
+          format: int32
+          type: integer
+        path:
+          type: string
+        planId:
+          format: int32
+          type: integer
+        reason:
+          type: string
+        repository:
+          type: string
+        state:
+          type: string
+      type: object
+    ReconcilePlanWithDetailsXO:
+      properties:
+        configuration:
+          additionalProperties:
+            type: string
+          type: object
+        continuationToken:
+          type: string
+        created:
+          format: date-time
+          type: string
+        details:
+          items:
+            $ref: '#/components/schemas/ReconcilePlanDetailsXO'
+          type: array
+        id:
+          format: int32
+          type: integer
+        repository:
+          type: string
+        state:
+          type: string
+      type: object
+    ReconcilePlanXO:
+      properties:
+        blobStore:
+          type: string
+        configuration:
+          additionalProperties:
+            type: string
+          type: object
+        created:
+          format: date-time
+          type: string
+        id:
+          format: int32
+          type: integer
+        repository:
+          type: string
+        started:
+          format: date-time
+          type: string
+        state:
           type: string
       type: object
     ReplicationAttributes:

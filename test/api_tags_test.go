@@ -72,13 +72,13 @@ func Test_v3_TagsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TagsAPIService Get", func(t *testing.T) {
+	t.Run("Test TagsAPIService Get3", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		resp, httpRes, err := apiClient.TagsAPI.Get(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.TagsAPI.Get3(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

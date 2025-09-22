@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteSamlConfiguration**](SecurityManagementSAMLAPI.md#DeleteSamlConfiguration) | **Delete** /v1/security/saml | Delete SAML configuration
 [**GetMetadata**](SecurityManagementSAMLAPI.md#GetMetadata) | **Get** /v1/security/saml/metadata | Get service provider metadata XML document
-[**GetPublicCertificateInPemFormat**](SecurityManagementSAMLAPI.md#GetPublicCertificateInPemFormat) | **Get** /v1/security/saml/pem | Get service provider signing certificate in PEM format
+[**GetPublicCertificateInPemFormat**](SecurityManagementSAMLAPI.md#GetPublicCertificateInPemFormat) | **Get** /v1/security/saml/pem | Get service provider signing or decryption certificate in PEM format
 [**GetSamlConfiguration**](SecurityManagementSAMLAPI.md#GetSamlConfiguration) | **Get** /v1/security/saml | Get SAML configuration
 [**PutSamlConfiguration**](SecurityManagementSAMLAPI.md#PutSamlConfiguration) | **Put** /v1/security/saml | Create or update SAML configuration
 
@@ -128,9 +128,9 @@ Other parameters are passed through a pointer to a apiGetMetadataRequest struct 
 
 ## GetPublicCertificateInPemFormat
 
-> GetPublicCertificateInPemFormat(ctx).Execute()
+> GetPublicCertificateInPemFormat(ctx).Type_(type_).Execute()
 
-Get service provider signing certificate in PEM format
+Get service provider signing or decryption certificate in PEM format
 
 ### Example
 
@@ -145,10 +145,11 @@ import (
 )
 
 func main() {
+	type_ := "type__example" // string | Type of certificate to return: 'signing' or 'decryption'. Defaults to 'signing' if not provided. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLAPI.GetPublicCertificateInPemFormat(context.Background()).Execute()
+	r, err := apiClient.SecurityManagementSAMLAPI.GetPublicCertificateInPemFormat(context.Background()).Type_(type_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLAPI.GetPublicCertificateInPemFormat``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -158,12 +159,16 @@ func main() {
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetPublicCertificateInPemFormatRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type_** | **string** | Type of certificate to return: &#39;signing&#39; or &#39;decryption&#39;. Defaults to &#39;signing&#39; if not provided. | 
 
 ### Return type
 

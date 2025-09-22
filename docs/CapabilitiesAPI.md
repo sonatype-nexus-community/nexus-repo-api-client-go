@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Create3**](CapabilitiesAPI.md#Create3) | **Post** /v1/capabilities | Create a capability
 [**Delete4**](CapabilitiesAPI.md#Delete4) | **Delete** /v1/capabilities/{capabilityId} | Delete a capability
 [**List**](CapabilitiesAPI.md#List) | **Get** /v1/capabilities | List the active capabilities
-[**Update2**](CapabilitiesAPI.md#Update2) | **Put** /v1/capabilities/{capabilityId} | Update a capability
+[**Update3**](CapabilitiesAPI.md#Update3) | **Put** /v1/capabilities/{capabilityId} | Update a capability
 
 
 
@@ -200,9 +200,9 @@ Other parameters are passed through a pointer to a apiListRequest struct via the
 [[Back to README]](../README.md)
 
 
-## Update2
+## Update3
 
-> Update2(ctx, capabilityId).Body(body).Execute()
+> Update3(ctx, capabilityId).Body(body).Execute()
 
 Update a capability
 
@@ -224,9 +224,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CapabilitiesAPI.Update2(context.Background(), capabilityId).Body(body).Execute()
+	r, err := apiClient.CapabilitiesAPI.Update3(context.Background(), capabilityId).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Update2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Update3``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -242,7 +242,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdate2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdate3Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

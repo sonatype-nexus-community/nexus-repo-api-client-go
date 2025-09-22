@@ -231,7 +231,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -6604,7 +6604,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

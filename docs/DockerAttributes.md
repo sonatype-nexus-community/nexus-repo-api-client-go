@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **ForceBasicAuth** | **bool** | Whether to force authentication (Docker Bearer Token Realm required if false) | 
 **HttpPort** | Pointer to **int32** | Create an HTTP connector at specified port | [optional] 
 **HttpsPort** | Pointer to **int32** | Create an HTTPS connector at specified port | [optional] 
+**PathEnabled** | Pointer to **bool** | Allows to use repository name in Docker image paths | [optional] 
 **Subdomain** | Pointer to **string** | Allows to use subdomain | [optional] 
 **V1Enabled** | **bool** | Whether to allow clients to use the V1 API to interact with this repository | 
 
@@ -98,6 +99,31 @@ SetHttpsPort sets HttpsPort field to given value.
 `func (o *DockerAttributes) HasHttpsPort() bool`
 
 HasHttpsPort returns a boolean if a field has been set.
+
+### GetPathEnabled
+
+`func (o *DockerAttributes) GetPathEnabled() bool`
+
+GetPathEnabled returns the PathEnabled field if non-nil, zero value otherwise.
+
+### GetPathEnabledOk
+
+`func (o *DockerAttributes) GetPathEnabledOk() (*bool, bool)`
+
+GetPathEnabledOk returns a tuple with the PathEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPathEnabled
+
+`func (o *DockerAttributes) SetPathEnabled(v bool)`
+
+SetPathEnabled sets PathEnabled field to given value.
+
+### HasPathEnabled
+
+`func (o *DockerAttributes) HasPathEnabled() bool`
+
+HasPathEnabled returns a boolean if a field has been set.
 
 ### GetSubdomain
 

@@ -70,13 +70,13 @@ func Test_v3_CleanupPoliciesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test CleanupPoliciesAPIService Update1", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService Update2", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var policyName string
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.Update1(context.Background(), policyName).Execute()
+		httpRes, err := apiClient.CleanupPoliciesAPI.Update2(context.Background(), policyName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

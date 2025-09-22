@@ -44,11 +44,11 @@ func Test_v3_ReadOnlyAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ReadOnlyAPIService Get3", func(t *testing.T) {
+	t.Run("Test ReadOnlyAPIService Get", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ReadOnlyAPI.Get3(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ReadOnlyAPI.Get(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
