@@ -78,7 +78,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DataStoreApiUpdateXO'
+              $ref: "#/components/schemas/DataStoreApiUpdateXO"
         required: false
       responses:
         "204":
@@ -103,7 +103,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/SystemCheckResultsApiDTO'
+                  $ref: "#/components/schemas/SystemCheckResultsApiDTO"
                 type: array
           description: successful operation
         "403":
@@ -158,7 +158,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiKeysReEncryptionRequestApiXO'
+              $ref: "#/components/schemas/ApiKeysReEncryptionRequestApiXO"
         required: false
       responses:
         "202":
@@ -205,7 +205,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageAssetXO'
+                $ref: "#/components/schemas/PageAssetXO"
           description: successful operation
         "403":
           content: {}
@@ -260,7 +260,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AssetXO'
+                $ref: "#/components/schemas/AssetXO"
           description: successful operation
         "403":
           content: {}
@@ -281,7 +281,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AzureConnectionXO'
+              $ref: "#/components/schemas/AzureConnectionXO"
         required: false
       responses:
         "204":
@@ -309,7 +309,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/GenericBlobStoreApiResponse'
+                  $ref: "#/components/schemas/GenericBlobStoreApiResponse"
                 type: array
           description: successful operation
       summary: List the blob stores
@@ -322,7 +322,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AzureBlobStoreApiModel'
+              $ref: "#/components/schemas/AzureBlobStoreApiModel"
         required: false
       responses:
         "201":
@@ -355,7 +355,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AzureBlobStoreApiModel'
+                $ref: "#/components/schemas/AzureBlobStoreApiModel"
           description: Success
         "401":
           content: {}
@@ -384,7 +384,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AzureBlobStoreApiModel'
+              $ref: "#/components/schemas/AzureBlobStoreApiModel"
         required: false
       responses:
         "204":
@@ -410,7 +410,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FileBlobStoreApiCreateRequest'
+              $ref: "#/components/schemas/FileBlobStoreApiCreateRequest"
         required: false
       responses:
         "204":
@@ -441,7 +441,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/FileBlobStoreApiModel'
+                $ref: "#/components/schemas/FileBlobStoreApiModel"
           description: Success
         "403":
           content: {}
@@ -467,7 +467,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/FileBlobStoreApiUpdateRequest'
+              $ref: "#/components/schemas/FileBlobStoreApiUpdateRequest"
         required: false
       responses:
         "204":
@@ -490,7 +490,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GoogleCloudBlobstoreApiModel'
+              $ref: "#/components/schemas/GoogleCloudBlobstoreApiModel"
         required: false
       responses:
         "201":
@@ -556,7 +556,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GoogleCloudBlobstoreApiModel'
+                $ref: "#/components/schemas/GoogleCloudBlobstoreApiModel"
           description: Google Cloud blob store configuration
         "401":
           content: {}
@@ -585,7 +585,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GoogleCloudBlobstoreApiModel'
+              $ref: "#/components/schemas/GoogleCloudBlobstoreApiModel"
         required: false
       responses:
         "204":
@@ -611,7 +611,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GroupBlobStoreApiCreateRequest'
+              $ref: "#/components/schemas/GroupBlobStoreApiCreateRequest"
         required: false
       responses:
         "204":
@@ -649,7 +649,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GroupBlobStoreApiModel'
+                $ref: "#/components/schemas/GroupBlobStoreApiModel"
           description: Success
         "403":
           content: {}
@@ -677,7 +677,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/GroupBlobStoreApiModel'
+                $ref: "#/components/schemas/GroupBlobStoreApiModel"
           description: Success
         "403":
           content: {}
@@ -703,7 +703,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GroupBlobStoreApiUpdateRequest'
+              $ref: "#/components/schemas/GroupBlobStoreApiUpdateRequest"
         required: false
       responses:
         "204":
@@ -726,7 +726,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/S3BlobStoreApiModel'
+              $ref: "#/components/schemas/S3BlobStoreApiModel"
         required: false
       responses:
         "201":
@@ -759,7 +759,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/S3BlobStoreApiModel'
+                $ref: "#/components/schemas/S3BlobStoreApiModel"
           description: Success
         "401":
           content: {}
@@ -788,7 +788,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/S3BlobStoreApiModel'
+              $ref: "#/components/schemas/S3BlobStoreApiModel"
         required: false
       responses:
         "204":
@@ -842,7 +842,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/BlobStoreQuotaResultXO'
+                $ref: "#/components/schemas/BlobStoreQuotaResultXO"
           description: successful operation
       summary: Get quota status for a given blob store
       tags:
@@ -856,7 +856,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/CapabilityDTO'
+                  $ref: "#/components/schemas/CapabilityDTO"
                 type: array
           description: successful operation
       summary: List the active capabilities
@@ -868,14 +868,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CapabilityDTO'
+              $ref: "#/components/schemas/CapabilityDTO"
         required: false
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CapabilityDTO'
+                $ref: "#/components/schemas/CapabilityDTO"
           description: successful operation
       summary: Create a capability
       tags:
@@ -915,7 +915,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CapabilityDTO'
+              $ref: "#/components/schemas/CapabilityDTO"
         description: capability
         required: false
       responses:
@@ -942,7 +942,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CleanupPolicyResourceXO'
+              $ref: "#/components/schemas/CleanupPolicyResourceXO"
         required: false
       responses:
         "201":
@@ -1011,7 +1011,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CleanupPolicyResourceXO'
+              $ref: "#/components/schemas/CleanupPolicyResourceXO"
         required: false
       responses:
         "204":
@@ -1053,7 +1053,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageComponentXO'
+                $ref: "#/components/schemas/PageComponentXO"
           description: successful operation
         "403":
           content: {}
@@ -1080,7 +1080,7 @@ paths:
         content:
           multipart/form-data:
             schema:
-              $ref: '#/components/schemas/uploadComponent_request'
+              $ref: "#/components/schemas/uploadComponent_request"
       responses:
         "403":
           content: {}
@@ -1135,7 +1135,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ComponentXO'
+                $ref: "#/components/schemas/ComponentXO"
           description: successful operation
         "403":
           content: {}
@@ -1166,7 +1166,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiEmailConfiguration'
+                $ref: "#/components/schemas/ApiEmailConfiguration"
           description: successful operation
         "403":
           content: {}
@@ -1180,7 +1180,7 @@ paths:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/ApiEmailConfiguration'
+              $ref: "#/components/schemas/ApiEmailConfiguration"
         required: true
       responses:
         "204":
@@ -1211,7 +1211,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiEmailValidation'
+                $ref: "#/components/schemas/ApiEmailValidation"
           description: "Validation was complete, look at the body to determine success"
         "403":
           content: {}
@@ -1229,7 +1229,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/UploadDefinitionXO'
+                  $ref: "#/components/schemas/UploadDefinitionXO"
                 type: array
           description: successful operation
       summary: Get upload field requirements for each supported format
@@ -1252,7 +1252,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UploadDefinitionXO'
+                $ref: "#/components/schemas/UploadDefinitionXO"
           description: successful operation
       summary: Get upload field requirements for the desired format
       tags:
@@ -1274,7 +1274,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/HttpSettingsXo'
+                $ref: "#/components/schemas/HttpSettingsXo"
           description: Successful Operation
       summary: Get HTTP system settings
       tags:
@@ -1285,7 +1285,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HttpSettingsXo'
+              $ref: "#/components/schemas/HttpSettingsXo"
         required: false
       responses:
         "204":
@@ -1303,7 +1303,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/IqConnectionXo'
+                $ref: "#/components/schemas/IqConnectionXo"
           description: Sonatype Repository Firewall configuration returned
       summary: Get Sonatype Repository Firewall configuration
       tags:
@@ -1314,7 +1314,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IqConnectionXo'
+              $ref: "#/components/schemas/IqConnectionXo"
         required: false
       responses:
         "204":
@@ -1333,7 +1333,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/IqAuditXo'
+                  $ref: "#/components/schemas/IqAuditXo"
                 type: array
           description: Successful Operation
       summary: List repositories audit statuses.
@@ -1345,7 +1345,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/IqAuditXo'
+              $ref: "#/components/schemas/IqAuditXo"
         required: false
       responses:
         "204":
@@ -1813,7 +1813,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReadOnlyState'
+                $ref: "#/components/schemas/ReadOnlyState"
           description: successful operation
       summary: Get read-only state
       tags:
@@ -1881,7 +1881,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/RepositoryXO'
+                  $ref: "#/components/schemas/RepositoryXO"
                 type: array
           description: successful operation
       summary: List repositories
@@ -1894,7 +1894,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AptHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/AptHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -1929,7 +1929,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AptHostedApiRepository'
+                $ref: "#/components/schemas/AptHostedApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -1949,7 +1949,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AptHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/AptHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -1978,7 +1978,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AptProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/AptProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2013,7 +2013,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AptProxyApiRepository'
+                $ref: "#/components/schemas/AptProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2033,7 +2033,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AptProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/AptProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2062,7 +2062,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2094,7 +2094,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CargoGroupApiRepository'
+                $ref: "#/components/schemas/CargoGroupApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2114,7 +2114,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2140,7 +2140,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2172,7 +2172,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2192,7 +2192,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2218,7 +2218,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2250,7 +2250,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/CargoProxyApiRepository'
+                $ref: "#/components/schemas/CargoProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2270,7 +2270,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CargoProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CargoProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2296,7 +2296,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CocoapodsProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CocoapodsProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2331,7 +2331,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2351,7 +2351,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CocoapodsProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CocoapodsProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2377,7 +2377,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ComposerProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/ComposerProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2409,7 +2409,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2429,7 +2429,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ComposerProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/ComposerProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2455,7 +2455,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2487,7 +2487,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupDeployRepository'
+                $ref: "#/components/schemas/SimpleApiGroupDeployRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2507,7 +2507,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2533,7 +2533,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2565,7 +2565,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2585,7 +2585,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2614,7 +2614,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2649,7 +2649,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2669,7 +2669,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ConanProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/ConanProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2698,7 +2698,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CondaProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CondaProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2733,7 +2733,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2753,7 +2753,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CondaProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/CondaProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2779,7 +2779,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2811,7 +2811,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DockerGroupApiRepository'
+                $ref: "#/components/schemas/DockerGroupApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2831,7 +2831,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2860,7 +2860,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2892,7 +2892,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DockerHostedApiRepository'
+                $ref: "#/components/schemas/DockerHostedApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2912,7 +2912,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -2941,7 +2941,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -2973,7 +2973,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/DockerProxyApiRepository'
+                $ref: "#/components/schemas/DockerProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -2993,7 +2993,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/DockerProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/DockerProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3022,7 +3022,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GitLfsHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/GitLfsHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3054,7 +3054,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3074,7 +3074,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GitLfsHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/GitLfsHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3100,7 +3100,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GolangGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/GolangGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3135,7 +3135,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3155,7 +3155,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GolangGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/GolangGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3184,7 +3184,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GolangProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/GolangProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3219,7 +3219,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3239,7 +3239,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/GolangProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/GolangProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3268,7 +3268,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HelmHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/HelmHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3303,7 +3303,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3323,7 +3323,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HelmHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/HelmHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3349,7 +3349,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HelmProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/HelmProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3384,7 +3384,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3404,7 +3404,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HelmProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/HelmProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3430,7 +3430,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HuggingFaceProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/HuggingFaceProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3462,7 +3462,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3482,7 +3482,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/HuggingFaceProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/HuggingFaceProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3508,7 +3508,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3540,7 +3540,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3560,7 +3560,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3586,7 +3586,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3618,7 +3618,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MavenHostedApiRepository'
+                $ref: "#/components/schemas/MavenHostedApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3638,7 +3638,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3664,7 +3664,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3696,7 +3696,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/MavenProxyApiRepository'
+                $ref: "#/components/schemas/MavenProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3716,7 +3716,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/MavenProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/MavenProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3742,7 +3742,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3774,7 +3774,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupDeployRepository'
+                $ref: "#/components/schemas/SimpleApiGroupDeployRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3794,7 +3794,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3820,7 +3820,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3852,7 +3852,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3872,7 +3872,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3898,7 +3898,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -3930,7 +3930,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NpmProxyApiRepository'
+                $ref: "#/components/schemas/NpmProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -3950,7 +3950,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NpmProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/NpmProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -3976,7 +3976,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4008,7 +4008,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4028,7 +4028,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4054,7 +4054,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4086,7 +4086,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4106,7 +4106,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4132,7 +4132,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4164,7 +4164,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NugetProxyApiRepository'
+                $ref: "#/components/schemas/NugetProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4184,7 +4184,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/NugetProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/NugetProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4210,7 +4210,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/P2ProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/P2ProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4245,7 +4245,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4265,7 +4265,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/P2ProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/P2ProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4291,7 +4291,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4323,7 +4323,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupDeployRepository'
+                $ref: "#/components/schemas/SimpleApiGroupDeployRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4343,7 +4343,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4369,7 +4369,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4401,7 +4401,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4421,7 +4421,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4447,7 +4447,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4479,7 +4479,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PyPiProxyApiRepository'
+                $ref: "#/components/schemas/PyPiProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4499,7 +4499,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/PypiProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/PypiProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4525,7 +4525,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4560,7 +4560,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4580,7 +4580,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4606,7 +4606,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4641,7 +4641,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4661,7 +4661,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4687,7 +4687,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4722,7 +4722,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4742,7 +4742,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4771,7 +4771,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RawGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4803,7 +4803,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RawGroupApiRepository'
+                $ref: "#/components/schemas/RawGroupApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4823,7 +4823,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RawGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4849,7 +4849,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RawHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4881,7 +4881,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RawHostedApiRepository'
+                $ref: "#/components/schemas/RawHostedApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4901,7 +4901,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RawHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -4927,7 +4927,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RawProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -4959,7 +4959,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RawProxyApiRepository'
+                $ref: "#/components/schemas/RawProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -4979,7 +4979,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RawProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RawProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5005,7 +5005,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5037,7 +5037,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5057,7 +5057,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5083,7 +5083,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5115,7 +5115,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiHostedRepository'
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5135,7 +5135,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5161,7 +5161,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5193,7 +5193,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5213,7 +5213,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RubyGemsProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/RubyGemsProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5239,7 +5239,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/YumGroupRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5271,7 +5271,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiGroupRepository'
+                $ref: "#/components/schemas/SimpleApiGroupRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5291,7 +5291,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumGroupRepositoryApiRequest'
+              $ref: "#/components/schemas/YumGroupRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5317,7 +5317,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/YumHostedRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5349,7 +5349,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/YumHostedApiRepository'
+                $ref: "#/components/schemas/YumHostedApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5369,7 +5369,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumHostedRepositoryApiRequest'
+              $ref: "#/components/schemas/YumHostedRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5395,7 +5395,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/YumProxyRepositoryApiRequest"
         required: false
       responses:
         "201":
@@ -5427,7 +5427,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/SimpleApiProxyRepository'
+                $ref: "#/components/schemas/SimpleApiProxyRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -5447,7 +5447,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/YumProxyRepositoryApiRequest'
+              $ref: "#/components/schemas/YumProxyRepositoryApiRequest"
         required: false
       responses:
         "204":
@@ -5510,7 +5510,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RepositoryXO'
+                $ref: "#/components/schemas/RepositoryXO"
           description: successful operation
         "401":
           content: {}
@@ -5655,7 +5655,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/AbstractApiRepository'
+                  $ref: "#/components/schemas/AbstractApiRepository"
                 type: array
           description: Repositories list returned
         "401":
@@ -5676,7 +5676,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/RoutingRuleXO'
+                  $ref: "#/components/schemas/RoutingRuleXO"
                 type: array
           description: successful operation
         "403":
@@ -5691,7 +5691,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoutingRuleXO'
+              $ref: "#/components/schemas/RoutingRuleXO"
         description: A routing rule configuration
         required: true
       responses:
@@ -5750,7 +5750,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoutingRuleXO'
+                $ref: "#/components/schemas/RoutingRuleXO"
           description: successful operation
         "403":
           content: {}
@@ -5776,7 +5776,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoutingRuleXO'
+              $ref: "#/components/schemas/RoutingRuleXO"
         description: A routing rule configuration
         required: true
       responses:
@@ -5806,7 +5806,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ScriptXO'
+                  $ref: "#/components/schemas/ScriptXO"
                 type: array
           description: successful operation
       summary: List all stored scripts
@@ -5818,7 +5818,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ScriptXO'
+              $ref: "#/components/schemas/ScriptXO"
         required: false
       responses:
         "204":
@@ -5867,7 +5867,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ScriptXO'
+                $ref: "#/components/schemas/ScriptXO"
           description: successful operation
         "404":
           content: {}
@@ -5889,7 +5889,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ScriptXO'
+              $ref: "#/components/schemas/ScriptXO"
         required: false
       responses:
         "204":
@@ -5930,7 +5930,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ScriptResultXO'
+                $ref: "#/components/schemas/ScriptResultXO"
           description: successful operation
         "404":
           content: {}
@@ -6432,7 +6432,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageComponentXO'
+                $ref: "#/components/schemas/PageComponentXO"
           description: successful operation
       summary: Search components
       tags:
@@ -6926,7 +6926,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageAssetXO'
+                $ref: "#/components/schemas/PageAssetXO"
           description: successful operation
       summary: Search assets
       tags:
@@ -7430,7 +7430,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ReEncryptionRequestApiXO'
+              $ref: "#/components/schemas/ReEncryptionRequestApiXO"
         required: false
       responses:
         "202":
@@ -7459,7 +7459,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AnonymousAccessSettingsXO'
+                $ref: "#/components/schemas/AnonymousAccessSettingsXO"
           description: successful operation
         "403":
           content: {}
@@ -7473,14 +7473,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/AnonymousAccessSettingsXO'
+              $ref: "#/components/schemas/AnonymousAccessSettingsXO"
         required: false
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/AnonymousAccessSettingsXO'
+                $ref: "#/components/schemas/AnonymousAccessSettingsXO"
           description: successful operation
         "403":
           content: {}
@@ -7511,7 +7511,7 @@ paths:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/CrowdApiXO'
+              $ref: "#/components/schemas/CrowdApiXO"
         required: false
       responses:
         "200":
@@ -7550,7 +7550,7 @@ paths:
         content:
           '*/*':
             schema:
-              $ref: '#/components/schemas/CrowdApiXO'
+              $ref: "#/components/schemas/CrowdApiXO"
         required: false
       responses:
         "204":
@@ -7578,7 +7578,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ContentSelectorApiResponse'
+                  $ref: "#/components/schemas/ContentSelectorApiResponse"
                 type: array
           description: successful operation
         "403":
@@ -7593,7 +7593,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContentSelectorApiCreateRequest'
+              $ref: "#/components/schemas/ContentSelectorApiCreateRequest"
         required: false
       responses:
         "204":
@@ -7649,7 +7649,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ContentSelectorApiResponse'
+                $ref: "#/components/schemas/ContentSelectorApiResponse"
           description: successful operation
         "403":
           content: {}
@@ -7672,7 +7672,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ContentSelectorApiUpdateRequest'
+              $ref: "#/components/schemas/ContentSelectorApiUpdateRequest"
         required: false
       responses:
         "204":
@@ -7697,7 +7697,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ReadLdapServerXo'
+                  $ref: "#/components/schemas/ReadLdapServerXo"
                 type: array
           description: LDAP server list returned
         "401":
@@ -7715,7 +7715,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/CreateLdapServerXo'
+              $ref: "#/components/schemas/CreateLdapServerXo"
         required: false
       responses:
         "201":
@@ -7801,7 +7801,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ReadLdapServerXo'
+                $ref: "#/components/schemas/ReadLdapServerXo"
           description: LDAP server returned
         "401":
           content: {}
@@ -7830,7 +7830,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UpdateLdapServerXo'
+              $ref: "#/components/schemas/UpdateLdapServerXo"
         description: Updated values of LDAP server
         required: false
       responses:
@@ -7859,7 +7859,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ApiPrivilegeRequest'
+                  $ref: "#/components/schemas/ApiPrivilegeRequest"
                 type: array
           description: successful operation
         "403":
@@ -7875,7 +7875,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeApplicationRequest'
+              $ref: "#/components/schemas/ApiPrivilegeApplicationRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -7908,7 +7908,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeApplicationRequest'
+              $ref: "#/components/schemas/ApiPrivilegeApplicationRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -7935,7 +7935,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryAdminRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryAdminRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -7968,7 +7968,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryAdminRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryAdminRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -7995,7 +7995,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryContentSelectorRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryContentSelectorRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -8028,7 +8028,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryContentSelectorRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryContentSelectorRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -8055,7 +8055,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryViewRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryViewRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -8088,7 +8088,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeRepositoryViewRequest'
+              $ref: "#/components/schemas/ApiPrivilegeRepositoryViewRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -8115,7 +8115,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeScriptRequest'
+              $ref: "#/components/schemas/ApiPrivilegeScriptRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -8148,7 +8148,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeScriptRequest'
+              $ref: "#/components/schemas/ApiPrivilegeScriptRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -8175,7 +8175,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
+              $ref: "#/components/schemas/ApiPrivilegeWildcardRequest"
         description: The privilege to create.
         required: false
       responses:
@@ -8208,7 +8208,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiPrivilegeWildcardRequest'
+              $ref: "#/components/schemas/ApiPrivilegeWildcardRequest"
         description: The privilege to update.
         required: false
       responses:
@@ -8269,7 +8269,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiPrivilegeRequest'
+                $ref: "#/components/schemas/ApiPrivilegeRequest"
           description: successful operation
         "403":
           content: {}
@@ -8323,7 +8323,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/RealmApiXO'
+                  $ref: "#/components/schemas/RealmApiXO"
                 type: array
           description: successful operation
       summary: List the available realms
@@ -8348,7 +8348,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/RoleXOResponse'
+                  $ref: "#/components/schemas/RoleXOResponse"
                 type: array
           description: successful operation
         "400":
@@ -8366,7 +8366,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoleXORequest'
+              $ref: "#/components/schemas/RoleXORequest"
         description: A role configuration
         required: true
       responses:
@@ -8374,7 +8374,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoleXOResponse'
+                $ref: "#/components/schemas/RoleXOResponse"
           description: successful operation
         "403":
           content: {}
@@ -8434,7 +8434,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/RoleXOResponse'
+                $ref: "#/components/schemas/RoleXOResponse"
           description: successful operation
         "400":
           content: {}
@@ -8463,7 +8463,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/RoleXORequest'
+              $ref: "#/components/schemas/RoleXORequest"
         description: A role configuration
         required: true
       responses:
@@ -8517,7 +8517,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SamlConfigurationXO'
+              $ref: "#/components/schemas/SamlConfigurationXO"
         required: false
       responses:
         "201":
@@ -8622,7 +8622,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiCertificate'
+                $ref: "#/components/schemas/ApiCertificate"
           description: successful operation
         "400":
           content: {}
@@ -8643,7 +8643,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ApiCertificate'
+                  $ref: "#/components/schemas/ApiCertificate"
                 type: array
           description: successful operation
         "403":
@@ -8667,7 +8667,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiCertificate'
+                $ref: "#/components/schemas/ApiCertificate"
           description: The certificate was successfully added.
         "403":
           content: {}
@@ -8708,7 +8708,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ApiUserSource'
+                  $ref: "#/components/schemas/ApiUserSource"
                 type: array
           description: successful operation
         "403":
@@ -8734,7 +8734,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserTokensApiModel'
+                $ref: "#/components/schemas/UserTokensApiModel"
           description: successful operation
       summary: Show if the user token capability is enabled or not
       tags:
@@ -8745,14 +8745,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/UserTokensApiModel'
+              $ref: "#/components/schemas/UserTokensApiModel"
         required: false
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/UserTokensApiModel'
+                $ref: "#/components/schemas/UserTokensApiModel"
           description: successful operation
       summary: Enable/Disable the user token capability
       tags:
@@ -8784,7 +8784,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/ApiUser'
+                  $ref: "#/components/schemas/ApiUser"
                 type: array
           description: successful operation
         "400":
@@ -8802,7 +8802,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiCreateUser'
+              $ref: "#/components/schemas/ApiCreateUser"
         description: A representation of the user to create.
         required: false
       responses:
@@ -8810,7 +8810,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiUser'
+                $ref: "#/components/schemas/ApiUser"
           description: successful operation
         "400":
           content: {}
@@ -8871,7 +8871,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/ApiUser'
+              $ref: "#/components/schemas/ApiUser"
         description: A representation of the user to update.
         required: false
       responses:
@@ -9907,7 +9907,7 @@ paths:
             application/json:
               schema:
                 additionalProperties:
-                  $ref: '#/components/schemas/Result'
+                  $ref: "#/components/schemas/Result"
                 type: object
           description: The system status check results
       summary: Health check endpoint that returns the results of the system status
@@ -9935,7 +9935,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SupportZipGeneratorRequest'
+              $ref: "#/components/schemas/SupportZipGeneratorRequest"
         required: false
       responses:
         "200":
@@ -9955,7 +9955,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/SupportZipGeneratorRequest'
+              $ref: "#/components/schemas/SupportZipGeneratorRequest"
         required: false
       responses:
         "200":
@@ -9992,7 +9992,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/EulaStatus'
+              $ref: "#/components/schemas/EulaStatus"
         required: false
       responses:
         "204":
@@ -10022,7 +10022,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiLicenseDetailsXO'
+                $ref: "#/components/schemas/ApiLicenseDetailsXO"
           description: successful operation
       summary: Get the current license status.
       tags:
@@ -10034,14 +10034,14 @@ paths:
         content:
           application/octet-stream:
             schema:
-              $ref: '#/components/schemas/InputStream'
+              $ref: "#/components/schemas/InputStream"
         required: false
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/ApiLicenseDetailsXO'
+                $ref: "#/components/schemas/ApiLicenseDetailsXO"
           description: successful operation
       summary: Upload a new license file.
       tags:
@@ -10065,7 +10065,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/NodeInformation'
+                $ref: "#/components/schemas/NodeInformation"
           description: successful operation
         "403":
           content: {}
@@ -10091,7 +10091,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageTagXO'
+                $ref: "#/components/schemas/PageTagXO"
           description: successful operation
       summary: List tags
       tags:
@@ -10102,7 +10102,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TagXO'
+              $ref: "#/components/schemas/TagXO"
         required: false
       responses:
         "200":
@@ -11081,7 +11081,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TagXO'
+                $ref: "#/components/schemas/TagXO"
           description: successful operation
         "404":
           content: {}
@@ -11103,14 +11103,14 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/BaseTagXO'
+              $ref: "#/components/schemas/BaseTagXO"
         required: false
       responses:
         "200":
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TagXO'
+                $ref: "#/components/schemas/TagXO"
           description: successful operation
         "400":
           content: {}
@@ -11140,7 +11140,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/PageTaskXO'
+                $ref: "#/components/schemas/PageTaskXO"
           description: successful operation
       summary: List tasks
       tags:
@@ -11151,7 +11151,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TaskTemplateXO'
+              $ref: "#/components/schemas/TaskTemplateXO"
         required: false
       responses:
         default:
@@ -11170,7 +11170,7 @@ paths:
             application/json:
               schema:
                 items:
-                  $ref: '#/components/schemas/TaskTemplateXO'
+                  $ref: "#/components/schemas/TaskTemplateXO"
                 type: array
           description: successful operation
       summary: List tasks of template tasks. This is the base to create new tasks
@@ -11192,7 +11192,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TaskTemplateXO'
+                $ref: "#/components/schemas/TaskTemplateXO"
           description: successful operation
       summary: Get task template by type. This is the base to create new tasks
       tags:
@@ -11231,7 +11231,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/TaskXO'
+                $ref: "#/components/schemas/TaskXO"
           description: successful operation
         "404":
           content: {}
@@ -11304,7 +11304,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/TaskTemplateXO'
+              $ref: "#/components/schemas/TaskTemplateXO"
         required: false
       responses:
         default:
@@ -12001,13 +12001,13 @@ components:
         url: url
       properties:
         apt:
-          $ref: '#/components/schemas/AptHostedRepositoriesAttributes'
+          $ref: "#/components/schemas/AptHostedRepositoriesAttributes"
         aptSigning:
-          $ref: '#/components/schemas/AptSigningRepositoriesAttributes'
+          $ref: "#/components/schemas/AptSigningRepositoriesAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         format:
           default: apt
           type: string
@@ -12021,7 +12021,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         type:
           default: hosted
           type: string
@@ -12063,13 +12063,13 @@ components:
           passphrase: passphrase
       properties:
         apt:
-          $ref: '#/components/schemas/AptHostedRepositoriesAttributes'
+          $ref: "#/components/schemas/AptHostedRepositoriesAttributes"
         aptSigning:
-          $ref: '#/components/schemas/AptSigningRepositoriesAttributes'
+          $ref: "#/components/schemas/AptSigningRepositoriesAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -12080,7 +12080,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - apt
       - aptSigning
@@ -12137,34 +12137,34 @@ components:
         online: true
       properties:
         apt:
-          $ref: '#/components/schemas/AptProxyRepositoriesAttributes'
+          $ref: "#/components/schemas/AptProxyRepositoriesAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: apt
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -12240,30 +12240,30 @@ components:
           blobStoreName: default
       properties:
         apt:
-          $ref: '#/components/schemas/AptProxyRepositoriesAttributes'
+          $ref: "#/components/schemas/AptProxyRepositoriesAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - apt
       - httpClient
@@ -12399,7 +12399,7 @@ components:
           description: Account name found under Access keys for the storage account.
           type: string
         authentication:
-          $ref: '#/components/schemas/AzureBlobStoreApiAuthentication'
+          $ref: "#/components/schemas/AzureBlobStoreApiAuthentication"
         containerName:
           description: The name of an existing container to be used for storage.
           pattern: "^[a-z0-9][a-z0-9-]{2,62}$"
@@ -12423,12 +12423,12 @@ components:
             accountKey: accountKey
       properties:
         bucketConfiguration:
-          $ref: '#/components/schemas/AzureBlobStoreApiBucketConfiguration'
+          $ref: "#/components/schemas/AzureBlobStoreApiBucketConfiguration"
         name:
           description: The name of the Azure blob store.
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       required:
       - bucketConfiguration
       - name
@@ -12541,12 +12541,12 @@ components:
           - memberNames
       properties:
         cargo:
-          $ref: '#/components/schemas/CargoAttributes'
+          $ref: "#/components/schemas/CargoAttributes"
         format:
           default: cargo
           type: string
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -12557,7 +12557,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: group
           type: string
@@ -12584,9 +12584,9 @@ components:
           - memberNames
       properties:
         cargo:
-          $ref: '#/components/schemas/CargoAttributes'
+          $ref: "#/components/schemas/CargoAttributes"
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -12597,7 +12597,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -12620,9 +12620,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -12633,7 +12633,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -12687,34 +12687,34 @@ components:
           requireAuthentication: false
       properties:
         cargo:
-          $ref: '#/components/schemas/CargoAttributes'
+          $ref: "#/components/schemas/CargoAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: cargo
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -12772,30 +12772,30 @@ components:
           requireAuthentication: false
       properties:
         cargo:
-          $ref: '#/components/schemas/CargoAttributes'
+          $ref: "#/components/schemas/CargoAttributes"
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -12913,28 +12913,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -12994,7 +12994,7 @@ components:
       properties:
         assets:
           items:
-            $ref: '#/components/schemas/AssetXO'
+            $ref: "#/components/schemas/AssetXO"
           type: array
         format:
           type: string
@@ -13052,28 +13052,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -13097,7 +13097,7 @@ components:
           writableMember: writableMember
       properties:
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13108,7 +13108,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -13131,9 +13131,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13144,7 +13144,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -13207,30 +13207,30 @@ components:
           conanVersion: V1
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         conanProxy:
-          $ref: '#/components/schemas/ConanProxyAttributes'
+          $ref: "#/components/schemas/ConanProxyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -13282,28 +13282,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -13728,12 +13728,12 @@ components:
           writableMember: writableMember
       properties:
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         format:
           default: docker
           type: string
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13744,7 +13744,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: group
           type: string
@@ -13778,9 +13778,9 @@ components:
           writableMember: writableMember
       properties:
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13791,7 +13791,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - docker
       - group
@@ -13826,11 +13826,11 @@ components:
           httpsPort: 8083
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         format:
           default: docker
           type: string
@@ -13844,7 +13844,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/DockerHostedStorageAttributes'
+          $ref: "#/components/schemas/DockerHostedStorageAttributes"
         type:
           default: hosted
           type: string
@@ -13879,11 +13879,11 @@ components:
           httpsPort: 8083
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -13894,7 +13894,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/DockerHostedStorageAttributes'
+          $ref: "#/components/schemas/DockerHostedStorageAttributes"
       required:
       - docker
       - name
@@ -13995,36 +13995,36 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         dockerProxy:
-          $ref: '#/components/schemas/DockerProxyAttributes'
+          $ref: "#/components/schemas/DockerProxyAttributes"
         format:
           default: docker
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -14127,32 +14127,32 @@ components:
           httpsPort: 8083
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         docker:
-          $ref: '#/components/schemas/DockerAttributes'
+          $ref: "#/components/schemas/DockerAttributes"
         dockerProxy:
-          $ref: '#/components/schemas/DockerProxyAttributes'
+          $ref: "#/components/schemas/DockerProxyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - docker
       - dockerProxy
@@ -14187,7 +14187,7 @@ components:
           description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     FileBlobStoreApiModel:
       example:
@@ -14200,7 +14200,7 @@ components:
           description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     FileBlobStoreApiUpdateRequest:
       example:
@@ -14213,7 +14213,7 @@ components:
           description: An absolute path or a path relative to <data-directory>/blobs
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     FrequencyXO:
       example:
@@ -14274,7 +14274,7 @@ components:
         name:
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
         totalSizeInBytes:
           format: int64
           type: integer
@@ -14299,9 +14299,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -14312,7 +14312,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -14332,7 +14332,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -14343,7 +14343,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -14393,28 +14393,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -14482,11 +14482,11 @@ components:
           encryptionKey: encryptionKey
       properties:
         bucket:
-          $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucket'
+          $ref: "#/components/schemas/GoogleCloudBlobStoreApiBucket"
         bucketSecurity:
-          $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucketAuthentication'
+          $ref: "#/components/schemas/GoogleCloudBlobStoreApiBucketAuthentication"
         encryption:
-          $ref: '#/components/schemas/GoogleCloudBlobStoreApiEncryption'
+          $ref: "#/components/schemas/GoogleCloudBlobStoreApiEncryption"
       required:
       - bucket
       type: object
@@ -14526,13 +14526,13 @@ components:
             encryptionKey: encryptionKey
       properties:
         bucketConfiguration:
-          $ref: '#/components/schemas/GoogleCloudBlobStoreApiBucketConfiguration'
+          $ref: "#/components/schemas/GoogleCloudBlobStoreApiBucketConfiguration"
         name:
           description: The name of the GC Storage blob store.
           example: gc_storage
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
         type:
           description: The blob store type.
           example: Google Cloud Storage
@@ -14578,7 +14578,7 @@ components:
         name:
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     GroupBlobStoreApiModel:
       example:
@@ -14601,7 +14601,7 @@ components:
             type: string
           type: array
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     GroupBlobStoreApiResponse:
       properties:
@@ -14618,7 +14618,7 @@ components:
         name:
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     GroupBlobStoreApiUpdateRequest:
       example:
@@ -14641,7 +14641,7 @@ components:
             type: string
           type: array
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
       type: object
     GroupDeployAttributes:
       example:
@@ -14676,9 +14676,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -14689,7 +14689,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -14738,28 +14738,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -14817,7 +14817,7 @@ components:
           username: username
       properties:
         authentication:
-          $ref: '#/components/schemas/HttpClientConnectionAuthenticationAttributes'
+          $ref: "#/components/schemas/HttpClientConnectionAuthenticationAttributes"
         autoBlock:
           description: Whether to auto-block outbound connections if remote peer is
             detected as unreachable/unresponsive
@@ -14828,7 +14828,7 @@ components:
           example: false
           type: boolean
         connection:
-          $ref: '#/components/schemas/HttpClientConnectionAttributes'
+          $ref: "#/components/schemas/HttpClientConnectionAttributes"
       required:
       - autoBlock
       - blocked
@@ -14854,7 +14854,7 @@ components:
           username: username
       properties:
         authentication:
-          $ref: '#/components/schemas/HttpClientConnectionAuthenticationAttributesWithPreemptive'
+          $ref: "#/components/schemas/HttpClientConnectionAuthenticationAttributesWithPreemptive"
         autoBlock:
           description: Whether to auto-block outbound connections if remote peer is
             detected as unreachable/unresponsive
@@ -14865,7 +14865,7 @@ components:
           example: false
           type: boolean
         connection:
-          $ref: '#/components/schemas/HttpClientConnectionAttributes'
+          $ref: "#/components/schemas/HttpClientConnectionAttributes"
       required:
       - autoBlock
       - blocked
@@ -15008,9 +15008,9 @@ components:
         timeout: 2170
       properties:
         httpProxy:
-          $ref: '#/components/schemas/ProxySettingsXo'
+          $ref: "#/components/schemas/ProxySettingsXo"
         httpsProxy:
-          $ref: '#/components/schemas/ProxySettingsXo'
+          $ref: "#/components/schemas/ProxySettingsXo"
         nonProxyHosts:
           items:
             type: string
@@ -15081,28 +15081,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -15251,7 +15251,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15262,7 +15262,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -15292,14 +15292,14 @@ components:
         url: url
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         format:
           default: maven2
           type: string
         maven:
-          $ref: '#/components/schemas/MavenAttributes'
+          $ref: "#/components/schemas/MavenAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15310,7 +15310,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         type:
           default: hosted
           type: string
@@ -15341,11 +15341,11 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         maven:
-          $ref: '#/components/schemas/MavenAttributes'
+          $ref: "#/components/schemas/MavenAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15356,7 +15356,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - maven
       - name
@@ -15413,34 +15413,34 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: maven2
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         maven:
-          $ref: '#/components/schemas/MavenAttributes'
+          $ref: "#/components/schemas/MavenAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -15501,30 +15501,30 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributesWithPreemptiveAuth'
+          $ref: "#/components/schemas/HttpClientAttributesWithPreemptiveAuth"
         maven:
-          $ref: '#/components/schemas/MavenAttributes'
+          $ref: "#/components/schemas/MavenAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - maven
@@ -15587,7 +15587,7 @@ components:
           writableMember: writableMember
       properties:
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15598,7 +15598,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -15621,9 +15621,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15634,7 +15634,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -15688,34 +15688,34 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: npm
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         npm:
-          $ref: '#/components/schemas/NpmAttributes'
+          $ref: "#/components/schemas/NpmAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -15773,30 +15773,30 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         npm:
-          $ref: '#/components/schemas/NpmAttributes'
+          $ref: "#/components/schemas/NpmAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -15838,7 +15838,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15849,7 +15849,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -15872,9 +15872,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -15885,7 +15885,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -15940,34 +15940,34 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: nuget
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         nugetProxy:
-          $ref: '#/components/schemas/NugetAttributes'
+          $ref: "#/components/schemas/NugetAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -16027,30 +16027,30 @@ components:
           queryCacheItemMaxAge: 3600
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         nugetProxy:
-          $ref: '#/components/schemas/NugetAttributes'
+          $ref: "#/components/schemas/NugetAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -16103,28 +16103,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -16182,7 +16182,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/AssetXO'
+            $ref: "#/components/schemas/AssetXO"
           type: array
       type: object
     PageComponentXO:
@@ -16268,7 +16268,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/ComponentXO'
+            $ref: "#/components/schemas/ComponentXO"
           type: array
       type: object
     PageReconcilePlanDetailsXO:
@@ -16277,7 +16277,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/ReconcilePlanDetailsXO'
+            $ref: "#/components/schemas/ReconcilePlanDetailsXO"
           type: array
       type: object
     PageReconcilePlanXO:
@@ -16286,7 +16286,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/ReconcilePlanXO'
+            $ref: "#/components/schemas/ReconcilePlanXO"
           type: array
       type: object
     PageTagXO:
@@ -16308,7 +16308,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/TagXO'
+            $ref: "#/components/schemas/TagXO"
           type: array
       type: object
     PageTaskXO:
@@ -16336,7 +16336,7 @@ components:
           type: string
         items:
           items:
-            $ref: '#/components/schemas/TaskXO'
+            $ref: "#/components/schemas/TaskXO"
           type: array
       type: object
     ProxyAttributes:
@@ -16378,7 +16378,7 @@ components:
           username: username
       properties:
         authInfo:
-          $ref: '#/components/schemas/AuthSettingsXo'
+          $ref: "#/components/schemas/AuthSettingsXo"
         enabled:
           description: proxy enabled
           type: boolean
@@ -16442,31 +16442,31 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: pypi
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         pypi:
-          $ref: '#/components/schemas/PyPiProxyAttributes'
+          $ref: "#/components/schemas/PyPiProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -16509,7 +16509,7 @@ components:
           writableMember: writableMember
       properties:
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16520,7 +16520,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -16543,9 +16543,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16556,7 +16556,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -16607,30 +16607,30 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         pypi:
-          $ref: '#/components/schemas/PyPiProxyAttributes'
+          $ref: "#/components/schemas/PyPiProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -16653,7 +16653,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16664,7 +16664,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -16687,9 +16687,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16700,7 +16700,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -16749,28 +16749,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -16813,7 +16813,7 @@ components:
           default: raw
           type: string
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
@@ -16822,9 +16822,9 @@ components:
           description: Whether this repository accepts incoming requests
           type: boolean
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: group
           type: string
@@ -16855,7 +16855,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16866,9 +16866,9 @@ components:
           example: true
           type: boolean
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -16896,9 +16896,9 @@ components:
         url: url
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         format:
           default: raw
           type: string
@@ -16910,9 +16910,9 @@ components:
           description: Whether this repository accepts incoming requests
           type: boolean
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         type:
           default: hosted
           type: string
@@ -16944,9 +16944,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16957,9 +16957,9 @@ components:
           example: true
           type: boolean
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -17013,31 +17013,31 @@ components:
         online: true
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           default: pypi
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: raw
           type: string
@@ -17099,30 +17099,30 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         raw:
-          $ref: '#/components/schemas/RawAttributes'
+          $ref: "#/components/schemas/RawAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -17405,7 +17405,7 @@ components:
           type: string
         details:
           items:
-            $ref: '#/components/schemas/ReconcilePlanDetailsXO'
+            $ref: "#/components/schemas/ReconcilePlanDetailsXO"
           type: array
         id:
           format: int32
@@ -17486,7 +17486,7 @@ components:
           format: int64
           type: integer
         error:
-          $ref: '#/components/schemas/Throwable'
+          $ref: "#/components/schemas/Throwable"
         healthy:
           type: boolean
         message:
@@ -17616,7 +17616,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -17627,7 +17627,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
       - name
@@ -17650,9 +17650,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -17663,7 +17663,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
       required:
       - name
       - online
@@ -17712,28 +17712,28 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
       required:
       - httpClient
       - name
@@ -17821,18 +17821,18 @@ components:
           readOnly: true
           type: string
         advancedBucketConnection:
-          $ref: '#/components/schemas/S3BlobStoreApiAdvancedBucketConnection'
+          $ref: "#/components/schemas/S3BlobStoreApiAdvancedBucketConnection"
         bucket:
-          $ref: '#/components/schemas/S3BlobStoreApiBucket'
+          $ref: "#/components/schemas/S3BlobStoreApiBucket"
         bucketSecurity:
-          $ref: '#/components/schemas/S3BlobStoreApiBucketSecurity'
+          $ref: "#/components/schemas/S3BlobStoreApiBucketSecurity"
         encryption:
-          $ref: '#/components/schemas/S3BlobStoreApiEncryption'
+          $ref: "#/components/schemas/S3BlobStoreApiEncryption"
         failoverBuckets:
           description: A list of secondary buckets which have bidirectional replication
             enabled and should be used when Nexus is running in the region
           items:
-            $ref: '#/components/schemas/S3BlobStoreApiFailoverBucket'
+            $ref: "#/components/schemas/S3BlobStoreApiFailoverBucket"
           type: array
         preSignedUrlEnabled:
           description: Whether pre assigned URL is enabled or not.
@@ -17929,13 +17929,13 @@ components:
           activeRegion: activeRegion
       properties:
         bucketConfiguration:
-          $ref: '#/components/schemas/S3BlobStoreApiBucketConfiguration'
+          $ref: "#/components/schemas/S3BlobStoreApiBucketConfiguration"
         name:
           description: The name of the S3 blob store.
           example: s3
           type: string
         softQuota:
-          $ref: '#/components/schemas/BlobStoreApiSoftQuota'
+          $ref: "#/components/schemas/BlobStoreApiSoftQuota"
         type:
           description: The blob store type.
           example: S3
@@ -18033,7 +18033,7 @@ components:
         format:
           type: string
         group:
-          $ref: '#/components/schemas/GroupDeployAttributes'
+          $ref: "#/components/schemas/GroupDeployAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -18046,7 +18046,7 @@ components:
           readOnly: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: group
           type: string
@@ -18076,7 +18076,7 @@ components:
         format:
           type: string
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -18087,7 +18087,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: group
           type: string
@@ -18117,9 +18117,9 @@ components:
         url: url
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         format:
           type: string
         name:
@@ -18132,7 +18132,7 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         type:
           default: hosted
           type: string
@@ -18188,31 +18188,31 @@ components:
         url: url
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
           type: string
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRuleName:
           description: The name of the routing rule assigned to this repository
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         type:
           default: proxy
           type: string
@@ -18357,7 +18357,7 @@ components:
           type: string
         results:
           additionalProperties:
-            $ref: '#/components/schemas/SystemCheckResultDTO'
+            $ref: "#/components/schemas/SystemCheckResultDTO"
           description: The system status check results
           example: "{\"Check\": {\"healthy\": false, \"message\": \"An explanation\
             \ of the check\"}}"
@@ -18415,7 +18415,7 @@ components:
           description: Indicates if the task would be enabled.
           type: boolean
         frequency:
-          $ref: '#/components/schemas/FrequencyXO'
+          $ref: "#/components/schemas/FrequencyXO"
         name:
           description: The name of the task template.
           type: string
@@ -18473,18 +18473,18 @@ components:
     Throwable:
       properties:
         cause:
-          $ref: '#/components/schemas/Throwable'
+          $ref: "#/components/schemas/Throwable"
         localizedMessage:
           type: string
         message:
           type: string
         stackTrace:
           items:
-            $ref: '#/components/schemas/StackTraceElement'
+            $ref: "#/components/schemas/StackTraceElement"
           type: array
         suppressed:
           items:
-            $ref: '#/components/schemas/Throwable'
+            $ref: "#/components/schemas/Throwable"
           type: array
       type: object
     UpdateLdapServerXo:
@@ -18716,11 +18716,11 @@ components:
       properties:
         assetFields:
           items:
-            $ref: '#/components/schemas/UploadFieldDefinitionXO'
+            $ref: "#/components/schemas/UploadFieldDefinitionXO"
           type: array
         componentFields:
           items:
-            $ref: '#/components/schemas/UploadFieldDefinitionXO'
+            $ref: "#/components/schemas/UploadFieldDefinitionXO"
           type: array
         format:
           type: string
@@ -18810,7 +18810,7 @@ components:
           - memberNames
       properties:
         group:
-          $ref: '#/components/schemas/GroupAttributes'
+          $ref: "#/components/schemas/GroupAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -18821,9 +18821,9 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         yumSigning:
-          $ref: '#/components/schemas/YumSigningRepositoriesAttributes'
+          $ref: "#/components/schemas/YumSigningRepositoriesAttributes"
       required:
       - group
       - name
@@ -18852,9 +18852,9 @@ components:
         url: url
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         format:
           default: yum
           type: string
@@ -18868,14 +18868,14 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         type:
           default: hosted
           type: string
         url:
           type: string
         yum:
-          $ref: '#/components/schemas/YumAttributes'
+          $ref: "#/components/schemas/YumAttributes"
       required:
       - online
       - storage
@@ -18900,9 +18900,9 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
-          $ref: '#/components/schemas/ComponentAttributes'
+          $ref: "#/components/schemas/ComponentAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -18913,9 +18913,9 @@ components:
           example: true
           type: boolean
         storage:
-          $ref: '#/components/schemas/HostedStorageAttributes'
+          $ref: "#/components/schemas/HostedStorageAttributes"
         yum:
-          $ref: '#/components/schemas/YumAttributes'
+          $ref: "#/components/schemas/YumAttributes"
       required:
       - name
       - online
@@ -18968,30 +18968,30 @@ components:
           blobStoreName: default
       properties:
         cleanup:
-          $ref: '#/components/schemas/CleanupPolicyAttributes'
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
         httpClient:
-          $ref: '#/components/schemas/HttpClientAttributes'
+          $ref: "#/components/schemas/HttpClientAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
           pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         negativeCache:
-          $ref: '#/components/schemas/NegativeCacheAttributes'
+          $ref: "#/components/schemas/NegativeCacheAttributes"
         online:
           description: Whether this repository accepts incoming requests
           example: true
           type: boolean
         proxy:
-          $ref: '#/components/schemas/ProxyAttributes'
+          $ref: "#/components/schemas/ProxyAttributes"
         replication:
-          $ref: '#/components/schemas/ReplicationAttributes'
+          $ref: "#/components/schemas/ReplicationAttributes"
         routingRule:
           type: string
         storage:
-          $ref: '#/components/schemas/StorageAttributes'
+          $ref: "#/components/schemas/StorageAttributes"
         yumSigning:
-          $ref: '#/components/schemas/YumSigningRepositoriesAttributes'
+          $ref: "#/components/schemas/YumSigningRepositoriesAttributes"
       required:
       - httpClient
       - name

@@ -1,6 +1,6 @@
 module github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3
 
-go 1.18
+go 1.23
 
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
