@@ -555,7 +555,7 @@ import (
 
 func main() {
 	taskId := "taskId_example" // string | 
-	body := *sonatyperepo.NewTaskTemplateXO(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example", "Type_example") // TaskTemplateXO |  (optional)
+	body := *sonatyperepo.NewUpdateTaskRequest(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example") // UpdateTaskRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -583,7 +583,7 @@ Other parameters are passed through a pointer to a apiUpdateTaskRequest struct v
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**TaskTemplateXO**](TaskTemplateXO.md) |  | 
+ **body** | [**UpdateTaskRequest**](UpdateTaskRequest.md) |  | 
 
 ### Return type
 

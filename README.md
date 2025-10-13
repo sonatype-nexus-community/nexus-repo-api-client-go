@@ -594,6 +594,7 @@ Class | Method | HTTP request | Description
  - [TaskXO](docs/TaskXO.md)
  - [Throwable](docs/Throwable.md)
  - [UpdateLdapServerXo](docs/UpdateLdapServerXo.md)
+ - [UpdateTaskRequest](docs/UpdateTaskRequest.md)
  - [UploadComponentRequest](docs/UploadComponentRequest.md)
  - [UploadDefinitionXO](docs/UploadDefinitionXO.md)
  - [UploadFieldDefinitionXO](docs/UploadFieldDefinitionXO.md)

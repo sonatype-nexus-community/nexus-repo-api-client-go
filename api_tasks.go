@@ -797,10 +797,10 @@ type ApiUpdateTaskRequest struct {
 	ctx context.Context
 	ApiService *TasksAPIService
 	taskId string
-	body *TaskTemplateXO
+	body *UpdateTaskRequest
 }
 
-func (r ApiUpdateTaskRequest) Body(body TaskTemplateXO) ApiUpdateTaskRequest {
+func (r ApiUpdateTaskRequest) Body(body UpdateTaskRequest) ApiUpdateTaskRequest {
 	r.body = &body
 	return r
 }

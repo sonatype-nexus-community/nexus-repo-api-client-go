@@ -11304,7 +11304,7 @@ paths:
         content:
           application/json:
             schema:
-              $ref: "#/components/schemas/TaskTemplateXO"
+              $ref: "#/components/schemas/updateTask_request"
         required: false
       responses:
         default:
@@ -19163,6 +19163,38 @@ components:
           description: yum Tag
           type: string
       type: object
+    updateTask_request:
+      properties:
+        alertEmail:
+          description: e-mail for task notifications.
+          type: string
+        enabled:
+          description: Indicates if the task would be enabled.
+          type: boolean
+        frequency:
+          $ref: "#/components/schemas/FrequencyXO"
+        name:
+          description: The name of the task template.
+          type: string
+        notificationCondition:
+          description: Condition required to notify a task execution.
+          enum:
+          - FAILURE
+          - SUCCESS_FAILURE
+          type: string
+        properties:
+          additionalProperties:
+            type: string
+          description: Additional properties for the task
+          type: object
+        type:
+          description: The type of task to be created.
+          type: string
+      required:
+      - enabled
+      - frequency
+      - name
+      - notificationCondition
   securitySchemes:
     BasicAuth:
       scheme: basic
