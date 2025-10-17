@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReEncrypt**](SecurityManagementSecretsEncryptionAPI.md#ReEncrypt) | **Put** /v1/secrets/encryption/re-encrypt | Re-encrypt secrets using the specified key
+[**ReEncrypt1**](SecurityManagementSecretsEncryptionAPI.md#ReEncrypt1) | **Put** /v1/secrets/encryption/re-encrypt | Re-encrypt secrets using the specified key
 
 
 
-## ReEncrypt
+## ReEncrypt1
 
-> ReEncrypt(ctx).Body(body).Execute()
+> ReEncrypt1(ctx).Body(body).Execute()
 
 Re-encrypt secrets using the specified key
 
@@ -33,9 +33,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSecretsEncryptionAPI.ReEncrypt(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementSecretsEncryptionAPI.ReEncrypt1(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSecretsEncryptionAPI.ReEncrypt``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSecretsEncryptionAPI.ReEncrypt1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReEncryptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiReEncrypt1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

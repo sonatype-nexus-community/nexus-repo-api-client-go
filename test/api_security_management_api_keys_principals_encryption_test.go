@@ -22,11 +22,11 @@ func Test_v3_SecurityManagementApiKeysPrincipalsEncryptionAPIService(t *testing.
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementApiKeysPrincipalsEncryptionAPIService ReEncrypt1", func(t *testing.T) {
+	t.Run("Test SecurityManagementApiKeysPrincipalsEncryptionAPIService ReEncrypt", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

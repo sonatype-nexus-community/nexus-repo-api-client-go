@@ -4,14 +4,14 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get1**](FormatsAPI.md#Get1) | **Get** /v1/formats/{format}/upload-specs | Get upload field requirements for the desired format
-[**Get2**](FormatsAPI.md#Get2) | **Get** /v1/formats/upload-specs | Get upload field requirements for each supported format
+[**Get**](FormatsAPI.md#Get) | **Get** /v1/formats/{format}/upload-specs | Get upload field requirements for the desired format
+[**Get1**](FormatsAPI.md#Get1) | **Get** /v1/formats/upload-specs | Get upload field requirements for each supported format
 
 
 
-## Get1
+## Get
 
-> UploadDefinitionXO Get1(ctx, format).Execute()
+> UploadDefinitionXO Get(ctx, format).Execute()
 
 Get upload field requirements for the desired format
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.FormatsAPI.Get1(context.Background(), format).Execute()
+	resp, r, err := apiClient.FormatsAPI.Get(context.Background(), format).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get1`: UploadDefinitionXO
-	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get1`: %v\n", resp)
+	// response from `Get`: UploadDefinitionXO
+	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGet1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Get2
+## Get1
 
-> []UploadDefinitionXO Get2(ctx).Execute()
+> []UploadDefinitionXO Get1(ctx).Execute()
 
 Get upload field requirements for each supported format
 
@@ -99,13 +99,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.FormatsAPI.Get2(context.Background()).Execute()
+	resp, r, err := apiClient.FormatsAPI.Get1(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get2`: []UploadDefinitionXO
-	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get2`: %v\n", resp)
+	// response from `Get1`: []UploadDefinitionXO
+	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get1`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGet2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGet1Request struct via the builder pattern
 
 
 ### Return type

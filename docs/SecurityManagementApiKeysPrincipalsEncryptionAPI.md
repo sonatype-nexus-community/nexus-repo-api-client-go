@@ -4,13 +4,13 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReEncrypt1**](SecurityManagementApiKeysPrincipalsEncryptionAPI.md#ReEncrypt1) | **Put** /v1/apikeys/encryption/re-encrypt | Re-encrypt api keys principals using the specified configuration
+[**ReEncrypt**](SecurityManagementApiKeysPrincipalsEncryptionAPI.md#ReEncrypt) | **Put** /v1/apikeys/encryption/re-encrypt | Re-encrypt api keys principals using the specified configuration
 
 
 
-## ReEncrypt1
+## ReEncrypt
 
-> ReEncrypt1(ctx).Body(body).Execute()
+> ReEncrypt(ctx).Body(body).Execute()
 
 Re-encrypt api keys principals using the specified configuration
 
@@ -33,9 +33,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt1(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -47,7 +47,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReEncrypt1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiReEncryptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
