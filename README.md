@@ -469,6 +469,7 @@ Class | Method | HTTP request | Description
  - [ContentSelectorApiResponse](docs/ContentSelectorApiResponse.md)
  - [ContentSelectorApiUpdateRequest](docs/ContentSelectorApiUpdateRequest.md)
  - [CreateLdapServerXo](docs/CreateLdapServerXo.md)
+ - [CreateTask201Response](docs/CreateTask201Response.md)
  - [CrowdApiXO](docs/CrowdApiXO.md)
  - [DataStoreApiUpdateXO](docs/DataStoreApiUpdateXO.md)
  - [DataStoreApiXO](docs/DataStoreApiXO.md)

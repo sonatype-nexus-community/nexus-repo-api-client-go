@@ -11329,9 +11329,12 @@ paths:
               $ref: "#/components/schemas/TaskTemplateXO"
         required: false
       responses:
-        default:
-          content: {}
-          description: successful operation
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/createTask_201_response"
+          description: Task created successfully
       summary: Create task
       tags:
       - Tasks
@@ -19410,6 +19413,16 @@ components:
           description: yum Tag
           type: string
       type: object
+    createTask_201_response:
+      example:
+        id: 046b6c7f-0b8a-43b9-b35d-6489e6daee91
+      properties:
+        id:
+          description: Task ID
+          format: uuid
+          type: string
+      required:
+      - id
     updateTask_request:
       properties:
         alertEmail:
