@@ -16558,12 +16558,12 @@ components:
         - lastUpdated: 2000-01-23T04:56:07.000+00:00
           name: name
           attributes:
-            key: "{}"
+            key: ""
           firstCreated: 2000-01-23T04:56:07.000+00:00
         - lastUpdated: 2000-01-23T04:56:07.000+00:00
           name: name
           attributes:
-            key: "{}"
+            key: ""
           firstCreated: 2000-01-23T04:56:07.000+00:00
         continuationToken: continuationToken
       properties:
@@ -18631,13 +18631,11 @@ components:
         lastUpdated: 2000-01-23T04:56:07.000+00:00
         name: name
         attributes:
-          key: "{}"
+          key: ""
         firstCreated: 2000-01-23T04:56:07.000+00:00
       properties:
         attributes:
-          additionalProperties:
-            properties: {}
-            type: object
+          additionalProperties: {}
           type: object
         firstCreated:
           format: date-time

@@ -22,7 +22,7 @@ var _ MappedNullable = &TagXO{}
 
 // TagXO struct for TagXO
 type TagXO struct {
-	Attributes map[string]map[string]interface{} `json:"attributes,omitempty"`
+	Attributes map[string]interface{} `json:"attributes,omitempty"`
 	FirstCreated *time.Time `json:"firstCreated,omitempty"`
 	LastUpdated *time.Time `json:"lastUpdated,omitempty"`
 	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
@@ -49,9 +49,9 @@ func NewTagXOWithDefaults() *TagXO {
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *TagXO) GetAttributes() map[string]map[string]interface{} {
+func (o *TagXO) GetAttributes() map[string]interface{} {
 	if o == nil || IsNil(o.Attributes) {
-		var ret map[string]map[string]interface{}
+		var ret map[string]interface{}
 		return ret
 	}
 	return o.Attributes
@@ -59,9 +59,9 @@ func (o *TagXO) GetAttributes() map[string]map[string]interface{} {
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TagXO) GetAttributesOk() (map[string]map[string]interface{}, bool) {
+func (o *TagXO) GetAttributesOk() (map[string]interface{}, bool) {
 	if o == nil || IsNil(o.Attributes) {
-		return map[string]map[string]interface{}{}, false
+		return map[string]interface{}{}, false
 	}
 	return o.Attributes, true
 }
@@ -75,8 +75,8 @@ func (o *TagXO) HasAttributes() bool {
 	return false
 }
 
-// SetAttributes gets a reference to the given map[string]map[string]interface{} and assigns it to the Attributes field.
-func (o *TagXO) SetAttributes(v map[string]map[string]interface{}) {
+// SetAttributes gets a reference to the given map[string]interface{} and assigns it to the Attributes field.
+func (o *TagXO) SetAttributes(v map[string]interface{}) {
 	o.Attributes = v
 }
 
