@@ -25,6 +25,7 @@ type ComponentXO struct {
 	Id *string `json:"id,omitempty"`
 	Name *string `json:"name,omitempty"`
 	Repository *string `json:"repository,omitempty"`
+	Tags []string `json:"tags,omitempty"`
 	Version *string `json:"version,omitempty"`
 }
 
@@ -237,6 +238,38 @@ func (o *ComponentXO) SetRepository(v string) {
 	o.Repository = &v
 }
 
+// GetTags returns the Tags field value if set, zero value otherwise.
+func (o *ComponentXO) GetTags() []string {
+	if o == nil || IsNil(o.Tags) {
+		var ret []string
+		return ret
+	}
+	return o.Tags
+}
+
+// GetTagsOk returns a tuple with the Tags field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ComponentXO) GetTagsOk() ([]string, bool) {
+	if o == nil || IsNil(o.Tags) {
+		return nil, false
+	}
+	return o.Tags, true
+}
+
+// HasTags returns a boolean if a field has been set.
+func (o *ComponentXO) HasTags() bool {
+	if o != nil && !IsNil(o.Tags) {
+		return true
+	}
+
+	return false
+}
+
+// SetTags gets a reference to the given []string and assigns it to the Tags field.
+func (o *ComponentXO) SetTags(v []string) {
+	o.Tags = v
+}
+
 // GetVersion returns the Version field value if set, zero value otherwise.
 func (o *ComponentXO) GetVersion() string {
 	if o == nil || IsNil(o.Version) {
@@ -296,6 +329,9 @@ func (o ComponentXO) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Repository) {
 		toSerialize["repository"] = o.Repository
+	}
+	if !IsNil(o.Tags) {
+		toSerialize["tags"] = o.Tags
 	}
 	if !IsNil(o.Version) {
 		toSerialize["version"] = o.Version

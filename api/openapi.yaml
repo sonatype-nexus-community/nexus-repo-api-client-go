@@ -13186,6 +13186,9 @@ components:
         repository: repository
         version: version
         group: group
+        tags:
+        - tags
+        - tags
       properties:
         assets:
           items:
@@ -13201,6 +13204,10 @@ components:
           type: string
         repository:
           type: string
+        tags:
+          items:
+            type: string
+          type: array
         version:
           type: string
       type: object
@@ -16475,6 +16482,9 @@ components:
           repository: repository
           version: version
           group: group
+          tags:
+          - tags
+          - tags
         - assets:
           - blobCreated: 2000-01-23T04:56:07.000+00:00
             blobStoreName: blobStoreName
@@ -16512,6 +16522,9 @@ components:
           repository: repository
           version: version
           group: group
+          tags:
+          - tags
+          - tags
         continuationToken: continuationToken
       properties:
         continuationToken:

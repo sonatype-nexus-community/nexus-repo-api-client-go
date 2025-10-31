@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Repository** | Pointer to **string** |  | [optional] 
+**Tags** | Pointer to **[]string** |  | [optional] 
 **Version** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -180,6 +181,31 @@ SetRepository sets Repository field to given value.
 `func (o *ComponentXO) HasRepository() bool`
 
 HasRepository returns a boolean if a field has been set.
+
+### GetTags
+
+`func (o *ComponentXO) GetTags() []string`
+
+GetTags returns the Tags field if non-nil, zero value otherwise.
+
+### GetTagsOk
+
+`func (o *ComponentXO) GetTagsOk() (*[]string, bool)`
+
+GetTagsOk returns a tuple with the Tags field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTags
+
+`func (o *ComponentXO) SetTags(v []string)`
+
+SetTags sets Tags field to given value.
+
+### HasTags
+
+`func (o *ComponentXO) HasTags() bool`
+
+HasTags returns a boolean if a field has been set.
 
 ### GetVersion
 
