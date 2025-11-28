@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **RoutingRule** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 **Format** | **string** |  | [default to "conan"]
+**RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Type** | **string** |  | [default to "proxy"]
 **Url** | **string** |  | 
 
@@ -276,6 +277,31 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
+
+### GetRoutingRuleName
+
+`func (o *ConanProxyApiRepository) GetRoutingRuleName() string`
+
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
+
+### GetRoutingRuleNameOk
+
+`func (o *ConanProxyApiRepository) GetRoutingRuleNameOk() (*string, bool)`
+
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingRuleName
+
+`func (o *ConanProxyApiRepository) SetRoutingRuleName(v string)`
+
+SetRoutingRuleName sets RoutingRuleName field to given value.
+
+### HasRoutingRuleName
+
+`func (o *ConanProxyApiRepository) HasRoutingRuleName() bool`
+
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetType
 

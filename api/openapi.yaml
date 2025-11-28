@@ -13359,6 +13359,9 @@ components:
           format:
             default: conan
             type: string
+          routingRuleName:
+            description: The name of the routing rule assigned to this repository
+            type: string
           type:
             default: proxy
             type: string
@@ -13405,6 +13408,7 @@ components:
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
         cleanup:
           policyNames:
           - policyNames

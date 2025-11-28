@@ -34,6 +34,8 @@ type ConanProxyApiRepository struct {
 	RoutingRule *string `json:"routingRule,omitempty"`
 	Storage StorageAttributes `json:"storage"`
 	Format string `json:"format"`
+	// The name of the routing rule assigned to this repository
+	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Type string `json:"type"`
 	Url string `json:"url"`
 }
@@ -366,6 +368,38 @@ func (o *ConanProxyApiRepository) SetFormat(v string) {
 	o.Format = v
 }
 
+// GetRoutingRuleName returns the RoutingRuleName field value if set, zero value otherwise.
+func (o *ConanProxyApiRepository) GetRoutingRuleName() string {
+	if o == nil || IsNil(o.RoutingRuleName) {
+		var ret string
+		return ret
+	}
+	return *o.RoutingRuleName
+}
+
+// GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *ConanProxyApiRepository) GetRoutingRuleNameOk() (*string, bool) {
+	if o == nil || IsNil(o.RoutingRuleName) {
+		return nil, false
+	}
+	return o.RoutingRuleName, true
+}
+
+// HasRoutingRuleName returns a boolean if a field has been set.
+func (o *ConanProxyApiRepository) HasRoutingRuleName() bool {
+	if o != nil && !IsNil(o.RoutingRuleName) {
+		return true
+	}
+
+	return false
+}
+
+// SetRoutingRuleName gets a reference to the given string and assigns it to the RoutingRuleName field.
+func (o *ConanProxyApiRepository) SetRoutingRuleName(v string) {
+	o.RoutingRuleName = &v
+}
+
 // GetType returns the Type field value
 func (o *ConanProxyApiRepository) GetType() string {
 	if o == nil {
@@ -443,6 +477,9 @@ func (o ConanProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	}
 	toSerialize["storage"] = o.Storage
 	toSerialize["format"] = o.Format
+	if !IsNil(o.RoutingRuleName) {
+		toSerialize["routingRuleName"] = o.RoutingRuleName
+	}
 	toSerialize["type"] = o.Type
 	toSerialize["url"] = o.Url
 	return toSerialize, nil
