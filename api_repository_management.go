@@ -5715,7 +5715,7 @@ type ApiGetConanProxyRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetConanProxyRepositoryRequest) Execute() (*ConanProxyRepositoryApiRequest, *http.Response, error) {
+func (r ApiGetConanProxyRepositoryRequest) Execute() (*ConanProxyApiRepository, *http.Response, error) {
 	return r.ApiService.GetConanProxyRepositoryExecute(r)
 }
 
@@ -5735,13 +5735,13 @@ func (a *RepositoryManagementAPIService) GetConanProxyRepository(ctx context.Con
 }
 
 // Execute executes the request
-//  @return ConanProxyRepositoryApiRequest
-func (a *RepositoryManagementAPIService) GetConanProxyRepositoryExecute(r ApiGetConanProxyRepositoryRequest) (*ConanProxyRepositoryApiRequest, *http.Response, error) {
+//  @return ConanProxyApiRepository
+func (a *RepositoryManagementAPIService) GetConanProxyRepositoryExecute(r ApiGetConanProxyRepositoryRequest) (*ConanProxyApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *ConanProxyRepositoryApiRequest
+		localVarReturnValue  *ConanProxyApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetConanProxyRepository")

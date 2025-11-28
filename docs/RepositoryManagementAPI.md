@@ -3943,7 +3943,7 @@ Name | Type | Description  | Notes
 
 ## GetConanProxyRepository
 
-> ConanProxyRepositoryApiRequest GetConanProxyRepository(ctx, repositoryName).Execute()
+> ConanProxyApiRepository GetConanProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -3969,7 +3969,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetConanProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConanProxyRepository`: ConanProxyRepositoryApiRequest
+	// response from `GetConanProxyRepository`: ConanProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetConanProxyRepository`: %v\n", resp)
 }
 ```
@@ -3993,7 +3993,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md)
+[**ConanProxyApiRepository**](ConanProxyApiRepository.md)
 
 ### Authorization
 

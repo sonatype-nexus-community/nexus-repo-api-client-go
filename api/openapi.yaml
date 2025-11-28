@@ -2712,7 +2712,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/ConanProxyRepositoryApiRequest"
+                $ref: "#/components/schemas/ConanProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -13352,6 +13352,68 @@ components:
       - online
       - storage
       type: object
+    ConanProxyApiRepository:
+      allOf:
+      - $ref: "#/components/schemas/ConanProxyRepositoryApiRequest"
+      - properties:
+          format:
+            default: conan
+            type: string
+          type:
+            default: proxy
+            type: string
+          url:
+            type: string
+        required:
+        - format
+        - type
+        - url
+        type: object
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: conan
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        routingRule: routingRule
+        name: internal
+        online: true
+        conanProxy:
+          conanVersion: V1
     ConanProxyAttributes:
       example:
         conanVersion: V1

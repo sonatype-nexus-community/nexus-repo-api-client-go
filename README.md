@@ -460,6 +460,7 @@ Class | Method | HTTP request | Description
  - [ComposerProxyRepositoryApiRequest](docs/ComposerProxyRepositoryApiRequest.md)
  - [ConanGroupRepositoryApiRequest](docs/ConanGroupRepositoryApiRequest.md)
  - [ConanHostedRepositoryApiRequest](docs/ConanHostedRepositoryApiRequest.md)
+ - [ConanProxyApiRepository](docs/ConanProxyApiRepository.md)
  - [ConanProxyAttributes](docs/ConanProxyAttributes.md)
  - [ConanProxyRepositoryApiRequest](docs/ConanProxyRepositoryApiRequest.md)
  - [CondaProxyRepositoryApiRequest](docs/CondaProxyRepositoryApiRequest.md)
