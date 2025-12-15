@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.85.0-03."
+    \ version 3.86.2-01."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.85.0-03
+  version: 3.86.2-01
 servers:
 - url: /service/rest/
 security:
@@ -42,7 +42,6 @@ tags:
 - name: "Security management: secrets encryption"
 - name: Security management
 - name: Support
-- name: Instance configuration
 - name: Cleanup policies
 - name: Manage Sonatype Repository Firewall configuration
 - name: Reconcile Plan
@@ -50,6 +49,7 @@ tags:
 - name: Product licensing
 - name: Data Store
 - name: "Security management: SAML"
+- name: "Security management: SAML users"
 - name: Staging
 - name: Tags
 - name: "Security management: user tokens"
@@ -1150,68 +1150,6 @@ paths:
       summary: Get a single component
       tags:
       - components
-  /v1/configuration:
-    get:
-      operationId: exportConfiguration
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/InstanceConfigurationXO"
-          description: Successful Operation
-        "401":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Insufficient permissions
-      summary: Export instance configuration
-      tags:
-      - Instance configuration
-    put:
-      operationId: applyConfiguration
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/InstanceConfigurationXO"
-        required: false
-      responses:
-        "200":
-          content:
-            application/json:
-              schema:
-                $ref: "#/components/schemas/ConfigurationApplyResponseXO"
-          description: Successful Operation
-        "400":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Invalid request
-        "401":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Authentication required
-        "403":
-          content:
-            application/json:
-              schema:
-                type: string
-          description: Insufficient permissions
-      summary: Apply instance configuration
-      tags:
-      - Instance configuration
-      x-codegen-request-body-name: body
   /v1/email:
     delete:
       operationId: deleteEmailConfiguration
@@ -7993,6 +7931,9 @@ paths:
         "201":
           content: {}
           description: Success
+        "204":
+          content: {}
+          description: Success
         "400":
           content: {}
           description: Privilege object not configured properly.
@@ -8053,6 +7994,9 @@ paths:
         "201":
           content: {}
           description: Success
+        "204":
+          content: {}
+          description: Success
         "400":
           content: {}
           description: Privilege object not configured properly.
@@ -8111,6 +8055,9 @@ paths:
         required: false
       responses:
         "201":
+          content: {}
+          description: Success
+        "204":
           content: {}
           description: Success
         "400":
@@ -8698,6 +8645,136 @@ paths:
       summary: Get service provider signing or decryption certificate in PEM format
       tags:
       - "Security management: SAML"
+  /v1/security/saml/users:
+    get:
+      operationId: getUsers_1
+      parameters:
+      - description: An optional term to search userids for.
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        "200":
+          content: {}
+          description: List of SAML users returned
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Retrieve a list of SAML users.
+      tags:
+      - "Security management: SAML users"
+    post:
+      operationId: createUser_1
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SamlUserXO"
+        description: The SAML user to create
+        required: true
+      responses:
+        "201":
+          content: {}
+          description: SAML user created
+        "400":
+          content: {}
+          description: Invalid user data or user already exists
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create a new SAML user. This allows administrators to pre-create SAML
+        users with roles before their first login.
+      tags:
+      - "Security management: SAML users"
+      x-codegen-request-body-name: body
+  /v1/security/saml/users/{userId}:
+    delete:
+      operationId: deleteUser_1
+      parameters:
+      - description: The userid the request should apply to.
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: SAML user deleted
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: User not found
+      summary: Delete a SAML user.
+      tags:
+      - "Security management: SAML users"
+    get:
+      operationId: getUser
+      parameters:
+      - description: The userid the request should apply to.
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content: {}
+          description: SAML user returned
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: User not found
+      summary: Retrieve a SAML user by userId.
+      tags:
+      - "Security management: SAML users"
+    put:
+      operationId: updateUser_1
+      parameters:
+      - description: The userid the request should apply to.
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SamlUserXO"
+        description: The SAML user to update
+        required: true
+      responses:
+        "204":
+          content: {}
+          description: SAML user updated
+        "400":
+          content: {}
+          description: Invalid user data
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: User not found
+      summary: Update a SAML user's roles and attributes.
+      tags:
+      - "Security management: SAML users"
+      x-codegen-request-body-name: body
   /v1/security/ssl:
     get:
       operationId: retrieveCertificate
@@ -11496,15 +11573,15 @@ components:
   schemas:
     AbstractApiRepository:
       example:
-        format: npm
+        format: abstractapirepository
         name: internal
         online: true
         type: hosted
-        url: url
+        url: http://localhost:8081/repository/abstractapirepository-example
       properties:
         format:
           description: Component format held in this repository
-          example: npm
+          example: abstractapirepository
           type: string
         name:
           description: A unique identifier for this repository
@@ -11525,6 +11602,7 @@ components:
           type: string
         url:
           description: URL to the repository
+          example: http://localhost:8081/repository/abstractapirepository-example
           type: string
       required:
       - online
@@ -12153,23 +12231,6 @@ components:
         id:
           type: string
         name:
-          type: string
-      type: object
-    ApplyStatusXO:
-      example:
-        message: message
-        entity: entity
-        status: APPLIED
-      properties:
-        entity:
-          type: string
-        message:
-          type: string
-        status:
-          enum:
-          - APPLIED
-          - NOT_APPLIED
-          - FAILED
           type: string
       type: object
     AptHostedApiRepository:
@@ -13579,50 +13640,6 @@ components:
       - online
       - proxy
       - storage
-      type: object
-    ConfigurationApplyResponseXO:
-      example:
-        appliedConfigurations:
-        - message: message
-          entity: entity
-          status: APPLIED
-        - message: message
-          entity: entity
-          status: APPLIED
-        failedConfigurations:
-        - message: message
-          entity: entity
-          status: APPLIED
-        - message: message
-          entity: entity
-          status: APPLIED
-        notAppliedConfigurations:
-        - message: message
-          entity: entity
-          status: APPLIED
-        - message: message
-          entity: entity
-          status: APPLIED
-      properties:
-        appliedConfigurations:
-          items:
-            $ref: "#/components/schemas/ApplyStatusXO"
-          type: array
-        failedConfigurations:
-          items:
-            $ref: "#/components/schemas/ApplyStatusXO"
-          type: array
-        notAppliedConfigurations:
-          items:
-            $ref: "#/components/schemas/ApplyStatusXO"
-          type: array
-      type: object
-    ConfigurationXO:
-      example:
-        configurationTypeId: configurationTypeId
-      properties:
-        configurationTypeId:
-          type: string
       type: object
     ContentSelectorApiCreateRequest:
       example:
@@ -15426,17 +15443,6 @@ components:
     InputStream:
       format: binary
       type: string
-    InstanceConfigurationXO:
-      example:
-        configurationXOs:
-        - configurationTypeId: configurationTypeId
-        - configurationTypeId: configurationTypeId
-      properties:
-        configurationXOs:
-          items:
-            $ref: "#/components/schemas/ConfigurationXO"
-          type: array
-      type: object
     IqAuditXo:
       example:
         enabledQuarantine: true
@@ -18317,6 +18323,42 @@ components:
       required:
       - idpMetadata
       - usernameAttribute
+      type: object
+    SamlUserXO:
+      example:
+        firstName: firstName
+        lastName: lastName
+        emailAddress: emailAddress
+        roles:
+        - roles
+        - roles
+        userId: userId
+        status: status
+      properties:
+        emailAddress:
+          description: The email address of the SAML user
+          type: string
+        firstName:
+          description: The first name of the SAML user
+          type: string
+        lastName:
+          description: The last name of the SAML user
+          type: string
+        roles:
+          description: The roles assigned to the SAML user
+          items:
+            type: string
+          type: array
+          uniqueItems: true
+        status:
+          description: "The status of the SAML user (active, disabled)"
+          type: string
+        userId:
+          description: The userid for the SAML user
+          type: string
+      required:
+      - status
+      - userId
       type: object
     ScriptResultXO:
       example:
