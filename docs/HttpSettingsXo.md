@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**HttpProxy** | [**ProxySettingsXo**](ProxySettingsXo.md) |  | 
-**HttpsProxy** | [**ProxySettingsXo**](ProxySettingsXo.md) |  | 
+**HttpProxy** | [**NullableProxySettingsXo**](ProxySettingsXo.md) |  | 
+**HttpsProxy** | [**NullableProxySettingsXo**](ProxySettingsXo.md) |  | 
 **NonProxyHosts** | Pointer to **[]string** |  | [optional] 
 **Retries** | **int32** | Connection/Socket Retry Attempts | 
 **Timeout** | **int32** | Connection/Socket Timeout | 
-**UserAgent** | **string** | User-Agent Customization | 
+**UserAgent** | **NullableString** | User-Agent Customization | 
 
 ## Methods
 
 ### NewHttpSettingsXo
 
-`func NewHttpSettingsXo(httpProxy ProxySettingsXo, httpsProxy ProxySettingsXo, retries int32, timeout int32, userAgent string, ) *HttpSettingsXo`
+`func NewHttpSettingsXo(httpProxy NullableProxySettingsXo, httpsProxy NullableProxySettingsXo, retries int32, timeout int32, userAgent NullableString, ) *HttpSettingsXo`
 
 NewHttpSettingsXo instantiates a new HttpSettingsXo object
 This constructor will assign default values to properties that have it defined,
@@ -50,6 +50,16 @@ and a boolean to check if the value has been set.
 SetHttpProxy sets HttpProxy field to given value.
 
 
+### SetHttpProxyNil
+
+`func (o *HttpSettingsXo) SetHttpProxyNil(b bool)`
+
+ SetHttpProxyNil sets the value for HttpProxy to be an explicit nil
+
+### UnsetHttpProxy
+`func (o *HttpSettingsXo) UnsetHttpProxy()`
+
+UnsetHttpProxy ensures that no value is present for HttpProxy, not even an explicit nil
 ### GetHttpsProxy
 
 `func (o *HttpSettingsXo) GetHttpsProxy() ProxySettingsXo`
@@ -70,6 +80,16 @@ and a boolean to check if the value has been set.
 SetHttpsProxy sets HttpsProxy field to given value.
 
 
+### SetHttpsProxyNil
+
+`func (o *HttpSettingsXo) SetHttpsProxyNil(b bool)`
+
+ SetHttpsProxyNil sets the value for HttpsProxy to be an explicit nil
+
+### UnsetHttpsProxy
+`func (o *HttpSettingsXo) UnsetHttpsProxy()`
+
+UnsetHttpsProxy ensures that no value is present for HttpsProxy, not even an explicit nil
 ### GetNonProxyHosts
 
 `func (o *HttpSettingsXo) GetNonProxyHosts() []string`
@@ -95,6 +115,16 @@ SetNonProxyHosts sets NonProxyHosts field to given value.
 
 HasNonProxyHosts returns a boolean if a field has been set.
 
+### SetNonProxyHostsNil
+
+`func (o *HttpSettingsXo) SetNonProxyHostsNil(b bool)`
+
+ SetNonProxyHostsNil sets the value for NonProxyHosts to be an explicit nil
+
+### UnsetNonProxyHosts
+`func (o *HttpSettingsXo) UnsetNonProxyHosts()`
+
+UnsetNonProxyHosts ensures that no value is present for NonProxyHosts, not even an explicit nil
 ### GetRetries
 
 `func (o *HttpSettingsXo) GetRetries() int32`
@@ -155,6 +185,16 @@ and a boolean to check if the value has been set.
 SetUserAgent sets UserAgent field to given value.
 
 
+### SetUserAgentNil
+
+`func (o *HttpSettingsXo) SetUserAgentNil(b bool)`
+
+ SetUserAgentNil sets the value for UserAgent to be an explicit nil
+
+### UnsetUserAgent
+`func (o *HttpSettingsXo) UnsetUserAgent()`
+
+UnsetUserAgent ensures that no value is present for UserAgent, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

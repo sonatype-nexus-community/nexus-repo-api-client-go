@@ -145,7 +145,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHttpSettingsXo(*sonatyperepo.NewProxySettingsXo(*sonatyperepo.NewAuthSettingsXo(false, "NtlmDomain_example", "NtlmHost_example", "Password_example", "Username_example"), false, "Host_example", "Port_example"), *sonatyperepo.NewProxySettingsXo(*sonatyperepo.NewAuthSettingsXo(false, "NtlmDomain_example", "NtlmHost_example", "Password_example", "Username_example"), false, "Host_example", "Port_example"), int32(123), int32(123), "UserAgent_example") // HttpSettingsXo |  (optional)
+	body := *sonatyperepo.NewHttpSettingsXo("TODO", "TODO", int32(123), int32(123), "UserAgent_example") // HttpSettingsXo |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

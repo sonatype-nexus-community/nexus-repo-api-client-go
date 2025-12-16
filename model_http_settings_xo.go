@@ -21,15 +21,15 @@ var _ MappedNullable = &HttpSettingsXo{}
 
 // HttpSettingsXo struct for HttpSettingsXo
 type HttpSettingsXo struct {
-	HttpProxy ProxySettingsXo `json:"httpProxy"`
-	HttpsProxy ProxySettingsXo `json:"httpsProxy"`
+	HttpProxy NullableProxySettingsXo `json:"httpProxy"`
+	HttpsProxy NullableProxySettingsXo `json:"httpsProxy"`
 	NonProxyHosts []string `json:"nonProxyHosts,omitempty"`
 	// Connection/Socket Retry Attempts
 	Retries int32 `json:"retries"`
 	// Connection/Socket Timeout
 	Timeout int32 `json:"timeout"`
 	// User-Agent Customization
-	UserAgent string `json:"userAgent"`
+	UserAgent NullableString `json:"userAgent"`
 }
 
 type _HttpSettingsXo HttpSettingsXo
@@ -38,7 +38,7 @@ type _HttpSettingsXo HttpSettingsXo
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewHttpSettingsXo(httpProxy ProxySettingsXo, httpsProxy ProxySettingsXo, retries int32, timeout int32, userAgent string) *HttpSettingsXo {
+func NewHttpSettingsXo(httpProxy NullableProxySettingsXo, httpsProxy NullableProxySettingsXo, retries int32, timeout int32, userAgent NullableString) *HttpSettingsXo {
 	this := HttpSettingsXo{}
 	this.HttpProxy = httpProxy
 	this.HttpsProxy = httpsProxy
@@ -57,56 +57,60 @@ func NewHttpSettingsXoWithDefaults() *HttpSettingsXo {
 }
 
 // GetHttpProxy returns the HttpProxy field value
+// If the value is explicit nil, the zero value for ProxySettingsXo will be returned
 func (o *HttpSettingsXo) GetHttpProxy() ProxySettingsXo {
-	if o == nil {
+	if o == nil || o.HttpProxy.Get() == nil {
 		var ret ProxySettingsXo
 		return ret
 	}
 
-	return o.HttpProxy
+	return *o.HttpProxy.Get()
 }
 
 // GetHttpProxyOk returns a tuple with the HttpProxy field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HttpSettingsXo) GetHttpProxyOk() (*ProxySettingsXo, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.HttpProxy, true
+	return o.HttpProxy.Get(), o.HttpProxy.IsSet()
 }
 
 // SetHttpProxy sets field value
 func (o *HttpSettingsXo) SetHttpProxy(v ProxySettingsXo) {
-	o.HttpProxy = v
+	o.HttpProxy.Set(&v)
 }
 
 // GetHttpsProxy returns the HttpsProxy field value
+// If the value is explicit nil, the zero value for ProxySettingsXo will be returned
 func (o *HttpSettingsXo) GetHttpsProxy() ProxySettingsXo {
-	if o == nil {
+	if o == nil || o.HttpsProxy.Get() == nil {
 		var ret ProxySettingsXo
 		return ret
 	}
 
-	return o.HttpsProxy
+	return *o.HttpsProxy.Get()
 }
 
 // GetHttpsProxyOk returns a tuple with the HttpsProxy field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HttpSettingsXo) GetHttpsProxyOk() (*ProxySettingsXo, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.HttpsProxy, true
+	return o.HttpsProxy.Get(), o.HttpsProxy.IsSet()
 }
 
 // SetHttpsProxy sets field value
 func (o *HttpSettingsXo) SetHttpsProxy(v ProxySettingsXo) {
-	o.HttpsProxy = v
+	o.HttpsProxy.Set(&v)
 }
 
-// GetNonProxyHosts returns the NonProxyHosts field value if set, zero value otherwise.
+// GetNonProxyHosts returns the NonProxyHosts field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *HttpSettingsXo) GetNonProxyHosts() []string {
-	if o == nil || IsNil(o.NonProxyHosts) {
+	if o == nil {
 		var ret []string
 		return ret
 	}
@@ -115,6 +119,7 @@ func (o *HttpSettingsXo) GetNonProxyHosts() []string {
 
 // GetNonProxyHostsOk returns a tuple with the NonProxyHosts field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HttpSettingsXo) GetNonProxyHostsOk() ([]string, bool) {
 	if o == nil || IsNil(o.NonProxyHosts) {
 		return nil, false
@@ -185,27 +190,29 @@ func (o *HttpSettingsXo) SetTimeout(v int32) {
 }
 
 // GetUserAgent returns the UserAgent field value
+// If the value is explicit nil, the zero value for string will be returned
 func (o *HttpSettingsXo) GetUserAgent() string {
-	if o == nil {
+	if o == nil || o.UserAgent.Get() == nil {
 		var ret string
 		return ret
 	}
 
-	return o.UserAgent
+	return *o.UserAgent.Get()
 }
 
 // GetUserAgentOk returns a tuple with the UserAgent field value
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *HttpSettingsXo) GetUserAgentOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.UserAgent, true
+	return o.UserAgent.Get(), o.UserAgent.IsSet()
 }
 
 // SetUserAgent sets field value
 func (o *HttpSettingsXo) SetUserAgent(v string) {
-	o.UserAgent = v
+	o.UserAgent.Set(&v)
 }
 
 func (o HttpSettingsXo) MarshalJSON() ([]byte, error) {
@@ -218,14 +225,14 @@ func (o HttpSettingsXo) MarshalJSON() ([]byte, error) {
 
 func (o HttpSettingsXo) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["httpProxy"] = o.HttpProxy
-	toSerialize["httpsProxy"] = o.HttpsProxy
-	if !IsNil(o.NonProxyHosts) {
+	toSerialize["httpProxy"] = o.HttpProxy.Get()
+	toSerialize["httpsProxy"] = o.HttpsProxy.Get()
+	if o.NonProxyHosts != nil {
 		toSerialize["nonProxyHosts"] = o.NonProxyHosts
 	}
 	toSerialize["retries"] = o.Retries
 	toSerialize["timeout"] = o.Timeout
-	toSerialize["userAgent"] = o.UserAgent
+	toSerialize["userAgent"] = o.UserAgent.Get()
 	return toSerialize, nil
 }
 
