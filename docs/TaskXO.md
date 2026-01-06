@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **Message** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextRun** | Pointer to **time.Time** |  | [optional] 
+**Schedule** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -206,6 +207,31 @@ SetNextRun sets NextRun field to given value.
 `func (o *TaskXO) HasNextRun() bool`
 
 HasNextRun returns a boolean if a field has been set.
+
+### GetSchedule
+
+`func (o *TaskXO) GetSchedule() string`
+
+GetSchedule returns the Schedule field if non-nil, zero value otherwise.
+
+### GetScheduleOk
+
+`func (o *TaskXO) GetScheduleOk() (*string, bool)`
+
+GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchedule
+
+`func (o *TaskXO) SetSchedule(v string)`
+
+SetSchedule sets Schedule field to given value.
+
+### HasSchedule
+
+`func (o *TaskXO) HasSchedule() bool`
+
+HasSchedule returns a boolean if a field has been set.
 
 ### GetType
 

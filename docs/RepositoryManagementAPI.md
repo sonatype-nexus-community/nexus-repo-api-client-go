@@ -169,7 +169,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes(), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // AptHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes(), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -355,7 +355,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -665,7 +665,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -913,7 +913,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "allow_once")) // DockerHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1037,7 +1037,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1223,7 +1223,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // HelmHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1471,7 +1471,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // MavenHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1657,7 +1657,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // NpmHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1843,7 +1843,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // NugetHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2091,7 +2091,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // PypiHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2277,7 +2277,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2463,7 +2463,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RawHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2649,7 +2649,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RubyGemsHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2835,7 +2835,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -6536,7 +6536,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes(), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // AptHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes(), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -6740,7 +6740,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // CargoHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7080,7 +7080,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // ConanHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7352,7 +7352,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "allow_once")) // DockerHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7488,7 +7488,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7692,7 +7692,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // HelmHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7964,7 +7964,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // MavenHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8168,7 +8168,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // NpmHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8372,7 +8372,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // NugetHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8644,7 +8644,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // PypiHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8848,7 +8848,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9052,7 +9052,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RawHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9256,7 +9256,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once")) // RubyGemsHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9460,7 +9460,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "allow_once"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

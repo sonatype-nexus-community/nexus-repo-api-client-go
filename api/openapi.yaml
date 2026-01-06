@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.86.2-01."
+    \ version 3.87.1-01."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.86.2-01
+  version: 3.87.1-01
 servers:
 - url: /service/rest/
 security:
@@ -42,6 +42,7 @@ tags:
 - name: "Security management: secrets encryption"
 - name: Security management
 - name: Support
+- name: Instance configuration
 - name: Cleanup policies
 - name: Manage Sonatype Repository Firewall configuration
 - name: Reconcile Plan
@@ -1150,6 +1151,219 @@ paths:
       summary: Get a single component
       tags:
       - components
+  /v1/configuration:
+    get:
+      operationId: exportConfiguration
+      parameters:
+      - description: Migration protocol version (must be '1')
+        explode: false
+        in: header
+        name: X-Nexus-Migration-Protocol-Version
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/InstanceConfigurationXO"
+          description: Successful Operation
+        "400":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Missing or invalid protocol version
+        "401":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Authentication required
+        "403":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Insufficient permissions
+      summary: Export instance configuration
+      tags:
+      - Instance configuration
+    put:
+      operationId: applyConfiguration
+      parameters:
+      - description: Migration protocol version (must be '1')
+        explode: false
+        in: header
+        name: X-Nexus-Migration-Protocol-Version
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/InstanceConfigurationXO"
+        required: false
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ConfigurationApplyResponseXO"
+          description: Successful Operation
+        "400":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Invalid request or missing/invalid protocol version
+        "401":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Authentication required
+        "403":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Insufficient permissions
+      summary: Apply instance configuration
+      tags:
+      - Instance configuration
+      x-codegen-request-body-name: body
+  /v1/configuration/assets:
+    get:
+      operationId: getAssets_1
+      parameters:
+      - description: Migration protocol version (must be '1')
+        explode: false
+        in: header
+        name: X-Nexus-Migration-Protocol-Version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: "A token returned by a prior request. If present, the next page\
+          \ of results are returned"
+        explode: true
+        in: query
+        name: continuationToken
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Repository from which you would like to retrieve assets.
+        explode: true
+        in: query
+        name: repository
+        required: true
+        schema:
+          type: string
+        style: form
+      - description: Unix timestamp (milliseconds since epoch). Return assets last
+          updated after this timestamp
+        explode: true
+        in: query
+        name: newerThan
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      - description: Unix timestamp (milliseconds since epoch). Return assets last
+          updated before this timestamp
+        explode: true
+        in: query
+        name: olderThan
+        required: false
+        schema:
+          format: int64
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Page"
+          description: Successful Operation
+        "400":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Missing or invalid protocol version
+        "403":
+          content: {}
+          description: Insufficient permissions to list assets
+        "422":
+          content: {}
+          description: Parameter 'repository' is required
+      summary: List assets
+      tags:
+      - Instance configuration
+  /v1/configuration/assets/{repositoryName}/import:
+    post:
+      operationId: importAsset
+      parameters:
+      - description: Migration protocol version (must be '1')
+        explode: false
+        in: header
+        name: X-Nexus-Migration-Protocol-Version
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: Repository name to import assets to
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/AssetImportResponseXO"
+                type: array
+          description: Assets imported successfully
+        "400":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Repository not found or missing/invalid protocol version
+        "401":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Authentication required
+        "403":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Insufficient permissions
+        "500":
+          content:
+            application/json:
+              schema:
+                type: string
+          description: Asset import failed
+      summary: Import assets to repository
+      tags:
+      - Instance configuration
   /v1/email:
     delete:
       operationId: deleteEmailConfiguration
@@ -6428,6 +6642,54 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Yum architecture
         explode: true
         in: query
@@ -6938,6 +7200,54 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Yum architecture
         explode: true
         in: query
@@ -7438,6 +7748,54 @@ paths:
         explode: true
         in: query
         name: tag
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -9592,6 +9950,54 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Yum architecture
         explode: true
         in: query
@@ -10066,6 +10472,54 @@ paths:
         explode: true
         in: query
         name: tag
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -10791,6 +11245,54 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
+        required: false
+        schema:
+          type: string
+        style: form
       - description: Yum architecture
         explode: true
         in: query
@@ -11265,6 +11767,54 @@ paths:
         explode: true
         in: query
         name: tag
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform provider
+        explode: true
+        in: query
+        name: terraform.provider
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform name
+        explode: true
+        in: query
+        name: terraform.name
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform system
+        explode: true
+        in: query
+        name: terraform.system
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform architecture
+        explode: true
+        in: query
+        name: terraform.architecture
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: terraform asset kind
+        explode: true
+        in: query
+        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -12233,6 +12783,23 @@ components:
         name:
           type: string
       type: object
+    ApplyStatusXO:
+      example:
+        message: message
+        entity: entity
+        status: APPLIED
+      properties:
+        entity:
+          type: string
+        message:
+          type: string
+        status:
+          enum:
+          - APPLIED
+          - NOT_APPLIED
+          - FAILED
+          type: string
+      type: object
     AptHostedApiRepository:
       example:
         component:
@@ -12248,7 +12815,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         aptSigning:
@@ -12312,7 +12879,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         aptSigning:
           keypair: keypair
@@ -12541,6 +13108,44 @@ components:
         passphrase:
           description: Passphrase to access PGP signing key
           type: string
+      type: object
+    AssetImportResponseXO:
+      example:
+        importTimestamp: 2000-01-23T04:56:07.000+00:00
+        path: path
+        componentId: componentId
+        assetId: assetId
+        warnings:
+        - warnings
+        - warnings
+        errorMessage: errorMessage
+        repository: repository
+        status: SUCCESS
+      properties:
+        assetId:
+          type: string
+        componentId:
+          type: string
+        errorMessage:
+          type: string
+        importTimestamp:
+          format: date-time
+          type: string
+        path:
+          type: string
+        repository:
+          type: string
+        status:
+          enum:
+          - SUCCESS
+          - SUCCESS_WITH_WARNINGS
+          - SKIPPED_ALREADY_EXISTS
+          - FAILED
+          type: string
+        warnings:
+          items:
+            type: string
+          type: array
       type: object
     AssetXO:
       example:
@@ -12872,7 +13477,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -13390,7 +13995,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -13640,6 +14245,50 @@ components:
       - online
       - proxy
       - storage
+      type: object
+    ConfigurationApplyResponseXO:
+      example:
+        appliedConfigurations:
+        - message: message
+          entity: entity
+          status: APPLIED
+        - message: message
+          entity: entity
+          status: APPLIED
+        failedConfigurations:
+        - message: message
+          entity: entity
+          status: APPLIED
+        - message: message
+          entity: entity
+          status: APPLIED
+        notAppliedConfigurations:
+        - message: message
+          entity: entity
+          status: APPLIED
+        - message: message
+          entity: entity
+          status: APPLIED
+      properties:
+        appliedConfigurations:
+          items:
+            $ref: "#/components/schemas/ApplyStatusXO"
+          type: array
+        failedConfigurations:
+          items:
+            $ref: "#/components/schemas/ApplyStatusXO"
+          type: array
+        notAppliedConfigurations:
+          items:
+            $ref: "#/components/schemas/ApplyStatusXO"
+          type: array
+      type: object
+    ConfigurationXO:
+      example:
+        configurationTypeId: configurationTypeId
+      properties:
+        configurationTypeId:
+          type: string
       type: object
     ContentSelectorApiCreateRequest:
       example:
@@ -14142,7 +14791,7 @@ components:
         storage:
           strictContentTypeValidation: true
           latestPolicy: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         url: url
@@ -14197,7 +14846,7 @@ components:
         storage:
           strictContentTypeValidation: true
           latestPolicy: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         docker:
           httpPort: 8082
@@ -14234,7 +14883,7 @@ components:
       example:
         strictContentTypeValidation: true
         latestPolicy: true
-        writePolicy: allow_once
+        writePolicy: ALLOW_ONCE
         blobStoreName: default
       properties:
         blobStoreName:
@@ -14254,10 +14903,10 @@ components:
         writePolicy:
           description: Controls if deployments of and updates to assets are allowed
           enum:
-          - allow
-          - allow_once
-          - deny
-          example: allow_once
+          - ALLOW
+          - ALLOW_ONCE
+          - DENY
+          example: ALLOW_ONCE
           type: string
       required:
       - blobStoreName
@@ -14624,7 +15273,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -15001,7 +15650,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -15100,7 +15749,7 @@ components:
     HostedStorageAttributes:
       example:
         strictContentTypeValidation: true
-        writePolicy: allow_once
+        writePolicy: ALLOW_ONCE
         blobStoreName: default
       properties:
         blobStoreName:
@@ -15115,10 +15764,10 @@ components:
         writePolicy:
           description: Controls if deployments of and updates to assets are allowed
           enum:
-          - allow
-          - allow_once
-          - deny
-          example: allow_once
+          - ALLOW
+          - ALLOW_ONCE
+          - DENY
+          example: ALLOW_ONCE
           type: string
       required:
       - blobStoreName
@@ -15445,6 +16094,17 @@ components:
     InputStream:
       format: binary
       type: string
+    InstanceConfigurationXO:
+      example:
+        configurationXOs:
+        - configurationTypeId: configurationTypeId
+        - configurationTypeId: configurationTypeId
+      properties:
+        configurationXOs:
+          items:
+            $ref: "#/components/schemas/ConfigurationXO"
+          type: array
+      type: object
     IqAuditXo:
       example:
         enabledQuarantine: true
@@ -15617,7 +16277,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         url: url
@@ -15668,7 +16328,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -15948,7 +16608,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -16199,7 +16859,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -16465,6 +17125,11 @@ components:
       - storage
       type: object
     Page:
+      example:
+        items:
+        - "{}"
+        - "{}"
+        continuationToken: continuationToken
       properties:
         continuationToken:
           type: string
@@ -16651,7 +17316,8 @@ components:
     PageTaskXO:
       example:
         items:
-        - lastRun: 2000-01-23T04:56:07.000+00:00
+        - schedule: schedule
+          lastRun: 2000-01-23T04:56:07.000+00:00
           name: name
           id: id
           currentState: currentState
@@ -16659,7 +17325,8 @@ components:
           type: type
           lastRunResult: lastRunResult
           nextRun: 2000-01-23T04:56:07.000+00:00
-        - lastRun: 2000-01-23T04:56:07.000+00:00
+        - schedule: schedule
+          lastRun: 2000-01-23T04:56:07.000+00:00
           name: name
           id: id
           currentState: currentState
@@ -16877,7 +17544,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -17021,7 +17688,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -17228,7 +17895,7 @@ components:
           contentDisposition: ATTACHMENT
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         url: url
@@ -17278,7 +17945,7 @@ components:
           contentDisposition: ATTACHMENT
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -17984,7 +18651,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
@@ -18485,7 +19152,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         url: url
@@ -18814,6 +19481,7 @@ components:
       type: object
     TaskXO:
       example:
+        schedule: schedule
         lastRun: 2000-01-23T04:56:07.000+00:00
         name: name
         id: id
@@ -18838,6 +19506,8 @@ components:
           type: string
         nextRun:
           format: date-time
+          type: string
+        schedule:
           type: string
         type:
           type: string
@@ -19218,7 +19888,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
         url: url
@@ -19268,7 +19938,7 @@ components:
         online: true
         storage:
           strictContentTypeValidation: true
-          writePolicy: allow_once
+          writePolicy: ALLOW_ONCE
           blobStoreName: default
       properties:
         cleanup:
