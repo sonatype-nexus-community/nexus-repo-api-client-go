@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** |  | [optional] [default to "npm"]
+**Format** | Pointer to **string** | Component format held in this repository | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
@@ -15,8 +15,8 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** |  | [optional] [default to "proxy"]
-**Url** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 

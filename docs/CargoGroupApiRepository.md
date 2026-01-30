@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** |  | [optional] [default to "cargo"]
+**Format** | Pointer to **string** | Component format held in this repository | [optional] 
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** |  | [optional] [default to "group"]
-**Url** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 

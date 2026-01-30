@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.87.1-01."
+    \ version 3.88.0-08."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.87.1-01
+  version: 3.88.0-08
 servers:
 - url: /service/rest/
 security:
@@ -55,8 +55,8 @@ tags:
 - name: Tags
 - name: "Security management: user tokens"
 - name: Azure blob store
-- name: Capabilities
 - name: Malicious Risk On Disk
+- name: Capabilities
 - name: Manage Sonatype HTTP System Settings
 - name: Monthly Metrics
 - name: "Security: certificates"
@@ -883,6 +883,21 @@ paths:
       tags:
       - Capabilities
       x-codegen-request-body-name: body
+  /v1/capabilities/types:
+    get:
+      operationId: getTypes
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CapabilityType"
+                type: array
+          description: successful operation
+      summary: List all capability types available and exposed in the system
+      tags:
+      - Capabilities
   /v1/capabilities/{capabilityId}:
     delete:
       operationId: delete_4
@@ -5447,6 +5462,103 @@ paths:
       tags:
       - Repository Management
       x-codegen-request-body-name: body
+  /v1/repositories/terraform/proxy:
+    post:
+      description: Creates a new Terraform proxy repository that proxies requests
+        to an upstream Terraform Registry
+      operationId: createTerraformProxyRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TerraformProxyRepositoryApiRequest"
+        description: Configuration for the new Terraform proxy repository
+        required: true
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create terraform proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/terraform/proxy/{repositoryName}:
+    get:
+      description: Retrieves configuration details for a Terraform proxy repository
+      operationId: getTerraformProxyRepository
+      parameters:
+      - description: Name of the repository to retrieve
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content: {}
+          description: Repository configuration retrieved successfully
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Repository not found
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      description: Updates the configuration of an existing Terraform proxy repository
+      operationId: updateTerraformProxyRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TerraformProxyRepositoryApiRequest"
+        description: Updated configuration for the Terraform proxy repository
+        required: true
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+        "404":
+          content: {}
+          description: Repository not found
+      summary: Update terraform proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
   /v1/repositories/yum/group:
     post:
       operationId: createYumGroupRepository
@@ -6159,6 +6271,11 @@ paths:
       x-codegen-request-body-name: body
   /v1/search:
     get:
+      description: "All searches require at least one criterion of at least three\
+        \ characters before a trailing wildcard (\\*) and cannot start with a wildcard\
+        \ (\\*). Enclose your criteria in quotation marks to search an exact phrase;\
+        \ otherwise, search criteria will be split by any commas, spaces, dashes,\
+        \ or forward slashes."
       operationId: search
       parameters:
       - allowEmptyValue: true
@@ -6642,14 +6759,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -6658,34 +6767,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -6718,6 +6811,11 @@ paths:
       - Search
   /v1/search/assets:
     get:
+      description: "All searches require at least one criterion of at least three\
+        \ characters before a trailing wildcard (\\*) and cannot start with a wildcard\
+        \ (\\*). Enclose your criteria in quotation marks to search an exact phrase;\
+        \ otherwise, search criteria will be split by any commas, spaces, dashes,\
+        \ or forward slashes."
       operationId: searchAssets
       parameters:
       - description: "A token returned by a prior request. If present, the next page\
@@ -7200,14 +7298,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -7216,34 +7306,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -7752,14 +7826,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -7768,34 +7834,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -8985,6 +9035,10 @@ paths:
         name: type
         required: false
         schema:
+          default: signing
+          enum:
+          - decryption
+          - signing
           type: string
         style: form
       responses:
@@ -9950,14 +10004,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -9966,34 +10012,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -10476,14 +10506,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -10492,34 +10514,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -11245,14 +11251,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -11261,34 +11259,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -11771,14 +11753,6 @@ paths:
         schema:
           type: string
         style: form
-      - description: terraform namespace
-        explode: true
-        in: query
-        name: terraform.namespace
-        required: false
-        schema:
-          type: string
-        style: form
       - description: terraform provider
         explode: true
         in: query
@@ -11787,34 +11761,18 @@ paths:
         schema:
           type: string
         style: form
+      - description: terraform namespace
+        explode: true
+        in: query
+        name: terraform.namespace
+        required: false
+        schema:
+          type: string
+        style: form
       - description: terraform name
         explode: true
         in: query
         name: terraform.name
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform system
-        explode: true
-        in: query
-        name: terraform.system
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform architecture
-        explode: true
-        in: query
-        name: terraform.architecture
-        required: false
-        schema:
-          type: string
-        style: form
-      - description: terraform asset kind
-        explode: true
-        in: query
-        name: terraform.asset_kind
         required: false
         schema:
           type: string
@@ -12324,11 +12282,16 @@ components:
     ApiKeysReEncryptionRequestApiXO:
       example:
         algorithmForDecryption: algorithmForDecryption
+        iterationsForDecryption: 0
         notifyEmail: notifyEmail
       properties:
         algorithmForDecryption:
           description: Optional - The algorithm to be used to decrypt the principals
           type: string
+        iterationsForDecryption:
+          description: Optional - The iterations to be used to decrypt the principals
+          format: int32
+          type: integer
         notifyEmail:
           description: Optional - Email to notify when task finishes
           type: string
@@ -12821,7 +12784,7 @@ components:
         aptSigning:
           keypair: keypair
           passphrase: passphrase
-        url: url
+        url: http://localhost:8081/repository/apt-example
       properties:
         apt:
           $ref: "#/components/schemas/AptHostedRepositoriesAttributes"
@@ -12832,7 +12795,8 @@ components:
         component:
           $ref: "#/components/schemas/ComponentAttributes"
         format:
-          default: apt
+          description: Component format held in this repository
+          example: apt
           type: string
         name:
           description: A unique identifier for this repository
@@ -12846,9 +12810,16 @@ components:
         storage:
           $ref: "#/components/schemas/HostedStorageAttributes"
         type:
-          default: hosted
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: hosted
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/apt-example
           type: string
       required:
       - apt
@@ -12946,7 +12917,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/apt-example
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
@@ -12964,7 +12935,8 @@ components:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
-          default: apt
+          description: Component format held in this repository
+          example: apt
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -12989,9 +12961,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/apt-example
           type: string
       required:
       - apt
@@ -13373,6 +13352,66 @@ components:
         type:
           type: string
       type: object
+    CapabilityType:
+      example:
+        about: about
+        name: name
+        formFields:
+        - storeApi: storeApi
+          helpText: helpText
+          storeFilters:
+            key: storeFilters
+          readOnly: true
+          label: label
+          type: type
+          required: true
+          minimumValue: minimumValue
+          regexValidation: regexValidation
+          allowAutocomplete: true
+          nameMapping: nameMapping
+          idMapping: idMapping
+          attributes:
+            key: "{}"
+          disabled: true
+          id: id
+          initialValue: initialValue
+          maximumValue: maximumValue
+        - storeApi: storeApi
+          helpText: helpText
+          storeFilters:
+            key: storeFilters
+          readOnly: true
+          label: label
+          type: type
+          required: true
+          minimumValue: minimumValue
+          regexValidation: regexValidation
+          allowAutocomplete: true
+          nameMapping: nameMapping
+          idMapping: idMapping
+          attributes:
+            key: "{}"
+          disabled: true
+          id: id
+          initialValue: initialValue
+          maximumValue: maximumValue
+        id: id
+      properties:
+        about:
+          description: Description of the capability type
+          type: string
+        formFields:
+          description: Form fields configuration for this capability type
+          items:
+            $ref: "#/components/schemas/FormField"
+          type: array
+        id:
+          description: Capability type identifier
+          type: string
+        name:
+          description: Display name of the capability type
+          type: string
+      type: object
     CargoAttributes:
       example:
         requireAuthentication: false
@@ -13395,7 +13434,7 @@ components:
         cargo:
           requireAuthentication: false
         type: group
-        url: url
+        url: http://localhost:8081/repository/cargo-example
         group:
           memberNames:
           - memberNames
@@ -13404,7 +13443,8 @@ components:
         cargo:
           $ref: "#/components/schemas/CargoAttributes"
         format:
-          default: cargo
+          description: Component format held in this repository
+          example: cargo
           type: string
         group:
           $ref: "#/components/schemas/GroupAttributes"
@@ -13420,9 +13460,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: group
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: group
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/cargo-example
           type: string
       required:
       - group
@@ -13532,7 +13579,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/cargo-example
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
@@ -13552,7 +13599,8 @@ components:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
-          default: cargo
+          description: Component format held in this repository
+          example: cargo
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -13577,9 +13625,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/cargo-example
           type: string
       required:
       - httpClient
@@ -14421,28 +14476,20 @@ components:
           description: This field specifies the attribute of the Object class that
             defines the Group ID. Required if groupType is static
           example: cn
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberAttribute:
           description: LDAP attribute containing the usernames for the group. Required
             if groupType is static
           example: memberUid
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberFormat:
           description: The format of user ID stored in the group member attribute.
             Required if groupType is static
           example: "uid=${username},ou=people,dc=example,dc=com"
-          maxLength: 0
-          minLength: 0
           type: string
         groupObjectClass:
           description: LDAP class for group objects. Required if groupType is static
           example: posixGroup
-          maxLength: 0
-          minLength: 0
           type: string
         groupSubtree:
           description: Are groups located in structures below the group base DN
@@ -14511,8 +14558,6 @@ components:
           description: Set this to the attribute used to store the attribute which
             holds groups DN in the user object. Required if groupType is dynamic
           example: memberOf
-          maxLength: 0
-          minLength: 0
           type: string
         userObjectClass:
           description: LDAP class for user objects
@@ -14691,7 +14736,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: group
-        url: url
+        url: http://localhost:8081/repository/docker-example
         docker:
           httpPort: 8082
           subdomain: docker-a
@@ -14708,7 +14753,8 @@ components:
         docker:
           $ref: "#/components/schemas/DockerAttributes"
         format:
-          default: docker
+          description: Component format held in this repository
+          example: docker
           type: string
         group:
           $ref: "#/components/schemas/GroupDeployAttributes"
@@ -14724,9 +14770,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: group
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: group
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/docker-example
           type: string
       required:
       - docker
@@ -14794,7 +14847,7 @@ components:
           writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
-        url: url
+        url: http://localhost:8081/repository/docker-example
         docker:
           httpPort: 8082
           subdomain: docker-a
@@ -14810,7 +14863,8 @@ components:
         docker:
           $ref: "#/components/schemas/DockerAttributes"
         format:
-          default: docker
+          description: Component format held in this repository
+          example: docker
           type: string
         name:
           description: A unique identifier for this repository
@@ -14824,9 +14878,16 @@ components:
         storage:
           $ref: "#/components/schemas/DockerHostedStorageAttributes"
         type:
-          default: hosted
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: hosted
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/docker-example
           type: string
       required:
       - docker
@@ -14945,7 +15006,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/docker-example
         docker:
           httpPort: 8082
           subdomain: docker-a
@@ -14979,7 +15040,8 @@ components:
         dockerProxy:
           $ref: "#/components/schemas/DockerProxyAttributes"
         format:
-          default: docker
+          description: Component format held in this repository
+          example: docker
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -15004,9 +15066,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/docker-example
           type: string
       required:
       - docker
@@ -15192,6 +15261,85 @@ components:
           type: string
         softQuota:
           $ref: "#/components/schemas/BlobStoreApiSoftQuota"
+      type: object
+    FormField:
+      example:
+        storeApi: storeApi
+        helpText: helpText
+        storeFilters:
+          key: storeFilters
+        readOnly: true
+        label: label
+        type: type
+        required: true
+        minimumValue: minimumValue
+        regexValidation: regexValidation
+        allowAutocomplete: true
+        nameMapping: nameMapping
+        idMapping: idMapping
+        attributes:
+          key: "{}"
+        disabled: true
+        id: id
+        initialValue: initialValue
+        maximumValue: maximumValue
+      properties:
+        allowAutocomplete:
+          description: Whether autocomplete is enabled for this field
+          type: boolean
+        attributes:
+          additionalProperties:
+            properties: {}
+            type: object
+          description: Additional attributes for the field
+          type: object
+        disabled:
+          description: Whether the field is disabled
+          type: boolean
+        helpText:
+          description: Help text shown to users
+          type: string
+        id:
+          description: Field identifier
+          type: string
+        idMapping:
+          description: Property path for the ID field in store API response
+          type: string
+        initialValue:
+          description: Initial value for the field
+          type: string
+        label:
+          description: Display label for the field
+          type: string
+        maximumValue:
+          description: Maximum value (for number fields)
+          type: string
+        minimumValue:
+          description: Minimum value (for number fields)
+          type: string
+        nameMapping:
+          description: Property path for the name/display field in store API response
+          type: string
+        readOnly:
+          description: Whether the field is read-only
+          type: boolean
+        regexValidation:
+          description: Regular expression for field validation
+          type: string
+        required:
+          description: Whether the field is required
+          type: boolean
+        storeApi:
+          description: API endpoint for fetching selectable options
+          type: string
+        storeFilters:
+          additionalProperties:
+            type: string
+          description: Filters to apply when fetching options from the store API
+          type: object
+        type:
+          description: "Field type (e.g., string, password, number, checkbox, combobox)"
+          type: string
       type: object
     FrequencyXO:
       example:
@@ -16230,6 +16378,10 @@ components:
       type: object
     MavenGroupRepositoryApiRequest:
       example:
+        maven:
+          layoutPolicy: STRICT
+          contentDisposition: ATTACHMENT
+          versionPolicy: MIXED
         name: internal
         online: true
         storage:
@@ -16243,6 +16395,8 @@ components:
       properties:
         group:
           $ref: "#/components/schemas/GroupAttributes"
+        maven:
+          $ref: "#/components/schemas/MavenAttributes"
         name:
           description: A unique identifier for this repository
           example: internal
@@ -16256,6 +16410,7 @@ components:
           $ref: "#/components/schemas/StorageAttributes"
       required:
       - group
+      - maven
       - name
       - online
       - storage
@@ -16280,14 +16435,15 @@ components:
           writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
-        url: url
+        url: http://localhost:8081/repository/maven2-example
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
           $ref: "#/components/schemas/ComponentAttributes"
         format:
-          default: maven2
+          description: Component format held in this repository
+          example: maven2
           type: string
         maven:
           $ref: "#/components/schemas/MavenAttributes"
@@ -16303,9 +16459,16 @@ components:
         storage:
           $ref: "#/components/schemas/HostedStorageAttributes"
         type:
-          default: hosted
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: hosted
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/maven2-example
           type: string
       required:
       - maven
@@ -16390,7 +16553,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/maven2-example
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
@@ -16406,7 +16569,8 @@ components:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
-          default: maven2
+          description: Component format held in this repository
+          example: maven2
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -16433,9 +16597,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/maven2-example
           type: string
       required:
       - httpClient
@@ -16665,7 +16836,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/npm-example
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
@@ -16681,7 +16852,8 @@ components:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
-          default: npm
+          description: Component format held in this repository
+          example: npm
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -16708,9 +16880,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/npm-example
           type: string
       required:
       - httpClient
@@ -16917,7 +17096,7 @@ components:
         nugetProxy:
           nugetVersion: V3
           queryCacheItemMaxAge: 3600
-        url: url
+        url: http://localhost:8081/repository/nuget-example
         proxy:
           contentMaxAge: 1440
           metadataMaxAge: 1440
@@ -16933,7 +17112,8 @@ components:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
-          default: nuget
+          description: Component format held in this repository
+          example: nuget
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -16960,9 +17140,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/nuget-example
           type: string
       required:
       - httpClient
@@ -18221,28 +18408,20 @@ components:
           description: This field specifies the attribute of the Object class that
             defines the Group ID. Required if groupType is static
           example: cn
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberAttribute:
           description: LDAP attribute containing the usernames for the group. Required
             if groupType is static
           example: memberUid
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberFormat:
           description: The format of user ID stored in the group member attribute.
             Required if groupType is static
           example: "uid=${username},ou=people,dc=example,dc=com"
-          maxLength: 0
-          minLength: 0
           type: string
         groupObjectClass:
           description: LDAP class for group objects. Required if groupType is static
           example: posixGroup
-          maxLength: 0
-          minLength: 0
           type: string
         groupSubtree:
           description: Are groups located in structures below the group base DN
@@ -18319,8 +18498,6 @@ components:
           description: Set this to the attribute used to store the attribute which
             holds groups DN in the user object. Required if groupType is dynamic
           example: memberOf
-          maxLength: 0
-          minLength: 0
           type: string
         userObjectClass:
           description: LDAP class for user objects
@@ -19056,7 +19233,7 @@ components:
       type: object
     SimpleApiGroupDeployRepository:
       example:
-        format: format
+        format: simpleapigroupdeployrepository
         name: internal
         online: true
         storage:
@@ -19064,7 +19241,7 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: group
-        url: url
+        url: http://localhost:8081/repository/simpleapigroupdeployrepository-example
         group:
           memberNames:
           - memberNames
@@ -19072,6 +19249,9 @@ components:
           writableMember: writableMember
       properties:
         format:
+          description: Component format held in this repository
+          example: simpleapigroupdeployrepository
+          readOnly: true
           type: string
         group:
           $ref: "#/components/schemas/GroupDeployAttributes"
@@ -19089,9 +19269,17 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: group
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: group
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/simpleapigroupdeployrepository-example
+          readOnly: true
           type: string
       required:
       - group
@@ -19100,7 +19288,7 @@ components:
       type: object
     SimpleApiGroupRepository:
       example:
-        format: format
+        format: simpleapigrouprepository
         name: internal
         online: true
         storage:
@@ -19108,13 +19296,15 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: group
-        url: url
+        url: http://localhost:8081/repository/simpleapigrouprepository-example
         group:
           memberNames:
           - memberNames
           - memberNames
       properties:
         format:
+          description: Component format held in this repository
+          example: simpleapigrouprepository
           type: string
         group:
           $ref: "#/components/schemas/GroupAttributes"
@@ -19130,9 +19320,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: group
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: group
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/simpleapigrouprepository-example
           type: string
       required:
       - group
@@ -19147,7 +19344,7 @@ components:
           policyNames:
           - policyNames
           - policyNames
-        format: format
+        format: simpleapihostedrepository
         name: internal
         online: true
         storage:
@@ -19155,13 +19352,15 @@ components:
           writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
-        url: url
+        url: http://localhost:8081/repository/simpleapihostedrepository-example
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
           $ref: "#/components/schemas/ComponentAttributes"
         format:
+          description: Component format held in this repository
+          example: simpleapihostedrepository
           type: string
         name:
           description: A unique identifier for this repository
@@ -19175,9 +19374,16 @@ components:
         storage:
           $ref: "#/components/schemas/HostedStorageAttributes"
         type:
-          default: hosted
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: hosted
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/simpleapihostedrepository-example
           type: string
       required:
       - online
@@ -19218,7 +19424,7 @@ components:
           policyNames:
           - policyNames
           - policyNames
-        format: format
+        format: simpleapiproxyrepository
         name: internal
         online: true
         storage:
@@ -19226,11 +19432,13 @@ components:
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
-        url: url
+        url: http://localhost:8081/repository/simpleapiproxyrepository-example
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         format:
+          description: Component format held in this repository
+          example: simpleapiproxyrepository
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"
@@ -19255,9 +19463,16 @@ components:
         storage:
           $ref: "#/components/schemas/StorageAttributes"
         type:
-          default: proxy
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: proxy
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/simpleapiproxyrepository-example
           type: string
       required:
       - httpClient
@@ -19512,6 +19727,142 @@ components:
         type:
           type: string
       type: object
+    TerraformAttributes:
+      example:
+        requireAuthentication: false
+      properties:
+        requireAuthentication:
+          description: Indicates if this repository requires authentication overriding
+            anonymous access.
+          example: false
+          type: boolean
+      type: object
+    TerraformProxyApiRepository:
+      description: Terraform proxy repository configuration
+      properties:
+        cleanup:
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
+        format:
+          description: Component format held in this repository
+          example: terraform
+          type: string
+        httpClient:
+          $ref: "#/components/schemas/HttpClientAttributes"
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: "#/components/schemas/NegativeCacheAttributes"
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        proxy:
+          $ref: "#/components/schemas/ProxyAttributes"
+        replication:
+          $ref: "#/components/schemas/ReplicationAttributes"
+        routingRuleName:
+          description: The name of the routing rule assigned to this repository
+          type: string
+        storage:
+          $ref: "#/components/schemas/StorageAttributes"
+        terraform:
+          $ref: "#/components/schemas/TerraformAttributes"
+        type:
+          description: Repository type
+          example: proxy
+          type: string
+        url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/terraform-example
+          type: string
+      required:
+      - httpClient
+      - negativeCache
+      - online
+      - proxy
+      - storage
+      type: object
+    TerraformProxyRepositoryApiRequest:
+      description: Request body for creating or updating a Terraform proxy repository
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        routingRule: routingRule
+        name: internal
+        online: true
+        terraform:
+          requireAuthentication: false
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+      properties:
+        cleanup:
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
+        httpClient:
+          $ref: "#/components/schemas/HttpClientAttributes"
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        negativeCache:
+          $ref: "#/components/schemas/NegativeCacheAttributes"
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        proxy:
+          $ref: "#/components/schemas/ProxyAttributes"
+        replication:
+          $ref: "#/components/schemas/ReplicationAttributes"
+        routingRule:
+          type: string
+        storage:
+          $ref: "#/components/schemas/StorageAttributes"
+        terraform:
+          $ref: "#/components/schemas/TerraformAttributes"
+      required:
+      - httpClient
+      - name
+      - negativeCache
+      - online
+      - proxy
+      - storage
+      type: object
     Throwable:
       properties:
         cause:
@@ -19606,28 +19957,20 @@ components:
           description: This field specifies the attribute of the Object class that
             defines the Group ID. Required if groupType is static
           example: cn
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberAttribute:
           description: LDAP attribute containing the usernames for the group. Required
             if groupType is static
           example: memberUid
-          maxLength: 0
-          minLength: 0
           type: string
         groupMemberFormat:
           description: The format of user ID stored in the group member attribute.
             Required if groupType is static
           example: "uid=${username},ou=people,dc=example,dc=com"
-          maxLength: 0
-          minLength: 0
           type: string
         groupObjectClass:
           description: LDAP class for group objects. Required if groupType is static
           example: posixGroup
-          maxLength: 0
-          minLength: 0
           type: string
         groupSubtree:
           description: Are groups located in structures below the group base DN
@@ -19699,8 +20042,6 @@ components:
           description: Set this to the attribute used to store the attribute which
             holds groups DN in the user object. Required if groupType is dynamic
           example: memberOf
-          maxLength: 0
-          minLength: 0
           type: string
         userObjectClass:
           description: LDAP class for user objects
@@ -19729,28 +20070,67 @@ components:
       - protocol
       - searchBase
       type: object
+    UpdateTaskTemplateXO:
+      description: Task template for updating existing tasks (type field is immutable)
+      properties:
+        alertEmail:
+          description: e-mail for task notifications.
+          type: string
+        enabled:
+          description: Indicates if the task would be enabled.
+          type: boolean
+        frequency:
+          $ref: "#/components/schemas/FrequencyXO"
+        name:
+          description: The name of the task template.
+          type: string
+        notificationCondition:
+          description: Condition required to notify a task execution.
+          enum:
+          - FAILURE
+          - SUCCESS_FAILURE
+          type: string
+        properties:
+          additionalProperties:
+            type: string
+          description: Additional properties for the task
+          type: object
+      required:
+      - enabled
+      - frequency
+      - name
+      - notificationCondition
+      type: object
     UploadDefinitionXO:
       example:
         multipleUpload: true
         format: format
         componentFields:
         - name: name
+          options:
+            key: options
           description: description
           optional: true
           type: type
           group: group
         - name: name
+          options:
+            key: options
           description: description
           optional: true
           type: type
           group: group
         assetFields:
         - name: name
+          options:
+            key: options
           description: description
           optional: true
           type: type
           group: group
         - name: name
+          options:
+            key: options
           description: description
           optional: true
           type: type
@@ -19772,6 +20152,8 @@ components:
     UploadFieldDefinitionXO:
       example:
         name: name
+        options:
+          key: options
         description: description
         optional: true
         type: type
@@ -19785,6 +20167,10 @@ components:
           type: string
         optional:
           type: boolean
+        options:
+          additionalProperties:
+            type: string
+          type: object
         type:
           type: string
       type: object
@@ -19891,14 +20277,15 @@ components:
           writePolicy: ALLOW_ONCE
           blobStoreName: default
         type: hosted
-        url: url
+        url: http://localhost:8081/repository/yum-example
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
         component:
           $ref: "#/components/schemas/ComponentAttributes"
         format:
-          default: yum
+          description: Component format held in this repository
+          example: yum
           type: string
         name:
           description: A unique identifier for this repository
@@ -19912,9 +20299,16 @@ components:
         storage:
           $ref: "#/components/schemas/HostedStorageAttributes"
         type:
-          default: hosted
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: hosted
           type: string
         url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/yum-example
           type: string
         yum:
           $ref: "#/components/schemas/YumAttributes"

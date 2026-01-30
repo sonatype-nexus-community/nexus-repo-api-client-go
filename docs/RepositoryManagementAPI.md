@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**CreateRubygemsGroupRepository**](RepositoryManagementAPI.md#CreateRubygemsGroupRepository) | **Post** /v1/repositories/rubygems/group | Create RubyGems group repository
 [**CreateRubygemsHostedRepository**](RepositoryManagementAPI.md#CreateRubygemsHostedRepository) | **Post** /v1/repositories/rubygems/hosted | Create RubyGems hosted repository
 [**CreateRubygemsProxyRepository**](RepositoryManagementAPI.md#CreateRubygemsProxyRepository) | **Post** /v1/repositories/rubygems/proxy | Create RubyGems proxy repository
+[**CreateTerraformProxyRepository**](RepositoryManagementAPI.md#CreateTerraformProxyRepository) | **Post** /v1/repositories/terraform/proxy | Create terraform proxy repository
 [**CreateYumGroupRepository**](RepositoryManagementAPI.md#CreateYumGroupRepository) | **Post** /v1/repositories/yum/group | Create Yum group repository
 [**CreateYumHostedRepository**](RepositoryManagementAPI.md#CreateYumHostedRepository) | **Post** /v1/repositories/yum/hosted | Create Yum hosted repository
 [**CreateYumProxyRepository**](RepositoryManagementAPI.md#CreateYumProxyRepository) | **Post** /v1/repositories/yum/proxy | Create Yum proxy repository
@@ -99,6 +100,7 @@ Method | HTTP request | Description
 [**GetRubygemsGroupRepository**](RepositoryManagementAPI.md#GetRubygemsGroupRepository) | **Get** /v1/repositories/rubygems/group/{repositoryName} | Get repository
 [**GetRubygemsHostedRepository**](RepositoryManagementAPI.md#GetRubygemsHostedRepository) | **Get** /v1/repositories/rubygems/hosted/{repositoryName} | Get repository
 [**GetRubygemsProxyRepository**](RepositoryManagementAPI.md#GetRubygemsProxyRepository) | **Get** /v1/repositories/rubygems/proxy/{repositoryName} | Get repository
+[**GetTerraformProxyRepository**](RepositoryManagementAPI.md#GetTerraformProxyRepository) | **Get** /v1/repositories/terraform/proxy/{repositoryName} | Get repository
 [**GetYumGroupRepository**](RepositoryManagementAPI.md#GetYumGroupRepository) | **Get** /v1/repositories/yum/group/{repositoryName} | Get repository
 [**GetYumHostedRepository**](RepositoryManagementAPI.md#GetYumHostedRepository) | **Get** /v1/repositories/yum/hosted/{repositoryName} | Get repository
 [**GetYumProxyRepository**](RepositoryManagementAPI.md#GetYumProxyRepository) | **Get** /v1/repositories/yum/proxy/{repositoryName} | Get repository
@@ -144,6 +146,7 @@ Method | HTTP request | Description
 [**UpdateRubygemsGroupRepository**](RepositoryManagementAPI.md#UpdateRubygemsGroupRepository) | **Put** /v1/repositories/rubygems/group/{repositoryName} | Update RubyGems group repository
 [**UpdateRubygemsHostedRepository**](RepositoryManagementAPI.md#UpdateRubygemsHostedRepository) | **Put** /v1/repositories/rubygems/hosted/{repositoryName} | Update RubyGems hosted repository
 [**UpdateRubygemsProxyRepository**](RepositoryManagementAPI.md#UpdateRubygemsProxyRepository) | **Put** /v1/repositories/rubygems/proxy/{repositoryName} | Update RubyGems proxy repository
+[**UpdateTerraformProxyRepository**](RepositoryManagementAPI.md#UpdateTerraformProxyRepository) | **Put** /v1/repositories/terraform/proxy/{repositoryName} | Update terraform proxy repository
 [**UpdateYumGroupRepository**](RepositoryManagementAPI.md#UpdateYumGroupRepository) | **Put** /v1/repositories/yum/group/{repositoryName} | Update Yum group repository
 [**UpdateYumHostedRepository**](RepositoryManagementAPI.md#UpdateYumHostedRepository) | **Put** /v1/repositories/yum/hosted/{repositoryName} | Update Yum hosted repository
 [**UpdateYumProxyRepository**](RepositoryManagementAPI.md#UpdateYumProxyRepository) | **Put** /v1/repositories/yum/proxy/{repositoryName} | Update Yum proxy repository
@@ -1409,7 +1412,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), *sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2735,6 +2738,70 @@ Other parameters are passed through a pointer to a apiCreateRubygemsProxyReposit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateTerraformProxyRepository
+
+> CreateTerraformProxyRepository(ctx).Body(body).Execute()
+
+Create terraform proxy repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateTerraformProxyRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateTerraformProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTerraformProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Configuration for the new Terraform proxy repository | 
 
 ### Return type
 
@@ -6312,6 +6379,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetTerraformProxyRepository
+
+> GetTerraformProxyRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to retrieve
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetTerraformProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to retrieve | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTerraformProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetYumGroupRepository
 
 > SimpleApiGroupRepository GetYumGroupRepository(ctx, repositoryName).Execute()
@@ -7896,7 +8031,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), *sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9353,6 +9488,76 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateTerraformProxyRepository
+
+> UpdateTerraformProxyRepository(ctx, repositoryName).Body(body).Execute()
+
+Update terraform proxy repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateTerraformProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateTerraformProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Updated configuration for the Terraform proxy repository | 
 
 ### Return type
 

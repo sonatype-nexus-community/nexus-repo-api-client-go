@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlgorithmForDecryption** | Pointer to **string** | Optional - The algorithm to be used to decrypt the principals | [optional] 
+**IterationsForDecryption** | Pointer to **int32** | Optional - The iterations to be used to decrypt the principals | [optional] 
 **NotifyEmail** | Pointer to **string** | Optional - Email to notify when task finishes | [optional] 
 
 ## Methods
@@ -50,6 +51,31 @@ SetAlgorithmForDecryption sets AlgorithmForDecryption field to given value.
 `func (o *ApiKeysReEncryptionRequestApiXO) HasAlgorithmForDecryption() bool`
 
 HasAlgorithmForDecryption returns a boolean if a field has been set.
+
+### GetIterationsForDecryption
+
+`func (o *ApiKeysReEncryptionRequestApiXO) GetIterationsForDecryption() int32`
+
+GetIterationsForDecryption returns the IterationsForDecryption field if non-nil, zero value otherwise.
+
+### GetIterationsForDecryptionOk
+
+`func (o *ApiKeysReEncryptionRequestApiXO) GetIterationsForDecryptionOk() (*int32, bool)`
+
+GetIterationsForDecryptionOk returns a tuple with the IterationsForDecryption field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIterationsForDecryption
+
+`func (o *ApiKeysReEncryptionRequestApiXO) SetIterationsForDecryption(v int32)`
+
+SetIterationsForDecryption sets IterationsForDecryption field to given value.
+
+### HasIterationsForDecryption
+
+`func (o *ApiKeysReEncryptionRequestApiXO) HasIterationsForDecryption() bool`
+
+HasIterationsForDecryption returns a boolean if a field has been set.
 
 ### GetNotifyEmail
 

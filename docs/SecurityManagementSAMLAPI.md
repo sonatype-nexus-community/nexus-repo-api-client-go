@@ -145,7 +145,7 @@ import (
 )
 
 func main() {
-	type_ := "type__example" // string | Type of certificate to return: 'signing' or 'decryption'. Defaults to 'signing' if not provided. (optional)
+	type_ := "type__example" // string | Type of certificate to return: 'signing' or 'decryption'. Defaults to 'signing' if not provided. (optional) (default to "signing")
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -168,7 +168,7 @@ Other parameters are passed through a pointer to a apiGetPublicCertificateInPemF
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_** | **string** | Type of certificate to return: &#39;signing&#39; or &#39;decryption&#39;. Defaults to &#39;signing&#39; if not provided. | 
+ **type_** | **string** | Type of certificate to return: &#39;signing&#39; or &#39;decryption&#39;. Defaults to &#39;signing&#39; if not provided. | [default to &quot;signing&quot;]
 
 ### Return type
 

@@ -6,12 +6,12 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** |  | [optional] [default to "yum"]
+**Format** | Pointer to **string** | Component format held in this repository | [optional] 
 **Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
-**Type** | Pointer to **string** |  | [optional] [default to "hosted"]
-**Url** | Pointer to **string** |  | [optional] 
+**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Url** | Pointer to **string** | URL to the repository | [optional] 
 **Yum** | [**YumAttributes**](YumAttributes.md) |  | 
 
 ## Methods

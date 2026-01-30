@@ -484,6 +484,17 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService CreateTerraformProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateTerraformProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService CreateYumGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1208,6 +1219,19 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService GetTerraformProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService GetYumGroupRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1790,6 +1814,19 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateRubygemsProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateTerraformProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateTerraformProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

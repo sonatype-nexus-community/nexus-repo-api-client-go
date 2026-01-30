@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Group** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Optional** | Pointer to **bool** |  | [optional] 
+**Options** | Pointer to **map[string]string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetOptional sets Optional field to given value.
 `func (o *UploadFieldDefinitionXO) HasOptional() bool`
 
 HasOptional returns a boolean if a field has been set.
+
+### GetOptions
+
+`func (o *UploadFieldDefinitionXO) GetOptions() map[string]string`
+
+GetOptions returns the Options field if non-nil, zero value otherwise.
+
+### GetOptionsOk
+
+`func (o *UploadFieldDefinitionXO) GetOptionsOk() (*map[string]string, bool)`
+
+GetOptionsOk returns a tuple with the Options field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOptions
+
+`func (o *UploadFieldDefinitionXO) SetOptions(v map[string]string)`
+
+SetOptions sets Options field to given value.
+
+### HasOptions
+
+`func (o *UploadFieldDefinitionXO) HasOptions() bool`
+
+HasOptions returns a boolean if a field has been set.
 
 ### GetType
 

@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**Create3**](CapabilitiesAPI.md#Create3) | **Post** /v1/capabilities | Create a capability
 [**Delete4**](CapabilitiesAPI.md#Delete4) | **Delete** /v1/capabilities/{capabilityId} | Delete a capability
+[**GetTypes**](CapabilitiesAPI.md#GetTypes) | **Get** /v1/capabilities/types | List all capability types available and exposed in the system
 [**List**](CapabilitiesAPI.md#List) | **Get** /v1/capabilities | List the active capabilities
 [**Update3**](CapabilitiesAPI.md#Update3) | **Put** /v1/capabilities/{capabilityId} | Update a capability
 
@@ -135,6 +136,65 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: Not defined
 - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTypes
+
+> []CapabilityType GetTypes(ctx).Execute()
+
+List all capability types available and exposed in the system
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.CapabilitiesAPI.GetTypes(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.GetTypes``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetTypes`: []CapabilityType
+	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.GetTypes`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetTypesRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]CapabilityType**](CapabilityType.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

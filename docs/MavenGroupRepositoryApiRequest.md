@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
+**Maven** | [**MavenAttributes**](MavenAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
@@ -13,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewMavenGroupRepositoryApiRequest
 
-`func NewMavenGroupRepositoryApiRequest(group GroupAttributes, name string, online bool, storage StorageAttributes, ) *MavenGroupRepositoryApiRequest`
+`func NewMavenGroupRepositoryApiRequest(group GroupAttributes, maven MavenAttributes, name string, online bool, storage StorageAttributes, ) *MavenGroupRepositoryApiRequest`
 
 NewMavenGroupRepositoryApiRequest instantiates a new MavenGroupRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -46,6 +47,26 @@ and a boolean to check if the value has been set.
 `func (o *MavenGroupRepositoryApiRequest) SetGroup(v GroupAttributes)`
 
 SetGroup sets Group field to given value.
+
+
+### GetMaven
+
+`func (o *MavenGroupRepositoryApiRequest) GetMaven() MavenAttributes`
+
+GetMaven returns the Maven field if non-nil, zero value otherwise.
+
+### GetMavenOk
+
+`func (o *MavenGroupRepositoryApiRequest) GetMavenOk() (*MavenAttributes, bool)`
+
+GetMavenOk returns a tuple with the Maven field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMaven
+
+`func (o *MavenGroupRepositoryApiRequest) SetMaven(v MavenAttributes)`
+
+SetMaven sets Maven field to given value.
 
 
 ### GetName
