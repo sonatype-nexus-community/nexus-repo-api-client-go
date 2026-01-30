@@ -103,13 +103,14 @@ func Test_v3_ManageSonatypeRepositoryFirewallConfigurationAPIService(t *testing.
 
 	})
 
-	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService VerifyConnection2", func(t *testing.T) {
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService VerifyIqConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyConnection2(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.VerifyIqConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

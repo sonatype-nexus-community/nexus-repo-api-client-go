@@ -151,7 +151,7 @@ Class | Method | HTTP request | Description
 *ManageSonatypeRepositoryFirewallConfigurationAPI* | [**GetConfiguration**](docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md#getconfiguration) | **Get** /v1/iq | Get Sonatype Repository Firewall configuration
 *ManageSonatypeRepositoryFirewallConfigurationAPI* | [**ManageAudit**](docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md#manageaudit) | **Put** /v1/iq/audit | Manage audit
 *ManageSonatypeRepositoryFirewallConfigurationAPI* | [**UpdateConfiguration**](docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md#updateconfiguration) | **Put** /v1/iq | Update Sonatype Repository Firewall configuration
-*ManageSonatypeRepositoryFirewallConfigurationAPI* | [**VerifyConnection2**](docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md#verifyconnection2) | **Post** /v1/iq/verify-connection | Verify Sonatype Repository Firewall connection
+*ManageSonatypeRepositoryFirewallConfigurationAPI* | [**VerifyIqConnection**](docs/ManageSonatypeRepositoryFirewallConfigurationAPI.md#verifyiqconnection) | **Post** /v1/iq/verify-connection | Verify Sonatype Repository Firewall connection
 *MonthlyMetricsAPI* | [**GetLast12MonthsMetrics**](docs/MonthlyMetricsAPI.md#getlast12monthsmetrics) | **Get** /v1/monthly-metrics | Get the last 12 months of metrics.
 *ProductLicensingAPI* | [**GetLicenseStatus**](docs/ProductLicensingAPI.md#getlicensestatus) | **Get** /v1/system/license | Get the current license status.
 *ProductLicensingAPI* | [**RemoveLicense**](docs/ProductLicensingAPI.md#removelicense) | **Delete** /v1/system/license | Uninstall license if present.

@@ -667,39 +667,41 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) UpdateConfigur
 	return localVarHTTPResponse, nil
 }
 
-type ApiVerifyConnection2Request struct {
+type ApiVerifyIqConnectionRequest struct {
 	ctx context.Context
 	ApiService *ManageSonatypeRepositoryFirewallConfigurationAPIService
 }
 
-func (r ApiVerifyConnection2Request) Execute() (*http.Response, error) {
-	return r.ApiService.VerifyConnection2Execute(r)
+func (r ApiVerifyIqConnectionRequest) Execute() (*IqConnectionVerificationXo, *http.Response, error) {
+	return r.ApiService.VerifyIqConnectionExecute(r)
 }
 
 /*
-VerifyConnection2 Verify Sonatype Repository Firewall connection
+VerifyIqConnection Verify Sonatype Repository Firewall connection
 
  @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApiVerifyConnection2Request
+ @return ApiVerifyIqConnectionRequest
 */
-func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyConnection2(ctx context.Context) ApiVerifyConnection2Request {
-	return ApiVerifyConnection2Request{
+func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyIqConnection(ctx context.Context) ApiVerifyIqConnectionRequest {
+	return ApiVerifyIqConnectionRequest{
 		ApiService: a,
 		ctx: ctx,
 	}
 }
 
 // Execute executes the request
-func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyConnection2Execute(r ApiVerifyConnection2Request) (*http.Response, error) {
+//  @return IqConnectionVerificationXo
+func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyIqConnectionExecute(r ApiVerifyIqConnectionRequest) (*IqConnectionVerificationXo, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodPost
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *IqConnectionVerificationXo
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManageSonatypeRepositoryFirewallConfigurationAPIService.VerifyConnection2")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ManageSonatypeRepositoryFirewallConfigurationAPIService.VerifyIqConnection")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/iq/verify-connection"
@@ -718,7 +720,7 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyConnecti
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -727,19 +729,19 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyConnecti
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -747,8 +749,17 @@ func (a *ManageSonatypeRepositoryFirewallConfigurationAPIService) VerifyConnecti
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
