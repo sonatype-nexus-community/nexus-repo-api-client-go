@@ -1225,9 +1225,10 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

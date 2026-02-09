@@ -6381,7 +6381,7 @@ Name | Type | Description  | Notes
 
 ## GetTerraformProxyRepository
 
-> GetTerraformProxyRepository(ctx, repositoryName).Execute()
+> TerraformProxyApiRepository GetTerraformProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6404,11 +6404,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetTerraformProxyRepository(context.Background(), repositoryName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetTerraformProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetTerraformProxyRepository`: TerraformProxyApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetTerraformProxyRepository`: %v\n", resp)
 }
 ```
 
@@ -6431,7 +6433,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**TerraformProxyApiRepository**](TerraformProxyApiRepository.md)
 
 ### Authorization
 
@@ -6440,7 +6442,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

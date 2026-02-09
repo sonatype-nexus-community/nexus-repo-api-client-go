@@ -5509,7 +5509,10 @@ paths:
         style: simple
       responses:
         "200":
-          content: {}
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TerraformProxyApiRepository"
           description: Repository configuration retrieved successfully
         "401":
           content: {}
@@ -19745,6 +19748,51 @@ components:
       type: object
     TerraformProxyApiRepository:
       description: Terraform proxy repository configuration
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: terraform
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: http://localhost:8081/repository/terraform-example
+        proxy:
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        name: internal
+        online: true
+        terraform:
+          requireAuthentication: false
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
