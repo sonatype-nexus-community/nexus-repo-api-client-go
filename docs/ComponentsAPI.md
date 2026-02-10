@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## UploadComponent
 
-> UploadComponent(ctx).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).DockerAsset(dockerAsset).DockerTag(dockerTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+> UploadComponent(ctx).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 
 Upload a single component
 
@@ -233,8 +233,6 @@ func main() {
 	repository := "repository_example" // string | Name of the repository to which you would like to upload the component
 	aptAsset := os.NewFile(1234, "some_file") // *os.File | apt Asset  (optional)
 	aptTag := "aptTag_example" // string | apt Tag (optional)
-	dockerAsset := os.NewFile(1234, "some_file") // *os.File | docker Asset  (optional)
-	dockerTag := "dockerTag_example" // string | docker Tag (optional)
 	helmAsset := os.NewFile(1234, "some_file") // *os.File | helm Asset  (optional)
 	helmTag := "helmTag_example" // string | helm Tag (optional)
 	maven2ArtifactId := "maven2ArtifactId_example" // string | maven2 Artifact ID (optional)
@@ -271,6 +269,16 @@ func main() {
 	rawTag := "rawTag_example" // string | raw Tag (optional)
 	rubygemsAsset := os.NewFile(1234, "some_file") // *os.File | rubygems Asset  (optional)
 	rubygemsTag := "rubygemsTag_example" // string | rubygems Tag (optional)
+	terraformArchitecture := "terraformArchitecture_example" // string | terraform Architecture (optional)
+	terraformAsset := os.NewFile(1234, "some_file") // *os.File | terraform Asset  (optional)
+	terraformName := "terraformName_example" // string | terraform Name (optional)
+	terraformNamespace := "terraformNamespace_example" // string | terraform Namespace (optional)
+	terraformOs := "terraformOs_example" // string | terraform Operating System (optional)
+	terraformProvider := "terraformProvider_example" // string | terraform Provider (optional)
+	terraformTag := "terraformTag_example" // string | terraform Tag (optional)
+	terraformType := "terraformType_example" // string | terraform Type (optional)
+	terraformUploadType := "terraformUploadType_example" // string | terraform Upload Type (optional)
+	terraformVersion := "terraformVersion_example" // string | terraform Version (optional)
 	yumAsset := os.NewFile(1234, "some_file") // *os.File | yum Asset  (optional)
 	yumAssetFilename := "yumAssetFilename_example" // string | yum Asset  Filename (optional)
 	yumDirectory := "yumDirectory_example" // string | yum Directory (optional)
@@ -278,7 +286,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).DockerAsset(dockerAsset).DockerTag(dockerTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+	r, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.UploadComponent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -300,8 +308,6 @@ Name | Type | Description  | Notes
  **repository** | **string** | Name of the repository to which you would like to upload the component | 
  **aptAsset** | ***os.File** | apt Asset  | 
  **aptTag** | **string** | apt Tag | 
- **dockerAsset** | ***os.File** | docker Asset  | 
- **dockerTag** | **string** | docker Tag | 
  **helmAsset** | ***os.File** | helm Asset  | 
  **helmTag** | **string** | helm Tag | 
  **maven2ArtifactId** | **string** | maven2 Artifact ID | 
@@ -338,6 +344,16 @@ Name | Type | Description  | Notes
  **rawTag** | **string** | raw Tag | 
  **rubygemsAsset** | ***os.File** | rubygems Asset  | 
  **rubygemsTag** | **string** | rubygems Tag | 
+ **terraformArchitecture** | **string** | terraform Architecture | 
+ **terraformAsset** | ***os.File** | terraform Asset  | 
+ **terraformName** | **string** | terraform Name | 
+ **terraformNamespace** | **string** | terraform Namespace | 
+ **terraformOs** | **string** | terraform Operating System | 
+ **terraformProvider** | **string** | terraform Provider | 
+ **terraformTag** | **string** | terraform Tag | 
+ **terraformType** | **string** | terraform Type | 
+ **terraformUploadType** | **string** | terraform Upload Type | 
+ **terraformVersion** | **string** | terraform Version | 
  **yumAsset** | ***os.File** | yum Asset  | 
  **yumAssetFilename** | **string** | yum Asset  Filename | 
  **yumDirectory** | **string** | yum Directory | 

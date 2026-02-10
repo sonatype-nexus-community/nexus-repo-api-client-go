@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
-**Name** | **string** | A unique identifier for this repository | 
+**Name** | **string** | A unique identifier for this repository (must be lowercase for Docker repositories) | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**DockerHostedStorageAttributes**](DockerHostedStorageAttributes.md) |  | 
 

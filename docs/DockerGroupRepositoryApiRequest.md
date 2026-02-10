@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
 **Group** | [**GroupDeployAttributes**](GroupDeployAttributes.md) |  | 
-**Name** | **string** | A unique identifier for this repository | 
+**Name** | **string** | A unique identifier for this repository (must be lowercase for Docker repositories) | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 

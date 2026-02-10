@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **LastName** | Pointer to **string** | The last name of the user. | [optional] 
 **ReadOnly** | Pointer to **bool** | Indicates whether the user&#39;s properties could be modified by the Nexus Repository Manager. When false only roles are considered during update. | [optional] 
 **Roles** | Pointer to **[]string** | The roles which the user has been assigned within Nexus. | [optional] 
-**Source** | Pointer to **string** | The user source which is the origin of this user. This value cannot be changed. | [optional] 
+**Source** | Pointer to **string** | The source of the user. When creating user, if the source is \&quot;default\&quot;, the local Nexus Security User will be created. If the source is anything but \&quot;default\&quot; (i.e., LDAP or SAML), a local LdapUser (or SamlUser) will be created and have the listed roles assigned to that user. | [optional] 
 **Status** | **string** | The user&#39;s status, e.g. active or disabled. | 
 **UserId** | Pointer to **string** | The userid which is required for login. This value cannot be changed. | [optional] 
 

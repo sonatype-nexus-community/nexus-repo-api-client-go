@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateTask
 
-> CreateTask201Response CreateTask(ctx).Body(body).Execute()
+> TaskXO CreateTask(ctx).Body(body).Execute()
 
 Create task
 
@@ -44,7 +44,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.CreateTask``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTask`: CreateTask201Response
+	// response from `CreateTask`: TaskXO
 	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.CreateTask`: %v\n", resp)
 }
 ```
@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CreateTask201Response**](CreateTask201Response.md)
+[**TaskXO**](TaskXO.md)
 
 ### Authorization
 

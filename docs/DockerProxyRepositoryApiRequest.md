@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
 **DockerProxy** | [**DockerProxyAttributes**](DockerProxyAttributes.md) |  | 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
-**Name** | **string** | A unique identifier for this repository | 
+**Name** | **string** | A unique identifier for this repository (must be lowercase for Docker repositories) | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 

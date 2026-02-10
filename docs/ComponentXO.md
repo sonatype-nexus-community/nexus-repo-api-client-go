@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Assets** | Pointer to [**[]AssetXO**](AssetXO.md) |  | [optional] 
+**ExtraJsonAttributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Format** | Pointer to **string** |  | [optional] 
 **Group** | Pointer to **string** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
@@ -56,6 +57,31 @@ SetAssets sets Assets field to given value.
 `func (o *ComponentXO) HasAssets() bool`
 
 HasAssets returns a boolean if a field has been set.
+
+### GetExtraJsonAttributes
+
+`func (o *ComponentXO) GetExtraJsonAttributes() map[string]map[string]interface{}`
+
+GetExtraJsonAttributes returns the ExtraJsonAttributes field if non-nil, zero value otherwise.
+
+### GetExtraJsonAttributesOk
+
+`func (o *ComponentXO) GetExtraJsonAttributesOk() (*map[string]map[string]interface{}, bool)`
+
+GetExtraJsonAttributesOk returns a tuple with the ExtraJsonAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExtraJsonAttributes
+
+`func (o *ComponentXO) SetExtraJsonAttributes(v map[string]map[string]interface{})`
+
+SetExtraJsonAttributes sets ExtraJsonAttributes field to given value.
+
+### HasExtraJsonAttributes
+
+`func (o *ComponentXO) HasExtraJsonAttributes() bool`
+
+HasExtraJsonAttributes returns a boolean if a field has been set.
 
 ### GetFormat
 

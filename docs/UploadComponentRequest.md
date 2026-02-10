@@ -6,8 +6,6 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AptAsset** | Pointer to ***os.File** | apt Asset  | [optional] 
 **AptTag** | Pointer to **string** | apt Tag | [optional] 
-**DockerAsset** | Pointer to ***os.File** | docker Asset  | [optional] 
-**DockerTag** | Pointer to **string** | docker Tag | [optional] 
 **HelmAsset** | Pointer to ***os.File** | helm Asset  | [optional] 
 **HelmTag** | Pointer to **string** | helm Tag | [optional] 
 **Maven2ArtifactId** | Pointer to **string** | maven2 Artifact ID | [optional] 
@@ -44,6 +42,16 @@ Name | Type | Description | Notes
 **RawTag** | Pointer to **string** | raw Tag | [optional] 
 **RubygemsAsset** | Pointer to ***os.File** | rubygems Asset  | [optional] 
 **RubygemsTag** | Pointer to **string** | rubygems Tag | [optional] 
+**TerraformArchitecture** | Pointer to **string** | terraform Architecture | [optional] 
+**TerraformAsset** | Pointer to ***os.File** | terraform Asset  | [optional] 
+**TerraformName** | Pointer to **string** | terraform Name | [optional] 
+**TerraformNamespace** | Pointer to **string** | terraform Namespace | [optional] 
+**TerraformOs** | Pointer to **string** | terraform Operating System | [optional] 
+**TerraformProvider** | Pointer to **string** | terraform Provider | [optional] 
+**TerraformTag** | Pointer to **string** | terraform Tag | [optional] 
+**TerraformType** | Pointer to **string** | terraform Type | [optional] 
+**TerraformUploadType** | Pointer to **string** | terraform Upload Type | [optional] 
+**TerraformVersion** | Pointer to **string** | terraform Version | [optional] 
 **YumAsset** | Pointer to ***os.File** | yum Asset  | [optional] 
 **YumAssetFilename** | Pointer to **string** | yum Asset  Filename | [optional] 
 **YumDirectory** | Pointer to **string** | yum Directory | [optional] 
@@ -117,56 +125,6 @@ SetAptTag sets AptTag field to given value.
 `func (o *UploadComponentRequest) HasAptTag() bool`
 
 HasAptTag returns a boolean if a field has been set.
-
-### GetDockerAsset
-
-`func (o *UploadComponentRequest) GetDockerAsset() *os.File`
-
-GetDockerAsset returns the DockerAsset field if non-nil, zero value otherwise.
-
-### GetDockerAssetOk
-
-`func (o *UploadComponentRequest) GetDockerAssetOk() (**os.File, bool)`
-
-GetDockerAssetOk returns a tuple with the DockerAsset field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDockerAsset
-
-`func (o *UploadComponentRequest) SetDockerAsset(v *os.File)`
-
-SetDockerAsset sets DockerAsset field to given value.
-
-### HasDockerAsset
-
-`func (o *UploadComponentRequest) HasDockerAsset() bool`
-
-HasDockerAsset returns a boolean if a field has been set.
-
-### GetDockerTag
-
-`func (o *UploadComponentRequest) GetDockerTag() string`
-
-GetDockerTag returns the DockerTag field if non-nil, zero value otherwise.
-
-### GetDockerTagOk
-
-`func (o *UploadComponentRequest) GetDockerTagOk() (*string, bool)`
-
-GetDockerTagOk returns a tuple with the DockerTag field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetDockerTag
-
-`func (o *UploadComponentRequest) SetDockerTag(v string)`
-
-SetDockerTag sets DockerTag field to given value.
-
-### HasDockerTag
-
-`func (o *UploadComponentRequest) HasDockerTag() bool`
-
-HasDockerTag returns a boolean if a field has been set.
 
 ### GetHelmAsset
 
@@ -1067,6 +1025,256 @@ SetRubygemsTag sets RubygemsTag field to given value.
 `func (o *UploadComponentRequest) HasRubygemsTag() bool`
 
 HasRubygemsTag returns a boolean if a field has been set.
+
+### GetTerraformArchitecture
+
+`func (o *UploadComponentRequest) GetTerraformArchitecture() string`
+
+GetTerraformArchitecture returns the TerraformArchitecture field if non-nil, zero value otherwise.
+
+### GetTerraformArchitectureOk
+
+`func (o *UploadComponentRequest) GetTerraformArchitectureOk() (*string, bool)`
+
+GetTerraformArchitectureOk returns a tuple with the TerraformArchitecture field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformArchitecture
+
+`func (o *UploadComponentRequest) SetTerraformArchitecture(v string)`
+
+SetTerraformArchitecture sets TerraformArchitecture field to given value.
+
+### HasTerraformArchitecture
+
+`func (o *UploadComponentRequest) HasTerraformArchitecture() bool`
+
+HasTerraformArchitecture returns a boolean if a field has been set.
+
+### GetTerraformAsset
+
+`func (o *UploadComponentRequest) GetTerraformAsset() *os.File`
+
+GetTerraformAsset returns the TerraformAsset field if non-nil, zero value otherwise.
+
+### GetTerraformAssetOk
+
+`func (o *UploadComponentRequest) GetTerraformAssetOk() (**os.File, bool)`
+
+GetTerraformAssetOk returns a tuple with the TerraformAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformAsset
+
+`func (o *UploadComponentRequest) SetTerraformAsset(v *os.File)`
+
+SetTerraformAsset sets TerraformAsset field to given value.
+
+### HasTerraformAsset
+
+`func (o *UploadComponentRequest) HasTerraformAsset() bool`
+
+HasTerraformAsset returns a boolean if a field has been set.
+
+### GetTerraformName
+
+`func (o *UploadComponentRequest) GetTerraformName() string`
+
+GetTerraformName returns the TerraformName field if non-nil, zero value otherwise.
+
+### GetTerraformNameOk
+
+`func (o *UploadComponentRequest) GetTerraformNameOk() (*string, bool)`
+
+GetTerraformNameOk returns a tuple with the TerraformName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformName
+
+`func (o *UploadComponentRequest) SetTerraformName(v string)`
+
+SetTerraformName sets TerraformName field to given value.
+
+### HasTerraformName
+
+`func (o *UploadComponentRequest) HasTerraformName() bool`
+
+HasTerraformName returns a boolean if a field has been set.
+
+### GetTerraformNamespace
+
+`func (o *UploadComponentRequest) GetTerraformNamespace() string`
+
+GetTerraformNamespace returns the TerraformNamespace field if non-nil, zero value otherwise.
+
+### GetTerraformNamespaceOk
+
+`func (o *UploadComponentRequest) GetTerraformNamespaceOk() (*string, bool)`
+
+GetTerraformNamespaceOk returns a tuple with the TerraformNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformNamespace
+
+`func (o *UploadComponentRequest) SetTerraformNamespace(v string)`
+
+SetTerraformNamespace sets TerraformNamespace field to given value.
+
+### HasTerraformNamespace
+
+`func (o *UploadComponentRequest) HasTerraformNamespace() bool`
+
+HasTerraformNamespace returns a boolean if a field has been set.
+
+### GetTerraformOs
+
+`func (o *UploadComponentRequest) GetTerraformOs() string`
+
+GetTerraformOs returns the TerraformOs field if non-nil, zero value otherwise.
+
+### GetTerraformOsOk
+
+`func (o *UploadComponentRequest) GetTerraformOsOk() (*string, bool)`
+
+GetTerraformOsOk returns a tuple with the TerraformOs field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformOs
+
+`func (o *UploadComponentRequest) SetTerraformOs(v string)`
+
+SetTerraformOs sets TerraformOs field to given value.
+
+### HasTerraformOs
+
+`func (o *UploadComponentRequest) HasTerraformOs() bool`
+
+HasTerraformOs returns a boolean if a field has been set.
+
+### GetTerraformProvider
+
+`func (o *UploadComponentRequest) GetTerraformProvider() string`
+
+GetTerraformProvider returns the TerraformProvider field if non-nil, zero value otherwise.
+
+### GetTerraformProviderOk
+
+`func (o *UploadComponentRequest) GetTerraformProviderOk() (*string, bool)`
+
+GetTerraformProviderOk returns a tuple with the TerraformProvider field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformProvider
+
+`func (o *UploadComponentRequest) SetTerraformProvider(v string)`
+
+SetTerraformProvider sets TerraformProvider field to given value.
+
+### HasTerraformProvider
+
+`func (o *UploadComponentRequest) HasTerraformProvider() bool`
+
+HasTerraformProvider returns a boolean if a field has been set.
+
+### GetTerraformTag
+
+`func (o *UploadComponentRequest) GetTerraformTag() string`
+
+GetTerraformTag returns the TerraformTag field if non-nil, zero value otherwise.
+
+### GetTerraformTagOk
+
+`func (o *UploadComponentRequest) GetTerraformTagOk() (*string, bool)`
+
+GetTerraformTagOk returns a tuple with the TerraformTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformTag
+
+`func (o *UploadComponentRequest) SetTerraformTag(v string)`
+
+SetTerraformTag sets TerraformTag field to given value.
+
+### HasTerraformTag
+
+`func (o *UploadComponentRequest) HasTerraformTag() bool`
+
+HasTerraformTag returns a boolean if a field has been set.
+
+### GetTerraformType
+
+`func (o *UploadComponentRequest) GetTerraformType() string`
+
+GetTerraformType returns the TerraformType field if non-nil, zero value otherwise.
+
+### GetTerraformTypeOk
+
+`func (o *UploadComponentRequest) GetTerraformTypeOk() (*string, bool)`
+
+GetTerraformTypeOk returns a tuple with the TerraformType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformType
+
+`func (o *UploadComponentRequest) SetTerraformType(v string)`
+
+SetTerraformType sets TerraformType field to given value.
+
+### HasTerraformType
+
+`func (o *UploadComponentRequest) HasTerraformType() bool`
+
+HasTerraformType returns a boolean if a field has been set.
+
+### GetTerraformUploadType
+
+`func (o *UploadComponentRequest) GetTerraformUploadType() string`
+
+GetTerraformUploadType returns the TerraformUploadType field if non-nil, zero value otherwise.
+
+### GetTerraformUploadTypeOk
+
+`func (o *UploadComponentRequest) GetTerraformUploadTypeOk() (*string, bool)`
+
+GetTerraformUploadTypeOk returns a tuple with the TerraformUploadType field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformUploadType
+
+`func (o *UploadComponentRequest) SetTerraformUploadType(v string)`
+
+SetTerraformUploadType sets TerraformUploadType field to given value.
+
+### HasTerraformUploadType
+
+`func (o *UploadComponentRequest) HasTerraformUploadType() bool`
+
+HasTerraformUploadType returns a boolean if a field has been set.
+
+### GetTerraformVersion
+
+`func (o *UploadComponentRequest) GetTerraformVersion() string`
+
+GetTerraformVersion returns the TerraformVersion field if non-nil, zero value otherwise.
+
+### GetTerraformVersionOk
+
+`func (o *UploadComponentRequest) GetTerraformVersionOk() (*string, bool)`
+
+GetTerraformVersionOk returns a tuple with the TerraformVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraformVersion
+
+`func (o *UploadComponentRequest) SetTerraformVersion(v string)`
+
+SetTerraformVersion sets TerraformVersion field to given value.
+
+### HasTerraformVersion
+
+`func (o *UploadComponentRequest) HasTerraformVersion() bool`
+
+HasTerraformVersion returns a boolean if a field has been set.
 
 ### GetYumAsset
 
