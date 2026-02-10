@@ -6513,7 +6513,7 @@ Name | Type | Description  | Notes
 
 ## GetSwiftProxyRepository
 
-> GetSwiftProxyRepository(ctx, repositoryName).Execute()
+> SwiftProxyApiRepository GetSwiftProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6534,11 +6534,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.GetSwiftProxyRepository(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetSwiftProxyRepository(context.Background(), repositoryName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetSwiftProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetSwiftProxyRepository`: SwiftProxyApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetSwiftProxyRepository`: %v\n", resp)
 }
 ```
 
@@ -6561,7 +6563,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SwiftProxyApiRepository**](SwiftProxyApiRepository.md)
 
 ### Authorization
 
@@ -6570,7 +6572,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
