@@ -9624,7 +9624,7 @@ type ApiGetTerraformHostedRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetTerraformHostedRepositoryRequest) Execute() (*SimpleApiHostedRepository, *http.Response, error) {
+func (r ApiGetTerraformHostedRepositoryRequest) Execute() (*TerraformHostedRepositoryApiRequest, *http.Response, error) {
 	return r.ApiService.GetTerraformHostedRepositoryExecute(r)
 }
 
@@ -9644,13 +9644,13 @@ func (a *RepositoryManagementAPIService) GetTerraformHostedRepository(ctx contex
 }
 
 // Execute executes the request
-//  @return SimpleApiHostedRepository
-func (a *RepositoryManagementAPIService) GetTerraformHostedRepositoryExecute(r ApiGetTerraformHostedRepositoryRequest) (*SimpleApiHostedRepository, *http.Response, error) {
+//  @return TerraformHostedRepositoryApiRequest
+func (a *RepositoryManagementAPIService) GetTerraformHostedRepositoryExecute(r ApiGetTerraformHostedRepositoryRequest) (*TerraformHostedRepositoryApiRequest, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiHostedRepository
+		localVarReturnValue  *TerraformHostedRepositoryApiRequest
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetTerraformHostedRepository")

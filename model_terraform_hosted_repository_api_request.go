@@ -23,12 +23,15 @@ var _ MappedNullable = &TerraformHostedRepositoryApiRequest{}
 type TerraformHostedRepositoryApiRequest struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
 	Component *ComponentAttributes `json:"component,omitempty"`
+	Format *string `json:"format,omitempty"`
 	// A unique identifier for this repository
 	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
 	// Whether this repository accepts incoming requests
 	Online bool `json:"online"`
 	Storage HostedStorageAttributes `json:"storage"`
 	TerraformSigning TerraformSigningAttributes `json:"terraformSigning"`
+	Type *string `json:"type,omitempty"`
+	Url *string `json:"url,omitempty"`
 }
 
 type _TerraformHostedRepositoryApiRequest TerraformHostedRepositoryApiRequest
@@ -39,10 +42,14 @@ type _TerraformHostedRepositoryApiRequest TerraformHostedRepositoryApiRequest
 // will change when the set of required properties is changed
 func NewTerraformHostedRepositoryApiRequest(name string, online bool, storage HostedStorageAttributes, terraformSigning TerraformSigningAttributes) *TerraformHostedRepositoryApiRequest {
 	this := TerraformHostedRepositoryApiRequest{}
+	var format string = "terraform"
+	this.Format = &format
 	this.Name = name
 	this.Online = online
 	this.Storage = storage
 	this.TerraformSigning = terraformSigning
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -51,6 +58,10 @@ func NewTerraformHostedRepositoryApiRequest(name string, online bool, storage Ho
 // but it doesn't guarantee that properties required by API are set
 func NewTerraformHostedRepositoryApiRequestWithDefaults() *TerraformHostedRepositoryApiRequest {
 	this := TerraformHostedRepositoryApiRequest{}
+	var format string = "terraform"
+	this.Format = &format
+	var type_ string = "hosted"
+	this.Type = &type_
 	return &this
 }
 
@@ -116,6 +127,38 @@ func (o *TerraformHostedRepositoryApiRequest) HasComponent() bool {
 // SetComponent gets a reference to the given ComponentAttributes and assigns it to the Component field.
 func (o *TerraformHostedRepositoryApiRequest) SetComponent(v ComponentAttributes) {
 	o.Component = &v
+}
+
+// GetFormat returns the Format field value if set, zero value otherwise.
+func (o *TerraformHostedRepositoryApiRequest) GetFormat() string {
+	if o == nil || IsNil(o.Format) {
+		var ret string
+		return ret
+	}
+	return *o.Format
+}
+
+// GetFormatOk returns a tuple with the Format field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TerraformHostedRepositoryApiRequest) GetFormatOk() (*string, bool) {
+	if o == nil || IsNil(o.Format) {
+		return nil, false
+	}
+	return o.Format, true
+}
+
+// HasFormat returns a boolean if a field has been set.
+func (o *TerraformHostedRepositoryApiRequest) HasFormat() bool {
+	if o != nil && !IsNil(o.Format) {
+		return true
+	}
+
+	return false
+}
+
+// SetFormat gets a reference to the given string and assigns it to the Format field.
+func (o *TerraformHostedRepositoryApiRequest) SetFormat(v string) {
+	o.Format = &v
 }
 
 // GetName returns the Name field value
@@ -214,6 +257,70 @@ func (o *TerraformHostedRepositoryApiRequest) SetTerraformSigning(v TerraformSig
 	o.TerraformSigning = v
 }
 
+// GetType returns the Type field value if set, zero value otherwise.
+func (o *TerraformHostedRepositoryApiRequest) GetType() string {
+	if o == nil || IsNil(o.Type) {
+		var ret string
+		return ret
+	}
+	return *o.Type
+}
+
+// GetTypeOk returns a tuple with the Type field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TerraformHostedRepositoryApiRequest) GetTypeOk() (*string, bool) {
+	if o == nil || IsNil(o.Type) {
+		return nil, false
+	}
+	return o.Type, true
+}
+
+// HasType returns a boolean if a field has been set.
+func (o *TerraformHostedRepositoryApiRequest) HasType() bool {
+	if o != nil && !IsNil(o.Type) {
+		return true
+	}
+
+	return false
+}
+
+// SetType gets a reference to the given string and assigns it to the Type field.
+func (o *TerraformHostedRepositoryApiRequest) SetType(v string) {
+	o.Type = &v
+}
+
+// GetUrl returns the Url field value if set, zero value otherwise.
+func (o *TerraformHostedRepositoryApiRequest) GetUrl() string {
+	if o == nil || IsNil(o.Url) {
+		var ret string
+		return ret
+	}
+	return *o.Url
+}
+
+// GetUrlOk returns a tuple with the Url field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TerraformHostedRepositoryApiRequest) GetUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.Url) {
+		return nil, false
+	}
+	return o.Url, true
+}
+
+// HasUrl returns a boolean if a field has been set.
+func (o *TerraformHostedRepositoryApiRequest) HasUrl() bool {
+	if o != nil && !IsNil(o.Url) {
+		return true
+	}
+
+	return false
+}
+
+// SetUrl gets a reference to the given string and assigns it to the Url field.
+func (o *TerraformHostedRepositoryApiRequest) SetUrl(v string) {
+	o.Url = &v
+}
+
 func (o TerraformHostedRepositoryApiRequest) MarshalJSON() ([]byte, error) {
 	toSerialize,err := o.ToMap()
 	if err != nil {
@@ -230,10 +337,19 @@ func (o TerraformHostedRepositoryApiRequest) ToMap() (map[string]interface{}, er
 	if !IsNil(o.Component) {
 		toSerialize["component"] = o.Component
 	}
+	if !IsNil(o.Format) {
+		toSerialize["format"] = o.Format
+	}
 	toSerialize["name"] = o.Name
 	toSerialize["online"] = o.Online
 	toSerialize["storage"] = o.Storage
 	toSerialize["terraformSigning"] = o.TerraformSigning
+	if !IsNil(o.Type) {
+		toSerialize["type"] = o.Type
+	}
+	if !IsNil(o.Url) {
+		toSerialize["url"] = o.Url
+	}
 	return toSerialize, nil
 }
 
