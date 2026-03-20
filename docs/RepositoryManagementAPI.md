@@ -6847,7 +6847,7 @@ Name | Type | Description  | Notes
 
 ## GetTerraformHostedRepository
 
-> SimpleApiHostedRepository GetTerraformHostedRepository(ctx, repositoryName).Execute()
+> TerraformHostedRepositoryApiRequest GetTerraformHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6873,7 +6873,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetTerraformHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTerraformHostedRepository`: SimpleApiHostedRepository
+	// response from `GetTerraformHostedRepository`: TerraformHostedRepositoryApiRequest
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetTerraformHostedRepository`: %v\n", resp)
 }
 ```
@@ -6897,7 +6897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**TerraformHostedRepositoryApiRequest**](TerraformHostedRepositoryApiRequest.md)
 
 ### Authorization
 
