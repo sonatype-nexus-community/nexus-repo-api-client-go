@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
 **Format** | Pointer to **string** |  | [optional] [default to "terraform"]
 **Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
@@ -56,6 +57,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *TerraformHostedRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetComponent
+
+`func (o *TerraformHostedRepositoryApiRequest) GetComponent() ComponentAttributes`
+
+GetComponent returns the Component field if non-nil, zero value otherwise.
+
+### GetComponentOk
+
+`func (o *TerraformHostedRepositoryApiRequest) GetComponentOk() (*ComponentAttributes, bool)`
+
+GetComponentOk returns a tuple with the Component field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComponent
+
+`func (o *TerraformHostedRepositoryApiRequest) SetComponent(v ComponentAttributes)`
+
+SetComponent sets Component field to given value.
+
+### HasComponent
+
+`func (o *TerraformHostedRepositoryApiRequest) HasComponent() bool`
+
+HasComponent returns a boolean if a field has been set.
 
 ### GetFormat
 

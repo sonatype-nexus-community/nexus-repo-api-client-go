@@ -22,6 +22,7 @@ var _ MappedNullable = &TerraformHostedRepositoryApiRequest{}
 // TerraformHostedRepositoryApiRequest struct for TerraformHostedRepositoryApiRequest
 type TerraformHostedRepositoryApiRequest struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Component *ComponentAttributes `json:"component,omitempty"`
 	Format *string `json:"format,omitempty"`
 	// A unique identifier for this repository
 	Name string `json:"name" validate:"regexp=^[a-zA-Z0-9\\\\-]{1}[a-zA-Z0-9_\\\\-\\\\.]*$"`
@@ -94,6 +95,38 @@ func (o *TerraformHostedRepositoryApiRequest) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *TerraformHostedRepositoryApiRequest) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetComponent returns the Component field value if set, zero value otherwise.
+func (o *TerraformHostedRepositoryApiRequest) GetComponent() ComponentAttributes {
+	if o == nil || IsNil(o.Component) {
+		var ret ComponentAttributes
+		return ret
+	}
+	return *o.Component
+}
+
+// GetComponentOk returns a tuple with the Component field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TerraformHostedRepositoryApiRequest) GetComponentOk() (*ComponentAttributes, bool) {
+	if o == nil || IsNil(o.Component) {
+		return nil, false
+	}
+	return o.Component, true
+}
+
+// HasComponent returns a boolean if a field has been set.
+func (o *TerraformHostedRepositoryApiRequest) HasComponent() bool {
+	if o != nil && !IsNil(o.Component) {
+		return true
+	}
+
+	return false
+}
+
+// SetComponent gets a reference to the given ComponentAttributes and assigns it to the Component field.
+func (o *TerraformHostedRepositoryApiRequest) SetComponent(v ComponentAttributes) {
+	o.Component = &v
 }
 
 // GetFormat returns the Format field value if set, zero value otherwise.
@@ -300,6 +333,9 @@ func (o TerraformHostedRepositoryApiRequest) ToMap() (map[string]interface{}, er
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
+	}
+	if !IsNil(o.Component) {
+		toSerialize["component"] = o.Component
 	}
 	if !IsNil(o.Format) {
 		toSerialize["format"] = o.Format
