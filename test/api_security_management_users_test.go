@@ -35,6 +35,21 @@ func Test_v3_SecurityManagementUsersAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SecurityManagementUsersAPIService Create3", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var userId string
+		var realm string
+
+		resp, httpRes, err := apiClient.SecurityManagementUsersAPI.Create3(context.Background(), userId, realm).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SecurityManagementUsersAPIService CreateUser", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -43,6 +58,20 @@ func Test_v3_SecurityManagementUsersAPIService(t *testing.T) {
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementUsersAPIService Delete4", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var userId string
+		var realm string
+
+		httpRes, err := apiClient.SecurityManagementUsersAPI.Delete4(context.Background(), userId, realm).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -56,6 +85,21 @@ func Test_v3_SecurityManagementUsersAPIService(t *testing.T) {
 		httpRes, err := apiClient.SecurityManagementUsersAPI.DeleteUser(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementUsersAPIService Get4", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var userId string
+		var realm string
+
+		resp, httpRes, err := apiClient.SecurityManagementUsersAPI.Get4(context.Background(), userId, realm).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

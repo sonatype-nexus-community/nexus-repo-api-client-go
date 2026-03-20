@@ -4,17 +4,17 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create3**](CapabilitiesAPI.md#Create3) | **Post** /v1/capabilities | Create a capability
-[**Delete4**](CapabilitiesAPI.md#Delete4) | **Delete** /v1/capabilities/{capabilityId} | Delete a capability
+[**Create4**](CapabilitiesAPI.md#Create4) | **Post** /v1/capabilities | Create a capability
+[**Delete5**](CapabilitiesAPI.md#Delete5) | **Delete** /v1/capabilities/{capabilityId} | Delete a capability
 [**GetTypes**](CapabilitiesAPI.md#GetTypes) | **Get** /v1/capabilities/types | List all capability types available and exposed in the system
-[**List**](CapabilitiesAPI.md#List) | **Get** /v1/capabilities | List the active capabilities
+[**List1**](CapabilitiesAPI.md#List1) | **Get** /v1/capabilities | List the active capabilities
 [**Update3**](CapabilitiesAPI.md#Update3) | **Put** /v1/capabilities/{capabilityId} | Update a capability
 
 
 
-## Create3
+## Create4
 
-> CapabilityDTO Create3(ctx).Body(body).Execute()
+> CapabilityDTO Create4(ctx).Body(body).Execute()
 
 Create a capability
 
@@ -35,13 +35,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CapabilitiesAPI.Create3(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.CapabilitiesAPI.Create4(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Create3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Create4``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create3`: CapabilityDTO
-	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.Create3`: %v\n", resp)
+	// response from `Create4`: CapabilityDTO
+	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.Create4`: %v\n", resp)
 }
 ```
 
@@ -51,7 +51,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreate3Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreate4Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Delete4
+## Delete5
 
-> Delete4(ctx, capabilityId).Execute()
+> Delete5(ctx, capabilityId).Execute()
 
 Delete a capability
 
@@ -99,9 +99,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CapabilitiesAPI.Delete4(context.Background(), capabilityId).Execute()
+	r, err := apiClient.CapabilitiesAPI.Delete5(context.Background(), capabilityId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Delete4``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.Delete5``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -117,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDelete4Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiDelete5Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -201,9 +201,9 @@ Other parameters are passed through a pointer to a apiGetTypesRequest struct via
 [[Back to README]](../README.md)
 
 
-## List
+## List1
 
-> []CapabilityDTO List(ctx).Execute()
+> []CapabilityDTO List1(ctx).Execute()
 
 List the active capabilities
 
@@ -223,13 +223,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CapabilitiesAPI.List(context.Background()).Execute()
+	resp, r, err := apiClient.CapabilitiesAPI.List1(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.List``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.List1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: []CapabilityDTO
-	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.List`: %v\n", resp)
+	// response from `List1`: []CapabilityDTO
+	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.List1`: %v\n", resp)
 }
 ```
 
@@ -239,7 +239,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiList1Request struct via the builder pattern
 
 
 ### Return type

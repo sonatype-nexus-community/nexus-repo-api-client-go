@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContentMaxAge** | **int32** | How long to cache artifacts before rechecking the remote repository (in minutes) | 
 **MetadataMaxAge** | **int32** | How long to cache metadata before rechecking the remote repository (in minutes) | 
+**PreserveEncodedCharacters** | Pointer to **bool** | When true, preserves encoded characters like %2B (plus), %23 (hash), and %20 (space) in their encoded form when proxying to the remote repository. Enable this when proxying to AWS S3, Cloudflare CDN, or Azure Blob Storage, which require encoded characters to remain encoded. When false (default), uses standard encoding that preserves literal + characters (works for crates.io and most remotes). This feature is only available when nexus.proxy.urlEncodingMode.enabled&#x3D;true is set. SECURITY NOTE: Only enable this for trusted remote repositories. Path traversal sequences (..) in redirects are automatically normalized. | [optional] 
 **RemoteUrl** | Pointer to **string** | Location of the remote repository being proxied | [optional] 
 
 ## Methods
@@ -66,6 +67,31 @@ and a boolean to check if the value has been set.
 
 SetMetadataMaxAge sets MetadataMaxAge field to given value.
 
+
+### GetPreserveEncodedCharacters
+
+`func (o *ProxyAttributes) GetPreserveEncodedCharacters() bool`
+
+GetPreserveEncodedCharacters returns the PreserveEncodedCharacters field if non-nil, zero value otherwise.
+
+### GetPreserveEncodedCharactersOk
+
+`func (o *ProxyAttributes) GetPreserveEncodedCharactersOk() (*bool, bool)`
+
+GetPreserveEncodedCharactersOk returns a tuple with the PreserveEncodedCharacters field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreserveEncodedCharacters
+
+`func (o *ProxyAttributes) SetPreserveEncodedCharacters(v bool)`
+
+SetPreserveEncodedCharacters sets PreserveEncodedCharacters field to given value.
+
+### HasPreserveEncodedCharacters
+
+`func (o *ProxyAttributes) HasPreserveEncodedCharacters() bool`
+
+HasPreserveEncodedCharacters returns a boolean if a field has been set.
 
 ### GetRemoteUrl
 

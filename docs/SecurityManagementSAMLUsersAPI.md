@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**CreateUser1**](SecurityManagementSAMLUsersAPI.md#CreateUser1) | **Post** /v1/security/saml/users | Create a new SAML user. This allows administrators to pre-create SAML users with roles before their first login.
 [**DeleteUser1**](SecurityManagementSAMLUsersAPI.md#DeleteUser1) | **Delete** /v1/security/saml/users/{userId} | Delete a SAML user.
 [**GetUser**](SecurityManagementSAMLUsersAPI.md#GetUser) | **Get** /v1/security/saml/users/{userId} | Retrieve a SAML user by userId.
-[**GetUsers1**](SecurityManagementSAMLUsersAPI.md#GetUsers1) | **Get** /v1/security/saml/users | Retrieve a list of SAML users.
+[**GetUsers1**](SecurityManagementSAMLUsersAPI.md#GetUsers1) | **Get** /v1/security/saml/users | Retrieve a list of SAML users. The response is limited to 1,000 users.
 [**UpdateUser1**](SecurityManagementSAMLUsersAPI.md#UpdateUser1) | **Put** /v1/security/saml/users/{userId} | Update a SAML user&#39;s roles and attributes.
 
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 > GetUsers1(ctx).UserId(userId).Execute()
 
-Retrieve a list of SAML users.
+Retrieve a list of SAML users. The response is limited to 1,000 users.
 
 ### Example
 

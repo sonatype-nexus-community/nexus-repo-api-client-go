@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.89.0-09."
+    \ version 3.90.1-01."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.89.0-09
+  version: 3.90.1-01
 servers:
 - url: /service/rest/
 security:
@@ -46,6 +46,7 @@ tags:
 - name: Cleanup policies
 - name: Manage Sonatype Repository Firewall configuration
 - name: Reconcile Plan
+- name: Recovery Mode
 - name: "Security: Atlassian Crowd"
 - name: Product licensing
 - name: Data Store
@@ -851,7 +852,7 @@ paths:
       - Blob store
   /v1/capabilities:
     get:
-      operationId: list
+      operationId: list_1
       responses:
         "200":
           content:
@@ -865,7 +866,7 @@ paths:
       tags:
       - Capabilities
     post:
-      operationId: create_3
+      operationId: create_4
       requestBody:
         content:
           application/json:
@@ -900,7 +901,7 @@ paths:
       - Capabilities
   /v1/capabilities/{capabilityId}:
     delete:
-      operationId: delete_4
+      operationId: delete_5
       parameters:
       - description: capabilityId
         explode: false
@@ -1442,7 +1443,16 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/ApiEmailValidation"
-          description: "Validation was complete, look at the body to determine success"
+          description: Test email was sent successfully
+        "400":
+          content:
+            application/json:
+              example:
+                message: string
+                success: false
+              schema:
+                $ref: "#/components/schemas/ApiEmailValidation"
+          description: There was a problem sending the test email
         "403":
           content: {}
           description: Insufficient permissions to verify the email configuration
@@ -2105,6 +2115,41 @@ paths:
       summary: Release read-only and allow changes to the database
       tags:
       - Read-only
+  /v1/recovery-mode:
+    delete:
+      operationId: disableRecoveryMode
+      responses:
+        "204":
+          content: {}
+          description: Recovery mode disabled
+        "400":
+          content: {}
+          description: Cannot disable recovery mode while reconciliation tasks are
+            running
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Disables recovery mode
+      tags:
+      - Recovery Mode
+    post:
+      operationId: enableRecoveryMode
+      responses:
+        "204":
+          content: {}
+          description: Recovery mode enabled
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Enables recovery mode and cancels conflicting tasks if running
+      tags:
+      - Recovery Mode
   /v1/repositories:
     get:
       operationId: getAllRepositories
@@ -5465,6 +5510,84 @@ paths:
       tags:
       - Repository Management
       x-codegen-request-body-name: body
+  /v1/repositories/swift/hosted:
+    post:
+      operationId: createSwiftHostedRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SwiftHostedRepositoryApiRequest"
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create swift hosted repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/swift/hosted/{repositoryName}:
+    get:
+      operationId: getSwiftHostedRepository
+      parameters:
+      - explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/SimpleApiHostedRepository"
+          description: successful operation
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      operationId: updateSwiftHostedRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/SwiftHostedRepositoryApiRequest"
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Update swift hosted repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
   /v1/repositories/swift/proxy:
     post:
       operationId: createSwiftProxyRepository
@@ -5549,6 +5672,84 @@ paths:
           content: {}
           description: Insufficient permissions
       summary: Update swift proxy repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/terraform/group:
+    post:
+      operationId: createTerraformGroupRepository
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TerraformGroupRepositoryApiRequest"
+        required: false
+      responses:
+        "201":
+          content: {}
+          description: Repository created
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Create Terraform group repository
+      tags:
+      - Repository Management
+      x-codegen-request-body-name: body
+  /v1/repositories/terraform/group/{repositoryName}:
+    get:
+      operationId: getTerraformGroupRepository
+      parameters:
+      - explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/TerraformGroupApiRepository"
+          description: successful operation
+      summary: Get repository
+      tags:
+      - Repository Management
+    put:
+      operationId: updateTerraformGroupRepository
+      parameters:
+      - description: Name of the repository to update
+        explode: false
+        in: path
+        name: repositoryName
+        required: true
+        schema:
+          type: string
+        style: simple
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/TerraformGroupRepositoryApiRequest"
+        required: false
+      responses:
+        "204":
+          content: {}
+          description: Repository updated
+        "400":
+          content: {}
+          description: Bad request
+        "401":
+          content: {}
+          description: Authentication required
+        "403":
+          content: {}
+          description: Insufficient permissions
+      summary: Update Terraform group repository
       tags:
       - Repository Management
       x-codegen-request-body-name: body
@@ -9295,7 +9496,7 @@ paths:
         "403":
           content: {}
           description: Insufficient permissions
-      summary: Retrieve a list of SAML users.
+      summary: "Retrieve a list of SAML users. The response is limited to 1,000 users."
       tags:
       - "Security management: SAML users"
     post:
@@ -9543,7 +9744,6 @@ paths:
         default:
           content: {}
           description: successful operation
-      summary: Invalidate all existing user tokens.
       tags:
       - "Security management: user tokens"
     get:
@@ -9573,10 +9773,77 @@ paths:
               schema:
                 $ref: "#/components/schemas/UserTokensApiModel"
           description: successful operation
-      summary: Enable/Disable the user token capability
       tags:
       - "Security management: user tokens"
       x-codegen-request-body-name: body
+  /v1/security/user-tokens/tokens:
+    get:
+      description: "Lists all user tokens with optional filtering and pagination.\
+        \ Returns metadata only, never the passCode."
+      operationId: list
+      parameters:
+      - description: "The realm of the user (optional for cloud, required for self-hosted)"
+        explode: true
+        in: query
+        name: realm
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: Filter by user ID (optional)
+        explode: true
+        in: query
+        name: userId
+        required: false
+        schema:
+          type: string
+        style: form
+      - description: "Include expired tokens (default: false)"
+        explode: true
+        in: query
+        name: includeExpired
+        required: false
+        schema:
+          type: boolean
+        style: form
+      - description: "Number of items to skip for pagination (default: 0)"
+        explode: true
+        in: query
+        name: skip
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      - description: "Maximum number of items to return (default: 25, max: 100)"
+        explode: true
+        in: query
+        name: limit
+        required: false
+        schema:
+          format: int32
+          type: integer
+        style: form
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserTokenListXO"
+          description: User tokens retrieved successfully
+        "400":
+          content: {}
+          description: Invalid request parameters. Check filter values and pagination
+            settings.
+        "403":
+          content: {}
+          description: Insufficient privileges to view or audit user tokens.
+        "500":
+          content: {}
+          description: Unexpected server error. Please try again later.
+      summary: List all user tokens
+      tags:
+      - "Security management: user tokens"
   /v1/security/users:
     get:
       operationId: getUsers
@@ -9612,7 +9879,8 @@ paths:
         "403":
           content: {}
           description: The user does not have permission to perform the operation.
-      summary: Retrieve a list of users.
+      summary: Retrieve a list of users. For SAML user sources a limit of 1000 users
+        will be applied.
       tags:
       - "Security management: users"
     post:
@@ -9746,10 +10014,152 @@ paths:
       tags:
       - "Security management: users"
       x-codegen-request-body-name: body
+  /v1/security/users/{userId}/{realm}/user-token:
+    delete:
+      description: Deletes the user token for the specified user. Both userId and
+        realm are required parameters. The token will be invalidated immediately and
+        can no longer be used.
+      operationId: delete_4
+      parameters:
+      - description: The userId of the user to delete the token for
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The realm of the user to delete the token for
+        explode: false
+        in: path
+        name: realm
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "204":
+          content: {}
+          description: User token successfully deleted
+        "400":
+          content: {}
+          description: User tokens are not enabled
+        "403":
+          content: {}
+          description: Insufficient permissions to delete user token
+        "404":
+          content: {}
+          description: User not found in realm or token not found
+        "422":
+          content: {}
+          description: Invalid realm
+        "500":
+          content: {}
+          description: Unexpected server error
+      summary: Delete the user token for the given user.
+      tags:
+      - "Security management: users"
+    get:
+      description: Retrieves metadata for an existing user token. Both userId and
+        realm are required parameters. The passCode is never returned in this response.
+      operationId: get_4
+      parameters:
+      - description: The userId of the user to get the token for
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The realm of the user to get the token for
+        explode: false
+        in: path
+        name: realm
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserTokenXO"
+          description: User token metadata retrieved successfully
+        "400":
+          content: {}
+          description: User tokens are not enabled
+        "403":
+          content: {}
+          description: Insufficient permissions to view user token
+        "404":
+          content: {}
+          description: User not found in realm or token not found
+        "422":
+          content: {}
+          description: Invalid realm
+        "500":
+          content: {}
+          description: Unexpected server error
+      summary: Get user token metadata for the given user.
+      tags:
+      - "Security management: users"
+    post:
+      description: Creates a new user token for the specified user. Both userId and
+        realm are required parameters.
+      operationId: create_3
+      parameters:
+      - description: The userId of the user to create the token for
+        explode: false
+        in: path
+        name: userId
+        required: true
+        schema:
+          type: string
+        style: simple
+      - description: The realm of the user to create the token for
+        explode: false
+        in: path
+        name: realm
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "201":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserTokenXO"
+          description: User token successfully created
+        "400":
+          content: {}
+          description: User tokens are not enabled
+        "403":
+          content: {}
+          description: Insufficient permissions to create user token
+        "404":
+          content: {}
+          description: User not found in realm
+        "409":
+          content: {}
+          description: User token already exists for this user and realm
+        "422":
+          content: {}
+          description: Invalid realm
+        "500":
+          content: {}
+          description: Unexpected server error
+      summary: Create a user token for the given user.
+      tags:
+      - "Security management: users"
   /v1/security/users/{userId}/{realm}/user-token-reset:
     delete:
-      description: Resetting the user token will invalidate the current token and
-        force a new token to be created the next time it is accessed.
+      deprecated: true
+      description: "Resetting the user token will invalidate the current token and\
+        \ force a new token to be created the next time it is accessed. This endpoint\
+        \ is deprecated, use DELETE /user-token instead."
       operationId: reset
       parameters:
       - description: The userId of the user to reset the token for
@@ -13118,9 +13528,13 @@ components:
         distribution: bionic
       properties:
         distribution:
-          description: Distribution to fetch
+          description: "Distribution name for this repository. Defines the distribution\
+            \ path used in metadata structure (e.g., dists/{distribution}/Release).\
+            \ Clients must configure this exact distribution name in their APT sources."
           example: bionic
           type: string
+      required:
+      - distribution
       type: object
     AptHostedRepositoryApiRequest:
       example:
@@ -13195,6 +13609,7 @@ components:
           timeToLive: 1440
           enabled: true
         apt:
+          enforceDistribution: false
           flat: false
           distribution: bionic
         format: apt
@@ -13205,6 +13620,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/apt-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -13268,15 +13684,26 @@ components:
       type: object
     AptProxyRepositoriesAttributes:
       example:
+        enforceDistribution: false
         flat: false
         distribution: bionic
       properties:
         distribution:
-          description: Distribution to fetch
+          description: "Distribution name. When enforceDistribution is false (default),\
+            \ this field is optional and informational only - proxy repositories forward\
+            \ all distribution requests to upstream transparently. When enforceDistribution\
+            \ is true, this field is required and restricts requests to only the specified\
+            \ distribution."
           example: bionic
           type: string
+        enforceDistribution:
+          description: Whether to restrict requests to only the specified distribution
+          example: false
+          type: boolean
         flat:
-          description: Whether this repository is flat
+          description: "Whether the upstream repository uses a flat structure (without\
+            \ distribution subdirectories). Set to true for flat repositories, false\
+            \ for standard hierarchical repositories."
           example: false
           type: boolean
       required:
@@ -13306,6 +13733,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -13313,6 +13741,7 @@ components:
           timeToLive: 1440
           enabled: true
         apt:
+          enforceDistribution: false
           flat: false
           distribution: bionic
         cleanup:
@@ -13552,6 +13981,7 @@ components:
           $ref: "#/components/schemas/AzureBlobStoreApiBucketConfiguration"
         name:
           description: The name of the Azure blob store.
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         softQuota:
           $ref: "#/components/schemas/BlobStoreApiSoftQuota"
@@ -13867,6 +14297,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/cargo-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -13953,6 +14384,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -14096,6 +14528,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -14249,6 +14682,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -14419,6 +14853,7 @@ components:
         type: proxy
         url: url
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -14468,6 +14903,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -14545,6 +14981,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -15310,6 +15747,7 @@ components:
           forceBasicAuth: true
           httpsPort: 8083
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -15436,6 +15874,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -15525,6 +15964,7 @@ components:
         name: name
       properties:
         name:
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         path:
           description: An absolute path or a path relative to <data-directory>/blobs
@@ -15796,6 +16236,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -15952,6 +16393,7 @@ components:
         name:
           description: The name of the GC Storage blob store.
           example: gc_storage
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         softQuota:
           $ref: "#/components/schemas/BlobStoreApiSoftQuota"
@@ -15998,6 +16440,7 @@ components:
             type: string
           type: array
         name:
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         softQuota:
           $ref: "#/components/schemas/BlobStoreApiSoftQuota"
@@ -16141,6 +16584,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -16486,6 +16930,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -16848,6 +17293,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/maven2-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -16933,6 +17379,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17131,6 +17578,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/npm-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17215,6 +17663,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17391,6 +17840,7 @@ components:
           queryCacheItemMaxAge: 3600
         url: http://localhost:8081/repository/nuget-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17476,6 +17926,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17555,6 +18006,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -17829,6 +18281,7 @@ components:
       type: object
     ProxyAttributes:
       example:
+        preserveEncodedCharacters: false
         contentMaxAge: 1440
         metadataMaxAge: 1440
         remoteUrl: https://remote.repository.com
@@ -17845,6 +18298,18 @@ components:
           example: 1440
           format: int32
           type: integer
+        preserveEncodedCharacters:
+          description: "When true, preserves encoded characters like %2B (plus), %23\
+            \ (hash), and %20 (space) in their encoded form when proxying to the remote\
+            \ repository. Enable this when proxying to AWS S3, Cloudflare CDN, or\
+            \ Azure Blob Storage, which require encoded characters to remain encoded.\
+            \ When false (default), uses standard encoding that preserves literal\
+            \ + characters (works for crates.io and most remotes). This feature is\
+            \ only available when nexus.proxy.urlEncodingMode.enabled=true is set.\
+            \ SECURITY NOTE: Only enable this for trusted remote repositories. Path\
+            \ traversal sequences (..) in redirects are automatically normalized."
+          example: false
+          type: boolean
         remoteUrl:
           description: Location of the remote repository being proxied
           example: https://remote.repository.com
@@ -17917,6 +18382,7 @@ components:
         type: proxy
         url: url
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -18075,6 +18541,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -18219,6 +18686,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -18490,6 +18958,7 @@ components:
         type: raw
         url: url
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -18567,6 +19036,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -19172,6 +19642,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -19412,6 +19883,7 @@ components:
         name:
           description: The name of the S3 blob store.
           example: s3
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
           type: string
         softQuota:
           $ref: "#/components/schemas/BlobStoreApiSoftQuota"
@@ -19710,6 +20182,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -19894,6 +20367,37 @@ components:
           example: false
           type: boolean
       type: object
+    SwiftHostedRepositoryApiRequest:
+      example:
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        name: internal
+        online: true
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: ALLOW_ONCE
+          blobStoreName: default
+      properties:
+        cleanup:
+          $ref: "#/components/schemas/CleanupPolicyAttributes"
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        storage:
+          $ref: "#/components/schemas/HostedStorageAttributes"
+      required:
+      - name
+      - online
+      - storage
+      type: object
     SwiftProxyApiRepository:
       example:
         replication:
@@ -19928,6 +20432,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/swift-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -20014,6 +20519,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -20217,10 +20723,99 @@ components:
           example: false
           type: boolean
       type: object
+    TerraformGroupApiRepository:
+      example:
+        format: terraform
+        name: internal
+        online: true
+        terraform:
+          requireAuthentication: false
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: group
+        url: http://localhost:8081/repository/terraform-example
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
+      properties:
+        format:
+          description: Component format held in this repository
+          example: terraform
+          type: string
+        group:
+          $ref: "#/components/schemas/GroupAttributes"
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        storage:
+          $ref: "#/components/schemas/StorageAttributes"
+        terraform:
+          $ref: "#/components/schemas/TerraformAttributes"
+        type:
+          description: Controls if deployments of and updates to artifacts are allowed
+          enum:
+          - hosted
+          - proxy
+          - group
+          example: group
+          type: string
+        url:
+          description: URL to the repository
+          example: http://localhost:8081/repository/terraform-example
+          type: string
+      required:
+      - group
+      - online
+      - storage
+      - terraform
+      type: object
+    TerraformGroupRepositoryApiRequest:
+      example:
+        name: internal
+        online: true
+        terraform:
+          requireAuthentication: false
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
+      properties:
+        group:
+          $ref: "#/components/schemas/GroupAttributes"
+        name:
+          description: A unique identifier for this repository
+          example: internal
+          pattern: "^[a-zA-Z0-9\\-]{1}[a-zA-Z0-9_\\-\\.]*$"
+          type: string
+        online:
+          description: Whether this repository accepts incoming requests
+          example: true
+          type: boolean
+        storage:
+          $ref: "#/components/schemas/StorageAttributes"
+        terraform:
+          $ref: "#/components/schemas/TerraformAttributes"
+      required:
+      - group
+      - name
+      - online
+      - storage
+      type: object
     TerraformHostedRepositoryApiRequest:
       example:
-        component:
-          proprietaryComponents: true
         cleanup:
           policyNames:
           - policyNames
@@ -20243,8 +20838,6 @@ components:
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
-        component:
-          $ref: "#/components/schemas/ComponentAttributes"
         format:
           default: terraform
           type: string
@@ -20307,6 +20900,7 @@ components:
         type: proxy
         url: http://localhost:8081/repository/terraform-example
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -20390,6 +20984,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -20776,6 +21371,76 @@ components:
         type:
           type: string
       type: object
+    UserTokenListXO:
+      example:
+        items:
+        - createdByRealm: createdByRealm
+          createdByUserId: createdByUserId
+          expires: 2000-01-23T04:56:07.000+00:00
+          nameCode: nameCode
+          created: 2000-01-23T04:56:07.000+00:00
+          realm: realm
+          isExpired: true
+          passCode: passCode
+          userId: userId
+        - createdByRealm: createdByRealm
+          createdByUserId: createdByUserId
+          expires: 2000-01-23T04:56:07.000+00:00
+          nameCode: nameCode
+          created: 2000-01-23T04:56:07.000+00:00
+          realm: realm
+          isExpired: true
+          passCode: passCode
+          userId: userId
+        continuationToken: continuationToken
+      properties:
+        continuationToken:
+          type: string
+        items:
+          items:
+            $ref: "#/components/schemas/UserTokenXO"
+          type: array
+      type: object
+      xml:
+        name: userTokenList
+    UserTokenXO:
+      example:
+        createdByRealm: createdByRealm
+        createdByUserId: createdByUserId
+        expires: 2000-01-23T04:56:07.000+00:00
+        nameCode: nameCode
+        created: 2000-01-23T04:56:07.000+00:00
+        realm: realm
+        isExpired: true
+        passCode: passCode
+        userId: userId
+      properties:
+        created:
+          format: date-time
+          type: string
+        createdByRealm:
+          type: string
+        createdByUserId:
+          type: string
+        expires:
+          format: date-time
+          type: string
+        isExpired:
+          type: boolean
+        nameCode:
+          type: string
+        passCode:
+          type: string
+        realm:
+          type: string
+        userId:
+          type: string
+      required:
+      - created
+      - nameCode
+      type: object
+      xml:
+        name: userToken
     UserTokensApiModel:
       example:
         expirationDays: 30
@@ -20984,6 +21649,7 @@ components:
             preemptive: false
             username: username
         proxy:
+          preserveEncodedCharacters: false
           contentMaxAge: 1440
           metadataMaxAge: 1440
           remoteUrl: https://remote.repository.com
@@ -21179,6 +21845,22 @@ components:
           type: string
         rubygems.tag:
           description: rubygems Tag
+          type: string
+        swift.asset:
+          description: 'swift Asset '
+          format: binary
+          type: string
+        swift.name:
+          description: swift Name
+          type: string
+        swift.scope:
+          description: swift Scope
+          type: string
+        swift.tag:
+          description: swift Tag
+          type: string
+        swift.version:
+          description: swift Version
           type: string
         terraform.architecture:
           description: terraform Architecture

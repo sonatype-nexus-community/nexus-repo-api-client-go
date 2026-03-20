@@ -42,6 +42,11 @@ Name | Type | Description | Notes
 **RawTag** | Pointer to **string** | raw Tag | [optional] 
 **RubygemsAsset** | Pointer to ***os.File** | rubygems Asset  | [optional] 
 **RubygemsTag** | Pointer to **string** | rubygems Tag | [optional] 
+**SwiftAsset** | Pointer to ***os.File** | swift Asset  | [optional] 
+**SwiftName** | Pointer to **string** | swift Name | [optional] 
+**SwiftScope** | Pointer to **string** | swift Scope | [optional] 
+**SwiftTag** | Pointer to **string** | swift Tag | [optional] 
+**SwiftVersion** | Pointer to **string** | swift Version | [optional] 
 **TerraformArchitecture** | Pointer to **string** | terraform Architecture | [optional] 
 **TerraformAsset** | Pointer to ***os.File** | terraform Asset  | [optional] 
 **TerraformName** | Pointer to **string** | terraform Name | [optional] 
@@ -1025,6 +1030,131 @@ SetRubygemsTag sets RubygemsTag field to given value.
 `func (o *UploadComponentRequest) HasRubygemsTag() bool`
 
 HasRubygemsTag returns a boolean if a field has been set.
+
+### GetSwiftAsset
+
+`func (o *UploadComponentRequest) GetSwiftAsset() *os.File`
+
+GetSwiftAsset returns the SwiftAsset field if non-nil, zero value otherwise.
+
+### GetSwiftAssetOk
+
+`func (o *UploadComponentRequest) GetSwiftAssetOk() (**os.File, bool)`
+
+GetSwiftAssetOk returns a tuple with the SwiftAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftAsset
+
+`func (o *UploadComponentRequest) SetSwiftAsset(v *os.File)`
+
+SetSwiftAsset sets SwiftAsset field to given value.
+
+### HasSwiftAsset
+
+`func (o *UploadComponentRequest) HasSwiftAsset() bool`
+
+HasSwiftAsset returns a boolean if a field has been set.
+
+### GetSwiftName
+
+`func (o *UploadComponentRequest) GetSwiftName() string`
+
+GetSwiftName returns the SwiftName field if non-nil, zero value otherwise.
+
+### GetSwiftNameOk
+
+`func (o *UploadComponentRequest) GetSwiftNameOk() (*string, bool)`
+
+GetSwiftNameOk returns a tuple with the SwiftName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftName
+
+`func (o *UploadComponentRequest) SetSwiftName(v string)`
+
+SetSwiftName sets SwiftName field to given value.
+
+### HasSwiftName
+
+`func (o *UploadComponentRequest) HasSwiftName() bool`
+
+HasSwiftName returns a boolean if a field has been set.
+
+### GetSwiftScope
+
+`func (o *UploadComponentRequest) GetSwiftScope() string`
+
+GetSwiftScope returns the SwiftScope field if non-nil, zero value otherwise.
+
+### GetSwiftScopeOk
+
+`func (o *UploadComponentRequest) GetSwiftScopeOk() (*string, bool)`
+
+GetSwiftScopeOk returns a tuple with the SwiftScope field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftScope
+
+`func (o *UploadComponentRequest) SetSwiftScope(v string)`
+
+SetSwiftScope sets SwiftScope field to given value.
+
+### HasSwiftScope
+
+`func (o *UploadComponentRequest) HasSwiftScope() bool`
+
+HasSwiftScope returns a boolean if a field has been set.
+
+### GetSwiftTag
+
+`func (o *UploadComponentRequest) GetSwiftTag() string`
+
+GetSwiftTag returns the SwiftTag field if non-nil, zero value otherwise.
+
+### GetSwiftTagOk
+
+`func (o *UploadComponentRequest) GetSwiftTagOk() (*string, bool)`
+
+GetSwiftTagOk returns a tuple with the SwiftTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftTag
+
+`func (o *UploadComponentRequest) SetSwiftTag(v string)`
+
+SetSwiftTag sets SwiftTag field to given value.
+
+### HasSwiftTag
+
+`func (o *UploadComponentRequest) HasSwiftTag() bool`
+
+HasSwiftTag returns a boolean if a field has been set.
+
+### GetSwiftVersion
+
+`func (o *UploadComponentRequest) GetSwiftVersion() string`
+
+GetSwiftVersion returns the SwiftVersion field if non-nil, zero value otherwise.
+
+### GetSwiftVersionOk
+
+`func (o *UploadComponentRequest) GetSwiftVersionOk() (*string, bool)`
+
+GetSwiftVersionOk returns a tuple with the SwiftVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSwiftVersion
+
+`func (o *UploadComponentRequest) SetSwiftVersion(v string)`
+
+SetSwiftVersion sets SwiftVersion field to given value.
+
+### HasSwiftVersion
+
+`func (o *UploadComponentRequest) HasSwiftVersion() bool`
+
+HasSwiftVersion returns a boolean if a field has been set.
 
 ### GetTerraformArchitecture
 

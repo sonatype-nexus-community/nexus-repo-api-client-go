@@ -22,11 +22,11 @@ func Test_v3_CapabilitiesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test CapabilitiesAPIService Create3", func(t *testing.T) {
+	t.Run("Test CapabilitiesAPIService Create4", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.CapabilitiesAPI.Create3(context.Background()).Execute()
+		resp, httpRes, err := apiClient.CapabilitiesAPI.Create4(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,13 +34,13 @@ func Test_v3_CapabilitiesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test CapabilitiesAPIService Delete4", func(t *testing.T) {
+	t.Run("Test CapabilitiesAPIService Delete5", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var capabilityId string
 
-		httpRes, err := apiClient.CapabilitiesAPI.Delete4(context.Background(), capabilityId).Execute()
+		httpRes, err := apiClient.CapabilitiesAPI.Delete5(context.Background(), capabilityId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -59,11 +59,11 @@ func Test_v3_CapabilitiesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test CapabilitiesAPIService List", func(t *testing.T) {
+	t.Run("Test CapabilitiesAPIService List1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.CapabilitiesAPI.List(context.Background()).Execute()
+		resp, httpRes, err := apiClient.CapabilitiesAPI.List1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

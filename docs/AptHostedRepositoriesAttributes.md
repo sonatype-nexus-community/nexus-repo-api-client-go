@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Distribution** | Pointer to **string** | Distribution to fetch | [optional] 
+**Distribution** | **string** | Distribution name for this repository. Defines the distribution path used in metadata structure (e.g., dists/{distribution}/Release). Clients must configure this exact distribution name in their APT sources. | 
 
 ## Methods
 
 ### NewAptHostedRepositoriesAttributes
 
-`func NewAptHostedRepositoriesAttributes() *AptHostedRepositoriesAttributes`
+`func NewAptHostedRepositoriesAttributes(distribution string, ) *AptHostedRepositoriesAttributes`
 
 NewAptHostedRepositoriesAttributes instantiates a new AptHostedRepositoriesAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetDistribution sets Distribution field to given value.
 
-### HasDistribution
-
-`func (o *AptHostedRepositoriesAttributes) HasDistribution() bool`
-
-HasDistribution returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

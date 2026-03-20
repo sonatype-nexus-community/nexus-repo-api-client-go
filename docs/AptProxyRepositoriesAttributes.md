@@ -4,8 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Distribution** | Pointer to **string** | Distribution to fetch | [optional] 
-**Flat** | **bool** | Whether this repository is flat | 
+**Distribution** | Pointer to **string** | Distribution name. When enforceDistribution is false (default), this field is optional and informational only - proxy repositories forward all distribution requests to upstream transparently. When enforceDistribution is true, this field is required and restricts requests to only the specified distribution. | [optional] 
+**EnforceDistribution** | Pointer to **bool** | Whether to restrict requests to only the specified distribution | [optional] 
+**Flat** | **bool** | Whether the upstream repository uses a flat structure (without distribution subdirectories). Set to true for flat repositories, false for standard hierarchical repositories. | 
 
 ## Methods
 
@@ -50,6 +51,31 @@ SetDistribution sets Distribution field to given value.
 `func (o *AptProxyRepositoriesAttributes) HasDistribution() bool`
 
 HasDistribution returns a boolean if a field has been set.
+
+### GetEnforceDistribution
+
+`func (o *AptProxyRepositoriesAttributes) GetEnforceDistribution() bool`
+
+GetEnforceDistribution returns the EnforceDistribution field if non-nil, zero value otherwise.
+
+### GetEnforceDistributionOk
+
+`func (o *AptProxyRepositoriesAttributes) GetEnforceDistributionOk() (*bool, bool)`
+
+GetEnforceDistributionOk returns a tuple with the EnforceDistribution field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnforceDistribution
+
+`func (o *AptProxyRepositoriesAttributes) SetEnforceDistribution(v bool)`
+
+SetEnforceDistribution sets EnforceDistribution field to given value.
+
+### HasEnforceDistribution
+
+`func (o *AptProxyRepositoriesAttributes) HasEnforceDistribution() bool`
+
+HasEnforceDistribution returns a boolean if a field has been set.
 
 ### GetFlat
 

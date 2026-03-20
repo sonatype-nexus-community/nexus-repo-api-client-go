@@ -5,9 +5,12 @@ All URIs are relative to *http://localhost/service/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ChangePassword**](SecurityManagementUsersAPI.md#ChangePassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
+[**Create3**](SecurityManagementUsersAPI.md#Create3) | **Post** /v1/security/users/{userId}/{realm}/user-token | Create a user token for the given user.
 [**CreateUser**](SecurityManagementUsersAPI.md#CreateUser) | **Post** /v1/security/users | Create a new user in the default source.
+[**Delete4**](SecurityManagementUsersAPI.md#Delete4) | **Delete** /v1/security/users/{userId}/{realm}/user-token | Delete the user token for the given user.
 [**DeleteUser**](SecurityManagementUsersAPI.md#DeleteUser) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users.
+[**Get4**](SecurityManagementUsersAPI.md#Get4) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
+[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
 [**Reset**](SecurityManagementUsersAPI.md#Reset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
 [**UpdateUser**](SecurityManagementUsersAPI.md#UpdateUser) | **Put** /v1/security/users/{userId} | Update an existing user.
 
@@ -81,6 +84,79 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## Create3
+
+> UserTokenXO Create3(ctx, userId, realm).Execute()
+
+Create a user token for the given user.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userId of the user to create the token for
+	realm := "realm_example" // string | The realm of the user to create the token for
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementUsersAPI.Create3(context.Background(), userId, realm).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Create3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Create3`: UserTokenXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Create3`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userId of the user to create the token for | 
+**realm** | **string** | The realm of the user to create the token for | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreate3Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**UserTokenXO**](UserTokenXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateUser
 
 > ApiUser CreateUser(ctx).Body(body).Execute()
@@ -139,6 +215,77 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## Delete4
+
+> Delete4(ctx, userId, realm).Execute()
+
+Delete the user token for the given user.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userId of the user to delete the token for
+	realm := "realm_example" // string | The realm of the user to delete the token for
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementUsersAPI.Delete4(context.Background(), userId, realm).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Delete4``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userId of the user to delete the token for | 
+**realm** | **string** | The realm of the user to delete the token for | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDelete4Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -213,11 +360,84 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## Get4
+
+> UserTokenXO Get4(ctx, userId, realm).Execute()
+
+Get user token metadata for the given user.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userId of the user to get the token for
+	realm := "realm_example" // string | The realm of the user to get the token for
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementUsersAPI.Get4(context.Background(), userId, realm).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Get4``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `Get4`: UserTokenXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Get4`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userId of the user to get the token for | 
+**realm** | **string** | The realm of the user to get the token for | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGet4Request struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**UserTokenXO**](UserTokenXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetUsers
 
 > []ApiUser GetUsers(ctx).UserId(userId).Source(source).Execute()
 
-Retrieve a list of users.
+Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
 
 ### Example
 
