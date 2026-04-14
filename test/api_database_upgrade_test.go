@@ -1,7 +1,7 @@
 /*
 Sonatype Nexus Repository Manager
 
-Testing ReadOnlyAPIService
+Testing DatabaseUpgradeAPIService
 
 */
 
@@ -17,38 +17,27 @@ import (
 	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
-func Test_v3_ReadOnlyAPIService(t *testing.T) {
+func Test_v3_DatabaseUpgradeAPIService(t *testing.T) {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ReadOnlyAPIService ForceRelease", func(t *testing.T) {
+	t.Run("Test DatabaseUpgradeAPIService ClearResult", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ReadOnlyAPI.ForceRelease(context.Background()).Execute()
+		httpRes, err := apiClient.DatabaseUpgradeAPI.ClearResult(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ReadOnlyAPIService Freeze", func(t *testing.T) {
+	t.Run("Test DatabaseUpgradeAPIService GetProgress", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ReadOnlyAPI.Freeze(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ReadOnlyAPIService Get2", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.ReadOnlyAPI.Get2(context.Background()).Execute()
+		resp, httpRes, err := apiClient.DatabaseUpgradeAPI.GetProgress(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -56,11 +45,11 @@ func Test_v3_ReadOnlyAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ReadOnlyAPIService Release", func(t *testing.T) {
+	t.Run("Test DatabaseUpgradeAPIService Migrate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ReadOnlyAPI.Release(context.Background()).Execute()
+		httpRes, err := apiClient.DatabaseUpgradeAPI.Migrate(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

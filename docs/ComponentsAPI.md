@@ -276,12 +276,12 @@ func main() {
 	swiftVersion := "swiftVersion_example" // string | swift Version (optional)
 	terraformArchitecture := "terraformArchitecture_example" // string | terraform Architecture (optional)
 	terraformAsset := os.NewFile(1234, "some_file") // *os.File | terraform Asset  (optional)
-	terraformName := "terraformName_example" // string | terraform Name (optional)
+	terraformName := "terraformName_example" // string | terraform Module Name (optional)
 	terraformNamespace := "terraformNamespace_example" // string | terraform Namespace (optional)
 	terraformOs := "terraformOs_example" // string | terraform Operating System (optional)
 	terraformProvider := "terraformProvider_example" // string | terraform Provider (optional)
 	terraformTag := "terraformTag_example" // string | terraform Tag (optional)
-	terraformType := "terraformType_example" // string | terraform Type (optional)
+	terraformType := "terraformType_example" // string | terraform Provider Type (optional)
 	terraformUploadType := "terraformUploadType_example" // string | terraform Upload Type (optional)
 	terraformVersion := "terraformVersion_example" // string | terraform Version (optional)
 	yumAsset := os.NewFile(1234, "some_file") // *os.File | yum Asset  (optional)
@@ -356,12 +356,12 @@ Name | Type | Description  | Notes
  **swiftVersion** | **string** | swift Version | 
  **terraformArchitecture** | **string** | terraform Architecture | 
  **terraformAsset** | ***os.File** | terraform Asset  | 
- **terraformName** | **string** | terraform Name | 
+ **terraformName** | **string** | terraform Module Name | 
  **terraformNamespace** | **string** | terraform Namespace | 
  **terraformOs** | **string** | terraform Operating System | 
  **terraformProvider** | **string** | terraform Provider | 
  **terraformTag** | **string** | terraform Tag | 
- **terraformType** | **string** | terraform Type | 
+ **terraformType** | **string** | terraform Provider Type | 
  **terraformUploadType** | **string** | terraform Upload Type | 
  **terraformVersion** | **string** | terraform Version | 
  **yumAsset** | ***os.File** | yum Asset  | 

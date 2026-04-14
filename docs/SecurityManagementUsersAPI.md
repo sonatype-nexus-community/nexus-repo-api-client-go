@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**CreateUser**](SecurityManagementUsersAPI.md#CreateUser) | **Post** /v1/security/users | Create a new user in the default source.
 [**Delete4**](SecurityManagementUsersAPI.md#Delete4) | **Delete** /v1/security/users/{userId}/{realm}/user-token | Delete the user token for the given user.
 [**DeleteUser**](SecurityManagementUsersAPI.md#DeleteUser) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**Get4**](SecurityManagementUsersAPI.md#Get4) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
+[**Get3**](SecurityManagementUsersAPI.md#Get3) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
 [**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
 [**Reset**](SecurityManagementUsersAPI.md#Reset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
 [**UpdateUser**](SecurityManagementUsersAPI.md#UpdateUser) | **Put** /v1/security/users/{userId} | Update an existing user.
@@ -360,9 +360,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Get4
+## Get3
 
-> UserTokenXO Get4(ctx, userId, realm).Execute()
+> UserTokenXO Get3(ctx, userId, realm).Execute()
 
 Get user token metadata for the given user.
 
@@ -386,13 +386,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUsersAPI.Get4(context.Background(), userId, realm).Execute()
+	resp, r, err := apiClient.SecurityManagementUsersAPI.Get3(context.Background(), userId, realm).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Get4``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Get3``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get4`: UserTokenXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Get4`: %v\n", resp)
+	// response from `Get3`: UserTokenXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Get3`: %v\n", resp)
 }
 ```
 
@@ -407,7 +407,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGet4Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiGet3Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

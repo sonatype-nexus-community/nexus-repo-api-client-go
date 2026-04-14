@@ -46,6 +46,7 @@ Method | HTTP request | Description
 [**CreateRubygemsGroupRepository**](RepositoryManagementAPI.md#CreateRubygemsGroupRepository) | **Post** /v1/repositories/rubygems/group | Create RubyGems group repository
 [**CreateRubygemsHostedRepository**](RepositoryManagementAPI.md#CreateRubygemsHostedRepository) | **Post** /v1/repositories/rubygems/hosted | Create RubyGems hosted repository
 [**CreateRubygemsProxyRepository**](RepositoryManagementAPI.md#CreateRubygemsProxyRepository) | **Post** /v1/repositories/rubygems/proxy | Create RubyGems proxy repository
+[**CreateSwiftGroupRepository**](RepositoryManagementAPI.md#CreateSwiftGroupRepository) | **Post** /v1/repositories/swift/group | Create Swift group repository
 [**CreateSwiftHostedRepository**](RepositoryManagementAPI.md#CreateSwiftHostedRepository) | **Post** /v1/repositories/swift/hosted | Create swift hosted repository
 [**CreateSwiftProxyRepository**](RepositoryManagementAPI.md#CreateSwiftProxyRepository) | **Post** /v1/repositories/swift/proxy | Create swift proxy repository
 [**CreateTerraformGroupRepository**](RepositoryManagementAPI.md#CreateTerraformGroupRepository) | **Post** /v1/repositories/terraform/group | Create Terraform group repository
@@ -104,6 +105,7 @@ Method | HTTP request | Description
 [**GetRubygemsGroupRepository**](RepositoryManagementAPI.md#GetRubygemsGroupRepository) | **Get** /v1/repositories/rubygems/group/{repositoryName} | Get repository
 [**GetRubygemsHostedRepository**](RepositoryManagementAPI.md#GetRubygemsHostedRepository) | **Get** /v1/repositories/rubygems/hosted/{repositoryName} | Get repository
 [**GetRubygemsProxyRepository**](RepositoryManagementAPI.md#GetRubygemsProxyRepository) | **Get** /v1/repositories/rubygems/proxy/{repositoryName} | Get repository
+[**GetSwiftGroupRepository**](RepositoryManagementAPI.md#GetSwiftGroupRepository) | **Get** /v1/repositories/swift/group/{repositoryName} | Get repository
 [**GetSwiftHostedRepository**](RepositoryManagementAPI.md#GetSwiftHostedRepository) | **Get** /v1/repositories/swift/hosted/{repositoryName} | Get repository
 [**GetSwiftProxyRepository**](RepositoryManagementAPI.md#GetSwiftProxyRepository) | **Get** /v1/repositories/swift/proxy/{repositoryName} | Get repository
 [**GetTerraformGroupRepository**](RepositoryManagementAPI.md#GetTerraformGroupRepository) | **Get** /v1/repositories/terraform/group/{repositoryName} | Get repository
@@ -154,6 +156,7 @@ Method | HTTP request | Description
 [**UpdateRubygemsGroupRepository**](RepositoryManagementAPI.md#UpdateRubygemsGroupRepository) | **Put** /v1/repositories/rubygems/group/{repositoryName} | Update RubyGems group repository
 [**UpdateRubygemsHostedRepository**](RepositoryManagementAPI.md#UpdateRubygemsHostedRepository) | **Put** /v1/repositories/rubygems/hosted/{repositoryName} | Update RubyGems hosted repository
 [**UpdateRubygemsProxyRepository**](RepositoryManagementAPI.md#UpdateRubygemsProxyRepository) | **Put** /v1/repositories/rubygems/proxy/{repositoryName} | Update RubyGems proxy repository
+[**UpdateSwiftGroupRepository**](RepositoryManagementAPI.md#UpdateSwiftGroupRepository) | **Put** /v1/repositories/swift/group/{repositoryName} | Update Swift group repository
 [**UpdateSwiftHostedRepository**](RepositoryManagementAPI.md#UpdateSwiftHostedRepository) | **Put** /v1/repositories/swift/hosted/{repositoryName} | Update swift hosted repository
 [**UpdateSwiftProxyRepository**](RepositoryManagementAPI.md#UpdateSwiftProxyRepository) | **Put** /v1/repositories/swift/proxy/{repositoryName} | Update swift proxy repository
 [**UpdateTerraformGroupRepository**](RepositoryManagementAPI.md#UpdateTerraformGroupRepository) | **Put** /v1/repositories/terraform/group/{repositoryName} | Update Terraform group repository
@@ -246,7 +249,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -432,7 +435,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -494,7 +497,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -556,7 +559,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -742,7 +745,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -804,7 +807,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -990,7 +993,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1176,7 +1179,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1300,7 +1303,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1362,7 +1365,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1548,7 +1551,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(true, false), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1734,7 +1737,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1920,7 +1923,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -1982,7 +1985,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2168,7 +2171,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2354,7 +2357,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2540,7 +2543,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2726,7 +2729,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -2750,6 +2753,68 @@ Other parameters are passed through a pointer to a apiCreateRubygemsProxyReposit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSwiftGroupRepository
+
+> CreateSwiftGroupRepository(ctx).Body(body).Execute()
+
+Create Swift group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateSwiftGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateSwiftGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSwiftGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2850,7 +2915,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -3040,7 +3105,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
+	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -3226,7 +3291,7 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -6641,6 +6706,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetSwiftGroupRepository
+
+> SwiftGroupApiRepository GetSwiftGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetSwiftGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetSwiftGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSwiftGroupRepository`: SwiftGroupApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetSwiftGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSwiftGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SwiftGroupApiRepository**](SwiftGroupApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetSwiftHostedRepository
 
 > SimpleApiHostedRepository GetSwiftHostedRepository(ctx, repositoryName).Execute()
@@ -6919,8 +7052,6 @@ Name | Type | Description  | Notes
 
 Get repository
 
-
-
 ### Example
 
 ```go
@@ -6934,7 +7065,7 @@ import (
 )
 
 func main() {
-	repositoryName := "repositoryName_example" // string | Name of the repository to retrieve
+	repositoryName := "repositoryName_example" // string | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -6954,7 +7085,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**repositoryName** | **string** | Name of the repository to retrieve | 
+**repositoryName** | **string** |  | 
 
 ### Other Parameters
 
@@ -7275,7 +7406,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7479,7 +7610,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7547,7 +7678,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7615,7 +7746,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7819,7 +7950,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -7887,7 +8018,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8091,7 +8222,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8295,7 +8426,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8431,7 +8562,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8499,7 +8630,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8703,7 +8834,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(true, false), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -8907,7 +9038,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9111,7 +9242,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9179,7 +9310,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9383,7 +9514,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9587,7 +9718,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9791,7 +9922,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -9995,7 +10126,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -10024,6 +10155,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSwiftGroupRepository
+
+> UpdateSwiftGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Swift group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateSwiftGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSwiftGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10131,7 +10330,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -10339,7 +10538,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
+	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -10543,7 +10742,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(true, false), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
+	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

@@ -5,7 +5,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **BlobCreated** | Pointer to **time.Time** |  | [optional] 
+**BlobRef** | Pointer to **string** |  | [optional] 
 **BlobStoreName** | Pointer to **string** |  | [optional] 
+**BlobUpdated** | Pointer to **time.Time** |  | [optional] 
 **Checksum** | Pointer to **map[string]string** |  | [optional] 
 **ContentType** | Pointer to **string** |  | [optional] 
 **DownloadUrl** | Pointer to **string** |  | [optional] 
@@ -14,6 +16,7 @@ Name | Type | Description | Notes
 **Id** | Pointer to **string** |  | [optional] 
 **LastDownloaded** | Pointer to **time.Time** |  | [optional] 
 **LastModified** | Pointer to **time.Time** |  | [optional] 
+**LastVerified** | Pointer to **time.Time** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
 **Repository** | Pointer to **string** |  | [optional] 
 **Uploader** | Pointer to **string** |  | [optional] 
@@ -63,6 +66,31 @@ SetBlobCreated sets BlobCreated field to given value.
 
 HasBlobCreated returns a boolean if a field has been set.
 
+### GetBlobRef
+
+`func (o *AssetXO) GetBlobRef() string`
+
+GetBlobRef returns the BlobRef field if non-nil, zero value otherwise.
+
+### GetBlobRefOk
+
+`func (o *AssetXO) GetBlobRefOk() (*string, bool)`
+
+GetBlobRefOk returns a tuple with the BlobRef field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobRef
+
+`func (o *AssetXO) SetBlobRef(v string)`
+
+SetBlobRef sets BlobRef field to given value.
+
+### HasBlobRef
+
+`func (o *AssetXO) HasBlobRef() bool`
+
+HasBlobRef returns a boolean if a field has been set.
+
 ### GetBlobStoreName
 
 `func (o *AssetXO) GetBlobStoreName() string`
@@ -87,6 +115,31 @@ SetBlobStoreName sets BlobStoreName field to given value.
 `func (o *AssetXO) HasBlobStoreName() bool`
 
 HasBlobStoreName returns a boolean if a field has been set.
+
+### GetBlobUpdated
+
+`func (o *AssetXO) GetBlobUpdated() time.Time`
+
+GetBlobUpdated returns the BlobUpdated field if non-nil, zero value otherwise.
+
+### GetBlobUpdatedOk
+
+`func (o *AssetXO) GetBlobUpdatedOk() (*time.Time, bool)`
+
+GetBlobUpdatedOk returns a tuple with the BlobUpdated field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetBlobUpdated
+
+`func (o *AssetXO) SetBlobUpdated(v time.Time)`
+
+SetBlobUpdated sets BlobUpdated field to given value.
+
+### HasBlobUpdated
+
+`func (o *AssetXO) HasBlobUpdated() bool`
+
+HasBlobUpdated returns a boolean if a field has been set.
 
 ### GetChecksum
 
@@ -287,6 +340,31 @@ SetLastModified sets LastModified field to given value.
 `func (o *AssetXO) HasLastModified() bool`
 
 HasLastModified returns a boolean if a field has been set.
+
+### GetLastVerified
+
+`func (o *AssetXO) GetLastVerified() time.Time`
+
+GetLastVerified returns the LastVerified field if non-nil, zero value otherwise.
+
+### GetLastVerifiedOk
+
+`func (o *AssetXO) GetLastVerifiedOk() (*time.Time, bool)`
+
+GetLastVerifiedOk returns a tuple with the LastVerified field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLastVerified
+
+`func (o *AssetXO) SetLastVerified(v time.Time)`
+
+SetLastVerified sets LastVerified field to given value.
+
+### HasLastVerified
+
+`func (o *AssetXO) HasLastVerified() bool`
+
+HasLastVerified returns a boolean if a field has been set.
 
 ### GetPath
 

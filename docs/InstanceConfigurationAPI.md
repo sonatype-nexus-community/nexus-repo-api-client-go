@@ -5,9 +5,12 @@ All URIs are relative to *http://localhost/service/rest*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**ApplyConfiguration**](InstanceConfigurationAPI.md#ApplyConfiguration) | **Put** /v1/configuration | Apply instance configuration
+[**ClearCipherPassword**](InstanceConfigurationAPI.md#ClearCipherPassword) | **Delete** /v1/configuration/cipher | Clear migration cipher password
 [**ExportConfiguration**](InstanceConfigurationAPI.md#ExportConfiguration) | **Get** /v1/configuration | Export instance configuration
 [**GetAssets1**](InstanceConfigurationAPI.md#GetAssets1) | **Get** /v1/configuration/assets | List assets
 [**ImportAsset**](InstanceConfigurationAPI.md#ImportAsset) | **Post** /v1/configuration/assets/{repositoryName}/import | Import assets to repository
+[**SetCipherPassword**](InstanceConfigurationAPI.md#SetCipherPassword) | **Post** /v1/configuration/cipher | Set migration cipher password for decrypting imported secrets
+[**TransferComplete**](InstanceConfigurationAPI.md#TransferComplete) | **Post** /v1/configuration/transfer-complete | Receive transfer complete notification from migrator
 
 
 
@@ -70,6 +73,70 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ClearCipherPassword
+
+> string ClearCipherPassword(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+
+Clear migration cipher password
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstanceConfigurationAPI.ClearCipherPassword(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ClearCipherPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ClearCipherPassword`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ClearCipherPassword`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiClearCipherPasswordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -276,6 +343,138 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## SetCipherPassword
+
+> string SetCipherPassword(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+
+Set migration cipher password for decrypting imported secrets
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	body := "body_example" // string | Cipher password as plain text
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstanceConfigurationAPI.SetCipherPassword(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.SetCipherPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `SetCipherPassword`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.SetCipherPassword`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiSetCipherPasswordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **body** | **string** | Cipher password as plain text | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: text/plain
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## TransferComplete
+
+> string TransferComplete(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+
+Receive transfer complete notification from migrator
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	body := *sonatyperepo.NewTransferCompleteXO() // TransferCompleteXO | Transfer completion notification data
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstanceConfigurationAPI.TransferComplete(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.TransferComplete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `TransferComplete`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.TransferComplete`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiTransferCompleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **body** | [**TransferCompleteXO**](TransferCompleteXO.md) | Transfer completion notification data | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

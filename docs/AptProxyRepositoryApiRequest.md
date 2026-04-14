@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Apt** | [**AptProxyRepositoriesAttributes**](AptProxyRepositoriesAttributes.md) |  | 
+**AptSigning** | Pointer to [**AptSigningRepositoriesAttributes**](AptSigningRepositoriesAttributes.md) |  | [optional] 
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
@@ -53,6 +54,31 @@ and a boolean to check if the value has been set.
 
 SetApt sets Apt field to given value.
 
+
+### GetAptSigning
+
+`func (o *AptProxyRepositoryApiRequest) GetAptSigning() AptSigningRepositoriesAttributes`
+
+GetAptSigning returns the AptSigning field if non-nil, zero value otherwise.
+
+### GetAptSigningOk
+
+`func (o *AptProxyRepositoryApiRequest) GetAptSigningOk() (*AptSigningRepositoriesAttributes, bool)`
+
+GetAptSigningOk returns a tuple with the AptSigning field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAptSigning
+
+`func (o *AptProxyRepositoryApiRequest) SetAptSigning(v AptSigningRepositoriesAttributes)`
+
+SetAptSigning sets AptSigning field to given value.
+
+### HasAptSigning
+
+`func (o *AptProxyRepositoryApiRequest) HasAptSigning() bool`
+
+HasAptSigning returns a boolean if a field has been set.
 
 ### GetCleanup
 

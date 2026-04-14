@@ -5,15 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Authentication** | Pointer to [**HttpClientConnectionAuthenticationAttributes**](HttpClientConnectionAuthenticationAttributes.md) |  | [optional] 
-**AutoBlock** | **bool** | Whether to auto-block outbound connections if remote peer is detected as unreachable/unresponsive | 
-**Blocked** | **bool** | Whether to block outbound connections on the repository | 
+**AutoBlock** | Pointer to **bool** | Whether to auto-block outbound connections if remote peer is detected as unreachable/unresponsive | [optional] 
+**Blocked** | Pointer to **bool** | Whether to block outbound connections on the repository | [optional] 
 **Connection** | Pointer to [**HttpClientConnectionAttributes**](HttpClientConnectionAttributes.md) |  | [optional] 
 
 ## Methods
 
 ### NewHttpClientAttributes
 
-`func NewHttpClientAttributes(autoBlock bool, blocked bool, ) *HttpClientAttributes`
+`func NewHttpClientAttributes() *HttpClientAttributes`
 
 NewHttpClientAttributes instantiates a new HttpClientAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -72,6 +72,11 @@ and a boolean to check if the value has been set.
 
 SetAutoBlock sets AutoBlock field to given value.
 
+### HasAutoBlock
+
+`func (o *HttpClientAttributes) HasAutoBlock() bool`
+
+HasAutoBlock returns a boolean if a field has been set.
 
 ### GetBlocked
 
@@ -92,6 +97,11 @@ and a boolean to check if the value has been set.
 
 SetBlocked sets Blocked field to given value.
 
+### HasBlocked
+
+`func (o *HttpClientAttributes) HasBlocked() bool`
+
+HasBlocked returns a boolean if a field has been set.
 
 ### GetConnection
 

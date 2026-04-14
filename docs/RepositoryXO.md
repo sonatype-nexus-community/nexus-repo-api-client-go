@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Format** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Size** | Pointer to **int64** | Size of the repository in bytes | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
 
@@ -103,6 +104,31 @@ SetName sets Name field to given value.
 `func (o *RepositoryXO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetSize
+
+`func (o *RepositoryXO) GetSize() int64`
+
+GetSize returns the Size field if non-nil, zero value otherwise.
+
+### GetSizeOk
+
+`func (o *RepositoryXO) GetSizeOk() (*int64, bool)`
+
+GetSizeOk returns a tuple with the Size field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSize
+
+`func (o *RepositoryXO) SetSize(v int64)`
+
+SetSize sets Size field to given value.
+
+### HasSize
+
+`func (o *RepositoryXO) HasSize() bool`
+
+HasSize returns a boolean if a field has been set.
 
 ### GetType
 

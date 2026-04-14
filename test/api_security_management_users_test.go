@@ -89,14 +89,14 @@ func Test_v3_SecurityManagementUsersAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementUsersAPIService Get4", func(t *testing.T) {
+	t.Run("Test SecurityManagementUsersAPIService Get3", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 		var realm string
 
-		resp, httpRes, err := apiClient.SecurityManagementUsersAPI.Get4(context.Background(), userId, realm).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementUsersAPI.Get3(context.Background(), userId, realm).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

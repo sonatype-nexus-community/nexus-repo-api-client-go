@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**IndexPath** | Pointer to **string** | Remote Index Path | [optional] 
 **RemoveQuarantined** | **bool** | Remove Quarantined Versions | 
 
 ## Methods
@@ -24,6 +25,31 @@ will change when the set of required properties is changed
 NewPyPiProxyAttributesWithDefaults instantiates a new PyPiProxyAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetIndexPath
+
+`func (o *PyPiProxyAttributes) GetIndexPath() string`
+
+GetIndexPath returns the IndexPath field if non-nil, zero value otherwise.
+
+### GetIndexPathOk
+
+`func (o *PyPiProxyAttributes) GetIndexPathOk() (*string, bool)`
+
+GetIndexPathOk returns a tuple with the IndexPath field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIndexPath
+
+`func (o *PyPiProxyAttributes) SetIndexPath(v string)`
+
+SetIndexPath sets IndexPath field to given value.
+
+### HasIndexPath
+
+`func (o *PyPiProxyAttributes) HasIndexPath() bool`
+
+HasIndexPath returns a boolean if a field has been set.
 
 ### GetRemoveQuarantined
 

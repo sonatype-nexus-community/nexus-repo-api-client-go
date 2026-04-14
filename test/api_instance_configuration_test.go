@@ -34,6 +34,18 @@ func Test_v3_InstanceConfigurationAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test InstanceConfigurationAPIService ClearCipherPassword", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.InstanceConfigurationAPI.ClearCipherPassword(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test InstanceConfigurationAPIService ExportConfiguration", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -65,6 +77,30 @@ func Test_v3_InstanceConfigurationAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.InstanceConfigurationAPI.ImportAsset(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstanceConfigurationAPIService SetCipherPassword", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.InstanceConfigurationAPI.SetCipherPassword(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test InstanceConfigurationAPIService TransferComplete", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.InstanceConfigurationAPI.TransferComplete(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

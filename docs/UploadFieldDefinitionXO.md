@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
 **Group** | Pointer to **string** |  | [optional] 
+**GroupHelpText** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **Optional** | Pointer to **bool** |  | [optional] 
 **Options** | Pointer to **map[string]string** |  | [optional] 
@@ -79,6 +80,31 @@ SetGroup sets Group field to given value.
 `func (o *UploadFieldDefinitionXO) HasGroup() bool`
 
 HasGroup returns a boolean if a field has been set.
+
+### GetGroupHelpText
+
+`func (o *UploadFieldDefinitionXO) GetGroupHelpText() string`
+
+GetGroupHelpText returns the GroupHelpText field if non-nil, zero value otherwise.
+
+### GetGroupHelpTextOk
+
+`func (o *UploadFieldDefinitionXO) GetGroupHelpTextOk() (*string, bool)`
+
+GetGroupHelpTextOk returns a tuple with the GroupHelpText field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGroupHelpText
+
+`func (o *UploadFieldDefinitionXO) SetGroupHelpText(v string)`
+
+SetGroupHelpText sets GroupHelpText field to given value.
+
+### HasGroupHelpText
+
+`func (o *UploadFieldDefinitionXO) HasGroupHelpText() bool`
+
+HasGroupHelpText returns a boolean if a field has been set.
 
 ### GetName
 
