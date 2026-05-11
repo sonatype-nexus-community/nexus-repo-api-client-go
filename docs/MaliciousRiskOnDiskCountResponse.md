@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**CountsByRepository** | Pointer to **map[string]int64** |  | [optional] 
 **HdsExceptionThrown** | Pointer to **bool** |  | [optional] 
 **TotalCount** | Pointer to **int64** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewMaliciousRiskOnDiskCountResponseWithDefaults instantiates a new MaliciousRiskOnDiskCountResponse object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetCountsByRepository
+
+`func (o *MaliciousRiskOnDiskCountResponse) GetCountsByRepository() map[string]int64`
+
+GetCountsByRepository returns the CountsByRepository field if non-nil, zero value otherwise.
+
+### GetCountsByRepositoryOk
+
+`func (o *MaliciousRiskOnDiskCountResponse) GetCountsByRepositoryOk() (*map[string]int64, bool)`
+
+GetCountsByRepositoryOk returns a tuple with the CountsByRepository field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCountsByRepository
+
+`func (o *MaliciousRiskOnDiskCountResponse) SetCountsByRepository(v map[string]int64)`
+
+SetCountsByRepository sets CountsByRepository field to given value.
+
+### HasCountsByRepository
+
+`func (o *MaliciousRiskOnDiskCountResponse) HasCountsByRepository() bool`
+
+HasCountsByRepository returns a boolean if a field has been set.
 
 ### GetHdsExceptionThrown
 

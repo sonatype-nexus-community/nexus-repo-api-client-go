@@ -4,6 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**ApplicationCount** | Pointer to **int32** |  | [optional] 
 **Reason** | Pointer to **string** |  | [optional] 
 **Success** | Pointer to **bool** |  | [optional] 
 
@@ -25,6 +26,31 @@ will change when the set of required properties is changed
 NewIqConnectionVerificationXoWithDefaults instantiates a new IqConnectionVerificationXo object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetApplicationCount
+
+`func (o *IqConnectionVerificationXo) GetApplicationCount() int32`
+
+GetApplicationCount returns the ApplicationCount field if non-nil, zero value otherwise.
+
+### GetApplicationCountOk
+
+`func (o *IqConnectionVerificationXo) GetApplicationCountOk() (*int32, bool)`
+
+GetApplicationCountOk returns a tuple with the ApplicationCount field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetApplicationCount
+
+`func (o *IqConnectionVerificationXo) SetApplicationCount(v int32)`
+
+SetApplicationCount sets ApplicationCount field to given value.
+
+### HasApplicationCount
+
+`func (o *IqConnectionVerificationXo) HasApplicationCount() bool`
+
+HasApplicationCount returns a boolean if a field has been set.
 
 ### GetReason
 

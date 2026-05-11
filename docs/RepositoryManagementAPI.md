@@ -14,6 +14,8 @@ Method | HTTP request | Description
 [**CreateConanGroupRepository**](RepositoryManagementAPI.md#CreateConanGroupRepository) | **Post** /v1/repositories/conan/group | Create Conan group repository
 [**CreateConanHostedRepository**](RepositoryManagementAPI.md#CreateConanHostedRepository) | **Post** /v1/repositories/conan/hosted | Create Conan hosted repository
 [**CreateConanProxyRepository**](RepositoryManagementAPI.md#CreateConanProxyRepository) | **Post** /v1/repositories/conan/proxy | Create Conan proxy repository
+[**CreateCondaGroupRepository**](RepositoryManagementAPI.md#CreateCondaGroupRepository) | **Post** /v1/repositories/conda/group | Create Conda group repository
+[**CreateCondaHostedRepository**](RepositoryManagementAPI.md#CreateCondaHostedRepository) | **Post** /v1/repositories/conda/hosted | Create conda hosted repository
 [**CreateCondaProxyRepository**](RepositoryManagementAPI.md#CreateCondaProxyRepository) | **Post** /v1/repositories/conda/proxy | Create conda proxy repository
 [**CreateDockerGroupRepository**](RepositoryManagementAPI.md#CreateDockerGroupRepository) | **Post** /v1/repositories/docker/group | Create Docker group repository
 [**CreateDockerHostedRepository**](RepositoryManagementAPI.md#CreateDockerHostedRepository) | **Post** /v1/repositories/docker/hosted | Create Docker hosted repository
@@ -21,6 +23,7 @@ Method | HTTP request | Description
 [**CreateGitlfsHostedRepository**](RepositoryManagementAPI.md#CreateGitlfsHostedRepository) | **Post** /v1/repositories/gitlfs/hosted | Create Git LFS hosted repository
 [**CreateGoGroupRepository**](RepositoryManagementAPI.md#CreateGoGroupRepository) | **Post** /v1/repositories/go/group | Create a Go group repository
 [**CreateGoProxyRepository**](RepositoryManagementAPI.md#CreateGoProxyRepository) | **Post** /v1/repositories/go/proxy | Create a Go proxy repository
+[**CreateHelmGroupRepository**](RepositoryManagementAPI.md#CreateHelmGroupRepository) | **Post** /v1/repositories/helm/group | Create Helm group repository
 [**CreateHelmHostedRepository**](RepositoryManagementAPI.md#CreateHelmHostedRepository) | **Post** /v1/repositories/helm/hosted | Create Helm hosted repository
 [**CreateHelmProxyRepository**](RepositoryManagementAPI.md#CreateHelmProxyRepository) | **Post** /v1/repositories/helm/proxy | Create Helm proxy repository
 [**CreateHuggingfaceProxyRepository**](RepositoryManagementAPI.md#CreateHuggingfaceProxyRepository) | **Post** /v1/repositories/huggingface/proxy | Create huggingface proxy repository
@@ -34,6 +37,9 @@ Method | HTTP request | Description
 [**CreateNugetHostedRepository**](RepositoryManagementAPI.md#CreateNugetHostedRepository) | **Post** /v1/repositories/nuget/hosted | Create NuGet hosted repository
 [**CreateNugetProxyRepository**](RepositoryManagementAPI.md#CreateNugetProxyRepository) | **Post** /v1/repositories/nuget/proxy | Create NuGet proxy repository
 [**CreateP2ProxyRepository**](RepositoryManagementAPI.md#CreateP2ProxyRepository) | **Post** /v1/repositories/p2/proxy | Create p2 proxy repository
+[**CreatePubGroupRepository**](RepositoryManagementAPI.md#CreatePubGroupRepository) | **Post** /v1/repositories/pub/group | Create Pub group repository
+[**CreatePubHostedRepository**](RepositoryManagementAPI.md#CreatePubHostedRepository) | **Post** /v1/repositories/pub/hosted | Create Pub hosted repository
+[**CreatePubProxyRepository**](RepositoryManagementAPI.md#CreatePubProxyRepository) | **Post** /v1/repositories/pub/proxy | Create Pub proxy repository
 [**CreatePypiGroupRepository**](RepositoryManagementAPI.md#CreatePypiGroupRepository) | **Post** /v1/repositories/pypi/group | Create PyPI group repository
 [**CreatePypiHostedRepository**](RepositoryManagementAPI.md#CreatePypiHostedRepository) | **Post** /v1/repositories/pypi/hosted | Create PyPI hosted repository
 [**CreatePypiProxyRepository**](RepositoryManagementAPI.md#CreatePypiProxyRepository) | **Post** /v1/repositories/pypi/proxy | Create PyPI proxy repository
@@ -71,6 +77,8 @@ Method | HTTP request | Description
 [**GetConanGroupRepository**](RepositoryManagementAPI.md#GetConanGroupRepository) | **Get** /v1/repositories/conan/group/{repositoryName} | Get repository
 [**GetConanHostedRepository**](RepositoryManagementAPI.md#GetConanHostedRepository) | **Get** /v1/repositories/conan/hosted/{repositoryName} | Get repository
 [**GetConanProxyRepository**](RepositoryManagementAPI.md#GetConanProxyRepository) | **Get** /v1/repositories/conan/proxy/{repositoryName} | Get repository
+[**GetCondaGroupRepository**](RepositoryManagementAPI.md#GetCondaGroupRepository) | **Get** /v1/repositories/conda/group/{repositoryName} | Get repository
+[**GetCondaHostedRepository**](RepositoryManagementAPI.md#GetCondaHostedRepository) | **Get** /v1/repositories/conda/hosted/{repositoryName} | Get repository
 [**GetCondaProxyRepository**](RepositoryManagementAPI.md#GetCondaProxyRepository) | **Get** /v1/repositories/conda/proxy/{repositoryName} | Get repository
 [**GetDockerGroupRepository**](RepositoryManagementAPI.md#GetDockerGroupRepository) | **Get** /v1/repositories/docker/group/{repositoryName} | Get repository
 [**GetDockerHostedRepository**](RepositoryManagementAPI.md#GetDockerHostedRepository) | **Get** /v1/repositories/docker/hosted/{repositoryName} | Get repository
@@ -78,6 +86,7 @@ Method | HTTP request | Description
 [**GetGitlfsHostedRepository**](RepositoryManagementAPI.md#GetGitlfsHostedRepository) | **Get** /v1/repositories/gitlfs/hosted/{repositoryName} | Get repository
 [**GetGoGroupRepository**](RepositoryManagementAPI.md#GetGoGroupRepository) | **Get** /v1/repositories/go/group/{repositoryName} | Get repository
 [**GetGoProxyRepository**](RepositoryManagementAPI.md#GetGoProxyRepository) | **Get** /v1/repositories/go/proxy/{repositoryName} | Get repository
+[**GetHelmGroupRepository**](RepositoryManagementAPI.md#GetHelmGroupRepository) | **Get** /v1/repositories/helm/group/{repositoryName} | Get repository
 [**GetHelmHostedRepository**](RepositoryManagementAPI.md#GetHelmHostedRepository) | **Get** /v1/repositories/helm/hosted/{repositoryName} | Get repository
 [**GetHelmProxyRepository**](RepositoryManagementAPI.md#GetHelmProxyRepository) | **Get** /v1/repositories/helm/proxy/{repositoryName} | Get repository
 [**GetHuggingfaceProxyRepository**](RepositoryManagementAPI.md#GetHuggingfaceProxyRepository) | **Get** /v1/repositories/huggingface/proxy/{repositoryName} | Get repository
@@ -91,6 +100,9 @@ Method | HTTP request | Description
 [**GetNugetHostedRepository**](RepositoryManagementAPI.md#GetNugetHostedRepository) | **Get** /v1/repositories/nuget/hosted/{repositoryName} | Get repository
 [**GetNugetProxyRepository**](RepositoryManagementAPI.md#GetNugetProxyRepository) | **Get** /v1/repositories/nuget/proxy/{repositoryName} | Get repository
 [**GetP2ProxyRepository**](RepositoryManagementAPI.md#GetP2ProxyRepository) | **Get** /v1/repositories/p2/proxy/{repositoryName} | Get repository
+[**GetPubGroupRepository**](RepositoryManagementAPI.md#GetPubGroupRepository) | **Get** /v1/repositories/pub/group/{repositoryName} | Get repository
+[**GetPubHostedRepository**](RepositoryManagementAPI.md#GetPubHostedRepository) | **Get** /v1/repositories/pub/hosted/{repositoryName} | Get repository
+[**GetPubProxyRepository**](RepositoryManagementAPI.md#GetPubProxyRepository) | **Get** /v1/repositories/pub/proxy/{repositoryName} | Get repository
 [**GetPypiGroupRepository**](RepositoryManagementAPI.md#GetPypiGroupRepository) | **Get** /v1/repositories/pypi/group/{repositoryName} | Get repository
 [**GetPypiHostedRepository**](RepositoryManagementAPI.md#GetPypiHostedRepository) | **Get** /v1/repositories/pypi/hosted/{repositoryName} | Get repository
 [**GetPypiProxyRepository**](RepositoryManagementAPI.md#GetPypiProxyRepository) | **Get** /v1/repositories/pypi/proxy/{repositoryName} | Get repository
@@ -124,6 +136,8 @@ Method | HTTP request | Description
 [**UpdateConanGroupRepository**](RepositoryManagementAPI.md#UpdateConanGroupRepository) | **Put** /v1/repositories/conan/group/{repositoryName} | Update Conan group repository
 [**UpdateConanHostedRepository**](RepositoryManagementAPI.md#UpdateConanHostedRepository) | **Put** /v1/repositories/conan/hosted/{repositoryName} | Update Conan hosted repository
 [**UpdateConanProxyRepository**](RepositoryManagementAPI.md#UpdateConanProxyRepository) | **Put** /v1/repositories/conan/proxy/{repositoryName} | Update Conan proxy repository
+[**UpdateCondaGroupRepository**](RepositoryManagementAPI.md#UpdateCondaGroupRepository) | **Put** /v1/repositories/conda/group/{repositoryName} | Update Conda group repository
+[**UpdateCondaHostedRepository**](RepositoryManagementAPI.md#UpdateCondaHostedRepository) | **Put** /v1/repositories/conda/hosted/{repositoryName} | Update conda hosted repository
 [**UpdateCondaProxyRepository**](RepositoryManagementAPI.md#UpdateCondaProxyRepository) | **Put** /v1/repositories/conda/proxy/{repositoryName} | Update conda proxy repository
 [**UpdateDockerGroupRepository**](RepositoryManagementAPI.md#UpdateDockerGroupRepository) | **Put** /v1/repositories/docker/group/{repositoryName} | Update Docker group repository
 [**UpdateDockerHostedRepository**](RepositoryManagementAPI.md#UpdateDockerHostedRepository) | **Put** /v1/repositories/docker/hosted/{repositoryName} | Update Docker hosted repository
@@ -131,6 +145,7 @@ Method | HTTP request | Description
 [**UpdateGitlfsHostedRepository**](RepositoryManagementAPI.md#UpdateGitlfsHostedRepository) | **Put** /v1/repositories/gitlfs/hosted/{repositoryName} | Update Git LFS hosted repository
 [**UpdateGoGroupRepository**](RepositoryManagementAPI.md#UpdateGoGroupRepository) | **Put** /v1/repositories/go/group/{repositoryName} | Update a Go group repository
 [**UpdateGoProxyRepository**](RepositoryManagementAPI.md#UpdateGoProxyRepository) | **Put** /v1/repositories/go/proxy/{repositoryName} | Update a Go proxy repository
+[**UpdateHelmGroupRepository**](RepositoryManagementAPI.md#UpdateHelmGroupRepository) | **Put** /v1/repositories/helm/group/{repositoryName} | Update Helm group repository
 [**UpdateHelmHostedRepository**](RepositoryManagementAPI.md#UpdateHelmHostedRepository) | **Put** /v1/repositories/helm/hosted/{repositoryName} | Update Helm hosted repository
 [**UpdateHelmProxyRepository**](RepositoryManagementAPI.md#UpdateHelmProxyRepository) | **Put** /v1/repositories/helm/proxy/{repositoryName} | Update Helm proxy repository
 [**UpdateHuggingfaceProxyRepository**](RepositoryManagementAPI.md#UpdateHuggingfaceProxyRepository) | **Put** /v1/repositories/huggingface/proxy/{repositoryName} | Update huggingface proxy repository
@@ -144,6 +159,9 @@ Method | HTTP request | Description
 [**UpdateNugetHostedRepository**](RepositoryManagementAPI.md#UpdateNugetHostedRepository) | **Put** /v1/repositories/nuget/hosted/{repositoryName} | Update NuGet hosted repository
 [**UpdateNugetProxyRepository**](RepositoryManagementAPI.md#UpdateNugetProxyRepository) | **Put** /v1/repositories/nuget/proxy/{repositoryName} | Update NuGet proxy repository
 [**UpdateP2ProxyRepository**](RepositoryManagementAPI.md#UpdateP2ProxyRepository) | **Put** /v1/repositories/p2/proxy/{repositoryName} | Update p2 proxy repository
+[**UpdatePubGroupRepository**](RepositoryManagementAPI.md#UpdatePubGroupRepository) | **Put** /v1/repositories/pub/group/{repositoryName} | Update Pub group repository
+[**UpdatePubHostedRepository**](RepositoryManagementAPI.md#UpdatePubHostedRepository) | **Put** /v1/repositories/pub/hosted/{repositoryName} | Update Pub hosted repository
+[**UpdatePubProxyRepository**](RepositoryManagementAPI.md#UpdatePubProxyRepository) | **Put** /v1/repositories/pub/proxy/{repositoryName} | Update Pub proxy repository
 [**UpdatePypiGroupRepository**](RepositoryManagementAPI.md#UpdatePypiGroupRepository) | **Put** /v1/repositories/pypi/group/{repositoryName} | Update PyPI group repository
 [**UpdatePypiHostedRepository**](RepositoryManagementAPI.md#UpdatePypiHostedRepository) | **Put** /v1/repositories/pypi/hosted/{repositoryName} | Update PyPI hosted repository
 [**UpdatePypiProxyRepository**](RepositoryManagementAPI.md#UpdatePypiProxyRepository) | **Put** /v1/repositories/pypi/proxy/{repositoryName} | Update PyPI proxy repository
@@ -788,6 +806,130 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateCondaGroupRepository
+
+> CreateCondaGroupRepository(ctx).Body(body).Execute()
+
+Create Conda group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateCondaGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCondaGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCondaGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateCondaHostedRepository
+
+> CreateCondaHostedRepository(ctx).Body(body).Execute()
+
+Create conda hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateCondaHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCondaHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateCondaHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateCondaProxyRepository
 
 > CreateCondaProxyRepository(ctx).Body(body).Execute()
@@ -1203,6 +1345,68 @@ Other parameters are passed through a pointer to a apiCreateGoProxyRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateHelmGroupRepository
+
+> CreateHelmGroupRepository(ctx).Body(body).Execute()
+
+Create Helm group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateHelmGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateHelmGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateHelmGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2009,6 +2213,192 @@ Other parameters are passed through a pointer to a apiCreateP2ProxyRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePubGroupRepository
+
+> CreatePubGroupRepository(ctx).Body(body).Execute()
+
+Create Pub group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreatePubGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePubGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePubHostedRepository
+
+> CreatePubHostedRepository(ctx).Body(body).Execute()
+
+Create Pub hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreatePubHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePubHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreatePubProxyRepository
+
+> CreatePubProxyRepository(ctx).Body(body).Execute()
+
+Create Pub proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreatePubProxyRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreatePubProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3336,7 +3726,7 @@ Name | Type | Description  | Notes
 
 ## CreaterepositorynameHealthCheckRepository
 
-> CreaterepositorynameHealthCheckRepository(ctx, repositoryName).Execute()
+> CreaterepositorynameHealthCheckRepository(ctx, repositoryName).Source(source).Execute()
 
 Enable repository health check. Proxy repositories only.
 
@@ -3354,10 +3744,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to enable Repository Health Check for
+	source := "source_example" // string | Source of the request (e.g. 'detect' for Malicious Packages Detect module) (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreaterepositorynameHealthCheckRepository(context.Background(), repositoryName).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreaterepositorynameHealthCheckRepository(context.Background(), repositoryName).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreaterepositorynameHealthCheckRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3381,6 +3772,7 @@ Other parameters are passed through a pointer to a apiCreaterepositorynameHealth
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **source** | **string** | Source of the request (e.g. &#39;detect&#39; for Malicious Packages Detect module) | 
 
 ### Return type
 
@@ -4403,6 +4795,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetCondaGroupRepository
+
+> SimpleApiGroupRepository GetCondaGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetCondaGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCondaGroupRepository`: SimpleApiGroupRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCondaGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetCondaHostedRepository
+
+> SimpleApiHostedRepository GetCondaHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetCondaHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetCondaHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetCondaHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetCondaProxyRepository
 
 > SimpleApiProxyRepository GetCondaProxyRepository(ctx, repositoryName).Execute()
@@ -4864,6 +5392,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetHelmGroupRepository
+
+> SimpleApiGroupRepository GetHelmGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetHelmGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetHelmGroupRepository`: SimpleApiGroupRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetHelmGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
 
 ### Authorization
 
@@ -5739,6 +6335,210 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGetP2ProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPubGroupRepository
+
+> SimpleApiGroupRepository GetPubGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetPubGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPubGroupRepository`: SimpleApiGroupRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPubGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPubHostedRepository
+
+> SimpleApiHostedRepository GetPubHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetPubHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPubHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPubHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetPubProxyRepository
+
+> SimpleApiProxyRepository GetPubProxyRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetPubProxyRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetPubProxyRepository`: SimpleApiProxyRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubProxyRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetPubProxyRepositoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -7998,6 +8798,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateCondaGroupRepository
+
+> UpdateCondaGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Conda group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateCondaGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCondaGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCondaGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateCondaHostedRepository
+
+> UpdateCondaHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update conda hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateCondaHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCondaHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateCondaHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateCondaProxyRepository
 
 > UpdateCondaProxyRepository(ctx, repositoryName).Body(body).Execute()
@@ -8455,6 +9391,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateHelmGroupRepository
+
+> UpdateHelmGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Helm group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateHelmGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateHelmGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateHelmGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9339,6 +10343,210 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePubGroupRepository
+
+> UpdatePubGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Pub group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePubGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePubHostedRepository
+
+> UpdatePubHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Pub hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePubHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdatePubProxyRepository
+
+> UpdatePubProxyRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Pub proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdatePubProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 

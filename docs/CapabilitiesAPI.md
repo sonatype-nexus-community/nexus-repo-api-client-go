@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**Create4**](CapabilitiesAPI.md#Create4) | **Post** /v1/capabilities | Create a capability
 [**Delete5**](CapabilitiesAPI.md#Delete5) | **Delete** /v1/capabilities/{capabilityId} | Delete a capability
 [**GetTypes**](CapabilitiesAPI.md#GetTypes) | **Get** /v1/capabilities/types | List all capability types available and exposed in the system
-[**List1**](CapabilitiesAPI.md#List1) | **Get** /v1/capabilities | List the active capabilities
+[**List2**](CapabilitiesAPI.md#List2) | **Get** /v1/capabilities | List the active capabilities
 [**Update3**](CapabilitiesAPI.md#Update3) | **Put** /v1/capabilities/{capabilityId} | Update a capability
 
 
@@ -201,9 +201,9 @@ Other parameters are passed through a pointer to a apiGetTypesRequest struct via
 [[Back to README]](../README.md)
 
 
-## List1
+## List2
 
-> []CapabilityDTO List1(ctx).Execute()
+> []CapabilityDTO List2(ctx).Execute()
 
 List the active capabilities
 
@@ -223,13 +223,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CapabilitiesAPI.List1(context.Background()).Execute()
+	resp, r, err := apiClient.CapabilitiesAPI.List2(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.List1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CapabilitiesAPI.List2``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List1`: []CapabilityDTO
-	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.List1`: %v\n", resp)
+	// response from `List2`: []CapabilityDTO
+	fmt.Fprintf(os.Stdout, "Response from `CapabilitiesAPI.List2`: %v\n", resp)
 }
 ```
 
@@ -239,7 +239,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiList1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiList2Request struct via the builder pattern
 
 
 ### Return type

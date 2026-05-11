@@ -132,6 +132,28 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService CreateCondaGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCondaGroupRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateCondaHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateCondaHostedRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService CreateCondaProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -203,6 +225,17 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.RepositoryManagementAPI.CreateGoProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateHelmGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateHelmGroupRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -346,6 +379,39 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		t.Skip("skip test")  // remove to run test
 
 		httpRes, err := apiClient.RepositoryManagementAPI.CreateP2ProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreatePubGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePubGroupRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreatePubHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePubHostedRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreatePubProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreatePubProxyRepository(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -800,6 +866,34 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService GetCondaGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCondaGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetCondaHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetCondaHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService GetCondaProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -891,6 +985,20 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetGoProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetHelmGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetHelmGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1073,6 +1181,48 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetP2ProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPubGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPubGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPubHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPubHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetPubProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetPubProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -1530,6 +1680,32 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService UpdateCondaGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCondaGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateCondaHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateCondaHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService UpdateCondaProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1615,6 +1791,19 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateGoProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateHelmGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateHelmGroupRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -1784,6 +1973,45 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateP2ProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdatePubGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePubGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdatePubHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePubHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdatePubProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdatePubProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

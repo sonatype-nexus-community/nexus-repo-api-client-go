@@ -6,6 +6,16 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AptAsset** | Pointer to ***os.File** | apt Asset  | [optional] 
 **AptTag** | Pointer to **string** | apt Tag | [optional] 
+**CondaArch** | Pointer to **string** | conda Architecture | [optional] 
+**CondaAsset** | Pointer to ***os.File** | conda Asset  | [optional] 
+**CondaBuild** | Pointer to **string** | conda Build String | [optional] 
+**CondaFilename** | Pointer to **string** | conda Filename | [optional] 
+**CondaTag** | Pointer to **string** | conda Tag | [optional] 
+**CondaVersion** | Pointer to **string** | conda Version | [optional] 
+**GoAsset** | Pointer to ***os.File** | go Asset  | [optional] 
+**GoModule** | Pointer to **string** | go Module | [optional] 
+**GoTag** | Pointer to **string** | go Tag | [optional] 
+**GoVersion** | Pointer to **string** | go Version | [optional] 
 **HelmAsset** | Pointer to ***os.File** | helm Asset  | [optional] 
 **HelmTag** | Pointer to **string** | helm Tag | [optional] 
 **Maven2ArtifactId** | Pointer to **string** | maven2 Artifact ID | [optional] 
@@ -27,6 +37,10 @@ Name | Type | Description | Notes
 **NpmTag** | Pointer to **string** | npm Tag | [optional] 
 **NugetAsset** | Pointer to ***os.File** | nuget Asset  | [optional] 
 **NugetTag** | Pointer to **string** | nuget Tag | [optional] 
+**PubAsset** | Pointer to ***os.File** | pub Asset  | [optional] 
+**PubName** | Pointer to **string** | pub Package Name | [optional] 
+**PubTag** | Pointer to **string** | pub Tag | [optional] 
+**PubVersion** | Pointer to **string** | pub Version | [optional] 
 **PypiAsset** | Pointer to ***os.File** | pypi Asset  | [optional] 
 **PypiTag** | Pointer to **string** | pypi Tag | [optional] 
 **RAsset** | Pointer to ***os.File** | r Asset  | [optional] 
@@ -130,6 +144,256 @@ SetAptTag sets AptTag field to given value.
 `func (o *UploadComponentRequest) HasAptTag() bool`
 
 HasAptTag returns a boolean if a field has been set.
+
+### GetCondaArch
+
+`func (o *UploadComponentRequest) GetCondaArch() string`
+
+GetCondaArch returns the CondaArch field if non-nil, zero value otherwise.
+
+### GetCondaArchOk
+
+`func (o *UploadComponentRequest) GetCondaArchOk() (*string, bool)`
+
+GetCondaArchOk returns a tuple with the CondaArch field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaArch
+
+`func (o *UploadComponentRequest) SetCondaArch(v string)`
+
+SetCondaArch sets CondaArch field to given value.
+
+### HasCondaArch
+
+`func (o *UploadComponentRequest) HasCondaArch() bool`
+
+HasCondaArch returns a boolean if a field has been set.
+
+### GetCondaAsset
+
+`func (o *UploadComponentRequest) GetCondaAsset() *os.File`
+
+GetCondaAsset returns the CondaAsset field if non-nil, zero value otherwise.
+
+### GetCondaAssetOk
+
+`func (o *UploadComponentRequest) GetCondaAssetOk() (**os.File, bool)`
+
+GetCondaAssetOk returns a tuple with the CondaAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaAsset
+
+`func (o *UploadComponentRequest) SetCondaAsset(v *os.File)`
+
+SetCondaAsset sets CondaAsset field to given value.
+
+### HasCondaAsset
+
+`func (o *UploadComponentRequest) HasCondaAsset() bool`
+
+HasCondaAsset returns a boolean if a field has been set.
+
+### GetCondaBuild
+
+`func (o *UploadComponentRequest) GetCondaBuild() string`
+
+GetCondaBuild returns the CondaBuild field if non-nil, zero value otherwise.
+
+### GetCondaBuildOk
+
+`func (o *UploadComponentRequest) GetCondaBuildOk() (*string, bool)`
+
+GetCondaBuildOk returns a tuple with the CondaBuild field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaBuild
+
+`func (o *UploadComponentRequest) SetCondaBuild(v string)`
+
+SetCondaBuild sets CondaBuild field to given value.
+
+### HasCondaBuild
+
+`func (o *UploadComponentRequest) HasCondaBuild() bool`
+
+HasCondaBuild returns a boolean if a field has been set.
+
+### GetCondaFilename
+
+`func (o *UploadComponentRequest) GetCondaFilename() string`
+
+GetCondaFilename returns the CondaFilename field if non-nil, zero value otherwise.
+
+### GetCondaFilenameOk
+
+`func (o *UploadComponentRequest) GetCondaFilenameOk() (*string, bool)`
+
+GetCondaFilenameOk returns a tuple with the CondaFilename field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaFilename
+
+`func (o *UploadComponentRequest) SetCondaFilename(v string)`
+
+SetCondaFilename sets CondaFilename field to given value.
+
+### HasCondaFilename
+
+`func (o *UploadComponentRequest) HasCondaFilename() bool`
+
+HasCondaFilename returns a boolean if a field has been set.
+
+### GetCondaTag
+
+`func (o *UploadComponentRequest) GetCondaTag() string`
+
+GetCondaTag returns the CondaTag field if non-nil, zero value otherwise.
+
+### GetCondaTagOk
+
+`func (o *UploadComponentRequest) GetCondaTagOk() (*string, bool)`
+
+GetCondaTagOk returns a tuple with the CondaTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaTag
+
+`func (o *UploadComponentRequest) SetCondaTag(v string)`
+
+SetCondaTag sets CondaTag field to given value.
+
+### HasCondaTag
+
+`func (o *UploadComponentRequest) HasCondaTag() bool`
+
+HasCondaTag returns a boolean if a field has been set.
+
+### GetCondaVersion
+
+`func (o *UploadComponentRequest) GetCondaVersion() string`
+
+GetCondaVersion returns the CondaVersion field if non-nil, zero value otherwise.
+
+### GetCondaVersionOk
+
+`func (o *UploadComponentRequest) GetCondaVersionOk() (*string, bool)`
+
+GetCondaVersionOk returns a tuple with the CondaVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCondaVersion
+
+`func (o *UploadComponentRequest) SetCondaVersion(v string)`
+
+SetCondaVersion sets CondaVersion field to given value.
+
+### HasCondaVersion
+
+`func (o *UploadComponentRequest) HasCondaVersion() bool`
+
+HasCondaVersion returns a boolean if a field has been set.
+
+### GetGoAsset
+
+`func (o *UploadComponentRequest) GetGoAsset() *os.File`
+
+GetGoAsset returns the GoAsset field if non-nil, zero value otherwise.
+
+### GetGoAssetOk
+
+`func (o *UploadComponentRequest) GetGoAssetOk() (**os.File, bool)`
+
+GetGoAssetOk returns a tuple with the GoAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGoAsset
+
+`func (o *UploadComponentRequest) SetGoAsset(v *os.File)`
+
+SetGoAsset sets GoAsset field to given value.
+
+### HasGoAsset
+
+`func (o *UploadComponentRequest) HasGoAsset() bool`
+
+HasGoAsset returns a boolean if a field has been set.
+
+### GetGoModule
+
+`func (o *UploadComponentRequest) GetGoModule() string`
+
+GetGoModule returns the GoModule field if non-nil, zero value otherwise.
+
+### GetGoModuleOk
+
+`func (o *UploadComponentRequest) GetGoModuleOk() (*string, bool)`
+
+GetGoModuleOk returns a tuple with the GoModule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGoModule
+
+`func (o *UploadComponentRequest) SetGoModule(v string)`
+
+SetGoModule sets GoModule field to given value.
+
+### HasGoModule
+
+`func (o *UploadComponentRequest) HasGoModule() bool`
+
+HasGoModule returns a boolean if a field has been set.
+
+### GetGoTag
+
+`func (o *UploadComponentRequest) GetGoTag() string`
+
+GetGoTag returns the GoTag field if non-nil, zero value otherwise.
+
+### GetGoTagOk
+
+`func (o *UploadComponentRequest) GetGoTagOk() (*string, bool)`
+
+GetGoTagOk returns a tuple with the GoTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGoTag
+
+`func (o *UploadComponentRequest) SetGoTag(v string)`
+
+SetGoTag sets GoTag field to given value.
+
+### HasGoTag
+
+`func (o *UploadComponentRequest) HasGoTag() bool`
+
+HasGoTag returns a boolean if a field has been set.
+
+### GetGoVersion
+
+`func (o *UploadComponentRequest) GetGoVersion() string`
+
+GetGoVersion returns the GoVersion field if non-nil, zero value otherwise.
+
+### GetGoVersionOk
+
+`func (o *UploadComponentRequest) GetGoVersionOk() (*string, bool)`
+
+GetGoVersionOk returns a tuple with the GoVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGoVersion
+
+`func (o *UploadComponentRequest) SetGoVersion(v string)`
+
+SetGoVersion sets GoVersion field to given value.
+
+### HasGoVersion
+
+`func (o *UploadComponentRequest) HasGoVersion() bool`
+
+HasGoVersion returns a boolean if a field has been set.
 
 ### GetHelmAsset
 
@@ -655,6 +919,106 @@ SetNugetTag sets NugetTag field to given value.
 `func (o *UploadComponentRequest) HasNugetTag() bool`
 
 HasNugetTag returns a boolean if a field has been set.
+
+### GetPubAsset
+
+`func (o *UploadComponentRequest) GetPubAsset() *os.File`
+
+GetPubAsset returns the PubAsset field if non-nil, zero value otherwise.
+
+### GetPubAssetOk
+
+`func (o *UploadComponentRequest) GetPubAssetOk() (**os.File, bool)`
+
+GetPubAssetOk returns a tuple with the PubAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPubAsset
+
+`func (o *UploadComponentRequest) SetPubAsset(v *os.File)`
+
+SetPubAsset sets PubAsset field to given value.
+
+### HasPubAsset
+
+`func (o *UploadComponentRequest) HasPubAsset() bool`
+
+HasPubAsset returns a boolean if a field has been set.
+
+### GetPubName
+
+`func (o *UploadComponentRequest) GetPubName() string`
+
+GetPubName returns the PubName field if non-nil, zero value otherwise.
+
+### GetPubNameOk
+
+`func (o *UploadComponentRequest) GetPubNameOk() (*string, bool)`
+
+GetPubNameOk returns a tuple with the PubName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPubName
+
+`func (o *UploadComponentRequest) SetPubName(v string)`
+
+SetPubName sets PubName field to given value.
+
+### HasPubName
+
+`func (o *UploadComponentRequest) HasPubName() bool`
+
+HasPubName returns a boolean if a field has been set.
+
+### GetPubTag
+
+`func (o *UploadComponentRequest) GetPubTag() string`
+
+GetPubTag returns the PubTag field if non-nil, zero value otherwise.
+
+### GetPubTagOk
+
+`func (o *UploadComponentRequest) GetPubTagOk() (*string, bool)`
+
+GetPubTagOk returns a tuple with the PubTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPubTag
+
+`func (o *UploadComponentRequest) SetPubTag(v string)`
+
+SetPubTag sets PubTag field to given value.
+
+### HasPubTag
+
+`func (o *UploadComponentRequest) HasPubTag() bool`
+
+HasPubTag returns a boolean if a field has been set.
+
+### GetPubVersion
+
+`func (o *UploadComponentRequest) GetPubVersion() string`
+
+GetPubVersion returns the PubVersion field if non-nil, zero value otherwise.
+
+### GetPubVersionOk
+
+`func (o *UploadComponentRequest) GetPubVersionOk() (*string, bool)`
+
+GetPubVersionOk returns a tuple with the PubVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPubVersion
+
+`func (o *UploadComponentRequest) SetPubVersion(v string)`
+
+SetPubVersion sets PubVersion field to given value.
+
+### HasPubVersion
+
+`func (o *UploadComponentRequest) HasPubVersion() bool`
+
+HasPubVersion returns a boolean if a field has been set.
 
 ### GetPypiAsset
 

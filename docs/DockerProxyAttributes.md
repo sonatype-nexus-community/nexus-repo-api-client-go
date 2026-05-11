@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CacheForeignLayers** | Pointer to **bool** | Allow Nexus Repository Manager to download and cache foreign layers | [optional] 
-**ForeignLayerUrlWhitelist** | Pointer to **[]string** |  | [optional] 
+**ForeignLayerUrlWhitelist** | Pointer to **[]string** | Regular expressions used to identify URLs that are allowed for foreign layer requests | [optional] 
 **IndexType** | Pointer to **string** | Type of Docker Index | [optional] 
 **IndexUrl** | Pointer to **string** | Url of Docker Index to use | [optional] 
 

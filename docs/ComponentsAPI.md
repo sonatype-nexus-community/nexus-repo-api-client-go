@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## UploadComponent
 
-> UploadComponent(ctx).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+> UploadComponent(ctx).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoModule(goModule).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 
 Upload a single component
 
@@ -233,6 +233,16 @@ func main() {
 	repository := "repository_example" // string | Name of the repository to which you would like to upload the component
 	aptAsset := os.NewFile(1234, "some_file") // *os.File | apt Asset  (optional)
 	aptTag := "aptTag_example" // string | apt Tag (optional)
+	condaArch := "condaArch_example" // string | conda Architecture (optional)
+	condaAsset := os.NewFile(1234, "some_file") // *os.File | conda Asset  (optional)
+	condaBuild := "condaBuild_example" // string | conda Build String (optional)
+	condaFilename := "condaFilename_example" // string | conda Filename (optional)
+	condaTag := "condaTag_example" // string | conda Tag (optional)
+	condaVersion := "condaVersion_example" // string | conda Version (optional)
+	goAsset := os.NewFile(1234, "some_file") // *os.File | go Asset  (optional)
+	goModule := "goModule_example" // string | go Module (optional)
+	goTag := "goTag_example" // string | go Tag (optional)
+	goVersion := "goVersion_example" // string | go Version (optional)
 	helmAsset := os.NewFile(1234, "some_file") // *os.File | helm Asset  (optional)
 	helmTag := "helmTag_example" // string | helm Tag (optional)
 	maven2ArtifactId := "maven2ArtifactId_example" // string | maven2 Artifact ID (optional)
@@ -254,6 +264,10 @@ func main() {
 	npmTag := "npmTag_example" // string | npm Tag (optional)
 	nugetAsset := os.NewFile(1234, "some_file") // *os.File | nuget Asset  (optional)
 	nugetTag := "nugetTag_example" // string | nuget Tag (optional)
+	pubAsset := os.NewFile(1234, "some_file") // *os.File | pub Asset  (optional)
+	pubName := "pubName_example" // string | pub Package Name (optional)
+	pubTag := "pubTag_example" // string | pub Tag (optional)
+	pubVersion := "pubVersion_example" // string | pub Version (optional)
 	pypiAsset := os.NewFile(1234, "some_file") // *os.File | pypi Asset  (optional)
 	pypiTag := "pypiTag_example" // string | pypi Tag (optional)
 	rAsset := os.NewFile(1234, "some_file") // *os.File | r Asset  (optional)
@@ -291,7 +305,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+	r, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Repository(repository).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoModule(goModule).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.UploadComponent``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -313,6 +327,16 @@ Name | Type | Description  | Notes
  **repository** | **string** | Name of the repository to which you would like to upload the component | 
  **aptAsset** | ***os.File** | apt Asset  | 
  **aptTag** | **string** | apt Tag | 
+ **condaArch** | **string** | conda Architecture | 
+ **condaAsset** | ***os.File** | conda Asset  | 
+ **condaBuild** | **string** | conda Build String | 
+ **condaFilename** | **string** | conda Filename | 
+ **condaTag** | **string** | conda Tag | 
+ **condaVersion** | **string** | conda Version | 
+ **goAsset** | ***os.File** | go Asset  | 
+ **goModule** | **string** | go Module | 
+ **goTag** | **string** | go Tag | 
+ **goVersion** | **string** | go Version | 
  **helmAsset** | ***os.File** | helm Asset  | 
  **helmTag** | **string** | helm Tag | 
  **maven2ArtifactId** | **string** | maven2 Artifact ID | 
@@ -334,6 +358,10 @@ Name | Type | Description  | Notes
  **npmTag** | **string** | npm Tag | 
  **nugetAsset** | ***os.File** | nuget Asset  | 
  **nugetTag** | **string** | nuget Tag | 
+ **pubAsset** | ***os.File** | pub Asset  | 
+ **pubName** | **string** | pub Package Name | 
+ **pubTag** | **string** | pub Tag | 
+ **pubVersion** | **string** | pub Version | 
  **pypiAsset** | ***os.File** | pypi Asset  | 
  **pypiTag** | **string** | pypi Tag | 
  **rAsset** | ***os.File** | r Asset  | 

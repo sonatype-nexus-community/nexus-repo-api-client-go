@@ -14,7 +14,6 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Terraform** | Pointer to [**TerraformAttributes**](TerraformAttributes.md) |  | [optional] 
 **Type** | Pointer to **string** | Repository type | [optional] 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
@@ -261,31 +260,6 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
-
-### GetTerraform
-
-`func (o *TerraformProxyApiRepository) GetTerraform() TerraformAttributes`
-
-GetTerraform returns the Terraform field if non-nil, zero value otherwise.
-
-### GetTerraformOk
-
-`func (o *TerraformProxyApiRepository) GetTerraformOk() (*TerraformAttributes, bool)`
-
-GetTerraformOk returns a tuple with the Terraform field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTerraform
-
-`func (o *TerraformProxyApiRepository) SetTerraform(v TerraformAttributes)`
-
-SetTerraform sets Terraform field to given value.
-
-### HasTerraform
-
-`func (o *TerraformProxyApiRepository) HasTerraform() bool`
-
-HasTerraform returns a boolean if a field has been set.
 
 ### GetType
 

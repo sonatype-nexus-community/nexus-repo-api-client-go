@@ -1,7 +1,7 @@
 /*
 Sonatype Nexus Repository Manager
 
-Testing SecurityManagementJWTAPIService
+Testing UsageHistoryAPIService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
 )
 
-func Test_v3_SecurityManagementJWTAPIService(t *testing.T) {
+func Test_v3_UsageHistoryAPIService(t *testing.T) {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementJWTAPIService ResetSecret", func(t *testing.T) {
+	t.Run("Test UsageHistoryAPIService GetUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementJWTAPI.ResetSecret(context.Background()).Execute()
+		httpRes, err := apiClient.UsageHistoryAPI.GetUsageHistory(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

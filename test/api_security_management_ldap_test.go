@@ -33,6 +33,17 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SecurityManagementLDAPAPIService ClearCache1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.ClearCache1(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SecurityManagementLDAPAPIService CreateLdapServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -83,6 +94,18 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SecurityManagementLDAPAPIService GetTemplates", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetTemplates(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SecurityManagementLDAPAPIService UpdateLdapServer", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -92,6 +115,40 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 		httpRes, err := apiClient.SecurityManagementLDAPAPI.UpdateLdapServer(context.Background(), name).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService VerifyConnection1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyConnection1(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService VerifyLogin", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyLogin(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService VerifyUserMapping", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyUserMapping(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

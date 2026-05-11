@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRule** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Terraform** | Pointer to [**TerraformAttributes**](TerraformAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -228,31 +227,6 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
-
-### GetTerraform
-
-`func (o *TerraformProxyRepositoryApiRequest) GetTerraform() TerraformAttributes`
-
-GetTerraform returns the Terraform field if non-nil, zero value otherwise.
-
-### GetTerraformOk
-
-`func (o *TerraformProxyRepositoryApiRequest) GetTerraformOk() (*TerraformAttributes, bool)`
-
-GetTerraformOk returns a tuple with the Terraform field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetTerraform
-
-`func (o *TerraformProxyRepositoryApiRequest) SetTerraform(v TerraformAttributes)`
-
-SetTerraform sets Terraform field to given value.
-
-### HasTerraform
-
-`func (o *TerraformProxyRepositoryApiRequest) HasTerraform() bool`
-
-HasTerraform returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

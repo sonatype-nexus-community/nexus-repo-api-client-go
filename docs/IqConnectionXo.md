@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **AuthenticationType** | **string** | Authentication method | 
 **Enabled** | Pointer to **bool** | Whether to use Sonatype Repository Firewall | [optional] 
 **FailOpenModeEnabled** | Pointer to **bool** | Allow by default when quarantine is enabled and the IQ connection fails | [optional] 
+**HasFirewall** | Pointer to **bool** | Whether the connected IQ Server has Firewall enabled | [optional] 
+**LicensedSolutions** | Pointer to [**[]LicensedSolution**](LicensedSolution.md) | List of licensed solutions available in the connected IQ Server | [optional] 
 **Password** | Pointer to **string** | Credentials for the Sonatype Repository Firewall User | [optional] 
 **Properties** | Pointer to **string** | Additional properties to configure for Sonatype Repository Firewall | [optional] 
 **ShowLink** | Pointer to **bool** | Show Sonatype Repository Firewall link in Browse menu when server is enabled | [optional] 
@@ -103,6 +105,56 @@ SetFailOpenModeEnabled sets FailOpenModeEnabled field to given value.
 `func (o *IqConnectionXo) HasFailOpenModeEnabled() bool`
 
 HasFailOpenModeEnabled returns a boolean if a field has been set.
+
+### GetHasFirewall
+
+`func (o *IqConnectionXo) GetHasFirewall() bool`
+
+GetHasFirewall returns the HasFirewall field if non-nil, zero value otherwise.
+
+### GetHasFirewallOk
+
+`func (o *IqConnectionXo) GetHasFirewallOk() (*bool, bool)`
+
+GetHasFirewallOk returns a tuple with the HasFirewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHasFirewall
+
+`func (o *IqConnectionXo) SetHasFirewall(v bool)`
+
+SetHasFirewall sets HasFirewall field to given value.
+
+### HasHasFirewall
+
+`func (o *IqConnectionXo) HasHasFirewall() bool`
+
+HasHasFirewall returns a boolean if a field has been set.
+
+### GetLicensedSolutions
+
+`func (o *IqConnectionXo) GetLicensedSolutions() []LicensedSolution`
+
+GetLicensedSolutions returns the LicensedSolutions field if non-nil, zero value otherwise.
+
+### GetLicensedSolutionsOk
+
+`func (o *IqConnectionXo) GetLicensedSolutionsOk() (*[]LicensedSolution, bool)`
+
+GetLicensedSolutionsOk returns a tuple with the LicensedSolutions field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLicensedSolutions
+
+`func (o *IqConnectionXo) SetLicensedSolutions(v []LicensedSolution)`
+
+SetLicensedSolutions sets LicensedSolutions field to given value.
+
+### HasLicensedSolutions
+
+`func (o *IqConnectionXo) HasLicensedSolutions() bool`
+
+HasLicensedSolutions returns a boolean if a field has been set.
 
 ### GetPassword
 

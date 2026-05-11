@@ -9,11 +9,11 @@ Name | Type | Description | Notes
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
 **Format** | Pointer to **string** | Component format held in this repository | [optional] 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
-**Online** | **bool** | Whether this repository accepts incoming requests | 
+**Name** | Pointer to **string** | A unique identifier for this repository | [optional] [readonly] 
+**Online** | **bool** | Whether this repository accepts incoming requests | [readonly] 
 **Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
 **Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
-**Url** | Pointer to **string** | URL to the repository | [optional] 
+**Url** | Pointer to **string** | URL to the repository | [optional] [readonly] 
 
 ## Methods
 

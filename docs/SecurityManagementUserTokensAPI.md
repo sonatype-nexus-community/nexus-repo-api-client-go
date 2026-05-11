@@ -4,16 +4,16 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](SecurityManagementUserTokensAPI.md#List) | **Get** /v1/security/user-tokens/tokens | List all user tokens
+[**List1**](SecurityManagementUserTokensAPI.md#List1) | **Get** /v1/security/user-tokens/tokens | List all user tokens
 [**ResetAllUserTokens**](SecurityManagementUserTokensAPI.md#ResetAllUserTokens) | **Delete** /v1/security/user-tokens | 
 [**ServiceStatus**](SecurityManagementUserTokensAPI.md#ServiceStatus) | **Get** /v1/security/user-tokens | Show if the user token capability is enabled or not
 [**SetServiceStatus**](SecurityManagementUserTokensAPI.md#SetServiceStatus) | **Put** /v1/security/user-tokens | 
 
 
 
-## List
+## List1
 
-> UserTokenListXO List(ctx).Realm(realm).UserId(userId).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+> UserTokenListXO List1(ctx).Realm(realm).UserId(userId).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 
 List all user tokens
 
@@ -40,13 +40,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUserTokensAPI.List(context.Background()).Realm(realm).UserId(userId).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+	resp, r, err := apiClient.SecurityManagementUserTokensAPI.List1(context.Background()).Realm(realm).UserId(userId).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUserTokensAPI.List``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUserTokensAPI.List1``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: UserTokenListXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUserTokensAPI.List`: %v\n", resp)
+	// response from `List1`: UserTokenListXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUserTokensAPI.List1`: %v\n", resp)
 }
 ```
 
@@ -56,7 +56,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiList1Request struct via the builder pattern
 
 
 Name | Type | Description  | Notes

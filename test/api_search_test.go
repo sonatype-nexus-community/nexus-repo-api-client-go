@@ -57,4 +57,15 @@ func Test_v3_SearchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SearchAPIService Suggest", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SearchAPI.Suggest(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 }

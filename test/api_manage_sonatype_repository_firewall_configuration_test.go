@@ -69,11 +69,35 @@ func Test_v3_ManageSonatypeRepositoryFirewallConfigurationAPIService(t *testing.
 
 	})
 
-	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService GetConfiguration", func(t *testing.T) {
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService GetCapabilities", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService GetCapabilities1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities1(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService GetConfiguration1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -92,13 +116,26 @@ func Test_v3_ManageSonatypeRepositoryFirewallConfigurationAPIService(t *testing.
 
 	})
 
-	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService UpdateConfiguration", func(t *testing.T) {
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService TestNewConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateConfiguration(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.TestNewConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ManageSonatypeRepositoryFirewallConfigurationAPIService UpdateConfiguration1", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateConfiguration1(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

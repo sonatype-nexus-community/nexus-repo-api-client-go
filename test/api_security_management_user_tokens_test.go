@@ -22,11 +22,11 @@ func Test_v3_SecurityManagementUserTokensAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementUserTokensAPIService List", func(t *testing.T) {
+	t.Run("Test SecurityManagementUserTokensAPIService List1", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.List(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.List1(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

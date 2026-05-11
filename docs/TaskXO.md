@@ -4,13 +4,22 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AlertEmail** | Pointer to **string** |  | [optional] 
+**CronExpression** | Pointer to **string** |  | [optional] 
 **CurrentState** | Pointer to **string** |  | [optional] 
+**Enabled** | Pointer to **bool** |  | [optional] 
 **Id** | Pointer to **string** |  | [optional] 
 **LastRun** | Pointer to **time.Time** |  | [optional] 
 **LastRunResult** | Pointer to **string** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **NextRun** | Pointer to **time.Time** |  | [optional] 
+**NotificationCondition** | Pointer to **string** |  | [optional] 
+**Properties** | Pointer to **map[string]string** |  | [optional] 
+**RecurringDays** | Pointer to **[]int32** |  | [optional] 
+**Schedule** | Pointer to **string** |  | [optional] 
+**StartDate** | Pointer to **time.Time** |  | [optional] 
+**TimeZoneOffset** | Pointer to **string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -31,6 +40,56 @@ will change when the set of required properties is changed
 NewTaskXOWithDefaults instantiates a new TaskXO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAlertEmail
+
+`func (o *TaskXO) GetAlertEmail() string`
+
+GetAlertEmail returns the AlertEmail field if non-nil, zero value otherwise.
+
+### GetAlertEmailOk
+
+`func (o *TaskXO) GetAlertEmailOk() (*string, bool)`
+
+GetAlertEmailOk returns a tuple with the AlertEmail field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlertEmail
+
+`func (o *TaskXO) SetAlertEmail(v string)`
+
+SetAlertEmail sets AlertEmail field to given value.
+
+### HasAlertEmail
+
+`func (o *TaskXO) HasAlertEmail() bool`
+
+HasAlertEmail returns a boolean if a field has been set.
+
+### GetCronExpression
+
+`func (o *TaskXO) GetCronExpression() string`
+
+GetCronExpression returns the CronExpression field if non-nil, zero value otherwise.
+
+### GetCronExpressionOk
+
+`func (o *TaskXO) GetCronExpressionOk() (*string, bool)`
+
+GetCronExpressionOk returns a tuple with the CronExpression field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCronExpression
+
+`func (o *TaskXO) SetCronExpression(v string)`
+
+SetCronExpression sets CronExpression field to given value.
+
+### HasCronExpression
+
+`func (o *TaskXO) HasCronExpression() bool`
+
+HasCronExpression returns a boolean if a field has been set.
 
 ### GetCurrentState
 
@@ -56,6 +115,31 @@ SetCurrentState sets CurrentState field to given value.
 `func (o *TaskXO) HasCurrentState() bool`
 
 HasCurrentState returns a boolean if a field has been set.
+
+### GetEnabled
+
+`func (o *TaskXO) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *TaskXO) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *TaskXO) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+### HasEnabled
+
+`func (o *TaskXO) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetId
 
@@ -206,6 +290,156 @@ SetNextRun sets NextRun field to given value.
 `func (o *TaskXO) HasNextRun() bool`
 
 HasNextRun returns a boolean if a field has been set.
+
+### GetNotificationCondition
+
+`func (o *TaskXO) GetNotificationCondition() string`
+
+GetNotificationCondition returns the NotificationCondition field if non-nil, zero value otherwise.
+
+### GetNotificationConditionOk
+
+`func (o *TaskXO) GetNotificationConditionOk() (*string, bool)`
+
+GetNotificationConditionOk returns a tuple with the NotificationCondition field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNotificationCondition
+
+`func (o *TaskXO) SetNotificationCondition(v string)`
+
+SetNotificationCondition sets NotificationCondition field to given value.
+
+### HasNotificationCondition
+
+`func (o *TaskXO) HasNotificationCondition() bool`
+
+HasNotificationCondition returns a boolean if a field has been set.
+
+### GetProperties
+
+`func (o *TaskXO) GetProperties() map[string]string`
+
+GetProperties returns the Properties field if non-nil, zero value otherwise.
+
+### GetPropertiesOk
+
+`func (o *TaskXO) GetPropertiesOk() (*map[string]string, bool)`
+
+GetPropertiesOk returns a tuple with the Properties field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetProperties
+
+`func (o *TaskXO) SetProperties(v map[string]string)`
+
+SetProperties sets Properties field to given value.
+
+### HasProperties
+
+`func (o *TaskXO) HasProperties() bool`
+
+HasProperties returns a boolean if a field has been set.
+
+### GetRecurringDays
+
+`func (o *TaskXO) GetRecurringDays() []int32`
+
+GetRecurringDays returns the RecurringDays field if non-nil, zero value otherwise.
+
+### GetRecurringDaysOk
+
+`func (o *TaskXO) GetRecurringDaysOk() (*[]int32, bool)`
+
+GetRecurringDaysOk returns a tuple with the RecurringDays field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurringDays
+
+`func (o *TaskXO) SetRecurringDays(v []int32)`
+
+SetRecurringDays sets RecurringDays field to given value.
+
+### HasRecurringDays
+
+`func (o *TaskXO) HasRecurringDays() bool`
+
+HasRecurringDays returns a boolean if a field has been set.
+
+### GetSchedule
+
+`func (o *TaskXO) GetSchedule() string`
+
+GetSchedule returns the Schedule field if non-nil, zero value otherwise.
+
+### GetScheduleOk
+
+`func (o *TaskXO) GetScheduleOk() (*string, bool)`
+
+GetScheduleOk returns a tuple with the Schedule field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSchedule
+
+`func (o *TaskXO) SetSchedule(v string)`
+
+SetSchedule sets Schedule field to given value.
+
+### HasSchedule
+
+`func (o *TaskXO) HasSchedule() bool`
+
+HasSchedule returns a boolean if a field has been set.
+
+### GetStartDate
+
+`func (o *TaskXO) GetStartDate() time.Time`
+
+GetStartDate returns the StartDate field if non-nil, zero value otherwise.
+
+### GetStartDateOk
+
+`func (o *TaskXO) GetStartDateOk() (*time.Time, bool)`
+
+GetStartDateOk returns a tuple with the StartDate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStartDate
+
+`func (o *TaskXO) SetStartDate(v time.Time)`
+
+SetStartDate sets StartDate field to given value.
+
+### HasStartDate
+
+`func (o *TaskXO) HasStartDate() bool`
+
+HasStartDate returns a boolean if a field has been set.
+
+### GetTimeZoneOffset
+
+`func (o *TaskXO) GetTimeZoneOffset() string`
+
+GetTimeZoneOffset returns the TimeZoneOffset field if non-nil, zero value otherwise.
+
+### GetTimeZoneOffsetOk
+
+`func (o *TaskXO) GetTimeZoneOffsetOk() (*string, bool)`
+
+GetTimeZoneOffsetOk returns a tuple with the TimeZoneOffset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTimeZoneOffset
+
+`func (o *TaskXO) SetTimeZoneOffset(v string)`
+
+SetTimeZoneOffset sets TimeZoneOffset field to given value.
+
+### HasTimeZoneOffset
+
+`func (o *TaskXO) HasTimeZoneOffset() bool`
+
+HasTimeZoneOffset returns a boolean if a field has been set.
 
 ### GetType
 
