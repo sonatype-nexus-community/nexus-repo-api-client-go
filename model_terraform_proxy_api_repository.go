@@ -35,6 +35,7 @@ type TerraformProxyApiRepository struct {
 	// The name of the routing rule assigned to this repository
 	RoutingRuleName *string `json:"routingRuleName,omitempty"`
 	Storage StorageAttributes `json:"storage"`
+	Terraform *TerraformAttributes `json:"terraform,omitempty"`
 	// Repository type
 	Type *string `json:"type,omitempty"`
 	// URL to the repository
@@ -345,6 +346,38 @@ func (o *TerraformProxyApiRepository) SetStorage(v StorageAttributes) {
 	o.Storage = v
 }
 
+// GetTerraform returns the Terraform field value if set, zero value otherwise.
+func (o *TerraformProxyApiRepository) GetTerraform() TerraformAttributes {
+	if o == nil || IsNil(o.Terraform) {
+		var ret TerraformAttributes
+		return ret
+	}
+	return *o.Terraform
+}
+
+// GetTerraformOk returns a tuple with the Terraform field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *TerraformProxyApiRepository) GetTerraformOk() (*TerraformAttributes, bool) {
+	if o == nil || IsNil(o.Terraform) {
+		return nil, false
+	}
+	return o.Terraform, true
+}
+
+// HasTerraform returns a boolean if a field has been set.
+func (o *TerraformProxyApiRepository) HasTerraform() bool {
+	if o != nil && !IsNil(o.Terraform) {
+		return true
+	}
+
+	return false
+}
+
+// SetTerraform gets a reference to the given TerraformAttributes and assigns it to the Terraform field.
+func (o *TerraformProxyApiRepository) SetTerraform(v TerraformAttributes) {
+	o.Terraform = &v
+}
+
 // GetType returns the Type field value if set, zero value otherwise.
 func (o *TerraformProxyApiRepository) GetType() string {
 	if o == nil || IsNil(o.Type) {
@@ -439,6 +472,9 @@ func (o TerraformProxyApiRepository) ToMap() (map[string]interface{}, error) {
 		toSerialize["routingRuleName"] = o.RoutingRuleName
 	}
 	toSerialize["storage"] = o.Storage
+	if !IsNil(o.Terraform) {
+		toSerialize["terraform"] = o.Terraform
+	}
 	if !IsNil(o.Type) {
 		toSerialize["type"] = o.Type
 	}

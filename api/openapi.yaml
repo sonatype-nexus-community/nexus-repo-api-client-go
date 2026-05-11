@@ -23295,28 +23295,30 @@ components:
             ntlmHost: ntlmHost
             preemptive: false
             username: username
-        proxy:
-          preserveEncodedCharacters: false
-          contentMaxAge: 1440
-          metadataMaxAge: 1440
-          remoteUrl: https://remote.repository.com
         negativeCache:
           timeToLive: 1440
           enabled: true
-        routingRuleName: routingRuleName
-        cleanup:
-          policyNames:
-          - policyNames
-          - policyNames
         format: terraform
-        name: internal
-        online: true
         storage:
           strictContentTypeValidation: true
           writePolicy: allow_once
           blobStoreName: default
         type: proxy
         url: http://localhost:8081/repository/terraform-example
+        proxy:
+          preserveEncodedCharacters: false
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        name: internal
+        online: true
+        terraform:
+          requireAuthentication: false
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
@@ -23346,6 +23348,8 @@ components:
           type: string
         storage:
           $ref: "#/components/schemas/StorageAttributes"
+        terraform:
+          $ref: "#/components/schemas/TerraformAttributes"
         type:
           description: Repository type
           example: proxy
