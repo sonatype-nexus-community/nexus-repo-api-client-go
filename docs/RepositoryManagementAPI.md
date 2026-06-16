@@ -4,6 +4,12 @@ All URIs are relative to *http://localhost/service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**CreateAlpineGroupRepository**](RepositoryManagementAPI.md#CreateAlpineGroupRepository) | **Post** /v1/repositories/alpine/group | Create Alpine group repository
+[**CreateAlpineHostedRepository**](RepositoryManagementAPI.md#CreateAlpineHostedRepository) | **Post** /v1/repositories/alpine/hosted | Create Alpine hosted repository
+[**CreateAlpineProxyRepository**](RepositoryManagementAPI.md#CreateAlpineProxyRepository) | **Post** /v1/repositories/alpine/proxy | Create Alpine proxy repository
+[**CreateAnsiblegalaxyGroupRepository**](RepositoryManagementAPI.md#CreateAnsiblegalaxyGroupRepository) | **Post** /v1/repositories/ansiblegalaxy/group | Create Ansible Galaxy group repository
+[**CreateAnsiblegalaxyHostedRepository**](RepositoryManagementAPI.md#CreateAnsiblegalaxyHostedRepository) | **Post** /v1/repositories/ansiblegalaxy/hosted | Create Ansible Galaxy hosted repository
+[**CreateAnsiblegalaxyProxyRepository**](RepositoryManagementAPI.md#CreateAnsiblegalaxyProxyRepository) | **Post** /v1/repositories/ansiblegalaxy/proxy | Create Ansible Galaxy proxy repository
 [**CreateAptHostedRepository**](RepositoryManagementAPI.md#CreateAptHostedRepository) | **Post** /v1/repositories/apt/hosted | Create APT hosted repository
 [**CreateAptProxyRepository**](RepositoryManagementAPI.md#CreateAptProxyRepository) | **Post** /v1/repositories/apt/proxy | Create APT proxy repository
 [**CreateCargoGroupRepository**](RepositoryManagementAPI.md#CreateCargoGroupRepository) | **Post** /v1/repositories/cargo/group | Create cargo group repository
@@ -22,6 +28,7 @@ Method | HTTP request | Description
 [**CreateDockerProxyRepository**](RepositoryManagementAPI.md#CreateDockerProxyRepository) | **Post** /v1/repositories/docker/proxy | Create Docker proxy repository
 [**CreateGitlfsHostedRepository**](RepositoryManagementAPI.md#CreateGitlfsHostedRepository) | **Post** /v1/repositories/gitlfs/hosted | Create Git LFS hosted repository
 [**CreateGoGroupRepository**](RepositoryManagementAPI.md#CreateGoGroupRepository) | **Post** /v1/repositories/go/group | Create a Go group repository
+[**CreateGoHostedRepository**](RepositoryManagementAPI.md#CreateGoHostedRepository) | **Post** /v1/repositories/go/hosted | Create a Go hosted repository
 [**CreateGoProxyRepository**](RepositoryManagementAPI.md#CreateGoProxyRepository) | **Post** /v1/repositories/go/proxy | Create a Go proxy repository
 [**CreateHelmGroupRepository**](RepositoryManagementAPI.md#CreateHelmGroupRepository) | **Post** /v1/repositories/helm/group | Create Helm group repository
 [**CreateHelmHostedRepository**](RepositoryManagementAPI.md#CreateHelmHostedRepository) | **Post** /v1/repositories/helm/hosted | Create Helm hosted repository
@@ -67,6 +74,12 @@ Method | HTTP request | Description
 [**DeleteRepository**](RepositoryManagementAPI.md#DeleteRepository) | **Delete** /v1/repositories/{repositoryName} | Delete repository of any format
 [**DisableRepositoryHealthCheck**](RepositoryManagementAPI.md#DisableRepositoryHealthCheck) | **Delete** /v1/repositories/{repositoryName}/health-check | Disable repository health check. Proxy repositories only.
 [**GetAllRepositories**](RepositoryManagementAPI.md#GetAllRepositories) | **Get** /v1/repositories | List repositories
+[**GetAlpineGroupRepository**](RepositoryManagementAPI.md#GetAlpineGroupRepository) | **Get** /v1/repositories/alpine/group/{repositoryName} | Get repository
+[**GetAlpineHostedRepository**](RepositoryManagementAPI.md#GetAlpineHostedRepository) | **Get** /v1/repositories/alpine/hosted/{repositoryName} | Get repository
+[**GetAlpineProxyRepository**](RepositoryManagementAPI.md#GetAlpineProxyRepository) | **Get** /v1/repositories/alpine/proxy/{repositoryName} | Get repository
+[**GetAnsiblegalaxyGroupRepository**](RepositoryManagementAPI.md#GetAnsiblegalaxyGroupRepository) | **Get** /v1/repositories/ansiblegalaxy/group/{repositoryName} | Get repository
+[**GetAnsiblegalaxyHostedRepository**](RepositoryManagementAPI.md#GetAnsiblegalaxyHostedRepository) | **Get** /v1/repositories/ansiblegalaxy/hosted/{repositoryName} | Get repository
+[**GetAnsiblegalaxyProxyRepository**](RepositoryManagementAPI.md#GetAnsiblegalaxyProxyRepository) | **Get** /v1/repositories/ansiblegalaxy/proxy/{repositoryName} | Get repository
 [**GetAptHostedRepository**](RepositoryManagementAPI.md#GetAptHostedRepository) | **Get** /v1/repositories/apt/hosted/{repositoryName} | Get repository
 [**GetAptProxyRepository**](RepositoryManagementAPI.md#GetAptProxyRepository) | **Get** /v1/repositories/apt/proxy/{repositoryName} | Get repository
 [**GetCargoGroupRepository**](RepositoryManagementAPI.md#GetCargoGroupRepository) | **Get** /v1/repositories/cargo/group/{repositoryName} | Get repository
@@ -85,6 +98,7 @@ Method | HTTP request | Description
 [**GetDockerProxyRepository**](RepositoryManagementAPI.md#GetDockerProxyRepository) | **Get** /v1/repositories/docker/proxy/{repositoryName} | Get repository
 [**GetGitlfsHostedRepository**](RepositoryManagementAPI.md#GetGitlfsHostedRepository) | **Get** /v1/repositories/gitlfs/hosted/{repositoryName} | Get repository
 [**GetGoGroupRepository**](RepositoryManagementAPI.md#GetGoGroupRepository) | **Get** /v1/repositories/go/group/{repositoryName} | Get repository
+[**GetGoHostedRepository**](RepositoryManagementAPI.md#GetGoHostedRepository) | **Get** /v1/repositories/go/hosted/{repositoryName} | Get repository
 [**GetGoProxyRepository**](RepositoryManagementAPI.md#GetGoProxyRepository) | **Get** /v1/repositories/go/proxy/{repositoryName} | Get repository
 [**GetHelmGroupRepository**](RepositoryManagementAPI.md#GetHelmGroupRepository) | **Get** /v1/repositories/helm/group/{repositoryName} | Get repository
 [**GetHelmHostedRepository**](RepositoryManagementAPI.md#GetHelmHostedRepository) | **Get** /v1/repositories/helm/hosted/{repositoryName} | Get repository
@@ -126,6 +140,12 @@ Method | HTTP request | Description
 [**GetYumGroupRepository**](RepositoryManagementAPI.md#GetYumGroupRepository) | **Get** /v1/repositories/yum/group/{repositoryName} | Get repository
 [**GetYumHostedRepository**](RepositoryManagementAPI.md#GetYumHostedRepository) | **Get** /v1/repositories/yum/hosted/{repositoryName} | Get repository
 [**GetYumProxyRepository**](RepositoryManagementAPI.md#GetYumProxyRepository) | **Get** /v1/repositories/yum/proxy/{repositoryName} | Get repository
+[**UpdateAlpineGroupRepository**](RepositoryManagementAPI.md#UpdateAlpineGroupRepository) | **Put** /v1/repositories/alpine/group/{repositoryName} | Update Alpine group repository
+[**UpdateAlpineHostedRepository**](RepositoryManagementAPI.md#UpdateAlpineHostedRepository) | **Put** /v1/repositories/alpine/hosted/{repositoryName} | Update Alpine hosted repository
+[**UpdateAlpineProxyRepository**](RepositoryManagementAPI.md#UpdateAlpineProxyRepository) | **Put** /v1/repositories/alpine/proxy/{repositoryName} | Update Alpine proxy repository
+[**UpdateAnsiblegalaxyGroupRepository**](RepositoryManagementAPI.md#UpdateAnsiblegalaxyGroupRepository) | **Put** /v1/repositories/ansiblegalaxy/group/{repositoryName} | Update Ansible Galaxy group repository
+[**UpdateAnsiblegalaxyHostedRepository**](RepositoryManagementAPI.md#UpdateAnsiblegalaxyHostedRepository) | **Put** /v1/repositories/ansiblegalaxy/hosted/{repositoryName} | Update Ansible Galaxy hosted repository
+[**UpdateAnsiblegalaxyProxyRepository**](RepositoryManagementAPI.md#UpdateAnsiblegalaxyProxyRepository) | **Put** /v1/repositories/ansiblegalaxy/proxy/{repositoryName} | Update Ansible Galaxy proxy repository
 [**UpdateAptHostedRepository**](RepositoryManagementAPI.md#UpdateAptHostedRepository) | **Put** /v1/repositories/apt/hosted/{repositoryName} | Update APT hosted repository
 [**UpdateAptProxyRepository**](RepositoryManagementAPI.md#UpdateAptProxyRepository) | **Put** /v1/repositories/apt/proxy/{repositoryName} | Update APT proxy repository
 [**UpdateCargoGroupRepository**](RepositoryManagementAPI.md#UpdateCargoGroupRepository) | **Put** /v1/repositories/cargo/group/{repositoryName} | Update cargo group repository
@@ -144,6 +164,7 @@ Method | HTTP request | Description
 [**UpdateDockerProxyRepository**](RepositoryManagementAPI.md#UpdateDockerProxyRepository) | **Put** /v1/repositories/docker/proxy/{repositoryName} | Update Docker proxy repository
 [**UpdateGitlfsHostedRepository**](RepositoryManagementAPI.md#UpdateGitlfsHostedRepository) | **Put** /v1/repositories/gitlfs/hosted/{repositoryName} | Update Git LFS hosted repository
 [**UpdateGoGroupRepository**](RepositoryManagementAPI.md#UpdateGoGroupRepository) | **Put** /v1/repositories/go/group/{repositoryName} | Update a Go group repository
+[**UpdateGoHostedRepository**](RepositoryManagementAPI.md#UpdateGoHostedRepository) | **Put** /v1/repositories/go/hosted/{repositoryName} | Update a Go hosted repository
 [**UpdateGoProxyRepository**](RepositoryManagementAPI.md#UpdateGoProxyRepository) | **Put** /v1/repositories/go/proxy/{repositoryName} | Update a Go proxy repository
 [**UpdateHelmGroupRepository**](RepositoryManagementAPI.md#UpdateHelmGroupRepository) | **Put** /v1/repositories/helm/group/{repositoryName} | Update Helm group repository
 [**UpdateHelmHostedRepository**](RepositoryManagementAPI.md#UpdateHelmHostedRepository) | **Put** /v1/repositories/helm/hosted/{repositoryName} | Update Helm hosted repository
@@ -184,6 +205,384 @@ Method | HTTP request | Description
 [**UpdateYumHostedRepository**](RepositoryManagementAPI.md#UpdateYumHostedRepository) | **Put** /v1/repositories/yum/hosted/{repositoryName} | Update Yum hosted repository
 [**UpdateYumProxyRepository**](RepositoryManagementAPI.md#UpdateYumProxyRepository) | **Put** /v1/repositories/yum/proxy/{repositoryName} | Update Yum proxy repository
 
+
+
+## CreateAlpineGroupRepository
+
+> CreateAlpineGroupRepository(ctx).Body(body).Execute()
+
+Create Alpine group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAlpineGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAlpineHostedRepository
+
+> CreateAlpineHostedRepository(ctx).Body(body).Execute()
+
+Create Alpine hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAlpineHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAlpineProxyRepository
+
+> CreateAlpineProxyRepository(ctx).Body(body).Execute()
+
+Create Alpine proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineProxyRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAlpineProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAnsiblegalaxyGroupRepository
+
+> CreateAnsiblegalaxyGroupRepository(ctx).Body(body).Execute()
+
+Create Ansible Galaxy group repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Configuration for the new Ansible Galaxy group repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyGroupRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy group repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAnsiblegalaxyHostedRepository
+
+> CreateAnsiblegalaxyHostedRepository(ctx).Body(body).Execute()
+
+Create Ansible Galaxy hosted repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Configuration for the new Ansible Galaxy hosted repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy hosted repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateAnsiblegalaxyProxyRepository
+
+> CreateAnsiblegalaxyProxyRepository(ctx).Body(body).Execute()
+
+Create Ansible Galaxy proxy repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Configuration for the new Ansible Galaxy proxy repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyProxyRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy proxy repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## CreateAptHostedRepository
@@ -1283,6 +1682,68 @@ Other parameters are passed through a pointer to a apiCreateGoGroupRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateGoHostedRepository
+
+> CreateGoHostedRepository(ctx).Body(body).Execute()
+
+Create a Go hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	body := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateGoHostedRepository(context.Background()).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateGoHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateGoHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -4115,6 +4576,414 @@ Other parameters are passed through a pointer to a apiGetAllRepositoriesRequest 
 [[Back to README]](../README.md)
 
 
+## GetAlpineGroupRepository
+
+> SimpleApiGroupRepository GetAlpineGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAlpineGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAlpineGroupRepository`: SimpleApiGroupRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAlpineGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAlpineHostedRepository
+
+> SimpleApiHostedRepository GetAlpineHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAlpineHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAlpineHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAlpineHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAlpineProxyRepository
+
+> SimpleApiProxyRepository GetAlpineProxyRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAlpineProxyRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAlpineProxyRepository`: SimpleApiProxyRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineProxyRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAlpineProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAnsiblegalaxyGroupRepository
+
+> AnsibleGalaxyGroupApiRepository GetAnsiblegalaxyGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAnsiblegalaxyGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAnsiblegalaxyGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAnsiblegalaxyGroupRepository`: AnsibleGalaxyGroupApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAnsiblegalaxyGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAnsiblegalaxyGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AnsibleGalaxyGroupApiRepository**](AnsibleGalaxyGroupApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAnsiblegalaxyHostedRepository
+
+> AnsibleGalaxyHostedApiRepository GetAnsiblegalaxyHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAnsiblegalaxyHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAnsiblegalaxyHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAnsiblegalaxyHostedRepository`: AnsibleGalaxyHostedApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAnsiblegalaxyHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAnsiblegalaxyHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AnsibleGalaxyHostedApiRepository**](AnsibleGalaxyHostedApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetAnsiblegalaxyProxyRepository
+
+> AnsibleGalaxyProxyApiRepository GetAnsiblegalaxyProxyRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetAnsiblegalaxyProxyRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAnsiblegalaxyProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetAnsiblegalaxyProxyRepository`: AnsibleGalaxyProxyApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAnsiblegalaxyProxyRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetAnsiblegalaxyProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AnsibleGalaxyProxyApiRepository**](AnsibleGalaxyProxyApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetAptHostedRepository
 
 > AptHostedApiRepository GetAptHostedRepository(ctx, repositoryName).Execute()
@@ -5324,6 +6193,74 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetGoHostedRepository
+
+> SimpleApiHostedRepository GetGoHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetGoHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetGoHostedRepository`: SimpleApiHostedRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetGoHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
 
 ### Authorization
 
@@ -8118,6 +9055,420 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateAlpineGroupRepository
+
+> UpdateAlpineGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Alpine group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAlpineGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAlpineHostedRepository
+
+> UpdateAlpineHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Alpine hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAlpineHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAlpineProxyRepository
+
+> UpdateAlpineProxyRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Alpine proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAlpineProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAnsiblegalaxyGroupRepository
+
+> UpdateAnsiblegalaxyGroupRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Ansible Galaxy group repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Updated configuration for the Ansible Galaxy group repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy group repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAnsiblegalaxyHostedRepository
+
+> UpdateAnsiblegalaxyHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Ansible Galaxy hosted repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Updated configuration for the Ansible Galaxy hosted repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy hosted repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateAnsiblegalaxyProxyRepository
+
+> UpdateAnsiblegalaxyProxyRepository(ctx, repositoryName).Body(body).Execute()
+
+Update Ansible Galaxy proxy repository
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Updated configuration for the Ansible Galaxy proxy repository
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy proxy repository | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateAptHostedRepository
 
 > UpdateAptHostedRepository(ctx, repositoryName).Body(body).Execute()
@@ -9323,6 +10674,74 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateGoHostedRepository
+
+> UpdateGoHostedRepository(ctx, repositoryName).Body(body).Execute()
+
+Update a Go hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	body := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateGoHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateGoHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateGoHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 

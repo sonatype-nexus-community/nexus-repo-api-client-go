@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **Properties** | Pointer to **map[string]string** |  | [optional] 
 **State** | Pointer to **string** |  | [optional] 
 **StateDescription** | Pointer to **string** |  | [optional] 
+**Status** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to **map[string]string** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **TypeName** | Pointer to **string** |  | [optional] 
@@ -260,6 +261,31 @@ SetStateDescription sets StateDescription field to given value.
 `func (o *CapabilityDTO) HasStateDescription() bool`
 
 HasStateDescription returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *CapabilityDTO) GetStatus() string`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *CapabilityDTO) GetStatusOk() (*string, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *CapabilityDTO) SetStatus(v string)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *CapabilityDTO) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
 
 ### GetTags
 

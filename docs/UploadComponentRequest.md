@@ -4,6 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**AlpineAsset** | Pointer to ***os.File** | alpine Asset  | [optional] 
+**AlpineRepository** | Pointer to **string** | alpine Repository | [optional] 
+**AlpineTag** | Pointer to **string** | alpine Tag | [optional] 
+**AlpineVersion** | Pointer to **string** | alpine Alpine Version | [optional] 
+**AnsiblegalaxyAsset** | Pointer to ***os.File** | ansiblegalaxy Asset  | [optional] 
+**AnsiblegalaxyName** | Pointer to **string** | ansiblegalaxy Name | [optional] 
+**AnsiblegalaxyNamespace** | Pointer to **string** | ansiblegalaxy Namespace | [optional] 
+**AnsiblegalaxyTag** | Pointer to **string** | ansiblegalaxy Tag | [optional] 
+**AnsiblegalaxyVersion** | Pointer to **string** | ansiblegalaxy Version | [optional] 
 **AptAsset** | Pointer to ***os.File** | apt Asset  | [optional] 
 **AptTag** | Pointer to **string** | apt Tag | [optional] 
 **CondaArch** | Pointer to **string** | conda Architecture | [optional] 
@@ -13,7 +22,6 @@ Name | Type | Description | Notes
 **CondaTag** | Pointer to **string** | conda Tag | [optional] 
 **CondaVersion** | Pointer to **string** | conda Version | [optional] 
 **GoAsset** | Pointer to ***os.File** | go Asset  | [optional] 
-**GoModule** | Pointer to **string** | go Module | [optional] 
 **GoTag** | Pointer to **string** | go Tag | [optional] 
 **GoVersion** | Pointer to **string** | go Version | [optional] 
 **HelmAsset** | Pointer to ***os.File** | helm Asset  | [optional] 
@@ -94,6 +102,231 @@ will change when the set of required properties is changed
 NewUploadComponentRequestWithDefaults instantiates a new UploadComponentRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetAlpineAsset
+
+`func (o *UploadComponentRequest) GetAlpineAsset() *os.File`
+
+GetAlpineAsset returns the AlpineAsset field if non-nil, zero value otherwise.
+
+### GetAlpineAssetOk
+
+`func (o *UploadComponentRequest) GetAlpineAssetOk() (**os.File, bool)`
+
+GetAlpineAssetOk returns a tuple with the AlpineAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlpineAsset
+
+`func (o *UploadComponentRequest) SetAlpineAsset(v *os.File)`
+
+SetAlpineAsset sets AlpineAsset field to given value.
+
+### HasAlpineAsset
+
+`func (o *UploadComponentRequest) HasAlpineAsset() bool`
+
+HasAlpineAsset returns a boolean if a field has been set.
+
+### GetAlpineRepository
+
+`func (o *UploadComponentRequest) GetAlpineRepository() string`
+
+GetAlpineRepository returns the AlpineRepository field if non-nil, zero value otherwise.
+
+### GetAlpineRepositoryOk
+
+`func (o *UploadComponentRequest) GetAlpineRepositoryOk() (*string, bool)`
+
+GetAlpineRepositoryOk returns a tuple with the AlpineRepository field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlpineRepository
+
+`func (o *UploadComponentRequest) SetAlpineRepository(v string)`
+
+SetAlpineRepository sets AlpineRepository field to given value.
+
+### HasAlpineRepository
+
+`func (o *UploadComponentRequest) HasAlpineRepository() bool`
+
+HasAlpineRepository returns a boolean if a field has been set.
+
+### GetAlpineTag
+
+`func (o *UploadComponentRequest) GetAlpineTag() string`
+
+GetAlpineTag returns the AlpineTag field if non-nil, zero value otherwise.
+
+### GetAlpineTagOk
+
+`func (o *UploadComponentRequest) GetAlpineTagOk() (*string, bool)`
+
+GetAlpineTagOk returns a tuple with the AlpineTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlpineTag
+
+`func (o *UploadComponentRequest) SetAlpineTag(v string)`
+
+SetAlpineTag sets AlpineTag field to given value.
+
+### HasAlpineTag
+
+`func (o *UploadComponentRequest) HasAlpineTag() bool`
+
+HasAlpineTag returns a boolean if a field has been set.
+
+### GetAlpineVersion
+
+`func (o *UploadComponentRequest) GetAlpineVersion() string`
+
+GetAlpineVersion returns the AlpineVersion field if non-nil, zero value otherwise.
+
+### GetAlpineVersionOk
+
+`func (o *UploadComponentRequest) GetAlpineVersionOk() (*string, bool)`
+
+GetAlpineVersionOk returns a tuple with the AlpineVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAlpineVersion
+
+`func (o *UploadComponentRequest) SetAlpineVersion(v string)`
+
+SetAlpineVersion sets AlpineVersion field to given value.
+
+### HasAlpineVersion
+
+`func (o *UploadComponentRequest) HasAlpineVersion() bool`
+
+HasAlpineVersion returns a boolean if a field has been set.
+
+### GetAnsiblegalaxyAsset
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyAsset() *os.File`
+
+GetAnsiblegalaxyAsset returns the AnsiblegalaxyAsset field if non-nil, zero value otherwise.
+
+### GetAnsiblegalaxyAssetOk
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyAssetOk() (**os.File, bool)`
+
+GetAnsiblegalaxyAssetOk returns a tuple with the AnsiblegalaxyAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnsiblegalaxyAsset
+
+`func (o *UploadComponentRequest) SetAnsiblegalaxyAsset(v *os.File)`
+
+SetAnsiblegalaxyAsset sets AnsiblegalaxyAsset field to given value.
+
+### HasAnsiblegalaxyAsset
+
+`func (o *UploadComponentRequest) HasAnsiblegalaxyAsset() bool`
+
+HasAnsiblegalaxyAsset returns a boolean if a field has been set.
+
+### GetAnsiblegalaxyName
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyName() string`
+
+GetAnsiblegalaxyName returns the AnsiblegalaxyName field if non-nil, zero value otherwise.
+
+### GetAnsiblegalaxyNameOk
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyNameOk() (*string, bool)`
+
+GetAnsiblegalaxyNameOk returns a tuple with the AnsiblegalaxyName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnsiblegalaxyName
+
+`func (o *UploadComponentRequest) SetAnsiblegalaxyName(v string)`
+
+SetAnsiblegalaxyName sets AnsiblegalaxyName field to given value.
+
+### HasAnsiblegalaxyName
+
+`func (o *UploadComponentRequest) HasAnsiblegalaxyName() bool`
+
+HasAnsiblegalaxyName returns a boolean if a field has been set.
+
+### GetAnsiblegalaxyNamespace
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyNamespace() string`
+
+GetAnsiblegalaxyNamespace returns the AnsiblegalaxyNamespace field if non-nil, zero value otherwise.
+
+### GetAnsiblegalaxyNamespaceOk
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyNamespaceOk() (*string, bool)`
+
+GetAnsiblegalaxyNamespaceOk returns a tuple with the AnsiblegalaxyNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnsiblegalaxyNamespace
+
+`func (o *UploadComponentRequest) SetAnsiblegalaxyNamespace(v string)`
+
+SetAnsiblegalaxyNamespace sets AnsiblegalaxyNamespace field to given value.
+
+### HasAnsiblegalaxyNamespace
+
+`func (o *UploadComponentRequest) HasAnsiblegalaxyNamespace() bool`
+
+HasAnsiblegalaxyNamespace returns a boolean if a field has been set.
+
+### GetAnsiblegalaxyTag
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyTag() string`
+
+GetAnsiblegalaxyTag returns the AnsiblegalaxyTag field if non-nil, zero value otherwise.
+
+### GetAnsiblegalaxyTagOk
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyTagOk() (*string, bool)`
+
+GetAnsiblegalaxyTagOk returns a tuple with the AnsiblegalaxyTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnsiblegalaxyTag
+
+`func (o *UploadComponentRequest) SetAnsiblegalaxyTag(v string)`
+
+SetAnsiblegalaxyTag sets AnsiblegalaxyTag field to given value.
+
+### HasAnsiblegalaxyTag
+
+`func (o *UploadComponentRequest) HasAnsiblegalaxyTag() bool`
+
+HasAnsiblegalaxyTag returns a boolean if a field has been set.
+
+### GetAnsiblegalaxyVersion
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyVersion() string`
+
+GetAnsiblegalaxyVersion returns the AnsiblegalaxyVersion field if non-nil, zero value otherwise.
+
+### GetAnsiblegalaxyVersionOk
+
+`func (o *UploadComponentRequest) GetAnsiblegalaxyVersionOk() (*string, bool)`
+
+GetAnsiblegalaxyVersionOk returns a tuple with the AnsiblegalaxyVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAnsiblegalaxyVersion
+
+`func (o *UploadComponentRequest) SetAnsiblegalaxyVersion(v string)`
+
+SetAnsiblegalaxyVersion sets AnsiblegalaxyVersion field to given value.
+
+### HasAnsiblegalaxyVersion
+
+`func (o *UploadComponentRequest) HasAnsiblegalaxyVersion() bool`
+
+HasAnsiblegalaxyVersion returns a boolean if a field has been set.
 
 ### GetAptAsset
 
@@ -319,31 +552,6 @@ SetGoAsset sets GoAsset field to given value.
 `func (o *UploadComponentRequest) HasGoAsset() bool`
 
 HasGoAsset returns a boolean if a field has been set.
-
-### GetGoModule
-
-`func (o *UploadComponentRequest) GetGoModule() string`
-
-GetGoModule returns the GoModule field if non-nil, zero value otherwise.
-
-### GetGoModuleOk
-
-`func (o *UploadComponentRequest) GetGoModuleOk() (*string, bool)`
-
-GetGoModuleOk returns a tuple with the GoModule field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetGoModule
-
-`func (o *UploadComponentRequest) SetGoModule(v string)`
-
-SetGoModule sets GoModule field to given value.
-
-### HasGoModule
-
-`func (o *UploadComponentRequest) HasGoModule() bool`
-
-HasGoModule returns a boolean if a field has been set.
 
 ### GetGoTag
 
