@@ -5,12 +5,12 @@ info:
     url: https://github.com/sonatype-nexus-community
   description: "This documents the available APIs into [Sonatype Nexus Repository\
     \ Manager](https://www.sonatype.com/products/sonatype-nexus-repository) as of\
-    \ version 3.93.0-06."
+    \ version 3.93.2-01."
   license:
     name: Apache-2.0
     url: http://www.apache.org/licenses/LICENSE-2.0.html
   title: Sonatype Nexus Repository Manager
-  version: 3.93.0-06
+  version: 3.93.2-01
 servers:
 - url: /service/rest/
 security:
@@ -1869,7 +1869,7 @@ paths:
       - Manage Sonatype Repository Firewall configuration
   /v1/iq/capabilities:
     get:
-      operationId: getCapabilities
+      operationId: getCapabilities_1
       responses:
         "200":
           content:
@@ -1882,7 +1882,7 @@ paths:
       - Manage Sonatype Repository Firewall configuration
   /v1/iq/capabilities/test:
     post:
-      operationId: getCapabilities_1
+      operationId: getCapabilities
       requestBody:
         content:
           application/json:
@@ -7480,7 +7480,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SimpleApiGroupRepository"
+                $ref: "#/components/schemas/YumGroupApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -7636,7 +7636,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/SimpleApiProxyRepository"
+                $ref: "#/components/schemas/YumProxyApiRepository"
           description: successful operation
       summary: Get repository
       tags:
@@ -25790,6 +25790,40 @@ components:
       required:
       - repodataDepth
       type: object
+    YumGroupApiRepository:
+      allOf:
+      - $ref: "#/components/schemas/YumGroupRepositoryApiRequest"
+      - properties:
+          format:
+            default: yum
+            type: string
+          type:
+            default: group
+            type: string
+          url:
+            type: string
+        required:
+        - format
+        - type
+        - url
+        type: object
+      example:
+        name: internal
+        format: yum
+        online: true
+        yumSigning:
+          keypair: keypair
+          passphrase: passphrase
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: group
+        url: url
+        group:
+          memberNames:
+          - memberNames
+          - memberNames
     YumGroupRepositoryApiRequest:
       example:
         name: internal
@@ -25927,6 +25961,74 @@ components:
       - storage
       - yum
       type: object
+    YumProxyApiRepository:
+      allOf:
+      - $ref: "#/components/schemas/YumProxyRepositoryApiRequest"
+      - properties:
+          format:
+            default: yum
+            type: string
+          routingRuleName:
+            description: The name of the routing rule assigned to this repository
+            type: string
+          type:
+            default: proxy
+            type: string
+          url:
+            type: string
+        required:
+        - format
+        - type
+        - url
+        type: object
+      example:
+        replication:
+          assetPathRegex: assetPathRegex
+          preemptivePullEnabled: false
+        httpClient:
+          blocked: false
+          autoBlock: true
+          connection:
+            userAgentSuffix: userAgentSuffix
+            retries: 0
+            enableCircularRedirects: false
+            enableCookies: false
+            useTrustStore: false
+            timeout: 60
+          authentication:
+            password: password
+            bearerToken: bearerToken
+            ntlmDomain: ntlmDomain
+            type: username
+            ntlmHost: ntlmHost
+            preemptive: false
+            username: username
+        negativeCache:
+          timeToLive: 1440
+          enabled: true
+        format: yum
+        storage:
+          strictContentTypeValidation: true
+          writePolicy: allow_once
+          blobStoreName: default
+        type: proxy
+        url: url
+        proxy:
+          preserveEncodedCharacters: false
+          contentMaxAge: 1440
+          metadataMaxAge: 1440
+          remoteUrl: https://remote.repository.com
+        routingRuleName: routingRuleName
+        cleanup:
+          policyNames:
+          - policyNames
+          - policyNames
+        routingRule: routingRule
+        name: internal
+        online: true
+        yumSigning:
+          keypair: keypair
+          passphrase: passphrase
     YumProxyRepositoryApiRequest:
       example:
         replication:

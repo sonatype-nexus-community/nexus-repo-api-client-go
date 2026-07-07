@@ -8853,7 +8853,7 @@ Name | Type | Description  | Notes
 
 ## GetYumGroupRepository
 
-> SimpleApiGroupRepository GetYumGroupRepository(ctx, repositoryName).Execute()
+> YumGroupApiRepository GetYumGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8879,7 +8879,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetYumGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetYumGroupRepository`: SimpleApiGroupRepository
+	// response from `GetYumGroupRepository`: YumGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetYumGroupRepository`: %v\n", resp)
 }
 ```
@@ -8903,7 +8903,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**YumGroupApiRepository**](YumGroupApiRepository.md)
 
 ### Authorization
 
@@ -8989,7 +8989,7 @@ Name | Type | Description  | Notes
 
 ## GetYumProxyRepository
 
-> SimpleApiProxyRepository GetYumProxyRepository(ctx, repositoryName).Execute()
+> YumProxyApiRepository GetYumProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -9015,7 +9015,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetYumProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetYumProxyRepository`: SimpleApiProxyRepository
+	// response from `GetYumProxyRepository`: YumProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetYumProxyRepository`: %v\n", resp)
 }
 ```
@@ -9039,7 +9039,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**YumProxyApiRepository**](YumProxyApiRepository.md)
 
 ### Authorization
 
