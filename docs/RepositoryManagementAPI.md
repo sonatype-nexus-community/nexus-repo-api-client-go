@@ -4578,7 +4578,7 @@ Other parameters are passed through a pointer to a apiGetAllRepositoriesRequest 
 
 ## GetAlpineGroupRepository
 
-> SimpleApiGroupRepository GetAlpineGroupRepository(ctx, repositoryName).Execute()
+> AlpineGroupApiRepository GetAlpineGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4604,7 +4604,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlpineGroupRepository`: SimpleApiGroupRepository
+	// response from `GetAlpineGroupRepository`: AlpineGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineGroupRepository`: %v\n", resp)
 }
 ```
@@ -4628,7 +4628,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AlpineGroupApiRepository**](AlpineGroupApiRepository.md)
 
 ### Authorization
 
@@ -4646,7 +4646,7 @@ Name | Type | Description  | Notes
 
 ## GetAlpineHostedRepository
 
-> SimpleApiHostedRepository GetAlpineHostedRepository(ctx, repositoryName).Execute()
+> AlpineHostedApiRepository GetAlpineHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4672,7 +4672,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlpineHostedRepository`: SimpleApiHostedRepository
+	// response from `GetAlpineHostedRepository`: AlpineHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineHostedRepository`: %v\n", resp)
 }
 ```
@@ -4696,7 +4696,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AlpineHostedApiRepository**](AlpineHostedApiRepository.md)
 
 ### Authorization
 
@@ -4714,7 +4714,7 @@ Name | Type | Description  | Notes
 
 ## GetAlpineProxyRepository
 
-> SimpleApiProxyRepository GetAlpineProxyRepository(ctx, repositoryName).Execute()
+> AlpineProxyApiRepository GetAlpineProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -4740,7 +4740,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAlpineProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAlpineProxyRepository`: SimpleApiProxyRepository
+	// response from `GetAlpineProxyRepository`: AlpineProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAlpineProxyRepository`: %v\n", resp)
 }
 ```
@@ -4764,7 +4764,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AlpineProxyApiRepository**](AlpineProxyApiRepository.md)
 
 ### Authorization
 

@@ -6626,7 +6626,7 @@ type ApiGetAlpineGroupRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetAlpineGroupRepositoryRequest) Execute() (*SimpleApiGroupRepository, *http.Response, error) {
+func (r ApiGetAlpineGroupRepositoryRequest) Execute() (*AlpineGroupApiRepository, *http.Response, error) {
 	return r.ApiService.GetAlpineGroupRepositoryExecute(r)
 }
 
@@ -6646,13 +6646,13 @@ func (a *RepositoryManagementAPIService) GetAlpineGroupRepository(ctx context.Co
 }
 
 // Execute executes the request
-//  @return SimpleApiGroupRepository
-func (a *RepositoryManagementAPIService) GetAlpineGroupRepositoryExecute(r ApiGetAlpineGroupRepositoryRequest) (*SimpleApiGroupRepository, *http.Response, error) {
+//  @return AlpineGroupApiRepository
+func (a *RepositoryManagementAPIService) GetAlpineGroupRepositoryExecute(r ApiGetAlpineGroupRepositoryRequest) (*AlpineGroupApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiGroupRepository
+		localVarReturnValue  *AlpineGroupApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetAlpineGroupRepository")
@@ -6727,7 +6727,7 @@ type ApiGetAlpineHostedRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetAlpineHostedRepositoryRequest) Execute() (*SimpleApiHostedRepository, *http.Response, error) {
+func (r ApiGetAlpineHostedRepositoryRequest) Execute() (*AlpineHostedApiRepository, *http.Response, error) {
 	return r.ApiService.GetAlpineHostedRepositoryExecute(r)
 }
 
@@ -6747,13 +6747,13 @@ func (a *RepositoryManagementAPIService) GetAlpineHostedRepository(ctx context.C
 }
 
 // Execute executes the request
-//  @return SimpleApiHostedRepository
-func (a *RepositoryManagementAPIService) GetAlpineHostedRepositoryExecute(r ApiGetAlpineHostedRepositoryRequest) (*SimpleApiHostedRepository, *http.Response, error) {
+//  @return AlpineHostedApiRepository
+func (a *RepositoryManagementAPIService) GetAlpineHostedRepositoryExecute(r ApiGetAlpineHostedRepositoryRequest) (*AlpineHostedApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiHostedRepository
+		localVarReturnValue  *AlpineHostedApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetAlpineHostedRepository")
@@ -6828,7 +6828,7 @@ type ApiGetAlpineProxyRepositoryRequest struct {
 	repositoryName string
 }
 
-func (r ApiGetAlpineProxyRepositoryRequest) Execute() (*SimpleApiProxyRepository, *http.Response, error) {
+func (r ApiGetAlpineProxyRepositoryRequest) Execute() (*AlpineProxyApiRepository, *http.Response, error) {
 	return r.ApiService.GetAlpineProxyRepositoryExecute(r)
 }
 
@@ -6848,13 +6848,13 @@ func (a *RepositoryManagementAPIService) GetAlpineProxyRepository(ctx context.Co
 }
 
 // Execute executes the request
-//  @return SimpleApiProxyRepository
-func (a *RepositoryManagementAPIService) GetAlpineProxyRepositoryExecute(r ApiGetAlpineProxyRepositoryRequest) (*SimpleApiProxyRepository, *http.Response, error) {
+//  @return AlpineProxyApiRepository
+func (a *RepositoryManagementAPIService) GetAlpineProxyRepositoryExecute(r ApiGetAlpineProxyRepositoryRequest) (*AlpineProxyApiRepository, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *SimpleApiProxyRepository
+		localVarReturnValue  *AlpineProxyApiRepository
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "RepositoryManagementAPIService.GetAlpineProxyRepository")

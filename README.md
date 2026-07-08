@@ -513,8 +513,11 @@ Class | Method | HTTP request | Description
 
  - [AbstractApiRepository](docs/AbstractApiRepository.md)
  - [AcknowledgeRequestXO](docs/AcknowledgeRequestXO.md)
+ - [AlpineGroupApiRepository](docs/AlpineGroupApiRepository.md)
  - [AlpineGroupRepositoryApiRequest](docs/AlpineGroupRepositoryApiRequest.md)
+ - [AlpineHostedApiRepository](docs/AlpineHostedApiRepository.md)
  - [AlpineHostedRepositoryApiRequest](docs/AlpineHostedRepositoryApiRequest.md)
+ - [AlpineProxyApiRepository](docs/AlpineProxyApiRepository.md)
  - [AlpineProxyRepositoryApiRequest](docs/AlpineProxyRepositoryApiRequest.md)
  - [AlpineSigningRepositoriesAttributes](docs/AlpineSigningRepositoriesAttributes.md)
  - [AnonymousAccessSettingsXO](docs/AnonymousAccessSettingsXO.md)
