@@ -1,18 +1,18 @@
 # \AssetsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteAsset**](AssetsAPI.md#DeleteAsset) | **Delete** /v1/assets/{id} | Delete a single asset
-[**GetAssetById**](AssetsAPI.md#GetAssetById) | **Get** /v1/assets/{id} | Get a single asset
-[**GetAssets**](AssetsAPI.md#GetAssets) | **Get** /v1/assets | List assets
+[**DeleteAssets**](AssetsAPI.md#DeleteAssets) | **Delete** /v1/assets/{id} | Delete a single asset
+[**GetAssets**](AssetsAPI.md#GetAssets) | **Get** /v1/assets/{id} | Get a single asset
+[**ListAssets**](AssetsAPI.md#ListAssets) | **Get** /v1/assets | List assets
 
 
 
-## DeleteAsset
+## DeleteAssets
 
-> DeleteAsset(ctx, id).Execute()
+> DeleteAssets(ctx, id).Execute()
 
 Delete a single asset
 
@@ -33,9 +33,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.AssetsAPI.DeleteAsset(context.Background(), id).Execute()
+	r, err := apiClient.AssetsAPI.DeleteAssets(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.DeleteAsset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.DeleteAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteAssetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteAssetsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -76,9 +76,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAssetById
+## GetAssets
 
-> AssetXO GetAssetById(ctx, id).Execute()
+> GetAssets(ctx, id).Execute()
 
 Get a single asset
 
@@ -99,13 +99,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.AssetsAPI.GetAssetById(context.Background(), id).Execute()
+	r, err := apiClient.AssetsAPI.GetAssets(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.GetAssetById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.GetAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAssetById`: AssetXO
-	fmt.Fprintf(os.Stdout, "Response from `AssetsAPI.GetAssetById`: %v\n", resp)
 }
 ```
 
@@ -119,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAssetByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetAssetsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -128,7 +126,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AssetXO**](AssetXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -137,16 +135,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetAssets
+## ListAssets
 
-> PageAssetXO GetAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+> ListAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 List assets
 
@@ -168,13 +166,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.AssetsAPI.GetAssets(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
+	r, err := apiClient.AssetsAPI.ListAssets(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.GetAssets``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.ListAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAssets`: PageAssetXO
-	fmt.Fprintf(os.Stdout, "Response from `AssetsAPI.GetAssets`: %v\n", resp)
 }
 ```
 
@@ -184,7 +180,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAssetsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListAssetsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -194,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PageAssetXO**](PageAssetXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -203,7 +199,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

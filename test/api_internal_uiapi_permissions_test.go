@@ -22,11 +22,11 @@ func Test_v3_InternalUIAPIPermissionsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test InternalUIAPIPermissionsAPIService List", func(t *testing.T) {
+	t.Run("Test InternalUIAPIPermissionsAPIService ListInternalUiApiPermissions", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.InternalUIAPIPermissionsAPI.List(context.Background()).Execute()
+		resp, httpRes, err := apiClient.InternalUIAPIPermissionsAPI.ListInternalUiApiPermissions(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

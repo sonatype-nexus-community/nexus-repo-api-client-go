@@ -1,6 +1,6 @@
 # \RepositoryManagementAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -43,6 +43,9 @@ Method | HTTP request | Description
 [**CreateNugetGroupRepository**](RepositoryManagementAPI.md#CreateNugetGroupRepository) | **Post** /v1/repositories/nuget/group | Create NuGet group repository
 [**CreateNugetHostedRepository**](RepositoryManagementAPI.md#CreateNugetHostedRepository) | **Post** /v1/repositories/nuget/hosted | Create NuGet hosted repository
 [**CreateNugetProxyRepository**](RepositoryManagementAPI.md#CreateNugetProxyRepository) | **Post** /v1/repositories/nuget/proxy | Create NuGet proxy repository
+[**CreateOciGroupRepository**](RepositoryManagementAPI.md#CreateOciGroupRepository) | **Post** /v1/repositories/oci/group | Create OCI group repository
+[**CreateOciHostedRepository**](RepositoryManagementAPI.md#CreateOciHostedRepository) | **Post** /v1/repositories/oci/hosted | Create OCI hosted repository
+[**CreateOciProxyRepository**](RepositoryManagementAPI.md#CreateOciProxyRepository) | **Post** /v1/repositories/oci/proxy | Create OCI proxy repository
 [**CreateP2ProxyRepository**](RepositoryManagementAPI.md#CreateP2ProxyRepository) | **Post** /v1/repositories/p2/proxy | Create p2 proxy repository
 [**CreatePubGroupRepository**](RepositoryManagementAPI.md#CreatePubGroupRepository) | **Post** /v1/repositories/pub/group | Create Pub group repository
 [**CreatePubHostedRepository**](RepositoryManagementAPI.md#CreatePubHostedRepository) | **Post** /v1/repositories/pub/hosted | Create Pub hosted repository
@@ -71,8 +74,8 @@ Method | HTTP request | Description
 [**CreaterepositorynameHealthCheckRepository**](RepositoryManagementAPI.md#CreaterepositorynameHealthCheckRepository) | **Post** /v1/repositories/{repositoryName}/health-check | Enable repository health check. Proxy repositories only.
 [**CreaterepositorynameInvalidateCacheRepository**](RepositoryManagementAPI.md#CreaterepositorynameInvalidateCacheRepository) | **Post** /v1/repositories/{repositoryName}/invalidate-cache | Invalidate repository cache. Proxy or group repositories only.
 [**CreaterepositorynameRebuildIndexRepository**](RepositoryManagementAPI.md#CreaterepositorynameRebuildIndexRepository) | **Post** /v1/repositories/{repositoryName}/rebuild-index | Schedule a &#39;Repair - Rebuild repository search&#39; Task. Hosted or proxy repositories only.
-[**DeleteRepository**](RepositoryManagementAPI.md#DeleteRepository) | **Delete** /v1/repositories/{repositoryName} | Delete repository of any format
-[**DisableRepositoryHealthCheck**](RepositoryManagementAPI.md#DisableRepositoryHealthCheck) | **Delete** /v1/repositories/{repositoryName}/health-check | Disable repository health check. Proxy repositories only.
+[**DeleteRepositories**](RepositoryManagementAPI.md#DeleteRepositories) | **Delete** /v1/repositories/{repositoryName} | Delete repository of any format
+[**DeleteRepositoriesHealthCheck**](RepositoryManagementAPI.md#DeleteRepositoriesHealthCheck) | **Delete** /v1/repositories/{repositoryName}/health-check | Disable repository health check. Proxy repositories only.
 [**GetAllRepositories**](RepositoryManagementAPI.md#GetAllRepositories) | **Get** /v1/repositories | List repositories
 [**GetAlpineGroupRepository**](RepositoryManagementAPI.md#GetAlpineGroupRepository) | **Get** /v1/repositories/alpine/group/{repositoryName} | Get repository
 [**GetAlpineHostedRepository**](RepositoryManagementAPI.md#GetAlpineHostedRepository) | **Get** /v1/repositories/alpine/hosted/{repositoryName} | Get repository
@@ -113,6 +116,9 @@ Method | HTTP request | Description
 [**GetNugetGroupRepository**](RepositoryManagementAPI.md#GetNugetGroupRepository) | **Get** /v1/repositories/nuget/group/{repositoryName} | Get repository
 [**GetNugetHostedRepository**](RepositoryManagementAPI.md#GetNugetHostedRepository) | **Get** /v1/repositories/nuget/hosted/{repositoryName} | Get repository
 [**GetNugetProxyRepository**](RepositoryManagementAPI.md#GetNugetProxyRepository) | **Get** /v1/repositories/nuget/proxy/{repositoryName} | Get repository
+[**GetOciGroupRepository**](RepositoryManagementAPI.md#GetOciGroupRepository) | **Get** /v1/repositories/oci/group/{repositoryName} | Get repository
+[**GetOciHostedRepository**](RepositoryManagementAPI.md#GetOciHostedRepository) | **Get** /v1/repositories/oci/hosted/{repositoryName} | Get repository
+[**GetOciProxyRepository**](RepositoryManagementAPI.md#GetOciProxyRepository) | **Get** /v1/repositories/oci/proxy/{repositoryName} | Get repository
 [**GetP2ProxyRepository**](RepositoryManagementAPI.md#GetP2ProxyRepository) | **Get** /v1/repositories/p2/proxy/{repositoryName} | Get repository
 [**GetPubGroupRepository**](RepositoryManagementAPI.md#GetPubGroupRepository) | **Get** /v1/repositories/pub/group/{repositoryName} | Get repository
 [**GetPubHostedRepository**](RepositoryManagementAPI.md#GetPubHostedRepository) | **Get** /v1/repositories/pub/hosted/{repositoryName} | Get repository
@@ -126,8 +132,7 @@ Method | HTTP request | Description
 [**GetRawGroupRepository**](RepositoryManagementAPI.md#GetRawGroupRepository) | **Get** /v1/repositories/raw/group/{repositoryName} | Get repository
 [**GetRawHostedRepository**](RepositoryManagementAPI.md#GetRawHostedRepository) | **Get** /v1/repositories/raw/hosted/{repositoryName} | Get repository
 [**GetRawProxyRepository**](RepositoryManagementAPI.md#GetRawProxyRepository) | **Get** /v1/repositories/raw/proxy/{repositoryName} | Get repository
-[**GetRepositories**](RepositoryManagementAPI.md#GetRepositories) | **Get** /v1/repositorySettings | List repositories
-[**GetRepository**](RepositoryManagementAPI.md#GetRepository) | **Get** /v1/repositories/{repositoryName} | Get repository details
+[**GetRepositories**](RepositoryManagementAPI.md#GetRepositories) | **Get** /v1/repositories/{repositoryName} | Get repository details
 [**GetRubygemsGroupRepository**](RepositoryManagementAPI.md#GetRubygemsGroupRepository) | **Get** /v1/repositories/rubygems/group/{repositoryName} | Get repository
 [**GetRubygemsHostedRepository**](RepositoryManagementAPI.md#GetRubygemsHostedRepository) | **Get** /v1/repositories/rubygems/hosted/{repositoryName} | Get repository
 [**GetRubygemsProxyRepository**](RepositoryManagementAPI.md#GetRubygemsProxyRepository) | **Get** /v1/repositories/rubygems/proxy/{repositoryName} | Get repository
@@ -140,6 +145,7 @@ Method | HTTP request | Description
 [**GetYumGroupRepository**](RepositoryManagementAPI.md#GetYumGroupRepository) | **Get** /v1/repositories/yum/group/{repositoryName} | Get repository
 [**GetYumHostedRepository**](RepositoryManagementAPI.md#GetYumHostedRepository) | **Get** /v1/repositories/yum/hosted/{repositoryName} | Get repository
 [**GetYumProxyRepository**](RepositoryManagementAPI.md#GetYumProxyRepository) | **Get** /v1/repositories/yum/proxy/{repositoryName} | Get repository
+[**ListRepositorySettings**](RepositoryManagementAPI.md#ListRepositorySettings) | **Get** /v1/repositorySettings | List repositories
 [**UpdateAlpineGroupRepository**](RepositoryManagementAPI.md#UpdateAlpineGroupRepository) | **Put** /v1/repositories/alpine/group/{repositoryName} | Update Alpine group repository
 [**UpdateAlpineHostedRepository**](RepositoryManagementAPI.md#UpdateAlpineHostedRepository) | **Put** /v1/repositories/alpine/hosted/{repositoryName} | Update Alpine hosted repository
 [**UpdateAlpineProxyRepository**](RepositoryManagementAPI.md#UpdateAlpineProxyRepository) | **Put** /v1/repositories/alpine/proxy/{repositoryName} | Update Alpine proxy repository
@@ -179,6 +185,9 @@ Method | HTTP request | Description
 [**UpdateNugetGroupRepository**](RepositoryManagementAPI.md#UpdateNugetGroupRepository) | **Put** /v1/repositories/nuget/group/{repositoryName} | Update NuGet group repository
 [**UpdateNugetHostedRepository**](RepositoryManagementAPI.md#UpdateNugetHostedRepository) | **Put** /v1/repositories/nuget/hosted/{repositoryName} | Update NuGet hosted repository
 [**UpdateNugetProxyRepository**](RepositoryManagementAPI.md#UpdateNugetProxyRepository) | **Put** /v1/repositories/nuget/proxy/{repositoryName} | Update NuGet proxy repository
+[**UpdateOciGroupRepository**](RepositoryManagementAPI.md#UpdateOciGroupRepository) | **Put** /v1/repositories/oci/group/{repositoryName} | Update OCI group repository
+[**UpdateOciHostedRepository**](RepositoryManagementAPI.md#UpdateOciHostedRepository) | **Put** /v1/repositories/oci/hosted/{repositoryName} | Update OCI hosted repository
+[**UpdateOciProxyRepository**](RepositoryManagementAPI.md#UpdateOciProxyRepository) | **Put** /v1/repositories/oci/proxy/{repositoryName} | Update OCI proxy repository
 [**UpdateP2ProxyRepository**](RepositoryManagementAPI.md#UpdateP2ProxyRepository) | **Put** /v1/repositories/p2/proxy/{repositoryName} | Update p2 proxy repository
 [**UpdatePubGroupRepository**](RepositoryManagementAPI.md#UpdatePubGroupRepository) | **Put** /v1/repositories/pub/group/{repositoryName} | Update Pub group repository
 [**UpdatePubHostedRepository**](RepositoryManagementAPI.md#UpdatePubHostedRepository) | **Put** /v1/repositories/pub/hosted/{repositoryName} | Update Pub hosted repository
@@ -209,7 +218,7 @@ Method | HTTP request | Description
 
 ## CreateAlpineGroupRepository
 
-> CreateAlpineGroupRepository(ctx).Body(body).Execute()
+> CreateAlpineGroupRepository(ctx).AlpineGroupRepositoryApiRequest(alpineGroupRepositoryApiRequest).Execute()
 
 Create Alpine group repository
 
@@ -226,11 +235,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest |  (optional)
+	alpineGroupRepositoryApiRequest := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes("Keypair_example"), *sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAlpineGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineGroupRepository(context.Background()).AlpineGroupRepositoryApiRequest(alpineGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -249,7 +258,7 @@ Other parameters are passed through a pointer to a apiCreateAlpineGroupRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
+ **alpineGroupRepositoryApiRequest** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -271,7 +280,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlpineHostedRepository
 
-> CreateAlpineHostedRepository(ctx).Body(body).Execute()
+> CreateAlpineHostedRepository(ctx).AlpineHostedRepositoryApiRequest(alpineHostedRepositoryApiRequest).Execute()
 
 Create Alpine hosted repository
 
@@ -288,11 +297,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest |  (optional)
+	alpineHostedRepositoryApiRequest := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAlpineHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineHostedRepository(context.Background()).AlpineHostedRepositoryApiRequest(alpineHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -311,7 +320,7 @@ Other parameters are passed through a pointer to a apiCreateAlpineHostedReposito
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
+ **alpineHostedRepositoryApiRequest** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -333,7 +342,7 @@ Name | Type | Description  | Notes
 
 ## CreateAlpineProxyRepository
 
-> CreateAlpineProxyRepository(ctx).Body(body).Execute()
+> CreateAlpineProxyRepository(ctx).AlpineProxyRepositoryApiRequest(alpineProxyRepositoryApiRequest).Execute()
 
 Create Alpine proxy repository
 
@@ -350,11 +359,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest |  (optional)
+	alpineProxyRepositoryApiRequest := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes("Keypair_example"), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAlpineProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAlpineProxyRepository(context.Background()).AlpineProxyRepositoryApiRequest(alpineProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAlpineProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -373,7 +382,7 @@ Other parameters are passed through a pointer to a apiCreateAlpineProxyRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
+ **alpineProxyRepositoryApiRequest** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -395,7 +404,7 @@ Name | Type | Description  | Notes
 
 ## CreateAnsiblegalaxyGroupRepository
 
-> CreateAnsiblegalaxyGroupRepository(ctx).Body(body).Execute()
+> CreateAnsiblegalaxyGroupRepository(ctx).AnsibleGalaxyGroupRepositoryApiRequest(ansibleGalaxyGroupRepositoryApiRequest).Execute()
 
 Create Ansible Galaxy group repository
 
@@ -414,11 +423,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Configuration for the new Ansible Galaxy group repository
+	ansibleGalaxyGroupRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Configuration for the new Ansible Galaxy group repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyGroupRepository(context.Background()).AnsibleGalaxyGroupRepositoryApiRequest(ansibleGalaxyGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -437,7 +446,7 @@ Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyGroupRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy group repository | 
+ **ansibleGalaxyGroupRepositoryApiRequest** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy group repository | 
 
 ### Return type
 
@@ -459,7 +468,7 @@ Name | Type | Description  | Notes
 
 ## CreateAnsiblegalaxyHostedRepository
 
-> CreateAnsiblegalaxyHostedRepository(ctx).Body(body).Execute()
+> CreateAnsiblegalaxyHostedRepository(ctx).AnsibleGalaxyHostedRepositoryApiRequest(ansibleGalaxyHostedRepositoryApiRequest).Execute()
 
 Create Ansible Galaxy hosted repository
 
@@ -478,11 +487,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Configuration for the new Ansible Galaxy hosted repository
+	ansibleGalaxyHostedRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Configuration for the new Ansible Galaxy hosted repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyHostedRepository(context.Background()).AnsibleGalaxyHostedRepositoryApiRequest(ansibleGalaxyHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -501,7 +510,7 @@ Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyHostedR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy hosted repository | 
+ **ansibleGalaxyHostedRepositoryApiRequest** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy hosted repository | 
 
 ### Return type
 
@@ -523,7 +532,7 @@ Name | Type | Description  | Notes
 
 ## CreateAnsiblegalaxyProxyRepository
 
-> CreateAnsiblegalaxyProxyRepository(ctx).Body(body).Execute()
+> CreateAnsiblegalaxyProxyRepository(ctx).AnsibleGalaxyProxyRepositoryApiRequest(ansibleGalaxyProxyRepositoryApiRequest).Execute()
 
 Create Ansible Galaxy proxy repository
 
@@ -542,11 +551,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Configuration for the new Ansible Galaxy proxy repository
+	ansibleGalaxyProxyRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Configuration for the new Ansible Galaxy proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAnsiblegalaxyProxyRepository(context.Background()).AnsibleGalaxyProxyRepositoryApiRequest(ansibleGalaxyProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAnsiblegalaxyProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -565,7 +574,7 @@ Other parameters are passed through a pointer to a apiCreateAnsiblegalaxyProxyRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy proxy repository | 
+ **ansibleGalaxyProxyRepositoryApiRequest** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Configuration for the new Ansible Galaxy proxy repository | 
 
 ### Return type
 
@@ -587,7 +596,7 @@ Name | Type | Description  | Notes
 
 ## CreateAptHostedRepository
 
-> CreateAptHostedRepository(ctx).Body(body).Execute()
+> CreateAptHostedRepository(ctx).AptHostedRepositoryApiRequest(aptHostedRepositoryApiRequest).Execute()
 
 Create APT hosted repository
 
@@ -604,11 +613,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes("bionic"), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest |  (optional)
+	aptHostedRepositoryApiRequest := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes("bionic"), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAptHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAptHostedRepository(context.Background()).AptHostedRepositoryApiRequest(aptHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAptHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -627,7 +636,7 @@ Other parameters are passed through a pointer to a apiCreateAptHostedRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AptHostedRepositoryApiRequest**](AptHostedRepositoryApiRequest.md) |  | 
+ **aptHostedRepositoryApiRequest** | [**AptHostedRepositoryApiRequest**](AptHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -649,7 +658,7 @@ Name | Type | Description  | Notes
 
 ## CreateAptProxyRepository
 
-> CreateAptProxyRepository(ctx).Body(body).Execute()
+> CreateAptProxyRepository(ctx).AptProxyRepositoryApiRequest(aptProxyRepositoryApiRequest).Execute()
 
 Create APT proxy repository
 
@@ -666,11 +675,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	aptProxyRepositoryApiRequest := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateAptProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateAptProxyRepository(context.Background()).AptProxyRepositoryApiRequest(aptProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateAptProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -689,7 +698,7 @@ Other parameters are passed through a pointer to a apiCreateAptProxyRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AptProxyRepositoryApiRequest**](AptProxyRepositoryApiRequest.md) |  | 
+ **aptProxyRepositoryApiRequest** | [**AptProxyRepositoryApiRequest**](AptProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -711,7 +720,7 @@ Name | Type | Description  | Notes
 
 ## CreateCargoGroupRepository
 
-> CreateCargoGroupRepository(ctx).Body(body).Execute()
+> CreateCargoGroupRepository(ctx).CargoGroupRepositoryApiRequest(cargoGroupRepositoryApiRequest).Execute()
 
 Create cargo group repository
 
@@ -728,11 +737,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest |  (optional)
+	cargoGroupRepositoryApiRequest := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCargoGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoGroupRepository(context.Background()).CargoGroupRepositoryApiRequest(cargoGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -751,7 +760,7 @@ Other parameters are passed through a pointer to a apiCreateCargoGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
+ **cargoGroupRepositoryApiRequest** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -773,7 +782,7 @@ Name | Type | Description  | Notes
 
 ## CreateCargoHostedRepository
 
-> CreateCargoHostedRepository(ctx).Body(body).Execute()
+> CreateCargoHostedRepository(ctx).CargoHostedRepositoryApiRequest(cargoHostedRepositoryApiRequest).Execute()
 
 Create cargo hosted repository
 
@@ -790,11 +799,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest |  (optional)
+	cargoHostedRepositoryApiRequest := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCargoHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoHostedRepository(context.Background()).CargoHostedRepositoryApiRequest(cargoHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -813,7 +822,7 @@ Other parameters are passed through a pointer to a apiCreateCargoHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
+ **cargoHostedRepositoryApiRequest** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -835,7 +844,7 @@ Name | Type | Description  | Notes
 
 ## CreateCargoProxyRepository
 
-> CreateCargoProxyRepository(ctx).Body(body).Execute()
+> CreateCargoProxyRepository(ctx).CargoProxyRepositoryApiRequest(cargoProxyRepositoryApiRequest).Execute()
 
 Create cargo proxy repository
 
@@ -852,11 +861,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
+	cargoProxyRepositoryApiRequest := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCargoProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCargoProxyRepository(context.Background()).CargoProxyRepositoryApiRequest(cargoProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCargoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -875,7 +884,7 @@ Other parameters are passed through a pointer to a apiCreateCargoProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
+ **cargoProxyRepositoryApiRequest** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -897,7 +906,7 @@ Name | Type | Description  | Notes
 
 ## CreateCocoapodsProxyRepository
 
-> CreateCocoapodsProxyRepository(ctx).Body(body).Execute()
+> CreateCocoapodsProxyRepository(ctx).CocoapodsProxyRepositoryApiRequest(cocoapodsProxyRepositoryApiRequest).Execute()
 
 Create Cocoapods proxy repository
 
@@ -914,11 +923,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
+	cocoapodsProxyRepositoryApiRequest := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCocoapodsProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCocoapodsProxyRepository(context.Background()).CocoapodsProxyRepositoryApiRequest(cocoapodsProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCocoapodsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -937,7 +946,7 @@ Other parameters are passed through a pointer to a apiCreateCocoapodsProxyReposi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
+ **cocoapodsProxyRepositoryApiRequest** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -959,7 +968,7 @@ Name | Type | Description  | Notes
 
 ## CreateComposerProxyRepository
 
-> CreateComposerProxyRepository(ctx).Body(body).Execute()
+> CreateComposerProxyRepository(ctx).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
 
 Create composer proxy repository
 
@@ -976,11 +985,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
+	composerProxyRepositoryApiRequest := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateComposerProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateComposerProxyRepository(context.Background()).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateComposerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -999,7 +1008,7 @@ Other parameters are passed through a pointer to a apiCreateComposerProxyReposit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
+ **composerProxyRepositoryApiRequest** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1021,7 +1030,7 @@ Name | Type | Description  | Notes
 
 ## CreateConanGroupRepository
 
-> CreateConanGroupRepository(ctx).Body(body).Execute()
+> CreateConanGroupRepository(ctx).ConanGroupRepositoryApiRequest(conanGroupRepositoryApiRequest).Execute()
 
 Create Conan group repository
 
@@ -1038,11 +1047,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewConanGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ConanGroupRepositoryApiRequest |  (optional)
+	conanGroupRepositoryApiRequest := *sonatyperepo.NewConanGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ConanGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateConanGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateConanGroupRepository(context.Background()).ConanGroupRepositoryApiRequest(conanGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateConanGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1061,7 +1070,7 @@ Other parameters are passed through a pointer to a apiCreateConanGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
+ **conanGroupRepositoryApiRequest** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1083,7 +1092,7 @@ Name | Type | Description  | Notes
 
 ## CreateConanHostedRepository
 
-> CreateConanHostedRepository(ctx).Body(body).Execute()
+> CreateConanHostedRepository(ctx).ConanHostedRepositoryApiRequest(conanHostedRepositoryApiRequest).Execute()
 
 Create Conan hosted repository
 
@@ -1100,11 +1109,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest |  (optional)
+	conanHostedRepositoryApiRequest := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateConanHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateConanHostedRepository(context.Background()).ConanHostedRepositoryApiRequest(conanHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateConanHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1123,7 +1132,7 @@ Other parameters are passed through a pointer to a apiCreateConanHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
+ **conanHostedRepositoryApiRequest** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1145,7 +1154,7 @@ Name | Type | Description  | Notes
 
 ## CreateConanProxyRepository
 
-> CreateConanProxyRepository(ctx).Body(body).Execute()
+> CreateConanProxyRepository(ctx).ConanProxyRepositoryApiRequest(conanProxyRepositoryApiRequest).Execute()
 
 Create Conan proxy repository
 
@@ -1162,11 +1171,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
+	conanProxyRepositoryApiRequest := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateConanProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateConanProxyRepository(context.Background()).ConanProxyRepositoryApiRequest(conanProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateConanProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1185,7 +1194,7 @@ Other parameters are passed through a pointer to a apiCreateConanProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
+ **conanProxyRepositoryApiRequest** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1207,7 +1216,7 @@ Name | Type | Description  | Notes
 
 ## CreateCondaGroupRepository
 
-> CreateCondaGroupRepository(ctx).Body(body).Execute()
+> CreateCondaGroupRepository(ctx).CondaGroupRepositoryApiRequest(condaGroupRepositoryApiRequest).Execute()
 
 Create Conda group repository
 
@@ -1224,11 +1233,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest |  (optional)
+	condaGroupRepositoryApiRequest := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCondaGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCondaGroupRepository(context.Background()).CondaGroupRepositoryApiRequest(condaGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCondaGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1247,7 +1256,7 @@ Other parameters are passed through a pointer to a apiCreateCondaGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
+ **condaGroupRepositoryApiRequest** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1269,7 +1278,7 @@ Name | Type | Description  | Notes
 
 ## CreateCondaHostedRepository
 
-> CreateCondaHostedRepository(ctx).Body(body).Execute()
+> CreateCondaHostedRepository(ctx).CondaHostedRepositoryApiRequest(condaHostedRepositoryApiRequest).Execute()
 
 Create conda hosted repository
 
@@ -1286,11 +1295,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest |  (optional)
+	condaHostedRepositoryApiRequest := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCondaHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCondaHostedRepository(context.Background()).CondaHostedRepositoryApiRequest(condaHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCondaHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1309,7 +1318,7 @@ Other parameters are passed through a pointer to a apiCreateCondaHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
+ **condaHostedRepositoryApiRequest** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1331,7 +1340,7 @@ Name | Type | Description  | Notes
 
 ## CreateCondaProxyRepository
 
-> CreateCondaProxyRepository(ctx).Body(body).Execute()
+> CreateCondaProxyRepository(ctx).CondaProxyRepositoryApiRequest(condaProxyRepositoryApiRequest).Execute()
 
 Create conda proxy repository
 
@@ -1348,11 +1357,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
+	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateCondaProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateCondaProxyRepository(context.Background()).CondaProxyRepositoryApiRequest(condaProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateCondaProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1371,7 +1380,7 @@ Other parameters are passed through a pointer to a apiCreateCondaProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CondaProxyRepositoryApiRequest**](CondaProxyRepositoryApiRequest.md) |  | 
+ **condaProxyRepositoryApiRequest** | [**CondaProxyRepositoryApiRequest**](CondaProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1393,7 +1402,7 @@ Name | Type | Description  | Notes
 
 ## CreateDockerGroupRepository
 
-> CreateDockerGroupRepository(ctx).Body(body).Execute()
+> CreateDockerGroupRepository(ctx).DockerGroupRepositoryApiRequest(dockerGroupRepositoryApiRequest).Execute()
 
 Create Docker group repository
 
@@ -1410,11 +1419,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDockerGroupRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // DockerGroupRepositoryApiRequest |  (optional)
+	dockerGroupRepositoryApiRequest := *sonatyperepo.NewDockerGroupRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // DockerGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateDockerGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateDockerGroupRepository(context.Background()).DockerGroupRepositoryApiRequest(dockerGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateDockerGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1433,7 +1442,7 @@ Other parameters are passed through a pointer to a apiCreateDockerGroupRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DockerGroupRepositoryApiRequest**](DockerGroupRepositoryApiRequest.md) |  | 
+ **dockerGroupRepositoryApiRequest** | [**DockerGroupRepositoryApiRequest**](DockerGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1455,7 +1464,7 @@ Name | Type | Description  | Notes
 
 ## CreateDockerHostedRepository
 
-> CreateDockerHostedRepository(ctx).Body(body).Execute()
+> CreateDockerHostedRepository(ctx).DockerHostedRepositoryApiRequest(dockerHostedRepositoryApiRequest).Execute()
 
 Create Docker hosted repository
 
@@ -1472,11 +1481,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest |  (optional)
+	dockerHostedRepositoryApiRequest := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateDockerHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateDockerHostedRepository(context.Background()).DockerHostedRepositoryApiRequest(dockerHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateDockerHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1495,7 +1504,7 @@ Other parameters are passed through a pointer to a apiCreateDockerHostedReposito
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DockerHostedRepositoryApiRequest**](DockerHostedRepositoryApiRequest.md) |  | 
+ **dockerHostedRepositoryApiRequest** | [**DockerHostedRepositoryApiRequest**](DockerHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1517,7 +1526,7 @@ Name | Type | Description  | Notes
 
 ## CreateDockerProxyRepository
 
-> CreateDockerProxyRepository(ctx).Body(body).Execute()
+> CreateDockerProxyRepository(ctx).DockerProxyRepositoryApiRequest(dockerProxyRepositoryApiRequest).Execute()
 
 Create Docker proxy repository
 
@@ -1534,11 +1543,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
+	dockerProxyRepositoryApiRequest := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes("HUB"), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateDockerProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateDockerProxyRepository(context.Background()).DockerProxyRepositoryApiRequest(dockerProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateDockerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1557,7 +1566,7 @@ Other parameters are passed through a pointer to a apiCreateDockerProxyRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DockerProxyRepositoryApiRequest**](DockerProxyRepositoryApiRequest.md) |  | 
+ **dockerProxyRepositoryApiRequest** | [**DockerProxyRepositoryApiRequest**](DockerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1579,7 +1588,7 @@ Name | Type | Description  | Notes
 
 ## CreateGitlfsHostedRepository
 
-> CreateGitlfsHostedRepository(ctx).Body(body).Execute()
+> CreateGitlfsHostedRepository(ctx).GitLfsHostedRepositoryApiRequest(gitLfsHostedRepositoryApiRequest).Execute()
 
 Create Git LFS hosted repository
 
@@ -1596,11 +1605,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	gitLfsHostedRepositoryApiRequest := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateGitlfsHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateGitlfsHostedRepository(context.Background()).GitLfsHostedRepositoryApiRequest(gitLfsHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateGitlfsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1619,7 +1628,7 @@ Other parameters are passed through a pointer to a apiCreateGitlfsHostedReposito
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
+ **gitLfsHostedRepositoryApiRequest** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1641,7 +1650,7 @@ Name | Type | Description  | Notes
 
 ## CreateGoGroupRepository
 
-> CreateGoGroupRepository(ctx).Body(body).Execute()
+> CreateGoGroupRepository(ctx).GolangGroupRepositoryApiRequest(golangGroupRepositoryApiRequest).Execute()
 
 Create a Go group repository
 
@@ -1658,11 +1667,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGolangGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // GolangGroupRepositoryApiRequest |  (optional)
+	golangGroupRepositoryApiRequest := *sonatyperepo.NewGolangGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // GolangGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateGoGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateGoGroupRepository(context.Background()).GolangGroupRepositoryApiRequest(golangGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateGoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1681,7 +1690,7 @@ Other parameters are passed through a pointer to a apiCreateGoGroupRepositoryReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
+ **golangGroupRepositoryApiRequest** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1703,7 +1712,7 @@ Name | Type | Description  | Notes
 
 ## CreateGoHostedRepository
 
-> CreateGoHostedRepository(ctx).Body(body).Execute()
+> CreateGoHostedRepository(ctx).GolangHostedRepositoryApiRequest(golangHostedRepositoryApiRequest).Execute()
 
 Create a Go hosted repository
 
@@ -1720,11 +1729,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest |  (optional)
+	golangHostedRepositoryApiRequest := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateGoHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateGoHostedRepository(context.Background()).GolangHostedRepositoryApiRequest(golangHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateGoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1743,7 +1752,7 @@ Other parameters are passed through a pointer to a apiCreateGoHostedRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
+ **golangHostedRepositoryApiRequest** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1765,7 +1774,7 @@ Name | Type | Description  | Notes
 
 ## CreateGoProxyRepository
 
-> CreateGoProxyRepository(ctx).Body(body).Execute()
+> CreateGoProxyRepository(ctx).GolangProxyRepositoryApiRequest(golangProxyRepositoryApiRequest).Execute()
 
 Create a Go proxy repository
 
@@ -1782,11 +1791,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
+	golangProxyRepositoryApiRequest := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateGoProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateGoProxyRepository(context.Background()).GolangProxyRepositoryApiRequest(golangProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateGoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1805,7 +1814,7 @@ Other parameters are passed through a pointer to a apiCreateGoProxyRepositoryReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
+ **golangProxyRepositoryApiRequest** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1827,7 +1836,7 @@ Name | Type | Description  | Notes
 
 ## CreateHelmGroupRepository
 
-> CreateHelmGroupRepository(ctx).Body(body).Execute()
+> CreateHelmGroupRepository(ctx).HelmGroupRepositoryApiRequest(helmGroupRepositoryApiRequest).Execute()
 
 Create Helm group repository
 
@@ -1844,11 +1853,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest |  (optional)
+	helmGroupRepositoryApiRequest := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateHelmGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateHelmGroupRepository(context.Background()).HelmGroupRepositoryApiRequest(helmGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateHelmGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1867,7 +1876,7 @@ Other parameters are passed through a pointer to a apiCreateHelmGroupRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
+ **helmGroupRepositoryApiRequest** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1889,7 +1898,7 @@ Name | Type | Description  | Notes
 
 ## CreateHelmHostedRepository
 
-> CreateHelmHostedRepository(ctx).Body(body).Execute()
+> CreateHelmHostedRepository(ctx).HelmHostedRepositoryApiRequest(helmHostedRepositoryApiRequest).Execute()
 
 Create Helm hosted repository
 
@@ -1906,11 +1915,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest |  (optional)
+	helmHostedRepositoryApiRequest := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateHelmHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateHelmHostedRepository(context.Background()).HelmHostedRepositoryApiRequest(helmHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateHelmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1929,7 +1938,7 @@ Other parameters are passed through a pointer to a apiCreateHelmHostedRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
+ **helmHostedRepositoryApiRequest** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -1951,7 +1960,7 @@ Name | Type | Description  | Notes
 
 ## CreateHelmProxyRepository
 
-> CreateHelmProxyRepository(ctx).Body(body).Execute()
+> CreateHelmProxyRepository(ctx).HelmProxyRepositoryApiRequest(helmProxyRepositoryApiRequest).Execute()
 
 Create Helm proxy repository
 
@@ -1968,11 +1977,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
+	helmProxyRepositoryApiRequest := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateHelmProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateHelmProxyRepository(context.Background()).HelmProxyRepositoryApiRequest(helmProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateHelmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1991,7 +2000,7 @@ Other parameters are passed through a pointer to a apiCreateHelmProxyRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
+ **helmProxyRepositoryApiRequest** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2013,7 +2022,7 @@ Name | Type | Description  | Notes
 
 ## CreateHuggingfaceProxyRepository
 
-> CreateHuggingfaceProxyRepository(ctx).Body(body).Execute()
+> CreateHuggingfaceProxyRepository(ctx).HuggingFaceProxyRepositoryApiRequest(huggingFaceProxyRepositoryApiRequest).Execute()
 
 Create huggingface proxy repository
 
@@ -2030,11 +2039,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
+	huggingFaceProxyRepositoryApiRequest := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateHuggingfaceProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateHuggingfaceProxyRepository(context.Background()).HuggingFaceProxyRepositoryApiRequest(huggingFaceProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateHuggingfaceProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2053,7 +2062,7 @@ Other parameters are passed through a pointer to a apiCreateHuggingfaceProxyRepo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HuggingFaceProxyRepositoryApiRequest**](HuggingFaceProxyRepositoryApiRequest.md) |  | 
+ **huggingFaceProxyRepositoryApiRequest** | [**HuggingFaceProxyRepositoryApiRequest**](HuggingFaceProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2075,7 +2084,7 @@ Name | Type | Description  | Notes
 
 ## CreateMavenGroupRepository
 
-> CreateMavenGroupRepository(ctx).Body(body).Execute()
+> CreateMavenGroupRepository(ctx).MavenGroupRepositoryApiRequest(mavenGroupRepositoryApiRequest).Execute()
 
 Create Maven group repository
 
@@ -2092,11 +2101,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
+	mavenGroupRepositoryApiRequest := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateMavenGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateMavenGroupRepository(context.Background()).MavenGroupRepositoryApiRequest(mavenGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateMavenGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2115,7 +2124,7 @@ Other parameters are passed through a pointer to a apiCreateMavenGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MavenGroupRepositoryApiRequest**](MavenGroupRepositoryApiRequest.md) |  | 
+ **mavenGroupRepositoryApiRequest** | [**MavenGroupRepositoryApiRequest**](MavenGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2137,7 +2146,7 @@ Name | Type | Description  | Notes
 
 ## CreateMavenHostedRepository
 
-> CreateMavenHostedRepository(ctx).Body(body).Execute()
+> CreateMavenHostedRepository(ctx).MavenHostedRepositoryApiRequest(mavenHostedRepositoryApiRequest).Execute()
 
 Create Maven hosted repository
 
@@ -2154,11 +2163,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest |  (optional)
+	mavenHostedRepositoryApiRequest := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes("STRICT", "MIXED"), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateMavenHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateMavenHostedRepository(context.Background()).MavenHostedRepositoryApiRequest(mavenHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateMavenHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2177,7 +2186,7 @@ Other parameters are passed through a pointer to a apiCreateMavenHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MavenHostedRepositoryApiRequest**](MavenHostedRepositoryApiRequest.md) |  | 
+ **mavenHostedRepositoryApiRequest** | [**MavenHostedRepositoryApiRequest**](MavenHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2199,7 +2208,7 @@ Name | Type | Description  | Notes
 
 ## CreateMavenProxyRepository
 
-> CreateMavenProxyRepository(ctx).Body(body).Execute()
+> CreateMavenProxyRepository(ctx).MavenProxyRepositoryApiRequest(mavenProxyRepositoryApiRequest).Execute()
 
 Create Maven proxy repository
 
@@ -2216,11 +2225,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
+	mavenProxyRepositoryApiRequest := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes("STRICT", "MIXED"), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateMavenProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateMavenProxyRepository(context.Background()).MavenProxyRepositoryApiRequest(mavenProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateMavenProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2239,7 +2248,7 @@ Other parameters are passed through a pointer to a apiCreateMavenProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**MavenProxyRepositoryApiRequest**](MavenProxyRepositoryApiRequest.md) |  | 
+ **mavenProxyRepositoryApiRequest** | [**MavenProxyRepositoryApiRequest**](MavenProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2261,7 +2270,7 @@ Name | Type | Description  | Notes
 
 ## CreateNpmGroupRepository
 
-> CreateNpmGroupRepository(ctx).Body(body).Execute()
+> CreateNpmGroupRepository(ctx).NpmGroupRepositoryApiRequest(npmGroupRepositoryApiRequest).Execute()
 
 Create npm group repository
 
@@ -2278,11 +2287,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNpmGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NpmGroupRepositoryApiRequest |  (optional)
+	npmGroupRepositoryApiRequest := *sonatyperepo.NewNpmGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NpmGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNpmGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNpmGroupRepository(context.Background()).NpmGroupRepositoryApiRequest(npmGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNpmGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2301,7 +2310,7 @@ Other parameters are passed through a pointer to a apiCreateNpmGroupRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NpmGroupRepositoryApiRequest**](NpmGroupRepositoryApiRequest.md) |  | 
+ **npmGroupRepositoryApiRequest** | [**NpmGroupRepositoryApiRequest**](NpmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2323,7 +2332,7 @@ Name | Type | Description  | Notes
 
 ## CreateNpmHostedRepository
 
-> CreateNpmHostedRepository(ctx).Body(body).Execute()
+> CreateNpmHostedRepository(ctx).NpmHostedRepositoryApiRequest(npmHostedRepositoryApiRequest).Execute()
 
 Create npm hosted repository
 
@@ -2340,11 +2349,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest |  (optional)
+	npmHostedRepositoryApiRequest := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNpmHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNpmHostedRepository(context.Background()).NpmHostedRepositoryApiRequest(npmHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNpmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2363,7 +2372,7 @@ Other parameters are passed through a pointer to a apiCreateNpmHostedRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NpmHostedRepositoryApiRequest**](NpmHostedRepositoryApiRequest.md) |  | 
+ **npmHostedRepositoryApiRequest** | [**NpmHostedRepositoryApiRequest**](NpmHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2385,7 +2394,7 @@ Name | Type | Description  | Notes
 
 ## CreateNpmProxyRepository
 
-> CreateNpmProxyRepository(ctx).Body(body).Execute()
+> CreateNpmProxyRepository(ctx).NpmProxyRepositoryApiRequest(npmProxyRepositoryApiRequest).Execute()
 
 Create npm proxy repository
 
@@ -2402,11 +2411,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
+	npmProxyRepositoryApiRequest := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNpmProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNpmProxyRepository(context.Background()).NpmProxyRepositoryApiRequest(npmProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNpmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2425,7 +2434,7 @@ Other parameters are passed through a pointer to a apiCreateNpmProxyRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NpmProxyRepositoryApiRequest**](NpmProxyRepositoryApiRequest.md) |  | 
+ **npmProxyRepositoryApiRequest** | [**NpmProxyRepositoryApiRequest**](NpmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2447,7 +2456,7 @@ Name | Type | Description  | Notes
 
 ## CreateNugetGroupRepository
 
-> CreateNugetGroupRepository(ctx).Body(body).Execute()
+> CreateNugetGroupRepository(ctx).NugetGroupRepositoryApiRequest(nugetGroupRepositoryApiRequest).Execute()
 
 Create NuGet group repository
 
@@ -2464,11 +2473,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNugetGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NugetGroupRepositoryApiRequest |  (optional)
+	nugetGroupRepositoryApiRequest := *sonatyperepo.NewNugetGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NugetGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNugetGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNugetGroupRepository(context.Background()).NugetGroupRepositoryApiRequest(nugetGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNugetGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2487,7 +2496,7 @@ Other parameters are passed through a pointer to a apiCreateNugetGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NugetGroupRepositoryApiRequest**](NugetGroupRepositoryApiRequest.md) |  | 
+ **nugetGroupRepositoryApiRequest** | [**NugetGroupRepositoryApiRequest**](NugetGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2509,7 +2518,7 @@ Name | Type | Description  | Notes
 
 ## CreateNugetHostedRepository
 
-> CreateNugetHostedRepository(ctx).Body(body).Execute()
+> CreateNugetHostedRepository(ctx).NugetHostedRepositoryApiRequest(nugetHostedRepositoryApiRequest).Execute()
 
 Create NuGet hosted repository
 
@@ -2526,11 +2535,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest |  (optional)
+	nugetHostedRepositoryApiRequest := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNugetHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNugetHostedRepository(context.Background()).NugetHostedRepositoryApiRequest(nugetHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNugetHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2549,7 +2558,7 @@ Other parameters are passed through a pointer to a apiCreateNugetHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NugetHostedRepositoryApiRequest**](NugetHostedRepositoryApiRequest.md) |  | 
+ **nugetHostedRepositoryApiRequest** | [**NugetHostedRepositoryApiRequest**](NugetHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2571,7 +2580,7 @@ Name | Type | Description  | Notes
 
 ## CreateNugetProxyRepository
 
-> CreateNugetProxyRepository(ctx).Body(body).Execute()
+> CreateNugetProxyRepository(ctx).NugetProxyRepositoryApiRequest(nugetProxyRepositoryApiRequest).Execute()
 
 Create NuGet proxy repository
 
@@ -2588,11 +2597,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
+	nugetProxyRepositoryApiRequest := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateNugetProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateNugetProxyRepository(context.Background()).NugetProxyRepositoryApiRequest(nugetProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateNugetProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2611,7 +2620,193 @@ Other parameters are passed through a pointer to a apiCreateNugetProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**NugetProxyRepositoryApiRequest**](NugetProxyRepositoryApiRequest.md) |  | 
+ **nugetProxyRepositoryApiRequest** | [**NugetProxyRepositoryApiRequest**](NugetProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOciGroupRepository
+
+> CreateOciGroupRepository(ctx).OciGroupRepositoryApiRequest(ociGroupRepositoryApiRequest).Execute()
+
+Create OCI group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	ociGroupRepositoryApiRequest := *sonatyperepo.NewOciGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewStorageAttributes("default", true)) // OciGroupRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateOciGroupRepository(context.Background()).OciGroupRepositoryApiRequest(ociGroupRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateOciGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOciGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ociGroupRepositoryApiRequest** | [**OciGroupRepositoryApiRequest**](OciGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOciHostedRepository
+
+> CreateOciHostedRepository(ctx).OciHostedRepositoryApiRequest(ociHostedRepositoryApiRequest).Execute()
+
+Create OCI hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	ociHostedRepositoryApiRequest := *sonatyperepo.NewOciHostedRepositoryApiRequest("internal", *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // OciHostedRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateOciHostedRepository(context.Background()).OciHostedRepositoryApiRequest(ociHostedRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateOciHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOciHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ociHostedRepositoryApiRequest** | [**OciHostedRepositoryApiRequest**](OciHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateOciProxyRepository
+
+> CreateOciProxyRepository(ctx).OciProxyRepositoryApiRequest(ociProxyRepositoryApiRequest).Execute()
+
+Create OCI proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	ociProxyRepositoryApiRequest := *sonatyperepo.NewOciProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // OciProxyRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateOciProxyRepository(context.Background()).OciProxyRepositoryApiRequest(ociProxyRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateOciProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateOciProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ociProxyRepositoryApiRequest** | [**OciProxyRepositoryApiRequest**](OciProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2633,7 +2828,7 @@ Name | Type | Description  | Notes
 
 ## CreateP2ProxyRepository
 
-> CreateP2ProxyRepository(ctx).Body(body).Execute()
+> CreateP2ProxyRepository(ctx).P2ProxyRepositoryApiRequest(p2ProxyRepositoryApiRequest).Execute()
 
 Create p2 proxy repository
 
@@ -2650,11 +2845,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
+	p2ProxyRepositoryApiRequest := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateP2ProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateP2ProxyRepository(context.Background()).P2ProxyRepositoryApiRequest(p2ProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateP2ProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2673,7 +2868,7 @@ Other parameters are passed through a pointer to a apiCreateP2ProxyRepositoryReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
+ **p2ProxyRepositoryApiRequest** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2695,7 +2890,7 @@ Name | Type | Description  | Notes
 
 ## CreatePubGroupRepository
 
-> CreatePubGroupRepository(ctx).Body(body).Execute()
+> CreatePubGroupRepository(ctx).PubGroupRepositoryApiRequest(pubGroupRepositoryApiRequest).Execute()
 
 Create Pub group repository
 
@@ -2712,11 +2907,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest |  (optional)
+	pubGroupRepositoryApiRequest := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePubGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePubGroupRepository(context.Background()).PubGroupRepositoryApiRequest(pubGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2735,7 +2930,7 @@ Other parameters are passed through a pointer to a apiCreatePubGroupRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
+ **pubGroupRepositoryApiRequest** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2757,7 +2952,7 @@ Name | Type | Description  | Notes
 
 ## CreatePubHostedRepository
 
-> CreatePubHostedRepository(ctx).Body(body).Execute()
+> CreatePubHostedRepository(ctx).PubHostedRepositoryApiRequest(pubHostedRepositoryApiRequest).Execute()
 
 Create Pub hosted repository
 
@@ -2774,11 +2969,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest |  (optional)
+	pubHostedRepositoryApiRequest := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePubHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePubHostedRepository(context.Background()).PubHostedRepositoryApiRequest(pubHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2797,7 +2992,7 @@ Other parameters are passed through a pointer to a apiCreatePubHostedRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
+ **pubHostedRepositoryApiRequest** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2819,7 +3014,7 @@ Name | Type | Description  | Notes
 
 ## CreatePubProxyRepository
 
-> CreatePubProxyRepository(ctx).Body(body).Execute()
+> CreatePubProxyRepository(ctx).PubProxyRepositoryApiRequest(pubProxyRepositoryApiRequest).Execute()
 
 Create Pub proxy repository
 
@@ -2836,11 +3031,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest |  (optional)
+	pubProxyRepositoryApiRequest := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePubProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePubProxyRepository(context.Background()).PubProxyRepositoryApiRequest(pubProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePubProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2859,7 +3054,7 @@ Other parameters are passed through a pointer to a apiCreatePubProxyRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
+ **pubProxyRepositoryApiRequest** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2881,7 +3076,7 @@ Name | Type | Description  | Notes
 
 ## CreatePypiGroupRepository
 
-> CreatePypiGroupRepository(ctx).Body(body).Execute()
+> CreatePypiGroupRepository(ctx).PypiGroupRepositoryApiRequest(pypiGroupRepositoryApiRequest).Execute()
 
 Create PyPI group repository
 
@@ -2898,11 +3093,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
+	pypiGroupRepositoryApiRequest := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePypiGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePypiGroupRepository(context.Background()).PypiGroupRepositoryApiRequest(pypiGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePypiGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2921,7 +3116,7 @@ Other parameters are passed through a pointer to a apiCreatePypiGroupRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PypiGroupRepositoryApiRequest**](PypiGroupRepositoryApiRequest.md) |  | 
+ **pypiGroupRepositoryApiRequest** | [**PypiGroupRepositoryApiRequest**](PypiGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -2943,7 +3138,7 @@ Name | Type | Description  | Notes
 
 ## CreatePypiHostedRepository
 
-> CreatePypiHostedRepository(ctx).Body(body).Execute()
+> CreatePypiHostedRepository(ctx).PypiHostedRepositoryApiRequest(pypiHostedRepositoryApiRequest).Execute()
 
 Create PyPI hosted repository
 
@@ -2960,11 +3155,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest |  (optional)
+	pypiHostedRepositoryApiRequest := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePypiHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePypiHostedRepository(context.Background()).PypiHostedRepositoryApiRequest(pypiHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePypiHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2983,7 +3178,7 @@ Other parameters are passed through a pointer to a apiCreatePypiHostedRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PypiHostedRepositoryApiRequest**](PypiHostedRepositoryApiRequest.md) |  | 
+ **pypiHostedRepositoryApiRequest** | [**PypiHostedRepositoryApiRequest**](PypiHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3005,7 +3200,7 @@ Name | Type | Description  | Notes
 
 ## CreatePypiProxyRepository
 
-> CreatePypiProxyRepository(ctx).Body(body).Execute()
+> CreatePypiProxyRepository(ctx).PypiProxyRepositoryApiRequest(pypiProxyRepositoryApiRequest).Execute()
 
 Create PyPI proxy repository
 
@@ -3022,11 +3217,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
+	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreatePypiProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreatePypiProxyRepository(context.Background()).PypiProxyRepositoryApiRequest(pypiProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreatePypiProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3045,7 +3240,7 @@ Other parameters are passed through a pointer to a apiCreatePypiProxyRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**PypiProxyRepositoryApiRequest**](PypiProxyRepositoryApiRequest.md) |  | 
+ **pypiProxyRepositoryApiRequest** | [**PypiProxyRepositoryApiRequest**](PypiProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3067,7 +3262,7 @@ Name | Type | Description  | Notes
 
 ## CreateRGroupRepository
 
-> CreateRGroupRepository(ctx).Body(body).Execute()
+> CreateRGroupRepository(ctx).RGroupRepositoryApiRequest(rGroupRepositoryApiRequest).Execute()
 
 Create R group repository
 
@@ -3084,11 +3279,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RGroupRepositoryApiRequest |  (optional)
+	rGroupRepositoryApiRequest := *sonatyperepo.NewRGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRGroupRepository(context.Background()).RGroupRepositoryApiRequest(rGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3107,7 +3302,7 @@ Other parameters are passed through a pointer to a apiCreateRGroupRepositoryRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
+ **rGroupRepositoryApiRequest** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3129,7 +3324,7 @@ Name | Type | Description  | Notes
 
 ## CreateRHostedRepository
 
-> CreateRHostedRepository(ctx).Body(body).Execute()
+> CreateRHostedRepository(ctx).RHostedRepositoryApiRequest(rHostedRepositoryApiRequest).Execute()
 
 Create R hosted repository
 
@@ -3146,11 +3341,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest |  (optional)
+	rHostedRepositoryApiRequest := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRHostedRepository(context.Background()).RHostedRepositoryApiRequest(rHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3169,7 +3364,7 @@ Other parameters are passed through a pointer to a apiCreateRHostedRepositoryReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
+ **rHostedRepositoryApiRequest** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3191,7 +3386,7 @@ Name | Type | Description  | Notes
 
 ## CreateRProxyRepository
 
-> CreateRProxyRepository(ctx).Body(body).Execute()
+> CreateRProxyRepository(ctx).RProxyRepositoryApiRequest(rProxyRepositoryApiRequest).Execute()
 
 Create R proxy repository
 
@@ -3208,11 +3403,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
+	rProxyRepositoryApiRequest := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRProxyRepository(context.Background()).RProxyRepositoryApiRequest(rProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3231,7 +3426,7 @@ Other parameters are passed through a pointer to a apiCreateRProxyRepositoryRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
+ **rProxyRepositoryApiRequest** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3253,7 +3448,7 @@ Name | Type | Description  | Notes
 
 ## CreateRawGroupRepository
 
-> CreateRawGroupRepository(ctx).Body(body).Execute()
+> CreateRawGroupRepository(ctx).RawGroupRepositoryApiRequest(rawGroupRepositoryApiRequest).Execute()
 
 Create raw group repository
 
@@ -3270,11 +3465,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRawGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RawGroupRepositoryApiRequest |  (optional)
+	rawGroupRepositoryApiRequest := *sonatyperepo.NewRawGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RawGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRawGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRawGroupRepository(context.Background()).RawGroupRepositoryApiRequest(rawGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRawGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3293,7 +3488,7 @@ Other parameters are passed through a pointer to a apiCreateRawGroupRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RawGroupRepositoryApiRequest**](RawGroupRepositoryApiRequest.md) |  | 
+ **rawGroupRepositoryApiRequest** | [**RawGroupRepositoryApiRequest**](RawGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3315,7 +3510,7 @@ Name | Type | Description  | Notes
 
 ## CreateRawHostedRepository
 
-> CreateRawHostedRepository(ctx).Body(body).Execute()
+> CreateRawHostedRepository(ctx).RawHostedRepositoryApiRequest(rawHostedRepositoryApiRequest).Execute()
 
 Create raw hosted repository
 
@@ -3332,11 +3527,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest |  (optional)
+	rawHostedRepositoryApiRequest := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRawHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRawHostedRepository(context.Background()).RawHostedRepositoryApiRequest(rawHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRawHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3355,7 +3550,7 @@ Other parameters are passed through a pointer to a apiCreateRawHostedRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RawHostedRepositoryApiRequest**](RawHostedRepositoryApiRequest.md) |  | 
+ **rawHostedRepositoryApiRequest** | [**RawHostedRepositoryApiRequest**](RawHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3377,7 +3572,7 @@ Name | Type | Description  | Notes
 
 ## CreateRawProxyRepository
 
-> CreateRawProxyRepository(ctx).Body(body).Execute()
+> CreateRawProxyRepository(ctx).RawProxyRepositoryApiRequest(rawProxyRepositoryApiRequest).Execute()
 
 Create raw proxy repository
 
@@ -3394,11 +3589,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
+	rawProxyRepositoryApiRequest := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRawProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRawProxyRepository(context.Background()).RawProxyRepositoryApiRequest(rawProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRawProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3417,7 +3612,7 @@ Other parameters are passed through a pointer to a apiCreateRawProxyRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RawProxyRepositoryApiRequest**](RawProxyRepositoryApiRequest.md) |  | 
+ **rawProxyRepositoryApiRequest** | [**RawProxyRepositoryApiRequest**](RawProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3439,7 +3634,7 @@ Name | Type | Description  | Notes
 
 ## CreateRubygemsGroupRepository
 
-> CreateRubygemsGroupRepository(ctx).Body(body).Execute()
+> CreateRubygemsGroupRepository(ctx).RubyGemsGroupRepositoryApiRequest(rubyGemsGroupRepositoryApiRequest).Execute()
 
 Create RubyGems group repository
 
@@ -3456,11 +3651,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRubyGemsGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsGroupRepositoryApiRequest |  (optional)
+	rubyGemsGroupRepositoryApiRequest := *sonatyperepo.NewRubyGemsGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsGroupRepository(context.Background()).RubyGemsGroupRepositoryApiRequest(rubyGemsGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRubygemsGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3479,7 +3674,7 @@ Other parameters are passed through a pointer to a apiCreateRubygemsGroupReposit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RubyGemsGroupRepositoryApiRequest**](RubyGemsGroupRepositoryApiRequest.md) |  | 
+ **rubyGemsGroupRepositoryApiRequest** | [**RubyGemsGroupRepositoryApiRequest**](RubyGemsGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3501,7 +3696,7 @@ Name | Type | Description  | Notes
 
 ## CreateRubygemsHostedRepository
 
-> CreateRubygemsHostedRepository(ctx).Body(body).Execute()
+> CreateRubygemsHostedRepository(ctx).RubyGemsHostedRepositoryApiRequest(rubyGemsHostedRepositoryApiRequest).Execute()
 
 Create RubyGems hosted repository
 
@@ -3518,11 +3713,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest |  (optional)
+	rubyGemsHostedRepositoryApiRequest := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsHostedRepository(context.Background()).RubyGemsHostedRepositoryApiRequest(rubyGemsHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRubygemsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3541,7 +3736,7 @@ Other parameters are passed through a pointer to a apiCreateRubygemsHostedReposi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RubyGemsHostedRepositoryApiRequest**](RubyGemsHostedRepositoryApiRequest.md) |  | 
+ **rubyGemsHostedRepositoryApiRequest** | [**RubyGemsHostedRepositoryApiRequest**](RubyGemsHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3563,7 +3758,7 @@ Name | Type | Description  | Notes
 
 ## CreateRubygemsProxyRepository
 
-> CreateRubygemsProxyRepository(ctx).Body(body).Execute()
+> CreateRubygemsProxyRepository(ctx).RubyGemsProxyRepositoryApiRequest(rubyGemsProxyRepositoryApiRequest).Execute()
 
 Create RubyGems proxy repository
 
@@ -3580,11 +3775,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
+	rubyGemsProxyRepositoryApiRequest := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateRubygemsProxyRepository(context.Background()).RubyGemsProxyRepositoryApiRequest(rubyGemsProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateRubygemsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3603,7 +3798,7 @@ Other parameters are passed through a pointer to a apiCreateRubygemsProxyReposit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+ **rubyGemsProxyRepositoryApiRequest** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3625,7 +3820,7 @@ Name | Type | Description  | Notes
 
 ## CreateSwiftGroupRepository
 
-> CreateSwiftGroupRepository(ctx).Body(body).Execute()
+> CreateSwiftGroupRepository(ctx).SwiftGroupRepositoryApiRequest(swiftGroupRepositoryApiRequest).Execute()
 
 Create Swift group repository
 
@@ -3642,11 +3837,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest |  (optional)
+	swiftGroupRepositoryApiRequest := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateSwiftGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateSwiftGroupRepository(context.Background()).SwiftGroupRepositoryApiRequest(swiftGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateSwiftGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3665,7 +3860,7 @@ Other parameters are passed through a pointer to a apiCreateSwiftGroupRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
+ **swiftGroupRepositoryApiRequest** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3687,7 +3882,7 @@ Name | Type | Description  | Notes
 
 ## CreateSwiftHostedRepository
 
-> CreateSwiftHostedRepository(ctx).Body(body).Execute()
+> CreateSwiftHostedRepository(ctx).SwiftHostedRepositoryApiRequest(swiftHostedRepositoryApiRequest).Execute()
 
 Create swift hosted repository
 
@@ -3704,11 +3899,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSwiftHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // SwiftHostedRepositoryApiRequest |  (optional)
+	swiftHostedRepositoryApiRequest := *sonatyperepo.NewSwiftHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // SwiftHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateSwiftHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateSwiftHostedRepository(context.Background()).SwiftHostedRepositoryApiRequest(swiftHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateSwiftHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3727,7 +3922,7 @@ Other parameters are passed through a pointer to a apiCreateSwiftHostedRepositor
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SwiftHostedRepositoryApiRequest**](SwiftHostedRepositoryApiRequest.md) |  | 
+ **swiftHostedRepositoryApiRequest** | [**SwiftHostedRepositoryApiRequest**](SwiftHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3749,7 +3944,7 @@ Name | Type | Description  | Notes
 
 ## CreateSwiftProxyRepository
 
-> CreateSwiftProxyRepository(ctx).Body(body).Execute()
+> CreateSwiftProxyRepository(ctx).SwiftProxyRepositoryApiRequest(swiftProxyRepositoryApiRequest).Execute()
 
 Create swift proxy repository
 
@@ -3766,11 +3961,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
+	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateSwiftProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateSwiftProxyRepository(context.Background()).SwiftProxyRepositoryApiRequest(swiftProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateSwiftProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3789,7 +3984,7 @@ Other parameters are passed through a pointer to a apiCreateSwiftProxyRepository
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SwiftProxyRepositoryApiRequest**](SwiftProxyRepositoryApiRequest.md) |  | 
+ **swiftProxyRepositoryApiRequest** | [**SwiftProxyRepositoryApiRequest**](SwiftProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3811,7 +4006,7 @@ Name | Type | Description  | Notes
 
 ## CreateTerraformGroupRepository
 
-> CreateTerraformGroupRepository(ctx).Body(body).Execute()
+> CreateTerraformGroupRepository(ctx).TerraformGroupRepositoryApiRequest(terraformGroupRepositoryApiRequest).Execute()
 
 Create Terraform group repository
 
@@ -3828,11 +4023,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewTerraformGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // TerraformGroupRepositoryApiRequest |  (optional)
+	terraformGroupRepositoryApiRequest := *sonatyperepo.NewTerraformGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // TerraformGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateTerraformGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateTerraformGroupRepository(context.Background()).TerraformGroupRepositoryApiRequest(terraformGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateTerraformGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3851,7 +4046,7 @@ Other parameters are passed through a pointer to a apiCreateTerraformGroupReposi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TerraformGroupRepositoryApiRequest**](TerraformGroupRepositoryApiRequest.md) |  | 
+ **terraformGroupRepositoryApiRequest** | [**TerraformGroupRepositoryApiRequest**](TerraformGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3873,7 +4068,7 @@ Name | Type | Description  | Notes
 
 ## CreateTerraformHostedRepository
 
-> CreateTerraformHostedRepository(ctx).Body(body).Execute()
+> CreateTerraformHostedRepository(ctx).TerraformHostedRepositoryApiRequest(terraformHostedRepositoryApiRequest).Execute()
 
 Create terraform hosted repository
 
@@ -3890,13 +4085,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewTerraformHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewTerraformSigningAttributes("-----BEGIN PGP PRIVATE KEY BLOCK-----
+	terraformHostedRepositoryApiRequest := *sonatyperepo.NewTerraformHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewTerraformSigningAttributes("-----BEGIN PGP PRIVATE KEY BLOCK-----
 ...
------END PGP PRIVATE KEY BLOCK-----")) // TerraformHostedRepositoryApiRequest |  (optional)
+-----END PGP PRIVATE KEY BLOCK-----")) // TerraformHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateTerraformHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateTerraformHostedRepository(context.Background()).TerraformHostedRepositoryApiRequest(terraformHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateTerraformHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3915,7 +4110,7 @@ Other parameters are passed through a pointer to a apiCreateTerraformHostedRepos
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TerraformHostedRepositoryApiRequest**](TerraformHostedRepositoryApiRequest.md) |  | 
+ **terraformHostedRepositoryApiRequest** | [**TerraformHostedRepositoryApiRequest**](TerraformHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -3937,7 +4132,7 @@ Name | Type | Description  | Notes
 
 ## CreateTerraformProxyRepository
 
-> CreateTerraformProxyRepository(ctx).Body(body).Execute()
+> CreateTerraformProxyRepository(ctx).TerraformProxyRepositoryApiRequest(terraformProxyRepositoryApiRequest).Execute()
 
 Create terraform proxy repository
 
@@ -3956,11 +4151,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
+	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateTerraformProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateTerraformProxyRepository(context.Background()).TerraformProxyRepositoryApiRequest(terraformProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateTerraformProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3979,7 +4174,7 @@ Other parameters are passed through a pointer to a apiCreateTerraformProxyReposi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Configuration for the new Terraform proxy repository | 
+ **terraformProxyRepositoryApiRequest** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Configuration for the new Terraform proxy repository | 
 
 ### Return type
 
@@ -4001,7 +4196,7 @@ Name | Type | Description  | Notes
 
 ## CreateYumGroupRepository
 
-> CreateYumGroupRepository(ctx).Body(body).Execute()
+> CreateYumGroupRepository(ctx).YumGroupRepositoryApiRequest(yumGroupRepositoryApiRequest).Execute()
 
 Create Yum group repository
 
@@ -4018,11 +4213,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewYumGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // YumGroupRepositoryApiRequest |  (optional)
+	yumGroupRepositoryApiRequest := *sonatyperepo.NewYumGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // YumGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateYumGroupRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateYumGroupRepository(context.Background()).YumGroupRepositoryApiRequest(yumGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateYumGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4041,7 +4236,7 @@ Other parameters are passed through a pointer to a apiCreateYumGroupRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**YumGroupRepositoryApiRequest**](YumGroupRepositoryApiRequest.md) |  | 
+ **yumGroupRepositoryApiRequest** | [**YumGroupRepositoryApiRequest**](YumGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -4063,7 +4258,7 @@ Name | Type | Description  | Notes
 
 ## CreateYumHostedRepository
 
-> CreateYumHostedRepository(ctx).Body(body).Execute()
+> CreateYumHostedRepository(ctx).YumHostedRepositoryApiRequest(yumHostedRepositoryApiRequest).Execute()
 
 Create Yum hosted repository
 
@@ -4080,11 +4275,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
+	yumHostedRepositoryApiRequest := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes("STRICT", int32(5))) // YumHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateYumHostedRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateYumHostedRepository(context.Background()).YumHostedRepositoryApiRequest(yumHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateYumHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4103,7 +4298,7 @@ Other parameters are passed through a pointer to a apiCreateYumHostedRepositoryR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**YumHostedRepositoryApiRequest**](YumHostedRepositoryApiRequest.md) |  | 
+ **yumHostedRepositoryApiRequest** | [**YumHostedRepositoryApiRequest**](YumHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -4125,7 +4320,7 @@ Name | Type | Description  | Notes
 
 ## CreateYumProxyRepository
 
-> CreateYumProxyRepository(ctx).Body(body).Execute()
+> CreateYumProxyRepository(ctx).YumProxyRepositoryApiRequest(yumProxyRepositoryApiRequest).Execute()
 
 Create Yum proxy repository
 
@@ -4142,11 +4337,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
+	yumProxyRepositoryApiRequest := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.CreateYumProxyRepository(context.Background()).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.CreateYumProxyRepository(context.Background()).YumProxyRepositoryApiRequest(yumProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateYumProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4165,7 +4360,7 @@ Other parameters are passed through a pointer to a apiCreateYumProxyRepositoryRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**YumProxyRepositoryApiRequest**](YumProxyRepositoryApiRequest.md) |  | 
+ **yumProxyRepositoryApiRequest** | [**YumProxyRepositoryApiRequest**](YumProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -4385,9 +4580,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteRepository
+## DeleteRepositories
 
-> DeleteRepository(ctx, repositoryName).Execute()
+> DeleteRepositories(ctx, repositoryName).Execute()
 
 Delete repository of any format
 
@@ -4408,9 +4603,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.DeleteRepository(context.Background(), repositoryName).Execute()
+	r, err := apiClient.RepositoryManagementAPI.DeleteRepositories(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.DeleteRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.DeleteRepositories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -4426,7 +4621,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRepositoriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4451,9 +4646,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DisableRepositoryHealthCheck
+## DeleteRepositoriesHealthCheck
 
-> DisableRepositoryHealthCheck(ctx, repositoryName).Execute()
+> DeleteRepositoriesHealthCheck(ctx, repositoryName).Execute()
 
 Disable repository health check. Proxy repositories only.
 
@@ -4474,9 +4669,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.DisableRepositoryHealthCheck(context.Background(), repositoryName).Execute()
+	r, err := apiClient.RepositoryManagementAPI.DeleteRepositoriesHealthCheck(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.DisableRepositoryHealthCheck``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.DeleteRepositoriesHealthCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -4492,7 +4687,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDisableRepositoryHealthCheckRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRepositoriesHealthCheckRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -4986,7 +5181,7 @@ Name | Type | Description  | Notes
 
 ## GetAptHostedRepository
 
-> AptHostedApiRepository GetAptHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetAptHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5012,7 +5207,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAptHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAptHostedRepository`: AptHostedApiRepository
+	// response from `GetAptHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAptHostedRepository`: %v\n", resp)
 }
 ```
@@ -5036,7 +5231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AptHostedApiRepository**](AptHostedApiRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5054,7 +5249,7 @@ Name | Type | Description  | Notes
 
 ## GetAptProxyRepository
 
-> AptProxyApiRepository GetAptProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetAptProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5080,7 +5275,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAptProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAptProxyRepository`: AptProxyApiRepository
+	// response from `GetAptProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAptProxyRepository`: %v\n", resp)
 }
 ```
@@ -5104,7 +5299,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AptProxyApiRepository**](AptProxyApiRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5190,7 +5385,7 @@ Name | Type | Description  | Notes
 
 ## GetCargoHostedRepository
 
-> SimpleApiHostedRepository GetCargoHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetCargoHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5216,7 +5411,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCargoHostedRepository`: SimpleApiHostedRepository
+	// response from `GetCargoHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCargoHostedRepository`: %v\n", resp)
 }
 ```
@@ -5240,7 +5435,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5326,7 +5521,7 @@ Name | Type | Description  | Notes
 
 ## GetCocoapodsProxyRepository
 
-> SimpleApiProxyRepository GetCocoapodsProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetCocoapodsProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5352,7 +5547,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCocoapodsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCocoapodsProxyRepository`: SimpleApiProxyRepository
+	// response from `GetCocoapodsProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCocoapodsProxyRepository`: %v\n", resp)
 }
 ```
@@ -5376,7 +5571,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5394,7 +5589,7 @@ Name | Type | Description  | Notes
 
 ## GetComposerProxyRepository
 
-> SimpleApiProxyRepository GetComposerProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetComposerProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5420,7 +5615,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetComposerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetComposerProxyRepository`: SimpleApiProxyRepository
+	// response from `GetComposerProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetComposerProxyRepository`: %v\n", resp)
 }
 ```
@@ -5444,7 +5639,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5530,7 +5725,7 @@ Name | Type | Description  | Notes
 
 ## GetConanHostedRepository
 
-> SimpleApiHostedRepository GetConanHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetConanHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5556,7 +5751,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetConanHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConanHostedRepository`: SimpleApiHostedRepository
+	// response from `GetConanHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetConanHostedRepository`: %v\n", resp)
 }
 ```
@@ -5580,7 +5775,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5734,7 +5929,7 @@ Name | Type | Description  | Notes
 
 ## GetCondaHostedRepository
 
-> SimpleApiHostedRepository GetCondaHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetCondaHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5760,7 +5955,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCondaHostedRepository`: SimpleApiHostedRepository
+	// response from `GetCondaHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaHostedRepository`: %v\n", resp)
 }
 ```
@@ -5784,7 +5979,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -5802,7 +5997,7 @@ Name | Type | Description  | Notes
 
 ## GetCondaProxyRepository
 
-> SimpleApiProxyRepository GetCondaProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetCondaProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5828,7 +6023,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCondaProxyRepository`: SimpleApiProxyRepository
+	// response from `GetCondaProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaProxyRepository`: %v\n", resp)
 }
 ```
@@ -5852,7 +6047,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6074,7 +6269,7 @@ Name | Type | Description  | Notes
 
 ## GetGitlfsHostedRepository
 
-> SimpleApiHostedRepository GetGitlfsHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetGitlfsHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6100,7 +6295,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGitlfsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGitlfsHostedRepository`: SimpleApiHostedRepository
+	// response from `GetGitlfsHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGitlfsHostedRepository`: %v\n", resp)
 }
 ```
@@ -6124,7 +6319,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6142,7 +6337,7 @@ Name | Type | Description  | Notes
 
 ## GetGoGroupRepository
 
-> SimpleApiGroupRepository GetGoGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetGoGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6168,7 +6363,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoGroupRepository`: SimpleApiGroupRepository
+	// response from `GetGoGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoGroupRepository`: %v\n", resp)
 }
 ```
@@ -6192,7 +6387,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6210,7 +6405,7 @@ Name | Type | Description  | Notes
 
 ## GetGoHostedRepository
 
-> SimpleApiHostedRepository GetGoHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetGoHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6236,7 +6431,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoHostedRepository`: SimpleApiHostedRepository
+	// response from `GetGoHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoHostedRepository`: %v\n", resp)
 }
 ```
@@ -6260,7 +6455,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6278,7 +6473,7 @@ Name | Type | Description  | Notes
 
 ## GetGoProxyRepository
 
-> SimpleApiProxyRepository GetGoProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetGoProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6304,7 +6499,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoProxyRepository`: SimpleApiProxyRepository
+	// response from `GetGoProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoProxyRepository`: %v\n", resp)
 }
 ```
@@ -6328,7 +6523,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6346,7 +6541,7 @@ Name | Type | Description  | Notes
 
 ## GetHelmGroupRepository
 
-> SimpleApiGroupRepository GetHelmGroupRepository(ctx, repositoryName).Execute()
+> HelmGroupApiRepository GetHelmGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6372,7 +6567,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHelmGroupRepository`: SimpleApiGroupRepository
+	// response from `GetHelmGroupRepository`: HelmGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmGroupRepository`: %v\n", resp)
 }
 ```
@@ -6396,7 +6591,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**HelmGroupApiRepository**](HelmGroupApiRepository.md)
 
 ### Authorization
 
@@ -6414,7 +6609,7 @@ Name | Type | Description  | Notes
 
 ## GetHelmHostedRepository
 
-> SimpleApiHostedRepository GetHelmHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetHelmHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6440,7 +6635,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHelmHostedRepository`: SimpleApiHostedRepository
+	// response from `GetHelmHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmHostedRepository`: %v\n", resp)
 }
 ```
@@ -6464,7 +6659,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6482,7 +6677,7 @@ Name | Type | Description  | Notes
 
 ## GetHelmProxyRepository
 
-> SimpleApiProxyRepository GetHelmProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetHelmProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6508,7 +6703,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHelmProxyRepository`: SimpleApiProxyRepository
+	// response from `GetHelmProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmProxyRepository`: %v\n", resp)
 }
 ```
@@ -6532,7 +6727,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6550,7 +6745,7 @@ Name | Type | Description  | Notes
 
 ## GetHuggingfaceProxyRepository
 
-> SimpleApiProxyRepository GetHuggingfaceProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetHuggingfaceProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6576,7 +6771,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHuggingfaceProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHuggingfaceProxyRepository`: SimpleApiProxyRepository
+	// response from `GetHuggingfaceProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHuggingfaceProxyRepository`: %v\n", resp)
 }
 ```
@@ -6600,7 +6795,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6618,7 +6813,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenGroupRepository
 
-> SimpleApiGroupRepository GetMavenGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetMavenGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6644,7 +6839,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenGroupRepository`: SimpleApiGroupRepository
+	// response from `GetMavenGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenGroupRepository`: %v\n", resp)
 }
 ```
@@ -6668,7 +6863,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6686,7 +6881,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenHostedRepository
 
-> MavenHostedApiRepository GetMavenHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetMavenHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6712,7 +6907,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenHostedRepository`: MavenHostedApiRepository
+	// response from `GetMavenHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenHostedRepository`: %v\n", resp)
 }
 ```
@@ -6736,7 +6931,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MavenHostedApiRepository**](MavenHostedApiRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6754,7 +6949,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenProxyRepository
 
-> MavenProxyApiRepository GetMavenProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetMavenProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6780,7 +6975,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenProxyRepository`: MavenProxyApiRepository
+	// response from `GetMavenProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenProxyRepository`: %v\n", resp)
 }
 ```
@@ -6804,7 +6999,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**MavenProxyApiRepository**](MavenProxyApiRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -6890,7 +7085,7 @@ Name | Type | Description  | Notes
 
 ## GetNpmHostedRepository
 
-> SimpleApiHostedRepository GetNpmHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetNpmHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6916,7 +7111,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNpmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNpmHostedRepository`: SimpleApiHostedRepository
+	// response from `GetNpmHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNpmHostedRepository`: %v\n", resp)
 }
 ```
@@ -6940,7 +7135,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7026,7 +7221,7 @@ Name | Type | Description  | Notes
 
 ## GetNugetGroupRepository
 
-> SimpleApiGroupRepository GetNugetGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetNugetGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7052,7 +7247,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNugetGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNugetGroupRepository`: SimpleApiGroupRepository
+	// response from `GetNugetGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNugetGroupRepository`: %v\n", resp)
 }
 ```
@@ -7076,7 +7271,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7094,7 +7289,7 @@ Name | Type | Description  | Notes
 
 ## GetNugetHostedRepository
 
-> SimpleApiHostedRepository GetNugetHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetNugetHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7120,7 +7315,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNugetHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNugetHostedRepository`: SimpleApiHostedRepository
+	// response from `GetNugetHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNugetHostedRepository`: %v\n", resp)
 }
 ```
@@ -7144,7 +7339,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7228,9 +7423,213 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GetOciGroupRepository
+
+> AbstractApiRepository GetOciGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetOciGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOciGroupRepository`: AbstractApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOciGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AbstractApiRepository**](AbstractApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOciHostedRepository
+
+> AbstractApiRepository GetOciHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetOciHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOciHostedRepository`: AbstractApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOciHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AbstractApiRepository**](AbstractApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetOciProxyRepository
+
+> AbstractApiRepository GetOciProxyRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetOciProxyRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetOciProxyRepository`: AbstractApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciProxyRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetOciProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**AbstractApiRepository**](AbstractApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GetP2ProxyRepository
 
-> SimpleApiProxyRepository GetP2ProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetP2ProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7256,7 +7655,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetP2ProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetP2ProxyRepository`: SimpleApiProxyRepository
+	// response from `GetP2ProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetP2ProxyRepository`: %v\n", resp)
 }
 ```
@@ -7280,7 +7679,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7298,7 +7697,7 @@ Name | Type | Description  | Notes
 
 ## GetPubGroupRepository
 
-> SimpleApiGroupRepository GetPubGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetPubGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7324,7 +7723,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubGroupRepository`: SimpleApiGroupRepository
+	// response from `GetPubGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubGroupRepository`: %v\n", resp)
 }
 ```
@@ -7348,7 +7747,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7366,7 +7765,7 @@ Name | Type | Description  | Notes
 
 ## GetPubHostedRepository
 
-> SimpleApiHostedRepository GetPubHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetPubHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7392,7 +7791,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubHostedRepository`: SimpleApiHostedRepository
+	// response from `GetPubHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubHostedRepository`: %v\n", resp)
 }
 ```
@@ -7416,7 +7815,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7434,7 +7833,7 @@ Name | Type | Description  | Notes
 
 ## GetPubProxyRepository
 
-> SimpleApiProxyRepository GetPubProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetPubProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7460,7 +7859,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubProxyRepository`: SimpleApiProxyRepository
+	// response from `GetPubProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubProxyRepository`: %v\n", resp)
 }
 ```
@@ -7484,7 +7883,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7570,7 +7969,7 @@ Name | Type | Description  | Notes
 
 ## GetPypiHostedRepository
 
-> SimpleApiHostedRepository GetPypiHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetPypiHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7596,7 +7995,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPypiHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPypiHostedRepository`: SimpleApiHostedRepository
+	// response from `GetPypiHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPypiHostedRepository`: %v\n", resp)
 }
 ```
@@ -7620,7 +8019,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7706,7 +8105,7 @@ Name | Type | Description  | Notes
 
 ## GetRGroupRepository
 
-> SimpleApiGroupRepository GetRGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7732,7 +8131,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRGroupRepository`: SimpleApiGroupRepository
+	// response from `GetRGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRGroupRepository`: %v\n", resp)
 }
 ```
@@ -7756,7 +8155,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7774,7 +8173,7 @@ Name | Type | Description  | Notes
 
 ## GetRHostedRepository
 
-> SimpleApiHostedRepository GetRHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7800,7 +8199,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRHostedRepository`: SimpleApiHostedRepository
+	// response from `GetRHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRHostedRepository`: %v\n", resp)
 }
 ```
@@ -7824,7 +8223,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -7842,7 +8241,7 @@ Name | Type | Description  | Notes
 
 ## GetRProxyRepository
 
-> SimpleApiProxyRepository GetRProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7868,7 +8267,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRProxyRepository`: SimpleApiProxyRepository
+	// response from `GetRProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRProxyRepository`: %v\n", resp)
 }
 ```
@@ -7892,7 +8291,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -8114,66 +8513,7 @@ Name | Type | Description  | Notes
 
 ## GetRepositories
 
-> []AbstractApiRepository GetRepositories(ctx).Execute()
-
-List repositories
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepositories``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetRepositories`: []AbstractApiRepository
-	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepositories`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetRepositoriesRequest struct via the builder pattern
-
-
-### Return type
-
-[**[]AbstractApiRepository**](AbstractApiRepository.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetRepository
-
-> RepositoryXO GetRepository(ctx, repositoryName).Execute()
+> GetRepositories(ctx, repositoryName).Execute()
 
 Get repository details
 
@@ -8194,13 +8534,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RepositoryManagementAPI.GetRepository(context.Background(), repositoryName).Execute()
+	r, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepositories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRepository`: RepositoryXO
-	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepository`: %v\n", resp)
 }
 ```
 
@@ -8214,7 +8552,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRepositoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRepositoriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -8223,7 +8561,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RepositoryXO**](RepositoryXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -8232,7 +8570,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8241,7 +8579,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsGroupRepository
 
-> SimpleApiGroupRepository GetRubygemsGroupRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRubygemsGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8267,7 +8605,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsGroupRepository`: SimpleApiGroupRepository
+	// response from `GetRubygemsGroupRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsGroupRepository`: %v\n", resp)
 }
 ```
@@ -8291,7 +8629,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiGroupRepository**](SimpleApiGroupRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -8309,7 +8647,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsHostedRepository
 
-> SimpleApiHostedRepository GetRubygemsHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRubygemsHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8335,7 +8673,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsHostedRepository`: SimpleApiHostedRepository
+	// response from `GetRubygemsHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsHostedRepository`: %v\n", resp)
 }
 ```
@@ -8359,7 +8697,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -8377,7 +8715,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsProxyRepository
 
-> SimpleApiProxyRepository GetRubygemsProxyRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetRubygemsProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8403,7 +8741,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsProxyRepository`: SimpleApiProxyRepository
+	// response from `GetRubygemsProxyRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsProxyRepository`: %v\n", resp)
 }
 ```
@@ -8427,7 +8765,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiProxyRepository**](SimpleApiProxyRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -8513,7 +8851,7 @@ Name | Type | Description  | Notes
 
 ## GetSwiftHostedRepository
 
-> SimpleApiHostedRepository GetSwiftHostedRepository(ctx, repositoryName).Execute()
+> AbstractApiRepository GetSwiftHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8539,7 +8877,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetSwiftHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSwiftHostedRepository`: SimpleApiHostedRepository
+	// response from `GetSwiftHostedRepository`: AbstractApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetSwiftHostedRepository`: %v\n", resp)
 }
 ```
@@ -8563,7 +8901,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**SimpleApiHostedRepository**](SimpleApiHostedRepository.md)
+[**AbstractApiRepository**](AbstractApiRepository.md)
 
 ### Authorization
 
@@ -9055,9 +9393,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListRepositorySettings
+
+> []AbstractApiRepository ListRepositorySettings(ctx).Execute()
+
+List repositories
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.ListRepositorySettings(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.ListRepositorySettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListRepositorySettings`: []AbstractApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.ListRepositorySettings`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListRepositorySettingsRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]AbstractApiRepository**](AbstractApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateAlpineGroupRepository
 
-> UpdateAlpineGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAlpineGroupRepository(ctx, repositoryName).AlpineGroupRepositoryApiRequest(alpineGroupRepositoryApiRequest).Execute()
 
 Update Alpine group repository
 
@@ -9075,11 +9472,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest |  (optional)
+	alpineGroupRepositoryApiRequest := *sonatyperepo.NewAlpineGroupRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes("Keypair_example"), *sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AlpineGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineGroupRepository(context.Background(), repositoryName).AlpineGroupRepositoryApiRequest(alpineGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9103,7 +9500,7 @@ Other parameters are passed through a pointer to a apiUpdateAlpineGroupRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
+ **alpineGroupRepositoryApiRequest** | [**AlpineGroupRepositoryApiRequest**](AlpineGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9125,7 +9522,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlpineHostedRepository
 
-> UpdateAlpineHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAlpineHostedRepository(ctx, repositoryName).AlpineHostedRepositoryApiRequest(alpineHostedRepositoryApiRequest).Execute()
 
 Update Alpine hosted repository
 
@@ -9143,11 +9540,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest |  (optional)
+	alpineHostedRepositoryApiRequest := *sonatyperepo.NewAlpineHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AlpineHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineHostedRepository(context.Background(), repositoryName).AlpineHostedRepositoryApiRequest(alpineHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9171,7 +9568,7 @@ Other parameters are passed through a pointer to a apiUpdateAlpineHostedReposito
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
+ **alpineHostedRepositoryApiRequest** | [**AlpineHostedRepositoryApiRequest**](AlpineHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9193,7 +9590,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAlpineProxyRepository
 
-> UpdateAlpineProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAlpineProxyRepository(ctx, repositoryName).AlpineProxyRepositoryApiRequest(alpineProxyRepositoryApiRequest).Execute()
 
 Update Alpine proxy repository
 
@@ -9211,11 +9608,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest |  (optional)
+	alpineProxyRepositoryApiRequest := *sonatyperepo.NewAlpineProxyRepositoryApiRequest(*sonatyperepo.NewAlpineSigningRepositoriesAttributes("Keypair_example"), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AlpineProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAlpineProxyRepository(context.Background(), repositoryName).AlpineProxyRepositoryApiRequest(alpineProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAlpineProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9239,7 +9636,7 @@ Other parameters are passed through a pointer to a apiUpdateAlpineProxyRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
+ **alpineProxyRepositoryApiRequest** | [**AlpineProxyRepositoryApiRequest**](AlpineProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9261,7 +9658,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAnsiblegalaxyGroupRepository
 
-> UpdateAnsiblegalaxyGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAnsiblegalaxyGroupRepository(ctx, repositoryName).AnsibleGalaxyGroupRepositoryApiRequest(ansibleGalaxyGroupRepositoryApiRequest).Execute()
 
 Update Ansible Galaxy group repository
 
@@ -9281,11 +9678,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Updated configuration for the Ansible Galaxy group repository
+	ansibleGalaxyGroupRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyGroupRepositoryApiRequest | Updated configuration for the Ansible Galaxy group repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyGroupRepository(context.Background(), repositoryName).AnsibleGalaxyGroupRepositoryApiRequest(ansibleGalaxyGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9309,7 +9706,7 @@ Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyGroupRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy group repository | 
+ **ansibleGalaxyGroupRepositoryApiRequest** | [**AnsibleGalaxyGroupRepositoryApiRequest**](AnsibleGalaxyGroupRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy group repository | 
 
 ### Return type
 
@@ -9331,7 +9728,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAnsiblegalaxyHostedRepository
 
-> UpdateAnsiblegalaxyHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAnsiblegalaxyHostedRepository(ctx, repositoryName).AnsibleGalaxyHostedRepositoryApiRequest(ansibleGalaxyHostedRepositoryApiRequest).Execute()
 
 Update Ansible Galaxy hosted repository
 
@@ -9351,11 +9748,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Updated configuration for the Ansible Galaxy hosted repository
+	ansibleGalaxyHostedRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AnsibleGalaxyHostedRepositoryApiRequest | Updated configuration for the Ansible Galaxy hosted repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyHostedRepository(context.Background(), repositoryName).AnsibleGalaxyHostedRepositoryApiRequest(ansibleGalaxyHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9379,7 +9776,7 @@ Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyHostedR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy hosted repository | 
+ **ansibleGalaxyHostedRepositoryApiRequest** | [**AnsibleGalaxyHostedRepositoryApiRequest**](AnsibleGalaxyHostedRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy hosted repository | 
 
 ### Return type
 
@@ -9401,7 +9798,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAnsiblegalaxyProxyRepository
 
-> UpdateAnsiblegalaxyProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAnsiblegalaxyProxyRepository(ctx, repositoryName).AnsibleGalaxyProxyRepositoryApiRequest(ansibleGalaxyProxyRepositoryApiRequest).Execute()
 
 Update Ansible Galaxy proxy repository
 
@@ -9421,11 +9818,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Updated configuration for the Ansible Galaxy proxy repository
+	ansibleGalaxyProxyRepositoryApiRequest := *sonatyperepo.NewAnsibleGalaxyProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AnsibleGalaxyProxyRepositoryApiRequest | Updated configuration for the Ansible Galaxy proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAnsiblegalaxyProxyRepository(context.Background(), repositoryName).AnsibleGalaxyProxyRepositoryApiRequest(ansibleGalaxyProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAnsiblegalaxyProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9449,7 +9846,7 @@ Other parameters are passed through a pointer to a apiUpdateAnsiblegalaxyProxyRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy proxy repository | 
+ **ansibleGalaxyProxyRepositoryApiRequest** | [**AnsibleGalaxyProxyRepositoryApiRequest**](AnsibleGalaxyProxyRepositoryApiRequest.md) | Updated configuration for the Ansible Galaxy proxy repository | 
 
 ### Return type
 
@@ -9471,7 +9868,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAptHostedRepository
 
-> UpdateAptHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAptHostedRepository(ctx, repositoryName).AptHostedRepositoryApiRequest(aptHostedRepositoryApiRequest).Execute()
 
 Update APT hosted repository
 
@@ -9489,11 +9886,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes("bionic"), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest |  (optional)
+	aptHostedRepositoryApiRequest := *sonatyperepo.NewAptHostedRepositoryApiRequest(*sonatyperepo.NewAptHostedRepositoriesAttributes("bionic"), *sonatyperepo.NewAptSigningRepositoriesAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // AptHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAptHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAptHostedRepository(context.Background(), repositoryName).AptHostedRepositoryApiRequest(aptHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAptHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9517,7 +9914,7 @@ Other parameters are passed through a pointer to a apiUpdateAptHostedRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AptHostedRepositoryApiRequest**](AptHostedRepositoryApiRequest.md) |  | 
+ **aptHostedRepositoryApiRequest** | [**AptHostedRepositoryApiRequest**](AptHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9539,7 +9936,7 @@ Name | Type | Description  | Notes
 
 ## UpdateAptProxyRepository
 
-> UpdateAptProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateAptProxyRepository(ctx, repositoryName).AptProxyRepositoryApiRequest(aptProxyRepositoryApiRequest).Execute()
 
 Update APT proxy repository
 
@@ -9557,11 +9954,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest |  (optional)
+	aptProxyRepositoryApiRequest := *sonatyperepo.NewAptProxyRepositoryApiRequest(*sonatyperepo.NewAptProxyRepositoriesAttributes(false), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // AptProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateAptProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateAptProxyRepository(context.Background(), repositoryName).AptProxyRepositoryApiRequest(aptProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateAptProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9585,7 +9982,7 @@ Other parameters are passed through a pointer to a apiUpdateAptProxyRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**AptProxyRepositoryApiRequest**](AptProxyRepositoryApiRequest.md) |  | 
+ **aptProxyRepositoryApiRequest** | [**AptProxyRepositoryApiRequest**](AptProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9607,7 +10004,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCargoGroupRepository
 
-> UpdateCargoGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoGroupRepository(ctx, repositoryName).CargoGroupRepositoryApiRequest(cargoGroupRepositoryApiRequest).Execute()
 
 Update cargo group repository
 
@@ -9625,11 +10022,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest |  (optional)
+	cargoGroupRepositoryApiRequest := *sonatyperepo.NewCargoGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CargoGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCargoGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoGroupRepository(context.Background(), repositoryName).CargoGroupRepositoryApiRequest(cargoGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9653,7 +10050,7 @@ Other parameters are passed through a pointer to a apiUpdateCargoGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
+ **cargoGroupRepositoryApiRequest** | [**CargoGroupRepositoryApiRequest**](CargoGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9675,7 +10072,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCargoHostedRepository
 
-> UpdateCargoHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoHostedRepository(ctx, repositoryName).CargoHostedRepositoryApiRequest(cargoHostedRepositoryApiRequest).Execute()
 
 Update cargo hosted repository
 
@@ -9693,11 +10090,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest |  (optional)
+	cargoHostedRepositoryApiRequest := *sonatyperepo.NewCargoHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CargoHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCargoHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoHostedRepository(context.Background(), repositoryName).CargoHostedRepositoryApiRequest(cargoHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9721,7 +10118,7 @@ Other parameters are passed through a pointer to a apiUpdateCargoHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
+ **cargoHostedRepositoryApiRequest** | [**CargoHostedRepositoryApiRequest**](CargoHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9743,7 +10140,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCargoProxyRepository
 
-> UpdateCargoProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCargoProxyRepository(ctx, repositoryName).CargoProxyRepositoryApiRequest(cargoProxyRepositoryApiRequest).Execute()
 
 Update cargo proxy repository
 
@@ -9761,11 +10158,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest |  (optional)
+	cargoProxyRepositoryApiRequest := *sonatyperepo.NewCargoProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CargoProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCargoProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCargoProxyRepository(context.Background(), repositoryName).CargoProxyRepositoryApiRequest(cargoProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCargoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9789,7 +10186,7 @@ Other parameters are passed through a pointer to a apiUpdateCargoProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
+ **cargoProxyRepositoryApiRequest** | [**CargoProxyRepositoryApiRequest**](CargoProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9811,7 +10208,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCocoapodsProxyRepository
 
-> UpdateCocoapodsProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCocoapodsProxyRepository(ctx, repositoryName).CocoapodsProxyRepositoryApiRequest(cocoapodsProxyRepositoryApiRequest).Execute()
 
 Update Cocoapods proxy repository
 
@@ -9829,11 +10226,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest |  (optional)
+	cocoapodsProxyRepositoryApiRequest := *sonatyperepo.NewCocoapodsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CocoapodsProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCocoapodsProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCocoapodsProxyRepository(context.Background(), repositoryName).CocoapodsProxyRepositoryApiRequest(cocoapodsProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCocoapodsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9857,7 +10254,7 @@ Other parameters are passed through a pointer to a apiUpdateCocoapodsProxyReposi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
+ **cocoapodsProxyRepositoryApiRequest** | [**CocoapodsProxyRepositoryApiRequest**](CocoapodsProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9879,7 +10276,7 @@ Name | Type | Description  | Notes
 
 ## UpdateComposerProxyRepository
 
-> UpdateComposerProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateComposerProxyRepository(ctx, repositoryName).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
 
 Update composer proxy repository
 
@@ -9897,11 +10294,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest |  (optional)
+	composerProxyRepositoryApiRequest := *sonatyperepo.NewComposerProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // ComposerProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateComposerProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateComposerProxyRepository(context.Background(), repositoryName).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateComposerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9925,7 +10322,7 @@ Other parameters are passed through a pointer to a apiUpdateComposerProxyReposit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
+ **composerProxyRepositoryApiRequest** | [**ComposerProxyRepositoryApiRequest**](ComposerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -9947,7 +10344,7 @@ Name | Type | Description  | Notes
 
 ## UpdateConanGroupRepository
 
-> UpdateConanGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateConanGroupRepository(ctx, repositoryName).ConanGroupRepositoryApiRequest(conanGroupRepositoryApiRequest).Execute()
 
 Update Conan group repository
 
@@ -9965,11 +10362,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewConanGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ConanGroupRepositoryApiRequest |  (optional)
+	conanGroupRepositoryApiRequest := *sonatyperepo.NewConanGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ConanGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateConanGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateConanGroupRepository(context.Background(), repositoryName).ConanGroupRepositoryApiRequest(conanGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateConanGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9993,7 +10390,7 @@ Other parameters are passed through a pointer to a apiUpdateConanGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
+ **conanGroupRepositoryApiRequest** | [**ConanGroupRepositoryApiRequest**](ConanGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10015,7 +10412,7 @@ Name | Type | Description  | Notes
 
 ## UpdateConanHostedRepository
 
-> UpdateConanHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateConanHostedRepository(ctx, repositoryName).ConanHostedRepositoryApiRequest(conanHostedRepositoryApiRequest).Execute()
 
 Update Conan hosted repository
 
@@ -10033,11 +10430,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest |  (optional)
+	conanHostedRepositoryApiRequest := *sonatyperepo.NewConanHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ConanHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateConanHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateConanHostedRepository(context.Background(), repositoryName).ConanHostedRepositoryApiRequest(conanHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateConanHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10061,7 +10458,7 @@ Other parameters are passed through a pointer to a apiUpdateConanHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
+ **conanHostedRepositoryApiRequest** | [**ConanHostedRepositoryApiRequest**](ConanHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10083,7 +10480,7 @@ Name | Type | Description  | Notes
 
 ## UpdateConanProxyRepository
 
-> UpdateConanProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateConanProxyRepository(ctx, repositoryName).ConanProxyRepositoryApiRequest(conanProxyRepositoryApiRequest).Execute()
 
 Update Conan proxy repository
 
@@ -10101,11 +10498,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest |  (optional)
+	conanProxyRepositoryApiRequest := *sonatyperepo.NewConanProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // ConanProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateConanProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateConanProxyRepository(context.Background(), repositoryName).ConanProxyRepositoryApiRequest(conanProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateConanProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10129,7 +10526,7 @@ Other parameters are passed through a pointer to a apiUpdateConanProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
+ **conanProxyRepositoryApiRequest** | [**ConanProxyRepositoryApiRequest**](ConanProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10151,7 +10548,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCondaGroupRepository
 
-> UpdateCondaGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCondaGroupRepository(ctx, repositoryName).CondaGroupRepositoryApiRequest(condaGroupRepositoryApiRequest).Execute()
 
 Update Conda group repository
 
@@ -10169,11 +10566,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest |  (optional)
+	condaGroupRepositoryApiRequest := *sonatyperepo.NewCondaGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // CondaGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCondaGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCondaGroupRepository(context.Background(), repositoryName).CondaGroupRepositoryApiRequest(condaGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCondaGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10197,7 +10594,7 @@ Other parameters are passed through a pointer to a apiUpdateCondaGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
+ **condaGroupRepositoryApiRequest** | [**CondaGroupRepositoryApiRequest**](CondaGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10219,7 +10616,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCondaHostedRepository
 
-> UpdateCondaHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCondaHostedRepository(ctx, repositoryName).CondaHostedRepositoryApiRequest(condaHostedRepositoryApiRequest).Execute()
 
 Update conda hosted repository
 
@@ -10237,11 +10634,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest |  (optional)
+	condaHostedRepositoryApiRequest := *sonatyperepo.NewCondaHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // CondaHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCondaHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCondaHostedRepository(context.Background(), repositoryName).CondaHostedRepositoryApiRequest(condaHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCondaHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10265,7 +10662,7 @@ Other parameters are passed through a pointer to a apiUpdateCondaHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
+ **condaHostedRepositoryApiRequest** | [**CondaHostedRepositoryApiRequest**](CondaHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10287,7 +10684,7 @@ Name | Type | Description  | Notes
 
 ## UpdateCondaProxyRepository
 
-> UpdateCondaProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateCondaProxyRepository(ctx, repositoryName).CondaProxyRepositoryApiRequest(condaProxyRepositoryApiRequest).Execute()
 
 Update conda proxy repository
 
@@ -10305,11 +10702,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest |  (optional)
+	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateCondaProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateCondaProxyRepository(context.Background(), repositoryName).CondaProxyRepositoryApiRequest(condaProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateCondaProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10333,7 +10730,7 @@ Other parameters are passed through a pointer to a apiUpdateCondaProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**CondaProxyRepositoryApiRequest**](CondaProxyRepositoryApiRequest.md) |  | 
+ **condaProxyRepositoryApiRequest** | [**CondaProxyRepositoryApiRequest**](CondaProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10355,7 +10752,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDockerGroupRepository
 
-> UpdateDockerGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateDockerGroupRepository(ctx, repositoryName).DockerGroupRepositoryApiRequest(dockerGroupRepositoryApiRequest).Execute()
 
 Update Docker group repository
 
@@ -10373,11 +10770,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewDockerGroupRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // DockerGroupRepositoryApiRequest |  (optional)
+	dockerGroupRepositoryApiRequest := *sonatyperepo.NewDockerGroupRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // DockerGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateDockerGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateDockerGroupRepository(context.Background(), repositoryName).DockerGroupRepositoryApiRequest(dockerGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateDockerGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10401,7 +10798,7 @@ Other parameters are passed through a pointer to a apiUpdateDockerGroupRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**DockerGroupRepositoryApiRequest**](DockerGroupRepositoryApiRequest.md) |  | 
+ **dockerGroupRepositoryApiRequest** | [**DockerGroupRepositoryApiRequest**](DockerGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10423,7 +10820,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDockerHostedRepository
 
-> UpdateDockerHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateDockerHostedRepository(ctx, repositoryName).DockerHostedRepositoryApiRequest(dockerHostedRepositoryApiRequest).Execute()
 
 Update Docker hosted repository
 
@@ -10441,11 +10838,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest |  (optional)
+	dockerHostedRepositoryApiRequest := *sonatyperepo.NewDockerHostedRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), "internal", true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // DockerHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateDockerHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateDockerHostedRepository(context.Background(), repositoryName).DockerHostedRepositoryApiRequest(dockerHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateDockerHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10469,7 +10866,7 @@ Other parameters are passed through a pointer to a apiUpdateDockerHostedReposito
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**DockerHostedRepositoryApiRequest**](DockerHostedRepositoryApiRequest.md) |  | 
+ **dockerHostedRepositoryApiRequest** | [**DockerHostedRepositoryApiRequest**](DockerHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10491,7 +10888,7 @@ Name | Type | Description  | Notes
 
 ## UpdateDockerProxyRepository
 
-> UpdateDockerProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateDockerProxyRepository(ctx, repositoryName).DockerProxyRepositoryApiRequest(dockerProxyRepositoryApiRequest).Execute()
 
 Update Docker proxy repository
 
@@ -10509,11 +10906,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes(), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest |  (optional)
+	dockerProxyRepositoryApiRequest := *sonatyperepo.NewDockerProxyRepositoryApiRequest(*sonatyperepo.NewDockerAttributes(true, false), *sonatyperepo.NewDockerProxyAttributes("HUB"), *sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // DockerProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateDockerProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateDockerProxyRepository(context.Background(), repositoryName).DockerProxyRepositoryApiRequest(dockerProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateDockerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10537,7 +10934,7 @@ Other parameters are passed through a pointer to a apiUpdateDockerProxyRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**DockerProxyRepositoryApiRequest**](DockerProxyRepositoryApiRequest.md) |  | 
+ **dockerProxyRepositoryApiRequest** | [**DockerProxyRepositoryApiRequest**](DockerProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10559,7 +10956,7 @@ Name | Type | Description  | Notes
 
 ## UpdateGitlfsHostedRepository
 
-> UpdateGitlfsHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateGitlfsHostedRepository(ctx, repositoryName).GitLfsHostedRepositoryApiRequest(gitLfsHostedRepositoryApiRequest).Execute()
 
 Update Git LFS hosted repository
 
@@ -10577,11 +10974,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest |  (optional)
+	gitLfsHostedRepositoryApiRequest := *sonatyperepo.NewGitLfsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GitLfsHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateGitlfsHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateGitlfsHostedRepository(context.Background(), repositoryName).GitLfsHostedRepositoryApiRequest(gitLfsHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateGitlfsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10605,7 +11002,7 @@ Other parameters are passed through a pointer to a apiUpdateGitlfsHostedReposito
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
+ **gitLfsHostedRepositoryApiRequest** | [**GitLfsHostedRepositoryApiRequest**](GitLfsHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10627,7 +11024,7 @@ Name | Type | Description  | Notes
 
 ## UpdateGoGroupRepository
 
-> UpdateGoGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateGoGroupRepository(ctx, repositoryName).GolangGroupRepositoryApiRequest(golangGroupRepositoryApiRequest).Execute()
 
 Update a Go group repository
 
@@ -10645,11 +11042,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGolangGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // GolangGroupRepositoryApiRequest |  (optional)
+	golangGroupRepositoryApiRequest := *sonatyperepo.NewGolangGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // GolangGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateGoGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateGoGroupRepository(context.Background(), repositoryName).GolangGroupRepositoryApiRequest(golangGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateGoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10673,7 +11070,7 @@ Other parameters are passed through a pointer to a apiUpdateGoGroupRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
+ **golangGroupRepositoryApiRequest** | [**GolangGroupRepositoryApiRequest**](GolangGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10695,7 +11092,7 @@ Name | Type | Description  | Notes
 
 ## UpdateGoHostedRepository
 
-> UpdateGoHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateGoHostedRepository(ctx, repositoryName).GolangHostedRepositoryApiRequest(golangHostedRepositoryApiRequest).Execute()
 
 Update a Go hosted repository
 
@@ -10713,11 +11110,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest |  (optional)
+	golangHostedRepositoryApiRequest := *sonatyperepo.NewGolangHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // GolangHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateGoHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateGoHostedRepository(context.Background(), repositoryName).GolangHostedRepositoryApiRequest(golangHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateGoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10741,7 +11138,7 @@ Other parameters are passed through a pointer to a apiUpdateGoHostedRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
+ **golangHostedRepositoryApiRequest** | [**GolangHostedRepositoryApiRequest**](GolangHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10763,7 +11160,7 @@ Name | Type | Description  | Notes
 
 ## UpdateGoProxyRepository
 
-> UpdateGoProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateGoProxyRepository(ctx, repositoryName).GolangProxyRepositoryApiRequest(golangProxyRepositoryApiRequest).Execute()
 
 Update a Go proxy repository
 
@@ -10781,11 +11178,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest |  (optional)
+	golangProxyRepositoryApiRequest := *sonatyperepo.NewGolangProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // GolangProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateGoProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateGoProxyRepository(context.Background(), repositoryName).GolangProxyRepositoryApiRequest(golangProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateGoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10809,7 +11206,7 @@ Other parameters are passed through a pointer to a apiUpdateGoProxyRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
+ **golangProxyRepositoryApiRequest** | [**GolangProxyRepositoryApiRequest**](GolangProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10831,7 +11228,7 @@ Name | Type | Description  | Notes
 
 ## UpdateHelmGroupRepository
 
-> UpdateHelmGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateHelmGroupRepository(ctx, repositoryName).HelmGroupRepositoryApiRequest(helmGroupRepositoryApiRequest).Execute()
 
 Update Helm group repository
 
@@ -10849,11 +11246,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest |  (optional)
+	helmGroupRepositoryApiRequest := *sonatyperepo.NewHelmGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // HelmGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateHelmGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateHelmGroupRepository(context.Background(), repositoryName).HelmGroupRepositoryApiRequest(helmGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateHelmGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10877,7 +11274,7 @@ Other parameters are passed through a pointer to a apiUpdateHelmGroupRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
+ **helmGroupRepositoryApiRequest** | [**HelmGroupRepositoryApiRequest**](HelmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10899,7 +11296,7 @@ Name | Type | Description  | Notes
 
 ## UpdateHelmHostedRepository
 
-> UpdateHelmHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateHelmHostedRepository(ctx, repositoryName).HelmHostedRepositoryApiRequest(helmHostedRepositoryApiRequest).Execute()
 
 Update Helm hosted repository
 
@@ -10917,11 +11314,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest |  (optional)
+	helmHostedRepositoryApiRequest := *sonatyperepo.NewHelmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // HelmHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateHelmHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateHelmHostedRepository(context.Background(), repositoryName).HelmHostedRepositoryApiRequest(helmHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateHelmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10945,7 +11342,7 @@ Other parameters are passed through a pointer to a apiUpdateHelmHostedRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
+ **helmHostedRepositoryApiRequest** | [**HelmHostedRepositoryApiRequest**](HelmHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -10967,7 +11364,7 @@ Name | Type | Description  | Notes
 
 ## UpdateHelmProxyRepository
 
-> UpdateHelmProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateHelmProxyRepository(ctx, repositoryName).HelmProxyRepositoryApiRequest(helmProxyRepositoryApiRequest).Execute()
 
 Update Helm proxy repository
 
@@ -10985,11 +11382,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest |  (optional)
+	helmProxyRepositoryApiRequest := *sonatyperepo.NewHelmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // HelmProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateHelmProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateHelmProxyRepository(context.Background(), repositoryName).HelmProxyRepositoryApiRequest(helmProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateHelmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11013,7 +11410,7 @@ Other parameters are passed through a pointer to a apiUpdateHelmProxyRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
+ **helmProxyRepositoryApiRequest** | [**HelmProxyRepositoryApiRequest**](HelmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11035,7 +11432,7 @@ Name | Type | Description  | Notes
 
 ## UpdateHuggingfaceProxyRepository
 
-> UpdateHuggingfaceProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateHuggingfaceProxyRepository(ctx, repositoryName).HuggingFaceProxyRepositoryApiRequest(huggingFaceProxyRepositoryApiRequest).Execute()
 
 Update huggingface proxy repository
 
@@ -11053,11 +11450,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest |  (optional)
+	huggingFaceProxyRepositoryApiRequest := *sonatyperepo.NewHuggingFaceProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // HuggingFaceProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateHuggingfaceProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateHuggingfaceProxyRepository(context.Background(), repositoryName).HuggingFaceProxyRepositoryApiRequest(huggingFaceProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateHuggingfaceProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11081,7 +11478,7 @@ Other parameters are passed through a pointer to a apiUpdateHuggingfaceProxyRepo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**HuggingFaceProxyRepositoryApiRequest**](HuggingFaceProxyRepositoryApiRequest.md) |  | 
+ **huggingFaceProxyRepositoryApiRequest** | [**HuggingFaceProxyRepositoryApiRequest**](HuggingFaceProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11103,7 +11500,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMavenGroupRepository
 
-> UpdateMavenGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateMavenGroupRepository(ctx, repositoryName).MavenGroupRepositoryApiRequest(mavenGroupRepositoryApiRequest).Execute()
 
 Update Maven group repository
 
@@ -11121,11 +11518,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest |  (optional)
+	mavenGroupRepositoryApiRequest := *sonatyperepo.NewMavenGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // MavenGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateMavenGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateMavenGroupRepository(context.Background(), repositoryName).MavenGroupRepositoryApiRequest(mavenGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateMavenGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11149,7 +11546,7 @@ Other parameters are passed through a pointer to a apiUpdateMavenGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**MavenGroupRepositoryApiRequest**](MavenGroupRepositoryApiRequest.md) |  | 
+ **mavenGroupRepositoryApiRequest** | [**MavenGroupRepositoryApiRequest**](MavenGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11171,7 +11568,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMavenHostedRepository
 
-> UpdateMavenHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateMavenHostedRepository(ctx, repositoryName).MavenHostedRepositoryApiRequest(mavenHostedRepositoryApiRequest).Execute()
 
 Update Maven hosted repository
 
@@ -11189,11 +11586,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes(), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest |  (optional)
+	mavenHostedRepositoryApiRequest := *sonatyperepo.NewMavenHostedRepositoryApiRequest(*sonatyperepo.NewMavenAttributes("STRICT", "MIXED"), "internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // MavenHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateMavenHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateMavenHostedRepository(context.Background(), repositoryName).MavenHostedRepositoryApiRequest(mavenHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateMavenHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11217,7 +11614,7 @@ Other parameters are passed through a pointer to a apiUpdateMavenHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**MavenHostedRepositoryApiRequest**](MavenHostedRepositoryApiRequest.md) |  | 
+ **mavenHostedRepositoryApiRequest** | [**MavenHostedRepositoryApiRequest**](MavenHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11239,7 +11636,7 @@ Name | Type | Description  | Notes
 
 ## UpdateMavenProxyRepository
 
-> UpdateMavenProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateMavenProxyRepository(ctx, repositoryName).MavenProxyRepositoryApiRequest(mavenProxyRepositoryApiRequest).Execute()
 
 Update Maven proxy repository
 
@@ -11257,11 +11654,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest |  (optional)
+	mavenProxyRepositoryApiRequest := *sonatyperepo.NewMavenProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributesWithPreemptiveAuth(), *sonatyperepo.NewMavenAttributes("STRICT", "MIXED"), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // MavenProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateMavenProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateMavenProxyRepository(context.Background(), repositoryName).MavenProxyRepositoryApiRequest(mavenProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateMavenProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11285,7 +11682,7 @@ Other parameters are passed through a pointer to a apiUpdateMavenProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**MavenProxyRepositoryApiRequest**](MavenProxyRepositoryApiRequest.md) |  | 
+ **mavenProxyRepositoryApiRequest** | [**MavenProxyRepositoryApiRequest**](MavenProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11307,7 +11704,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNpmGroupRepository
 
-> UpdateNpmGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNpmGroupRepository(ctx, repositoryName).NpmGroupRepositoryApiRequest(npmGroupRepositoryApiRequest).Execute()
 
 Update npm group repository
 
@@ -11325,11 +11722,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNpmGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NpmGroupRepositoryApiRequest |  (optional)
+	npmGroupRepositoryApiRequest := *sonatyperepo.NewNpmGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NpmGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNpmGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNpmGroupRepository(context.Background(), repositoryName).NpmGroupRepositoryApiRequest(npmGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNpmGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11353,7 +11750,7 @@ Other parameters are passed through a pointer to a apiUpdateNpmGroupRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NpmGroupRepositoryApiRequest**](NpmGroupRepositoryApiRequest.md) |  | 
+ **npmGroupRepositoryApiRequest** | [**NpmGroupRepositoryApiRequest**](NpmGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11375,7 +11772,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNpmHostedRepository
 
-> UpdateNpmHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNpmHostedRepository(ctx, repositoryName).NpmHostedRepositoryApiRequest(npmHostedRepositoryApiRequest).Execute()
 
 Update npm hosted repository
 
@@ -11393,11 +11790,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest |  (optional)
+	npmHostedRepositoryApiRequest := *sonatyperepo.NewNpmHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NpmHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNpmHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNpmHostedRepository(context.Background(), repositoryName).NpmHostedRepositoryApiRequest(npmHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNpmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11421,7 +11818,7 @@ Other parameters are passed through a pointer to a apiUpdateNpmHostedRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NpmHostedRepositoryApiRequest**](NpmHostedRepositoryApiRequest.md) |  | 
+ **npmHostedRepositoryApiRequest** | [**NpmHostedRepositoryApiRequest**](NpmHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11443,7 +11840,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNpmProxyRepository
 
-> UpdateNpmProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNpmProxyRepository(ctx, repositoryName).NpmProxyRepositoryApiRequest(npmProxyRepositoryApiRequest).Execute()
 
 Update npm proxy repository
 
@@ -11461,11 +11858,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest |  (optional)
+	npmProxyRepositoryApiRequest := *sonatyperepo.NewNpmProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // NpmProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNpmProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNpmProxyRepository(context.Background(), repositoryName).NpmProxyRepositoryApiRequest(npmProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNpmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11489,7 +11886,7 @@ Other parameters are passed through a pointer to a apiUpdateNpmProxyRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NpmProxyRepositoryApiRequest**](NpmProxyRepositoryApiRequest.md) |  | 
+ **npmProxyRepositoryApiRequest** | [**NpmProxyRepositoryApiRequest**](NpmProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11511,7 +11908,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNugetGroupRepository
 
-> UpdateNugetGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNugetGroupRepository(ctx, repositoryName).NugetGroupRepositoryApiRequest(nugetGroupRepositoryApiRequest).Execute()
 
 Update NuGet group repository
 
@@ -11529,11 +11926,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNugetGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NugetGroupRepositoryApiRequest |  (optional)
+	nugetGroupRepositoryApiRequest := *sonatyperepo.NewNugetGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // NugetGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNugetGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNugetGroupRepository(context.Background(), repositoryName).NugetGroupRepositoryApiRequest(nugetGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNugetGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11557,7 +11954,7 @@ Other parameters are passed through a pointer to a apiUpdateNugetGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NugetGroupRepositoryApiRequest**](NugetGroupRepositoryApiRequest.md) |  | 
+ **nugetGroupRepositoryApiRequest** | [**NugetGroupRepositoryApiRequest**](NugetGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11579,7 +11976,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNugetHostedRepository
 
-> UpdateNugetHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNugetHostedRepository(ctx, repositoryName).NugetHostedRepositoryApiRequest(nugetHostedRepositoryApiRequest).Execute()
 
 Update NuGet hosted repository
 
@@ -11597,11 +11994,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest |  (optional)
+	nugetHostedRepositoryApiRequest := *sonatyperepo.NewNugetHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // NugetHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNugetHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNugetHostedRepository(context.Background(), repositoryName).NugetHostedRepositoryApiRequest(nugetHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNugetHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11625,7 +12022,7 @@ Other parameters are passed through a pointer to a apiUpdateNugetHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NugetHostedRepositoryApiRequest**](NugetHostedRepositoryApiRequest.md) |  | 
+ **nugetHostedRepositoryApiRequest** | [**NugetHostedRepositoryApiRequest**](NugetHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11647,7 +12044,7 @@ Name | Type | Description  | Notes
 
 ## UpdateNugetProxyRepository
 
-> UpdateNugetProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateNugetProxyRepository(ctx, repositoryName).NugetProxyRepositoryApiRequest(nugetProxyRepositoryApiRequest).Execute()
 
 Update NuGet proxy repository
 
@@ -11665,11 +12062,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest |  (optional)
+	nugetProxyRepositoryApiRequest := *sonatyperepo.NewNugetProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewNugetAttributes(), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // NugetProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateNugetProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateNugetProxyRepository(context.Background(), repositoryName).NugetProxyRepositoryApiRequest(nugetProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateNugetProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11693,7 +12090,211 @@ Other parameters are passed through a pointer to a apiUpdateNugetProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**NugetProxyRepositoryApiRequest**](NugetProxyRepositoryApiRequest.md) |  | 
+ **nugetProxyRepositoryApiRequest** | [**NugetProxyRepositoryApiRequest**](NugetProxyRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateOciGroupRepository
+
+> UpdateOciGroupRepository(ctx, repositoryName).OciGroupRepositoryApiRequest(ociGroupRepositoryApiRequest).Execute()
+
+Update OCI group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	ociGroupRepositoryApiRequest := *sonatyperepo.NewOciGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewStorageAttributes("default", true)) // OciGroupRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateOciGroupRepository(context.Background(), repositoryName).OciGroupRepositoryApiRequest(ociGroupRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateOciGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateOciGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ociGroupRepositoryApiRequest** | [**OciGroupRepositoryApiRequest**](OciGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateOciHostedRepository
+
+> UpdateOciHostedRepository(ctx, repositoryName).OciHostedRepositoryApiRequest(ociHostedRepositoryApiRequest).Execute()
+
+Update OCI hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	ociHostedRepositoryApiRequest := *sonatyperepo.NewOciHostedRepositoryApiRequest("internal", *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewDockerHostedStorageAttributes("default", true, "ALLOW_ONCE")) // OciHostedRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateOciHostedRepository(context.Background(), repositoryName).OciHostedRepositoryApiRequest(ociHostedRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateOciHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateOciHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ociHostedRepositoryApiRequest** | [**OciHostedRepositoryApiRequest**](OciHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateOciProxyRepository
+
+> UpdateOciProxyRepository(ctx, repositoryName).OciProxyRepositoryApiRequest(ociProxyRepositoryApiRequest).Execute()
+
+Update OCI proxy repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	ociProxyRepositoryApiRequest := *sonatyperepo.NewOciProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), *sonatyperepo.NewOciAttributes(true, false), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // OciProxyRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateOciProxyRepository(context.Background(), repositoryName).OciProxyRepositoryApiRequest(ociProxyRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateOciProxyRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateOciProxyRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **ociProxyRepositoryApiRequest** | [**OciProxyRepositoryApiRequest**](OciProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11715,7 +12316,7 @@ Name | Type | Description  | Notes
 
 ## UpdateP2ProxyRepository
 
-> UpdateP2ProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateP2ProxyRepository(ctx, repositoryName).P2ProxyRepositoryApiRequest(p2ProxyRepositoryApiRequest).Execute()
 
 Update p2 proxy repository
 
@@ -11733,11 +12334,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest |  (optional)
+	p2ProxyRepositoryApiRequest := *sonatyperepo.NewP2ProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // P2ProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateP2ProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateP2ProxyRepository(context.Background(), repositoryName).P2ProxyRepositoryApiRequest(p2ProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateP2ProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11761,7 +12362,7 @@ Other parameters are passed through a pointer to a apiUpdateP2ProxyRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
+ **p2ProxyRepositoryApiRequest** | [**P2ProxyRepositoryApiRequest**](P2ProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11783,7 +12384,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePubGroupRepository
 
-> UpdatePubGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePubGroupRepository(ctx, repositoryName).PubGroupRepositoryApiRequest(pubGroupRepositoryApiRequest).Execute()
 
 Update Pub group repository
 
@@ -11801,11 +12402,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest |  (optional)
+	pubGroupRepositoryApiRequest := *sonatyperepo.NewPubGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PubGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePubGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubGroupRepository(context.Background(), repositoryName).PubGroupRepositoryApiRequest(pubGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11829,7 +12430,7 @@ Other parameters are passed through a pointer to a apiUpdatePubGroupRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
+ **pubGroupRepositoryApiRequest** | [**PubGroupRepositoryApiRequest**](PubGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11851,7 +12452,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePubHostedRepository
 
-> UpdatePubHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePubHostedRepository(ctx, repositoryName).PubHostedRepositoryApiRequest(pubHostedRepositoryApiRequest).Execute()
 
 Update Pub hosted repository
 
@@ -11869,11 +12470,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest |  (optional)
+	pubHostedRepositoryApiRequest := *sonatyperepo.NewPubHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PubHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePubHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubHostedRepository(context.Background(), repositoryName).PubHostedRepositoryApiRequest(pubHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11897,7 +12498,7 @@ Other parameters are passed through a pointer to a apiUpdatePubHostedRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
+ **pubHostedRepositoryApiRequest** | [**PubHostedRepositoryApiRequest**](PubHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11919,7 +12520,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePubProxyRepository
 
-> UpdatePubProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePubProxyRepository(ctx, repositoryName).PubProxyRepositoryApiRequest(pubProxyRepositoryApiRequest).Execute()
 
 Update Pub proxy repository
 
@@ -11937,11 +12538,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest |  (optional)
+	pubProxyRepositoryApiRequest := *sonatyperepo.NewPubProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PubProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePubProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePubProxyRepository(context.Background(), repositoryName).PubProxyRepositoryApiRequest(pubProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePubProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11965,7 +12566,7 @@ Other parameters are passed through a pointer to a apiUpdatePubProxyRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
+ **pubProxyRepositoryApiRequest** | [**PubProxyRepositoryApiRequest**](PubProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -11987,7 +12588,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePypiGroupRepository
 
-> UpdatePypiGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePypiGroupRepository(ctx, repositoryName).PypiGroupRepositoryApiRequest(pypiGroupRepositoryApiRequest).Execute()
 
 Update PyPI group repository
 
@@ -12005,11 +12606,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest |  (optional)
+	pypiGroupRepositoryApiRequest := *sonatyperepo.NewPypiGroupRepositoryApiRequest(*sonatyperepo.NewGroupDeployAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // PypiGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePypiGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePypiGroupRepository(context.Background(), repositoryName).PypiGroupRepositoryApiRequest(pypiGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePypiGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12033,7 +12634,7 @@ Other parameters are passed through a pointer to a apiUpdatePypiGroupRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PypiGroupRepositoryApiRequest**](PypiGroupRepositoryApiRequest.md) |  | 
+ **pypiGroupRepositoryApiRequest** | [**PypiGroupRepositoryApiRequest**](PypiGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12055,7 +12656,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePypiHostedRepository
 
-> UpdatePypiHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePypiHostedRepository(ctx, repositoryName).PypiHostedRepositoryApiRequest(pypiHostedRepositoryApiRequest).Execute()
 
 Update PyPI hosted repository
 
@@ -12073,11 +12674,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest |  (optional)
+	pypiHostedRepositoryApiRequest := *sonatyperepo.NewPypiHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // PypiHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePypiHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePypiHostedRepository(context.Background(), repositoryName).PypiHostedRepositoryApiRequest(pypiHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePypiHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12101,7 +12702,7 @@ Other parameters are passed through a pointer to a apiUpdatePypiHostedRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PypiHostedRepositoryApiRequest**](PypiHostedRepositoryApiRequest.md) |  | 
+ **pypiHostedRepositoryApiRequest** | [**PypiHostedRepositoryApiRequest**](PypiHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12123,7 +12724,7 @@ Name | Type | Description  | Notes
 
 ## UpdatePypiProxyRepository
 
-> UpdatePypiProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdatePypiProxyRepository(ctx, repositoryName).PypiProxyRepositoryApiRequest(pypiProxyRepositoryApiRequest).Execute()
 
 Update PyPI proxy repository
 
@@ -12141,11 +12742,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest |  (optional)
+	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdatePypiProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdatePypiProxyRepository(context.Background(), repositoryName).PypiProxyRepositoryApiRequest(pypiProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdatePypiProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12169,7 +12770,7 @@ Other parameters are passed through a pointer to a apiUpdatePypiProxyRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**PypiProxyRepositoryApiRequest**](PypiProxyRepositoryApiRequest.md) |  | 
+ **pypiProxyRepositoryApiRequest** | [**PypiProxyRepositoryApiRequest**](PypiProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12191,7 +12792,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRGroupRepository
 
-> UpdateRGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRGroupRepository(ctx, repositoryName).RGroupRepositoryApiRequest(rGroupRepositoryApiRequest).Execute()
 
 Update R group repository
 
@@ -12209,11 +12810,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RGroupRepositoryApiRequest |  (optional)
+	rGroupRepositoryApiRequest := *sonatyperepo.NewRGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRGroupRepository(context.Background(), repositoryName).RGroupRepositoryApiRequest(rGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12237,7 +12838,7 @@ Other parameters are passed through a pointer to a apiUpdateRGroupRepositoryRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
+ **rGroupRepositoryApiRequest** | [**RGroupRepositoryApiRequest**](RGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12259,7 +12860,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRHostedRepository
 
-> UpdateRHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRHostedRepository(ctx, repositoryName).RHostedRepositoryApiRequest(rHostedRepositoryApiRequest).Execute()
 
 Update R hosted repository
 
@@ -12277,11 +12878,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest |  (optional)
+	rHostedRepositoryApiRequest := *sonatyperepo.NewRHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRHostedRepository(context.Background(), repositoryName).RHostedRepositoryApiRequest(rHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12305,7 +12906,7 @@ Other parameters are passed through a pointer to a apiUpdateRHostedRepositoryReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
+ **rHostedRepositoryApiRequest** | [**RHostedRepositoryApiRequest**](RHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12327,7 +12928,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRProxyRepository
 
-> UpdateRProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRProxyRepository(ctx, repositoryName).RProxyRepositoryApiRequest(rProxyRepositoryApiRequest).Execute()
 
 Update R proxy repository
 
@@ -12345,11 +12946,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest |  (optional)
+	rProxyRepositoryApiRequest := *sonatyperepo.NewRProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRProxyRepository(context.Background(), repositoryName).RProxyRepositoryApiRequest(rProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12373,7 +12974,7 @@ Other parameters are passed through a pointer to a apiUpdateRProxyRepositoryRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
+ **rProxyRepositoryApiRequest** | [**RProxyRepositoryApiRequest**](RProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12395,7 +12996,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRawGroupRepository
 
-> UpdateRawGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRawGroupRepository(ctx, repositoryName).RawGroupRepositoryApiRequest(rawGroupRepositoryApiRequest).Execute()
 
 Update raw group repository
 
@@ -12413,11 +13014,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRawGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RawGroupRepositoryApiRequest |  (optional)
+	rawGroupRepositoryApiRequest := *sonatyperepo.NewRawGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RawGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRawGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRawGroupRepository(context.Background(), repositoryName).RawGroupRepositoryApiRequest(rawGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRawGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12441,7 +13042,7 @@ Other parameters are passed through a pointer to a apiUpdateRawGroupRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RawGroupRepositoryApiRequest**](RawGroupRepositoryApiRequest.md) |  | 
+ **rawGroupRepositoryApiRequest** | [**RawGroupRepositoryApiRequest**](RawGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12463,7 +13064,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRawHostedRepository
 
-> UpdateRawHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRawHostedRepository(ctx, repositoryName).RawHostedRepositoryApiRequest(rawHostedRepositoryApiRequest).Execute()
 
 Update raw hosted repository
 
@@ -12481,11 +13082,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest |  (optional)
+	rawHostedRepositoryApiRequest := *sonatyperepo.NewRawHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RawHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRawHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRawHostedRepository(context.Background(), repositoryName).RawHostedRepositoryApiRequest(rawHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRawHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12509,7 +13110,7 @@ Other parameters are passed through a pointer to a apiUpdateRawHostedRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RawHostedRepositoryApiRequest**](RawHostedRepositoryApiRequest.md) |  | 
+ **rawHostedRepositoryApiRequest** | [**RawHostedRepositoryApiRequest**](RawHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12531,7 +13132,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRawProxyRepository
 
-> UpdateRawProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRawProxyRepository(ctx, repositoryName).RawProxyRepositoryApiRequest(rawProxyRepositoryApiRequest).Execute()
 
 Update raw proxy repository
 
@@ -12549,11 +13150,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest |  (optional)
+	rawProxyRepositoryApiRequest := *sonatyperepo.NewRawProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RawProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRawProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRawProxyRepository(context.Background(), repositoryName).RawProxyRepositoryApiRequest(rawProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRawProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12577,7 +13178,7 @@ Other parameters are passed through a pointer to a apiUpdateRawProxyRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RawProxyRepositoryApiRequest**](RawProxyRepositoryApiRequest.md) |  | 
+ **rawProxyRepositoryApiRequest** | [**RawProxyRepositoryApiRequest**](RawProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12599,7 +13200,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRubygemsGroupRepository
 
-> UpdateRubygemsGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRubygemsGroupRepository(ctx, repositoryName).RubyGemsGroupRepositoryApiRequest(rubyGemsGroupRepositoryApiRequest).Execute()
 
 Update RubyGems group repository
 
@@ -12617,11 +13218,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRubyGemsGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsGroupRepositoryApiRequest |  (optional)
+	rubyGemsGroupRepositoryApiRequest := *sonatyperepo.NewRubyGemsGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsGroupRepository(context.Background(), repositoryName).RubyGemsGroupRepositoryApiRequest(rubyGemsGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRubygemsGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12645,7 +13246,7 @@ Other parameters are passed through a pointer to a apiUpdateRubygemsGroupReposit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RubyGemsGroupRepositoryApiRequest**](RubyGemsGroupRepositoryApiRequest.md) |  | 
+ **rubyGemsGroupRepositoryApiRequest** | [**RubyGemsGroupRepositoryApiRequest**](RubyGemsGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12667,7 +13268,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRubygemsHostedRepository
 
-> UpdateRubygemsHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRubygemsHostedRepository(ctx, repositoryName).RubyGemsHostedRepositoryApiRequest(rubyGemsHostedRepositoryApiRequest).Execute()
 
 Update RubyGems hosted repository
 
@@ -12685,11 +13286,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest |  (optional)
+	rubyGemsHostedRepositoryApiRequest := *sonatyperepo.NewRubyGemsHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // RubyGemsHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsHostedRepository(context.Background(), repositoryName).RubyGemsHostedRepositoryApiRequest(rubyGemsHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRubygemsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12713,7 +13314,7 @@ Other parameters are passed through a pointer to a apiUpdateRubygemsHostedReposi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RubyGemsHostedRepositoryApiRequest**](RubyGemsHostedRepositoryApiRequest.md) |  | 
+ **rubyGemsHostedRepositoryApiRequest** | [**RubyGemsHostedRepositoryApiRequest**](RubyGemsHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12735,7 +13336,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRubygemsProxyRepository
 
-> UpdateRubygemsProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateRubygemsProxyRepository(ctx, repositoryName).RubyGemsProxyRepositoryApiRequest(rubyGemsProxyRepositoryApiRequest).Execute()
 
 Update RubyGems proxy repository
 
@@ -12753,11 +13354,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest |  (optional)
+	rubyGemsProxyRepositoryApiRequest := *sonatyperepo.NewRubyGemsProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // RubyGemsProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateRubygemsProxyRepository(context.Background(), repositoryName).RubyGemsProxyRepositoryApiRequest(rubyGemsProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateRubygemsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12781,7 +13382,7 @@ Other parameters are passed through a pointer to a apiUpdateRubygemsProxyReposit
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
+ **rubyGemsProxyRepositoryApiRequest** | [**RubyGemsProxyRepositoryApiRequest**](RubyGemsProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12803,7 +13404,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSwiftGroupRepository
 
-> UpdateSwiftGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateSwiftGroupRepository(ctx, repositoryName).SwiftGroupRepositoryApiRequest(swiftGroupRepositoryApiRequest).Execute()
 
 Update Swift group repository
 
@@ -12821,11 +13422,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest |  (optional)
+	swiftGroupRepositoryApiRequest := *sonatyperepo.NewSwiftGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // SwiftGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftGroupRepository(context.Background(), repositoryName).SwiftGroupRepositoryApiRequest(swiftGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateSwiftGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12849,7 +13450,7 @@ Other parameters are passed through a pointer to a apiUpdateSwiftGroupRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
+ **swiftGroupRepositoryApiRequest** | [**SwiftGroupRepositoryApiRequest**](SwiftGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12871,7 +13472,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSwiftHostedRepository
 
-> UpdateSwiftHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateSwiftHostedRepository(ctx, repositoryName).SwiftHostedRepositoryApiRequest(swiftHostedRepositoryApiRequest).Execute()
 
 Update swift hosted repository
 
@@ -12889,11 +13490,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewSwiftHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // SwiftHostedRepositoryApiRequest |  (optional)
+	swiftHostedRepositoryApiRequest := *sonatyperepo.NewSwiftHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // SwiftHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftHostedRepository(context.Background(), repositoryName).SwiftHostedRepositoryApiRequest(swiftHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateSwiftHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12917,7 +13518,7 @@ Other parameters are passed through a pointer to a apiUpdateSwiftHostedRepositor
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**SwiftHostedRepositoryApiRequest**](SwiftHostedRepositoryApiRequest.md) |  | 
+ **swiftHostedRepositoryApiRequest** | [**SwiftHostedRepositoryApiRequest**](SwiftHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -12939,7 +13540,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSwiftProxyRepository
 
-> UpdateSwiftProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateSwiftProxyRepository(ctx, repositoryName).SwiftProxyRepositoryApiRequest(swiftProxyRepositoryApiRequest).Execute()
 
 Update swift proxy repository
 
@@ -12957,11 +13558,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest |  (optional)
+	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateSwiftProxyRepository(context.Background(), repositoryName).SwiftProxyRepositoryApiRequest(swiftProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateSwiftProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12985,7 +13586,7 @@ Other parameters are passed through a pointer to a apiUpdateSwiftProxyRepository
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**SwiftProxyRepositoryApiRequest**](SwiftProxyRepositoryApiRequest.md) |  | 
+ **swiftProxyRepositoryApiRequest** | [**SwiftProxyRepositoryApiRequest**](SwiftProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -13007,7 +13608,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTerraformGroupRepository
 
-> UpdateTerraformGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateTerraformGroupRepository(ctx, repositoryName).TerraformGroupRepositoryApiRequest(terraformGroupRepositoryApiRequest).Execute()
 
 Update Terraform group repository
 
@@ -13025,11 +13626,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewTerraformGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // TerraformGroupRepositoryApiRequest |  (optional)
+	terraformGroupRepositoryApiRequest := *sonatyperepo.NewTerraformGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // TerraformGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformGroupRepository(context.Background(), repositoryName).TerraformGroupRepositoryApiRequest(terraformGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateTerraformGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13053,7 +13654,7 @@ Other parameters are passed through a pointer to a apiUpdateTerraformGroupReposi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**TerraformGroupRepositoryApiRequest**](TerraformGroupRepositoryApiRequest.md) |  | 
+ **terraformGroupRepositoryApiRequest** | [**TerraformGroupRepositoryApiRequest**](TerraformGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -13075,7 +13676,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTerraformHostedRepository
 
-> UpdateTerraformHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateTerraformHostedRepository(ctx, repositoryName).TerraformHostedRepositoryApiRequest(terraformHostedRepositoryApiRequest).Execute()
 
 Update terraform hosted repository
 
@@ -13093,13 +13694,13 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewTerraformHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewTerraformSigningAttributes("-----BEGIN PGP PRIVATE KEY BLOCK-----
+	terraformHostedRepositoryApiRequest := *sonatyperepo.NewTerraformHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewTerraformSigningAttributes("-----BEGIN PGP PRIVATE KEY BLOCK-----
 ...
------END PGP PRIVATE KEY BLOCK-----")) // TerraformHostedRepositoryApiRequest |  (optional)
+-----END PGP PRIVATE KEY BLOCK-----")) // TerraformHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformHostedRepository(context.Background(), repositoryName).TerraformHostedRepositoryApiRequest(terraformHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateTerraformHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13123,7 +13724,7 @@ Other parameters are passed through a pointer to a apiUpdateTerraformHostedRepos
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**TerraformHostedRepositoryApiRequest**](TerraformHostedRepositoryApiRequest.md) |  | 
+ **terraformHostedRepositoryApiRequest** | [**TerraformHostedRepositoryApiRequest**](TerraformHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -13145,7 +13746,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTerraformProxyRepository
 
-> UpdateTerraformProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateTerraformProxyRepository(ctx, repositoryName).TerraformProxyRepositoryApiRequest(terraformProxyRepositoryApiRequest).Execute()
 
 Update terraform proxy repository
 
@@ -13165,11 +13766,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
+	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateTerraformProxyRepository(context.Background(), repositoryName).TerraformProxyRepositoryApiRequest(terraformProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateTerraformProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13193,7 +13794,7 @@ Other parameters are passed through a pointer to a apiUpdateTerraformProxyReposi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Updated configuration for the Terraform proxy repository | 
+ **terraformProxyRepositoryApiRequest** | [**TerraformProxyRepositoryApiRequest**](TerraformProxyRepositoryApiRequest.md) | Updated configuration for the Terraform proxy repository | 
 
 ### Return type
 
@@ -13215,7 +13816,7 @@ Name | Type | Description  | Notes
 
 ## UpdateYumGroupRepository
 
-> UpdateYumGroupRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateYumGroupRepository(ctx, repositoryName).YumGroupRepositoryApiRequest(yumGroupRepositoryApiRequest).Execute()
 
 Update Yum group repository
 
@@ -13233,11 +13834,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewYumGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes(), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // YumGroupRepositoryApiRequest |  (optional)
+	yumGroupRepositoryApiRequest := *sonatyperepo.NewYumGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // YumGroupRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateYumGroupRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateYumGroupRepository(context.Background(), repositoryName).YumGroupRepositoryApiRequest(yumGroupRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateYumGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13261,7 +13862,7 @@ Other parameters are passed through a pointer to a apiUpdateYumGroupRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**YumGroupRepositoryApiRequest**](YumGroupRepositoryApiRequest.md) |  | 
+ **yumGroupRepositoryApiRequest** | [**YumGroupRepositoryApiRequest**](YumGroupRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -13283,7 +13884,7 @@ Name | Type | Description  | Notes
 
 ## UpdateYumHostedRepository
 
-> UpdateYumHostedRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateYumHostedRepository(ctx, repositoryName).YumHostedRepositoryApiRequest(yumHostedRepositoryApiRequest).Execute()
 
 Update Yum hosted repository
 
@@ -13301,11 +13902,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes(int32(5))) // YumHostedRepositoryApiRequest |  (optional)
+	yumHostedRepositoryApiRequest := *sonatyperepo.NewYumHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE"), *sonatyperepo.NewYumAttributes("STRICT", int32(5))) // YumHostedRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateYumHostedRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateYumHostedRepository(context.Background(), repositoryName).YumHostedRepositoryApiRequest(yumHostedRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateYumHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13329,7 +13930,7 @@ Other parameters are passed through a pointer to a apiUpdateYumHostedRepositoryR
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**YumHostedRepositoryApiRequest**](YumHostedRepositoryApiRequest.md) |  | 
+ **yumHostedRepositoryApiRequest** | [**YumHostedRepositoryApiRequest**](YumHostedRepositoryApiRequest.md) |  | 
 
 ### Return type
 
@@ -13351,7 +13952,7 @@ Name | Type | Description  | Notes
 
 ## UpdateYumProxyRepository
 
-> UpdateYumProxyRepository(ctx, repositoryName).Body(body).Execute()
+> UpdateYumProxyRepository(ctx, repositoryName).YumProxyRepositoryApiRequest(yumProxyRepositoryApiRequest).Execute()
 
 Update Yum proxy repository
 
@@ -13369,11 +13970,11 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	body := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440)), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest |  (optional)
+	yumProxyRepositoryApiRequest := *sonatyperepo.NewYumProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // YumProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.UpdateYumProxyRepository(context.Background(), repositoryName).Body(body).Execute()
+	r, err := apiClient.RepositoryManagementAPI.UpdateYumProxyRepository(context.Background(), repositoryName).YumProxyRepositoryApiRequest(yumProxyRepositoryApiRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateYumProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -13397,7 +13998,7 @@ Other parameters are passed through a pointer to a apiUpdateYumProxyRepositoryRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**YumProxyRepositoryApiRequest**](YumProxyRepositoryApiRequest.md) |  | 
+ **yumProxyRepositoryApiRequest** | [**YumProxyRepositoryApiRequest**](YumProxyRepositoryApiRequest.md) |  | 
 
 ### Return type
 

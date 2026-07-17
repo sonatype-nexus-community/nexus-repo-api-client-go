@@ -22,63 +22,79 @@ func Test_v3_CleanupPoliciesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test CleanupPoliciesAPIService Create1", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService CreateCleanupRun", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.Create1(context.Background()).Execute()
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.CreateCleanupRun(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CleanupPoliciesAPIService DeletePolicyByName", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService CreateInternalCleanupPolicies", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.CreateInternalCleanupPolicies(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CleanupPoliciesAPIService DeleteInternalCleanupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.DeletePolicyByName(context.Background(), name).Execute()
+		httpRes, err := apiClient.CleanupPoliciesAPI.DeleteInternalCleanupPolicies(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CleanupPoliciesAPIService GetAll", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.CleanupPoliciesAPI.GetAll(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test CleanupPoliciesAPIService GetCleanupPolicyByName", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService GetInternalCleanupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicyByName(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.GetInternalCleanupPolicies(context.Background(), name).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CleanupPoliciesAPIService Update2", func(t *testing.T) {
+	t.Run("Test CleanupPoliciesAPIService ListInternalCleanupPolicies", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var policyName string
-
-		httpRes, err := apiClient.CleanupPoliciesAPI.Update2(context.Background(), policyName).Execute()
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.ListInternalCleanupPolicies(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test CleanupPoliciesAPIService UpdateInternalCleanupPolicies", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.UpdateInternalCleanupPolicies(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

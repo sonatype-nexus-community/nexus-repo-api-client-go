@@ -22,22 +22,11 @@ func Test_v3_LifecycleAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test LifecycleAPIService Bounce", func(t *testing.T) {
+	t.Run("Test LifecycleAPIService ListLifecyclePhase", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.LifecycleAPI.Bounce(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test LifecycleAPIService GetPhase", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.LifecycleAPI.GetPhase(context.Background()).Execute()
+		resp, httpRes, err := apiClient.LifecycleAPI.ListLifecyclePhase(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -45,11 +34,22 @@ func Test_v3_LifecycleAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test LifecycleAPIService SetPhase", func(t *testing.T) {
+	t.Run("Test LifecycleAPIService UpdateLifecycleBounce", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.LifecycleAPI.SetPhase(context.Background()).Execute()
+		httpRes, err := apiClient.LifecycleAPI.UpdateLifecycleBounce(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test LifecycleAPIService UpdateLifecyclePhase", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.LifecycleAPI.UpdateLifecyclePhase(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

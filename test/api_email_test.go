@@ -22,22 +22,11 @@ func Test_v3_EmailAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test EmailAPIService DeleteEmailConfiguration", func(t *testing.T) {
+	t.Run("Test EmailAPIService CreateEmailVerify", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.EmailAPI.DeleteEmailConfiguration(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test EmailAPIService GetEmailConfiguration", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.EmailAPI.GetEmailConfiguration(context.Background()).Execute()
+		resp, httpRes, err := apiClient.EmailAPI.CreateEmailVerify(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -45,25 +34,35 @@ func Test_v3_EmailAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test EmailAPIService SetEmailConfiguration", func(t *testing.T) {
+	t.Run("Test EmailAPIService DeleteEmail", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.EmailAPI.SetEmailConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.EmailAPI.DeleteEmail(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test EmailAPIService TestEmailConfiguration", func(t *testing.T) {
+	t.Run("Test EmailAPIService ListEmail", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.EmailAPI.TestEmailConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.EmailAPI.ListEmail(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test EmailAPIService UpdateEmail", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.EmailAPI.UpdateEmail(context.Background()).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

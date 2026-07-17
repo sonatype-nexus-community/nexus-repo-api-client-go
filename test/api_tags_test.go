@@ -22,66 +22,52 @@ func Test_v3_TagsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test TagsAPIService Associate", func(t *testing.T) {
+	t.Run("Test TagsAPIService CreateTags", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.TagsAPI.CreateTags(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TagsAPIService CreateTagsAssociate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var tagName string
 
-		httpRes, err := apiClient.TagsAPI.Associate(context.Background(), tagName).Execute()
+		httpRes, err := apiClient.TagsAPI.CreateTagsAssociate(context.Background(), tagName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TagsAPIService Create2", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.TagsAPI.Create2(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test TagsAPIService Delete3", func(t *testing.T) {
+	t.Run("Test TagsAPIService DeleteTags", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.TagsAPI.Delete3(context.Background(), name).Execute()
+		httpRes, err := apiClient.TagsAPI.DeleteTags(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test TagsAPIService Disassociate", func(t *testing.T) {
+	t.Run("Test TagsAPIService DeleteTagsAssociate", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var tagName string
 
-		httpRes, err := apiClient.TagsAPI.Disassociate(context.Background(), tagName).Execute()
+		httpRes, err := apiClient.TagsAPI.DeleteTagsAssociate(context.Background(), tagName).Execute()
 
 		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test TagsAPIService Get2", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		resp, httpRes, err := apiClient.TagsAPI.Get2(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -90,7 +76,20 @@ func Test_v3_TagsAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.TagsAPI.GetTags(context.Background()).Execute()
+		var name string
+
+		httpRes, err := apiClient.TagsAPI.GetTags(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TagsAPIService ListTags", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.TagsAPI.ListTags(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -98,16 +97,15 @@ func Test_v3_TagsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test TagsAPIService Replace", func(t *testing.T) {
+	t.Run("Test TagsAPIService UpdateTags", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		resp, httpRes, err := apiClient.TagsAPI.Replace(context.Background(), name).Execute()
+		httpRes, err := apiClient.TagsAPI.UpdateTags(context.Background(), name).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

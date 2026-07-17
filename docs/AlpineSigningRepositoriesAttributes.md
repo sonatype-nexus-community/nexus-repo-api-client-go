@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Keypair** | Pointer to **string** | RSA signing key pair (PEM armored private key) | [optional] 
+**Keypair** | **string** | RSA signing key pair (PEM armored private key) | 
 **Passphrase** | Pointer to **string** | Passphrase to access RSA signing key | [optional] 
 
 ## Methods
 
 ### NewAlpineSigningRepositoriesAttributes
 
-`func NewAlpineSigningRepositoriesAttributes() *AlpineSigningRepositoriesAttributes`
+`func NewAlpineSigningRepositoriesAttributes(keypair string, ) *AlpineSigningRepositoriesAttributes`
 
 NewAlpineSigningRepositoriesAttributes instantiates a new AlpineSigningRepositoriesAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetKeypair sets Keypair field to given value.
 
-### HasKeypair
-
-`func (o *AlpineSigningRepositoriesAttributes) HasKeypair() bool`
-
-HasKeypair returns a boolean if a field has been set.
 
 ### GetPassphrase
 

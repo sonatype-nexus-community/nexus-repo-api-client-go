@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | Pointer to **string** | The email address associated with the user. | [optional] 
-**FirstName** | Pointer to **string** | The first name of the user. | [optional] 
-**LastName** | Pointer to **string** | The last name of the user. | [optional] 
-**Password** | Pointer to **string** | The password for the new user. | [optional] 
+**EmailAddress** | **string** | The email address associated with the user. | 
+**FirstName** | **string** | The first name of the user. | 
+**LastName** | **string** | The last name of the user. | 
+**Password** | **string** | The password for the new user. | 
 **Roles** | Pointer to **[]string** | The roles which the user has been assigned within Nexus. | [optional] 
 **Status** | **string** | The user&#39;s status, e.g. active or disabled. | 
-**UserId** | Pointer to **string** | The userid which is required for login. This value cannot be changed. | [optional] 
+**UserId** | **string** | The userid which is required for login. This value cannot be changed. | 
 
 ## Methods
 
 ### NewApiCreateUser
 
-`func NewApiCreateUser(status string, ) *ApiCreateUser`
+`func NewApiCreateUser(emailAddress string, firstName string, lastName string, password string, status string, userId string, ) *ApiCreateUser`
 
 NewApiCreateUser instantiates a new ApiCreateUser object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetEmailAddress sets EmailAddress field to given value.
 
-### HasEmailAddress
-
-`func (o *ApiCreateUser) HasEmailAddress() bool`
-
-HasEmailAddress returns a boolean if a field has been set.
 
 ### GetFirstName
 
@@ -75,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetFirstName sets FirstName field to given value.
 
-### HasFirstName
-
-`func (o *ApiCreateUser) HasFirstName() bool`
-
-HasFirstName returns a boolean if a field has been set.
 
 ### GetLastName
 
@@ -100,11 +90,6 @@ and a boolean to check if the value has been set.
 
 SetLastName sets LastName field to given value.
 
-### HasLastName
-
-`func (o *ApiCreateUser) HasLastName() bool`
-
-HasLastName returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -125,11 +110,6 @@ and a boolean to check if the value has been set.
 
 SetPassword sets Password field to given value.
 
-### HasPassword
-
-`func (o *ApiCreateUser) HasPassword() bool`
-
-HasPassword returns a boolean if a field has been set.
 
 ### GetRoles
 
@@ -195,11 +175,6 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
-### HasUserId
-
-`func (o *ApiCreateUser) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

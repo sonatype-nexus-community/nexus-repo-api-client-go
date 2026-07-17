@@ -1,219 +1,19 @@
 # \ComponentsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteComponent**](ComponentsAPI.md#DeleteComponent) | **Delete** /v1/components/{id} | Delete a single component
-[**GetComponentById**](ComponentsAPI.md#GetComponentById) | **Get** /v1/components/{id} | Get a single component
-[**GetComponents**](ComponentsAPI.md#GetComponents) | **Get** /v1/components | List components
-[**UploadComponent**](ComponentsAPI.md#UploadComponent) | **Post** /v1/components | Upload a single component
+[**CreateComponents**](ComponentsAPI.md#CreateComponents) | **Post** /v1/components | Upload a single component
+[**DeleteComponents**](ComponentsAPI.md#DeleteComponents) | **Delete** /v1/components/{id} | Delete a single component
+[**GetComponents**](ComponentsAPI.md#GetComponents) | **Get** /v1/components/{id} | Get a single component
+[**ListComponents**](ComponentsAPI.md#ListComponents) | **Get** /v1/components | List components
 
 
 
-## DeleteComponent
+## CreateComponents
 
-> DeleteComponent(ctx, id).Execute()
-
-Delete a single component
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	id := "id_example" // string | ID of the component to delete
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.DeleteComponent(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.DeleteComponent``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | ID of the component to delete | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteComponentRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetComponentById
-
-> ComponentXO GetComponentById(ctx, id).Execute()
-
-Get a single component
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	id := "id_example" // string | ID of the component to retrieve
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ComponentsAPI.GetComponentById(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.GetComponentById``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetComponentById`: ComponentXO
-	fmt.Fprintf(os.Stdout, "Response from `ComponentsAPI.GetComponentById`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | ID of the component to retrieve | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetComponentByIdRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**ComponentXO**](ComponentXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetComponents
-
-> PageComponentXO GetComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
-
-List components
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	repository := "repository_example" // string | Repository from which you would like to retrieve components
-	continuationToken := "continuationToken_example" // string | A token returned by a prior request. If present, the next page of results are returned (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ComponentsAPI.GetComponents(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.GetComponents``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetComponents`: PageComponentXO
-	fmt.Fprintf(os.Stdout, "Response from `ComponentsAPI.GetComponents`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetComponentsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **repository** | **string** | Repository from which you would like to retrieve components | 
- **continuationToken** | **string** | A token returned by a prior request. If present, the next page of results are returned | 
-
-### Return type
-
-[**PageComponentXO**](PageComponentXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## UploadComponent
-
-> UploadComponent(ctx).Repository(repository).AlpineAsset(alpineAsset).AlpineRepository(alpineRepository).AlpineTag(alpineTag).AlpineVersion(alpineVersion).AnsiblegalaxyAsset(ansiblegalaxyAsset).AnsiblegalaxyName(ansiblegalaxyName).AnsiblegalaxyNamespace(ansiblegalaxyNamespace).AnsiblegalaxyTag(ansiblegalaxyTag).AnsiblegalaxyVersion(ansiblegalaxyVersion).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+> CreateComponents(ctx).Repository(repository).AlpineAsset(alpineAsset).AlpineRepository(alpineRepository).AlpineTag(alpineTag).AlpineVersion(alpineVersion).AnsiblegalaxyAsset(ansiblegalaxyAsset).AnsiblegalaxyName(ansiblegalaxyName).AnsiblegalaxyNamespace(ansiblegalaxyNamespace).AnsiblegalaxyTag(ansiblegalaxyTag).AnsiblegalaxyVersion(ansiblegalaxyVersion).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 
 Upload a single component
 
@@ -313,9 +113,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Repository(repository).AlpineAsset(alpineAsset).AlpineRepository(alpineRepository).AlpineTag(alpineTag).AlpineVersion(alpineVersion).AnsiblegalaxyAsset(ansiblegalaxyAsset).AnsiblegalaxyName(ansiblegalaxyName).AnsiblegalaxyNamespace(ansiblegalaxyNamespace).AnsiblegalaxyTag(ansiblegalaxyTag).AnsiblegalaxyVersion(ansiblegalaxyVersion).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
+	r, err := apiClient.ComponentsAPI.CreateComponents(context.Background()).Repository(repository).AlpineAsset(alpineAsset).AlpineRepository(alpineRepository).AlpineTag(alpineTag).AlpineVersion(alpineVersion).AnsiblegalaxyAsset(ansiblegalaxyAsset).AnsiblegalaxyName(ansiblegalaxyName).AnsiblegalaxyNamespace(ansiblegalaxyNamespace).AnsiblegalaxyTag(ansiblegalaxyTag).AnsiblegalaxyVersion(ansiblegalaxyVersion).AptAsset(aptAsset).AptTag(aptTag).CondaArch(condaArch).CondaAsset(condaAsset).CondaBuild(condaBuild).CondaFilename(condaFilename).CondaTag(condaTag).CondaVersion(condaVersion).GoAsset(goAsset).GoTag(goTag).GoVersion(goVersion).HelmAsset(helmAsset).HelmTag(helmTag).Maven2ArtifactId(maven2ArtifactId).Maven2Asset1(maven2Asset1).Maven2Asset1Classifier(maven2Asset1Classifier).Maven2Asset1Extension(maven2Asset1Extension).Maven2Asset2(maven2Asset2).Maven2Asset2Classifier(maven2Asset2Classifier).Maven2Asset2Extension(maven2Asset2Extension).Maven2Asset3(maven2Asset3).Maven2Asset3Classifier(maven2Asset3Classifier).Maven2Asset3Extension(maven2Asset3Extension).Maven2GeneratePom(maven2GeneratePom).Maven2GroupId(maven2GroupId).Maven2Packaging(maven2Packaging).Maven2Tag(maven2Tag).Maven2Version(maven2Version).NpmAsset(npmAsset).NpmTag(npmTag).NugetAsset(nugetAsset).NugetTag(nugetTag).PubAsset(pubAsset).PubName(pubName).PubTag(pubTag).PubVersion(pubVersion).PypiAsset(pypiAsset).PypiTag(pypiTag).RAsset(rAsset).RAssetPathId(rAssetPathId).RTag(rTag).RawAsset1(rawAsset1).RawAsset1Filename(rawAsset1Filename).RawAsset2(rawAsset2).RawAsset2Filename(rawAsset2Filename).RawAsset3(rawAsset3).RawAsset3Filename(rawAsset3Filename).RawDirectory(rawDirectory).RawTag(rawTag).RubygemsAsset(rubygemsAsset).RubygemsTag(rubygemsTag).SwiftAsset(swiftAsset).SwiftName(swiftName).SwiftScope(swiftScope).SwiftTag(swiftTag).SwiftVersion(swiftVersion).TerraformArchitecture(terraformArchitecture).TerraformAsset(terraformAsset).TerraformName(terraformName).TerraformNamespace(terraformNamespace).TerraformOs(terraformOs).TerraformProvider(terraformProvider).TerraformTag(terraformTag).TerraformType(terraformType).TerraformUploadType(terraformUploadType).TerraformVersion(terraformVersion).YumAsset(yumAsset).YumAssetFilename(yumAssetFilename).YumDirectory(yumDirectory).YumTag(yumTag).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.UploadComponent``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.CreateComponents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -327,7 +127,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUploadComponentRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateComponentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -424,6 +224,202 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteComponents
+
+> DeleteComponents(ctx, id).Execute()
+
+Delete a single component
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	id := "id_example" // string | ID of the component to delete
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ComponentsAPI.DeleteComponents(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.DeleteComponents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the component to delete | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteComponentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetComponents
+
+> GetComponents(ctx, id).Execute()
+
+Get a single component
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	id := "id_example" // string | ID of the component to retrieve
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ComponentsAPI.GetComponents(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.GetComponents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | ID of the component to retrieve | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetComponentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListComponents
+
+> ListComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+
+List components
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	repository := "repository_example" // string | Repository from which you would like to retrieve components
+	continuationToken := "continuationToken_example" // string | A token returned by a prior request. If present, the next page of results are returned (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ComponentsAPI.ListComponents(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.ListComponents``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListComponentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **repository** | **string** | Repository from which you would like to retrieve components | 
+ **continuationToken** | **string** | A token returned by a prior request. If present, the next page of results are returned | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

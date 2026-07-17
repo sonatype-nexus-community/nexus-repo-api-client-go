@@ -1,17 +1,17 @@
 # \StagingAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Delete2**](StagingAPI.md#Delete2) | **Post** /v1/staging/delete | Delete components
-[**Move**](StagingAPI.md#Move) | **Post** /v1/staging/move/{destination} | Move components
+[**CreateStagingDelete**](StagingAPI.md#CreateStagingDelete) | **Post** /v1/staging/delete | Delete components
+[**CreateStagingMove**](StagingAPI.md#CreateStagingMove) | **Post** /v1/staging/move/{destination} | Move components
 
 
 
-## Delete2
+## CreateStagingDelete
 
-> Delete2(ctx).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> CreateStagingDelete(ctx).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Delete components
 
@@ -30,6 +30,7 @@ import (
 func main() {
 	q := "q_example" // string | Query by keyword (optional)
 	repository := "repository_example" // string | Repository name (optional)
+	repositoryName := "repositoryName_example" // string | Repository name (optional)
 	format := "format_example" // string | Query by format (optional)
 	group := "group_example" // string | Component group (optional)
 	name := "name_example" // string | Component name (optional)
@@ -47,6 +48,8 @@ func main() {
 	composerVendor := "composerVendor_example" // string | Vendor (optional)
 	composerPackage := "composerPackage_example" // string | Package (optional)
 	composerVersion := "composerVersion_example" // string | Version (optional)
+	composerDescription := "composerDescription_example" // string | Composer Description (optional)
+	composerKeywords := "composerKeywords_example" // string | Composer Keywords (optional)
 	conanBaseVersion := "conanBaseVersion_example" // string | Conan base version (optional)
 	conanChannel := "conanChannel_example" // string | Conan channel (optional)
 	conanRevision := "conanRevision_example" // string | Conan recipe revision (optional)
@@ -56,6 +59,10 @@ func main() {
 	dockerImageTag := "dockerImageTag_example" // string | Docker image tag (optional)
 	dockerLayerId := "dockerLayerId_example" // string | Docker layer ID (optional)
 	dockerContentDigest := "dockerContentDigest_example" // string | Docker content digest (optional)
+	dockerOs := "dockerOs_example" // string | Docker image OS (optional)
+	dockerArchitecture := "dockerArchitecture_example" // string | Docker image architecture (optional)
+	dockerLabels := "dockerLabels_example" // string | Docker image labels (optional)
+	dockerAuthor := "dockerAuthor_example" // string | Docker image author (optional)
 	mavenGroupId := "mavenGroupId_example" // string | Maven groupId (optional)
 	mavenArtifactId := "mavenArtifactId_example" // string | Maven artifactId (optional)
 	mavenBaseVersion := "mavenBaseVersion_example" // string | Maven base version (optional)
@@ -76,6 +83,9 @@ func main() {
 	nugetDescription := "nugetDescription_example" // string | NuGet description (optional)
 	nugetSummary := "nugetSummary_example" // string | NuGet summary (optional)
 	nugetIsPrerelease := "nugetIsPrerelease_example" // string | NuGet prerelease (optional)
+	ociImageName := "ociImageName_example" // string | OCI image name (optional)
+	ociImageTag := "ociImageTag_example" // string | OCI image tag (optional)
+	ociContentDigest := "ociContentDigest_example" // string | OCI content digest (optional)
 	p2PluginName := "p2PluginName_example" // string | p2 plugin name (optional)
 	pubAssetKind := "pubAssetKind_example" // string | Pub asset kind (PACKAGE, PACKAGE_METADATA, VERSION_METADATA, ADVISORIES) (optional)
 	pypiClassifiers := "pypiClassifiers_example" // string | PyPI classifiers (optional)
@@ -96,9 +106,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.StagingAPI.Delete2(context.Background()).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	r, err := apiClient.StagingAPI.CreateStagingDelete(context.Background()).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StagingAPI.Delete2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StagingAPI.CreateStagingDelete``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -110,13 +120,14 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDelete2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStagingDeleteRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **q** | **string** | Query by keyword | 
  **repository** | **string** | Repository name | 
+ **repositoryName** | **string** | Repository name | 
  **format** | **string** | Query by format | 
  **group** | **string** | Component group | 
  **name** | **string** | Component name | 
@@ -134,6 +145,8 @@ Name | Type | Description  | Notes
  **composerVendor** | **string** | Vendor | 
  **composerPackage** | **string** | Package | 
  **composerVersion** | **string** | Version | 
+ **composerDescription** | **string** | Composer Description | 
+ **composerKeywords** | **string** | Composer Keywords | 
  **conanBaseVersion** | **string** | Conan base version | 
  **conanChannel** | **string** | Conan channel | 
  **conanRevision** | **string** | Conan recipe revision | 
@@ -143,6 +156,10 @@ Name | Type | Description  | Notes
  **dockerImageTag** | **string** | Docker image tag | 
  **dockerLayerId** | **string** | Docker layer ID | 
  **dockerContentDigest** | **string** | Docker content digest | 
+ **dockerOs** | **string** | Docker image OS | 
+ **dockerArchitecture** | **string** | Docker image architecture | 
+ **dockerLabels** | **string** | Docker image labels | 
+ **dockerAuthor** | **string** | Docker image author | 
  **mavenGroupId** | **string** | Maven groupId | 
  **mavenArtifactId** | **string** | Maven artifactId | 
  **mavenBaseVersion** | **string** | Maven base version | 
@@ -163,6 +180,9 @@ Name | Type | Description  | Notes
  **nugetDescription** | **string** | NuGet description | 
  **nugetSummary** | **string** | NuGet summary | 
  **nugetIsPrerelease** | **string** | NuGet prerelease | 
+ **ociImageName** | **string** | OCI image name | 
+ **ociImageTag** | **string** | OCI image tag | 
+ **ociContentDigest** | **string** | OCI content digest | 
  **p2PluginName** | **string** | p2 plugin name | 
  **pubAssetKind** | **string** | Pub asset kind (PACKAGE, PACKAGE_METADATA, VERSION_METADATA, ADVISORIES) | 
  **pypiClassifiers** | **string** | PyPI classifiers | 
@@ -199,9 +219,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Move
+## CreateStagingMove
 
-> Move(ctx, destination).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> CreateStagingMove(ctx, destination).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Move components
 
@@ -221,6 +241,7 @@ func main() {
 	destination := "destination_example" // string | 
 	q := "q_example" // string | Query by keyword (optional)
 	repository := "repository_example" // string | Repository name (optional)
+	repositoryName := "repositoryName_example" // string | Repository name (optional)
 	format := "format_example" // string | Query by format (optional)
 	group := "group_example" // string | Component group (optional)
 	name := "name_example" // string | Component name (optional)
@@ -238,6 +259,8 @@ func main() {
 	composerVendor := "composerVendor_example" // string | Vendor (optional)
 	composerPackage := "composerPackage_example" // string | Package (optional)
 	composerVersion := "composerVersion_example" // string | Version (optional)
+	composerDescription := "composerDescription_example" // string | Composer Description (optional)
+	composerKeywords := "composerKeywords_example" // string | Composer Keywords (optional)
 	conanBaseVersion := "conanBaseVersion_example" // string | Conan base version (optional)
 	conanChannel := "conanChannel_example" // string | Conan channel (optional)
 	conanRevision := "conanRevision_example" // string | Conan recipe revision (optional)
@@ -247,6 +270,10 @@ func main() {
 	dockerImageTag := "dockerImageTag_example" // string | Docker image tag (optional)
 	dockerLayerId := "dockerLayerId_example" // string | Docker layer ID (optional)
 	dockerContentDigest := "dockerContentDigest_example" // string | Docker content digest (optional)
+	dockerOs := "dockerOs_example" // string | Docker image OS (optional)
+	dockerArchitecture := "dockerArchitecture_example" // string | Docker image architecture (optional)
+	dockerLabels := "dockerLabels_example" // string | Docker image labels (optional)
+	dockerAuthor := "dockerAuthor_example" // string | Docker image author (optional)
 	mavenGroupId := "mavenGroupId_example" // string | Maven groupId (optional)
 	mavenArtifactId := "mavenArtifactId_example" // string | Maven artifactId (optional)
 	mavenBaseVersion := "mavenBaseVersion_example" // string | Maven base version (optional)
@@ -267,6 +294,9 @@ func main() {
 	nugetDescription := "nugetDescription_example" // string | NuGet description (optional)
 	nugetSummary := "nugetSummary_example" // string | NuGet summary (optional)
 	nugetIsPrerelease := "nugetIsPrerelease_example" // string | NuGet prerelease (optional)
+	ociImageName := "ociImageName_example" // string | OCI image name (optional)
+	ociImageTag := "ociImageTag_example" // string | OCI image tag (optional)
+	ociContentDigest := "ociContentDigest_example" // string | OCI content digest (optional)
 	p2PluginName := "p2PluginName_example" // string | p2 plugin name (optional)
 	pubAssetKind := "pubAssetKind_example" // string | Pub asset kind (PACKAGE, PACKAGE_METADATA, VERSION_METADATA, ADVISORIES) (optional)
 	pypiClassifiers := "pypiClassifiers_example" // string | PyPI classifiers (optional)
@@ -287,9 +317,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.StagingAPI.Move(context.Background(), destination).Q(q).Repository(repository).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	r, err := apiClient.StagingAPI.CreateStagingMove(context.Background(), destination).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `StagingAPI.Move``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `StagingAPI.CreateStagingMove``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -305,7 +335,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiMoveRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateStagingMoveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -313,6 +343,7 @@ Name | Type | Description  | Notes
 
  **q** | **string** | Query by keyword | 
  **repository** | **string** | Repository name | 
+ **repositoryName** | **string** | Repository name | 
  **format** | **string** | Query by format | 
  **group** | **string** | Component group | 
  **name** | **string** | Component name | 
@@ -330,6 +361,8 @@ Name | Type | Description  | Notes
  **composerVendor** | **string** | Vendor | 
  **composerPackage** | **string** | Package | 
  **composerVersion** | **string** | Version | 
+ **composerDescription** | **string** | Composer Description | 
+ **composerKeywords** | **string** | Composer Keywords | 
  **conanBaseVersion** | **string** | Conan base version | 
  **conanChannel** | **string** | Conan channel | 
  **conanRevision** | **string** | Conan recipe revision | 
@@ -339,6 +372,10 @@ Name | Type | Description  | Notes
  **dockerImageTag** | **string** | Docker image tag | 
  **dockerLayerId** | **string** | Docker layer ID | 
  **dockerContentDigest** | **string** | Docker content digest | 
+ **dockerOs** | **string** | Docker image OS | 
+ **dockerArchitecture** | **string** | Docker image architecture | 
+ **dockerLabels** | **string** | Docker image labels | 
+ **dockerAuthor** | **string** | Docker image author | 
  **mavenGroupId** | **string** | Maven groupId | 
  **mavenArtifactId** | **string** | Maven artifactId | 
  **mavenBaseVersion** | **string** | Maven base version | 
@@ -359,6 +396,9 @@ Name | Type | Description  | Notes
  **nugetDescription** | **string** | NuGet description | 
  **nugetSummary** | **string** | NuGet summary | 
  **nugetIsPrerelease** | **string** | NuGet prerelease | 
+ **ociImageName** | **string** | OCI image name | 
+ **ociImageTag** | **string** | OCI image tag | 
+ **ociContentDigest** | **string** | OCI content digest | 
  **p2PluginName** | **string** | p2 plugin name | 
  **pubAssetKind** | **string** | Pub asset kind (PACKAGE, PACKAGE_METADATA, VERSION_METADATA, ADVISORIES) | 
  **pypiClassifiers** | **string** | PyPI classifiers | 

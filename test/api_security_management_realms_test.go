@@ -22,11 +22,11 @@ func Test_v3_SecurityManagementRealmsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementRealmsAPIService GetActiveRealms", func(t *testing.T) {
+	t.Run("Test SecurityManagementRealmsAPIService ListSecurityRealmsActive", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementRealmsAPI.GetActiveRealms(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementRealmsAPI.ListSecurityRealmsActive(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,11 +34,11 @@ func Test_v3_SecurityManagementRealmsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementRealmsAPIService GetRealms", func(t *testing.T) {
+	t.Run("Test SecurityManagementRealmsAPIService ListSecurityRealmsAvailable", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementRealmsAPI.GetRealms(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementRealmsAPI.ListSecurityRealmsAvailable(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -46,11 +46,11 @@ func Test_v3_SecurityManagementRealmsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementRealmsAPIService SetActiveRealms", func(t *testing.T) {
+	t.Run("Test SecurityManagementRealmsAPIService UpdateSecurityRealmsActive", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementRealmsAPI.SetActiveRealms(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementRealmsAPI.UpdateSecurityRealmsActive(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

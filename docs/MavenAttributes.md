@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContentDisposition** | Pointer to **string** | Content Disposition | [optional] 
-**LayoutPolicy** | Pointer to **string** | Validate that all paths are maven artifact or metadata paths | [optional] 
-**VersionPolicy** | Pointer to **string** | What type of artifacts does this repository store? | [optional] 
+**LayoutPolicy** | **string** | Validate that all paths are maven artifact or metadata paths | 
+**VersionPolicy** | **string** | What type of artifacts does this repository store? | 
 
 ## Methods
 
 ### NewMavenAttributes
 
-`func NewMavenAttributes() *MavenAttributes`
+`func NewMavenAttributes(layoutPolicy string, versionPolicy string, ) *MavenAttributes`
 
 NewMavenAttributes instantiates a new MavenAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetLayoutPolicy sets LayoutPolicy field to given value.
 
-### HasLayoutPolicy
-
-`func (o *MavenAttributes) HasLayoutPolicy() bool`
-
-HasLayoutPolicy returns a boolean if a field has been set.
 
 ### GetVersionPolicy
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetVersionPolicy sets VersionPolicy field to given value.
 
-### HasVersionPolicy
-
-`func (o *MavenAttributes) HasVersionPolicy() bool`
-
-HasVersionPolicy returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

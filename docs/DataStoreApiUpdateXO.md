@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Advanced** | Pointer to **string** |  | [optional] 
 **JdbcUrl** | **string** | The JDBC connection URL for the data store. | 
-**Name** | Pointer to **string** | The name of the data store. | [optional] 
+**Name** | **string** | The name of the data store. | 
 **Password** | Pointer to **string** | The password to use for the JDBC connection. | [optional] 
 **Schema** | Pointer to **string** |  | [optional] 
-**Source** | Pointer to **string** | The source of the data store. | [optional] 
-**Type** | Pointer to **string** | The type of the data store. | [optional] 
+**Source** | **string** | The source of the data store. | 
+**Type** | **string** | The type of the data store. | 
 **Username** | Pointer to **string** | The username to use for the JDBC connection. | [optional] 
 
 ## Methods
 
 ### NewDataStoreApiUpdateXO
 
-`func NewDataStoreApiUpdateXO(jdbcUrl string, ) *DataStoreApiUpdateXO`
+`func NewDataStoreApiUpdateXO(jdbcUrl string, name string, source string, type_ string, ) *DataStoreApiUpdateXO`
 
 NewDataStoreApiUpdateXO instantiates a new DataStoreApiUpdateXO object
 This constructor will assign default values to properties that have it defined,
@@ -96,11 +96,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *DataStoreApiUpdateXO) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetPassword
 
@@ -171,11 +166,6 @@ and a boolean to check if the value has been set.
 
 SetSource sets Source field to given value.
 
-### HasSource
-
-`func (o *DataStoreApiUpdateXO) HasSource() bool`
-
-HasSource returns a boolean if a field has been set.
 
 ### GetType
 
@@ -196,11 +186,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *DataStoreApiUpdateXO) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUsername
 

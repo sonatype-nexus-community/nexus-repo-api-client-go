@@ -4,14 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Path** | Pointer to **string** | An absolute path or a path relative to &lt;data-directory&gt;/blobs | [optional] 
+**Path** | **string** | An absolute path or a path relative to &lt;data-directory&gt;/blobs | 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
+**SoftQuotaAttributes** | Pointer to [**BlobStoreConfiguration**](BlobStoreConfiguration.md) |  | [optional] 
 
 ## Methods
 
 ### NewFileBlobStoreApiModel
 
-`func NewFileBlobStoreApiModel() *FileBlobStoreApiModel`
+`func NewFileBlobStoreApiModel(path string, ) *FileBlobStoreApiModel`
 
 NewFileBlobStoreApiModel instantiates a new FileBlobStoreApiModel object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
-### HasPath
-
-`func (o *FileBlobStoreApiModel) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
 
 ### GetSoftQuota
 
@@ -75,6 +71,31 @@ SetSoftQuota sets SoftQuota field to given value.
 `func (o *FileBlobStoreApiModel) HasSoftQuota() bool`
 
 HasSoftQuota returns a boolean if a field has been set.
+
+### GetSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiModel) GetSoftQuotaAttributes() BlobStoreConfiguration`
+
+GetSoftQuotaAttributes returns the SoftQuotaAttributes field if non-nil, zero value otherwise.
+
+### GetSoftQuotaAttributesOk
+
+`func (o *FileBlobStoreApiModel) GetSoftQuotaAttributesOk() (*BlobStoreConfiguration, bool)`
+
+GetSoftQuotaAttributesOk returns a tuple with the SoftQuotaAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiModel) SetSoftQuotaAttributes(v BlobStoreConfiguration)`
+
+SetSoftQuotaAttributes sets SoftQuotaAttributes field to given value.
+
+### HasSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiModel) HasSoftQuotaAttributes() bool`
+
+HasSoftQuotaAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -22,11 +22,11 @@ func Test_v3_MonthlyMetricsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test MonthlyMetricsAPIService GetLast12MonthsMetrics", func(t *testing.T) {
+	t.Run("Test MonthlyMetricsAPIService ListMonthlyMetrics", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.MonthlyMetricsAPI.GetLast12MonthsMetrics(context.Background()).Execute()
+		httpRes, err := apiClient.MonthlyMetricsAPI.ListMonthlyMetrics(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

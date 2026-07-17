@@ -1,20 +1,20 @@
 # \SecurityManagementSAMLUsersAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateUser1**](SecurityManagementSAMLUsersAPI.md#CreateUser1) | **Post** /v1/security/saml/users | Create a new SAML user. This allows administrators to pre-create SAML users with roles before their first login.
-[**DeleteUser1**](SecurityManagementSAMLUsersAPI.md#DeleteUser1) | **Delete** /v1/security/saml/users/{userId} | Delete a SAML user.
-[**GetUser**](SecurityManagementSAMLUsersAPI.md#GetUser) | **Get** /v1/security/saml/users/{userId} | Retrieve a SAML user by userId.
-[**GetUsers1**](SecurityManagementSAMLUsersAPI.md#GetUsers1) | **Get** /v1/security/saml/users | Retrieve a list of SAML users. The response is limited to 1,000 users.
-[**UpdateUser1**](SecurityManagementSAMLUsersAPI.md#UpdateUser1) | **Put** /v1/security/saml/users/{userId} | Update a SAML user&#39;s roles and attributes.
+[**CreateSecuritySamlUsers**](SecurityManagementSAMLUsersAPI.md#CreateSecuritySamlUsers) | **Post** /v1/security/saml/users | Create a new SAML user. This allows administrators to pre-create SAML users with roles before their first login.
+[**DeleteSecuritySamlUsers**](SecurityManagementSAMLUsersAPI.md#DeleteSecuritySamlUsers) | **Delete** /v1/security/saml/users/{userId} | Delete a SAML user.
+[**GetSecuritySamlUsers**](SecurityManagementSAMLUsersAPI.md#GetSecuritySamlUsers) | **Get** /v1/security/saml/users/{userId} | Retrieve a SAML user by userId.
+[**ListSecuritySamlUsers**](SecurityManagementSAMLUsersAPI.md#ListSecuritySamlUsers) | **Get** /v1/security/saml/users | Retrieve a list of SAML users. The response is limited to 1,000 users.
+[**UpdateSecuritySamlUsers**](SecurityManagementSAMLUsersAPI.md#UpdateSecuritySamlUsers) | **Put** /v1/security/saml/users/{userId} | Update a SAML user&#39;s roles and attributes.
 
 
 
-## CreateUser1
+## CreateSecuritySamlUsers
 
-> CreateUser1(ctx).Body(body).Execute()
+> CreateSecuritySamlUsers(ctx).SamlUserXO(samlUserXO).Execute()
 
 Create a new SAML user. This allows administrators to pre-create SAML users with roles before their first login.
 
@@ -31,13 +31,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSamlUserXO("Status_example", "UserId_example") // SamlUserXO | The SAML user to create
+	samlUserXO := *sonatyperepo.NewSamlUserXO("Status_example", "UserId_example") // SamlUserXO | The SAML user to create
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.CreateUser1(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementSAMLUsersAPI.CreateSecuritySamlUsers(context.Background()).SamlUserXO(samlUserXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.CreateUser1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.CreateSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -49,12 +49,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateUser1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecuritySamlUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SamlUserXO**](SamlUserXO.md) | The SAML user to create | 
+ **samlUserXO** | [**SamlUserXO**](SamlUserXO.md) | The SAML user to create | 
 
 ### Return type
 
@@ -74,9 +74,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteUser1
+## DeleteSecuritySamlUsers
 
-> DeleteUser1(ctx, userId).Execute()
+> DeleteSecuritySamlUsers(ctx, userId).Execute()
 
 Delete a SAML user.
 
@@ -97,9 +97,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.DeleteUser1(context.Background(), userId).Execute()
+	r, err := apiClient.SecurityManagementSAMLUsersAPI.DeleteSecuritySamlUsers(context.Background(), userId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.DeleteUser1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.DeleteSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteUser1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecuritySamlUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetUser
+## GetSecuritySamlUsers
 
-> GetUser(ctx, userId).Execute()
+> GetSecuritySamlUsers(ctx, userId).Execute()
 
 Retrieve a SAML user by userId.
 
@@ -163,9 +163,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.GetUser(context.Background(), userId).Execute()
+	r, err := apiClient.SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers(context.Background(), userId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.GetUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSecuritySamlUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -206,9 +206,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetUsers1
+## ListSecuritySamlUsers
 
-> GetUsers1(ctx).UserId(userId).Execute()
+> ListSecuritySamlUsers(ctx).UserId(userId).Execute()
 
 Retrieve a list of SAML users. The response is limited to 1,000 users.
 
@@ -229,9 +229,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.GetUsers1(context.Background()).UserId(userId).Execute()
+	r, err := apiClient.SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers(context.Background()).UserId(userId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.GetUsers1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -243,7 +243,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUsers1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecuritySamlUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -268,9 +268,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateUser1
+## UpdateSecuritySamlUsers
 
-> UpdateUser1(ctx, userId).Body(body).Execute()
+> UpdateSecuritySamlUsers(ctx, userId).SamlUserXO(samlUserXO).Execute()
 
 Update a SAML user's roles and attributes.
 
@@ -288,13 +288,13 @@ import (
 
 func main() {
 	userId := "userId_example" // string | The userid the request should apply to.
-	body := *sonatyperepo.NewSamlUserXO("Status_example", "UserId_example") // SamlUserXO | The SAML user to update
+	samlUserXO := *sonatyperepo.NewSamlUserXO("Status_example", "UserId_example") // SamlUserXO | The SAML user to update
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.UpdateUser1(context.Background(), userId).Body(body).Execute()
+	r, err := apiClient.SecurityManagementSAMLUsersAPI.UpdateSecuritySamlUsers(context.Background(), userId).SamlUserXO(samlUserXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.UpdateUser1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.UpdateSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -310,13 +310,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateUser1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecuritySamlUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**SamlUserXO**](SamlUserXO.md) | The SAML user to update | 
+ **samlUserXO** | [**SamlUserXO**](SamlUserXO.md) | The SAML user to update | 
 
 ### Return type
 

@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Actions** | Pointer to **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | [optional] 
+**Actions** | **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | 
 **Description** | Pointer to **string** |  | [optional] 
-**Domain** | Pointer to **string** | The domain (i.e. &#39;blobstores&#39;, &#39;capabilities&#39; or even &#39;*&#39; for all) that this privilege is granting access to.  Note that creating new privileges with a domain is only necessary when using plugins that define their own domain(s). | [optional] 
-**Name** | Pointer to **string** | The name of the privilege.  This value cannot be changed. | [optional] 
+**Domain** | **string** | The domain (i.e. &#39;blobstores&#39;, &#39;capabilities&#39; or even &#39;*&#39; for all) that this privilege is granting access to.  Note that creating new privileges with a domain is only necessary when using plugins that define their own domain(s). | 
+**Name** | **string** | The name of the privilege.  This value cannot be changed. | 
 
 ## Methods
 
 ### NewApiPrivilegeApplicationRequest
 
-`func NewApiPrivilegeApplicationRequest() *ApiPrivilegeApplicationRequest`
+`func NewApiPrivilegeApplicationRequest(actions []string, domain string, name string, ) *ApiPrivilegeApplicationRequest`
 
 NewApiPrivilegeApplicationRequest instantiates a new ApiPrivilegeApplicationRequest object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetActions sets Actions field to given value.
 
-### HasActions
-
-`func (o *ApiPrivilegeApplicationRequest) HasActions() bool`
-
-HasActions returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetDomain sets Domain field to given value.
 
-### HasDomain
-
-`func (o *ApiPrivilegeApplicationRequest) HasDomain() bool`
-
-HasDomain returns a boolean if a field has been set.
 
 ### GetName
 
@@ -122,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ApiPrivilegeApplicationRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

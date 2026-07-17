@@ -22,59 +22,93 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementLDAPAPIService ChangeOrder", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService CreateSecurityLdap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.ChangeOrder(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdap(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService ClearCache1", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService CreateSecurityLdapChangeOrder", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.ClearCache1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapChangeOrder(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService CreateLdapServer", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService CreateSecurityLdapVerifyConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateLdapServer(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService DeleteLdapServer", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService CreateSecurityLdapVerifyLogin", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService CreateSecurityLdapVerifyUserMapping", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyUserMapping(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService DeleteSecurityLdap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.DeleteLdapServer(context.Background(), name).Execute()
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.DeleteSecurityLdap(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService GetLdapServer", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService DeleteSecurityLdapCache", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.DeleteSecurityLdapCache(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementLDAPAPIService GetSecurityLdap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetSecurityLdap(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -82,11 +116,11 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService GetLdapServers", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService ListSecurityLdap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.ListSecurityLdap(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -94,11 +128,11 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService GetTemplates", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService ListSecurityLdapTemplates", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.GetTemplates(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.ListSecurityLdapTemplates(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -106,49 +140,15 @@ func Test_v3_SecurityManagementLDAPAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementLDAPAPIService UpdateLdapServer", func(t *testing.T) {
+	t.Run("Test SecurityManagementLDAPAPIService UpdateSecurityLdap", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.UpdateLdapServer(context.Background(), name).Execute()
+		httpRes, err := apiClient.SecurityManagementLDAPAPI.UpdateSecurityLdap(context.Background(), name).Execute()
 
 		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityManagementLDAPAPIService VerifyConnection1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyConnection1(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityManagementLDAPAPIService VerifyLogin", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyLogin(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityManagementLDAPAPIService VerifyUserMapping", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SecurityManagementLDAPAPI.VerifyUserMapping(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **BucketConfiguration** | [**GoogleCloudBlobStoreApiBucketConfiguration**](GoogleCloudBlobStoreApiBucketConfiguration.md) |  | 
 **Name** | **string** | The name of the GC Storage blob store. | 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
-**Type** | Pointer to **string** | The blob store type. | [optional] [readonly] 
+**Type** | Pointer to **string** | The blob store type. | [optional] 
 
 ## Methods
 

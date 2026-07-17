@@ -88,13 +88,13 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService DeletePrivilege", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService DeleteSecurityPrivileges", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.DeletePrivilege(context.Background(), privilegeName).Execute()
+		httpRes, err := apiClient.SecurityManagementPrivilegesAPI.DeleteSecurityPrivileges(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -113,13 +113,13 @@ func Test_v3_SecurityManagementPrivilegesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementPrivilegesAPIService GetPrivilege", func(t *testing.T) {
+	t.Run("Test SecurityManagementPrivilegesAPIService GetSecurityPrivileges", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var privilegeName string
 
-		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivilege(context.Background(), privilegeName).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementPrivilegesAPI.GetSecurityPrivileges(context.Background(), privilegeName).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

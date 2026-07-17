@@ -1,17 +1,17 @@
 # \SecurityManagementSSRFProtectionAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetConfiguration**](SecurityManagementSSRFProtectionAPI.md#GetConfiguration) | **Get** /v1/security/ssrf-protection | Get SSRF protection settings
-[**UpdateConfiguration**](SecurityManagementSSRFProtectionAPI.md#UpdateConfiguration) | **Put** /v1/security/ssrf-protection | Update SSRF protection settings
+[**ListSecuritySsrfProtection**](SecurityManagementSSRFProtectionAPI.md#ListSecuritySsrfProtection) | **Get** /v1/security/ssrf-protection | Get SSRF protection settings
+[**UpdateSecuritySsrfProtection**](SecurityManagementSSRFProtectionAPI.md#UpdateSecuritySsrfProtection) | **Put** /v1/security/ssrf-protection | Update SSRF protection settings
 
 
 
-## GetConfiguration
+## ListSecuritySsrfProtection
 
-> GetConfiguration(ctx).Execute()
+> ListSecuritySsrfProtection(ctx).Execute()
 
 Get SSRF protection settings
 
@@ -31,9 +31,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSSRFProtectionAPI.GetConfiguration(context.Background()).Execute()
+	r, err := apiClient.SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.GetConfiguration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfigurationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecuritySsrfProtectionRequest struct via the builder pattern
 
 
 ### Return type
@@ -59,16 +59,16 @@ Other parameters are passed through a pointer to a apiGetConfigurationRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## UpdateConfiguration
+## UpdateSecuritySsrfProtection
 
-> UpdateConfiguration(ctx).Body(body).Execute()
+> UpdateSecuritySsrfProtection(ctx).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
 
 Update SSRF protection settings
 
@@ -85,13 +85,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewSsrfProtectionConfigurationXO(true) // SsrfProtectionConfigurationXO |  (optional)
+	ssrfProtectionConfigurationXO := *sonatyperepo.NewSsrfProtectionConfigurationXO(true) // SsrfProtectionConfigurationXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateConfiguration(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection(context.Background()).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.UpdateConfiguration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -103,12 +103,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfigurationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecuritySsrfProtectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**SsrfProtectionConfigurationXO**](SsrfProtectionConfigurationXO.md) |  | 
+ **ssrfProtectionConfigurationXO** | [**SsrfProtectionConfigurationXO**](SsrfProtectionConfigurationXO.md) |  | 
 
 ### Return type
 

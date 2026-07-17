@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | An optional description of this content selector | [optional] 
-**Expression** | Pointer to **string** | The expression used to identify content | [optional] 
+**Expression** | **string** | The expression used to identify content | 
 
 ## Methods
 
 ### NewContentSelectorApiUpdateRequest
 
-`func NewContentSelectorApiUpdateRequest() *ContentSelectorApiUpdateRequest`
+`func NewContentSelectorApiUpdateRequest(expression string, ) *ContentSelectorApiUpdateRequest`
 
 NewContentSelectorApiUpdateRequest instantiates a new ContentSelectorApiUpdateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -70,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetExpression sets Expression field to given value.
 
-### HasExpression
-
-`func (o *ContentSelectorApiUpdateRequest) HasExpression() bool`
-
-HasExpression returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -27,20 +27,20 @@ Name | Type | Description | Notes
 **SearchBase** | **string** | LDAP location to be added to the connection URL | 
 **UseTrustStore** | Pointer to **bool** | Whether to use certificates stored in Nexus Repository Manager&#39;s truststore | [optional] 
 **UserBaseDn** | Pointer to **string** | The relative DN where user objects are found (e.g. ou&#x3D;people). This value will have the Search base DN value appended to form the full User search base DN. | [optional] 
-**UserEmailAddressAttribute** | Pointer to **string** | This is used to find an email address given the user ID | [optional] 
-**UserIdAttribute** | Pointer to **string** | This is used to find a user given its user ID | [optional] 
+**UserEmailAddressAttribute** | **string** | This is used to find an email address given the user ID | 
+**UserIdAttribute** | **string** | This is used to find a user given its user ID | 
 **UserLdapFilter** | Pointer to **string** | LDAP search filter to limit user search | [optional] 
 **UserMemberOfAttribute** | Pointer to **string** | Set this to the attribute used to store the attribute which holds groups DN in the user object. Required if groupType is dynamic | [optional] 
-**UserObjectClass** | Pointer to **string** | LDAP class for user objects | [optional] 
+**UserObjectClass** | **string** | LDAP class for user objects | 
 **UserPasswordAttribute** | Pointer to **string** | If this field is blank the user will be authenticated against a bind with the LDAP server | [optional] 
-**UserRealNameAttribute** | Pointer to **string** | This is used to find a real name given the user ID | [optional] 
+**UserRealNameAttribute** | **string** | This is used to find a real name given the user ID | 
 **UserSubtree** | Pointer to **bool** | Are users located in structures below the user base DN? | [optional] 
 
 ## Methods
 
 ### NewReadLdapServerXo
 
-`func NewReadLdapServerXo(authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, ) *ReadLdapServerXo`
+`func NewReadLdapServerXo(authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, userEmailAddressAttribute string, userIdAttribute string, userObjectClass string, userRealNameAttribute string, ) *ReadLdapServerXo`
 
 NewReadLdapServerXo instantiates a new ReadLdapServerXo object
 This constructor will assign default values to properties that have it defined,
@@ -604,11 +604,6 @@ and a boolean to check if the value has been set.
 
 SetUserEmailAddressAttribute sets UserEmailAddressAttribute field to given value.
 
-### HasUserEmailAddressAttribute
-
-`func (o *ReadLdapServerXo) HasUserEmailAddressAttribute() bool`
-
-HasUserEmailAddressAttribute returns a boolean if a field has been set.
 
 ### GetUserIdAttribute
 
@@ -629,11 +624,6 @@ and a boolean to check if the value has been set.
 
 SetUserIdAttribute sets UserIdAttribute field to given value.
 
-### HasUserIdAttribute
-
-`func (o *ReadLdapServerXo) HasUserIdAttribute() bool`
-
-HasUserIdAttribute returns a boolean if a field has been set.
 
 ### GetUserLdapFilter
 
@@ -704,11 +694,6 @@ and a boolean to check if the value has been set.
 
 SetUserObjectClass sets UserObjectClass field to given value.
 
-### HasUserObjectClass
-
-`func (o *ReadLdapServerXo) HasUserObjectClass() bool`
-
-HasUserObjectClass returns a boolean if a field has been set.
 
 ### GetUserPasswordAttribute
 
@@ -754,11 +739,6 @@ and a boolean to check if the value has been set.
 
 SetUserRealNameAttribute sets UserRealNameAttribute field to given value.
 
-### HasUserRealNameAttribute
-
-`func (o *ReadLdapServerXo) HasUserRealNameAttribute() bool`
-
-HasUserRealNameAttribute returns a boolean if a field has been set.
 
 ### GetUserSubtree
 

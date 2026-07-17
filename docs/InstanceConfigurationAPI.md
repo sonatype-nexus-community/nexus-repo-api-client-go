@@ -1,24 +1,24 @@
 # \InstanceConfigurationAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ApplyConfiguration**](InstanceConfigurationAPI.md#ApplyConfiguration) | **Put** /v1/configuration | Apply instance configuration
-[**ClearCipherPassword**](InstanceConfigurationAPI.md#ClearCipherPassword) | **Delete** /v1/configuration/cipher | Clear migration cipher password
-[**ExportConfiguration**](InstanceConfigurationAPI.md#ExportConfiguration) | **Get** /v1/configuration | Export instance configuration
-[**GetAssets1**](InstanceConfigurationAPI.md#GetAssets1) | **Get** /v1/configuration/assets | List assets
-[**ImportAsset**](InstanceConfigurationAPI.md#ImportAsset) | **Post** /v1/configuration/assets/{repositoryName}/import | Import assets to repository
-[**SetCipherPassword**](InstanceConfigurationAPI.md#SetCipherPassword) | **Post** /v1/configuration/cipher | Set migration cipher password for decrypting imported secrets
-[**TransferComplete**](InstanceConfigurationAPI.md#TransferComplete) | **Post** /v1/configuration/transfer-complete | Receive transfer complete notification from migrator
+[**CreateConfigurationAssetsImport**](InstanceConfigurationAPI.md#CreateConfigurationAssetsImport) | **Post** /v1/configuration/assets/{repositoryName}/import | Import assets to repository
+[**CreateConfigurationCipher**](InstanceConfigurationAPI.md#CreateConfigurationCipher) | **Post** /v1/configuration/cipher | Set migration cipher password for decrypting imported secrets
+[**CreateConfigurationTransferComplete**](InstanceConfigurationAPI.md#CreateConfigurationTransferComplete) | **Post** /v1/configuration/transfer-complete | Receive transfer complete notification from migrator
+[**DeleteConfigurationCipher**](InstanceConfigurationAPI.md#DeleteConfigurationCipher) | **Delete** /v1/configuration/cipher | Clear migration cipher password
+[**ListConfiguration**](InstanceConfigurationAPI.md#ListConfiguration) | **Get** /v1/configuration | Export instance configuration
+[**ListConfigurationAssets**](InstanceConfigurationAPI.md#ListConfigurationAssets) | **Get** /v1/configuration/assets | List assets
+[**UpdateConfiguration**](InstanceConfigurationAPI.md#UpdateConfiguration) | **Put** /v1/configuration | Apply instance configuration
 
 
 
-## ApplyConfiguration
+## CreateConfigurationAssetsImport
 
-> ConfigurationApplyResponseXO ApplyConfiguration(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+> AssetImportResponseXO CreateConfigurationAssetsImport(ctx, repositoryName).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 
-Apply instance configuration
+Import assets to repository
 
 ### Example
 
@@ -34,17 +34,87 @@ import (
 
 func main() {
 	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
-	body := *sonatyperepo.NewInstanceConfigurationXO() // InstanceConfigurationXO |  (optional)
+	repositoryName := "repositoryName_example" // string | Repository name to import assets to
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.ApplyConfiguration(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+	resp, r, err := apiClient.InstanceConfigurationAPI.CreateConfigurationAssetsImport(context.Background(), repositoryName).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ApplyConfiguration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.CreateConfigurationAssetsImport``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ApplyConfiguration`: ConfigurationApplyResponseXO
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ApplyConfiguration`: %v\n", resp)
+	// response from `CreateConfigurationAssetsImport`: AssetImportResponseXO
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.CreateConfigurationAssetsImport`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Repository name to import assets to | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateConfigurationAssetsImportRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+
+
+### Return type
+
+[**AssetImportResponseXO**](AssetImportResponseXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateConfigurationCipher
+
+> string CreateConfigurationCipher(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+
+Set migration cipher password for decrypting imported secrets
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	body := "body_example" // string | Cipher password as plain text
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstanceConfigurationAPI.CreateConfigurationCipher(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.CreateConfigurationCipher``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateConfigurationCipher`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.CreateConfigurationCipher`: %v\n", resp)
 }
 ```
 
@@ -54,17 +124,83 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiApplyConfigurationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateConfigurationCipherRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
- **body** | [**InstanceConfigurationXO**](InstanceConfigurationXO.md) |  | 
+ **body** | **string** | Cipher password as plain text | 
 
 ### Return type
 
-[**ConfigurationApplyResponseXO**](ConfigurationApplyResponseXO.md)
+**string**
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: text/plain
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateConfigurationTransferComplete
+
+> string CreateConfigurationTransferComplete(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).TransferCompleteXO(transferCompleteXO).Execute()
+
+Receive transfer complete notification from migrator
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	transferCompleteXO := *sonatyperepo.NewTransferCompleteXO() // TransferCompleteXO | Transfer completion notification data
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.InstanceConfigurationAPI.CreateConfigurationTransferComplete(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).TransferCompleteXO(transferCompleteXO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.CreateConfigurationTransferComplete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateConfigurationTransferComplete`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.CreateConfigurationTransferComplete`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateConfigurationTransferCompleteRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **transferCompleteXO** | [**TransferCompleteXO**](TransferCompleteXO.md) | Transfer completion notification data | 
+
+### Return type
+
+**string**
 
 ### Authorization
 
@@ -80,9 +216,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ClearCipherPassword
+## DeleteConfigurationCipher
 
-> string ClearCipherPassword(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+> string DeleteConfigurationCipher(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 
 Clear migration cipher password
 
@@ -103,13 +239,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.ClearCipherPassword(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+	resp, r, err := apiClient.InstanceConfigurationAPI.DeleteConfigurationCipher(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ClearCipherPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.DeleteConfigurationCipher``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ClearCipherPassword`: string
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ClearCipherPassword`: %v\n", resp)
+	// response from `DeleteConfigurationCipher`: string
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.DeleteConfigurationCipher`: %v\n", resp)
 }
 ```
 
@@ -119,7 +255,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiClearCipherPasswordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteConfigurationCipherRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -144,9 +280,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ExportConfiguration
+## ListConfiguration
 
-> InstanceConfigurationXO ExportConfiguration(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+> InstanceConfigurationXO ListConfiguration(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 
 Export instance configuration
 
@@ -167,13 +303,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.ExportConfiguration(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+	resp, r, err := apiClient.InstanceConfigurationAPI.ListConfiguration(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ExportConfiguration``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ListConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ExportConfiguration`: InstanceConfigurationXO
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ExportConfiguration`: %v\n", resp)
+	// response from `ListConfiguration`: InstanceConfigurationXO
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ListConfiguration`: %v\n", resp)
 }
 ```
 
@@ -183,7 +319,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiExportConfigurationRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListConfigurationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -208,9 +344,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetAssets1
+## ListConfigurationAssets
 
-> Page GetAssets1(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
+> Page ListConfigurationAssets(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
 
 List assets
 
@@ -235,13 +371,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.GetAssets1(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
+	resp, r, err := apiClient.InstanceConfigurationAPI.ListConfigurationAssets(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.GetAssets1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ListConfigurationAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAssets1`: Page
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.GetAssets1`: %v\n", resp)
+	// response from `ListConfigurationAssets`: Page
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ListConfigurationAssets`: %v\n", resp)
 }
 ```
 
@@ -251,7 +387,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAssets1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiListConfigurationAssetsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -280,81 +416,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## ImportAsset
+## UpdateConfiguration
 
-> []AssetImportResponseXO ImportAsset(ctx, repositoryName).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
+> ConfigurationApplyResponseXO UpdateConfiguration(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).InstanceConfigurationXO(instanceConfigurationXO).Execute()
 
-Import assets to repository
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
-	repositoryName := "repositoryName_example" // string | Repository name to import assets to
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.ImportAsset(context.Background(), repositoryName).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ImportAsset``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `ImportAsset`: []AssetImportResponseXO
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ImportAsset`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**repositoryName** | **string** | Repository name to import assets to | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiImportAssetRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
-
-
-### Return type
-
-[**[]AssetImportResponseXO**](AssetImportResponseXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## SetCipherPassword
-
-> string SetCipherPassword(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
-
-Set migration cipher password for decrypting imported secrets
+Apply instance configuration
 
 ### Example
 
@@ -370,17 +436,17 @@ import (
 
 func main() {
 	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
-	body := "body_example" // string | Cipher password as plain text
+	instanceConfigurationXO := *sonatyperepo.NewInstanceConfigurationXO() // InstanceConfigurationXO |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.SetCipherPassword(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
+	resp, r, err := apiClient.InstanceConfigurationAPI.UpdateConfiguration(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).InstanceConfigurationXO(instanceConfigurationXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.SetCipherPassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.UpdateConfiguration``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `SetCipherPassword`: string
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.SetCipherPassword`: %v\n", resp)
+	// response from `UpdateConfiguration`: ConfigurationApplyResponseXO
+	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.UpdateConfiguration`: %v\n", resp)
 }
 ```
 
@@ -390,83 +456,17 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSetCipherPasswordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateConfigurationRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
- **body** | **string** | Cipher password as plain text | 
+ **instanceConfigurationXO** | [**InstanceConfigurationXO**](InstanceConfigurationXO.md) |  | 
 
 ### Return type
 
-**string**
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: text/plain
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## TransferComplete
-
-> string TransferComplete(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
-
-Receive transfer complete notification from migrator
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
-	body := *sonatyperepo.NewTransferCompleteXO() // TransferCompleteXO | Transfer completion notification data
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InstanceConfigurationAPI.TransferComplete(context.Background()).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.TransferComplete``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `TransferComplete`: string
-	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.TransferComplete`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiTransferCompleteRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
- **body** | [**TransferCompleteXO**](TransferCompleteXO.md) | Transfer completion notification data | 
-
-### Return type
-
-**string**
+[**ConfigurationApplyResponseXO**](ConfigurationApplyResponseXO.md)
 
 ### Authorization
 

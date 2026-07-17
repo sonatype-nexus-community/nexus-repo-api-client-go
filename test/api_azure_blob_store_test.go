@@ -22,11 +22,11 @@ func Test_v3_AzureBlobStoreAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test AzureBlobStoreAPIService VerifyConnection2", func(t *testing.T) {
+	t.Run("Test AzureBlobStoreAPIService CreateAzureblobstoreTestConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.AzureBlobStoreAPI.VerifyConnection2(context.Background()).Execute()
+		httpRes, err := apiClient.AzureBlobStoreAPI.CreateAzureblobstoreTestConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MemberNames** | Pointer to **[]string** | Member repositories&#39; names | [optional] 
+**MemberNames** | **[]string** | Member repositories&#39; names | 
 **WritableMember** | Pointer to **string** | Pro-only: This field is for the Group Deployment feature available in NXRM Pro. | [optional] 
 
 ## Methods
 
 ### NewGroupDeployAttributes
 
-`func NewGroupDeployAttributes() *GroupDeployAttributes`
+`func NewGroupDeployAttributes(memberNames []string, ) *GroupDeployAttributes`
 
 NewGroupDeployAttributes instantiates a new GroupDeployAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetMemberNames sets MemberNames field to given value.
 
-### HasMemberNames
-
-`func (o *GroupDeployAttributes) HasMemberNames() bool`
-
-HasMemberNames returns a boolean if a field has been set.
 
 ### GetWritableMember
 

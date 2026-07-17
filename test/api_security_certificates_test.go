@@ -22,11 +22,11 @@ func Test_v3_SecurityCertificatesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityCertificatesAPIService AddCertificate", func(t *testing.T) {
+	t.Run("Test SecurityCertificatesAPIService CreateSecuritySslTruststore", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityCertificatesAPI.AddCertificate(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityCertificatesAPI.CreateSecuritySslTruststore(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,39 +34,37 @@ func Test_v3_SecurityCertificatesAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityCertificatesAPIService GetTrustStoreCertificates", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SecurityCertificatesAPI.GetTrustStoreCertificates(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityCertificatesAPIService RemoveCertificate", func(t *testing.T) {
+	t.Run("Test SecurityCertificatesAPIService DeleteSecuritySslTruststore", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.SecurityCertificatesAPI.RemoveCertificate(context.Background(), id).Execute()
+		httpRes, err := apiClient.SecurityCertificatesAPI.DeleteSecuritySslTruststore(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityCertificatesAPIService RetrieveCertificate", func(t *testing.T) {
+	t.Run("Test SecurityCertificatesAPIService ListSecuritySsl", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityCertificatesAPI.RetrieveCertificate(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityCertificatesAPI.ListSecuritySsl(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityCertificatesAPIService ListSecuritySslTruststore", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityCertificatesAPI.ListSecuritySslTruststore(context.Background()).Execute()
+
+		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

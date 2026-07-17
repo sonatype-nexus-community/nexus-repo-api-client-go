@@ -22,22 +22,22 @@ func Test_v3_RecoveryModeAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test RecoveryModeAPIService DisableRecoveryMode", func(t *testing.T) {
+	t.Run("Test RecoveryModeAPIService CreateRecoveryMode", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RecoveryModeAPI.DisableRecoveryMode(context.Background()).Execute()
+		httpRes, err := apiClient.RecoveryModeAPI.CreateRecoveryMode(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RecoveryModeAPIService EnableRecoveryMode", func(t *testing.T) {
+	t.Run("Test RecoveryModeAPIService DeleteRecoveryMode", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.RecoveryModeAPI.EnableRecoveryMode(context.Background()).Execute()
+		httpRes, err := apiClient.RecoveryModeAPI.DeleteRecoveryMode(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

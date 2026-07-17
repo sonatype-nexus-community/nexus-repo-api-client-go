@@ -1,16 +1,16 @@
 # \InternalUIAPIPermissionsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**List**](InternalUIAPIPermissionsAPI.md#List) | **Get** /internal/ui/api/permissions | List REST endpoints with permission metadata for the API documentation UI
+[**ListInternalUiApiPermissions**](InternalUIAPIPermissionsAPI.md#ListInternalUiApiPermissions) | **Get** /internal/ui/api/permissions | List REST endpoints with permission metadata for the API documentation UI
 
 
 
-## List
+## ListInternalUiApiPermissions
 
-> ApiPermissionsResponse List(ctx).Method(method).Path(path).Permission(permission).Tag(tag).Execute()
+> ApiPermissionsResponse ListInternalUiApiPermissions(ctx).Method(method).Path(path).Permission(permission).Tag(tag).Execute()
 
 List REST endpoints with permission metadata for the API documentation UI
 
@@ -34,13 +34,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.InternalUIAPIPermissionsAPI.List(context.Background()).Method(method).Path(path).Permission(permission).Tag(tag).Execute()
+	resp, r, err := apiClient.InternalUIAPIPermissionsAPI.ListInternalUiApiPermissions(context.Background()).Method(method).Path(path).Permission(permission).Tag(tag).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `InternalUIAPIPermissionsAPI.List``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `InternalUIAPIPermissionsAPI.ListInternalUiApiPermissions``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `List`: ApiPermissionsResponse
-	fmt.Fprintf(os.Stdout, "Response from `InternalUIAPIPermissionsAPI.List`: %v\n", resp)
+	// response from `ListInternalUiApiPermissions`: ApiPermissionsResponse
+	fmt.Fprintf(os.Stdout, "Response from `InternalUIAPIPermissionsAPI.ListInternalUiApiPermissions`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListInternalUiApiPermissionsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -22,26 +22,24 @@ func Test_v3_SecurityManagementAnonymousAccessAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementAnonymousAccessAPIService Read1", func(t *testing.T) {
+	t.Run("Test SecurityManagementAnonymousAccessAPIService ListSecurityAnonymous", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementAnonymousAccessAPI.Read1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementAnonymousAccessAPI.ListSecurityAnonymous(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementAnonymousAccessAPIService Update1", func(t *testing.T) {
+	t.Run("Test SecurityManagementAnonymousAccessAPIService UpdateSecurityAnonymous", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementAnonymousAccessAPI.Update1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementAnonymousAccessAPI.UpdateSecurityAnonymous(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

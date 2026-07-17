@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AlertEmail** | Pointer to **string** | e-mail for task notifications. | [optional] 
+**ConcurrentRun** | Pointer to **bool** | Indicates whether the task can run concurrently with other instances of the same type. | [optional] 
 **Enabled** | **bool** | Indicates if the task would be enabled. | 
 **Frequency** | [**FrequencyXO**](FrequencyXO.md) |  | 
 **Name** | **string** | The name of the task template. | 
@@ -54,6 +55,31 @@ SetAlertEmail sets AlertEmail field to given value.
 `func (o *UpdateTaskTemplateXO) HasAlertEmail() bool`
 
 HasAlertEmail returns a boolean if a field has been set.
+
+### GetConcurrentRun
+
+`func (o *UpdateTaskTemplateXO) GetConcurrentRun() bool`
+
+GetConcurrentRun returns the ConcurrentRun field if non-nil, zero value otherwise.
+
+### GetConcurrentRunOk
+
+`func (o *UpdateTaskTemplateXO) GetConcurrentRunOk() (*bool, bool)`
+
+GetConcurrentRunOk returns a tuple with the ConcurrentRun field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetConcurrentRun
+
+`func (o *UpdateTaskTemplateXO) SetConcurrentRun(v bool)`
+
+SetConcurrentRun sets ConcurrentRun field to given value.
+
+### HasConcurrentRun
+
+`func (o *UpdateTaskTemplateXO) HasConcurrentRun() bool`
+
+HasConcurrentRun returns a boolean if a field has been set.
 
 ### GetEnabled
 

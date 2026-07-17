@@ -22,22 +22,61 @@ func Test_v3_ScriptAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ScriptAPIService Add", func(t *testing.T) {
+	t.Run("Test ScriptAPIService CreateScript", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ScriptAPI.Add(context.Background()).Execute()
+		httpRes, err := apiClient.ScriptAPI.CreateScript(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ScriptAPIService Browse", func(t *testing.T) {
+	t.Run("Test ScriptAPIService CreateScriptRun", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ScriptAPI.Browse(context.Background()).Execute()
+		var name string
+
+		httpRes, err := apiClient.ScriptAPI.CreateScriptRun(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScriptAPIService DeleteScript", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		httpRes, err := apiClient.ScriptAPI.DeleteScript(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScriptAPIService GetScript", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var name string
+
+		httpRes, err := apiClient.ScriptAPI.GetScript(context.Background(), name).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ScriptAPIService ListScript", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.ScriptAPI.ListScript(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -45,56 +84,15 @@ func Test_v3_ScriptAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ScriptAPIService Delete1", func(t *testing.T) {
+	t.Run("Test ScriptAPIService UpdateScript", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.ScriptAPI.Delete1(context.Background(), name).Execute()
+		httpRes, err := apiClient.ScriptAPI.UpdateScript(context.Background(), name).Execute()
 
 		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ScriptAPIService Edit", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		httpRes, err := apiClient.ScriptAPI.Edit(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ScriptAPIService Read", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		resp, httpRes, err := apiClient.ScriptAPI.Read(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ScriptAPIService Run1", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		var name string
-
-		resp, httpRes, err := apiClient.ScriptAPI.Run1(context.Background(), name).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

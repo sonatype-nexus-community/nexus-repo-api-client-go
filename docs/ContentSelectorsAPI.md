@@ -1,20 +1,20 @@
 # \ContentSelectorsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateContentSelector**](ContentSelectorsAPI.md#CreateContentSelector) | **Post** /v1/security/content-selectors | Create a new content selector
-[**DeleteContentSelector**](ContentSelectorsAPI.md#DeleteContentSelector) | **Delete** /v1/security/content-selectors/{name} | Delete a content selector
-[**GetContentSelector**](ContentSelectorsAPI.md#GetContentSelector) | **Get** /v1/security/content-selectors/{name} | Get a content selector by name
-[**GetContentSelectors**](ContentSelectorsAPI.md#GetContentSelectors) | **Get** /v1/security/content-selectors | List content selectors
-[**UpdateContentSelector**](ContentSelectorsAPI.md#UpdateContentSelector) | **Put** /v1/security/content-selectors/{name} | Update a content selector
+[**CreateSecurityContentSelectors**](ContentSelectorsAPI.md#CreateSecurityContentSelectors) | **Post** /v1/security/content-selectors | Create a new content selector
+[**DeleteSecurityContentSelectors**](ContentSelectorsAPI.md#DeleteSecurityContentSelectors) | **Delete** /v1/security/content-selectors/{name} | Delete a content selector
+[**GetSecurityContentSelectors**](ContentSelectorsAPI.md#GetSecurityContentSelectors) | **Get** /v1/security/content-selectors/{name} | Get a content selector by name
+[**ListSecurityContentSelectors**](ContentSelectorsAPI.md#ListSecurityContentSelectors) | **Get** /v1/security/content-selectors | List content selectors
+[**UpdateSecurityContentSelectors**](ContentSelectorsAPI.md#UpdateSecurityContentSelectors) | **Put** /v1/security/content-selectors/{name} | Update a content selector
 
 
 
-## CreateContentSelector
+## CreateSecurityContentSelectors
 
-> CreateContentSelector(ctx).Body(body).Execute()
+> CreateSecurityContentSelectors(ctx).ContentSelectorApiCreateRequest(contentSelectorApiCreateRequest).Execute()
 
 Create a new content selector
 
@@ -31,13 +31,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewContentSelectorApiCreateRequest() // ContentSelectorApiCreateRequest |  (optional)
+	contentSelectorApiCreateRequest := *sonatyperepo.NewContentSelectorApiCreateRequest("format == "maven2" and path =^ "/org/sonatype/nexus"", "Name_example") // ContentSelectorApiCreateRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ContentSelectorsAPI.CreateContentSelector(context.Background()).Body(body).Execute()
+	r, err := apiClient.ContentSelectorsAPI.CreateSecurityContentSelectors(context.Background()).ContentSelectorApiCreateRequest(contentSelectorApiCreateRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.CreateContentSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.CreateSecurityContentSelectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -49,12 +49,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateContentSelectorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityContentSelectorsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ContentSelectorApiCreateRequest**](ContentSelectorApiCreateRequest.md) |  | 
+ **contentSelectorApiCreateRequest** | [**ContentSelectorApiCreateRequest**](ContentSelectorApiCreateRequest.md) |  | 
 
 ### Return type
 
@@ -74,9 +74,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteContentSelector
+## DeleteSecurityContentSelectors
 
-> DeleteContentSelector(ctx, name).Execute()
+> DeleteSecurityContentSelectors(ctx, name).Execute()
 
 Delete a content selector
 
@@ -97,9 +97,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ContentSelectorsAPI.DeleteContentSelector(context.Background(), name).Execute()
+	r, err := apiClient.ContentSelectorsAPI.DeleteSecurityContentSelectors(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.DeleteContentSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.DeleteSecurityContentSelectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteContentSelectorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityContentSelectorsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetContentSelector
+## GetSecurityContentSelectors
 
-> ContentSelectorApiResponse GetContentSelector(ctx, name).Execute()
+> ContentSelectorApiResponse GetSecurityContentSelectors(ctx, name).Execute()
 
 Get a content selector by name
 
@@ -163,13 +163,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContentSelectorsAPI.GetContentSelector(context.Background(), name).Execute()
+	resp, r, err := apiClient.ContentSelectorsAPI.GetSecurityContentSelectors(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.GetContentSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.GetSecurityContentSelectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetContentSelector`: ContentSelectorApiResponse
-	fmt.Fprintf(os.Stdout, "Response from `ContentSelectorsAPI.GetContentSelector`: %v\n", resp)
+	// response from `GetSecurityContentSelectors`: ContentSelectorApiResponse
+	fmt.Fprintf(os.Stdout, "Response from `ContentSelectorsAPI.GetSecurityContentSelectors`: %v\n", resp)
 }
 ```
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetContentSelectorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSecurityContentSelectorsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -208,9 +208,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetContentSelectors
+## ListSecurityContentSelectors
 
-> []ContentSelectorApiResponse GetContentSelectors(ctx).Execute()
+> []ContentSelectorApiResponse ListSecurityContentSelectors(ctx).Execute()
 
 List content selectors
 
@@ -230,13 +230,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ContentSelectorsAPI.GetContentSelectors(context.Background()).Execute()
+	resp, r, err := apiClient.ContentSelectorsAPI.ListSecurityContentSelectors(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.GetContentSelectors``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.ListSecurityContentSelectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetContentSelectors`: []ContentSelectorApiResponse
-	fmt.Fprintf(os.Stdout, "Response from `ContentSelectorsAPI.GetContentSelectors`: %v\n", resp)
+	// response from `ListSecurityContentSelectors`: []ContentSelectorApiResponse
+	fmt.Fprintf(os.Stdout, "Response from `ContentSelectorsAPI.ListSecurityContentSelectors`: %v\n", resp)
 }
 ```
 
@@ -246,7 +246,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetContentSelectorsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityContentSelectorsRequest struct via the builder pattern
 
 
 ### Return type
@@ -267,9 +267,9 @@ Other parameters are passed through a pointer to a apiGetContentSelectorsRequest
 [[Back to README]](../README.md)
 
 
-## UpdateContentSelector
+## UpdateSecurityContentSelectors
 
-> UpdateContentSelector(ctx, name).Body(body).Execute()
+> UpdateSecurityContentSelectors(ctx, name).ContentSelectorApiUpdateRequest(contentSelectorApiUpdateRequest).Execute()
 
 Update a content selector
 
@@ -287,13 +287,13 @@ import (
 
 func main() {
 	name := "name_example" // string | The content selector name
-	body := *sonatyperepo.NewContentSelectorApiUpdateRequest() // ContentSelectorApiUpdateRequest |  (optional)
+	contentSelectorApiUpdateRequest := *sonatyperepo.NewContentSelectorApiUpdateRequest("format == "maven2" and path =^ "/org/sonatype/nexus"") // ContentSelectorApiUpdateRequest |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ContentSelectorsAPI.UpdateContentSelector(context.Background(), name).Body(body).Execute()
+	r, err := apiClient.ContentSelectorsAPI.UpdateSecurityContentSelectors(context.Background(), name).ContentSelectorApiUpdateRequest(contentSelectorApiUpdateRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.UpdateContentSelector``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ContentSelectorsAPI.UpdateSecurityContentSelectors``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -309,13 +309,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateContentSelectorRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityContentSelectorsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ContentSelectorApiUpdateRequest**](ContentSelectorApiUpdateRequest.md) |  | 
+ **contentSelectorApiUpdateRequest** | [**ContentSelectorApiUpdateRequest**](ContentSelectorApiUpdateRequest.md) |  | 
 
 ### Return type
 

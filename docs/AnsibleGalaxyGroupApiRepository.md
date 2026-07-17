@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
+**Format** | **string** | Component format held in this repository | 
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** | Repository type | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewAnsibleGalaxyGroupApiRepository
 
-`func NewAnsibleGalaxyGroupApiRepository(group GroupAttributes, online bool, storage StorageAttributes, ) *AnsibleGalaxyGroupApiRepository`
+`func NewAnsibleGalaxyGroupApiRepository(format string, group GroupAttributes, name string, online bool, storage StorageAttributes, type_ string, ) *AnsibleGalaxyGroupApiRepository`
 
 NewAnsibleGalaxyGroupApiRepository instantiates a new AnsibleGalaxyGroupApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *AnsibleGalaxyGroupApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -95,11 +90,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *AnsibleGalaxyGroupApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -160,11 +150,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *AnsibleGalaxyGroupApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

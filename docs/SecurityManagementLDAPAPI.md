@@ -1,145 +1,26 @@
 # \SecurityManagementLDAPAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangeOrder**](SecurityManagementLDAPAPI.md#ChangeOrder) | **Post** /v1/security/ldap/change-order | Change LDAP server order
-[**ClearCache1**](SecurityManagementLDAPAPI.md#ClearCache1) | **Delete** /v1/security/ldap/cache | 
-[**CreateLdapServer**](SecurityManagementLDAPAPI.md#CreateLdapServer) | **Post** /v1/security/ldap | Create LDAP server
-[**DeleteLdapServer**](SecurityManagementLDAPAPI.md#DeleteLdapServer) | **Delete** /v1/security/ldap/{name} | Delete LDAP server
-[**GetLdapServer**](SecurityManagementLDAPAPI.md#GetLdapServer) | **Get** /v1/security/ldap/{name} | Get LDAP server
-[**GetLdapServers**](SecurityManagementLDAPAPI.md#GetLdapServers) | **Get** /v1/security/ldap | List LDAP servers
-[**GetTemplates**](SecurityManagementLDAPAPI.md#GetTemplates) | **Get** /v1/security/ldap/templates | 
-[**UpdateLdapServer**](SecurityManagementLDAPAPI.md#UpdateLdapServer) | **Put** /v1/security/ldap/{name} | Update LDAP server
-[**VerifyConnection1**](SecurityManagementLDAPAPI.md#VerifyConnection1) | **Post** /v1/security/ldap/verify-connection | 
-[**VerifyLogin**](SecurityManagementLDAPAPI.md#VerifyLogin) | **Post** /v1/security/ldap/verify-login | 
-[**VerifyUserMapping**](SecurityManagementLDAPAPI.md#VerifyUserMapping) | **Post** /v1/security/ldap/verify-user-mapping | 
+[**CreateSecurityLdap**](SecurityManagementLDAPAPI.md#CreateSecurityLdap) | **Post** /v1/security/ldap | Create LDAP server
+[**CreateSecurityLdapChangeOrder**](SecurityManagementLDAPAPI.md#CreateSecurityLdapChangeOrder) | **Post** /v1/security/ldap/change-order | Change LDAP server order
+[**CreateSecurityLdapVerifyConnection**](SecurityManagementLDAPAPI.md#CreateSecurityLdapVerifyConnection) | **Post** /v1/security/ldap/verify-connection | 
+[**CreateSecurityLdapVerifyLogin**](SecurityManagementLDAPAPI.md#CreateSecurityLdapVerifyLogin) | **Post** /v1/security/ldap/verify-login | 
+[**CreateSecurityLdapVerifyUserMapping**](SecurityManagementLDAPAPI.md#CreateSecurityLdapVerifyUserMapping) | **Post** /v1/security/ldap/verify-user-mapping | 
+[**DeleteSecurityLdap**](SecurityManagementLDAPAPI.md#DeleteSecurityLdap) | **Delete** /v1/security/ldap/{name} | Delete LDAP server
+[**DeleteSecurityLdapCache**](SecurityManagementLDAPAPI.md#DeleteSecurityLdapCache) | **Delete** /v1/security/ldap/cache | 
+[**GetSecurityLdap**](SecurityManagementLDAPAPI.md#GetSecurityLdap) | **Get** /v1/security/ldap/{name} | Get LDAP server
+[**ListSecurityLdap**](SecurityManagementLDAPAPI.md#ListSecurityLdap) | **Get** /v1/security/ldap | List LDAP servers
+[**ListSecurityLdapTemplates**](SecurityManagementLDAPAPI.md#ListSecurityLdapTemplates) | **Get** /v1/security/ldap/templates | 
+[**UpdateSecurityLdap**](SecurityManagementLDAPAPI.md#UpdateSecurityLdap) | **Put** /v1/security/ldap/{name} | Update LDAP server
 
 
 
-## ChangeOrder
+## CreateSecurityLdap
 
-> ChangeOrder(ctx).Body(body).Execute()
-
-Change LDAP server order
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := []string{"Property_example"} // []string | Ordered list of LDAP server names (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.ChangeOrder(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.ChangeOrder``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiChangeOrderRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | **[]string** | Ordered list of LDAP server names | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ClearCache1
-
-> ClearCache1(ctx).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.ClearCache1(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.ClearCache1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiClearCache1Request struct via the builder pattern
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## CreateLdapServer
-
-> CreateLdapServer(ctx).Body(body).Execute()
+> CreateSecurityLdap(ctx).CreateLdapServerXo(createLdapServerXo).Execute()
 
 Create LDAP server
 
@@ -156,13 +37,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // CreateLdapServerXo |  (optional)
+	createLdapServerXo := *sonatyperepo.NewCreateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn") // CreateLdapServerXo | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.CreateLdapServer(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdap(context.Background()).CreateLdapServerXo(createLdapServerXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateLdapServer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -174,12 +55,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateLdapServerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityLdapRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
+ **createLdapServerXo** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
 
 ### Return type
 
@@ -199,9 +80,263 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteLdapServer
+## CreateSecurityLdapChangeOrder
 
-> DeleteLdapServer(ctx, name).Execute()
+> CreateSecurityLdapChangeOrder(ctx).RequestBody(requestBody).Execute()
+
+Change LDAP server order
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	requestBody := []string{"Property_example"} // []string | Ordered list of LDAP server names
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapChangeOrder(context.Background()).RequestBody(requestBody).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdapChangeOrder``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityLdapChangeOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **requestBody** | **[]string** | Ordered list of LDAP server names | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSecurityLdapVerifyConnection
+
+> CreateSecurityLdapVerifyConnection(ctx).CreateLdapServerXo(createLdapServerXo).ExistingServerName(existingServerName).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	createLdapServerXo := *sonatyperepo.NewCreateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn") // CreateLdapServerXo | 
+	existingServerName := "existingServerName_example" // string |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyConnection(context.Background()).CreateLdapServerXo(createLdapServerXo).ExistingServerName(existingServerName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdapVerifyConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityLdapVerifyConnectionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createLdapServerXo** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
+ **existingServerName** | **string** |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSecurityLdapVerifyLogin
+
+> CreateSecurityLdapVerifyLogin(ctx).LdapVerifyLoginXo(ldapVerifyLoginXo).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	ldapVerifyLoginXo := *sonatyperepo.NewLdapVerifyLoginXo("Base64Password_example", "Base64Username_example", *sonatyperepo.NewCreateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn")) // LdapVerifyLoginXo | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin(context.Background()).LdapVerifyLoginXo(ldapVerifyLoginXo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityLdapVerifyLoginRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **ldapVerifyLoginXo** | [**LdapVerifyLoginXo**](LdapVerifyLoginXo.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateSecurityLdapVerifyUserMapping
+
+> []LdapTestUserMappingXo CreateSecurityLdapVerifyUserMapping(ctx).CreateLdapServerXo(createLdapServerXo).ExistingServerName(existingServerName).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	createLdapServerXo := *sonatyperepo.NewCreateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn") // CreateLdapServerXo | 
+	existingServerName := "existingServerName_example" // string |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyUserMapping(context.Background()).CreateLdapServerXo(createLdapServerXo).ExistingServerName(existingServerName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdapVerifyUserMapping``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateSecurityLdapVerifyUserMapping`: []LdapTestUserMappingXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.CreateSecurityLdapVerifyUserMapping`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityLdapVerifyUserMappingRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **createLdapServerXo** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
+ **existingServerName** | **string** |  | 
+
+### Return type
+
+[**[]LdapTestUserMappingXo**](LdapTestUserMappingXo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteSecurityLdap
+
+> DeleteSecurityLdap(ctx, name).Execute()
 
 Delete LDAP server
 
@@ -222,9 +357,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.DeleteLdapServer(context.Background(), name).Execute()
+	r, err := apiClient.SecurityManagementLDAPAPI.DeleteSecurityLdap(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.DeleteLdapServer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.DeleteSecurityLdap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -240,7 +375,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteLdapServerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityLdapRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -265,9 +400,66 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLdapServer
+## DeleteSecurityLdapCache
 
-> ReadLdapServerXo GetLdapServer(ctx, name).Execute()
+> DeleteSecurityLdapCache(ctx).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementLDAPAPI.DeleteSecurityLdapCache(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.DeleteSecurityLdapCache``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSecurityLdapCacheRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSecurityLdap
+
+> ReadLdapServerXo GetSecurityLdap(ctx, name).Execute()
 
 Get LDAP server
 
@@ -288,13 +480,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServer(context.Background(), name).Execute()
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetSecurityLdap(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetLdapServer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetSecurityLdap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLdapServer`: ReadLdapServerXo
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetLdapServer`: %v\n", resp)
+	// response from `GetSecurityLdap`: ReadLdapServerXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetSecurityLdap`: %v\n", resp)
 }
 ```
 
@@ -308,7 +500,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetLdapServerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSecurityLdapRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -333,9 +525,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetLdapServers
+## ListSecurityLdap
 
-> []ReadLdapServerXo GetLdapServers(ctx).Execute()
+> []ReadLdapServerXo ListSecurityLdap(ctx).Execute()
 
 List LDAP servers
 
@@ -355,13 +547,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetLdapServers(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.ListSecurityLdap(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetLdapServers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.ListSecurityLdap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetLdapServers`: []ReadLdapServerXo
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetLdapServers`: %v\n", resp)
+	// response from `ListSecurityLdap`: []ReadLdapServerXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.ListSecurityLdap`: %v\n", resp)
 }
 ```
 
@@ -371,7 +563,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetLdapServersRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityLdapRequest struct via the builder pattern
 
 
 ### Return type
@@ -392,9 +584,9 @@ Other parameters are passed through a pointer to a apiGetLdapServersRequest stru
 [[Back to README]](../README.md)
 
 
-## GetTemplates
+## ListSecurityLdapTemplates
 
-> []LdapSchemaTemplateXo GetTemplates(ctx).Execute()
+> []LdapSchemaTemplateXo ListSecurityLdapTemplates(ctx).Execute()
 
 
 
@@ -414,13 +606,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementLDAPAPI.GetTemplates(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementLDAPAPI.ListSecurityLdapTemplates(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.GetTemplates``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.ListSecurityLdapTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTemplates`: []LdapSchemaTemplateXo
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.GetTemplates`: %v\n", resp)
+	// response from `ListSecurityLdapTemplates`: []LdapSchemaTemplateXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.ListSecurityLdapTemplates`: %v\n", resp)
 }
 ```
 
@@ -430,7 +622,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTemplatesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityLdapTemplatesRequest struct via the builder pattern
 
 
 ### Return type
@@ -451,9 +643,9 @@ Other parameters are passed through a pointer to a apiGetTemplatesRequest struct
 [[Back to README]](../README.md)
 
 
-## UpdateLdapServer
+## UpdateSecurityLdap
 
-> UpdateLdapServer(ctx, name).Body(body).Execute()
+> UpdateSecurityLdap(ctx, name).UpdateLdapServerXo(updateLdapServerXo).Execute()
 
 Update LDAP server
 
@@ -471,13 +663,13 @@ import (
 
 func main() {
 	name := "name_example" // string | Name of the LDAP server to update
-	body := *sonatyperepo.NewUpdateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // UpdateLdapServerXo | Updated values of LDAP server (optional)
+	updateLdapServerXo := *sonatyperepo.NewUpdateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn") // UpdateLdapServerXo | Updated values of LDAP server
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.UpdateLdapServer(context.Background(), name).Body(body).Execute()
+	r, err := apiClient.SecurityManagementLDAPAPI.UpdateSecurityLdap(context.Background(), name).UpdateLdapServerXo(updateLdapServerXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.UpdateLdapServer``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.UpdateSecurityLdap``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -493,13 +685,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateLdapServerRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityLdapRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**UpdateLdapServerXo**](UpdateLdapServerXo.md) | Updated values of LDAP server | 
+ **updateLdapServerXo** | [**UpdateLdapServerXo**](UpdateLdapServerXo.md) | Updated values of LDAP server | 
 
 ### Return type
 
@@ -513,198 +705,6 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## VerifyConnection1
-
-> VerifyConnection1(ctx).ExistingServerName(existingServerName).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	existingServerName := "existingServerName_example" // string |  (optional)
-	body := *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // CreateLdapServerXo |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.VerifyConnection1(context.Background()).ExistingServerName(existingServerName).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.VerifyConnection1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiVerifyConnection1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingServerName** | **string** |  | 
- **body** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## VerifyLogin
-
-> VerifyLogin(ctx).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := *sonatyperepo.NewLdapVerifyLoginXo("Base64Password_example", "Base64Username_example", *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com")) // LdapVerifyLoginXo |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.VerifyLogin(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.VerifyLogin``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiVerifyLoginRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**LdapVerifyLoginXo**](LdapVerifyLoginXo.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## VerifyUserMapping
-
-> []LdapTestUserMappingXo VerifyUserMapping(ctx).ExistingServerName(existingServerName).Body(body).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	existingServerName := "existingServerName_example" // string |  (optional)
-	body := *sonatyperepo.NewCreateLdapServerXo("AuthPassword_example", "AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com") // CreateLdapServerXo |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementLDAPAPI.VerifyUserMapping(context.Background()).ExistingServerName(existingServerName).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.VerifyUserMapping``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `VerifyUserMapping`: []LdapTestUserMappingXo
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementLDAPAPI.VerifyUserMapping`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiVerifyUserMappingRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **existingServerName** | **string** |  | 
- **body** | [**CreateLdapServerXo**](CreateLdapServerXo.md) |  | 
-
-### Return type
-
-[**[]LdapTestUserMappingXo**](LdapTestUserMappingXo.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

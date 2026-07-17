@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** |  | [optional] [readonly] 
-**Group** | Pointer to **string** |  | [optional] [readonly] 
-**Id** | Pointer to **string** |  | [optional] [readonly] 
-**Name** | Pointer to **string** |  | [optional] [readonly] 
-**Repository** | Pointer to **string** |  | [optional] [readonly] 
-**Version** | Pointer to **string** |  | [optional] [readonly] 
+**Format** | Pointer to **string** |  | [optional] 
+**Group** | Pointer to **string** |  | [optional] 
+**Id** | Pointer to **string** |  | [optional] 
+**Name** | Pointer to **string** |  | [optional] 
+**Repository** | Pointer to **string** |  | [optional] 
+**Version** | Pointer to **string** |  | [optional] 
 
 ## Methods
 

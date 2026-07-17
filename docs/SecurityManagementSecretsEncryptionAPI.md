@@ -1,16 +1,16 @@
 # \SecurityManagementSecretsEncryptionAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReEncrypt1**](SecurityManagementSecretsEncryptionAPI.md#ReEncrypt1) | **Put** /v1/secrets/encryption/re-encrypt | Re-encrypt secrets using the specified key
+[**UpdateSecretsEncryptionReEncrypt**](SecurityManagementSecretsEncryptionAPI.md#UpdateSecretsEncryptionReEncrypt) | **Put** /v1/secrets/encryption/re-encrypt | Re-encrypt secrets using the specified key
 
 
 
-## ReEncrypt1
+## UpdateSecretsEncryptionReEncrypt
 
-> ReEncrypt1(ctx).Body(body).Execute()
+> UpdateSecretsEncryptionReEncrypt(ctx).ReEncryptionRequestApiXO(reEncryptionRequestApiXO).Execute()
 
 Re-encrypt secrets using the specified key
 
@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewReEncryptionRequestApiXO() // ReEncryptionRequestApiXO |  (optional)
+	reEncryptionRequestApiXO := *sonatyperepo.NewReEncryptionRequestApiXO("SecretKeyId_example") // ReEncryptionRequestApiXO |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSecretsEncryptionAPI.ReEncrypt1(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementSecretsEncryptionAPI.UpdateSecretsEncryptionReEncrypt(context.Background()).ReEncryptionRequestApiXO(reEncryptionRequestApiXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSecretsEncryptionAPI.ReEncrypt1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSecretsEncryptionAPI.UpdateSecretsEncryptionReEncrypt``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -47,12 +47,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReEncrypt1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecretsEncryptionReEncryptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ReEncryptionRequestApiXO**](ReEncryptionRequestApiXO.md) |  | 
+ **reEncryptionRequestApiXO** | [**ReEncryptionRequestApiXO**](ReEncryptionRequestApiXO.md) |  | 
 
 ### Return type
 

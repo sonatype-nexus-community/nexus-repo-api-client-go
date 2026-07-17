@@ -22,33 +22,22 @@ func Test_v3_SecurityManagementUserTokensAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementUserTokensAPIService List1", func(t *testing.T) {
+	t.Run("Test SecurityManagementUserTokensAPIService DeleteSecurityUserTokens", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementUserTokensAPI.List1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementUserTokensAPI.DeleteSecurityUserTokens(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementUserTokensAPIService ResetAllUserTokens", func(t *testing.T) {
+	t.Run("Test SecurityManagementUserTokensAPIService ListSecurityUserTokens", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementUserTokensAPI.ResetAllUserTokens(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityManagementUserTokensAPIService ServiceStatus", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.ServiceStatus(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokens(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -56,11 +45,22 @@ func Test_v3_SecurityManagementUserTokensAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityManagementUserTokensAPIService SetServiceStatus", func(t *testing.T) {
+	t.Run("Test SecurityManagementUserTokensAPIService ListSecurityUserTokensTokens", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.SetServiceStatus(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityManagementUserTokensAPIService UpdateSecurityUserTokens", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SecurityManagementUserTokensAPI.UpdateSecurityUserTokens(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

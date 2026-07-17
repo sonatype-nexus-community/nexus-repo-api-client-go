@@ -4,20 +4,20 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
+**Format** | **string** | Component format held in this repository | 
 **Group** | [**GroupAttributes**](GroupAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 **Terraform** | [**TerraformAttributes**](TerraformAttributes.md) |  | 
-**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewTerraformGroupApiRepository
 
-`func NewTerraformGroupApiRepository(group GroupAttributes, online bool, storage StorageAttributes, terraform TerraformAttributes, ) *TerraformGroupApiRepository`
+`func NewTerraformGroupApiRepository(format string, group GroupAttributes, name string, online bool, storage StorageAttributes, terraform TerraformAttributes, type_ string, ) *TerraformGroupApiRepository`
 
 NewTerraformGroupApiRepository instantiates a new TerraformGroupApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -51,11 +51,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *TerraformGroupApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetGroup
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *TerraformGroupApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -181,11 +171,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *TerraformGroupApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

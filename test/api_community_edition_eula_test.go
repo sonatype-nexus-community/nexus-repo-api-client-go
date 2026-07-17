@@ -22,22 +22,22 @@ func Test_v3_CommunityEditionEulaAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test CommunityEditionEulaAPIService GetCommunityEulaStatus", func(t *testing.T) {
+	t.Run("Test CommunityEditionEulaAPIService CreateSystemEula", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.CommunityEditionEulaAPI.GetCommunityEulaStatus(context.Background()).Execute()
+		httpRes, err := apiClient.CommunityEditionEulaAPI.CreateSystemEula(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test CommunityEditionEulaAPIService SetEulaAcceptedCE", func(t *testing.T) {
+	t.Run("Test CommunityEditionEulaAPIService ListSystemEula", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.CommunityEditionEulaAPI.SetEulaAcceptedCE(context.Background()).Execute()
+		httpRes, err := apiClient.CommunityEditionEulaAPI.ListSystemEula(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

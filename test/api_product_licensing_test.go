@@ -22,11 +22,11 @@ func Test_v3_ProductLicensingAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ProductLicensingAPIService GetLicenseStatus", func(t *testing.T) {
+	t.Run("Test ProductLicensingAPIService CreateSystemLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProductLicensingAPI.GetLicenseStatus(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductLicensingAPI.CreateSystemLicense(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,22 +34,22 @@ func Test_v3_ProductLicensingAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ProductLicensingAPIService RemoveLicense", func(t *testing.T) {
+	t.Run("Test ProductLicensingAPIService DeleteSystemLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ProductLicensingAPI.RemoveLicense(context.Background()).Execute()
+		httpRes, err := apiClient.ProductLicensingAPI.DeleteSystemLicense(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ProductLicensingAPIService SetLicense", func(t *testing.T) {
+	t.Run("Test ProductLicensingAPIService ListSystemLicense", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ProductLicensingAPI.SetLicense(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ProductLicensingAPI.ListSystemLicense(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

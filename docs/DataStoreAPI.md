@@ -1,17 +1,17 @@
 # \DataStoreAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetDataStore**](DataStoreAPI.md#GetDataStore) | **Get** /beta/data-store | Get the data store
+[**ListDataStore**](DataStoreAPI.md#ListDataStore) | **Get** /beta/data-store | Get the data store
 [**UpdateDataStore**](DataStoreAPI.md#UpdateDataStore) | **Put** /beta/data-store | Update the data store
 
 
 
-## GetDataStore
+## ListDataStore
 
-> GetDataStore(ctx).Execute()
+> ListDataStore(ctx).Execute()
 
 Get the data store
 
@@ -31,9 +31,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.DataStoreAPI.GetDataStore(context.Background()).Execute()
+	r, err := apiClient.DataStoreAPI.ListDataStore(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `DataStoreAPI.GetDataStore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `DataStoreAPI.ListDataStore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetDataStoreRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListDataStoreRequest struct via the builder pattern
 
 
 ### Return type
@@ -68,7 +68,7 @@ Other parameters are passed through a pointer to a apiGetDataStoreRequest struct
 
 ## UpdateDataStore
 
-> UpdateDataStore(ctx).Body(body).Execute()
+> UpdateDataStore(ctx).DataStoreApiUpdateXO(dataStoreApiUpdateXO).Execute()
 
 Update the data store
 
@@ -85,11 +85,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewDataStoreApiUpdateXO("JdbcUrl_example") // DataStoreApiUpdateXO |  (optional)
+	dataStoreApiUpdateXO := *sonatyperepo.NewDataStoreApiUpdateXO("JdbcUrl_example", "Name_example", "Source_example", "Type_example") // DataStoreApiUpdateXO |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.DataStoreAPI.UpdateDataStore(context.Background()).Body(body).Execute()
+	r, err := apiClient.DataStoreAPI.UpdateDataStore(context.Background()).DataStoreApiUpdateXO(dataStoreApiUpdateXO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DataStoreAPI.UpdateDataStore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -108,7 +108,7 @@ Other parameters are passed through a pointer to a apiUpdateDataStoreRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**DataStoreApiUpdateXO**](DataStoreApiUpdateXO.md) |  | 
+ **dataStoreApiUpdateXO** | [**DataStoreApiUpdateXO**](DataStoreApiUpdateXO.md) |  | 
 
 ### Return type
 

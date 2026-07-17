@@ -1,18 +1,18 @@
 # \SecurityManagementRealmsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetActiveRealms**](SecurityManagementRealmsAPI.md#GetActiveRealms) | **Get** /v1/security/realms/active | List the active realm IDs in order
-[**GetRealms**](SecurityManagementRealmsAPI.md#GetRealms) | **Get** /v1/security/realms/available | List the available realms
-[**SetActiveRealms**](SecurityManagementRealmsAPI.md#SetActiveRealms) | **Put** /v1/security/realms/active | Set the active security realms in the order they should be used
+[**ListSecurityRealmsActive**](SecurityManagementRealmsAPI.md#ListSecurityRealmsActive) | **Get** /v1/security/realms/active | List the active realm IDs in order
+[**ListSecurityRealmsAvailable**](SecurityManagementRealmsAPI.md#ListSecurityRealmsAvailable) | **Get** /v1/security/realms/available | List the available realms
+[**UpdateSecurityRealmsActive**](SecurityManagementRealmsAPI.md#UpdateSecurityRealmsActive) | **Put** /v1/security/realms/active | Set the active security realms in the order they should be used
 
 
 
-## GetActiveRealms
+## ListSecurityRealmsActive
 
-> []string GetActiveRealms(ctx).Execute()
+> []string ListSecurityRealmsActive(ctx).Execute()
 
 List the active realm IDs in order
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRealmsAPI.GetActiveRealms(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementRealmsAPI.ListSecurityRealmsActive(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.GetActiveRealms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.ListSecurityRealmsActive``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetActiveRealms`: []string
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRealmsAPI.GetActiveRealms`: %v\n", resp)
+	// response from `ListSecurityRealmsActive`: []string
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRealmsAPI.ListSecurityRealmsActive`: %v\n", resp)
 }
 ```
 
@@ -48,7 +48,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetActiveRealmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityRealmsActiveRequest struct via the builder pattern
 
 
 ### Return type
@@ -69,9 +69,9 @@ Other parameters are passed through a pointer to a apiGetActiveRealmsRequest str
 [[Back to README]](../README.md)
 
 
-## GetRealms
+## ListSecurityRealmsAvailable
 
-> []RealmApiXO GetRealms(ctx).Execute()
+> []RealmApiXO ListSecurityRealmsAvailable(ctx).Execute()
 
 List the available realms
 
@@ -91,13 +91,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRealmsAPI.GetRealms(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementRealmsAPI.ListSecurityRealmsAvailable(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.GetRealms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.ListSecurityRealmsAvailable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRealms`: []RealmApiXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRealmsAPI.GetRealms`: %v\n", resp)
+	// response from `ListSecurityRealmsAvailable`: []RealmApiXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRealmsAPI.ListSecurityRealmsAvailable`: %v\n", resp)
 }
 ```
 
@@ -107,7 +107,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRealmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityRealmsAvailableRequest struct via the builder pattern
 
 
 ### Return type
@@ -128,9 +128,9 @@ Other parameters are passed through a pointer to a apiGetRealmsRequest struct vi
 [[Back to README]](../README.md)
 
 
-## SetActiveRealms
+## UpdateSecurityRealmsActive
 
-> SetActiveRealms(ctx).Body(body).Execute()
+> UpdateSecurityRealmsActive(ctx).RequestBody(requestBody).Execute()
 
 Set the active security realms in the order they should be used
 
@@ -147,13 +147,13 @@ import (
 )
 
 func main() {
-	body := []string{"Property_example"} // []string | The realm IDs (optional)
+	requestBody := []string{"Property_example"} // []string | The realm IDs (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRealmsAPI.SetActiveRealms(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementRealmsAPI.UpdateSecurityRealmsActive(context.Background()).RequestBody(requestBody).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.SetActiveRealms``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRealmsAPI.UpdateSecurityRealmsActive``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -165,12 +165,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiSetActiveRealmsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityRealmsActiveRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **[]string** | The realm IDs | 
+ **requestBody** | **[]string** | The realm IDs | 
 
 ### Return type
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

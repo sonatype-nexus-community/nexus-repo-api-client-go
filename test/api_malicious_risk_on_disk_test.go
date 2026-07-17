@@ -22,93 +22,22 @@ func Test_v3_MaliciousRiskOnDiskAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test MaliciousRiskOnDiskAPIService AcknowledgeFinding", func(t *testing.T) {
+	t.Run("Test MaliciousRiskOnDiskAPIService ListMaliciousRiskEnabledRegistries", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var id int32
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.AcknowledgeFinding(context.Background(), id).Execute()
+		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskEnabledRegistries(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test MaliciousRiskOnDiskAPIService DeleteFinding", func(t *testing.T) {
+	t.Run("Test MaliciousRiskOnDiskAPIService ListMaliciousRiskRiskOnDisk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var id int32
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.DeleteFinding(context.Background(), id).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService GetActiveFindings", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.MaliciousRiskOnDiskAPI.GetActiveFindings(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService GetEnabledRegistries", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.GetEnabledRegistries(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService GetHistory", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.GetHistory(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService GetMaliciousRiskComponents", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.GetMaliciousRiskComponents(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService GetMaliciousRiskOnDiskCount", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.GetMaliciousRiskOnDiskCount(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test MaliciousRiskOnDiskAPIService RemediateFindings", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.RemediateFindings(context.Background()).Execute()
+		httpRes, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskRiskOnDisk(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

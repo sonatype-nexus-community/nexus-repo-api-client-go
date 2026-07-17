@@ -1,20 +1,20 @@
 # \SecurityManagementRolesAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Create**](SecurityManagementRolesAPI.md#Create) | **Post** /v1/security/roles | Create role
-[**Delete**](SecurityManagementRolesAPI.md#Delete) | **Delete** /v1/security/roles/{id} | Delete role
-[**GetRole**](SecurityManagementRolesAPI.md#GetRole) | **Get** /v1/security/roles/{id} | Get role
-[**GetRoles**](SecurityManagementRolesAPI.md#GetRoles) | **Get** /v1/security/roles | List roles
-[**Update**](SecurityManagementRolesAPI.md#Update) | **Put** /v1/security/roles/{id} | Update role
+[**CreateSecurityRoles**](SecurityManagementRolesAPI.md#CreateSecurityRoles) | **Post** /v1/security/roles | Create role
+[**DeleteSecurityRoles**](SecurityManagementRolesAPI.md#DeleteSecurityRoles) | **Delete** /v1/security/roles/{id} | Delete role
+[**GetSecurityRoles**](SecurityManagementRolesAPI.md#GetSecurityRoles) | **Get** /v1/security/roles/{id} | Get role
+[**ListSecurityRoles**](SecurityManagementRolesAPI.md#ListSecurityRoles) | **Get** /v1/security/roles | List roles
+[**UpdateSecurityRoles**](SecurityManagementRolesAPI.md#UpdateSecurityRoles) | **Put** /v1/security/roles/{id} | Update role
 
 
 
-## Create
+## CreateSecurityRoles
 
-> RoleXOResponse Create(ctx).Body(body).Execute()
+> CreateSecurityRoles(ctx).RoleXORequest(roleXORequest).Execute()
 
 Create role
 
@@ -31,17 +31,15 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRoleXORequest() // RoleXORequest | A role configuration
+	roleXORequest := *sonatyperepo.NewRoleXORequest("Id_example", "Name_example") // RoleXORequest | A role configuration
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRolesAPI.Create(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).RoleXORequest(roleXORequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.Create``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.CreateSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create`: RoleXOResponse
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.Create`: %v\n", resp)
 }
 ```
 
@@ -51,16 +49,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityRolesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
+ **roleXORequest** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
 
 ### Return type
 
-[**RoleXOResponse**](RoleXOResponse.md)
+ (empty response body)
 
 ### Authorization
 
@@ -69,16 +67,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## Delete
+## DeleteSecurityRoles
 
-> Delete(ctx, id).Execute()
+> DeleteSecurityRoles(ctx, id).Execute()
 
 Delete role
 
@@ -99,9 +97,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.Delete(context.Background(), id).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.DeleteSecurityRoles(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.Delete``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.DeleteSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -117,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityRolesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -142,9 +140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetRole
+## GetSecurityRoles
 
-> RoleXOResponse GetRole(ctx, id).Source(source).Execute()
+> GetSecurityRoles(ctx, id).Source(source).Execute()
 
 Get role
 
@@ -166,13 +164,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRolesAPI.GetRole(context.Background(), id).Source(source).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.GetSecurityRoles(context.Background(), id).Source(source).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.GetRole``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.GetSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRole`: RoleXOResponse
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.GetRole`: %v\n", resp)
 }
 ```
 
@@ -186,7 +182,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRoleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSecurityRolesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -196,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoleXOResponse**](RoleXOResponse.md)
+ (empty response body)
 
 ### Authorization
 
@@ -205,16 +201,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetRoles
+## ListSecurityRoles
 
-> []RoleXOResponse GetRoles(ctx).Source(source).Execute()
+> ListSecurityRoles(ctx).Source(source).Execute()
 
 List roles
 
@@ -235,13 +231,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRolesAPI.GetRoles(context.Background()).Source(source).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.ListSecurityRoles(context.Background()).Source(source).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.GetRoles``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.ListSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRoles`: []RoleXOResponse
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.GetRoles`: %v\n", resp)
 }
 ```
 
@@ -251,7 +245,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRolesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityRolesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -260,7 +254,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**[]RoleXOResponse**](RoleXOResponse.md)
+ (empty response body)
 
 ### Authorization
 
@@ -269,16 +263,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## Update
+## UpdateSecurityRoles
 
-> Update(ctx, id).Body(body).Execute()
+> UpdateSecurityRoles(ctx, id).RoleXORequest(roleXORequest).Execute()
 
 Update role
 
@@ -296,13 +290,13 @@ import (
 
 func main() {
 	id := "id_example" // string | The id of the role to update
-	body := *sonatyperepo.NewRoleXORequest() // RoleXORequest | A role configuration
+	roleXORequest := *sonatyperepo.NewRoleXORequest("Id_example", "Name_example") // RoleXORequest | A role configuration
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.Update(context.Background(), id).Body(body).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.UpdateSecurityRoles(context.Background(), id).RoleXORequest(roleXORequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.Update``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.UpdateSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -318,13 +312,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityRolesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
+ **roleXORequest** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
 
 ### Return type
 

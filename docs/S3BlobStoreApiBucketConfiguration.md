@@ -6,11 +6,13 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ActiveRegion** | Pointer to **string** | The active region based on bucket configuration, failover buckets, and EC2 region Nexus is running. | [optional] [readonly] 
 **AdvancedBucketConnection** | Pointer to [**S3BlobStoreApiAdvancedBucketConnection**](S3BlobStoreApiAdvancedBucketConnection.md) |  | [optional] 
+**AdvancedConnection** | Pointer to [**S3BlobStoreApiAdvancedBucketConnection**](S3BlobStoreApiAdvancedBucketConnection.md) |  | [optional] 
 **Bucket** | [**S3BlobStoreApiBucket**](S3BlobStoreApiBucket.md) |  | 
 **BucketSecurity** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 **Encryption** | Pointer to [**S3BlobStoreApiEncryption**](S3BlobStoreApiEncryption.md) |  | [optional] 
 **FailoverBuckets** | Pointer to [**[]S3BlobStoreApiFailoverBucket**](S3BlobStoreApiFailoverBucket.md) | A list of secondary buckets which have bidirectional replication enabled and should be used when Nexus is running in the region | [optional] 
 **PreSignedUrlEnabled** | Pointer to **bool** | Whether pre assigned URL is enabled or not. | [optional] 
+**Security** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 
 ## Methods
 
@@ -80,6 +82,31 @@ SetAdvancedBucketConnection sets AdvancedBucketConnection field to given value.
 `func (o *S3BlobStoreApiBucketConfiguration) HasAdvancedBucketConnection() bool`
 
 HasAdvancedBucketConnection returns a boolean if a field has been set.
+
+### GetAdvancedConnection
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetAdvancedConnection() S3BlobStoreApiAdvancedBucketConnection`
+
+GetAdvancedConnection returns the AdvancedConnection field if non-nil, zero value otherwise.
+
+### GetAdvancedConnectionOk
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetAdvancedConnectionOk() (*S3BlobStoreApiAdvancedBucketConnection, bool)`
+
+GetAdvancedConnectionOk returns a tuple with the AdvancedConnection field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAdvancedConnection
+
+`func (o *S3BlobStoreApiBucketConfiguration) SetAdvancedConnection(v S3BlobStoreApiAdvancedBucketConnection)`
+
+SetAdvancedConnection sets AdvancedConnection field to given value.
+
+### HasAdvancedConnection
+
+`func (o *S3BlobStoreApiBucketConfiguration) HasAdvancedConnection() bool`
+
+HasAdvancedConnection returns a boolean if a field has been set.
 
 ### GetBucket
 
@@ -200,6 +227,31 @@ SetPreSignedUrlEnabled sets PreSignedUrlEnabled field to given value.
 `func (o *S3BlobStoreApiBucketConfiguration) HasPreSignedUrlEnabled() bool`
 
 HasPreSignedUrlEnabled returns a boolean if a field has been set.
+
+### GetSecurity
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetSecurity() S3BlobStoreApiBucketSecurity`
+
+GetSecurity returns the Security field if non-nil, zero value otherwise.
+
+### GetSecurityOk
+
+`func (o *S3BlobStoreApiBucketConfiguration) GetSecurityOk() (*S3BlobStoreApiBucketSecurity, bool)`
+
+GetSecurityOk returns a tuple with the Security field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSecurity
+
+`func (o *S3BlobStoreApiBucketConfiguration) SetSecurity(v S3BlobStoreApiBucketSecurity)`
+
+SetSecurity sets Security field to given value.
+
+### HasSecurity
+
+`func (o *S3BlobStoreApiBucketConfiguration) HasSecurity() bool`
+
+HasSecurity returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

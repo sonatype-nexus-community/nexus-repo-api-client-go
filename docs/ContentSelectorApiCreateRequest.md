@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | A human-readable description | [optional] 
-**Expression** | Pointer to **string** | The expression used to identify content | [optional] 
-**Name** | Pointer to **string** | The content selector name cannot be changed after creation | [optional] 
+**Expression** | **string** | The expression used to identify content | 
+**Name** | **string** | The content selector name cannot be changed after creation | 
 
 ## Methods
 
 ### NewContentSelectorApiCreateRequest
 
-`func NewContentSelectorApiCreateRequest() *ContentSelectorApiCreateRequest`
+`func NewContentSelectorApiCreateRequest(expression string, name string, ) *ContentSelectorApiCreateRequest`
 
 NewContentSelectorApiCreateRequest instantiates a new ContentSelectorApiCreateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetExpression sets Expression field to given value.
 
-### HasExpression
-
-`func (o *ContentSelectorApiCreateRequest) HasExpression() bool`
-
-HasExpression returns a boolean if a field has been set.
 
 ### GetName
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ContentSelectorApiCreateRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

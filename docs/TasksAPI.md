@@ -1,24 +1,24 @@
 # \TasksAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateTask**](TasksAPI.md#CreateTask) | **Post** /v1/tasks | Create task
-[**DeleteTaskById**](TasksAPI.md#DeleteTaskById) | **Delete** /v1/tasks/{id} | Delete task by id
-[**GetTaskById**](TasksAPI.md#GetTaskById) | **Get** /v1/tasks/{id} | Get a single task by id
-[**GetTaskTemplate**](TasksAPI.md#GetTaskTemplate) | **Get** /v1/tasks/templates/{typeId} | Get task template by type. This is the base to create new tasks
-[**GetTaskTemplates**](TasksAPI.md#GetTaskTemplates) | **Get** /v1/tasks/templates | List tasks of template tasks. This is the base to create new tasks
-[**GetTasks**](TasksAPI.md#GetTasks) | **Get** /v1/tasks | List tasks
-[**Run**](TasksAPI.md#Run) | **Post** /v1/tasks/{id}/run | Run task
-[**Stop**](TasksAPI.md#Stop) | **Post** /v1/tasks/{id}/stop | Stop task
-[**UpdateTask**](TasksAPI.md#UpdateTask) | **Put** /v1/tasks/{taskId} | Update an existing task
+[**CreateTasks**](TasksAPI.md#CreateTasks) | **Post** /v1/tasks | Create task
+[**CreateTasksRun**](TasksAPI.md#CreateTasksRun) | **Post** /v1/tasks/{id}/run | Run task
+[**CreateTasksStop**](TasksAPI.md#CreateTasksStop) | **Post** /v1/tasks/{id}/stop | Stop task
+[**DeleteTasks**](TasksAPI.md#DeleteTasks) | **Delete** /v1/tasks/{id} | Delete task by id
+[**GetTasks**](TasksAPI.md#GetTasks) | **Get** /v1/tasks/{id} | Get a single task by id
+[**GetTasksTemplates**](TasksAPI.md#GetTasksTemplates) | **Get** /v1/tasks/templates/{typeId} | Get task template by type. This is the base to create new tasks
+[**ListTasks**](TasksAPI.md#ListTasks) | **Get** /v1/tasks | List tasks
+[**ListTasksTemplates**](TasksAPI.md#ListTasksTemplates) | **Get** /v1/tasks/templates | List tasks of template tasks. This is the base to create new tasks
+[**UpdateTasks**](TasksAPI.md#UpdateTasks) | **Put** /v1/tasks/{taskId} | Update an existing task
 
 
 
-## CreateTask
+## CreateTasks
 
-> TaskXO CreateTask(ctx).Body(body).Execute()
+> TaskXO CreateTasks(ctx).TaskTemplateXO(taskTemplateXO).Execute()
 
 Create task
 
@@ -35,17 +35,17 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewTaskTemplateXO(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example", "Type_example") // TaskTemplateXO |  (optional)
+	taskTemplateXO := *sonatyperepo.NewTaskTemplateXO(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example", "Type_example") // TaskTemplateXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TasksAPI.CreateTask(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.TasksAPI.CreateTasks(context.Background()).TaskTemplateXO(taskTemplateXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.CreateTask``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.CreateTasks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateTask`: TaskXO
-	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.CreateTask`: %v\n", resp)
+	// response from `CreateTasks`: TaskXO
+	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.CreateTasks`: %v\n", resp)
 }
 ```
 
@@ -55,12 +55,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateTaskRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTasksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**TaskTemplateXO**](TaskTemplateXO.md) |  | 
+ **taskTemplateXO** | [**TaskTemplateXO**](TaskTemplateXO.md) |  | 
 
 ### Return type
 
@@ -80,11 +80,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteTaskById
+## CreateTasksRun
 
-> DeleteTaskById(ctx, id).Execute()
+> CreateTasksRun(ctx, id).Execute()
 
-Delete task by id
+Run task
 
 ### Example
 
@@ -99,13 +99,13 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | 
+	id := "id_example" // string | Id of the task to run
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TasksAPI.DeleteTaskById(context.Background(), id).Execute()
+	r, err := apiClient.TasksAPI.CreateTasksRun(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.DeleteTaskById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.CreateTasksRun``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -117,11 +117,11 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** |  | 
+**id** | **string** | Id of the task to run | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteTaskByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateTasksRunRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -146,9 +146,141 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetTaskById
+## CreateTasksStop
 
-> TaskXO GetTaskById(ctx, id).Execute()
+> CreateTasksStop(ctx, id).Execute()
+
+Stop task
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	id := "id_example" // string | Id of the task to stop
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.TasksAPI.CreateTasksStop(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.CreateTasksStop``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** | Id of the task to stop | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateTasksStopRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteTasks
+
+> DeleteTasks(ctx, id).Execute()
+
+Delete task by id
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	id := "id_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.TasksAPI.DeleteTasks(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.DeleteTasks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteTasksRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetTasks
+
+> GetTasks(ctx, id).Execute()
 
 Get a single task by id
 
@@ -169,13 +301,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TasksAPI.GetTaskById(context.Background(), id).Execute()
+	r, err := apiClient.TasksAPI.GetTasks(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTaskById``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTasks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTaskById`: TaskXO
-	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.GetTaskById`: %v\n", resp)
 }
 ```
 
@@ -189,7 +319,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTaskByIdRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTasksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -198,7 +328,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**TaskXO**](TaskXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -207,16 +337,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetTaskTemplate
+## GetTasksTemplates
 
-> TaskTemplateXO GetTaskTemplate(ctx, typeId).Execute()
+> TaskTemplateXO GetTasksTemplates(ctx, typeId).Execute()
 
 Get task template by type. This is the base to create new tasks
 
@@ -237,13 +367,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TasksAPI.GetTaskTemplate(context.Background(), typeId).Execute()
+	resp, r, err := apiClient.TasksAPI.GetTasksTemplates(context.Background(), typeId).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTaskTemplate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTasksTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTaskTemplate`: TaskTemplateXO
-	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.GetTaskTemplate`: %v\n", resp)
+	// response from `GetTasksTemplates`: TaskTemplateXO
+	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.GetTasksTemplates`: %v\n", resp)
 }
 ```
 
@@ -257,7 +387,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTaskTemplateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetTasksTemplatesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -282,68 +412,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetTaskTemplates
+## ListTasks
 
-> []TaskTemplateXO GetTaskTemplates(ctx).Execute()
-
-List tasks of template tasks. This is the base to create new tasks
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TasksAPI.GetTaskTemplates(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTaskTemplates``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetTaskTemplates`: []TaskTemplateXO
-	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.GetTaskTemplates`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetTaskTemplatesRequest struct via the builder pattern
-
-
-### Return type
-
-[**[]TaskTemplateXO**](TaskTemplateXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetTasks
-
-> PageTaskXO GetTasks(ctx).Type_(type_).Execute()
+> PageTaskXO ListTasks(ctx).Type_(type_).Execute()
 
 List tasks
 
@@ -364,13 +435,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.TasksAPI.GetTasks(context.Background()).Type_(type_).Execute()
+	resp, r, err := apiClient.TasksAPI.ListTasks(context.Background()).Type_(type_).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.GetTasks``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.ListTasks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetTasks`: PageTaskXO
-	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.GetTasks`: %v\n", resp)
+	// response from `ListTasks`: PageTaskXO
+	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.ListTasks`: %v\n", resp)
 }
 ```
 
@@ -380,7 +451,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetTasksRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListTasksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -405,77 +476,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Run
+## ListTasksTemplates
 
-> Run(ctx, id).Execute()
+> []TaskTemplateXO ListTasksTemplates(ctx).Execute()
 
-Run task
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	id := "id_example" // string | Id of the task to run
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TasksAPI.Run(context.Background(), id).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.Run``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Id of the task to run | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiRunRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Stop
-
-> Stop(ctx, id).Execute()
-
-Stop task
+List tasks of template tasks. This is the base to create new tasks
 
 ### Example
 
@@ -490,38 +495,31 @@ import (
 )
 
 func main() {
-	id := "id_example" // string | Id of the task to stop
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TasksAPI.Stop(context.Background(), id).Execute()
+	resp, r, err := apiClient.TasksAPI.ListTasksTemplates(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.Stop``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.ListTasksTemplates``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListTasksTemplates`: []TaskTemplateXO
+	fmt.Fprintf(os.Stdout, "Response from `TasksAPI.ListTasksTemplates`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**id** | **string** | Id of the task to stop | 
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiStopRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
+Other parameters are passed through a pointer to a apiListTasksTemplatesRequest struct via the builder pattern
 
 
 ### Return type
 
- (empty response body)
+[**[]TaskTemplateXO**](TaskTemplateXO.md)
 
 ### Authorization
 
@@ -530,16 +528,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## UpdateTask
+## UpdateTasks
 
-> UpdateTask(ctx, taskId).Body(body).Execute()
+> UpdateTasks(ctx, taskId).UpdateTasksRequest(updateTasksRequest).Execute()
 
 Update an existing task
 
@@ -557,13 +555,13 @@ import (
 
 func main() {
 	taskId := "taskId_example" // string | 
-	body := *sonatyperepo.NewUpdateTaskRequest(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example") // UpdateTaskRequest |  (optional)
+	updateTasksRequest := *sonatyperepo.NewUpdateTasksRequest(false, *sonatyperepo.NewFrequencyXO("Schedule_example"), "Name_example", "NotificationCondition_example") // UpdateTasksRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TasksAPI.UpdateTask(context.Background(), taskId).Body(body).Execute()
+	r, err := apiClient.TasksAPI.UpdateTasks(context.Background(), taskId).UpdateTasksRequest(updateTasksRequest).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.UpdateTask``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `TasksAPI.UpdateTasks``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -579,13 +577,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateTaskRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateTasksRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**UpdateTaskRequest**](UpdateTaskRequest.md) |  | 
+ **updateTasksRequest** | [**UpdateTasksRequest**](UpdateTasksRequest.md) |  | 
 
 ### Return type
 
@@ -598,7 +596,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

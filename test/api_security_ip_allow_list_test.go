@@ -22,45 +22,22 @@ func Test_v3_SecurityIPAllowListAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityIPAllowListAPIService AddEntry", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService CreateSecurityIpAllowlistEntries", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityIPAllowListAPI.AddEntry(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityIPAllowListAPI.CreateSecurityIpAllowlistEntries(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService BrowseEntries", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService CreateSecurityIpAllowlistEntriesBulk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.BrowseEntries(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityIPAllowListAPIService BulkDelete", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.SecurityIPAllowListAPI.BulkDelete(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SecurityIPAllowListAPIService BulkUpload", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.BulkUpload(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.CreateSecurityIpAllowlistEntriesBulk(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -68,33 +45,33 @@ func Test_v3_SecurityIPAllowListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService ClearAllEntries", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService DeleteSecurityIpAllowlistEntries", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityIPAllowListAPI.ClearAllEntries(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityIPAllowListAPI.DeleteSecurityIpAllowlistEntries(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService GetCurrentIp", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService DeleteSecurityIpAllowlistEntriesBulk", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityIPAllowListAPI.GetCurrentIp(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityIPAllowListAPI.DeleteSecurityIpAllowlistEntriesBulk(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService GetSettings", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService ListSecurityIpAllowlist", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.GetSettings(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.ListSecurityIpAllowlist(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -102,13 +79,36 @@ func Test_v3_SecurityIPAllowListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService UpdateEntry", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService ListSecurityIpAllowlistCurrentIp", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.SecurityIPAllowListAPI.ListSecurityIpAllowlistCurrentIp(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityIPAllowListAPIService ListSecurityIpAllowlistEntries", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.ListSecurityIpAllowlistEntries(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SecurityIPAllowListAPIService UpdateSecurityIpAllowlistEntries", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.UpdateEntry(context.Background(), id).Execute()
+		resp, httpRes, err := apiClient.SecurityIPAllowListAPI.UpdateSecurityIpAllowlistEntries(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -116,11 +116,11 @@ func Test_v3_SecurityIPAllowListAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SecurityIPAllowListAPIService UpdateMode", func(t *testing.T) {
+	t.Run("Test SecurityIPAllowListAPIService UpdateSecurityIpAllowlistMode", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityIPAllowListAPI.UpdateMode(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityIPAllowListAPI.UpdateSecurityIpAllowlistMode(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

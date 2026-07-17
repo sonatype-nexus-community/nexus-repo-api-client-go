@@ -1,19 +1,19 @@
 # \SecurityAtlassianCrowdAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ClearCache**](SecurityAtlassianCrowdAPI.md#ClearCache) | **Post** /v1/security/atlassian-crowd/clear-cache | Clear Atlassian Crowd cache
-[**ReadSettings**](SecurityAtlassianCrowdAPI.md#ReadSettings) | **Get** /v1/security/atlassian-crowd | Retrieve Atlassian Crowd settings configured in Nexus Repository Manager
-[**UpdateSettings**](SecurityAtlassianCrowdAPI.md#UpdateSettings) | **Put** /v1/security/atlassian-crowd | Update Atlassian Crowd settings configured in Nexus Repository Manager
-[**VerifyConnection**](SecurityAtlassianCrowdAPI.md#VerifyConnection) | **Post** /v1/security/atlassian-crowd/verify-connection | Verify connection using supplied Atlassian Crowd settings
+[**CreateSecurityAtlassianCrowdClearCache**](SecurityAtlassianCrowdAPI.md#CreateSecurityAtlassianCrowdClearCache) | **Post** /v1/security/atlassian-crowd/clear-cache | Clear Atlassian Crowd cache
+[**CreateSecurityAtlassianCrowdVerifyConnection**](SecurityAtlassianCrowdAPI.md#CreateSecurityAtlassianCrowdVerifyConnection) | **Post** /v1/security/atlassian-crowd/verify-connection | Verify connection using supplied Atlassian Crowd settings
+[**ListSecurityAtlassianCrowd**](SecurityAtlassianCrowdAPI.md#ListSecurityAtlassianCrowd) | **Get** /v1/security/atlassian-crowd | Retrieve Atlassian Crowd settings configured in Nexus Repository Manager
+[**UpdateSecurityAtlassianCrowd**](SecurityAtlassianCrowdAPI.md#UpdateSecurityAtlassianCrowd) | **Put** /v1/security/atlassian-crowd | Update Atlassian Crowd settings configured in Nexus Repository Manager
 
 
 
-## ClearCache
+## CreateSecurityAtlassianCrowdClearCache
 
-> ClearCache(ctx).Execute()
+> CreateSecurityAtlassianCrowdClearCache(ctx).Execute()
 
 Clear Atlassian Crowd cache
 
@@ -33,9 +33,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.ClearCache(context.Background()).Execute()
+	r, err := apiClient.SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdClearCache(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.ClearCache``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdClearCache``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -47,7 +47,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiClearCacheRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityAtlassianCrowdClearCacheRequest struct via the builder pattern
 
 
 ### Return type
@@ -68,9 +68,71 @@ Other parameters are passed through a pointer to a apiClearCacheRequest struct v
 [[Back to README]](../README.md)
 
 
-## ReadSettings
+## CreateSecurityAtlassianCrowdVerifyConnection
 
-> ReadSettings(ctx).Execute()
+> CreateSecurityAtlassianCrowdVerifyConnection(ctx).CrowdApiXO(crowdApiXO).Execute()
+
+Verify connection using supplied Atlassian Crowd settings
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	crowdApiXO := *sonatyperepo.NewCrowdApiXO("ApplicationName_example", "ApplicationPassword_example", false, false, "Url_example") // CrowdApiXO | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdVerifyConnection(context.Background()).CrowdApiXO(crowdApiXO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdVerifyConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateSecurityAtlassianCrowdVerifyConnectionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **crowdApiXO** | [**CrowdApiXO**](CrowdApiXO.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSecurityAtlassianCrowd
+
+> ListSecurityAtlassianCrowd(ctx).Execute()
 
 Retrieve Atlassian Crowd settings configured in Nexus Repository Manager
 
@@ -90,9 +152,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.ReadSettings(context.Background()).Execute()
+	r, err := apiClient.SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.ReadSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -104,7 +166,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReadSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityAtlassianCrowdRequest struct via the builder pattern
 
 
 ### Return type
@@ -125,9 +187,9 @@ Other parameters are passed through a pointer to a apiReadSettingsRequest struct
 [[Back to README]](../README.md)
 
 
-## UpdateSettings
+## UpdateSecurityAtlassianCrowd
 
-> UpdateSettings(ctx).Body(body).Execute()
+> UpdateSecurityAtlassianCrowd(ctx).CrowdApiXO(crowdApiXO).Execute()
 
 Update Atlassian Crowd settings configured in Nexus Repository Manager
 
@@ -144,13 +206,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewCrowdApiXO(false, false) // CrowdApiXO |  (optional)
+	crowdApiXO := *sonatyperepo.NewCrowdApiXO("ApplicationName_example", "ApplicationPassword_example", false, false, "Url_example") // CrowdApiXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSettings(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd(context.Background()).CrowdApiXO(crowdApiXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.UpdateSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -162,74 +224,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityAtlassianCrowdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**CrowdApiXO**](CrowdApiXO.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## VerifyConnection
-
-> VerifyConnection(ctx).Body(body).Execute()
-
-Verify connection using supplied Atlassian Crowd settings
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := *sonatyperepo.NewCrowdApiXO(false, false) // CrowdApiXO |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.VerifyConnection``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiVerifyConnectionRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**CrowdApiXO**](CrowdApiXO.md) |  | 
+ **crowdApiXO** | [**CrowdApiXO**](CrowdApiXO.md) |  | 
 
 ### Return type
 

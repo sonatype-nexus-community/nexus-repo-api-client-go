@@ -6,18 +6,18 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Format** | **string** | Component format held in this repository | 
+**Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Storage** | [**HostedStorageAttributes**](HostedStorageAttributes.md) |  | 
-**Type** | Pointer to **string** | Repository type | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewAnsibleGalaxyHostedApiRepository
 
-`func NewAnsibleGalaxyHostedApiRepository(online bool, storage HostedStorageAttributes, ) *AnsibleGalaxyHostedApiRepository`
+`func NewAnsibleGalaxyHostedApiRepository(format string, name string, online bool, storage HostedStorageAttributes, type_ string, ) *AnsibleGalaxyHostedApiRepository`
 
 NewAnsibleGalaxyHostedApiRepository instantiates a new AnsibleGalaxyHostedApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -101,11 +101,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *AnsibleGalaxyHostedApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetName
 
@@ -126,11 +121,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *AnsibleGalaxyHostedApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -191,11 +181,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *AnsibleGalaxyHostedApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

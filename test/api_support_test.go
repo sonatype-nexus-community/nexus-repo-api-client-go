@@ -22,22 +22,22 @@ func Test_v3_SupportAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SupportAPIService Supportzip", func(t *testing.T) {
+	t.Run("Test SupportAPIService CreateSupportSupportzip", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SupportAPI.Supportzip(context.Background()).Execute()
+		httpRes, err := apiClient.SupportAPI.CreateSupportSupportzip(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SupportAPIService Supportzippath", func(t *testing.T) {
+	t.Run("Test SupportAPIService CreateSupportSupportzippath", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SupportAPI.Supportzippath(context.Background()).Execute()
+		httpRes, err := apiClient.SupportAPI.CreateSupportSupportzippath(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

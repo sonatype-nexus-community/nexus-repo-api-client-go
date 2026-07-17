@@ -22,59 +22,57 @@ func Test_v3_StatusAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test StatusAPIService GetClusterSystemStatusChecks", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.StatusAPI.GetClusterSystemStatusChecks(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test StatusAPIService GetNodeSystemStatusChecks", func(t *testing.T) {
+	t.Run("Test StatusAPIService GetStatusCheck", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var nodeId string
 
-		httpRes, err := apiClient.StatusAPI.GetNodeSystemStatusChecks(context.Background(), nodeId).Execute()
+		httpRes, err := apiClient.StatusAPI.GetStatusCheck(context.Background(), nodeId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test StatusAPIService GetSystemStatusChecks", func(t *testing.T) {
+	t.Run("Test StatusAPIService ListStatus", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.StatusAPI.GetSystemStatusChecks(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test StatusAPIService IsAvailable", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.StatusAPI.IsAvailable(context.Background()).Execute()
+		httpRes, err := apiClient.StatusAPI.ListStatus(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test StatusAPIService IsWritable", func(t *testing.T) {
+	t.Run("Test StatusAPIService ListStatusCheck", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.StatusAPI.IsWritable(context.Background()).Execute()
+		httpRes, err := apiClient.StatusAPI.ListStatusCheck(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StatusAPIService ListStatusCheckCluster", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.StatusAPI.ListStatusCheckCluster(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test StatusAPIService ListStatusWritable", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.StatusAPI.ListStatusWritable(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**DeployPolicy** | Pointer to **string** | Validate that all paths are RPMs or yum metadata | [optional] 
+**DeployPolicy** | **string** | Validate that all paths are RPMs or yum metadata | 
 **RepodataDepth** | **int32** | Specifies the repository depth where repodata folder(s) are created | 
 
 ## Methods
 
 ### NewYumAttributes
 
-`func NewYumAttributes(repodataDepth int32, ) *YumAttributes`
+`func NewYumAttributes(deployPolicy string, repodataDepth int32, ) *YumAttributes`
 
 NewYumAttributes instantiates a new YumAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetDeployPolicy sets DeployPolicy field to given value.
 
-### HasDeployPolicy
-
-`func (o *YumAttributes) HasDeployPolicy() bool`
-
-HasDeployPolicy returns a boolean if a field has been set.
 
 ### GetRepodataDepth
 

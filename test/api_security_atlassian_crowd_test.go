@@ -22,44 +22,44 @@ func Test_v3_SecurityAtlassianCrowdAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityAtlassianCrowdAPIService ClearCache", func(t *testing.T) {
+	t.Run("Test SecurityAtlassianCrowdAPIService CreateSecurityAtlassianCrowdClearCache", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.ClearCache(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdClearCache(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityAtlassianCrowdAPIService ReadSettings", func(t *testing.T) {
+	t.Run("Test SecurityAtlassianCrowdAPIService CreateSecurityAtlassianCrowdVerifyConnection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.ReadSettings(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.CreateSecurityAtlassianCrowdVerifyConnection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityAtlassianCrowdAPIService UpdateSettings", func(t *testing.T) {
+	t.Run("Test SecurityAtlassianCrowdAPIService ListSecurityAtlassianCrowd", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSettings(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityAtlassianCrowdAPIService VerifyConnection", func(t *testing.T) {
+	t.Run("Test SecurityAtlassianCrowdAPIService UpdateSecurityAtlassianCrowd", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.VerifyConnection(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

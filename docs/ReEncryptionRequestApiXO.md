@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **NotifyEmail** | Pointer to **string** | Optional - Email to notify when task finishes | [optional] 
-**SecretKeyId** | Pointer to **string** | Key identifier that will be used to re-encrypt secrets | [optional] 
+**SecretKeyId** | **string** | Key identifier that will be used to re-encrypt secrets | 
 
 ## Methods
 
 ### NewReEncryptionRequestApiXO
 
-`func NewReEncryptionRequestApiXO() *ReEncryptionRequestApiXO`
+`func NewReEncryptionRequestApiXO(secretKeyId string, ) *ReEncryptionRequestApiXO`
 
 NewReEncryptionRequestApiXO instantiates a new ReEncryptionRequestApiXO object
 This constructor will assign default values to properties that have it defined,
@@ -70,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetSecretKeyId sets SecretKeyId field to given value.
 
-### HasSecretKeyId
-
-`func (o *ReEncryptionRequestApiXO) HasSecretKeyId() bool`
-
-HasSecretKeyId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

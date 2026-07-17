@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **LastModified** | Pointer to **time.Time** |  | [optional] 
 **LastVerified** | Pointer to **time.Time** |  | [optional] 
 **Path** | Pointer to **string** |  | [optional] 
+**RegistryUrl** | Pointer to **string** |  | [optional] 
 **Repository** | Pointer to **string** |  | [optional] 
 **Uploader** | Pointer to **string** |  | [optional] 
 **UploaderIp** | Pointer to **string** |  | [optional] 
@@ -390,6 +391,31 @@ SetPath sets Path field to given value.
 `func (o *AssetXO) HasPath() bool`
 
 HasPath returns a boolean if a field has been set.
+
+### GetRegistryUrl
+
+`func (o *AssetXO) GetRegistryUrl() string`
+
+GetRegistryUrl returns the RegistryUrl field if non-nil, zero value otherwise.
+
+### GetRegistryUrlOk
+
+`func (o *AssetXO) GetRegistryUrlOk() (*string, bool)`
+
+GetRegistryUrlOk returns a tuple with the RegistryUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRegistryUrl
+
+`func (o *AssetXO) SetRegistryUrl(v string)`
+
+SetRegistryUrl sets RegistryUrl field to given value.
+
+### HasRegistryUrl
+
+`func (o *AssetXO) HasRegistryUrl() bool`
+
+HasRegistryUrl returns a boolean if a field has been set.
 
 ### GetRepository
 

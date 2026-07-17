@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** | The description of this role. | [optional] 
-**Id** | Pointer to **string** | The id of the role. | [optional] 
-**Name** | Pointer to **string** | The name of the role. | [optional] 
+**Id** | **string** | The id of the role. | 
+**Name** | **string** | The name of the role. | 
 **Privileges** | Pointer to **[]string** | The list of privileges assigned to this role. | [optional] 
 **Roles** | Pointer to **[]string** | The list of roles assigned to this role. | [optional] 
 
@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 
 ### NewRoleXORequest
 
-`func NewRoleXORequest() *RoleXORequest`
+`func NewRoleXORequest(id string, name string, ) *RoleXORequest`
 
 NewRoleXORequest instantiates a new RoleXORequest object
 This constructor will assign default values to properties that have it defined,
@@ -73,11 +73,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *RoleXORequest) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetName
 
@@ -98,11 +93,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *RoleXORequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetPrivileges
 

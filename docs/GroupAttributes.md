@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**MemberNames** | Pointer to **[]string** | Member repositories&#39; names | [optional] 
+**MemberNames** | **[]string** | Member repositories&#39; names | 
 
 ## Methods
 
 ### NewGroupAttributes
 
-`func NewGroupAttributes() *GroupAttributes`
+`func NewGroupAttributes(memberNames []string, ) *GroupAttributes`
 
 NewGroupAttributes instantiates a new GroupAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -44,11 +44,6 @@ and a boolean to check if the value has been set.
 
 SetMemberNames sets MemberNames field to given value.
 
-### HasMemberNames
-
-`func (o *GroupAttributes) HasMemberNames() bool`
-
-HasMemberNames returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

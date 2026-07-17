@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
+**Name** | **string** |  | 
 **Result** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewScriptResultXO
 
-`func NewScriptResultXO() *ScriptResultXO`
+`func NewScriptResultXO(name string, ) *ScriptResultXO`
 
 NewScriptResultXO instantiates a new ScriptResultXO object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ScriptResultXO) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetResult
 

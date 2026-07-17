@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The name of the GC Storage bucket | 
-**Prefix** | Pointer to **string** | The GC Storage blob store (i.e GC Storage object) key prefix | [optional] [readonly] 
-**ProjectId** | Pointer to **string** | GCP Project ID | [optional] [readonly] 
+**Prefix** | Pointer to **string** | The GC Storage blob store (i.e GC Storage object) key prefix | [optional] 
+**ProjectId** | Pointer to **string** | GCP Project ID | [optional] 
 **Region** | Pointer to **string** | The GCP region to create a new GC Storage bucket in or an existing GC Storage bucket&#39;s region. Should be the same as Nexus deployment region. | [optional] 
 
 ## Methods

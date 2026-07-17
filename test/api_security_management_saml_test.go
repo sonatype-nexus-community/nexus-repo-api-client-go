@@ -22,55 +22,55 @@ func Test_v3_SecurityManagementSAMLAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementSAMLAPIService DeleteSamlConfiguration", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLAPIService DeleteSecuritySaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLAPI.DeleteSamlConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLAPI.DeleteSecuritySaml(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLAPIService GetMetadata", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLAPIService ListSecuritySaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLAPI.GetMetadata(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySaml(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLAPIService GetPublicCertificateInPemFormat", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLAPIService ListSecuritySamlMetadata", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLAPI.GetPublicCertificateInPemFormat(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlMetadata(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLAPIService GetSamlConfiguration", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLAPIService ListSecuritySamlPem", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLAPI.GetSamlConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlPem(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLAPIService PutSamlConfiguration", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLAPIService UpdateSecuritySaml", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLAPI.PutSamlConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLAPI.UpdateSecuritySaml(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

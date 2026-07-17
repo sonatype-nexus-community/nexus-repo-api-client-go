@@ -1,16 +1,16 @@
 # \SecurityManagementAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUserSources**](SecurityManagementAPI.md#GetUserSources) | **Get** /v1/security/user-sources | Retrieve a list of the available user sources.
+[**ListSecurityUserSources**](SecurityManagementAPI.md#ListSecurityUserSources) | **Get** /v1/security/user-sources | Retrieve a list of the available user sources.
 
 
 
-## GetUserSources
+## ListSecurityUserSources
 
-> []ApiUserSource GetUserSources(ctx).Execute()
+> ListSecurityUserSources(ctx).Execute()
 
 Retrieve a list of the available user sources.
 
@@ -30,13 +30,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementAPI.GetUserSources(context.Background()).Execute()
+	r, err := apiClient.SecurityManagementAPI.ListSecurityUserSources(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAPI.GetUserSources``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAPI.ListSecurityUserSources``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetUserSources`: []ApiUserSource
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAPI.GetUserSources`: %v\n", resp)
 }
 ```
 
@@ -46,12 +44,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUserSourcesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecurityUserSourcesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**[]ApiUserSource**](ApiUserSource.md)
+ (empty response body)
 
 ### Authorization
 
@@ -60,7 +58,7 @@ Other parameters are passed through a pointer to a apiGetUserSourcesRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

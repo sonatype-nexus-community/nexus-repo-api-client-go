@@ -22,11 +22,11 @@ func Test_v3_SearchAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SearchAPIService Search", func(t *testing.T) {
+	t.Run("Test SearchAPIService ListSearch", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SearchAPI.Search(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SearchAPI.ListSearch(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -34,22 +34,11 @@ func Test_v3_SearchAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SearchAPIService SearchAndDownloadAssets", func(t *testing.T) {
+	t.Run("Test SearchAPIService ListSearchAssets", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SearchAPI.SearchAndDownloadAssets(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test SearchAPIService SearchAssets", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		resp, httpRes, err := apiClient.SearchAPI.SearchAssets(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SearchAPI.ListSearchAssets(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -57,13 +46,25 @@ func Test_v3_SearchAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test SearchAPIService Suggest", func(t *testing.T) {
+	t.Run("Test SearchAPIService ListSearchAssetsDownload", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SearchAPI.Suggest(context.Background()).Execute()
+		httpRes, err := apiClient.SearchAPI.ListSearchAssetsDownload(context.Background()).Execute()
 
 		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SearchAPIService ListSearchSuggest", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SearchAPI.ListSearchSuggest(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

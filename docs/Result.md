@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Details** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Duration** | Pointer to **int64** |  | [optional] 
-**Error** | Pointer to [**Throwable**](Throwable.md) |  | [optional] 
+**Error** | Pointer to [**ResultError**](ResultError.md) |  | [optional] 
 **Healthy** | Pointer to **bool** |  | [optional] 
 **Message** | Pointer to **string** |  | [optional] 
 **Time** | Pointer to **int64** |  | [optional] 
@@ -83,20 +83,20 @@ HasDuration returns a boolean if a field has been set.
 
 ### GetError
 
-`func (o *Result) GetError() Throwable`
+`func (o *Result) GetError() ResultError`
 
 GetError returns the Error field if non-nil, zero value otherwise.
 
 ### GetErrorOk
 
-`func (o *Result) GetErrorOk() (*Throwable, bool)`
+`func (o *Result) GetErrorOk() (*ResultError, bool)`
 
 GetErrorOk returns a tuple with the Error field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetError
 
-`func (o *Result) SetError(v Throwable)`
+`func (o *Result) SetError(v ResultError)`
 
 SetError sets Error field to given value.
 

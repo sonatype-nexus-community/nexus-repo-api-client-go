@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BucketName** | **string** | The name of the bucket in the region | [readonly] 
-**Region** | **string** | The region containing the bucket | [readonly] 
+**BucketName** | **string** | The name of the bucket in the region | 
+**Region** | **string** | The region containing the bucket | 
 
 ## Methods
 

@@ -1,20 +1,20 @@
 # \RoutingRulesAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateRoutingRule**](RoutingRulesAPI.md#CreateRoutingRule) | **Post** /v1/routing-rules | Create a single routing rule
-[**DeleteRoutingRule**](RoutingRulesAPI.md#DeleteRoutingRule) | **Delete** /v1/routing-rules/{name} | Delete a single routing rule
-[**GetRoutingRule**](RoutingRulesAPI.md#GetRoutingRule) | **Get** /v1/routing-rules/{name} | Get a single routing rule
-[**GetRoutingRules**](RoutingRulesAPI.md#GetRoutingRules) | **Get** /v1/routing-rules | List routing rules
-[**UpdateRoutingRule**](RoutingRulesAPI.md#UpdateRoutingRule) | **Put** /v1/routing-rules/{name} | Update a single routing rule
+[**CreateRoutingRules**](RoutingRulesAPI.md#CreateRoutingRules) | **Post** /v1/routing-rules | Create a single routing rule
+[**DeleteRoutingRules**](RoutingRulesAPI.md#DeleteRoutingRules) | **Delete** /v1/routing-rules/{name} | Delete a single routing rule
+[**GetRoutingRules**](RoutingRulesAPI.md#GetRoutingRules) | **Get** /v1/routing-rules/{name} | Get a single routing rule
+[**ListRoutingRules**](RoutingRulesAPI.md#ListRoutingRules) | **Get** /v1/routing-rules | List routing rules
+[**UpdateRoutingRules**](RoutingRulesAPI.md#UpdateRoutingRules) | **Put** /v1/routing-rules/{name} | Update a single routing rule
 
 
 
-## CreateRoutingRule
+## CreateRoutingRules
 
-> CreateRoutingRule(ctx).Body(body).Execute()
+> CreateRoutingRules(ctx).RoutingRuleXO(routingRuleXO).Execute()
 
 Create a single routing rule
 
@@ -31,13 +31,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewRoutingRuleXO() // RoutingRuleXO | A routing rule configuration
+	routingRuleXO := *sonatyperepo.NewRoutingRuleXO() // RoutingRuleXO | A routing rule configuration
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RoutingRulesAPI.CreateRoutingRule(context.Background()).Body(body).Execute()
+	r, err := apiClient.RoutingRulesAPI.CreateRoutingRules(context.Background()).RoutingRuleXO(routingRuleXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.CreateRoutingRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.CreateRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -49,12 +49,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateRoutingRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRoutingRulesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**RoutingRuleXO**](RoutingRuleXO.md) | A routing rule configuration | 
+ **routingRuleXO** | [**RoutingRuleXO**](RoutingRuleXO.md) | A routing rule configuration | 
 
 ### Return type
 
@@ -74,9 +74,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteRoutingRule
+## DeleteRoutingRules
 
-> DeleteRoutingRule(ctx, name).Execute()
+> DeleteRoutingRules(ctx, name).Execute()
 
 Delete a single routing rule
 
@@ -97,9 +97,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RoutingRulesAPI.DeleteRoutingRule(context.Background(), name).Execute()
+	r, err := apiClient.RoutingRulesAPI.DeleteRoutingRules(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.DeleteRoutingRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.DeleteRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -115,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteRoutingRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRoutingRulesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -140,9 +140,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetRoutingRule
+## GetRoutingRules
 
-> RoutingRuleXO GetRoutingRule(ctx, name).Execute()
+> GetRoutingRules(ctx, name).Execute()
 
 Get a single routing rule
 
@@ -163,13 +163,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingRulesAPI.GetRoutingRule(context.Background(), name).Execute()
+	r, err := apiClient.RoutingRulesAPI.GetRoutingRules(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.GetRoutingRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.GetRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRoutingRule`: RoutingRuleXO
-	fmt.Fprintf(os.Stdout, "Response from `RoutingRulesAPI.GetRoutingRule`: %v\n", resp)
 }
 ```
 
@@ -183,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRoutingRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetRoutingRulesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -192,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**RoutingRuleXO**](RoutingRuleXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -201,16 +199,16 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetRoutingRules
+## ListRoutingRules
 
-> []RoutingRuleXO GetRoutingRules(ctx).Execute()
+> ListRoutingRules(ctx).Execute()
 
 List routing rules
 
@@ -230,13 +228,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.RoutingRulesAPI.GetRoutingRules(context.Background()).Execute()
+	r, err := apiClient.RoutingRulesAPI.ListRoutingRules(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.GetRoutingRules``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.ListRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRoutingRules`: []RoutingRuleXO
-	fmt.Fprintf(os.Stdout, "Response from `RoutingRulesAPI.GetRoutingRules`: %v\n", resp)
 }
 ```
 
@@ -246,12 +242,12 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRoutingRulesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListRoutingRulesRequest struct via the builder pattern
 
 
 ### Return type
 
-[**[]RoutingRuleXO**](RoutingRuleXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -260,16 +256,16 @@ Other parameters are passed through a pointer to a apiGetRoutingRulesRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## UpdateRoutingRule
+## UpdateRoutingRules
 
-> UpdateRoutingRule(ctx, name).Body(body).Execute()
+> UpdateRoutingRules(ctx, name).RoutingRuleXO(routingRuleXO).Execute()
 
 Update a single routing rule
 
@@ -287,13 +283,13 @@ import (
 
 func main() {
 	name := "name_example" // string | The name of the routing rule to update
-	body := *sonatyperepo.NewRoutingRuleXO() // RoutingRuleXO | A routing rule configuration
+	routingRuleXO := *sonatyperepo.NewRoutingRuleXO() // RoutingRuleXO | A routing rule configuration
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RoutingRulesAPI.UpdateRoutingRule(context.Background(), name).Body(body).Execute()
+	r, err := apiClient.RoutingRulesAPI.UpdateRoutingRules(context.Background(), name).RoutingRuleXO(routingRuleXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.UpdateRoutingRule``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.UpdateRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -309,13 +305,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateRoutingRuleRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateRoutingRulesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**RoutingRuleXO**](RoutingRuleXO.md) | A routing rule configuration | 
+ **routingRuleXO** | [**RoutingRuleXO**](RoutingRuleXO.md) | A routing rule configuration | 
 
 ### Return type
 

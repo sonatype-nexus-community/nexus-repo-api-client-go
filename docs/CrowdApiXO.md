@@ -4,19 +4,19 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ApplicationName** | Pointer to **string** |  | [optional] 
-**ApplicationPassword** | Pointer to **string** |  | [optional] 
+**ApplicationName** | **string** |  | 
+**ApplicationPassword** | **string** |  | 
 **Enabled** | **bool** |  | 
 **RealmActive** | **bool** |  | 
 **Timeout** | Pointer to **int32** |  | [optional] 
-**Url** | Pointer to **string** |  | [optional] 
+**Url** | **string** |  | 
 **UseTrustStoreForUrl** | Pointer to **bool** |  | [optional] 
 
 ## Methods
 
 ### NewCrowdApiXO
 
-`func NewCrowdApiXO(enabled bool, realmActive bool, ) *CrowdApiXO`
+`func NewCrowdApiXO(applicationName string, applicationPassword string, enabled bool, realmActive bool, url string, ) *CrowdApiXO`
 
 NewCrowdApiXO instantiates a new CrowdApiXO object
 This constructor will assign default values to properties that have it defined,
@@ -50,11 +50,6 @@ and a boolean to check if the value has been set.
 
 SetApplicationName sets ApplicationName field to given value.
 
-### HasApplicationName
-
-`func (o *CrowdApiXO) HasApplicationName() bool`
-
-HasApplicationName returns a boolean if a field has been set.
 
 ### GetApplicationPassword
 
@@ -75,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetApplicationPassword sets ApplicationPassword field to given value.
 
-### HasApplicationPassword
-
-`func (o *CrowdApiXO) HasApplicationPassword() bool`
-
-HasApplicationPassword returns a boolean if a field has been set.
 
 ### GetEnabled
 
@@ -165,11 +155,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *CrowdApiXO) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetUseTrustStoreForUrl
 

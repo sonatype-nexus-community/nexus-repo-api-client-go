@@ -4,18 +4,18 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Actions** | Pointer to **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | [optional] 
-**ContentSelector** | Pointer to **string** | The name of a content selector that will be used to grant access to content via this privilege. | [optional] 
+**Actions** | **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | 
+**ContentSelector** | **string** | The name of a content selector that will be used to grant access to content via this privilege. | 
 **Description** | Pointer to **string** |  | [optional] 
-**Format** | Pointer to **string** | The repository format (i.e &#39;nuget&#39;, &#39;npm&#39;) this privilege will grant access to (or * for all). | [optional] 
-**Name** | Pointer to **string** | The name of the privilege.  This value cannot be changed. | [optional] 
-**Repository** | Pointer to **string** | The name of the repository this privilege will grant access to (or * for all). | [optional] 
+**Format** | **string** | The repository format (i.e &#39;nuget&#39;, &#39;npm&#39;) this privilege will grant access to (or * for all). | 
+**Name** | **string** | The name of the privilege.  This value cannot be changed. | 
+**Repository** | **string** | The name of the repository this privilege will grant access to (or * for all). | 
 
 ## Methods
 
 ### NewApiPrivilegeRepositoryContentSelectorRequest
 
-`func NewApiPrivilegeRepositoryContentSelectorRequest() *ApiPrivilegeRepositoryContentSelectorRequest`
+`func NewApiPrivilegeRepositoryContentSelectorRequest(actions []string, contentSelector string, format string, name string, repository string, ) *ApiPrivilegeRepositoryContentSelectorRequest`
 
 NewApiPrivilegeRepositoryContentSelectorRequest instantiates a new ApiPrivilegeRepositoryContentSelectorRequest object
 This constructor will assign default values to properties that have it defined,
@@ -49,11 +49,6 @@ and a boolean to check if the value has been set.
 
 SetActions sets Actions field to given value.
 
-### HasActions
-
-`func (o *ApiPrivilegeRepositoryContentSelectorRequest) HasActions() bool`
-
-HasActions returns a boolean if a field has been set.
 
 ### GetContentSelector
 
@@ -74,11 +69,6 @@ and a boolean to check if the value has been set.
 
 SetContentSelector sets ContentSelector field to given value.
 
-### HasContentSelector
-
-`func (o *ApiPrivilegeRepositoryContentSelectorRequest) HasContentSelector() bool`
-
-HasContentSelector returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -124,11 +114,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *ApiPrivilegeRepositoryContentSelectorRequest) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetName
 
@@ -149,11 +134,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ApiPrivilegeRepositoryContentSelectorRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetRepository
 
@@ -174,11 +154,6 @@ and a boolean to check if the value has been set.
 
 SetRepository sets Repository field to given value.
 
-### HasRepository
-
-`func (o *ApiPrivilegeRepositoryContentSelectorRequest) HasRepository() bool`
-
-HasRepository returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

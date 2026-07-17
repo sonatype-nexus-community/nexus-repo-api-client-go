@@ -1,19 +1,19 @@
 # \SecurityCertificatesAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**AddCertificate**](SecurityCertificatesAPI.md#AddCertificate) | **Post** /v1/security/ssl/truststore | Add a certificate to the trust store.
-[**GetTrustStoreCertificates**](SecurityCertificatesAPI.md#GetTrustStoreCertificates) | **Get** /v1/security/ssl/truststore | Retrieve a list of certificates added to the trust store.
-[**RemoveCertificate**](SecurityCertificatesAPI.md#RemoveCertificate) | **Delete** /v1/security/ssl/truststore/{id} | Remove a certificate in the trust store.
-[**RetrieveCertificate**](SecurityCertificatesAPI.md#RetrieveCertificate) | **Get** /v1/security/ssl | Helper method to retrieve certificate details from a remote system.
+[**CreateSecuritySslTruststore**](SecurityCertificatesAPI.md#CreateSecuritySslTruststore) | **Post** /v1/security/ssl/truststore | Add a certificate to the trust store.
+[**DeleteSecuritySslTruststore**](SecurityCertificatesAPI.md#DeleteSecuritySslTruststore) | **Delete** /v1/security/ssl/truststore/{id} | Remove a certificate in the trust store.
+[**ListSecuritySsl**](SecurityCertificatesAPI.md#ListSecuritySsl) | **Get** /v1/security/ssl | Helper method to retrieve certificate details from a remote system.
+[**ListSecuritySslTruststore**](SecurityCertificatesAPI.md#ListSecuritySslTruststore) | **Get** /v1/security/ssl/truststore | Retrieve a list of certificates added to the trust store.
 
 
 
-## AddCertificate
+## CreateSecuritySslTruststore
 
-> ApiCertificate AddCertificate(ctx).Body(body).Execute()
+> ApiCertificate CreateSecuritySslTruststore(ctx).Body(body).Execute()
 
 Add a certificate to the trust store.
 
@@ -30,17 +30,17 @@ import (
 )
 
 func main() {
-	body := "body_example" // string | The certificate to add encoded in PEM format (optional)
+	body := "body_example" // string | The certificate to add encoded in PEM format
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityCertificatesAPI.AddCertificate(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.SecurityCertificatesAPI.CreateSecuritySslTruststore(context.Background()).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.AddCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.CreateSecuritySslTruststore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `AddCertificate`: ApiCertificate
-	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.AddCertificate`: %v\n", resp)
+	// response from `CreateSecuritySslTruststore`: ApiCertificate
+	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.CreateSecuritySslTruststore`: %v\n", resp)
 }
 ```
 
@@ -50,7 +50,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAddCertificateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecuritySslTruststoreRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -75,68 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetTrustStoreCertificates
+## DeleteSecuritySslTruststore
 
-> []ApiCertificate GetTrustStoreCertificates(ctx).Execute()
-
-Retrieve a list of certificates added to the trust store.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityCertificatesAPI.GetTrustStoreCertificates(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.GetTrustStoreCertificates``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetTrustStoreCertificates`: []ApiCertificate
-	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.GetTrustStoreCertificates`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetTrustStoreCertificatesRequest struct via the builder pattern
-
-
-### Return type
-
-[**[]ApiCertificate**](ApiCertificate.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## RemoveCertificate
-
-> RemoveCertificate(ctx, id).Execute()
+> DeleteSecuritySslTruststore(ctx, id).Execute()
 
 Remove a certificate in the trust store.
 
@@ -157,9 +98,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityCertificatesAPI.RemoveCertificate(context.Background(), id).Execute()
+	r, err := apiClient.SecurityCertificatesAPI.DeleteSecuritySslTruststore(context.Background(), id).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.RemoveCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.DeleteSecuritySslTruststore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -175,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRemoveCertificateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecuritySslTruststoreRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -200,9 +141,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## RetrieveCertificate
+## ListSecuritySsl
 
-> ApiCertificate RetrieveCertificate(ctx).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
+> ListSecuritySsl(ctx).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
 
 Helper method to retrieve certificate details from a remote system.
 
@@ -225,13 +166,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityCertificatesAPI.RetrieveCertificate(context.Background()).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
+	r, err := apiClient.SecurityCertificatesAPI.ListSecuritySsl(context.Background()).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.RetrieveCertificate``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.ListSecuritySsl``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `RetrieveCertificate`: ApiCertificate
-	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.RetrieveCertificate`: %v\n", resp)
 }
 ```
 
@@ -241,7 +180,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRetrieveCertificateRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListSecuritySslRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -252,7 +191,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ApiCertificate**](ApiCertificate.md)
+ (empty response body)
 
 ### Authorization
 
@@ -261,7 +200,64 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSecuritySslTruststore
+
+> ListSecuritySslTruststore(ctx).Execute()
+
+Retrieve a list of certificates added to the trust store.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityCertificatesAPI.ListSecuritySslTruststore(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.ListSecuritySslTruststore``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSecuritySslTruststoreRequest struct via the builder pattern
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

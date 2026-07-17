@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** | The name of the privilege.  This value cannot be changed. | [optional] 
-**Pattern** | Pointer to **string** | A colon separated list of parts that create a permission string. | [optional] 
+**Name** | **string** | The name of the privilege.  This value cannot be changed. | 
+**Pattern** | **string** | A colon separated list of parts that create a permission string. | 
 
 ## Methods
 
 ### NewApiPrivilegeWildcardRequest
 
-`func NewApiPrivilegeWildcardRequest() *ApiPrivilegeWildcardRequest`
+`func NewApiPrivilegeWildcardRequest(name string, pattern string, ) *ApiPrivilegeWildcardRequest`
 
 NewApiPrivilegeWildcardRequest instantiates a new ApiPrivilegeWildcardRequest object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ApiPrivilegeWildcardRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetPattern
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetPattern sets Pattern field to given value.
 
-### HasPattern
-
-`func (o *ApiPrivilegeWildcardRequest) HasPattern() bool`
-
-HasPattern returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

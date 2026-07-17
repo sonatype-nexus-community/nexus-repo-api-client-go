@@ -4,15 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** |  | [optional] 
-**Path** | Pointer to **string** | An absolute path or a path relative to &lt;data-directory&gt;/blobs | [optional] 
+**Name** | **string** |  | 
+**Path** | **string** | An absolute path or a path relative to &lt;data-directory&gt;/blobs | 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
+**SoftQuotaAttributes** | Pointer to [**BlobStoreConfiguration**](BlobStoreConfiguration.md) |  | [optional] 
 
 ## Methods
 
 ### NewFileBlobStoreApiCreateRequest
 
-`func NewFileBlobStoreApiCreateRequest() *FileBlobStoreApiCreateRequest`
+`func NewFileBlobStoreApiCreateRequest(name string, path string, ) *FileBlobStoreApiCreateRequest`
 
 NewFileBlobStoreApiCreateRequest instantiates a new FileBlobStoreApiCreateRequest object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *FileBlobStoreApiCreateRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetPath
 
@@ -71,11 +67,6 @@ and a boolean to check if the value has been set.
 
 SetPath sets Path field to given value.
 
-### HasPath
-
-`func (o *FileBlobStoreApiCreateRequest) HasPath() bool`
-
-HasPath returns a boolean if a field has been set.
 
 ### GetSoftQuota
 
@@ -101,6 +92,31 @@ SetSoftQuota sets SoftQuota field to given value.
 `func (o *FileBlobStoreApiCreateRequest) HasSoftQuota() bool`
 
 HasSoftQuota returns a boolean if a field has been set.
+
+### GetSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiCreateRequest) GetSoftQuotaAttributes() BlobStoreConfiguration`
+
+GetSoftQuotaAttributes returns the SoftQuotaAttributes field if non-nil, zero value otherwise.
+
+### GetSoftQuotaAttributesOk
+
+`func (o *FileBlobStoreApiCreateRequest) GetSoftQuotaAttributesOk() (*BlobStoreConfiguration, bool)`
+
+GetSoftQuotaAttributesOk returns a tuple with the SoftQuotaAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiCreateRequest) SetSoftQuotaAttributes(v BlobStoreConfiguration)`
+
+SetSoftQuotaAttributes sets SoftQuotaAttributes field to given value.
+
+### HasSoftQuotaAttributes
+
+`func (o *FileBlobStoreApiCreateRequest) HasSoftQuotaAttributes() bool`
+
+HasSoftQuotaAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

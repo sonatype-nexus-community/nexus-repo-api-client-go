@@ -1,16 +1,16 @@
 # \AzureBlobStoreAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**VerifyConnection2**](AzureBlobStoreAPI.md#VerifyConnection2) | **Post** /v1/azureblobstore/test-connection | Verify connection using supplied Azure Blob Store settings
+[**CreateAzureblobstoreTestConnection**](AzureBlobStoreAPI.md#CreateAzureblobstoreTestConnection) | **Post** /v1/azureblobstore/test-connection | Verify connection using supplied Azure Blob Store settings
 
 
 
-## VerifyConnection2
+## CreateAzureblobstoreTestConnection
 
-> VerifyConnection2(ctx).Body(body).Execute()
+> CreateAzureblobstoreTestConnection(ctx).AzureConnectionXO(azureConnectionXO).Execute()
 
 Verify connection using supplied Azure Blob Store settings
 
@@ -27,13 +27,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewAzureConnectionXO() // AzureConnectionXO |  (optional)
+	azureConnectionXO := *sonatyperepo.NewAzureConnectionXO() // AzureConnectionXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.AzureBlobStoreAPI.VerifyConnection2(context.Background()).Body(body).Execute()
+	r, err := apiClient.AzureBlobStoreAPI.CreateAzureblobstoreTestConnection(context.Background()).AzureConnectionXO(azureConnectionXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `AzureBlobStoreAPI.VerifyConnection2``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `AzureBlobStoreAPI.CreateAzureblobstoreTestConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -45,12 +45,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiVerifyConnection2Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateAzureblobstoreTestConnectionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**AzureConnectionXO**](AzureConnectionXO.md) |  | 
+ **azureConnectionXO** | [**AzureConnectionXO**](AzureConnectionXO.md) |  | 
 
 ### Return type
 

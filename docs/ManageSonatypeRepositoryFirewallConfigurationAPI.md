@@ -1,26 +1,90 @@
 # \ManageSonatypeRepositoryFirewallConfigurationAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DisableIq**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#DisableIq) | **Post** /v1/iq/disable | Disable Sonatype Repository Firewall
-[**EnableIq**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#EnableIq) | **Post** /v1/iq/enable | Enable Sonatype Repository Firewall
-[**GetAllAuditStatus**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetAllAuditStatus) | **Get** /v1/iq/audit | List repositories audit statuses.
-[**GetAuditStatus**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetAuditStatus) | **Get** /v1/iq/audit/{repositoryName} | Get audit status for the repository
-[**GetCapabilities**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetCapabilities) | **Post** /v1/iq/capabilities/test | Get IQ Server capabilities for a specific configuration
-[**GetCapabilities1**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetCapabilities1) | **Get** /v1/iq/capabilities | Get IQ Server capabilities (Firewall and Lifecycle)
-[**GetConfiguration1**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetConfiguration1) | **Get** /v1/iq | Get Sonatype Repository Firewall configuration
-[**ManageAudit**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#ManageAudit) | **Put** /v1/iq/audit | Manage audit
-[**TestNewConnection**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#TestNewConnection) | **Post** /v1/iq/test-new-connection | Test new Sonatype Repository Firewall connection
-[**UpdateConfiguration1**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#UpdateConfiguration1) | **Put** /v1/iq | Update Sonatype Repository Firewall configuration
+[**CreateIqCapabilitiesTest**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#CreateIqCapabilitiesTest) | **Post** /v1/iq/capabilities/test | Get IQ Server capabilities for a specific configuration
+[**CreateIqDisable**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#CreateIqDisable) | **Post** /v1/iq/disable | Disable Sonatype Repository Firewall
+[**CreateIqEnable**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#CreateIqEnable) | **Post** /v1/iq/enable | Enable Sonatype Repository Firewall
+[**CreateIqTestNewConnection**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#CreateIqTestNewConnection) | **Post** /v1/iq/test-new-connection | Test new Sonatype Repository Firewall connection
+[**GetIqAudit**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#GetIqAudit) | **Get** /v1/iq/audit/{repositoryName} | Get audit status for the repository
+[**ListIq**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#ListIq) | **Get** /v1/iq | Get Sonatype Repository Firewall configuration
+[**ListIqAudit**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#ListIqAudit) | **Get** /v1/iq/audit | List repositories audit statuses.
+[**ListIqCapabilities**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#ListIqCapabilities) | **Get** /v1/iq/capabilities | Get IQ Server capabilities (Firewall and Lifecycle)
+[**UpdateIq**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#UpdateIq) | **Put** /v1/iq | Update Sonatype Repository Firewall configuration
+[**UpdateIqAudit**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#UpdateIqAudit) | **Put** /v1/iq/audit | Manage audit
 [**VerifyIqConnection**](ManageSonatypeRepositoryFirewallConfigurationAPI.md#VerifyIqConnection) | **Post** /v1/iq/verify-connection | Verify Sonatype Repository Firewall connection
 
 
 
-## DisableIq
+## CreateIqCapabilitiesTest
 
-> DisableIq(ctx).Execute()
+> IqCapabilitiesXo CreateIqCapabilitiesTest(ctx).IqConnectionXo(iqConnectionXo).Execute()
+
+Get IQ Server capabilities for a specific configuration
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	iqConnectionXo := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example", "Url_example") // IqConnectionXo | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqCapabilitiesTest(context.Background()).IqConnectionXo(iqConnectionXo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqCapabilitiesTest``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `CreateIqCapabilitiesTest`: IqCapabilitiesXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqCapabilitiesTest`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateIqCapabilitiesTestRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iqConnectionXo** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
+
+### Return type
+
+[**IqCapabilitiesXo**](IqCapabilitiesXo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateIqDisable
+
+> CreateIqDisable(ctx).Execute()
 
 Disable Sonatype Repository Firewall
 
@@ -40,9 +104,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.DisableIq(context.Background()).Execute()
+	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqDisable(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.DisableIq``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqDisable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -54,7 +118,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDisableIqRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateIqDisableRequest struct via the builder pattern
 
 
 ### Return type
@@ -75,9 +139,9 @@ Other parameters are passed through a pointer to a apiDisableIqRequest struct vi
 [[Back to README]](../README.md)
 
 
-## EnableIq
+## CreateIqEnable
 
-> EnableIq(ctx).Execute()
+> CreateIqEnable(ctx).Execute()
 
 Enable Sonatype Repository Firewall
 
@@ -97,9 +161,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.EnableIq(context.Background()).Execute()
+	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqEnable(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.EnableIq``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqEnable``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -111,7 +175,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnableIqRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateIqEnableRequest struct via the builder pattern
 
 
 ### Return type
@@ -132,11 +196,11 @@ Other parameters are passed through a pointer to a apiEnableIqRequest struct via
 [[Back to README]](../README.md)
 
 
-## GetAllAuditStatus
+## CreateIqTestNewConnection
 
-> []IqAuditXo GetAllAuditStatus(ctx).Execute()
+> IqConnectionVerificationXo CreateIqTestNewConnection(ctx).IqConnectionXo(iqConnectionXo).Execute()
 
-List repositories audit statuses.
+Test new Sonatype Repository Firewall connection
 
 ### Example
 
@@ -151,31 +215,36 @@ import (
 )
 
 func main() {
+	iqConnectionXo := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example", "Url_example") // IqConnectionXo | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetAllAuditStatus(context.Background()).Execute()
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqTestNewConnection(context.Background()).IqConnectionXo(iqConnectionXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetAllAuditStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqTestNewConnection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAllAuditStatus`: []IqAuditXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.GetAllAuditStatus`: %v\n", resp)
+	// response from `CreateIqTestNewConnection`: IqConnectionVerificationXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.CreateIqTestNewConnection`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-This endpoint does not need any parameter.
+
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAllAuditStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateIqTestNewConnectionRequest struct via the builder pattern
 
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iqConnectionXo** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
 
 ### Return type
 
-[**[]IqAuditXo**](IqAuditXo.md)
+[**IqConnectionVerificationXo**](IqConnectionVerificationXo.md)
 
 ### Authorization
 
@@ -183,7 +252,7 @@ Other parameters are passed through a pointer to a apiGetAllAuditStatusRequest s
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -191,9 +260,9 @@ Other parameters are passed through a pointer to a apiGetAllAuditStatusRequest s
 [[Back to README]](../README.md)
 
 
-## GetAuditStatus
+## GetIqAudit
 
-> GetAuditStatus(ctx, repositoryName).Execute()
+> GetIqAudit(ctx, repositoryName).Execute()
 
 Get audit status for the repository
 
@@ -214,9 +283,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetAuditStatus(context.Background(), repositoryName).Execute()
+	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetIqAudit(context.Background(), repositoryName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetAuditStatus``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetIqAudit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -232,7 +301,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetAuditStatusRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetIqAuditRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -257,132 +326,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GetCapabilities
+## ListIq
 
-> IqCapabilitiesXo GetCapabilities(ctx).Body(body).Execute()
-
-Get IQ Server capabilities for a specific configuration
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example") // IqConnectionXo |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetCapabilities`: IqCapabilitiesXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCapabilitiesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
-
-### Return type
-
-[**IqCapabilitiesXo**](IqCapabilitiesXo.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetCapabilities1
-
-> IqCapabilitiesXo GetCapabilities1(ctx).Execute()
-
-Get IQ Server capabilities (Firewall and Lifecycle)
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities1(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetCapabilities1`: IqCapabilitiesXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.GetCapabilities1`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetCapabilities1Request struct via the builder pattern
-
-
-### Return type
-
-[**IqCapabilitiesXo**](IqCapabilitiesXo.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetConfiguration1
-
-> IqConnectionXo GetConfiguration1(ctx).Execute()
+> IqConnectionXo ListIq(ctx).Execute()
 
 Get Sonatype Repository Firewall configuration
 
@@ -402,13 +348,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration1(context.Background()).Execute()
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.ListIq(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIq``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConfiguration1`: IqConnectionXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.GetConfiguration1`: %v\n", resp)
+	// response from `ListIq`: IqConnectionXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIq`: %v\n", resp)
 }
 ```
 
@@ -418,7 +364,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetConfiguration1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiListIqRequest struct via the builder pattern
 
 
 ### Return type
@@ -439,73 +385,11 @@ Other parameters are passed through a pointer to a apiGetConfiguration1Request s
 [[Back to README]](../README.md)
 
 
-## ManageAudit
+## ListIqAudit
 
-> ManageAudit(ctx).Body(body).Execute()
+> []IqAuditXo ListIqAudit(ctx).Execute()
 
-Manage audit
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := *sonatyperepo.NewIqAuditXo(false, "RepositoryName_example") // IqAuditXo |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.ManageAudit(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.ManageAudit``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiManageAuditRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IqAuditXo**](IqAuditXo.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## TestNewConnection
-
-> IqConnectionVerificationXo TestNewConnection(ctx).Body(body).Execute()
-
-Test new Sonatype Repository Firewall connection
+List repositories audit statuses.
 
 ### Example
 
@@ -520,36 +404,31 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example") // IqConnectionXo |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.TestNewConnection(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqAudit(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.TestNewConnection``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqAudit``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `TestNewConnection`: IqConnectionVerificationXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.TestNewConnection`: %v\n", resp)
+	// response from `ListIqAudit`: []IqAuditXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqAudit`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiTestNewConnectionRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListIqAuditRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
 
 ### Return type
 
-[**IqConnectionVerificationXo**](IqConnectionVerificationXo.md)
+[**[]IqAuditXo**](IqAuditXo.md)
 
 ### Authorization
 
@@ -557,7 +436,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: application/json
+- **Content-Type**: Not defined
 - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -565,9 +444,68 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateConfiguration1
+## ListIqCapabilities
 
-> IqConnectionXo UpdateConfiguration1(ctx).Body(body).Execute()
+> IqCapabilitiesXo ListIqCapabilities(ctx).Execute()
+
+Get IQ Server capabilities (Firewall and Lifecycle)
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqCapabilities(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqCapabilities``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListIqCapabilities`: IqCapabilitiesXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.ListIqCapabilities`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListIqCapabilitiesRequest struct via the builder pattern
+
+
+### Return type
+
+[**IqCapabilitiesXo**](IqCapabilitiesXo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateIq
+
+> IqConnectionXo UpdateIq(ctx).IqConnectionXo(iqConnectionXo).Execute()
 
 Update Sonatype Repository Firewall configuration
 
@@ -584,17 +522,17 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example") // IqConnectionXo |  (optional)
+	iqConnectionXo := *sonatyperepo.NewIqConnectionXo("AuthenticationType_example", "Url_example") // IqConnectionXo | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateConfiguration1(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateIq(context.Background()).IqConnectionXo(iqConnectionXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateConfiguration1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateIq``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateConfiguration1`: IqConnectionXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateConfiguration1`: %v\n", resp)
+	// response from `UpdateIq`: IqConnectionXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateIq`: %v\n", resp)
 }
 ```
 
@@ -604,12 +542,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateConfiguration1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateIqRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
+ **iqConnectionXo** | [**IqConnectionXo**](IqConnectionXo.md) |  | 
 
 ### Return type
 
@@ -623,6 +561,68 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateIqAudit
+
+> UpdateIqAudit(ctx).IqAuditXo(iqAuditXo).Execute()
+
+Manage audit
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	iqAuditXo := *sonatyperepo.NewIqAuditXo(false, "RepositoryName_example") // IqAuditXo |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateIqAudit(context.Background()).IqAuditXo(iqAuditXo).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeRepositoryFirewallConfigurationAPI.UpdateIqAudit``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateIqAuditRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **iqAuditXo** | [**IqAuditXo**](IqAuditXo.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

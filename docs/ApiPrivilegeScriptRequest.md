@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Actions** | Pointer to **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | [optional] 
+**Actions** | **[]string** | A collection of actions to associate with the privilege, using BREAD syntax (browse,read,edit,add,delete,all) as well as &#39;run&#39; for script privileges. | 
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** | The name of the privilege.  This value cannot be changed. | [optional] 
-**ScriptName** | Pointer to **string** | The name of a script to give access to. | [optional] 
+**Name** | **string** | The name of the privilege.  This value cannot be changed. | 
+**ScriptName** | **string** | The name of a script to give access to. | 
 
 ## Methods
 
 ### NewApiPrivilegeScriptRequest
 
-`func NewApiPrivilegeScriptRequest() *ApiPrivilegeScriptRequest`
+`func NewApiPrivilegeScriptRequest(actions []string, name string, scriptName string, ) *ApiPrivilegeScriptRequest`
 
 NewApiPrivilegeScriptRequest instantiates a new ApiPrivilegeScriptRequest object
 This constructor will assign default values to properties that have it defined,
@@ -47,11 +47,6 @@ and a boolean to check if the value has been set.
 
 SetActions sets Actions field to given value.
 
-### HasActions
-
-`func (o *ApiPrivilegeScriptRequest) HasActions() bool`
-
-HasActions returns a boolean if a field has been set.
 
 ### GetDescription
 
@@ -97,11 +92,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ApiPrivilegeScriptRequest) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetScriptName
 
@@ -122,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetScriptName sets ScriptName field to given value.
 
-### HasScriptName
-
-`func (o *ApiPrivilegeScriptRequest) HasScriptName() bool`
-
-HasScriptName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

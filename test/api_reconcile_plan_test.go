@@ -22,11 +22,11 @@ func Test_v3_ReconcilePlanAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ReconcilePlanAPIService CreateReconciliationPlans", func(t *testing.T) {
+	t.Run("Test ReconcilePlanAPIService CreatePlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ReconcilePlanAPI.CreateReconciliationPlans(context.Background()).Execute()
+		httpRes, err := apiClient.ReconcilePlanAPI.CreatePlan(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -57,59 +57,59 @@ func Test_v3_ReconcilePlanAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ReconcilePlanAPIService ExecuteReconcileTaskById", func(t *testing.T) {
+	t.Run("Test ReconcilePlanAPIService ExecuteAllPlans", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.ReconcilePlanAPI.ExecuteAllPlans(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ReconcilePlanAPIService ExecutePlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var planId int32
 
-		httpRes, err := apiClient.ReconcilePlanAPI.ExecuteReconcileTaskById(context.Background(), planId).Execute()
+		httpRes, err := apiClient.ReconcilePlanAPI.ExecutePlan(context.Background(), planId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ReconcilePlanAPIService ExecuteReconcileTasks", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.ReconcilePlanAPI.ExecuteReconcileTasks(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ReconcilePlanAPIService GetAvailablePlans", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.ReconcilePlanAPI.GetAvailablePlans(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ReconcilePlanAPIService GetPlanDetails", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
-		httpRes, err := apiClient.ReconcilePlanAPI.GetPlanDetails(context.Background()).Execute()
-
-		require.Nil(t, err)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test ReconcilePlanAPIService GetSinglePlanWithDetails", func(t *testing.T) {
+	t.Run("Test ReconcilePlanAPIService GetPlan", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var planId int32
 
-		httpRes, err := apiClient.ReconcilePlanAPI.GetSinglePlanWithDetails(context.Background(), planId).Execute()
+		httpRes, err := apiClient.ReconcilePlanAPI.GetPlan(context.Background(), planId).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ReconcilePlanAPIService ListPlan", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.ReconcilePlanAPI.ListPlan(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ReconcilePlanAPIService ListPlanDetails", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.ReconcilePlanAPI.ListPlanDetails(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

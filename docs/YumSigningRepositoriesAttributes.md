@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Keypair** | Pointer to **string** | PGP signing key pair (armored private key e.g. gpg --export-secret-key --armor) | [optional] 
+**Keypair** | **string** | PGP signing key pair (armored private key e.g. gpg --export-secret-key --armor) | 
 **Passphrase** | Pointer to **string** | Passphrase to access PGP signing key | [optional] 
 
 ## Methods
 
 ### NewYumSigningRepositoriesAttributes
 
-`func NewYumSigningRepositoriesAttributes() *YumSigningRepositoriesAttributes`
+`func NewYumSigningRepositoriesAttributes(keypair string, ) *YumSigningRepositoriesAttributes`
 
 NewYumSigningRepositoriesAttributes instantiates a new YumSigningRepositoriesAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -45,11 +45,6 @@ and a boolean to check if the value has been set.
 
 SetKeypair sets Keypair field to given value.
 
-### HasKeypair
-
-`func (o *YumSigningRepositoriesAttributes) HasKeypair() bool`
-
-HasKeypair returns a boolean if a field has been set.
 
 ### GetPassphrase
 

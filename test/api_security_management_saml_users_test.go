@@ -22,61 +22,61 @@ func Test_v3_SecurityManagementSAMLUsersAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementSAMLUsersAPIService CreateUser1", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersAPIService CreateSecuritySamlUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.CreateUser1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.CreateSecuritySamlUsers(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLUsersAPIService DeleteUser1", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersAPIService DeleteSecuritySamlUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
-		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.DeleteUser1(context.Background(), userId).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.DeleteSecuritySamlUsers(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLUsersAPIService GetUser", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersAPIService GetSecuritySamlUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
-		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.GetUser(context.Background(), userId).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLUsersAPIService GetUsers1", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersAPIService ListSecuritySamlUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.GetUsers1(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSAMLUsersAPIService UpdateUser1", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersAPIService UpdateSecuritySamlUsers", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var userId string
 
-		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.UpdateUser1(context.Background(), userId).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersAPI.UpdateSecuritySamlUsers(context.Background(), userId).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

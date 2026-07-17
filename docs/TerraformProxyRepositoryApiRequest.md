@@ -5,14 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Terraform** | Pointer to [**TerraformAttributes**](TerraformAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -57,6 +59,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *TerraformProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *TerraformProxyRepositoryApiRequest) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *TerraformProxyRepositoryApiRequest) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *TerraformProxyRepositoryApiRequest) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *TerraformProxyRepositoryApiRequest) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -183,30 +210,30 @@ SetReplication sets Replication field to given value.
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRule
+### GetRoutingRuleName
 
-`func (o *TerraformProxyRepositoryApiRequest) GetRoutingRule() string`
+`func (o *TerraformProxyRepositoryApiRequest) GetRoutingRuleName() string`
 
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
 
-### GetRoutingRuleOk
+### GetRoutingRuleNameOk
 
-`func (o *TerraformProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
+`func (o *TerraformProxyRepositoryApiRequest) GetRoutingRuleNameOk() (*string, bool)`
 
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRule
+### SetRoutingRuleName
 
-`func (o *TerraformProxyRepositoryApiRequest) SetRoutingRule(v string)`
+`func (o *TerraformProxyRepositoryApiRequest) SetRoutingRuleName(v string)`
 
-SetRoutingRule sets RoutingRule field to given value.
+SetRoutingRuleName sets RoutingRuleName field to given value.
 
-### HasRoutingRule
+### HasRoutingRuleName
 
-`func (o *TerraformProxyRepositoryApiRequest) HasRoutingRule() bool`
+`func (o *TerraformProxyRepositoryApiRequest) HasRoutingRuleName() bool`
 
-HasRoutingRule returns a boolean if a field has been set.
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 
@@ -227,6 +254,31 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetTerraform
+
+`func (o *TerraformProxyRepositoryApiRequest) GetTerraform() TerraformAttributes`
+
+GetTerraform returns the Terraform field if non-nil, zero value otherwise.
+
+### GetTerraformOk
+
+`func (o *TerraformProxyRepositoryApiRequest) GetTerraformOk() (*TerraformAttributes, bool)`
+
+GetTerraformOk returns a tuple with the Terraform field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTerraform
+
+`func (o *TerraformProxyRepositoryApiRequest) SetTerraform(v TerraformAttributes)`
+
+SetTerraform sets Terraform field to given value.
+
+### HasTerraform
+
+`func (o *TerraformProxyRepositoryApiRequest) HasTerraform() bool`
+
+HasTerraform returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

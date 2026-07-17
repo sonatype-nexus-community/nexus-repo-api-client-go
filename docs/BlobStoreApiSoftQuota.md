@@ -5,13 +5,13 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Limit** | Pointer to **int64** | The limit in MB. | [optional] 
-**Type** | Pointer to **string** | The type to use such as spaceRemainingQuota, or spaceUsedQuota | [optional] 
+**Type** | **string** | The type to use such as spaceRemainingQuota, or spaceUsedQuotaspaceUsedQuota | 
 
 ## Methods
 
 ### NewBlobStoreApiSoftQuota
 
-`func NewBlobStoreApiSoftQuota() *BlobStoreApiSoftQuota`
+`func NewBlobStoreApiSoftQuota(type_ string, ) *BlobStoreApiSoftQuota`
 
 NewBlobStoreApiSoftQuota instantiates a new BlobStoreApiSoftQuota object
 This constructor will assign default values to properties that have it defined,
@@ -70,11 +70,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *BlobStoreApiSoftQuota) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

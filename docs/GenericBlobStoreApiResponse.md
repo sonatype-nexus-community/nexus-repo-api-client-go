@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **BlobCount** | Pointer to **int64** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
+**SoftQuotaAttributes** | Pointer to [**BlobStoreConfiguration**](BlobStoreConfiguration.md) |  | [optional] 
 **TotalSizeInBytes** | Pointer to **int64** |  | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Unavailable** | Pointer to **bool** |  | [optional] 
@@ -130,6 +131,31 @@ SetSoftQuota sets SoftQuota field to given value.
 `func (o *GenericBlobStoreApiResponse) HasSoftQuota() bool`
 
 HasSoftQuota returns a boolean if a field has been set.
+
+### GetSoftQuotaAttributes
+
+`func (o *GenericBlobStoreApiResponse) GetSoftQuotaAttributes() BlobStoreConfiguration`
+
+GetSoftQuotaAttributes returns the SoftQuotaAttributes field if non-nil, zero value otherwise.
+
+### GetSoftQuotaAttributesOk
+
+`func (o *GenericBlobStoreApiResponse) GetSoftQuotaAttributesOk() (*BlobStoreConfiguration, bool)`
+
+GetSoftQuotaAttributesOk returns a tuple with the SoftQuotaAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSoftQuotaAttributes
+
+`func (o *GenericBlobStoreApiResponse) SetSoftQuotaAttributes(v BlobStoreConfiguration)`
+
+SetSoftQuotaAttributes sets SoftQuotaAttributes field to given value.
+
+### HasSoftQuotaAttributes
+
+`func (o *GenericBlobStoreApiResponse) HasSoftQuotaAttributes() bool`
+
+HasSoftQuotaAttributes returns a boolean if a field has been set.
 
 ### GetTotalSizeInBytes
 

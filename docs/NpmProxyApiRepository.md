@@ -5,24 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
+**Format** | **string** | Component format held in this repository | 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
-**Npm** | Pointer to [**NpmAttributes**](NpmAttributes.md) |  | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewNpmProxyApiRepository
 
-`func NewNpmProxyApiRepository(httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *NpmProxyApiRepository`
+`func NewNpmProxyApiRepository(format string, httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, type_ string, ) *NpmProxyApiRepository`
 
 NewNpmProxyApiRepository instantiates a new NpmProxyApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -62,6 +62,31 @@ SetCleanup sets Cleanup field to given value.
 
 HasCleanup returns a boolean if a field has been set.
 
+### GetFirewall
+
+`func (o *NpmProxyApiRepository) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *NpmProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *NpmProxyApiRepository) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *NpmProxyApiRepository) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
+
 ### GetFormat
 
 `func (o *NpmProxyApiRepository) GetFormat() string`
@@ -81,11 +106,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *NpmProxyApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -126,11 +146,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *NpmProxyApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNegativeCache
 
@@ -151,31 +166,6 @@ and a boolean to check if the value has been set.
 
 SetNegativeCache sets NegativeCache field to given value.
 
-
-### GetNpm
-
-`func (o *NpmProxyApiRepository) GetNpm() NpmAttributes`
-
-GetNpm returns the Npm field if non-nil, zero value otherwise.
-
-### GetNpmOk
-
-`func (o *NpmProxyApiRepository) GetNpmOk() (*NpmAttributes, bool)`
-
-GetNpmOk returns a tuple with the Npm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNpm
-
-`func (o *NpmProxyApiRepository) SetNpm(v NpmAttributes)`
-
-SetNpm sets Npm field to given value.
-
-### HasNpm
-
-`func (o *NpmProxyApiRepository) HasNpm() bool`
-
-HasNpm returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -306,11 +296,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *NpmProxyApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

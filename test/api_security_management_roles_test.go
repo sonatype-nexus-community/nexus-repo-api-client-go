@@ -22,64 +22,61 @@ func Test_v3_SecurityManagementRolesAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementRolesAPIService Create", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService CreateSecurityRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementRolesAPI.Create(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementRolesAPIService Delete", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService DeleteSecurityRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.SecurityManagementRolesAPI.Delete(context.Background(), id).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.DeleteSecurityRoles(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementRolesAPIService GetRole", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService GetSecurityRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.SecurityManagementRolesAPI.GetRole(context.Background(), id).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.GetSecurityRoles(context.Background(), id).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementRolesAPIService GetRoles", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService ListSecurityRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementRolesAPI.GetRoles(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.ListSecurityRoles(context.Background()).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementRolesAPIService Update", func(t *testing.T) {
+	t.Run("Test SecurityManagementRolesAPIService UpdateSecurityRoles", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		httpRes, err := apiClient.SecurityManagementRolesAPI.Update(context.Background(), id).Execute()
+		httpRes, err := apiClient.SecurityManagementRolesAPI.UpdateSecurityRoles(context.Background(), id).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

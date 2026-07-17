@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AccountKey** | Pointer to **string** | The credentials JSON file. | [optional] 
 **AuthenticationMethod** | **string** | The type of Google Cloud authentication to use. | 
+**Method** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -70,6 +71,31 @@ and a boolean to check if the value has been set.
 
 SetAuthenticationMethod sets AuthenticationMethod field to given value.
 
+
+### GetMethod
+
+`func (o *GoogleCloudBlobStoreApiBucketAuthentication) GetMethod() string`
+
+GetMethod returns the Method field if non-nil, zero value otherwise.
+
+### GetMethodOk
+
+`func (o *GoogleCloudBlobStoreApiBucketAuthentication) GetMethodOk() (*string, bool)`
+
+GetMethodOk returns a tuple with the Method field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMethod
+
+`func (o *GoogleCloudBlobStoreApiBucketAuthentication) SetMethod(v string)`
+
+SetMethod sets Method field to given value.
+
+### HasMethod
+
+`func (o *GoogleCloudBlobStoreApiBucketAuthentication) HasMethod() bool`
+
+HasMethod returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

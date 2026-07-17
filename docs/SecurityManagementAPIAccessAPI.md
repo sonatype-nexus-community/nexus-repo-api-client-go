@@ -1,16 +1,16 @@
 # \SecurityManagementAPIAccessAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CheckAccess**](SecurityManagementAPIAccessAPI.md#CheckAccess) | **Post** /internal/ui/security/access-check | Check if a user or role has access to an API endpoint
+[**CreateInternalUiSecurityAccessCheck**](SecurityManagementAPIAccessAPI.md#CreateInternalUiSecurityAccessCheck) | **Post** /internal/ui/security/access-check | Check if a user or role has access to an API endpoint
 
 
 
-## CheckAccess
+## CreateInternalUiSecurityAccessCheck
 
-> ApiAccessResultXo CheckAccess(ctx).Body(body).Execute()
+> ApiAccessResultXo CreateInternalUiSecurityAccessCheck(ctx).ApiAccessCheckXo(apiAccessCheckXo).Execute()
 
 Check if a user or role has access to an API endpoint
 
@@ -27,17 +27,17 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiAccessCheckXo("/service/rest/v1/repositories", "GET") // ApiAccessCheckXo | Access check request
+	apiAccessCheckXo := *sonatyperepo.NewApiAccessCheckXo("/service/rest/v1/repositories", "GET") // ApiAccessCheckXo | Access check request
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementAPIAccessAPI.CheckAccess(context.Background()).Body(body).Execute()
+	resp, r, err := apiClient.SecurityManagementAPIAccessAPI.CreateInternalUiSecurityAccessCheck(context.Background()).ApiAccessCheckXo(apiAccessCheckXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAPIAccessAPI.CheckAccess``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAPIAccessAPI.CreateInternalUiSecurityAccessCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CheckAccess`: ApiAccessResultXo
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAPIAccessAPI.CheckAccess`: %v\n", resp)
+	// response from `CreateInternalUiSecurityAccessCheck`: ApiAccessResultXo
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAPIAccessAPI.CreateInternalUiSecurityAccessCheck`: %v\n", resp)
 }
 ```
 
@@ -47,12 +47,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCheckAccessRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateInternalUiSecurityAccessCheckRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiAccessCheckXo**](ApiAccessCheckXo.md) | Access check request | 
+ **apiAccessCheckXo** | [**ApiAccessCheckXo**](ApiAccessCheckXo.md) | Access check request | 
 
 ### Return type
 

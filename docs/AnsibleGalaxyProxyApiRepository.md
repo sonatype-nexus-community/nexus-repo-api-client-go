@@ -5,23 +5,24 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
+**Format** | **string** | Component format held in this repository | 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** | Repository type | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewAnsibleGalaxyProxyApiRepository
 
-`func NewAnsibleGalaxyProxyApiRepository(httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *AnsibleGalaxyProxyApiRepository`
+`func NewAnsibleGalaxyProxyApiRepository(format string, httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, type_ string, ) *AnsibleGalaxyProxyApiRepository`
 
 NewAnsibleGalaxyProxyApiRepository instantiates a new AnsibleGalaxyProxyApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -61,6 +62,31 @@ SetCleanup sets Cleanup field to given value.
 
 HasCleanup returns a boolean if a field has been set.
 
+### GetFirewall
+
+`func (o *AnsibleGalaxyProxyApiRepository) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *AnsibleGalaxyProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *AnsibleGalaxyProxyApiRepository) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *AnsibleGalaxyProxyApiRepository) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
+
 ### GetFormat
 
 `func (o *AnsibleGalaxyProxyApiRepository) GetFormat() string`
@@ -80,11 +106,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *AnsibleGalaxyProxyApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -125,11 +146,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *AnsibleGalaxyProxyApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNegativeCache
 
@@ -280,11 +296,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *AnsibleGalaxyProxyApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

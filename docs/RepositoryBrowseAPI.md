@@ -1,17 +1,17 @@
 # \RepositoryBrowseAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeleteFolder**](RepositoryBrowseAPI.md#DeleteFolder) | **Delete** /v1/repositories/{repositoryName}/browse | Delete a folder and all its contents
+[**DeleteRepositoriesBrowse**](RepositoryBrowseAPI.md#DeleteRepositoriesBrowse) | **Delete** /v1/repositories/{repositoryName}/browse | Delete a folder and all its contents
 [**GetrepositorynameBrowseRepository**](RepositoryBrowseAPI.md#GetrepositorynameBrowseRepository) | **Get** /v1/repositories/{repositoryName}/browse | List browse nodes for a repository path
 
 
 
-## DeleteFolder
+## DeleteRepositoriesBrowse
 
-> DeleteFolder(ctx, repositoryName).Path(path).Execute()
+> DeleteRepositoriesBrowse(ctx, repositoryName).Path(path).Execute()
 
 Delete a folder and all its contents
 
@@ -33,9 +33,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryBrowseAPI.DeleteFolder(context.Background(), repositoryName).Path(path).Execute()
+	r, err := apiClient.RepositoryBrowseAPI.DeleteRepositoriesBrowse(context.Background(), repositoryName).Path(path).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryBrowseAPI.DeleteFolder``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryBrowseAPI.DeleteRepositoriesBrowse``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -51,7 +51,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteFolderRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRepositoriesBrowseRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

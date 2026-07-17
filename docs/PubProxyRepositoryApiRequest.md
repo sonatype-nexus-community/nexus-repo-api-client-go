@@ -5,13 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
 ## Methods
@@ -57,6 +58,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *PubProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *PubProxyRepositoryApiRequest) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *PubProxyRepositoryApiRequest) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *PubProxyRepositoryApiRequest) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *PubProxyRepositoryApiRequest) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -183,30 +209,30 @@ SetReplication sets Replication field to given value.
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRule
+### GetRoutingRuleName
 
-`func (o *PubProxyRepositoryApiRequest) GetRoutingRule() string`
+`func (o *PubProxyRepositoryApiRequest) GetRoutingRuleName() string`
 
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
 
-### GetRoutingRuleOk
+### GetRoutingRuleNameOk
 
-`func (o *PubProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
+`func (o *PubProxyRepositoryApiRequest) GetRoutingRuleNameOk() (*string, bool)`
 
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRule
+### SetRoutingRuleName
 
-`func (o *PubProxyRepositoryApiRequest) SetRoutingRule(v string)`
+`func (o *PubProxyRepositoryApiRequest) SetRoutingRuleName(v string)`
 
-SetRoutingRule sets RoutingRule field to given value.
+SetRoutingRuleName sets RoutingRuleName field to given value.
 
-### HasRoutingRule
+### HasRoutingRuleName
 
-`func (o *PubProxyRepositoryApiRequest) HasRoutingRule() bool`
+`func (o *PubProxyRepositoryApiRequest) HasRoutingRuleName() bool`
 
-HasRoutingRule returns a boolean if a field has been set.
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 

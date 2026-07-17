@@ -7,23 +7,24 @@ Name | Type | Description | Notes
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Docker** | [**DockerAttributes**](DockerAttributes.md) |  | 
 **DockerProxy** | [**DockerProxyAttributes**](DockerProxyAttributes.md) |  | 
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
+**Format** | **string** | Component format held in this repository | 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** | The name of the routing rule assigned to this repository | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
-**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewDockerProxyApiRepository
 
-`func NewDockerProxyApiRepository(docker DockerAttributes, dockerProxy DockerProxyAttributes, httpClient HttpClientAttributes, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *DockerProxyApiRepository`
+`func NewDockerProxyApiRepository(docker DockerAttributes, dockerProxy DockerProxyAttributes, format string, httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, type_ string, ) *DockerProxyApiRepository`
 
 NewDockerProxyApiRepository instantiates a new DockerProxyApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -103,6 +104,31 @@ and a boolean to check if the value has been set.
 SetDockerProxy sets DockerProxy field to given value.
 
 
+### GetFirewall
+
+`func (o *DockerProxyApiRepository) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *DockerProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *DockerProxyApiRepository) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *DockerProxyApiRepository) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
+
 ### GetFormat
 
 `func (o *DockerProxyApiRepository) GetFormat() string`
@@ -122,11 +148,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *DockerProxyApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -167,11 +188,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *DockerProxyApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetNegativeCache
 
@@ -322,11 +338,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *DockerProxyApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

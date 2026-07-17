@@ -22,29 +22,26 @@ func Test_v3_ComponentsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ComponentsAPIService DeleteComponent", func(t *testing.T) {
+	t.Run("Test ComponentsAPIService CreateComponents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		var id string
-
-		httpRes, err := apiClient.ComponentsAPI.DeleteComponent(context.Background(), id).Execute()
+		httpRes, err := apiClient.ComponentsAPI.CreateComponents(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ComponentsAPIService GetComponentById", func(t *testing.T) {
+	t.Run("Test ComponentsAPIService DeleteComponents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var id string
 
-		resp, httpRes, err := apiClient.ComponentsAPI.GetComponentById(context.Background(), id).Execute()
+		httpRes, err := apiClient.ComponentsAPI.DeleteComponents(context.Background(), id).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -53,19 +50,20 @@ func Test_v3_ComponentsAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ComponentsAPI.GetComponents(context.Background()).Execute()
+		var id string
+
+		httpRes, err := apiClient.ComponentsAPI.GetComponents(context.Background(), id).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ComponentsAPIService UploadComponent", func(t *testing.T) {
+	t.Run("Test ComponentsAPIService ListComponents", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ComponentsAPI.UploadComponent(context.Background()).Execute()
+		httpRes, err := apiClient.ComponentsAPI.ListComponents(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

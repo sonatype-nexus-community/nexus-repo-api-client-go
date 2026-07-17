@@ -1,16 +1,16 @@
 # \SecurityManagementApiKeysPrincipalsEncryptionAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ReEncrypt**](SecurityManagementApiKeysPrincipalsEncryptionAPI.md#ReEncrypt) | **Put** /v1/apikeys/encryption/re-encrypt | Re-encrypt api keys principals using the specified configuration
+[**UpdateApikeysEncryptionReEncrypt**](SecurityManagementApiKeysPrincipalsEncryptionAPI.md#UpdateApikeysEncryptionReEncrypt) | **Put** /v1/apikeys/encryption/re-encrypt | Re-encrypt api keys principals using the specified configuration
 
 
 
-## ReEncrypt
+## UpdateApikeysEncryptionReEncrypt
 
-> ReEncrypt(ctx).Body(body).Execute()
+> UpdateApikeysEncryptionReEncrypt(ctx).ApiKeysReEncryptionRequestApiXO(apiKeysReEncryptionRequestApiXO).Execute()
 
 Re-encrypt api keys principals using the specified configuration
 
@@ -29,13 +29,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiKeysReEncryptionRequestApiXO() // ApiKeysReEncryptionRequestApiXO |  (optional)
+	apiKeysReEncryptionRequestApiXO := *sonatyperepo.NewApiKeysReEncryptionRequestApiXO() // ApiKeysReEncryptionRequestApiXO |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementApiKeysPrincipalsEncryptionAPI.UpdateApikeysEncryptionReEncrypt(context.Background()).ApiKeysReEncryptionRequestApiXO(apiKeysReEncryptionRequestApiXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementApiKeysPrincipalsEncryptionAPI.ReEncrypt``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementApiKeysPrincipalsEncryptionAPI.UpdateApikeysEncryptionReEncrypt``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -47,12 +47,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiReEncryptRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateApikeysEncryptionReEncryptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiKeysReEncryptionRequestApiXO**](ApiKeysReEncryptionRequestApiXO.md) |  | 
+ **apiKeysReEncryptionRequestApiXO** | [**ApiKeysReEncryptionRequestApiXO**](ApiKeysReEncryptionRequestApiXO.md) |  | 
 
 ### Return type
 

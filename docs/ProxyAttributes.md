@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ContentMaxAge** | **int32** | How long to cache artifacts before rechecking the remote repository (in minutes) | 
 **MetadataMaxAge** | **int32** | How long to cache metadata before rechecking the remote repository (in minutes) | 
-**PreserveEncodedCharacters** | Pointer to **bool** | When true, preserves encoded characters like %2B (plus), %23 (hash), and %20 (space) in their encoded form when proxying to the remote repository. Enable this when proxying to AWS S3, Cloudflare CDN, or Azure Blob Storage, which require encoded characters to remain encoded. When false (default), uses standard encoding that preserves literal + characters (works for crates.io and most remotes). This feature is only available when nexus.proxy.urlEncodingMode.enabled&#x3D;true is set. SECURITY NOTE: Only enable this for trusted remote repositories. Path traversal sequences (..) in redirects are automatically normalized. | [optional] 
-**RemoteUrl** | Pointer to **string** | Location of the remote repository being proxied | [optional] 
+**PreserveEncodedCharacters** | Pointer to **bool** | When true, preserves encoded characters like %2B (plus), %23 (hash), and %20 (space) in their encoded form when proxying to the remote repository. Enable this when proxying to AWS S3, Cloudflare CDN, or Azure Blob Storage, which require encoded characters to remain encoded. When false (default), uses standard encoding that preserves literal + characters (works for crates.io and most remotes). SECURITY NOTE: Only enable this for trusted remote repositories. Path traversal sequences (..) in redirects are automatically normalized. | [optional] 
+**RemoteUrl** | **string** | Location of the remote repository being proxied | 
 
 ## Methods
 
 ### NewProxyAttributes
 
-`func NewProxyAttributes(contentMaxAge int32, metadataMaxAge int32, ) *ProxyAttributes`
+`func NewProxyAttributes(contentMaxAge int32, metadataMaxAge int32, remoteUrl string, ) *ProxyAttributes`
 
 NewProxyAttributes instantiates a new ProxyAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -112,11 +112,6 @@ and a boolean to check if the value has been set.
 
 SetRemoteUrl sets RemoteUrl field to given value.
 
-### HasRemoteUrl
-
-`func (o *ProxyAttributes) HasRemoteUrl() bool`
-
-HasRemoteUrl returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

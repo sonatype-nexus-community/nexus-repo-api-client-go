@@ -1,19 +1,19 @@
 # \RecoveryModeAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DisableRecoveryMode**](RecoveryModeAPI.md#DisableRecoveryMode) | **Delete** /v1/recovery-mode | Disables recovery mode
-[**EnableRecoveryMode**](RecoveryModeAPI.md#EnableRecoveryMode) | **Post** /v1/recovery-mode | Enables recovery mode and cancels conflicting tasks if running
+[**CreateRecoveryMode**](RecoveryModeAPI.md#CreateRecoveryMode) | **Post** /v1/recovery-mode | Enables recovery mode and cancels conflicting tasks if running
+[**DeleteRecoveryMode**](RecoveryModeAPI.md#DeleteRecoveryMode) | **Delete** /v1/recovery-mode | Disables recovery mode
 
 
 
-## DisableRecoveryMode
+## CreateRecoveryMode
 
-> DisableRecoveryMode(ctx).Execute()
+> CreateRecoveryMode(ctx).Execute()
 
-Disables recovery mode
+Enables recovery mode and cancels conflicting tasks if running
 
 ### Example
 
@@ -31,9 +31,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RecoveryModeAPI.DisableRecoveryMode(context.Background()).Execute()
+	r, err := apiClient.RecoveryModeAPI.CreateRecoveryMode(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RecoveryModeAPI.DisableRecoveryMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RecoveryModeAPI.CreateRecoveryMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -45,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDisableRecoveryModeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateRecoveryModeRequest struct via the builder pattern
 
 
 ### Return type
@@ -66,11 +66,11 @@ Other parameters are passed through a pointer to a apiDisableRecoveryModeRequest
 [[Back to README]](../README.md)
 
 
-## EnableRecoveryMode
+## DeleteRecoveryMode
 
-> EnableRecoveryMode(ctx).Execute()
+> DeleteRecoveryMode(ctx).Execute()
 
-Enables recovery mode and cancels conflicting tasks if running
+Disables recovery mode
 
 ### Example
 
@@ -88,9 +88,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RecoveryModeAPI.EnableRecoveryMode(context.Background()).Execute()
+	r, err := apiClient.RecoveryModeAPI.DeleteRecoveryMode(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `RecoveryModeAPI.EnableRecoveryMode``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `RecoveryModeAPI.DeleteRecoveryMode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -102,7 +102,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiEnableRecoveryModeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteRecoveryModeRequest struct via the builder pattern
 
 
 ### Return type

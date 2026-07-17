@@ -1,26 +1,26 @@
 # \SecurityManagementUsersAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**ChangePassword**](SecurityManagementUsersAPI.md#ChangePassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
-[**Create3**](SecurityManagementUsersAPI.md#Create3) | **Post** /v1/security/users/{userId}/{realm}/user-token | Create a user token for the given user.
-[**CreateUser**](SecurityManagementUsersAPI.md#CreateUser) | **Post** /v1/security/users | Create a new user in the default source.
-[**Delete4**](SecurityManagementUsersAPI.md#Delete4) | **Delete** /v1/security/users/{userId}/{realm}/user-token | Delete the user token for the given user.
-[**DeleteUser**](SecurityManagementUsersAPI.md#DeleteUser) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**Get3**](SecurityManagementUsersAPI.md#Get3) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
-[**GetUsers**](SecurityManagementUsersAPI.md#GetUsers) | **Get** /v1/security/users | Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
-[**Reset**](SecurityManagementUsersAPI.md#Reset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
-[**UpdateUser**](SecurityManagementUsersAPI.md#UpdateUser) | **Put** /v1/security/users/{userId} | Update an existing user.
+[**CreateSecurityUsers**](SecurityManagementUsersAPI.md#CreateSecurityUsers) | **Post** /v1/security/users | Create a new user in the default source.
+[**CreateSecurityUsersUserToken**](SecurityManagementUsersAPI.md#CreateSecurityUsersUserToken) | **Post** /v1/security/users/{userId}/{realm}/user-token | Create a user token for the given user.
+[**DeleteSecurityUsers**](SecurityManagementUsersAPI.md#DeleteSecurityUsers) | **Delete** /v1/security/users/{userId} | Delete a user.
+[**DeleteSecurityUsersUserToken**](SecurityManagementUsersAPI.md#DeleteSecurityUsersUserToken) | **Delete** /v1/security/users/{userId}/{realm}/user-token | Delete the user token for the given user.
+[**DeleteSecurityUsersUserTokenReset**](SecurityManagementUsersAPI.md#DeleteSecurityUsersUserTokenReset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
+[**GetSecurityUsersUserToken**](SecurityManagementUsersAPI.md#GetSecurityUsersUserToken) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
+[**ListSecurityUsers**](SecurityManagementUsersAPI.md#ListSecurityUsers) | **Get** /v1/security/users | Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
+[**UpdateSecurityUsers**](SecurityManagementUsersAPI.md#UpdateSecurityUsers) | **Put** /v1/security/users/{userId} | Update an existing user.
+[**UpdateSecurityUsersChangePassword**](SecurityManagementUsersAPI.md#UpdateSecurityUsersChangePassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
 
 
 
-## ChangePassword
+## CreateSecurityUsers
 
-> ChangePassword(ctx, userId).Body(body).Execute()
+> CreateSecurityUsers(ctx).ApiCreateUser(apiCreateUser).Execute()
 
-Change a user's password.
+Create a new user in the default source.
 
 ### Example
 
@@ -35,14 +35,13 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string | The userid the request should apply to.
-	body := "body_example" // string | The new password to use. (optional)
+	apiCreateUser := *sonatyperepo.NewApiCreateUser("EmailAddress_example", "FirstName_example", "LastName_example", "Password_example", "Status_example", "UserId_example") // ApiCreateUser | A representation of the user to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.ChangePassword(context.Background(), userId).Body(body).Execute()
+	r, err := apiClient.SecurityManagementUsersAPI.CreateSecurityUsers(context.Background()).ApiCreateUser(apiCreateUser).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.ChangePassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.CreateSecurityUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -51,20 +50,15 @@ func main() {
 ### Path Parameters
 
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | The userid the request should apply to. | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiChangePasswordRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
-
- **body** | **string** | The new password to use. | 
+ **apiCreateUser** | [**ApiCreateUser**](ApiCreateUser.md) | A representation of the user to create. | 
 
 ### Return type
 
@@ -76,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: text/plain
+- **Content-Type**: application/json
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
@@ -84,9 +78,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Create3
+## CreateSecurityUsersUserToken
 
-> UserTokenXO Create3(ctx, userId, realm).Execute()
+> UserTokenXO CreateSecurityUsersUserToken(ctx, userId, realm).Execute()
 
 Create a user token for the given user.
 
@@ -110,13 +104,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUsersAPI.Create3(context.Background(), userId, realm).Execute()
+	resp, r, err := apiClient.SecurityManagementUsersAPI.CreateSecurityUsersUserToken(context.Background(), userId, realm).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Create3``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.CreateSecurityUsersUserToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Create3`: UserTokenXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Create3`: %v\n", resp)
+	// response from `CreateSecurityUsersUserToken`: UserTokenXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.CreateSecurityUsersUserToken`: %v\n", resp)
 }
 ```
 
@@ -131,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreate3Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateSecurityUsersUserTokenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -157,144 +151,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## CreateUser
+## DeleteSecurityUsers
 
-> ApiUser CreateUser(ctx).Body(body).Execute()
-
-Create a new user in the default source.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	body := *sonatyperepo.NewApiCreateUser("Status_example") // ApiCreateUser | A representation of the user to create. (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUsersAPI.CreateUser(context.Background()).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.CreateUser``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CreateUser`: ApiUser
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.CreateUser`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateUserRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **body** | [**ApiCreateUser**](ApiCreateUser.md) | A representation of the user to create. | 
-
-### Return type
-
-[**ApiUser**](ApiUser.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Delete4
-
-> Delete4(ctx, userId, realm).Execute()
-
-Delete the user token for the given user.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	userId := "userId_example" // string | The userId of the user to delete the token for
-	realm := "realm_example" // string | The realm of the user to delete the token for
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.Delete4(context.Background(), userId, realm).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Delete4``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | The userId of the user to delete the token for | 
-**realm** | **string** | The realm of the user to delete the token for | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDelete4Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteUser
-
-> DeleteUser(ctx, userId).Realm(realm).Execute()
+> DeleteSecurityUsers(ctx, userId).Realm(realm).Execute()
 
 Delete a user.
 
@@ -316,9 +175,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.DeleteUser(context.Background(), userId).Realm(realm).Execute()
+	r, err := apiClient.SecurityManagementUsersAPI.DeleteSecurityUsers(context.Background(), userId).Realm(realm).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteSecurityUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -334,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -360,150 +219,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Get3
+## DeleteSecurityUsersUserToken
 
-> UserTokenXO Get3(ctx, userId, realm).Execute()
+> DeleteSecurityUsersUserToken(ctx, userId, realm).Execute()
 
-Get user token metadata for the given user.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	userId := "userId_example" // string | The userId of the user to get the token for
-	realm := "realm_example" // string | The realm of the user to get the token for
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUsersAPI.Get3(context.Background(), userId, realm).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Get3``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `Get3`: UserTokenXO
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.Get3`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | The userId of the user to get the token for | 
-**realm** | **string** | The realm of the user to get the token for | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGet3Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-### Return type
-
-[**UserTokenXO**](UserTokenXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GetUsers
-
-> []ApiUser GetUsers(ctx).UserId(userId).Source(source).Execute()
-
-Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	userId := "userId_example" // string | An optional term to search userids for. (optional)
-	source := "source_example" // string | An optional user source to restrict the search to. (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUsersAPI.GetUsers(context.Background()).UserId(userId).Source(source).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.GetUsers``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetUsers`: []ApiUser
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.GetUsers`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetUsersRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **userId** | **string** | An optional term to search userids for. | 
- **source** | **string** | An optional user source to restrict the search to. | 
-
-### Return type
-
-[**[]ApiUser**](ApiUser.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Reset
-
-> Reset(ctx, userId, realm).Execute()
-
-Reset the user token for the given user.
+Delete the user token for the given user.
 
 
 
@@ -520,14 +240,14 @@ import (
 )
 
 func main() {
-	userId := "userId_example" // string | The userId of the user to reset the token for
-	realm := "realm_example" // string | The realm of the user to reset the token for
+	userId := "userId_example" // string | The userId of the user to delete the token for
+	realm := "realm_example" // string | The realm of the user to delete the token for
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.Reset(context.Background(), userId, realm).Execute()
+	r, err := apiClient.SecurityManagementUsersAPI.DeleteSecurityUsersUserToken(context.Background(), userId, realm).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.Reset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteSecurityUsersUserToken``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -539,12 +259,12 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | The userId of the user to reset the token for | 
-**realm** | **string** | The realm of the user to reset the token for | 
+**userId** | **string** | The userId of the user to delete the token for | 
+**realm** | **string** | The realm of the user to delete the token for | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiResetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityUsersUserTokenRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -570,9 +290,217 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## UpdateUser
+## DeleteSecurityUsersUserTokenReset
 
-> UpdateUser(ctx, userId).Body(body).Execute()
+> DeleteSecurityUsersUserTokenReset(ctx, userId, realm).Execute()
+
+Reset the user token for the given user.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userId of the user to reset the token for
+	realm := "realm_example" // string | The realm of the user to reset the token for
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementUsersAPI.DeleteSecurityUsersUserTokenReset(context.Background(), userId, realm).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteSecurityUsersUserTokenReset``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userId of the user to reset the token for | 
+**realm** | **string** | The realm of the user to reset the token for | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteSecurityUsersUserTokenResetRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetSecurityUsersUserToken
+
+> UserTokenXO GetSecurityUsersUserToken(ctx, userId, realm).Execute()
+
+Get user token metadata for the given user.
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userId of the user to get the token for
+	realm := "realm_example" // string | The realm of the user to get the token for
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementUsersAPI.GetSecurityUsersUserToken(context.Background(), userId, realm).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.GetSecurityUsersUserToken``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetSecurityUsersUserToken`: UserTokenXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.GetSecurityUsersUserToken`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userId of the user to get the token for | 
+**realm** | **string** | The realm of the user to get the token for | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetSecurityUsersUserTokenRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+
+### Return type
+
+[**UserTokenXO**](UserTokenXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSecurityUsers
+
+> ListSecurityUsers(ctx).UserId(userId).Source(source).Execute()
+
+Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | An optional term to search userids for. (optional)
+	source := "source_example" // string | An optional user source to restrict the search to. (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementUsersAPI.ListSecurityUsers(context.Background()).UserId(userId).Source(source).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.ListSecurityUsers``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSecurityUsersRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **userId** | **string** | An optional term to search userids for. | 
+ **source** | **string** | An optional user source to restrict the search to. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSecurityUsers
+
+> UpdateSecurityUsers(ctx, userId).ApiUser(apiUser).Execute()
 
 Update an existing user.
 
@@ -590,13 +518,13 @@ import (
 
 func main() {
 	userId := "userId_example" // string | The userid the request should apply to.
-	body := *sonatyperepo.NewApiUser("Status_example") // ApiUser | A representation of the user to update. (optional)
+	apiUser := *sonatyperepo.NewApiUser("EmailAddress_example", "FirstName_example", "LastName_example", "Source_example", "Status_example", "UserId_example") // ApiUser | A representation of the user to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.UpdateUser(context.Background(), userId).Body(body).Execute()
+	r, err := apiClient.SecurityManagementUsersAPI.UpdateSecurityUsers(context.Background(), userId).ApiUser(apiUser).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.UpdateUser``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.UpdateSecurityUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -612,13 +540,13 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateUserRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateSecurityUsersRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiUser**](ApiUser.md) | A representation of the user to update. | 
+ **apiUser** | [**ApiUser**](ApiUser.md) | A representation of the user to update. | 
 
 ### Return type
 
@@ -631,6 +559,74 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateSecurityUsersChangePassword
+
+> UpdateSecurityUsersChangePassword(ctx, userId).Body(body).Execute()
+
+Change a user's password.
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	userId := "userId_example" // string | The userid the request should apply to.
+	body := "body_example" // string | The new password to use.
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.SecurityManagementUsersAPI.UpdateSecurityUsersChangePassword(context.Background(), userId).Body(body).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.UpdateSecurityUsersChangePassword``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**userId** | **string** | The userid the request should apply to. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateSecurityUsersChangePasswordRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **body** | **string** | The new password to use. | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: text/plain
 - **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)

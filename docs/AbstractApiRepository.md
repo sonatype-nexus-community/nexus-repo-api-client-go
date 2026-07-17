@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Format** | Pointer to **string** | Component format held in this repository | [optional] 
-**Name** | Pointer to **string** | A unique identifier for this repository | [optional] 
+**Format** | **string** | Component format held in this repository | 
+**Name** | **string** | A unique identifier for this repository | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
-**Type** | Pointer to **string** | Controls if deployments of and updates to artifacts are allowed | [optional] 
+**Type** | **string** | Controls if deployments of and updates to artifacts are allowed | 
 **Url** | Pointer to **string** | URL to the repository | [optional] 
 
 ## Methods
 
 ### NewAbstractApiRepository
 
-`func NewAbstractApiRepository(online bool, ) *AbstractApiRepository`
+`func NewAbstractApiRepository(format string, name string, online bool, type_ string, ) *AbstractApiRepository`
 
 NewAbstractApiRepository instantiates a new AbstractApiRepository object
 This constructor will assign default values to properties that have it defined,
@@ -48,11 +48,6 @@ and a boolean to check if the value has been set.
 
 SetFormat sets Format field to given value.
 
-### HasFormat
-
-`func (o *AbstractApiRepository) HasFormat() bool`
-
-HasFormat returns a boolean if a field has been set.
 
 ### GetName
 
@@ -73,11 +68,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *AbstractApiRepository) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -118,11 +108,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *AbstractApiRepository) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUrl
 

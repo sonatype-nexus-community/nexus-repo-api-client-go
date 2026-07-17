@@ -1,16 +1,16 @@
 # \UsageHistoryAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetUsageHistory**](UsageHistoryAPI.md#GetUsageHistory) | **Get** /v1/usage-history | Get usage history for sparklines
+[**ListUsageHistory**](UsageHistoryAPI.md#ListUsageHistory) | **Get** /v1/usage-history | Get usage history for sparklines
 
 
 
-## GetUsageHistory
+## ListUsageHistory
 
-> GetUsageHistory(ctx).Metric(metric).Period(period).Execute()
+> ListUsageHistory(ctx).Metric(metric).Period(period).Execute()
 
 Get usage history for sparklines
 
@@ -34,9 +34,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.UsageHistoryAPI.GetUsageHistory(context.Background()).Metric(metric).Period(period).Execute()
+	r, err := apiClient.UsageHistoryAPI.ListUsageHistory(context.Background()).Metric(metric).Period(period).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `UsageHistoryAPI.GetUsageHistory``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `UsageHistoryAPI.ListUsageHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -48,7 +48,7 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetUsageHistoryRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListUsageHistoryRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

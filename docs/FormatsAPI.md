@@ -1,17 +1,17 @@
 # \FormatsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Get**](FormatsAPI.md#Get) | **Get** /v1/formats/{format}/upload-specs | Get upload field requirements for the desired format
-[**Get1**](FormatsAPI.md#Get1) | **Get** /v1/formats/upload-specs | Get upload field requirements for each supported format
+[**GetFormatsUploadSpecs**](FormatsAPI.md#GetFormatsUploadSpecs) | **Get** /v1/formats/{format}/upload-specs | Get upload field requirements for the desired format
+[**ListFormatsUploadSpecs**](FormatsAPI.md#ListFormatsUploadSpecs) | **Get** /v1/formats/upload-specs | Get upload field requirements for each supported format
 
 
 
-## Get
+## GetFormatsUploadSpecs
 
-> UploadDefinitionXO Get(ctx, format).Execute()
+> UploadDefinitionXO GetFormatsUploadSpecs(ctx, format).Execute()
 
 Get upload field requirements for the desired format
 
@@ -32,13 +32,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.FormatsAPI.Get(context.Background(), format).Execute()
+	resp, r, err := apiClient.FormatsAPI.GetFormatsUploadSpecs(context.Background(), format).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.GetFormatsUploadSpecs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get`: UploadDefinitionXO
-	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get`: %v\n", resp)
+	// response from `GetFormatsUploadSpecs`: UploadDefinitionXO
+	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.GetFormatsUploadSpecs`: %v\n", resp)
 }
 ```
 
@@ -52,7 +52,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetFormatsUploadSpecsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -77,9 +77,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Get1
+## ListFormatsUploadSpecs
 
-> []UploadDefinitionXO Get1(ctx).Execute()
+> []UploadDefinitionXO ListFormatsUploadSpecs(ctx).Execute()
 
 Get upload field requirements for each supported format
 
@@ -99,13 +99,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.FormatsAPI.Get1(context.Background()).Execute()
+	resp, r, err := apiClient.FormatsAPI.ListFormatsUploadSpecs(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.Get1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `FormatsAPI.ListFormatsUploadSpecs``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Get1`: []UploadDefinitionXO
-	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.Get1`: %v\n", resp)
+	// response from `ListFormatsUploadSpecs`: []UploadDefinitionXO
+	fmt.Fprintf(os.Stdout, "Response from `FormatsAPI.ListFormatsUploadSpecs`: %v\n", resp)
 }
 ```
 
@@ -115,7 +115,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGet1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiListFormatsUploadSpecsRequest struct via the builder pattern
 
 
 ### Return type

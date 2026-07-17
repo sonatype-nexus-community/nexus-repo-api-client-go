@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** |  | [optional] 
-**FromAddress** | Pointer to **string** |  | [optional] 
-**Host** | Pointer to **string** |  | [optional] 
+**FromAddress** | **string** |  | 
+**Host** | **string** |  | 
 **NexusTrustStoreEnabled** | Pointer to **bool** | Use the Nexus Repository Manager&#39;s certificate truststore | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **Port** | **int32** |  | 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewApiEmailConfiguration
 
-`func NewApiEmailConfiguration(port int32, ) *ApiEmailConfiguration`
+`func NewApiEmailConfiguration(fromAddress string, host string, port int32, ) *ApiEmailConfiguration`
 
 NewApiEmailConfiguration instantiates a new ApiEmailConfiguration object
 This constructor will assign default values to properties that have it defined,
@@ -80,11 +80,6 @@ and a boolean to check if the value has been set.
 
 SetFromAddress sets FromAddress field to given value.
 
-### HasFromAddress
-
-`func (o *ApiEmailConfiguration) HasFromAddress() bool`
-
-HasFromAddress returns a boolean if a field has been set.
 
 ### GetHost
 
@@ -105,11 +100,6 @@ and a boolean to check if the value has been set.
 
 SetHost sets Host field to given value.
 
-### HasHost
-
-`func (o *ApiEmailConfiguration) HasHost() bool`
-
-HasHost returns a boolean if a field has been set.
 
 ### GetNexusTrustStoreEnabled
 

@@ -4,21 +4,21 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | Pointer to **string** | The email address associated with the user. | [optional] 
+**EmailAddress** | **string** | The email address associated with the user. | 
 **ExternalRoles** | Pointer to **[]string** | The roles which the user has been assigned in an external source, e.g. LDAP group. These cannot be changed within the Nexus Repository Manager. | [optional] 
-**FirstName** | Pointer to **string** | The first name of the user. | [optional] 
-**LastName** | Pointer to **string** | The last name of the user. | [optional] 
+**FirstName** | **string** | The first name of the user. | 
+**LastName** | **string** | The last name of the user. | 
 **ReadOnly** | Pointer to **bool** | Indicates whether the user&#39;s properties could be modified by the Nexus Repository Manager. When false only roles are considered during update. | [optional] 
 **Roles** | Pointer to **[]string** | The roles which the user has been assigned within Nexus. | [optional] 
-**Source** | Pointer to **string** | The source of the user. When creating user, if the source is \&quot;default\&quot;, the local Nexus Security User will be created. If the source is anything but \&quot;default\&quot; (i.e., LDAP or SAML), a local LdapUser (or SamlUser) will be created and have the listed roles assigned to that user. | [optional] 
+**Source** | **string** | The source of the user. When creating user, if the source is \&quot;default\&quot;, the local Nexus Security User will be created. If the source is anything but \&quot;default\&quot; (i.e., LDAP or SAML), a local LdapUser (or SamlUser) will be created and have the listed roles assigned to that user. | 
 **Status** | **string** | The user&#39;s status, e.g. active or disabled. | 
-**UserId** | Pointer to **string** | The userid which is required for login. This value cannot be changed. | [optional] 
+**UserId** | **string** | The userid which is required for login. This value cannot be changed. | 
 
 ## Methods
 
 ### NewApiUser
 
-`func NewApiUser(status string, ) *ApiUser`
+`func NewApiUser(emailAddress string, firstName string, lastName string, source string, status string, userId string, ) *ApiUser`
 
 NewApiUser instantiates a new ApiUser object
 This constructor will assign default values to properties that have it defined,
@@ -52,11 +52,6 @@ and a boolean to check if the value has been set.
 
 SetEmailAddress sets EmailAddress field to given value.
 
-### HasEmailAddress
-
-`func (o *ApiUser) HasEmailAddress() bool`
-
-HasEmailAddress returns a boolean if a field has been set.
 
 ### GetExternalRoles
 
@@ -102,11 +97,6 @@ and a boolean to check if the value has been set.
 
 SetFirstName sets FirstName field to given value.
 
-### HasFirstName
-
-`func (o *ApiUser) HasFirstName() bool`
-
-HasFirstName returns a boolean if a field has been set.
 
 ### GetLastName
 
@@ -127,11 +117,6 @@ and a boolean to check if the value has been set.
 
 SetLastName sets LastName field to given value.
 
-### HasLastName
-
-`func (o *ApiUser) HasLastName() bool`
-
-HasLastName returns a boolean if a field has been set.
 
 ### GetReadOnly
 
@@ -202,11 +187,6 @@ and a boolean to check if the value has been set.
 
 SetSource sets Source field to given value.
 
-### HasSource
-
-`func (o *ApiUser) HasSource() bool`
-
-HasSource returns a boolean if a field has been set.
 
 ### GetStatus
 
@@ -247,11 +227,6 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
-### HasUserId
-
-`func (o *ApiUser) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

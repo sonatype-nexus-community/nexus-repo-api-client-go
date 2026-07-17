@@ -22,37 +22,37 @@ func Test_v3_ContentSelectorsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test ContentSelectorsAPIService CreateContentSelector", func(t *testing.T) {
+	t.Run("Test ContentSelectorsAPIService CreateSecurityContentSelectors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.ContentSelectorsAPI.CreateContentSelector(context.Background()).Execute()
+		httpRes, err := apiClient.ContentSelectorsAPI.CreateSecurityContentSelectors(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ContentSelectorsAPIService DeleteContentSelector", func(t *testing.T) {
+	t.Run("Test ContentSelectorsAPIService DeleteSecurityContentSelectors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.ContentSelectorsAPI.DeleteContentSelector(context.Background(), name).Execute()
+		httpRes, err := apiClient.ContentSelectorsAPI.DeleteSecurityContentSelectors(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test ContentSelectorsAPIService GetContentSelector", func(t *testing.T) {
+	t.Run("Test ContentSelectorsAPIService GetSecurityContentSelectors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		resp, httpRes, err := apiClient.ContentSelectorsAPI.GetContentSelector(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.ContentSelectorsAPI.GetSecurityContentSelectors(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -60,11 +60,11 @@ func Test_v3_ContentSelectorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ContentSelectorsAPIService GetContentSelectors", func(t *testing.T) {
+	t.Run("Test ContentSelectorsAPIService ListSecurityContentSelectors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.ContentSelectorsAPI.GetContentSelectors(context.Background()).Execute()
+		resp, httpRes, err := apiClient.ContentSelectorsAPI.ListSecurityContentSelectors(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -72,13 +72,13 @@ func Test_v3_ContentSelectorsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test ContentSelectorsAPIService UpdateContentSelector", func(t *testing.T) {
+	t.Run("Test ContentSelectorsAPIService UpdateSecurityContentSelectors", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var name string
 
-		httpRes, err := apiClient.ContentSelectorsAPI.UpdateContentSelector(context.Background(), name).Execute()
+		httpRes, err := apiClient.ContentSelectorsAPI.UpdateSecurityContentSelectors(context.Background(), name).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

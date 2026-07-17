@@ -1,77 +1,18 @@
 # \ManageSonatypeHTTPSystemSettingsAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetHttpSettings**](ManageSonatypeHTTPSystemSettingsAPI.md#GetHttpSettings) | **Get** /v1/http | Get HTTP system settings
-[**ResetHttpSettings**](ManageSonatypeHTTPSystemSettingsAPI.md#ResetHttpSettings) | **Delete** /v1/http | Reset HTTP System Settings
-[**UpdateHttpSettings**](ManageSonatypeHTTPSystemSettingsAPI.md#UpdateHttpSettings) | **Put** /v1/http | Update HTTP system settings
+[**DeleteHttp**](ManageSonatypeHTTPSystemSettingsAPI.md#DeleteHttp) | **Delete** /v1/http | Reset HTTP System Settings
+[**ListHttp**](ManageSonatypeHTTPSystemSettingsAPI.md#ListHttp) | **Get** /v1/http | Get HTTP system settings
+[**UpdateHttp**](ManageSonatypeHTTPSystemSettingsAPI.md#UpdateHttp) | **Put** /v1/http | Update HTTP system settings
 
 
 
-## GetHttpSettings
+## DeleteHttp
 
-> HttpSettingsXo GetHttpSettings(ctx).Execute()
-
-Get HTTP system settings
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.GetHttpSettings(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.GetHttpSettings``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `GetHttpSettings`: HttpSettingsXo
-	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeHTTPSystemSettingsAPI.GetHttpSettings`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGetHttpSettingsRequest struct via the builder pattern
-
-
-### Return type
-
-[**HttpSettingsXo**](HttpSettingsXo.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## ResetHttpSettings
-
-> ResetHttpSettings(ctx).Execute()
+> DeleteHttp(ctx).Execute()
 
 Reset HTTP System Settings
 
@@ -91,9 +32,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.ResetHttpSettings(context.Background()).Execute()
+	r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.DeleteHttp(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.ResetHttpSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.DeleteHttp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -105,7 +46,7 @@ This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiResetHttpSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteHttpRequest struct via the builder pattern
 
 
 ### Return type
@@ -126,9 +67,68 @@ Other parameters are passed through a pointer to a apiResetHttpSettingsRequest s
 [[Back to README]](../README.md)
 
 
-## UpdateHttpSettings
+## ListHttp
 
-> UpdateHttpSettings(ctx).Body(body).Execute()
+> HttpSettingsXo ListHttp(ctx).Execute()
+
+Get HTTP system settings
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.ListHttp(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.ListHttp``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListHttp`: HttpSettingsXo
+	fmt.Fprintf(os.Stdout, "Response from `ManageSonatypeHTTPSystemSettingsAPI.ListHttp`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListHttpRequest struct via the builder pattern
+
+
+### Return type
+
+[**HttpSettingsXo**](HttpSettingsXo.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateHttp
+
+> UpdateHttp(ctx).HttpSettingsXo(httpSettingsXo).Execute()
 
 Update HTTP system settings
 
@@ -145,13 +145,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewHttpSettingsXo("TODO", "TODO", int32(123), int32(123), "UserAgent_example") // HttpSettingsXo |  (optional)
+	httpSettingsXo := *sonatyperepo.NewHttpSettingsXo("TODO", "TODO", int32(123), int32(123), "UserAgent_example") // HttpSettingsXo | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.UpdateHttpSettings(context.Background()).Body(body).Execute()
+	r, err := apiClient.ManageSonatypeHTTPSystemSettingsAPI.UpdateHttp(context.Background()).HttpSettingsXo(httpSettingsXo).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.UpdateHttpSettings``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ManageSonatypeHTTPSystemSettingsAPI.UpdateHttp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -163,12 +163,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateHttpSettingsRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateHttpRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**HttpSettingsXo**](HttpSettingsXo.md) |  | 
+ **httpSettingsXo** | [**HttpSettingsXo**](HttpSettingsXo.md) |  | 
 
 ### Return type
 

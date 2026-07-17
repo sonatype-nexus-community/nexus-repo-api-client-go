@@ -22,22 +22,22 @@ func Test_v3_SecurityManagementSSRFProtectionAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementSSRFProtectionAPIService GetConfiguration", func(t *testing.T) {
+	t.Run("Test SecurityManagementSSRFProtectionAPIService ListSecuritySsrfProtection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSSRFProtectionAPI.GetConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test SecurityManagementSSRFProtectionAPIService UpdateConfiguration", func(t *testing.T) {
+	t.Run("Test SecurityManagementSSRFProtectionAPIService UpdateSecuritySsrfProtection", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateConfiguration(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

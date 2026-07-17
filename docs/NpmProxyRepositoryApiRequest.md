@@ -5,14 +5,15 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
-**Npm** | Pointer to [**NpmAttributes**](NpmAttributes.md) |  | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
 ## Methods
@@ -58,6 +59,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *NpmProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *NpmProxyRepositoryApiRequest) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *NpmProxyRepositoryApiRequest) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *NpmProxyRepositoryApiRequest) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *NpmProxyRepositoryApiRequest) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -118,31 +144,6 @@ and a boolean to check if the value has been set.
 
 SetNegativeCache sets NegativeCache field to given value.
 
-
-### GetNpm
-
-`func (o *NpmProxyRepositoryApiRequest) GetNpm() NpmAttributes`
-
-GetNpm returns the Npm field if non-nil, zero value otherwise.
-
-### GetNpmOk
-
-`func (o *NpmProxyRepositoryApiRequest) GetNpmOk() (*NpmAttributes, bool)`
-
-GetNpmOk returns a tuple with the Npm field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetNpm
-
-`func (o *NpmProxyRepositoryApiRequest) SetNpm(v NpmAttributes)`
-
-SetNpm sets Npm field to given value.
-
-### HasNpm
-
-`func (o *NpmProxyRepositoryApiRequest) HasNpm() bool`
-
-HasNpm returns a boolean if a field has been set.
 
 ### GetOnline
 
@@ -233,6 +234,31 @@ SetRoutingRule sets RoutingRule field to given value.
 `func (o *NpmProxyRepositoryApiRequest) HasRoutingRule() bool`
 
 HasRoutingRule returns a boolean if a field has been set.
+
+### GetRoutingRuleName
+
+`func (o *NpmProxyRepositoryApiRequest) GetRoutingRuleName() string`
+
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
+
+### GetRoutingRuleNameOk
+
+`func (o *NpmProxyRepositoryApiRequest) GetRoutingRuleNameOk() (*string, bool)`
+
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRoutingRuleName
+
+`func (o *NpmProxyRepositoryApiRequest) SetRoutingRuleName(v string)`
+
+SetRoutingRuleName sets RoutingRuleName field to given value.
+
+### HasRoutingRuleName
+
+`func (o *NpmProxyRepositoryApiRequest) HasRoutingRuleName() bool`
+
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 

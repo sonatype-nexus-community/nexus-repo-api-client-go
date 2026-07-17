@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Attributes** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
 **Format** | Pointer to **string** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
+**Online** | Pointer to **bool** | Whether this repository accepts incoming requests | [optional] 
 **Size** | Pointer to **int64** | Size of the repository in bytes | [optional] 
 **Type** | Pointer to **string** |  | [optional] 
 **Url** | Pointer to **string** |  | [optional] 
@@ -104,6 +105,31 @@ SetName sets Name field to given value.
 `func (o *RepositoryXO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetOnline
+
+`func (o *RepositoryXO) GetOnline() bool`
+
+GetOnline returns the Online field if non-nil, zero value otherwise.
+
+### GetOnlineOk
+
+`func (o *RepositoryXO) GetOnlineOk() (*bool, bool)`
+
+GetOnlineOk returns a tuple with the Online field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOnline
+
+`func (o *RepositoryXO) SetOnline(v bool)`
+
+SetOnline sets Online field to given value.
+
+### HasOnline
+
+`func (o *RepositoryXO) HasOnline() bool`
+
+HasOnline returns a boolean if a field has been set.
 
 ### GetSize
 

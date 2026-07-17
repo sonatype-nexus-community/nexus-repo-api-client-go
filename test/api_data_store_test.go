@@ -22,11 +22,11 @@ func Test_v3_DataStoreAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test DataStoreAPIService GetDataStore", func(t *testing.T) {
+	t.Run("Test DataStoreAPIService ListDataStore", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.DataStoreAPI.GetDataStore(context.Background()).Execute()
+		httpRes, err := apiClient.DataStoreAPI.ListDataStore(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

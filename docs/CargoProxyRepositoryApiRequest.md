@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
 ## Methods
@@ -83,6 +84,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *CargoProxyRepositoryApiRequest) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *CargoProxyRepositoryApiRequest) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *CargoProxyRepositoryApiRequest) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *CargoProxyRepositoryApiRequest) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *CargoProxyRepositoryApiRequest) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -209,30 +235,30 @@ SetReplication sets Replication field to given value.
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRule
+### GetRoutingRuleName
 
-`func (o *CargoProxyRepositoryApiRequest) GetRoutingRule() string`
+`func (o *CargoProxyRepositoryApiRequest) GetRoutingRuleName() string`
 
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
 
-### GetRoutingRuleOk
+### GetRoutingRuleNameOk
 
-`func (o *CargoProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
+`func (o *CargoProxyRepositoryApiRequest) GetRoutingRuleNameOk() (*string, bool)`
 
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRule
+### SetRoutingRuleName
 
-`func (o *CargoProxyRepositoryApiRequest) SetRoutingRule(v string)`
+`func (o *CargoProxyRepositoryApiRequest) SetRoutingRuleName(v string)`
 
-SetRoutingRule sets RoutingRule field to given value.
+SetRoutingRuleName sets RoutingRuleName field to given value.
 
-### HasRoutingRule
+### HasRoutingRuleName
 
-`func (o *CargoProxyRepositoryApiRequest) HasRoutingRule() bool`
+`func (o *CargoProxyRepositoryApiRequest) HasRoutingRuleName() bool`
 
-HasRoutingRule returns a boolean if a field has been set.
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 

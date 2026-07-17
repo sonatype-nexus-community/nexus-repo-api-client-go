@@ -5,15 +5,16 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **CacheForeignLayers** | Pointer to **bool** | Allow Nexus Repository Manager to download and cache foreign layers | [optional] 
+**EcrAuth** | Pointer to [**EcrAuthAttributes**](EcrAuthAttributes.md) |  | [optional] 
 **ForeignLayerUrlWhitelist** | Pointer to **[]string** | Regular expressions used to identify URLs that are allowed for foreign layer requests | [optional] 
-**IndexType** | Pointer to **string** | Type of Docker Index | [optional] 
+**IndexType** | **string** | Type of Docker Index | 
 **IndexUrl** | Pointer to **string** | Url of Docker Index to use | [optional] 
 
 ## Methods
 
 ### NewDockerProxyAttributes
 
-`func NewDockerProxyAttributes() *DockerProxyAttributes`
+`func NewDockerProxyAttributes(indexType string, ) *DockerProxyAttributes`
 
 NewDockerProxyAttributes instantiates a new DockerProxyAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -52,6 +53,31 @@ SetCacheForeignLayers sets CacheForeignLayers field to given value.
 `func (o *DockerProxyAttributes) HasCacheForeignLayers() bool`
 
 HasCacheForeignLayers returns a boolean if a field has been set.
+
+### GetEcrAuth
+
+`func (o *DockerProxyAttributes) GetEcrAuth() EcrAuthAttributes`
+
+GetEcrAuth returns the EcrAuth field if non-nil, zero value otherwise.
+
+### GetEcrAuthOk
+
+`func (o *DockerProxyAttributes) GetEcrAuthOk() (*EcrAuthAttributes, bool)`
+
+GetEcrAuthOk returns a tuple with the EcrAuth field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEcrAuth
+
+`func (o *DockerProxyAttributes) SetEcrAuth(v EcrAuthAttributes)`
+
+SetEcrAuth sets EcrAuth field to given value.
+
+### HasEcrAuth
+
+`func (o *DockerProxyAttributes) HasEcrAuth() bool`
+
+HasEcrAuth returns a boolean if a field has been set.
 
 ### GetForeignLayerUrlWhitelist
 
@@ -97,11 +123,6 @@ and a boolean to check if the value has been set.
 
 SetIndexType sets IndexType field to given value.
 
-### HasIndexType
-
-`func (o *DockerProxyAttributes) HasIndexType() bool`
-
-HasIndexType returns a boolean if a field has been set.
 
 ### GetIndexUrl
 

@@ -8,12 +8,12 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** | Whether to use Sonatype Repository Firewall | [optional] 
 **FailOpenModeEnabled** | Pointer to **bool** | Allow by default when quarantine is enabled and the IQ connection fails | [optional] 
 **HasFirewall** | Pointer to **bool** | Whether the connected IQ Server has Firewall enabled | [optional] 
-**LicensedSolutions** | Pointer to [**[]LicensedSolution**](LicensedSolution.md) | List of licensed solutions available in the connected IQ Server | [optional] 
+**LicensedSolutions** | Pointer to [**[]LicensedSolutionXO**](LicensedSolutionXO.md) | List of licensed solutions available in the connected IQ Server | [optional] 
 **Password** | Pointer to **string** | Credentials for the Sonatype Repository Firewall User | [optional] 
 **Properties** | Pointer to **string** | Additional properties to configure for Sonatype Repository Firewall | [optional] 
 **ShowLink** | Pointer to **bool** | Show Sonatype Repository Firewall link in Browse menu when server is enabled | [optional] 
 **TimeoutSeconds** | Pointer to **int32** | Seconds to wait for activity before stopping and retrying the connection. Leave blank to use the globally defined HTTP timeout. | [optional] 
-**Url** | Pointer to **string** | The address of your Sonatype Repository Firewall | [optional] 
+**Url** | **string** | The address of your Sonatype Repository Firewall | 
 **UseTrustStoreForUrl** | Pointer to **bool** | Use certificates stored in the Nexus Repository Manager truststore to connect to Sonatype Repository Firewall | [optional] 
 **Username** | Pointer to **string** | User with access to Sonatype Repository Firewall | [optional] 
 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewIqConnectionXo
 
-`func NewIqConnectionXo(authenticationType string, ) *IqConnectionXo`
+`func NewIqConnectionXo(authenticationType string, url string, ) *IqConnectionXo`
 
 NewIqConnectionXo instantiates a new IqConnectionXo object
 This constructor will assign default values to properties that have it defined,
@@ -133,20 +133,20 @@ HasHasFirewall returns a boolean if a field has been set.
 
 ### GetLicensedSolutions
 
-`func (o *IqConnectionXo) GetLicensedSolutions() []LicensedSolution`
+`func (o *IqConnectionXo) GetLicensedSolutions() []LicensedSolutionXO`
 
 GetLicensedSolutions returns the LicensedSolutions field if non-nil, zero value otherwise.
 
 ### GetLicensedSolutionsOk
 
-`func (o *IqConnectionXo) GetLicensedSolutionsOk() (*[]LicensedSolution, bool)`
+`func (o *IqConnectionXo) GetLicensedSolutionsOk() (*[]LicensedSolutionXO, bool)`
 
 GetLicensedSolutionsOk returns a tuple with the LicensedSolutions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLicensedSolutions
 
-`func (o *IqConnectionXo) SetLicensedSolutions(v []LicensedSolution)`
+`func (o *IqConnectionXo) SetLicensedSolutions(v []LicensedSolutionXO)`
 
 SetLicensedSolutions sets LicensedSolutions field to given value.
 
@@ -275,11 +275,6 @@ and a boolean to check if the value has been set.
 
 SetUrl sets Url field to given value.
 
-### HasUrl
-
-`func (o *IqConnectionXo) HasUrl() bool`
-
-HasUrl returns a boolean if a field has been set.
 
 ### GetUseTrustStoreForUrl
 

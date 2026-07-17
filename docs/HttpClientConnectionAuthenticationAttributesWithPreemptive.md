@@ -9,14 +9,14 @@ Name | Type | Description | Notes
 **NtlmHost** | Pointer to **string** |  | [optional] 
 **Password** | Pointer to **string** |  | [optional] 
 **Preemptive** | Pointer to **bool** | Whether to use pre-emptive authentication. Use with caution. Defaults to false. | [optional] 
-**Type** | Pointer to **string** | Authentication type | [optional] 
+**Type** | **string** | Authentication type | 
 **Username** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
 ### NewHttpClientConnectionAuthenticationAttributesWithPreemptive
 
-`func NewHttpClientConnectionAuthenticationAttributesWithPreemptive() *HttpClientConnectionAuthenticationAttributesWithPreemptive`
+`func NewHttpClientConnectionAuthenticationAttributesWithPreemptive(type_ string, ) *HttpClientConnectionAuthenticationAttributesWithPreemptive`
 
 NewHttpClientConnectionAuthenticationAttributesWithPreemptive instantiates a new HttpClientConnectionAuthenticationAttributesWithPreemptive object
 This constructor will assign default values to properties that have it defined,
@@ -175,11 +175,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *HttpClientConnectionAuthenticationAttributesWithPreemptive) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 ### GetUsername
 

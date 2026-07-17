@@ -6,17 +6,17 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AssetId** | Pointer to **string** |  | [optional] 
 **ComponentId** | Pointer to **string** |  | [optional] 
-**Id** | Pointer to **string** |  | [optional] 
+**Id** | **string** |  | 
 **Leaf** | Pointer to **bool** |  | [optional] 
 **PackageUrl** | Pointer to **string** |  | [optional] 
-**Text** | Pointer to **string** |  | [optional] 
-**Type** | Pointer to **string** |  | [optional] 
+**Text** | **string** |  | 
+**Type** | **string** |  | 
 
 ## Methods
 
 ### NewBrowseNodeXO
 
-`func NewBrowseNodeXO() *BrowseNodeXO`
+`func NewBrowseNodeXO(id string, text string, type_ string, ) *BrowseNodeXO`
 
 NewBrowseNodeXO instantiates a new BrowseNodeXO object
 This constructor will assign default values to properties that have it defined,
@@ -100,11 +100,6 @@ and a boolean to check if the value has been set.
 
 SetId sets Id field to given value.
 
-### HasId
-
-`func (o *BrowseNodeXO) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetLeaf
 
@@ -175,11 +170,6 @@ and a boolean to check if the value has been set.
 
 SetText sets Text field to given value.
 
-### HasText
-
-`func (o *BrowseNodeXO) HasText() bool`
-
-HasText returns a boolean if a field has been set.
 
 ### GetType
 
@@ -200,11 +190,6 @@ and a boolean to check if the value has been set.
 
 SetType sets Type field to given value.
 
-### HasType
-
-`func (o *BrowseNodeXO) HasType() bool`
-
-HasType returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

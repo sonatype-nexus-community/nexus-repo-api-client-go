@@ -22,13 +22,13 @@ func Test_v3_RepositoryBrowseAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test RepositoryBrowseAPIService DeleteFolder", func(t *testing.T) {
+	t.Run("Test RepositoryBrowseAPIService DeleteRepositoriesBrowse", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryBrowseAPI.DeleteFolder(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryBrowseAPI.DeleteRepositoriesBrowse(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

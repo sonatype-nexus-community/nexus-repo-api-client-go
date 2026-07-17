@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Enabled** | Pointer to **bool** | Whether or not Anonymous Access is enabled | [optional] 
-**RealmName** | Pointer to **string** | The name of the authentication realm for the anonymous account | [optional] 
-**UserId** | Pointer to **string** | The username of the anonymous account | [optional] 
+**RealmName** | **string** | The name of the authentication realm for the anonymous account | 
+**UserId** | **string** | The username of the anonymous account | 
 
 ## Methods
 
 ### NewAnonymousAccessSettingsXO
 
-`func NewAnonymousAccessSettingsXO() *AnonymousAccessSettingsXO`
+`func NewAnonymousAccessSettingsXO(realmName string, userId string, ) *AnonymousAccessSettingsXO`
 
 NewAnonymousAccessSettingsXO instantiates a new AnonymousAccessSettingsXO object
 This constructor will assign default values to properties that have it defined,
@@ -71,11 +71,6 @@ and a boolean to check if the value has been set.
 
 SetRealmName sets RealmName field to given value.
 
-### HasRealmName
-
-`func (o *AnonymousAccessSettingsXO) HasRealmName() bool`
-
-HasRealmName returns a boolean if a field has been set.
 
 ### GetUserId
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetUserId sets UserId field to given value.
 
-### HasUserId
-
-`func (o *AnonymousAccessSettingsXO) HasUserId() bool`
-
-HasUserId returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

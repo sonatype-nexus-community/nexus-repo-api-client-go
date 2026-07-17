@@ -22,11 +22,11 @@ func Test_v3_SecurityManagementAPIAccessAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementAPIAccessAPIService CheckAccess", func(t *testing.T) {
+	t.Run("Test SecurityManagementAPIAccessAPIService CreateInternalUiSecurityAccessCheck", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.SecurityManagementAPIAccessAPI.CheckAccess(context.Background()).Execute()
+		resp, httpRes, err := apiClient.SecurityManagementAPIAccessAPI.CreateInternalUiSecurityAccessCheck(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

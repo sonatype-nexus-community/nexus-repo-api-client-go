@@ -1,21 +1,21 @@
 # \ScriptAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**Add**](ScriptAPI.md#Add) | **Post** /v1/script | Add a new script
-[**Browse**](ScriptAPI.md#Browse) | **Get** /v1/script | List all stored scripts
-[**Delete1**](ScriptAPI.md#Delete1) | **Delete** /v1/script/{name} | Delete stored script by name
-[**Edit**](ScriptAPI.md#Edit) | **Put** /v1/script/{name} | Update stored script by name
-[**Read**](ScriptAPI.md#Read) | **Get** /v1/script/{name} | Read stored script by name
-[**Run1**](ScriptAPI.md#Run1) | **Post** /v1/script/{name}/run | Run stored script by name
+[**CreateScript**](ScriptAPI.md#CreateScript) | **Post** /v1/script | Add a new script
+[**CreateScriptRun**](ScriptAPI.md#CreateScriptRun) | **Post** /v1/script/{name}/run | Run stored script by name
+[**DeleteScript**](ScriptAPI.md#DeleteScript) | **Delete** /v1/script/{name} | Delete stored script by name
+[**GetScript**](ScriptAPI.md#GetScript) | **Get** /v1/script/{name} | Read stored script by name
+[**ListScript**](ScriptAPI.md#ListScript) | **Get** /v1/script | List all stored scripts
+[**UpdateScript**](ScriptAPI.md#UpdateScript) | **Put** /v1/script/{name} | Update stored script by name
 
 
 
-## Add
+## CreateScript
 
-> Add(ctx).Body(body).Execute()
+> CreateScript(ctx).ScriptXO(scriptXO).Execute()
 
 Add a new script
 
@@ -32,13 +32,13 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewScriptXO() // ScriptXO |  (optional)
+	scriptXO := *sonatyperepo.NewScriptXO("Content_example", "Name_example", "Type_example") // ScriptXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ScriptAPI.Add(context.Background()).Body(body).Execute()
+	r, err := apiClient.ScriptAPI.CreateScript(context.Background()).ScriptXO(scriptXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Add``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.CreateScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -50,12 +50,12 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiAddRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateScriptRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ScriptXO**](ScriptXO.md) |  | 
+ **scriptXO** | [**ScriptXO**](ScriptXO.md) |  | 
 
 ### Return type
 
@@ -75,270 +75,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## Browse
+## CreateScriptRun
 
-> []ScriptXO Browse(ctx).Execute()
-
-List all stored scripts
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScriptAPI.Browse(context.Background()).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Browse``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `Browse`: []ScriptXO
-	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.Browse`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-This endpoint does not need any parameter.
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiBrowseRequest struct via the builder pattern
-
-
-### Return type
-
-[**[]ScriptXO**](ScriptXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Delete1
-
-> Delete1(ctx, name).Execute()
-
-Delete stored script by name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	name := "name_example" // string | 
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ScriptAPI.Delete1(context.Background(), name).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Delete1``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDelete1Request struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Edit
-
-> Edit(ctx, name).Body(body).Execute()
-
-Update stored script by name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	name := "name_example" // string | 
-	body := *sonatyperepo.NewScriptXO() // ScriptXO |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ScriptAPI.Edit(context.Background(), name).Body(body).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Edit``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiEditRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
- **body** | [**ScriptXO**](ScriptXO.md) |  | 
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Read
-
-> ScriptXO Read(ctx, name).Execute()
-
-Read stored script by name
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	name := "name_example" // string | 
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScriptAPI.Read(context.Background(), name).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Read``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `Read`: ScriptXO
-	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.Read`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiReadRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
-[**ScriptXO**](ScriptXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## Run1
-
-> ScriptResultXO Run1(ctx, name).Body(body).Execute()
+> CreateScriptRun(ctx, name).Body(body).Execute()
 
 Run stored script by name
 
@@ -360,13 +99,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.ScriptAPI.Run1(context.Background(), name).Body(body).Execute()
+	r, err := apiClient.ScriptAPI.CreateScriptRun(context.Background(), name).Body(body).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.Run1``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.CreateScriptRun``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `Run1`: ScriptResultXO
-	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.Run1`: %v\n", resp)
 }
 ```
 
@@ -380,7 +117,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiRun1Request struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateScriptRunRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -390,7 +127,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ScriptResultXO**](ScriptResultXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -399,7 +136,266 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/plain
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## DeleteScript
+
+> DeleteScript(ctx, name).Execute()
+
+Delete stored script by name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	name := "name_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ScriptAPI.DeleteScript(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.DeleteScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiDeleteScriptRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetScript
+
+> GetScript(ctx, name).Execute()
+
+Read stored script by name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	name := "name_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ScriptAPI.GetScript(context.Background(), name).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.GetScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetScriptRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListScript
+
+> []ScriptXO ListScript(ctx).Execute()
+
+List all stored scripts
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.ScriptAPI.ListScript(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.ListScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListScript`: []ScriptXO
+	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.ListScript`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListScriptRequest struct via the builder pattern
+
+
+### Return type
+
+[**[]ScriptXO**](ScriptXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateScript
+
+> UpdateScript(ctx, name).ScriptXO(scriptXO).Execute()
+
+Update stored script by name
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+)
+
+func main() {
+	name := "name_example" // string | 
+	scriptXO := *sonatyperepo.NewScriptXO("Content_example", "Name_example", "Type_example") // ScriptXO | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.ScriptAPI.UpdateScript(context.Background(), name).ScriptXO(scriptXO).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.UpdateScript``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**name** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateScriptRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **scriptXO** | [**ScriptXO**](ScriptXO.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

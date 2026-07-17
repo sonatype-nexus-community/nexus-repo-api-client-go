@@ -6,13 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **ConanProxy** | Pointer to [**ConanProxyAttributes**](ConanProxyAttributes.md) |  | [optional] 
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
+**RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
 ## Methods
@@ -83,6 +84,31 @@ SetConanProxy sets ConanProxy field to given value.
 `func (o *ConanProxyRepositoryApiRequest) HasConanProxy() bool`
 
 HasConanProxy returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *ConanProxyRepositoryApiRequest) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *ConanProxyRepositoryApiRequest) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *ConanProxyRepositoryApiRequest) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *ConanProxyRepositoryApiRequest) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
@@ -209,30 +235,30 @@ SetReplication sets Replication field to given value.
 
 HasReplication returns a boolean if a field has been set.
 
-### GetRoutingRule
+### GetRoutingRuleName
 
-`func (o *ConanProxyRepositoryApiRequest) GetRoutingRule() string`
+`func (o *ConanProxyRepositoryApiRequest) GetRoutingRuleName() string`
 
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
+GetRoutingRuleName returns the RoutingRuleName field if non-nil, zero value otherwise.
 
-### GetRoutingRuleOk
+### GetRoutingRuleNameOk
 
-`func (o *ConanProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
+`func (o *ConanProxyRepositoryApiRequest) GetRoutingRuleNameOk() (*string, bool)`
 
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
+GetRoutingRuleNameOk returns a tuple with the RoutingRuleName field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetRoutingRule
+### SetRoutingRuleName
 
-`func (o *ConanProxyRepositoryApiRequest) SetRoutingRule(v string)`
+`func (o *ConanProxyRepositoryApiRequest) SetRoutingRuleName(v string)`
 
-SetRoutingRule sets RoutingRule field to given value.
+SetRoutingRuleName sets RoutingRuleName field to given value.
 
-### HasRoutingRule
+### HasRoutingRuleName
 
-`func (o *ConanProxyRepositoryApiRequest) HasRoutingRule() bool`
+`func (o *ConanProxyRepositoryApiRequest) HasRoutingRuleName() bool`
 
-HasRoutingRule returns a boolean if a field has been set.
+HasRoutingRuleName returns a boolean if a field has been set.
 
 ### GetStorage
 

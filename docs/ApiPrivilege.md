@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Description** | Pointer to **string** |  | [optional] 
-**Name** | Pointer to **string** | The name of the privilege.  This value cannot be changed. | [optional] 
+**Name** | **string** | The name of the privilege.  This value cannot be changed. | 
 **ReadOnly** | Pointer to **bool** | Indicates whether the privilege can be changed. External values supplied to this will be ignored by the system. | [optional] 
 **Type** | Pointer to **string** | The type of privilege, each type covers different portions of the system. External values supplied to this will be ignored by the system. | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewApiPrivilege
 
-`func NewApiPrivilege() *ApiPrivilege`
+`func NewApiPrivilege(name string, ) *ApiPrivilege`
 
 NewApiPrivilege instantiates a new ApiPrivilege object
 This constructor will assign default values to properties that have it defined,
@@ -72,11 +72,6 @@ and a boolean to check if the value has been set.
 
 SetName sets Name field to given value.
 
-### HasName
-
-`func (o *ApiPrivilege) HasName() bool`
-
-HasName returns a boolean if a field has been set.
 
 ### GetReadOnly
 

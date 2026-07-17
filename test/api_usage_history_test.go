@@ -22,11 +22,11 @@ func Test_v3_UsageHistoryAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test UsageHistoryAPIService GetUsageHistory", func(t *testing.T) {
+	t.Run("Test UsageHistoryAPIService ListUsageHistory", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.UsageHistoryAPI.GetUsageHistory(context.Background()).Execute()
+		httpRes, err := apiClient.UsageHistoryAPI.ListUsageHistory(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

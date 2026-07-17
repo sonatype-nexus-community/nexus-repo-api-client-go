@@ -451,6 +451,39 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService CreateOciGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateOciGroupRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateOciHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateOciHostedRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService CreateOciProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		httpRes, err := apiClient.RepositoryManagementAPI.CreateOciProxyRepository(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService CreateP2ProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -765,26 +798,26 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService DeleteRepository", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService DeleteRepositories", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.DeleteRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.DeleteRepositories(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test RepositoryManagementAPIService DisableRepositoryHealthCheck", func(t *testing.T) {
+	t.Run("Test RepositoryManagementAPIService DeleteRepositoriesHealthCheck", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var repositoryName string
 
-		httpRes, err := apiClient.RepositoryManagementAPI.DisableRepositoryHealthCheck(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.DeleteRepositoriesHealthCheck(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
@@ -1349,6 +1382,48 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test RepositoryManagementAPIService GetOciGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetOciGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetOciHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetOciHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService GetOciProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetOciProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test RepositoryManagementAPIService GetP2ProxyRepository", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
@@ -1535,24 +1610,11 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background()).Execute()
-
-		require.Nil(t, err)
-		require.NotNil(t, resp)
-		assert.Equal(t, 200, httpRes.StatusCode)
-
-	})
-
-	t.Run("Test RepositoryManagementAPIService GetRepository", func(t *testing.T) {
-
-		t.Skip("skip test")  // remove to run test
-
 		var repositoryName string
 
-		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetRepository(context.Background(), repositoryName).Execute()
+		httpRes, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
-		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -1718,6 +1780,18 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		resp, httpRes, err := apiClient.RepositoryManagementAPI.GetYumProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService ListRepositorySettings", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.RepositoryManagementAPI.ListRepositorySettings(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -2226,6 +2300,45 @@ func Test_v3_RepositoryManagementAPIService(t *testing.T) {
 		var repositoryName string
 
 		httpRes, err := apiClient.RepositoryManagementAPI.UpdateNugetProxyRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateOciGroupRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateOciGroupRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateOciHostedRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateOciHostedRepository(context.Background(), repositoryName).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test RepositoryManagementAPIService UpdateOciProxyRepository", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var repositoryName string
+
+		httpRes, err := apiClient.RepositoryManagementAPI.UpdateOciProxyRepository(context.Background(), repositoryName).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

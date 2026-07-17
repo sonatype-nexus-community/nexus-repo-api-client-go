@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Members** | Pointer to **[]string** | List of the names of blob stores that are members of this group | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
+**SoftQuotaAttributes** | Pointer to [**BlobStoreConfiguration**](BlobStoreConfiguration.md) |  | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetSoftQuota sets SoftQuota field to given value.
 `func (o *GroupBlobStoreApiResponse) HasSoftQuota() bool`
 
 HasSoftQuota returns a boolean if a field has been set.
+
+### GetSoftQuotaAttributes
+
+`func (o *GroupBlobStoreApiResponse) GetSoftQuotaAttributes() BlobStoreConfiguration`
+
+GetSoftQuotaAttributes returns the SoftQuotaAttributes field if non-nil, zero value otherwise.
+
+### GetSoftQuotaAttributesOk
+
+`func (o *GroupBlobStoreApiResponse) GetSoftQuotaAttributesOk() (*BlobStoreConfiguration, bool)`
+
+GetSoftQuotaAttributesOk returns a tuple with the SoftQuotaAttributes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSoftQuotaAttributes
+
+`func (o *GroupBlobStoreApiResponse) SetSoftQuotaAttributes(v BlobStoreConfiguration)`
+
+SetSoftQuotaAttributes sets SoftQuotaAttributes field to given value.
+
+### HasSoftQuotaAttributes
+
+`func (o *GroupBlobStoreApiResponse) HasSoftQuotaAttributes() bool`
+
+HasSoftQuotaAttributes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

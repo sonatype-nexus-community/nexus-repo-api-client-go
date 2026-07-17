@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BlobStoreName** | Pointer to **string** |  | [optional] 
+**BlobStoreName** | **string** |  | 
 **IsViolation** | Pointer to **bool** |  | [optional] 
-**Message** | Pointer to **string** |  | [optional] 
+**Message** | **string** |  | 
 
 ## Methods
 
 ### NewBlobStoreQuotaResultXO
 
-`func NewBlobStoreQuotaResultXO() *BlobStoreQuotaResultXO`
+`func NewBlobStoreQuotaResultXO(blobStoreName string, message string, ) *BlobStoreQuotaResultXO`
 
 NewBlobStoreQuotaResultXO instantiates a new BlobStoreQuotaResultXO object
 This constructor will assign default values to properties that have it defined,
@@ -46,11 +46,6 @@ and a boolean to check if the value has been set.
 
 SetBlobStoreName sets BlobStoreName field to given value.
 
-### HasBlobStoreName
-
-`func (o *BlobStoreQuotaResultXO) HasBlobStoreName() bool`
-
-HasBlobStoreName returns a boolean if a field has been set.
 
 ### GetIsViolation
 
@@ -96,11 +91,6 @@ and a boolean to check if the value has been set.
 
 SetMessage sets Message field to given value.
 
-### HasMessage
-
-`func (o *BlobStoreQuotaResultXO) HasMessage() bool`
-
-HasMessage returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

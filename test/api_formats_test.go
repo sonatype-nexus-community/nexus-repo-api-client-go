@@ -22,13 +22,13 @@ func Test_v3_FormatsAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test FormatsAPIService Get", func(t *testing.T) {
+	t.Run("Test FormatsAPIService GetFormatsUploadSpecs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var format string
 
-		resp, httpRes, err := apiClient.FormatsAPI.Get(context.Background(), format).Execute()
+		resp, httpRes, err := apiClient.FormatsAPI.GetFormatsUploadSpecs(context.Background(), format).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
@@ -36,11 +36,11 @@ func Test_v3_FormatsAPIService(t *testing.T) {
 
 	})
 
-	t.Run("Test FormatsAPIService Get1", func(t *testing.T) {
+	t.Run("Test FormatsAPIService ListFormatsUploadSpecs", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		resp, httpRes, err := apiClient.FormatsAPI.Get1(context.Background()).Execute()
+		resp, httpRes, err := apiClient.FormatsAPI.ListFormatsUploadSpecs(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

@@ -1,6 +1,6 @@
 # \SecurityManagementPrivilegesAPI
 
-All URIs are relative to *http://localhost/service/rest*
+All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,9 +10,9 @@ Method | HTTP request | Description
 [**CreateRepositoryViewPrivilege**](SecurityManagementPrivilegesAPI.md#CreateRepositoryViewPrivilege) | **Post** /v1/security/privileges/repository-view | Create a repository view type privilege.
 [**CreateScriptPrivilege**](SecurityManagementPrivilegesAPI.md#CreateScriptPrivilege) | **Post** /v1/security/privileges/script | Create a script type privilege.
 [**CreateWildcardPrivilege**](SecurityManagementPrivilegesAPI.md#CreateWildcardPrivilege) | **Post** /v1/security/privileges/wildcard | Create a wildcard type privilege.
-[**DeletePrivilege**](SecurityManagementPrivilegesAPI.md#DeletePrivilege) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
+[**DeleteSecurityPrivileges**](SecurityManagementPrivilegesAPI.md#DeleteSecurityPrivileges) | **Delete** /v1/security/privileges/{privilegeName} | Delete a privilege by name.
 [**GetAllPrivileges**](SecurityManagementPrivilegesAPI.md#GetAllPrivileges) | **Get** /v1/security/privileges | Retrieve a list of privileges.
-[**GetPrivilege**](SecurityManagementPrivilegesAPI.md#GetPrivilege) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
+[**GetSecurityPrivileges**](SecurityManagementPrivilegesAPI.md#GetSecurityPrivileges) | **Get** /v1/security/privileges/{privilegeName} | Retrieve a privilege by name.
 [**UpdateApplicationPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateApplicationPrivilege) | **Put** /v1/security/privileges/application/{privilegeName} | Update an application type privilege.
 [**UpdateRepositoryAdminPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateRepositoryAdminPrivilege) | **Put** /v1/security/privileges/repository-admin/{privilegeName} | Update a repository admin type privilege.
 [**UpdateRepositoryContentSelectorPrivilege**](SecurityManagementPrivilegesAPI.md#UpdateRepositoryContentSelectorPrivilege) | **Put** /v1/security/privileges/repository-content-selector/{privilegeName} | Update a repository content selector type privilege.
@@ -24,7 +24,7 @@ Method | HTTP request | Description
 
 ## CreateApplicationPrivilege
 
-> CreateApplicationPrivilege(ctx).Body(body).Execute()
+> CreateApplicationPrivilege(ctx).ApiPrivilegeApplicationRequest(apiPrivilegeApplicationRequest).Execute()
 
 Create an application type privilege.
 
@@ -41,11 +41,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to create. (optional)
+	apiPrivilegeApplicationRequest := *sonatyperepo.NewApiPrivilegeApplicationRequest([]string{"Actions_example"}, "Domain_example", "Name_example") // ApiPrivilegeApplicationRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateApplicationPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateApplicationPrivilege(context.Background()).ApiPrivilegeApplicationRequest(apiPrivilegeApplicationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateApplicationPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -64,7 +64,7 @@ Other parameters are passed through a pointer to a apiCreateApplicationPrivilege
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
+ **apiPrivilegeApplicationRequest** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 
 ## CreateRepositoryAdminPrivilege
 
-> CreateRepositoryAdminPrivilege(ctx).Body(body).Execute()
+> CreateRepositoryAdminPrivilege(ctx).ApiPrivilegeRepositoryAdminRequest(apiPrivilegeRepositoryAdminRequest).Execute()
 
 Create a repository admin type privilege.
 
@@ -103,11 +103,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest() // ApiPrivilegeRepositoryAdminRequest | The privilege to create. (optional)
+	apiPrivilegeRepositoryAdminRequest := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest([]string{"Actions_example"}, "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryAdminRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryAdminPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryAdminPrivilege(context.Background()).ApiPrivilegeRepositoryAdminRequest(apiPrivilegeRepositoryAdminRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateRepositoryAdminPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ Other parameters are passed through a pointer to a apiCreateRepositoryAdminPrivi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to create. | 
+ **apiPrivilegeRepositoryAdminRequest** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -148,7 +148,7 @@ Name | Type | Description  | Notes
 
 ## CreateRepositoryContentSelectorPrivilege
 
-> CreateRepositoryContentSelectorPrivilege(ctx).Body(body).Execute()
+> CreateRepositoryContentSelectorPrivilege(ctx).ApiPrivilegeRepositoryContentSelectorRequest(apiPrivilegeRepositoryContentSelectorRequest).Execute()
 
 Create a repository content selector type privilege.
 
@@ -165,11 +165,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to create. (optional)
+	apiPrivilegeRepositoryContentSelectorRequest := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest([]string{"Actions_example"}, "ContentSelector_example", "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryContentSelectorPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryContentSelectorPrivilege(context.Background()).ApiPrivilegeRepositoryContentSelectorRequest(apiPrivilegeRepositoryContentSelectorRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateRepositoryContentSelectorPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -188,7 +188,7 @@ Other parameters are passed through a pointer to a apiCreateRepositoryContentSel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to create. | 
+ **apiPrivilegeRepositoryContentSelectorRequest** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -210,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## CreateRepositoryViewPrivilege
 
-> CreateRepositoryViewPrivilege(ctx).Body(body).Execute()
+> CreateRepositoryViewPrivilege(ctx).ApiPrivilegeRepositoryViewRequest(apiPrivilegeRepositoryViewRequest).Execute()
 
 Create a repository view type privilege.
 
@@ -227,11 +227,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to create. (optional)
+	apiPrivilegeRepositoryViewRequest := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest([]string{"Actions_example"}, "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryViewRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryViewPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateRepositoryViewPrivilege(context.Background()).ApiPrivilegeRepositoryViewRequest(apiPrivilegeRepositoryViewRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateRepositoryViewPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -250,7 +250,7 @@ Other parameters are passed through a pointer to a apiCreateRepositoryViewPrivil
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to create. | 
+ **apiPrivilegeRepositoryViewRequest** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ## CreateScriptPrivilege
 
-> CreateScriptPrivilege(ctx).Body(body).Execute()
+> CreateScriptPrivilege(ctx).ApiPrivilegeScriptRequest(apiPrivilegeScriptRequest).Execute()
 
 Create a script type privilege.
 
@@ -289,11 +289,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeScriptRequest() // ApiPrivilegeScriptRequest | The privilege to create. (optional)
+	apiPrivilegeScriptRequest := *sonatyperepo.NewApiPrivilegeScriptRequest([]string{"Actions_example"}, "Name_example", "ScriptName_example") // ApiPrivilegeScriptRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateScriptPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateScriptPrivilege(context.Background()).ApiPrivilegeScriptRequest(apiPrivilegeScriptRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateScriptPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -312,7 +312,7 @@ Other parameters are passed through a pointer to a apiCreateScriptPrivilegeReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeScriptRequest**](ApiPrivilegeScriptRequest.md) | The privilege to create. | 
+ **apiPrivilegeScriptRequest** | [**ApiPrivilegeScriptRequest**](ApiPrivilegeScriptRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -334,7 +334,7 @@ Name | Type | Description  | Notes
 
 ## CreateWildcardPrivilege
 
-> CreateWildcardPrivilege(ctx).Body(body).Execute()
+> CreateWildcardPrivilege(ctx).ApiPrivilegeWildcardRequest(apiPrivilegeWildcardRequest).Execute()
 
 Create a wildcard type privilege.
 
@@ -351,11 +351,11 @@ import (
 )
 
 func main() {
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to create. (optional)
+	apiPrivilegeWildcardRequest := *sonatyperepo.NewApiPrivilegeWildcardRequest("Name_example", "Pattern_example") // ApiPrivilegeWildcardRequest | The privilege to create.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateWildcardPrivilege(context.Background()).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.CreateWildcardPrivilege(context.Background()).ApiPrivilegeWildcardRequest(apiPrivilegeWildcardRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.CreateWildcardPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,7 +374,7 @@ Other parameters are passed through a pointer to a apiCreateWildcardPrivilegeReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
+ **apiPrivilegeWildcardRequest** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to create. | 
 
 ### Return type
 
@@ -394,9 +394,9 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeletePrivilege
+## DeleteSecurityPrivileges
 
-> DeletePrivilege(ctx, privilegeName).Execute()
+> DeleteSecurityPrivileges(ctx, privilegeName).Execute()
 
 Delete a privilege by name.
 
@@ -417,9 +417,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.DeletePrivilege(context.Background(), privilegeName).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.DeleteSecurityPrivileges(context.Background(), privilegeName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.DeletePrivilege``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.DeleteSecurityPrivileges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -435,7 +435,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeletePrivilegeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteSecurityPrivilegesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -519,9 +519,9 @@ Other parameters are passed through a pointer to a apiGetAllPrivilegesRequest st
 [[Back to README]](../README.md)
 
 
-## GetPrivilege
+## GetSecurityPrivileges
 
-> ApiPrivilegeRequest GetPrivilege(ctx, privilegeName).Execute()
+> ApiPrivilegeRequest GetSecurityPrivileges(ctx, privilegeName).Execute()
 
 Retrieve a privilege by name.
 
@@ -542,13 +542,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetPrivilege(context.Background(), privilegeName).Execute()
+	resp, r, err := apiClient.SecurityManagementPrivilegesAPI.GetSecurityPrivileges(context.Background(), privilegeName).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetPrivilege``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.GetSecurityPrivileges``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPrivilege`: ApiPrivilegeRequest
-	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetPrivilege`: %v\n", resp)
+	// response from `GetSecurityPrivileges`: ApiPrivilegeRequest
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementPrivilegesAPI.GetSecurityPrivileges`: %v\n", resp)
 }
 ```
 
@@ -562,7 +562,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetPrivilegeRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetSecurityPrivilegesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -589,7 +589,7 @@ Name | Type | Description  | Notes
 
 ## UpdateApplicationPrivilege
 
-> UpdateApplicationPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateApplicationPrivilege(ctx, privilegeName).ApiPrivilegeApplicationRequest(apiPrivilegeApplicationRequest).Execute()
 
 Update an application type privilege.
 
@@ -607,11 +607,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeApplicationRequest() // ApiPrivilegeApplicationRequest | The privilege to update. (optional)
+	apiPrivilegeApplicationRequest := *sonatyperepo.NewApiPrivilegeApplicationRequest([]string{"Actions_example"}, "Domain_example", "Name_example") // ApiPrivilegeApplicationRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateApplicationPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateApplicationPrivilege(context.Background(), privilegeName).ApiPrivilegeApplicationRequest(apiPrivilegeApplicationRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateApplicationPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -635,7 +635,7 @@ Other parameters are passed through a pointer to a apiUpdateApplicationPrivilege
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
+ **apiPrivilegeApplicationRequest** | [**ApiPrivilegeApplicationRequest**](ApiPrivilegeApplicationRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -657,7 +657,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRepositoryAdminPrivilege
 
-> UpdateRepositoryAdminPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateRepositoryAdminPrivilege(ctx, privilegeName).ApiPrivilegeRepositoryAdminRequest(apiPrivilegeRepositoryAdminRequest).Execute()
 
 Update a repository admin type privilege.
 
@@ -675,11 +675,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest() // ApiPrivilegeRepositoryAdminRequest | The privilege to update. (optional)
+	apiPrivilegeRepositoryAdminRequest := *sonatyperepo.NewApiPrivilegeRepositoryAdminRequest([]string{"Actions_example"}, "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryAdminRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryAdminPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryAdminPrivilege(context.Background(), privilegeName).ApiPrivilegeRepositoryAdminRequest(apiPrivilegeRepositoryAdminRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateRepositoryAdminPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -703,7 +703,7 @@ Other parameters are passed through a pointer to a apiUpdateRepositoryAdminPrivi
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to update. | 
+ **apiPrivilegeRepositoryAdminRequest** | [**ApiPrivilegeRepositoryAdminRequest**](ApiPrivilegeRepositoryAdminRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -725,7 +725,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRepositoryContentSelectorPrivilege
 
-> UpdateRepositoryContentSelectorPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateRepositoryContentSelectorPrivilege(ctx, privilegeName).ApiPrivilegeRepositoryContentSelectorRequest(apiPrivilegeRepositoryContentSelectorRequest).Execute()
 
 Update a repository content selector type privilege.
 
@@ -743,11 +743,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest() // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to update. (optional)
+	apiPrivilegeRepositoryContentSelectorRequest := *sonatyperepo.NewApiPrivilegeRepositoryContentSelectorRequest([]string{"Actions_example"}, "ContentSelector_example", "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryContentSelectorRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryContentSelectorPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryContentSelectorPrivilege(context.Background(), privilegeName).ApiPrivilegeRepositoryContentSelectorRequest(apiPrivilegeRepositoryContentSelectorRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateRepositoryContentSelectorPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -771,7 +771,7 @@ Other parameters are passed through a pointer to a apiUpdateRepositoryContentSel
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to update. | 
+ **apiPrivilegeRepositoryContentSelectorRequest** | [**ApiPrivilegeRepositoryContentSelectorRequest**](ApiPrivilegeRepositoryContentSelectorRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -793,7 +793,7 @@ Name | Type | Description  | Notes
 
 ## UpdateRepositoryViewPrivilege
 
-> UpdateRepositoryViewPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateRepositoryViewPrivilege(ctx, privilegeName).ApiPrivilegeRepositoryViewRequest(apiPrivilegeRepositoryViewRequest).Execute()
 
 Update a repository view type privilege.
 
@@ -811,11 +811,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest() // ApiPrivilegeRepositoryViewRequest | The privilege to update. (optional)
+	apiPrivilegeRepositoryViewRequest := *sonatyperepo.NewApiPrivilegeRepositoryViewRequest([]string{"Actions_example"}, "Format_example", "Name_example", "Repository_example") // ApiPrivilegeRepositoryViewRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryViewPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateRepositoryViewPrivilege(context.Background(), privilegeName).ApiPrivilegeRepositoryViewRequest(apiPrivilegeRepositoryViewRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateRepositoryViewPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -839,7 +839,7 @@ Other parameters are passed through a pointer to a apiUpdateRepositoryViewPrivil
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to update. | 
+ **apiPrivilegeRepositoryViewRequest** | [**ApiPrivilegeRepositoryViewRequest**](ApiPrivilegeRepositoryViewRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -861,7 +861,7 @@ Name | Type | Description  | Notes
 
 ## UpdateScriptPrivilege
 
-> UpdateScriptPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateScriptPrivilege(ctx, privilegeName).ApiPrivilegeScriptRequest(apiPrivilegeScriptRequest).Execute()
 
 Update a script type privilege.
 
@@ -879,11 +879,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeScriptRequest() // ApiPrivilegeScriptRequest | The privilege to update. (optional)
+	apiPrivilegeScriptRequest := *sonatyperepo.NewApiPrivilegeScriptRequest([]string{"Actions_example"}, "Name_example", "ScriptName_example") // ApiPrivilegeScriptRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateScriptPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateScriptPrivilege(context.Background(), privilegeName).ApiPrivilegeScriptRequest(apiPrivilegeScriptRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateScriptPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -907,7 +907,7 @@ Other parameters are passed through a pointer to a apiUpdateScriptPrivilegeReque
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeScriptRequest**](ApiPrivilegeScriptRequest.md) | The privilege to update. | 
+ **apiPrivilegeScriptRequest** | [**ApiPrivilegeScriptRequest**](ApiPrivilegeScriptRequest.md) | The privilege to update. | 
 
 ### Return type
 
@@ -929,7 +929,7 @@ Name | Type | Description  | Notes
 
 ## UpdateWildcardPrivilege
 
-> UpdateWildcardPrivilege(ctx, privilegeName).Body(body).Execute()
+> UpdateWildcardPrivilege(ctx, privilegeName).ApiPrivilegeWildcardRequest(apiPrivilegeWildcardRequest).Execute()
 
 Update a wildcard type privilege.
 
@@ -947,11 +947,11 @@ import (
 
 func main() {
 	privilegeName := "privilegeName_example" // string | The name of the privilege to update.
-	body := *sonatyperepo.NewApiPrivilegeWildcardRequest() // ApiPrivilegeWildcardRequest | The privilege to update. (optional)
+	apiPrivilegeWildcardRequest := *sonatyperepo.NewApiPrivilegeWildcardRequest("Name_example", "Pattern_example") // ApiPrivilegeWildcardRequest | The privilege to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateWildcardPrivilege(context.Background(), privilegeName).Body(body).Execute()
+	r, err := apiClient.SecurityManagementPrivilegesAPI.UpdateWildcardPrivilege(context.Background(), privilegeName).ApiPrivilegeWildcardRequest(apiPrivilegeWildcardRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementPrivilegesAPI.UpdateWildcardPrivilege``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -975,7 +975,7 @@ Other parameters are passed through a pointer to a apiUpdateWildcardPrivilegeReq
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **body** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
+ **apiPrivilegeWildcardRequest** | [**ApiPrivilegeWildcardRequest**](ApiPrivilegeWildcardRequest.md) | The privilege to update. | 
 
 ### Return type
 

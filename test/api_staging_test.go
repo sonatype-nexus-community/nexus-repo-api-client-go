@@ -22,24 +22,24 @@ func Test_v3_StagingAPIService(t *testing.T) {
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test StagingAPIService Delete2", func(t *testing.T) {
+	t.Run("Test StagingAPIService CreateStagingDelete", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.StagingAPI.Delete2(context.Background()).Execute()
+		httpRes, err := apiClient.StagingAPI.CreateStagingDelete(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
 
-	t.Run("Test StagingAPIService Move", func(t *testing.T) {
+	t.Run("Test StagingAPIService CreateStagingMove", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		var destination string
 
-		httpRes, err := apiClient.StagingAPI.Move(context.Background(), destination).Execute()
+		httpRes, err := apiClient.StagingAPI.CreateStagingMove(context.Background(), destination).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

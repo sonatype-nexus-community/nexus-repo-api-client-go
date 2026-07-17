@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AuthPassword** | **string** | The password to bind with. Required if authScheme other than none. | 
+**AuthPassword** | Pointer to **string** | The password to bind with. Required if authScheme other than none. | [optional] 
 **AuthRealm** | Pointer to **string** | The SASL realm to bind to. Required if authScheme is CRAM_MD5 or DIGEST_MD5 | [optional] 
 **AuthScheme** | **string** | Authentication scheme used for connecting to LDAP server | 
 **AuthUsername** | Pointer to **string** | This must be a fully qualified username if simple authentication is used. Required if authScheme other than none. | [optional] 
@@ -27,20 +27,20 @@ Name | Type | Description | Notes
 **SearchBase** | **string** | LDAP location to be added to the connection URL | 
 **UseTrustStore** | Pointer to **bool** | Whether to use certificates stored in Nexus Repository Manager&#39;s truststore | [optional] 
 **UserBaseDn** | Pointer to **string** | The relative DN where user objects are found (e.g. ou&#x3D;people). This value will have the Search base DN value appended to form the full User search base DN. | [optional] 
-**UserEmailAddressAttribute** | Pointer to **string** | This is used to find an email address given the user ID | [optional] 
-**UserIdAttribute** | Pointer to **string** | This is used to find a user given its user ID | [optional] 
+**UserEmailAddressAttribute** | **string** | This is used to find an email address given the user ID | 
+**UserIdAttribute** | **string** | This is used to find a user given its user ID | 
 **UserLdapFilter** | Pointer to **string** | LDAP search filter to limit user search | [optional] 
 **UserMemberOfAttribute** | Pointer to **string** | Set this to the attribute used to store the attribute which holds groups DN in the user object. Required if groupType is dynamic | [optional] 
-**UserObjectClass** | Pointer to **string** | LDAP class for user objects | [optional] 
+**UserObjectClass** | **string** | LDAP class for user objects | 
 **UserPasswordAttribute** | Pointer to **string** | If this field is blank the user will be authenticated against a bind with the LDAP server | [optional] 
-**UserRealNameAttribute** | Pointer to **string** | This is used to find a real name given the user ID | [optional] 
+**UserRealNameAttribute** | **string** | This is used to find a real name given the user ID | 
 **UserSubtree** | Pointer to **bool** | Are users located in structures below the user base DN? | [optional] 
 
 ## Methods
 
 ### NewUpdateLdapServerXo
 
-`func NewUpdateLdapServerXo(authPassword string, authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, ) *UpdateLdapServerXo`
+`func NewUpdateLdapServerXo(authScheme string, connectionRetryDelaySeconds int32, connectionTimeoutSeconds int32, host string, maxIncidentsCount int32, name string, port int32, protocol string, searchBase string, userEmailAddressAttribute string, userIdAttribute string, userObjectClass string, userRealNameAttribute string, ) *UpdateLdapServerXo`
 
 NewUpdateLdapServerXo instantiates a new UpdateLdapServerXo object
 This constructor will assign default values to properties that have it defined,
@@ -74,6 +74,11 @@ and a boolean to check if the value has been set.
 
 SetAuthPassword sets AuthPassword field to given value.
 
+### HasAuthPassword
+
+`func (o *UpdateLdapServerXo) HasAuthPassword() bool`
+
+HasAuthPassword returns a boolean if a field has been set.
 
 ### GetAuthRealm
 
@@ -599,11 +604,6 @@ and a boolean to check if the value has been set.
 
 SetUserEmailAddressAttribute sets UserEmailAddressAttribute field to given value.
 
-### HasUserEmailAddressAttribute
-
-`func (o *UpdateLdapServerXo) HasUserEmailAddressAttribute() bool`
-
-HasUserEmailAddressAttribute returns a boolean if a field has been set.
 
 ### GetUserIdAttribute
 
@@ -624,11 +624,6 @@ and a boolean to check if the value has been set.
 
 SetUserIdAttribute sets UserIdAttribute field to given value.
 
-### HasUserIdAttribute
-
-`func (o *UpdateLdapServerXo) HasUserIdAttribute() bool`
-
-HasUserIdAttribute returns a boolean if a field has been set.
 
 ### GetUserLdapFilter
 
@@ -699,11 +694,6 @@ and a boolean to check if the value has been set.
 
 SetUserObjectClass sets UserObjectClass field to given value.
 
-### HasUserObjectClass
-
-`func (o *UpdateLdapServerXo) HasUserObjectClass() bool`
-
-HasUserObjectClass returns a boolean if a field has been set.
 
 ### GetUserPasswordAttribute
 
@@ -749,11 +739,6 @@ and a boolean to check if the value has been set.
 
 SetUserRealNameAttribute sets UserRealNameAttribute field to given value.
 
-### HasUserRealNameAttribute
-
-`func (o *UpdateLdapServerXo) HasUserRealNameAttribute() bool`
-
-HasUserRealNameAttribute returns a boolean if a field has been set.
 
 ### GetUserSubtree
 
