@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -90,7 +90,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -143,7 +143,7 @@ Name | Type | Description  | Notes
 
 ## ListSecuritySsl
 
-> ListSecuritySsl(ctx).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
+> ApiCertificate ListSecuritySsl(ctx).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
 
 Helper method to retrieve certificate details from a remote system.
 
@@ -156,7 +156,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -166,11 +166,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityCertificatesAPI.ListSecuritySsl(context.Background()).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
+	resp, r, err := apiClient.SecurityCertificatesAPI.ListSecuritySsl(context.Background()).Host(host).Port(port).ProtocolHint(protocolHint).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.ListSecuritySsl``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySsl`: ApiCertificate
+	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.ListSecuritySsl`: %v\n", resp)
 }
 ```
 
@@ -191,7 +193,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ApiCertificate**](ApiCertificate.md)
 
 ### Authorization
 
@@ -200,7 +202,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -209,7 +211,7 @@ Name | Type | Description  | Notes
 
 ## ListSecuritySslTruststore
 
-> ListSecuritySslTruststore(ctx).Execute()
+> []ApiCertificate ListSecuritySslTruststore(ctx).Execute()
 
 Retrieve a list of certificates added to the trust store.
 
@@ -222,18 +224,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityCertificatesAPI.ListSecuritySslTruststore(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityCertificatesAPI.ListSecuritySslTruststore(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityCertificatesAPI.ListSecuritySslTruststore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySslTruststore`: []ApiCertificate
+	fmt.Fprintf(os.Stdout, "Response from `SecurityCertificatesAPI.ListSecuritySslTruststore`: %v\n", resp)
 }
 ```
 
@@ -248,7 +252,7 @@ Other parameters are passed through a pointer to a apiListSecuritySslTruststoreR
 
 ### Return type
 
- (empty response body)
+[**[]ApiCertificate**](ApiCertificate.md)
 
 ### Authorization
 
@@ -257,7 +261,7 @@ Other parameters are passed through a pointer to a apiListSecuritySslTruststoreR
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

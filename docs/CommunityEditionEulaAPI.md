@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## ListSystemEula
 
-> ListSystemEula(ctx).Execute()
+> EulaStatus ListSystemEula(ctx).Execute()
 
 Get the current Community Eula status.
 
@@ -86,18 +86,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CommunityEditionEulaAPI.ListSystemEula(context.Background()).Execute()
+	resp, r, err := apiClient.CommunityEditionEulaAPI.ListSystemEula(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CommunityEditionEulaAPI.ListSystemEula``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSystemEula`: EulaStatus
+	fmt.Fprintf(os.Stdout, "Response from `CommunityEditionEulaAPI.ListSystemEula`: %v\n", resp)
 }
 ```
 
@@ -112,7 +114,7 @@ Other parameters are passed through a pointer to a apiListSystemEulaRequest stru
 
 ### Return type
 
- (empty response body)
+[**EulaStatus**](EulaStatus.md)
 
 ### Authorization
 
@@ -121,7 +123,7 @@ Other parameters are passed through a pointer to a apiListSystemEulaRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ListMaliciousRiskEnabledRegistries
 
-> ListMaliciousRiskEnabledRegistries(ctx).Execute()
+> map[string]interface{} ListMaliciousRiskEnabledRegistries(ctx).Execute()
 
 Get RHC Enabled registries for malicious risk scanning.
 
@@ -24,18 +24,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskEnabledRegistries(context.Background()).Execute()
+	resp, r, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskEnabledRegistries(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MaliciousRiskOnDiskAPI.ListMaliciousRiskEnabledRegistries``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMaliciousRiskEnabledRegistries`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `MaliciousRiskOnDiskAPI.ListMaliciousRiskEnabledRegistries`: %v\n", resp)
 }
 ```
 
@@ -50,7 +52,7 @@ Other parameters are passed through a pointer to a apiListMaliciousRiskEnabledRe
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -59,7 +61,7 @@ Other parameters are passed through a pointer to a apiListMaliciousRiskEnabledRe
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -68,7 +70,7 @@ Other parameters are passed through a pointer to a apiListMaliciousRiskEnabledRe
 
 ## ListMaliciousRiskRiskOnDisk
 
-> ListMaliciousRiskRiskOnDisk(ctx).Execute()
+> MaliciousRiskOnDiskCountResponse ListMaliciousRiskRiskOnDisk(ctx).Execute()
 
 Get Malicious Risk On Disk Count
 
@@ -81,18 +83,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskRiskOnDisk(context.Background()).Execute()
+	resp, r, err := apiClient.MaliciousRiskOnDiskAPI.ListMaliciousRiskRiskOnDisk(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MaliciousRiskOnDiskAPI.ListMaliciousRiskRiskOnDisk``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMaliciousRiskRiskOnDisk`: MaliciousRiskOnDiskCountResponse
+	fmt.Fprintf(os.Stdout, "Response from `MaliciousRiskOnDiskAPI.ListMaliciousRiskRiskOnDisk`: %v\n", resp)
 }
 ```
 
@@ -107,7 +111,7 @@ Other parameters are passed through a pointer to a apiListMaliciousRiskRiskOnDis
 
 ### Return type
 
- (empty response body)
+[**MaliciousRiskOnDiskCountResponse**](MaliciousRiskOnDiskCountResponse.md)
 
 ### Authorization
 
@@ -116,7 +120,7 @@ Other parameters are passed through a pointer to a apiListMaliciousRiskRiskOnDis
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

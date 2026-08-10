@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 ## GetStatusCheck
 
-> GetStatusCheck(ctx, nodeId).Execute()
+> SystemCheckResultsApiDTO GetStatusCheck(ctx, nodeId).Execute()
 
 Health check endpoint that returns the results of the system status checks of specified Node
 
@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -35,11 +35,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.StatusAPI.GetStatusCheck(context.Background(), nodeId).Execute()
+	resp, r, err := apiClient.StatusAPI.GetStatusCheck(context.Background(), nodeId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StatusAPI.GetStatusCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetStatusCheck`: SystemCheckResultsApiDTO
+	fmt.Fprintf(os.Stdout, "Response from `StatusAPI.GetStatusCheck`: %v\n", resp)
 }
 ```
 
@@ -62,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SystemCheckResultsApiDTO**](SystemCheckResultsApiDTO.md)
 
 ### Authorization
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -93,7 +95,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -137,7 +139,7 @@ Other parameters are passed through a pointer to a apiListStatusRequest struct v
 
 ## ListStatusCheck
 
-> ListStatusCheck(ctx).Execute()
+> map[string]interface{} ListStatusCheck(ctx).Execute()
 
 Health check endpoint that returns the results of the system status checks
 
@@ -150,18 +152,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.StatusAPI.ListStatusCheck(context.Background()).Execute()
+	resp, r, err := apiClient.StatusAPI.ListStatusCheck(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StatusAPI.ListStatusCheck``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListStatusCheck`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `StatusAPI.ListStatusCheck`: %v\n", resp)
 }
 ```
 
@@ -176,7 +180,7 @@ Other parameters are passed through a pointer to a apiListStatusCheckRequest str
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -185,7 +189,7 @@ Other parameters are passed through a pointer to a apiListStatusCheckRequest str
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -194,7 +198,7 @@ Other parameters are passed through a pointer to a apiListStatusCheckRequest str
 
 ## ListStatusCheckCluster
 
-> ListStatusCheckCluster(ctx).Execute()
+> []SystemCheckResultsApiDTO ListStatusCheckCluster(ctx).Execute()
 
 Health check endpoint that returns the results of the system status checks
 
@@ -207,18 +211,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.StatusAPI.ListStatusCheckCluster(context.Background()).Execute()
+	resp, r, err := apiClient.StatusAPI.ListStatusCheckCluster(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `StatusAPI.ListStatusCheckCluster``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListStatusCheckCluster`: []SystemCheckResultsApiDTO
+	fmt.Fprintf(os.Stdout, "Response from `StatusAPI.ListStatusCheckCluster`: %v\n", resp)
 }
 ```
 
@@ -233,7 +239,7 @@ Other parameters are passed through a pointer to a apiListStatusCheckClusterRequ
 
 ### Return type
 
- (empty response body)
+[**[]SystemCheckResultsApiDTO**](SystemCheckResultsApiDTO.md)
 
 ### Authorization
 
@@ -242,7 +248,7 @@ Other parameters are passed through a pointer to a apiListStatusCheckClusterRequ
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -264,7 +270,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EmailAddress** | **string** | The email address associated with the user. | 
+**EmailAddress** | Pointer to **NullableString** | The email address associated with the user. | [optional] 
 **ExternalRoles** | Pointer to **[]string** | The roles which the user has been assigned in an external source, e.g. LDAP group. These cannot be changed within the Nexus Repository Manager. | [optional] 
-**FirstName** | **string** | The first name of the user. | 
-**LastName** | **string** | The last name of the user. | 
+**FirstName** | Pointer to **NullableString** | The first name of the user. | [optional] 
+**LastName** | Pointer to **NullableString** | The last name of the user. | [optional] 
 **ReadOnly** | Pointer to **bool** | Indicates whether the user&#39;s properties could be modified by the Nexus Repository Manager. When false only roles are considered during update. | [optional] 
 **Roles** | Pointer to **[]string** | The roles which the user has been assigned within Nexus. | [optional] 
 **Source** | **string** | The source of the user. When creating user, if the source is \&quot;default\&quot;, the local Nexus Security User will be created. If the source is anything but \&quot;default\&quot; (i.e., LDAP or SAML), a local LdapUser (or SamlUser) will be created and have the listed roles assigned to that user. | 
@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 
 ### NewApiUser
 
-`func NewApiUser(emailAddress string, firstName string, lastName string, source string, status string, userId string, ) *ApiUser`
+`func NewApiUser(source string, status string, userId string, ) *ApiUser`
 
 NewApiUser instantiates a new ApiUser object
 This constructor will assign default values to properties that have it defined,
@@ -52,7 +52,22 @@ and a boolean to check if the value has been set.
 
 SetEmailAddress sets EmailAddress field to given value.
 
+### HasEmailAddress
 
+`func (o *ApiUser) HasEmailAddress() bool`
+
+HasEmailAddress returns a boolean if a field has been set.
+
+### SetEmailAddressNil
+
+`func (o *ApiUser) SetEmailAddressNil(b bool)`
+
+ SetEmailAddressNil sets the value for EmailAddress to be an explicit nil
+
+### UnsetEmailAddress
+`func (o *ApiUser) UnsetEmailAddress()`
+
+UnsetEmailAddress ensures that no value is present for EmailAddress, not even an explicit nil
 ### GetExternalRoles
 
 `func (o *ApiUser) GetExternalRoles() []string`
@@ -97,7 +112,22 @@ and a boolean to check if the value has been set.
 
 SetFirstName sets FirstName field to given value.
 
+### HasFirstName
 
+`func (o *ApiUser) HasFirstName() bool`
+
+HasFirstName returns a boolean if a field has been set.
+
+### SetFirstNameNil
+
+`func (o *ApiUser) SetFirstNameNil(b bool)`
+
+ SetFirstNameNil sets the value for FirstName to be an explicit nil
+
+### UnsetFirstName
+`func (o *ApiUser) UnsetFirstName()`
+
+UnsetFirstName ensures that no value is present for FirstName, not even an explicit nil
 ### GetLastName
 
 `func (o *ApiUser) GetLastName() string`
@@ -117,7 +147,22 @@ and a boolean to check if the value has been set.
 
 SetLastName sets LastName field to given value.
 
+### HasLastName
 
+`func (o *ApiUser) HasLastName() bool`
+
+HasLastName returns a boolean if a field has been set.
+
+### SetLastNameNil
+
+`func (o *ApiUser) SetLastNameNil(b bool)`
+
+ SetLastNameNil sets the value for LastName to be an explicit nil
+
+### UnsetLastName
+`func (o *ApiUser) UnsetLastName()`
+
+UnsetLastName ensures that no value is present for LastName, not even an explicit nil
 ### GetReadOnly
 
 `func (o *ApiUser) GetReadOnly() bool`

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AlertEmail** | Pointer to **string** | e-mail for task notifications. | [optional] 
 **ConcurrentRun** | Pointer to **bool** | Indicates whether the task can run concurrently with other instances of the same type. | [optional] 
 **Enabled** | **bool** | Indicates if the task would be enabled. | 
+**FormFields** | Pointer to [**[]FormFieldInfo**](FormFieldInfo.md) | Metadata for each form field declared by the task descriptor, in the order the descriptor declares them. Populated on read responses; ignored on create/update. | [optional] 
 **Frequency** | [**FrequencyXO**](FrequencyXO.md) |  | 
 **Name** | **string** | The name of the task template. | 
 **NotificationCondition** | **string** | Condition required to notify a task execution. | 
@@ -100,6 +101,31 @@ and a boolean to check if the value has been set.
 
 SetEnabled sets Enabled field to given value.
 
+
+### GetFormFields
+
+`func (o *UpdateTaskTemplateXO) GetFormFields() []FormFieldInfo`
+
+GetFormFields returns the FormFields field if non-nil, zero value otherwise.
+
+### GetFormFieldsOk
+
+`func (o *UpdateTaskTemplateXO) GetFormFieldsOk() (*[]FormFieldInfo, bool)`
+
+GetFormFieldsOk returns a tuple with the FormFields field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFormFields
+
+`func (o *UpdateTaskTemplateXO) SetFormFields(v []FormFieldInfo)`
+
+SetFormFields sets FormFields field to given value.
+
+### HasFormFields
+
+`func (o *UpdateTaskTemplateXO) HasFormFields() bool`
+
+HasFormFields returns a boolean if a field has been set.
 
 ### GetFrequency
 

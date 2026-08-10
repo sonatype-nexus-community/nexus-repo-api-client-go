@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -83,7 +83,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -129,7 +129,7 @@ Other parameters are passed through a pointer to a apiListSecurityUserTokensRequ
 
 ## ListSecurityUserTokensTokens
 
-> ListSecurityUserTokensTokens(ctx).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+> ListSecurityUserTokensTokens200Response ListSecurityUserTokensTokens(ctx).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 
 List user tokens or look up a token owner by namecode
 
@@ -144,7 +144,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -157,11 +157,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens(context.Background()).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+	resp, r, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens(context.Background()).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityUserTokensTokens`: ListSecurityUserTokensTokens200Response
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens`: %v\n", resp)
 }
 ```
 
@@ -185,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ListSecurityUserTokensTokens200Response**](ListSecurityUserTokensTokens200Response.md)
 
 ### Authorization
 
@@ -216,7 +218,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

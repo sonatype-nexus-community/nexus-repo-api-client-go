@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ListDataStore
 
-> ListDataStore(ctx).Execute()
+> DataStoreApiXO ListDataStore(ctx).Execute()
 
 Get the data store
 
@@ -24,18 +24,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.DataStoreAPI.ListDataStore(context.Background()).Execute()
+	resp, r, err := apiClient.DataStoreAPI.ListDataStore(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `DataStoreAPI.ListDataStore``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListDataStore`: DataStoreApiXO
+	fmt.Fprintf(os.Stdout, "Response from `DataStoreAPI.ListDataStore`: %v\n", resp)
 }
 ```
 
@@ -50,7 +52,7 @@ Other parameters are passed through a pointer to a apiListDataStoreRequest struc
 
 ### Return type
 
- (empty response body)
+[**DataStoreApiXO**](DataStoreApiXO.md)
 
 ### Authorization
 
@@ -59,7 +61,7 @@ Other parameters are passed through a pointer to a apiListDataStoreRequest struc
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -81,7 +83,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

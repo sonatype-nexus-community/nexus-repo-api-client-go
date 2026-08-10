@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -83,7 +83,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -132,7 +132,7 @@ Name | Type | Description  | Notes
 
 ## ListSecurityAtlassianCrowd
 
-> ListSecurityAtlassianCrowd(ctx).Execute()
+> CrowdApiXO ListSecurityAtlassianCrowd(ctx).Execute()
 
 Retrieve Atlassian Crowd settings configured in Nexus Repository Manager
 
@@ -145,18 +145,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityAtlassianCrowd`: CrowdApiXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityAtlassianCrowdAPI.ListSecurityAtlassianCrowd`: %v\n", resp)
 }
 ```
 
@@ -171,7 +173,7 @@ Other parameters are passed through a pointer to a apiListSecurityAtlassianCrowd
 
 ### Return type
 
- (empty response body)
+[**CrowdApiXO**](CrowdApiXO.md)
 
 ### Authorization
 
@@ -180,7 +182,7 @@ Other parameters are passed through a pointer to a apiListSecurityAtlassianCrowd
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -189,7 +191,7 @@ Other parameters are passed through a pointer to a apiListSecurityAtlassianCrowd
 
 ## UpdateSecurityAtlassianCrowd
 
-> UpdateSecurityAtlassianCrowd(ctx).CrowdApiXO(crowdApiXO).Execute()
+> CrowdApiXO UpdateSecurityAtlassianCrowd(ctx).CrowdApiXO(crowdApiXO).Execute()
 
 Update Atlassian Crowd settings configured in Nexus Repository Manager
 
@@ -202,7 +204,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -210,11 +212,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd(context.Background()).CrowdApiXO(crowdApiXO).Execute()
+	resp, r, err := apiClient.SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd(context.Background()).CrowdApiXO(crowdApiXO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `UpdateSecurityAtlassianCrowd`: CrowdApiXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityAtlassianCrowdAPI.UpdateSecurityAtlassianCrowd`: %v\n", resp)
 }
 ```
 
@@ -233,7 +237,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**CrowdApiXO**](CrowdApiXO.md)
 
 ### Authorization
 
@@ -242,7 +246,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

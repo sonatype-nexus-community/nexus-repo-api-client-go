@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ListSecurityUserSources
 
-> ListSecurityUserSources(ctx).Execute()
+> []ApiUserSource ListSecurityUserSources(ctx).Execute()
 
 Retrieve a list of the available user sources.
 
@@ -23,18 +23,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementAPI.ListSecurityUserSources(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementAPI.ListSecurityUserSources(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementAPI.ListSecurityUserSources``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityUserSources`: []ApiUserSource
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementAPI.ListSecurityUserSources`: %v\n", resp)
 }
 ```
 
@@ -49,7 +51,7 @@ Other parameters are passed through a pointer to a apiListSecurityUserSourcesReq
 
 ### Return type
 
- (empty response body)
+[**[]ApiUserSource**](ApiUserSource.md)
 
 ### Authorization
 
@@ -58,7 +60,7 @@ Other parameters are passed through a pointer to a apiListSecurityUserSourcesReq
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

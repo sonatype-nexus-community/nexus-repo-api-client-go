@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -78,7 +78,7 @@ Name | Type | Description  | Notes
 
 ## GetAssets
 
-> GetAssets(ctx, id).Execute()
+> AssetXO GetAssets(ctx, id).Execute()
 
 Get a single asset
 
@@ -91,7 +91,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -99,11 +99,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.AssetsAPI.GetAssets(context.Background(), id).Execute()
+	resp, r, err := apiClient.AssetsAPI.GetAssets(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.GetAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetAssets`: AssetXO
+	fmt.Fprintf(os.Stdout, "Response from `AssetsAPI.GetAssets`: %v\n", resp)
 }
 ```
 
@@ -126,7 +128,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**AssetXO**](AssetXO.md)
 
 ### Authorization
 
@@ -135,7 +137,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -144,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## ListAssets
 
-> ListAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+> Page ListAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 List assets
 
@@ -157,7 +159,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -166,11 +168,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.AssetsAPI.ListAssets(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
+	resp, r, err := apiClient.AssetsAPI.ListAssets(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.ListAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListAssets`: Page
+	fmt.Fprintf(os.Stdout, "Response from `AssetsAPI.ListAssets`: %v\n", resp)
 }
 ```
 
@@ -190,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Page**](Page.md)
 
 ### Authorization
 
@@ -199,7 +203,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

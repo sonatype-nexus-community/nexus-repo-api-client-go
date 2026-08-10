@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -246,7 +246,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -299,7 +299,7 @@ Name | Type | Description  | Notes
 
 ## GetComponents
 
-> GetComponents(ctx, id).Execute()
+> ComponentXO GetComponents(ctx, id).Execute()
 
 Get a single component
 
@@ -312,7 +312,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -320,11 +320,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.GetComponents(context.Background(), id).Execute()
+	resp, r, err := apiClient.ComponentsAPI.GetComponents(context.Background(), id).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.GetComponents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetComponents`: ComponentXO
+	fmt.Fprintf(os.Stdout, "Response from `ComponentsAPI.GetComponents`: %v\n", resp)
 }
 ```
 
@@ -347,7 +349,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ComponentXO**](ComponentXO.md)
 
 ### Authorization
 
@@ -356,7 +358,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -365,7 +367,7 @@ Name | Type | Description  | Notes
 
 ## ListComponents
 
-> ListComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+> Page ListComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 List components
 
@@ -378,7 +380,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -387,11 +389,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ComponentsAPI.ListComponents(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
+	resp, r, err := apiClient.ComponentsAPI.ListComponents(context.Background()).Repository(repository).ContinuationToken(continuationToken).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.ListComponents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListComponents`: Page
+	fmt.Fprintf(os.Stdout, "Response from `ComponentsAPI.ListComponents`: %v\n", resp)
 }
 ```
 
@@ -411,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Page**](Page.md)
 
 ### Authorization
 
@@ -420,7 +424,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

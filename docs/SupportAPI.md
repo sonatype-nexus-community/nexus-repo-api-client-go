@@ -24,7 +24,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ## CreateSupportSupportzippath
 
-> CreateSupportSupportzippath(ctx).SupportZipGeneratorRequest(supportZipGeneratorRequest).Execute()
+> SupportZipXO CreateSupportSupportzippath(ctx).SupportZipGeneratorRequest(supportZipGeneratorRequest).Execute()
 
 Creates a support zip and returns the path
 
@@ -86,7 +86,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -94,11 +94,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SupportAPI.CreateSupportSupportzippath(context.Background()).SupportZipGeneratorRequest(supportZipGeneratorRequest).Execute()
+	resp, r, err := apiClient.SupportAPI.CreateSupportSupportzippath(context.Background()).SupportZipGeneratorRequest(supportZipGeneratorRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SupportAPI.CreateSupportSupportzippath``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateSupportSupportzippath`: SupportZipXO
+	fmt.Fprintf(os.Stdout, "Response from `SupportAPI.CreateSupportSupportzippath`: %v\n", resp)
 }
 ```
 
@@ -117,7 +119,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SupportZipXO**](SupportZipXO.md)
 
 ### Authorization
 
@@ -126,7 +128,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

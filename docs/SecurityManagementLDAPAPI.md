@@ -33,7 +33,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -95,7 +95,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -157,7 +157,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -208,7 +208,7 @@ Name | Type | Description  | Notes
 
 ## CreateSecurityLdapVerifyLogin
 
-> CreateSecurityLdapVerifyLogin(ctx).LdapVerifyLoginXo(ldapVerifyLoginXo).Execute()
+> CreateSecurityLdapVerifyLogin(ctx).LdapVerifyLoginXo(ldapVerifyLoginXo).ExistingServerName(existingServerName).Execute()
 
 
 
@@ -221,15 +221,16 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 	ldapVerifyLoginXo := *sonatyperepo.NewLdapVerifyLoginXo("Base64Password_example", "Base64Username_example", *sonatyperepo.NewCreateLdapServerXo("AuthScheme_example", int32(123), int32(1), "Host_example", int32(123), "Name_example", int32(636), "Protocol_example", "dc=example,dc=com", "mail", "uid", "inetOrgPerson", "cn")) // LdapVerifyLoginXo | 
+	existingServerName := "existingServerName_example" // string |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin(context.Background()).LdapVerifyLoginXo(ldapVerifyLoginXo).Execute()
+	r, err := apiClient.SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin(context.Background()).LdapVerifyLoginXo(ldapVerifyLoginXo).ExistingServerName(existingServerName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementLDAPAPI.CreateSecurityLdapVerifyLogin``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -249,6 +250,7 @@ Other parameters are passed through a pointer to a apiCreateSecurityLdapVerifyLo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ldapVerifyLoginXo** | [**LdapVerifyLoginXo**](LdapVerifyLoginXo.md) |  | 
+ **existingServerName** | **string** |  | 
 
 ### Return type
 
@@ -283,7 +285,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -349,7 +351,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -415,7 +417,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -472,7 +474,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -540,7 +542,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -599,7 +601,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -658,7 +660,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

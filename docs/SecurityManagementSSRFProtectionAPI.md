@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 ## ListSecuritySsrfProtection
 
-> ListSecuritySsrfProtection(ctx).Execute()
+> SsrfProtectionConfigurationXO ListSecuritySsrfProtection(ctx).Execute()
 
 Get SSRF protection settings
 
@@ -24,18 +24,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySsrfProtection`: SsrfProtectionConfigurationXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSSRFProtectionAPI.ListSecuritySsrfProtection`: %v\n", resp)
 }
 ```
 
@@ -50,7 +52,7 @@ Other parameters are passed through a pointer to a apiListSecuritySsrfProtection
 
 ### Return type
 
- (empty response body)
+[**SsrfProtectionConfigurationXO**](SsrfProtectionConfigurationXO.md)
 
 ### Authorization
 
@@ -59,7 +61,7 @@ Other parameters are passed through a pointer to a apiListSecuritySsrfProtection
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -68,7 +70,7 @@ Other parameters are passed through a pointer to a apiListSecuritySsrfProtection
 
 ## UpdateSecuritySsrfProtection
 
-> UpdateSecuritySsrfProtection(ctx).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
+> SsrfProtectionConfigurationXO UpdateSecuritySsrfProtection(ctx).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
 
 Update SSRF protection settings
 
@@ -81,7 +83,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -89,11 +91,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection(context.Background()).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
+	resp, r, err := apiClient.SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection(context.Background()).SsrfProtectionConfigurationXO(ssrfProtectionConfigurationXO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `UpdateSecuritySsrfProtection`: SsrfProtectionConfigurationXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSSRFProtectionAPI.UpdateSecuritySsrfProtection`: %v\n", resp)
 }
 ```
 
@@ -112,7 +116,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SsrfProtectionConfigurationXO**](SsrfProtectionConfigurationXO.md)
 
 ### Authorization
 
@@ -121,7 +125,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

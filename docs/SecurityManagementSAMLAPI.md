@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -71,7 +71,7 @@ Other parameters are passed through a pointer to a apiDeleteSecuritySamlRequest 
 
 ## ListSecuritySaml
 
-> ListSecuritySaml(ctx).Execute()
+> SamlConfigurationXO ListSecuritySaml(ctx).Execute()
 
 Get SAML configuration
 
@@ -84,18 +84,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySaml(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySaml(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLAPI.ListSecuritySaml``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySaml`: SamlConfigurationXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSAMLAPI.ListSecuritySaml`: %v\n", resp)
 }
 ```
 
@@ -110,7 +112,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlRequest st
 
 ### Return type
 
- (empty response body)
+[**SamlConfigurationXO**](SamlConfigurationXO.md)
 
 ### Authorization
 
@@ -119,7 +121,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -141,7 +143,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -198,11 +200,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	type_ := "type__example" // string | Type of certificate to return: 'signing' or 'decryption'. Defaults to 'signing' if not provided. (optional)
+	type_ := "type__example" // string | Type of certificate to return: SIGNING or DECRYPTION. Defaults to SIGNING if not provided. (optional) (default to "SIGNING")
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -225,7 +227,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlPemRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type_** | **string** | Type of certificate to return: &#39;signing&#39; or &#39;decryption&#39;. Defaults to &#39;signing&#39; if not provided. | 
+ **type_** | **string** | Type of certificate to return: SIGNING or DECRYPTION. Defaults to SIGNING if not provided. | [default to &quot;SIGNING&quot;]
 
 ### Return type
 
@@ -260,7 +262,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

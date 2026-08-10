@@ -4,22 +4,19 @@ All URIs are relative to */service/rest*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CreateCleanupRun**](CleanupPoliciesAPI.md#CreateCleanupRun) | **Post** /v1/cleanup/run | Run cleanup on a repository (dry run or async execution)
-[**CreateInternalCleanupPolicies**](CleanupPoliciesAPI.md#CreateInternalCleanupPolicies) | **Post** /internal/cleanup-policies | Create a cleanup policy
-[**DeleteInternalCleanupPolicies**](CleanupPoliciesAPI.md#DeleteInternalCleanupPolicies) | **Delete** /internal/cleanup-policies/{name} | 
-[**GetInternalCleanupPolicies**](CleanupPoliciesAPI.md#GetInternalCleanupPolicies) | **Get** /internal/cleanup-policies/{name} | 
-[**ListInternalCleanupPolicies**](CleanupPoliciesAPI.md#ListInternalCleanupPolicies) | **Get** /internal/cleanup-policies | List cleanup policies
-[**UpdateInternalCleanupPolicies**](CleanupPoliciesAPI.md#UpdateInternalCleanupPolicies) | **Put** /internal/cleanup-policies/{name} | 
+[**CreateCleanupPolicies**](CleanupPoliciesAPI.md#CreateCleanupPolicies) | **Post** /v1/cleanup-policies | Create a new policy
+[**DeleteCleanupPolicies**](CleanupPoliciesAPI.md#DeleteCleanupPolicies) | **Delete** /v1/cleanup-policies/{name} | Delete cleanup policy
+[**GetCleanupPolicies**](CleanupPoliciesAPI.md#GetCleanupPolicies) | **Get** /v1/cleanup-policies/{name} | Get a policy by name
+[**ListCleanupPolicies**](CleanupPoliciesAPI.md#ListCleanupPolicies) | **Get** /v1/cleanup-policies | Get a list of existing policies
+[**UpdateCleanupPolicies**](CleanupPoliciesAPI.md#UpdateCleanupPolicies) | **Put** /v1/cleanup-policies/{policyName} | Update existing policy
 
 
 
-## CreateCleanupRun
+## CreateCleanupPolicies
 
-> CleanupExecutionStatusXO CreateCleanupRun(ctx).CleanupExecutionRequestXO(cleanupExecutionRequestXO).Execute()
+> CreateCleanupPolicies(ctx).CleanupPolicyResourceXO(cleanupPolicyResourceXO).Execute()
 
-Run cleanup on a repository (dry run or async execution)
-
-
+Create a new policy
 
 ### Example
 
@@ -30,21 +27,19 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	cleanupExecutionRequestXO := *sonatyperepo.NewCleanupExecutionRequestXO("Repository_example") // CleanupExecutionRequestXO |  (optional)
+	cleanupPolicyResourceXO := *sonatyperepo.NewCleanupPolicyResourceXO("Format_example", "Name_example") // CleanupPolicyResourceXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CleanupPoliciesAPI.CreateCleanupRun(context.Background()).CleanupExecutionRequestXO(cleanupExecutionRequestXO).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.CreateCleanupPolicies(context.Background()).CleanupPolicyResourceXO(cleanupPolicyResourceXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.CreateCleanupRun``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.CreateCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `CreateCleanupRun`: CleanupExecutionStatusXO
-	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.CreateCleanupRun`: %v\n", resp)
 }
 ```
 
@@ -54,16 +49,16 @@ func main() {
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiCreateCleanupRunRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiCreateCleanupPoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cleanupExecutionRequestXO** | [**CleanupExecutionRequestXO**](CleanupExecutionRequestXO.md) |  | 
+ **cleanupPolicyResourceXO** | [**CleanupPolicyResourceXO**](CleanupPolicyResourceXO.md) |  | 
 
 ### Return type
 
-[**CleanupExecutionStatusXO**](CleanupExecutionStatusXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -72,20 +67,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## CreateInternalCleanupPolicies
+## DeleteCleanupPolicies
 
-> CleanupPolicyXO CreateInternalCleanupPolicies(ctx).CleanupPolicyXO(cleanupPolicyXO).Execute()
+> DeleteCleanupPolicies(ctx, name).Execute()
 
-Create a cleanup policy
-
-
+Delete cleanup policy
 
 ### Example
 
@@ -96,71 +89,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
-)
-
-func main() {
-	cleanupPolicyXO := *sonatyperepo.NewCleanupPolicyXO("Format_example", "Name_example") // CleanupPolicyXO |  (optional)
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CleanupPoliciesAPI.CreateInternalCleanupPolicies(context.Background()).CleanupPolicyXO(cleanupPolicyXO).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.CreateInternalCleanupPolicies``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-	// response from `CreateInternalCleanupPolicies`: CleanupPolicyXO
-	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.CreateInternalCleanupPolicies`: %v\n", resp)
-}
-```
-
-### Path Parameters
-
-
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiCreateInternalCleanupPoliciesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **cleanupPolicyXO** | [**CleanupPolicyXO**](CleanupPolicyXO.md) |  | 
-
-### Return type
-
-[**CleanupPolicyXO**](CleanupPolicyXO.md)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
-- **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## DeleteInternalCleanupPolicies
-
-> DeleteInternalCleanupPolicies(ctx, name).Execute()
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -168,9 +97,9 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CleanupPoliciesAPI.DeleteInternalCleanupPolicies(context.Background(), name).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.DeleteCleanupPolicies(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.DeleteInternalCleanupPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.DeleteCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
 }
@@ -186,7 +115,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiDeleteInternalCleanupPoliciesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiDeleteCleanupPoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -204,18 +133,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## GetInternalCleanupPolicies
+## GetCleanupPolicies
 
-> CleanupPolicyXO GetInternalCleanupPolicies(ctx, name).Execute()
+> GetCleanupPolicies(ctx, name).Execute()
 
-
+Get a policy by name
 
 ### Example
 
@@ -226,7 +155,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -234,13 +163,11 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CleanupPoliciesAPI.GetInternalCleanupPolicies(context.Background(), name).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicies(context.Background(), name).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.GetInternalCleanupPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.GetCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetInternalCleanupPolicies`: CleanupPolicyXO
-	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.GetInternalCleanupPolicies`: %v\n", resp)
 }
 ```
 
@@ -254,7 +181,7 @@ Name | Type | Description  | Notes
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGetInternalCleanupPoliciesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiGetCleanupPoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -263,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**CleanupPolicyXO**](CleanupPolicyXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -272,20 +199,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## ListInternalCleanupPolicies
+## ListCleanupPolicies
 
-> []CleanupPolicyXO ListInternalCleanupPolicies(ctx).Format(format).Execute()
+> ListCleanupPolicies(ctx).Execute()
 
-List cleanup policies
-
-
+Get a list of existing policies
 
 ### Example
 
@@ -296,40 +221,33 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	format := "format_example" // string |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CleanupPoliciesAPI.ListInternalCleanupPolicies(context.Background()).Format(format).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.ListCleanupPolicies(context.Background()).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.ListInternalCleanupPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.ListCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListInternalCleanupPolicies`: []CleanupPolicyXO
-	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.ListInternalCleanupPolicies`: %v\n", resp)
 }
 ```
 
 ### Path Parameters
 
-
+This endpoint does not need any parameter.
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiListInternalCleanupPoliciesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiListCleanupPoliciesRequest struct via the builder pattern
 
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **format** | **string** |  | 
 
 ### Return type
 
-[**[]CleanupPolicyXO**](CleanupPolicyXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -338,18 +256,18 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
 [[Back to README]](../README.md)
 
 
-## UpdateInternalCleanupPolicies
+## UpdateCleanupPolicies
 
-> CleanupPolicyXO UpdateInternalCleanupPolicies(ctx, name).CleanupPolicyXO(cleanupPolicyXO).Execute()
+> UpdateCleanupPolicies(ctx, policyName).CleanupPolicyResourceXO(cleanupPolicyResourceXO).Execute()
 
-
+Update existing policy
 
 ### Example
 
@@ -360,22 +278,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	name := "name_example" // string | 
-	cleanupPolicyXO := *sonatyperepo.NewCleanupPolicyXO("Format_example", "Name_example") // CleanupPolicyXO | 
+	policyName := "policyName_example" // string | 
+	cleanupPolicyResourceXO := *sonatyperepo.NewCleanupPolicyResourceXO("Format_example", "Name_example") // CleanupPolicyResourceXO | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.CleanupPoliciesAPI.UpdateInternalCleanupPolicies(context.Background(), name).CleanupPolicyXO(cleanupPolicyXO).Execute()
+	r, err := apiClient.CleanupPoliciesAPI.UpdateCleanupPolicies(context.Background(), policyName).CleanupPolicyResourceXO(cleanupPolicyResourceXO).Execute()
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.UpdateInternalCleanupPolicies``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.UpdateCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `UpdateInternalCleanupPolicies`: CleanupPolicyXO
-	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.UpdateInternalCleanupPolicies`: %v\n", resp)
 }
 ```
 
@@ -385,21 +301,21 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**name** | **string** |  | 
+**policyName** | **string** |  | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiUpdateInternalCleanupPoliciesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiUpdateCleanupPoliciesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **cleanupPolicyXO** | [**CleanupPolicyXO**](CleanupPolicyXO.md) |  | 
+ **cleanupPolicyResourceXO** | [**CleanupPolicyResourceXO**](CleanupPolicyResourceXO.md) |  | 
 
 ### Return type
 
-[**CleanupPolicyXO**](CleanupPolicyXO.md)
+ (empty response body)
 
 ### Authorization
 
@@ -408,7 +324,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

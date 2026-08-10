@@ -26,7 +26,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -90,7 +90,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -134,7 +134,7 @@ Other parameters are passed through a pointer to a apiDeleteEmailRequest struct 
 
 ## ListEmail
 
-> ListEmail(ctx).Execute()
+> ApiEmailConfiguration ListEmail(ctx).Execute()
 
 Retrieve the current email configuration
 
@@ -147,18 +147,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.EmailAPI.ListEmail(context.Background()).Execute()
+	resp, r, err := apiClient.EmailAPI.ListEmail(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `EmailAPI.ListEmail``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListEmail`: ApiEmailConfiguration
+	fmt.Fprintf(os.Stdout, "Response from `EmailAPI.ListEmail`: %v\n", resp)
 }
 ```
 
@@ -173,7 +175,7 @@ Other parameters are passed through a pointer to a apiListEmailRequest struct vi
 
 ### Return type
 
- (empty response body)
+[**ApiEmailConfiguration**](ApiEmailConfiguration.md)
 
 ### Authorization
 
@@ -182,7 +184,7 @@ Other parameters are passed through a pointer to a apiListEmailRequest struct vi
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -204,7 +206,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

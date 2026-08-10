@@ -25,7 +25,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -69,7 +69,7 @@ Other parameters are passed through a pointer to a apiDeleteSystemNodeRequest st
 
 ## ListSystemInformation
 
-> ListSystemInformation(ctx).Execute()
+> map[string]interface{} ListSystemInformation(ctx).Execute()
 
 Get information about all nodes
 
@@ -82,18 +82,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SystemNodesAPI.ListSystemInformation(context.Background()).Execute()
+	resp, r, err := apiClient.SystemNodesAPI.ListSystemInformation(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemNodesAPI.ListSystemInformation``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSystemInformation`: map[string]interface{}
+	fmt.Fprintf(os.Stdout, "Response from `SystemNodesAPI.ListSystemInformation`: %v\n", resp)
 }
 ```
 
@@ -108,7 +110,7 @@ Other parameters are passed through a pointer to a apiListSystemInformationReque
 
 ### Return type
 
- (empty response body)
+**map[string]interface{}**
 
 ### Authorization
 
@@ -117,7 +119,7 @@ Other parameters are passed through a pointer to a apiListSystemInformationReque
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -126,7 +128,7 @@ Other parameters are passed through a pointer to a apiListSystemInformationReque
 
 ## ListSystemNode
 
-> ListSystemNode(ctx).Execute()
+> NodeInformation ListSystemNode(ctx).Execute()
 
 Get information about this node
 
@@ -139,18 +141,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SystemNodesAPI.ListSystemNode(context.Background()).Execute()
+	resp, r, err := apiClient.SystemNodesAPI.ListSystemNode(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SystemNodesAPI.ListSystemNode``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSystemNode`: NodeInformation
+	fmt.Fprintf(os.Stdout, "Response from `SystemNodesAPI.ListSystemNode`: %v\n", resp)
 }
 ```
 
@@ -165,7 +169,7 @@ Other parameters are passed through a pointer to a apiListSystemNodeRequest stru
 
 ### Return type
 
- (empty response body)
+[**NodeInformation**](NodeInformation.md)
 
 ### Authorization
 
@@ -174,7 +178,7 @@ Other parameters are passed through a pointer to a apiListSystemNodeRequest stru
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

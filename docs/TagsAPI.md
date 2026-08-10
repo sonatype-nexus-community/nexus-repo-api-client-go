@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 ## CreateTags
 
-> CreateTags(ctx).TagXO(tagXO).Execute()
+> TagXO CreateTags(ctx).TagXO(tagXO).Execute()
 
 Create a tag
 
@@ -29,7 +29,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -37,11 +37,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.CreateTags(context.Background()).TagXO(tagXO).Execute()
+	resp, r, err := apiClient.TagsAPI.CreateTags(context.Background()).TagXO(tagXO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.CreateTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateTags`: TagXO
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.CreateTags`: %v\n", resp)
 }
 ```
 
@@ -60,7 +62,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**TagXO**](TagXO.md)
 
 ### Authorization
 
@@ -69,7 +71,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -78,7 +80,7 @@ Name | Type | Description  | Notes
 
 ## CreateTagsAssociate
 
-> CreateTagsAssociate(ctx, tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> CreateTagsAssociate(ctx, tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RawName(rawName).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Associate components with a tag
 
@@ -91,7 +93,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -161,6 +163,7 @@ func main() {
 	pypiDescription := "pypiDescription_example" // string | PyPI description (optional)
 	pypiKeywords := "pypiKeywords_example" // string | PyPI keywords (optional)
 	pypiSummary := "pypiSummary_example" // string | PyPI summary (optional)
+	rawName := "rawName_example" // string | Raw asset filename (basename) (optional)
 	rubygemsDescription := "rubygemsDescription_example" // string | RubyGems description (optional)
 	rubygemsPlatform := "rubygemsPlatform_example" // string | RubyGems platform (optional)
 	rubygemsSummary := "rubygemsSummary_example" // string | RubyGems summary (optional)
@@ -175,7 +178,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.CreateTagsAssociate(context.Background(), tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	r, err := apiClient.TagsAPI.CreateTagsAssociate(context.Background(), tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RawName(rawName).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.CreateTagsAssociate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -264,6 +267,7 @@ Name | Type | Description  | Notes
  **pypiDescription** | **string** | PyPI description | 
  **pypiKeywords** | **string** | PyPI keywords | 
  **pypiSummary** | **string** | PyPI summary | 
+ **rawName** | **string** | Raw asset filename (basename) | 
  **rubygemsDescription** | **string** | RubyGems description | 
  **rubygemsPlatform** | **string** | RubyGems platform | 
  **rubygemsSummary** | **string** | RubyGems summary | 
@@ -309,7 +313,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -362,7 +366,7 @@ Name | Type | Description  | Notes
 
 ## DeleteTagsAssociate
 
-> DeleteTagsAssociate(ctx, tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+> DeleteTagsAssociate(ctx, tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RawName(rawName).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 
 Disassociate components from a tag
 
@@ -375,7 +379,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -445,6 +449,7 @@ func main() {
 	pypiDescription := "pypiDescription_example" // string | PyPI description (optional)
 	pypiKeywords := "pypiKeywords_example" // string | PyPI keywords (optional)
 	pypiSummary := "pypiSummary_example" // string | PyPI summary (optional)
+	rawName := "rawName_example" // string | Raw asset filename (basename) (optional)
 	rubygemsDescription := "rubygemsDescription_example" // string | RubyGems description (optional)
 	rubygemsPlatform := "rubygemsPlatform_example" // string | RubyGems platform (optional)
 	rubygemsSummary := "rubygemsSummary_example" // string | RubyGems summary (optional)
@@ -459,7 +464,7 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.DeleteTagsAssociate(context.Background(), tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
+	r, err := apiClient.TagsAPI.DeleteTagsAssociate(context.Background(), tagName).Wait(wait).Q(q).Repository(repository).RepositoryName(repositoryName).Format(format).Group(group).Name(name).Version(version).Prerelease(prerelease).LastUpdated(lastUpdated).LastBlobUpdated(lastBlobUpdated).Md5(md5).Sha1(sha1).Sha256(sha256).Sha512(sha512).AnsibleGalaxyNamespace(ansibleGalaxyNamespace).AnsibleGalaxyName(ansibleGalaxyName).AnsibleGalaxyVersion(ansibleGalaxyVersion).ComposerVendor(composerVendor).ComposerPackage(composerPackage).ComposerVersion(composerVersion).ComposerDescription(composerDescription).ComposerKeywords(composerKeywords).ConanBaseVersion(conanBaseVersion).ConanChannel(conanChannel).ConanRevision(conanRevision).ConanPackageId(conanPackageId).ConanPackageRevision(conanPackageRevision).DockerImageName(dockerImageName).DockerImageTag(dockerImageTag).DockerLayerId(dockerLayerId).DockerContentDigest(dockerContentDigest).DockerOs(dockerOs).DockerArchitecture(dockerArchitecture).DockerLabels(dockerLabels).DockerAuthor(dockerAuthor).MavenGroupId(mavenGroupId).MavenArtifactId(mavenArtifactId).MavenBaseVersion(mavenBaseVersion).MavenExtension(mavenExtension).MavenClassifier(mavenClassifier).Gavec(gavec).NpmScope(npmScope).NpmAuthor(npmAuthor).NpmDescription(npmDescription).NpmKeywords(npmKeywords).NpmLicense(npmLicense).NpmTaggedIs(npmTaggedIs).NpmTaggedNot(npmTaggedNot).NugetId(nugetId).NugetTags(nugetTags).NugetTitle(nugetTitle).NugetAuthors(nugetAuthors).NugetDescription(nugetDescription).NugetSummary(nugetSummary).NugetIsPrerelease(nugetIsPrerelease).OciImageName(ociImageName).OciImageTag(ociImageTag).OciContentDigest(ociContentDigest).P2PluginName(p2PluginName).PubAssetKind(pubAssetKind).PypiClassifiers(pypiClassifiers).PypiDescription(pypiDescription).PypiKeywords(pypiKeywords).PypiSummary(pypiSummary).RawName(rawName).RubygemsDescription(rubygemsDescription).RubygemsPlatform(rubygemsPlatform).RubygemsSummary(rubygemsSummary).SwiftScope(swiftScope).SwiftAssetKind(swiftAssetKind).Tag(tag).TerraformProvider(terraformProvider).TerraformNamespace(terraformNamespace).TerraformName(terraformName).YumArchitecture(yumArchitecture).YumName(yumName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.DeleteTagsAssociate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -548,6 +553,7 @@ Name | Type | Description  | Notes
  **pypiDescription** | **string** | PyPI description | 
  **pypiKeywords** | **string** | PyPI keywords | 
  **pypiSummary** | **string** | PyPI summary | 
+ **rawName** | **string** | Raw asset filename (basename) | 
  **rubygemsDescription** | **string** | RubyGems description | 
  **rubygemsPlatform** | **string** | RubyGems platform | 
  **rubygemsSummary** | **string** | RubyGems summary | 
@@ -580,7 +586,7 @@ Name | Type | Description  | Notes
 
 ## GetTags
 
-> GetTags(ctx, name).Execute()
+> TagXO GetTags(ctx, name).Execute()
 
 Get a tag
 
@@ -593,7 +599,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -601,11 +607,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.GetTags(context.Background(), name).Execute()
+	resp, r, err := apiClient.TagsAPI.GetTags(context.Background(), name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.GetTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetTags`: TagXO
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.GetTags`: %v\n", resp)
 }
 ```
 
@@ -628,7 +636,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**TagXO**](TagXO.md)
 
 ### Authorization
 
@@ -637,7 +645,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -659,7 +667,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -710,7 +718,7 @@ Name | Type | Description  | Notes
 
 ## UpdateTags
 
-> UpdateTags(ctx, name).BaseTagXO(baseTagXO).Execute()
+> TagXO UpdateTags(ctx, name).BaseTagXO(baseTagXO).Execute()
 
 Update a tags attributes
 
@@ -723,7 +731,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -732,11 +740,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.TagsAPI.UpdateTags(context.Background(), name).BaseTagXO(baseTagXO).Execute()
+	resp, r, err := apiClient.TagsAPI.UpdateTags(context.Background(), name).BaseTagXO(baseTagXO).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `TagsAPI.UpdateTags``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `UpdateTags`: TagXO
+	fmt.Fprintf(os.Stdout, "Response from `TagsAPI.UpdateTags`: %v\n", resp)
 }
 ```
 
@@ -760,7 +770,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**TagXO**](TagXO.md)
 
 ### Authorization
 
@@ -769,7 +779,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

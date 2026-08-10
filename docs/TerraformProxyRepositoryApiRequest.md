@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
-**HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
+**HttpClient** | Pointer to [**HttpClientAttributesWithPreemptiveAuth**](HttpClientAttributesWithPreemptiveAuth.md) |  | [optional] 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewTerraformProxyRepositoryApiRequest
 
-`func NewTerraformProxyRepositoryApiRequest(httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *TerraformProxyRepositoryApiRequest`
+`func NewTerraformProxyRepositoryApiRequest(name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *TerraformProxyRepositoryApiRequest`
 
 NewTerraformProxyRepositoryApiRequest instantiates a new TerraformProxyRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -87,23 +87,28 @@ HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
-`func (o *TerraformProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributes`
+`func (o *TerraformProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributesWithPreemptiveAuth`
 
 GetHttpClient returns the HttpClient field if non-nil, zero value otherwise.
 
 ### GetHttpClientOk
 
-`func (o *TerraformProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributes, bool)`
+`func (o *TerraformProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributesWithPreemptiveAuth, bool)`
 
 GetHttpClientOk returns a tuple with the HttpClient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpClient
 
-`func (o *TerraformProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributes)`
+`func (o *TerraformProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributesWithPreemptiveAuth)`
 
 SetHttpClient sets HttpClient field to given value.
 
+### HasHttpClient
+
+`func (o *TerraformProxyRepositoryApiRequest) HasHttpClient() bool`
+
+HasHttpClient returns a boolean if a field has been set.
 
 ### GetName
 

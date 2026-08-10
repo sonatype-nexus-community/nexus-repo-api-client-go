@@ -18,7 +18,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityUsers
 
-> CreateSecurityUsers(ctx).ApiCreateUser(apiCreateUser).Execute()
+> ApiUser CreateSecurityUsers(ctx).ApiCreateUser(apiCreateUser).Execute()
 
 Create a new user in the default source.
 
@@ -31,7 +31,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -39,11 +39,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.CreateSecurityUsers(context.Background()).ApiCreateUser(apiCreateUser).Execute()
+	resp, r, err := apiClient.SecurityManagementUsersAPI.CreateSecurityUsers(context.Background()).ApiCreateUser(apiCreateUser).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.CreateSecurityUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateSecurityUsers`: ApiUser
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.CreateSecurityUsers`: %v\n", resp)
 }
 ```
 
@@ -62,7 +64,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ApiUser**](ApiUser.md)
 
 ### Authorization
 
@@ -71,7 +73,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -95,7 +97,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -166,7 +168,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -236,7 +238,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -307,7 +309,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -378,7 +380,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -436,7 +438,7 @@ Name | Type | Description  | Notes
 
 ## ListSecurityUsers
 
-> ListSecurityUsers(ctx).UserId(userId).Source(source).Execute()
+> []ApiUser ListSecurityUsers(ctx).UserId(userId).Source(source).Execute()
 
 Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
 
@@ -449,7 +451,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -458,11 +460,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.ListSecurityUsers(context.Background()).UserId(userId).Source(source).Execute()
+	resp, r, err := apiClient.SecurityManagementUsersAPI.ListSecurityUsers(context.Background()).UserId(userId).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.ListSecurityUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityUsers`: []ApiUser
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementUsersAPI.ListSecurityUsers`: %v\n", resp)
 }
 ```
 
@@ -482,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]ApiUser**](ApiUser.md)
 
 ### Authorization
 
@@ -491,7 +495,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -513,12 +517,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 	userId := "userId_example" // string | The userid the request should apply to.
-	apiUser := *sonatyperepo.NewApiUser("EmailAddress_example", "FirstName_example", "LastName_example", "Source_example", "Status_example", "UserId_example") // ApiUser | A representation of the user to update.
+	apiUser := *sonatyperepo.NewApiUser("Source_example", "Status_example", "UserId_example") // ApiUser | A representation of the user to update.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -581,7 +585,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

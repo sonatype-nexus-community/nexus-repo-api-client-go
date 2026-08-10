@@ -28,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 
 ## CreateScriptRun
 
-> CreateScriptRun(ctx, name).Body(body).Execute()
+> ScriptResultXO CreateScriptRun(ctx, name).Body(body).Execute()
 
 Run stored script by name
 
@@ -90,7 +90,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -99,11 +99,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ScriptAPI.CreateScriptRun(context.Background(), name).Body(body).Execute()
+	resp, r, err := apiClient.ScriptAPI.CreateScriptRun(context.Background(), name).Body(body).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.CreateScriptRun``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateScriptRun`: ScriptResultXO
+	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.CreateScriptRun`: %v\n", resp)
 }
 ```
 
@@ -127,7 +129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ScriptResultXO**](ScriptResultXO.md)
 
 ### Authorization
 
@@ -136,7 +138,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, text/plain
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -158,7 +160,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -211,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## GetScript
 
-> GetScript(ctx, name).Execute()
+> ScriptXO GetScript(ctx, name).Execute()
 
 Read stored script by name
 
@@ -224,7 +226,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -232,11 +234,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ScriptAPI.GetScript(context.Background(), name).Execute()
+	resp, r, err := apiClient.ScriptAPI.GetScript(context.Background(), name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ScriptAPI.GetScript``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetScript`: ScriptXO
+	fmt.Fprintf(os.Stdout, "Response from `ScriptAPI.GetScript`: %v\n", resp)
 }
 ```
 
@@ -259,7 +263,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ScriptXO**](ScriptXO.md)
 
 ### Authorization
 
@@ -268,7 +272,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -290,7 +294,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -349,7 +353,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -89,7 +89,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## GetRoutingRules
 
-> GetRoutingRules(ctx, name).Execute()
+> RoutingRuleXO GetRoutingRules(ctx, name).Execute()
 
 Get a single routing rule
 
@@ -155,7 +155,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -163,11 +163,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RoutingRulesAPI.GetRoutingRules(context.Background(), name).Execute()
+	resp, r, err := apiClient.RoutingRulesAPI.GetRoutingRules(context.Background(), name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.GetRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetRoutingRules`: RoutingRuleXO
+	fmt.Fprintf(os.Stdout, "Response from `RoutingRulesAPI.GetRoutingRules`: %v\n", resp)
 }
 ```
 
@@ -190,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**RoutingRuleXO**](RoutingRuleXO.md)
 
 ### Authorization
 
@@ -199,7 +201,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -208,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## ListRoutingRules
 
-> ListRoutingRules(ctx).Execute()
+> []RoutingRuleXO ListRoutingRules(ctx).Execute()
 
 List routing rules
 
@@ -221,18 +223,20 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RoutingRulesAPI.ListRoutingRules(context.Background()).Execute()
+	resp, r, err := apiClient.RoutingRulesAPI.ListRoutingRules(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RoutingRulesAPI.ListRoutingRules``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListRoutingRules`: []RoutingRuleXO
+	fmt.Fprintf(os.Stdout, "Response from `RoutingRulesAPI.ListRoutingRules`: %v\n", resp)
 }
 ```
 
@@ -247,7 +251,7 @@ Other parameters are passed through a pointer to a apiListRoutingRulesRequest st
 
 ### Return type
 
- (empty response body)
+[**[]RoutingRuleXO**](RoutingRuleXO.md)
 
 ### Authorization
 
@@ -256,7 +260,7 @@ Other parameters are passed through a pointer to a apiListRoutingRulesRequest st
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -278,7 +282,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

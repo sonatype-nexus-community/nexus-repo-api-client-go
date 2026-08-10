@@ -16,6 +16,8 @@ Method | HTTP request | Description
 [**CreateCargoHostedRepository**](RepositoryManagementAPI.md#CreateCargoHostedRepository) | **Post** /v1/repositories/cargo/hosted | Create cargo hosted repository
 [**CreateCargoProxyRepository**](RepositoryManagementAPI.md#CreateCargoProxyRepository) | **Post** /v1/repositories/cargo/proxy | Create cargo proxy repository
 [**CreateCocoapodsProxyRepository**](RepositoryManagementAPI.md#CreateCocoapodsProxyRepository) | **Post** /v1/repositories/cocoapods/proxy | Create Cocoapods proxy repository
+[**CreateComposerGroupRepository**](RepositoryManagementAPI.md#CreateComposerGroupRepository) | **Post** /v1/repositories/composer/group | Create composer group repository
+[**CreateComposerHostedRepository**](RepositoryManagementAPI.md#CreateComposerHostedRepository) | **Post** /v1/repositories/composer/hosted | Create composer hosted repository
 [**CreateComposerProxyRepository**](RepositoryManagementAPI.md#CreateComposerProxyRepository) | **Post** /v1/repositories/composer/proxy | Create composer proxy repository
 [**CreateConanGroupRepository**](RepositoryManagementAPI.md#CreateConanGroupRepository) | **Post** /v1/repositories/conan/group | Create Conan group repository
 [**CreateConanHostedRepository**](RepositoryManagementAPI.md#CreateConanHostedRepository) | **Post** /v1/repositories/conan/hosted | Create Conan hosted repository
@@ -89,6 +91,8 @@ Method | HTTP request | Description
 [**GetCargoHostedRepository**](RepositoryManagementAPI.md#GetCargoHostedRepository) | **Get** /v1/repositories/cargo/hosted/{repositoryName} | Get repository
 [**GetCargoProxyRepository**](RepositoryManagementAPI.md#GetCargoProxyRepository) | **Get** /v1/repositories/cargo/proxy/{repositoryName} | Get repository
 [**GetCocoapodsProxyRepository**](RepositoryManagementAPI.md#GetCocoapodsProxyRepository) | **Get** /v1/repositories/cocoapods/proxy/{repositoryName} | Get repository
+[**GetComposerGroupRepository**](RepositoryManagementAPI.md#GetComposerGroupRepository) | **Get** /v1/repositories/composer/group/{repositoryName} | Get repository
+[**GetComposerHostedRepository**](RepositoryManagementAPI.md#GetComposerHostedRepository) | **Get** /v1/repositories/composer/hosted/{repositoryName} | Get repository
 [**GetComposerProxyRepository**](RepositoryManagementAPI.md#GetComposerProxyRepository) | **Get** /v1/repositories/composer/proxy/{repositoryName} | Get repository
 [**GetConanGroupRepository**](RepositoryManagementAPI.md#GetConanGroupRepository) | **Get** /v1/repositories/conan/group/{repositoryName} | Get repository
 [**GetConanHostedRepository**](RepositoryManagementAPI.md#GetConanHostedRepository) | **Get** /v1/repositories/conan/hosted/{repositoryName} | Get repository
@@ -158,6 +162,8 @@ Method | HTTP request | Description
 [**UpdateCargoHostedRepository**](RepositoryManagementAPI.md#UpdateCargoHostedRepository) | **Put** /v1/repositories/cargo/hosted/{repositoryName} | Update cargo hosted repository
 [**UpdateCargoProxyRepository**](RepositoryManagementAPI.md#UpdateCargoProxyRepository) | **Put** /v1/repositories/cargo/proxy/{repositoryName} | Update cargo proxy repository
 [**UpdateCocoapodsProxyRepository**](RepositoryManagementAPI.md#UpdateCocoapodsProxyRepository) | **Put** /v1/repositories/cocoapods/proxy/{repositoryName} | Update Cocoapods proxy repository
+[**UpdateComposerGroupRepository**](RepositoryManagementAPI.md#UpdateComposerGroupRepository) | **Put** /v1/repositories/composer/group/{repositoryName} | Update composer group repository
+[**UpdateComposerHostedRepository**](RepositoryManagementAPI.md#UpdateComposerHostedRepository) | **Put** /v1/repositories/composer/hosted/{repositoryName} | Update composer hosted repository
 [**UpdateComposerProxyRepository**](RepositoryManagementAPI.md#UpdateComposerProxyRepository) | **Put** /v1/repositories/composer/proxy/{repositoryName} | Update composer proxy repository
 [**UpdateConanGroupRepository**](RepositoryManagementAPI.md#UpdateConanGroupRepository) | **Put** /v1/repositories/conan/group/{repositoryName} | Update Conan group repository
 [**UpdateConanHostedRepository**](RepositoryManagementAPI.md#UpdateConanHostedRepository) | **Put** /v1/repositories/conan/hosted/{repositoryName} | Update Conan hosted repository
@@ -231,7 +237,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -293,7 +299,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -355,7 +361,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -419,7 +425,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -483,7 +489,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -547,7 +553,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -609,7 +615,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -671,7 +677,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -733,7 +739,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -795,7 +801,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -857,7 +863,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -919,7 +925,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -966,6 +972,130 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## CreateComposerGroupRepository
+
+> CreateComposerGroupRepository(ctx).ComposerGroupRepositoryApiRequest(composerGroupRepositoryApiRequest).Execute()
+
+Create composer group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	composerGroupRepositoryApiRequest := *sonatyperepo.NewComposerGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ComposerGroupRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateComposerGroupRepository(context.Background()).ComposerGroupRepositoryApiRequest(composerGroupRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateComposerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateComposerGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **composerGroupRepositoryApiRequest** | [**ComposerGroupRepositoryApiRequest**](ComposerGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## CreateComposerHostedRepository
+
+> CreateComposerHostedRepository(ctx).ComposerHostedRepositoryApiRequest(composerHostedRepositoryApiRequest).Execute()
+
+Create composer hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	composerHostedRepositoryApiRequest := *sonatyperepo.NewComposerHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ComposerHostedRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.CreateComposerHostedRepository(context.Background()).ComposerHostedRepositoryApiRequest(composerHostedRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.CreateComposerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiCreateComposerHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **composerHostedRepositoryApiRequest** | [**ComposerHostedRepositoryApiRequest**](ComposerHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## CreateComposerProxyRepository
 
 > CreateComposerProxyRepository(ctx).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
@@ -981,7 +1111,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1043,7 +1173,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1105,7 +1235,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1167,7 +1297,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1229,7 +1359,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1291,7 +1421,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1353,7 +1483,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1415,7 +1545,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1477,7 +1607,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1539,7 +1669,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1601,7 +1731,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1663,7 +1793,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1725,7 +1855,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1787,7 +1917,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1849,7 +1979,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1911,7 +2041,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -1973,7 +2103,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2035,7 +2165,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2097,7 +2227,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2159,7 +2289,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2221,7 +2351,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2283,7 +2413,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2345,7 +2475,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2407,7 +2537,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2469,7 +2599,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2531,7 +2661,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2593,7 +2723,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2655,7 +2785,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2717,7 +2847,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2779,7 +2909,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2841,7 +2971,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2903,7 +3033,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -2965,7 +3095,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3027,7 +3157,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3089,7 +3219,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3151,7 +3281,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3213,11 +3343,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
+	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -3275,7 +3405,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3337,7 +3467,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3399,7 +3529,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3461,7 +3591,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3523,7 +3653,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3585,7 +3715,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3647,7 +3777,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3709,7 +3839,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3771,7 +3901,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3833,7 +3963,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3895,7 +4025,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -3957,7 +4087,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4019,7 +4149,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4081,7 +4211,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4147,11 +4277,11 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
-	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
+	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Configuration for the new Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -4209,7 +4339,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4271,7 +4401,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4333,7 +4463,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4395,7 +4525,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4463,7 +4593,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4529,7 +4659,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4595,7 +4725,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4661,7 +4791,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4727,7 +4857,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4786,7 +4916,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4854,7 +4984,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4922,7 +5052,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -4990,7 +5120,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5058,7 +5188,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5126,7 +5256,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5181,7 +5311,7 @@ Name | Type | Description  | Notes
 
 ## GetAptHostedRepository
 
-> AbstractApiRepository GetAptHostedRepository(ctx, repositoryName).Execute()
+> AptHostedApiRepository GetAptHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5194,7 +5324,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5207,7 +5337,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAptHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAptHostedRepository`: AbstractApiRepository
+	// response from `GetAptHostedRepository`: AptHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAptHostedRepository`: %v\n", resp)
 }
 ```
@@ -5231,7 +5361,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**AptHostedApiRepository**](AptHostedApiRepository.md)
 
 ### Authorization
 
@@ -5249,7 +5379,7 @@ Name | Type | Description  | Notes
 
 ## GetAptProxyRepository
 
-> AbstractApiRepository GetAptProxyRepository(ctx, repositoryName).Execute()
+> AptProxyApiRepository GetAptProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5262,7 +5392,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5275,7 +5405,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetAptProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetAptProxyRepository`: AbstractApiRepository
+	// response from `GetAptProxyRepository`: AptProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetAptProxyRepository`: %v\n", resp)
 }
 ```
@@ -5299,7 +5429,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**AptProxyApiRepository**](AptProxyApiRepository.md)
 
 ### Authorization
 
@@ -5330,7 +5460,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5385,7 +5515,7 @@ Name | Type | Description  | Notes
 
 ## GetCargoHostedRepository
 
-> AbstractApiRepository GetCargoHostedRepository(ctx, repositoryName).Execute()
+> CargoHostedApiRepository GetCargoHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5398,7 +5528,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5411,7 +5541,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCargoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCargoHostedRepository`: AbstractApiRepository
+	// response from `GetCargoHostedRepository`: CargoHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCargoHostedRepository`: %v\n", resp)
 }
 ```
@@ -5435,7 +5565,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**CargoHostedApiRepository**](CargoHostedApiRepository.md)
 
 ### Authorization
 
@@ -5466,7 +5596,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5521,7 +5651,7 @@ Name | Type | Description  | Notes
 
 ## GetCocoapodsProxyRepository
 
-> AbstractApiRepository GetCocoapodsProxyRepository(ctx, repositoryName).Execute()
+> CocoapodsProxyApiRepository GetCocoapodsProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5534,7 +5664,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5547,7 +5677,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCocoapodsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCocoapodsProxyRepository`: AbstractApiRepository
+	// response from `GetCocoapodsProxyRepository`: CocoapodsProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCocoapodsProxyRepository`: %v\n", resp)
 }
 ```
@@ -5571,7 +5701,143 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**CocoapodsProxyApiRepository**](CocoapodsProxyApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetComposerGroupRepository
+
+> ComposerGroupApiRepository GetComposerGroupRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetComposerGroupRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetComposerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetComposerGroupRepository`: ComposerGroupApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetComposerGroupRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetComposerGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ComposerGroupApiRepository**](ComposerGroupApiRepository.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GetComposerHostedRepository
+
+> ComposerHostedApiRepository GetComposerHostedRepository(ctx, repositoryName).Execute()
+
+Get repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.RepositoryManagementAPI.GetComposerHostedRepository(context.Background(), repositoryName).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetComposerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `GetComposerHostedRepository`: ComposerHostedApiRepository
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetComposerHostedRepository`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** |  | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGetComposerHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+[**ComposerHostedApiRepository**](ComposerHostedApiRepository.md)
 
 ### Authorization
 
@@ -5589,7 +5855,7 @@ Name | Type | Description  | Notes
 
 ## GetComposerProxyRepository
 
-> AbstractApiRepository GetComposerProxyRepository(ctx, repositoryName).Execute()
+> ComposerProxyApiRepository GetComposerProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5602,7 +5868,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5615,7 +5881,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetComposerProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetComposerProxyRepository`: AbstractApiRepository
+	// response from `GetComposerProxyRepository`: ComposerProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetComposerProxyRepository`: %v\n", resp)
 }
 ```
@@ -5639,7 +5905,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**ComposerProxyApiRepository**](ComposerProxyApiRepository.md)
 
 ### Authorization
 
@@ -5670,7 +5936,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5725,7 +5991,7 @@ Name | Type | Description  | Notes
 
 ## GetConanHostedRepository
 
-> AbstractApiRepository GetConanHostedRepository(ctx, repositoryName).Execute()
+> ConanHostedApiRepository GetConanHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5738,7 +6004,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5751,7 +6017,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetConanHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetConanHostedRepository`: AbstractApiRepository
+	// response from `GetConanHostedRepository`: ConanHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetConanHostedRepository`: %v\n", resp)
 }
 ```
@@ -5775,7 +6041,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**ConanHostedApiRepository**](ConanHostedApiRepository.md)
 
 ### Authorization
 
@@ -5806,7 +6072,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5874,7 +6140,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5929,7 +6195,7 @@ Name | Type | Description  | Notes
 
 ## GetCondaHostedRepository
 
-> AbstractApiRepository GetCondaHostedRepository(ctx, repositoryName).Execute()
+> CondaHostedApiRepository GetCondaHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -5942,7 +6208,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -5955,7 +6221,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCondaHostedRepository`: AbstractApiRepository
+	// response from `GetCondaHostedRepository`: CondaHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaHostedRepository`: %v\n", resp)
 }
 ```
@@ -5979,7 +6245,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**CondaHostedApiRepository**](CondaHostedApiRepository.md)
 
 ### Authorization
 
@@ -5997,7 +6263,7 @@ Name | Type | Description  | Notes
 
 ## GetCondaProxyRepository
 
-> AbstractApiRepository GetCondaProxyRepository(ctx, repositoryName).Execute()
+> CondaProxyApiRepository GetCondaProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6010,7 +6276,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6023,7 +6289,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetCondaProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetCondaProxyRepository`: AbstractApiRepository
+	// response from `GetCondaProxyRepository`: CondaProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetCondaProxyRepository`: %v\n", resp)
 }
 ```
@@ -6047,7 +6313,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**CondaProxyApiRepository**](CondaProxyApiRepository.md)
 
 ### Authorization
 
@@ -6078,7 +6344,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6146,7 +6412,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6214,7 +6480,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6269,7 +6535,7 @@ Name | Type | Description  | Notes
 
 ## GetGitlfsHostedRepository
 
-> AbstractApiRepository GetGitlfsHostedRepository(ctx, repositoryName).Execute()
+> GitLfsHostedApiRepository GetGitlfsHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6282,7 +6548,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6295,7 +6561,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGitlfsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGitlfsHostedRepository`: AbstractApiRepository
+	// response from `GetGitlfsHostedRepository`: GitLfsHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGitlfsHostedRepository`: %v\n", resp)
 }
 ```
@@ -6319,7 +6585,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**GitLfsHostedApiRepository**](GitLfsHostedApiRepository.md)
 
 ### Authorization
 
@@ -6337,7 +6603,7 @@ Name | Type | Description  | Notes
 
 ## GetGoGroupRepository
 
-> AbstractApiRepository GetGoGroupRepository(ctx, repositoryName).Execute()
+> GolangGroupApiRepository GetGoGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6350,7 +6616,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6363,7 +6629,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoGroupRepository`: AbstractApiRepository
+	// response from `GetGoGroupRepository`: GolangGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoGroupRepository`: %v\n", resp)
 }
 ```
@@ -6387,7 +6653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**GolangGroupApiRepository**](GolangGroupApiRepository.md)
 
 ### Authorization
 
@@ -6405,7 +6671,7 @@ Name | Type | Description  | Notes
 
 ## GetGoHostedRepository
 
-> AbstractApiRepository GetGoHostedRepository(ctx, repositoryName).Execute()
+> GolangHostedApiRepository GetGoHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6418,7 +6684,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6431,7 +6697,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoHostedRepository`: AbstractApiRepository
+	// response from `GetGoHostedRepository`: GolangHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoHostedRepository`: %v\n", resp)
 }
 ```
@@ -6455,7 +6721,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**GolangHostedApiRepository**](GolangHostedApiRepository.md)
 
 ### Authorization
 
@@ -6473,7 +6739,7 @@ Name | Type | Description  | Notes
 
 ## GetGoProxyRepository
 
-> AbstractApiRepository GetGoProxyRepository(ctx, repositoryName).Execute()
+> GolangProxyApiRepository GetGoProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6486,7 +6752,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6499,7 +6765,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetGoProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetGoProxyRepository`: AbstractApiRepository
+	// response from `GetGoProxyRepository`: GolangProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetGoProxyRepository`: %v\n", resp)
 }
 ```
@@ -6523,7 +6789,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**GolangProxyApiRepository**](GolangProxyApiRepository.md)
 
 ### Authorization
 
@@ -6554,7 +6820,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6609,7 +6875,7 @@ Name | Type | Description  | Notes
 
 ## GetHelmHostedRepository
 
-> AbstractApiRepository GetHelmHostedRepository(ctx, repositoryName).Execute()
+> HelmHostedApiRepository GetHelmHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6622,7 +6888,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6635,7 +6901,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHelmHostedRepository`: AbstractApiRepository
+	// response from `GetHelmHostedRepository`: HelmHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmHostedRepository`: %v\n", resp)
 }
 ```
@@ -6659,7 +6925,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**HelmHostedApiRepository**](HelmHostedApiRepository.md)
 
 ### Authorization
 
@@ -6677,7 +6943,7 @@ Name | Type | Description  | Notes
 
 ## GetHelmProxyRepository
 
-> AbstractApiRepository GetHelmProxyRepository(ctx, repositoryName).Execute()
+> HelmProxyApiRepository GetHelmProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6690,7 +6956,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6703,7 +6969,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHelmProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHelmProxyRepository`: AbstractApiRepository
+	// response from `GetHelmProxyRepository`: HelmProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHelmProxyRepository`: %v\n", resp)
 }
 ```
@@ -6727,7 +6993,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**HelmProxyApiRepository**](HelmProxyApiRepository.md)
 
 ### Authorization
 
@@ -6745,7 +7011,7 @@ Name | Type | Description  | Notes
 
 ## GetHuggingfaceProxyRepository
 
-> AbstractApiRepository GetHuggingfaceProxyRepository(ctx, repositoryName).Execute()
+> HuggingFaceProxyApiRepository GetHuggingfaceProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6758,7 +7024,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6771,7 +7037,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetHuggingfaceProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetHuggingfaceProxyRepository`: AbstractApiRepository
+	// response from `GetHuggingfaceProxyRepository`: HuggingFaceProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetHuggingfaceProxyRepository`: %v\n", resp)
 }
 ```
@@ -6795,7 +7061,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**HuggingFaceProxyApiRepository**](HuggingFaceProxyApiRepository.md)
 
 ### Authorization
 
@@ -6813,7 +7079,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenGroupRepository
 
-> AbstractApiRepository GetMavenGroupRepository(ctx, repositoryName).Execute()
+> MavenGroupApiRepository GetMavenGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6826,7 +7092,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6839,7 +7105,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenGroupRepository`: AbstractApiRepository
+	// response from `GetMavenGroupRepository`: MavenGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenGroupRepository`: %v\n", resp)
 }
 ```
@@ -6863,7 +7129,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**MavenGroupApiRepository**](MavenGroupApiRepository.md)
 
 ### Authorization
 
@@ -6881,7 +7147,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenHostedRepository
 
-> AbstractApiRepository GetMavenHostedRepository(ctx, repositoryName).Execute()
+> MavenHostedApiRepository GetMavenHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6894,7 +7160,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6907,7 +7173,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenHostedRepository`: AbstractApiRepository
+	// response from `GetMavenHostedRepository`: MavenHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenHostedRepository`: %v\n", resp)
 }
 ```
@@ -6931,7 +7197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**MavenHostedApiRepository**](MavenHostedApiRepository.md)
 
 ### Authorization
 
@@ -6949,7 +7215,7 @@ Name | Type | Description  | Notes
 
 ## GetMavenProxyRepository
 
-> AbstractApiRepository GetMavenProxyRepository(ctx, repositoryName).Execute()
+> MavenProxyApiRepository GetMavenProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -6962,7 +7228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -6975,7 +7241,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetMavenProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetMavenProxyRepository`: AbstractApiRepository
+	// response from `GetMavenProxyRepository`: MavenProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetMavenProxyRepository`: %v\n", resp)
 }
 ```
@@ -6999,7 +7265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**MavenProxyApiRepository**](MavenProxyApiRepository.md)
 
 ### Authorization
 
@@ -7030,7 +7296,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7085,7 +7351,7 @@ Name | Type | Description  | Notes
 
 ## GetNpmHostedRepository
 
-> AbstractApiRepository GetNpmHostedRepository(ctx, repositoryName).Execute()
+> NpmHostedApiRepository GetNpmHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7098,7 +7364,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7111,7 +7377,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNpmHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNpmHostedRepository`: AbstractApiRepository
+	// response from `GetNpmHostedRepository`: NpmHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNpmHostedRepository`: %v\n", resp)
 }
 ```
@@ -7135,7 +7401,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**NpmHostedApiRepository**](NpmHostedApiRepository.md)
 
 ### Authorization
 
@@ -7166,7 +7432,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7221,7 +7487,7 @@ Name | Type | Description  | Notes
 
 ## GetNugetGroupRepository
 
-> AbstractApiRepository GetNugetGroupRepository(ctx, repositoryName).Execute()
+> NugetGroupApiRepository GetNugetGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7234,7 +7500,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7247,7 +7513,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNugetGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNugetGroupRepository`: AbstractApiRepository
+	// response from `GetNugetGroupRepository`: NugetGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNugetGroupRepository`: %v\n", resp)
 }
 ```
@@ -7271,7 +7537,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**NugetGroupApiRepository**](NugetGroupApiRepository.md)
 
 ### Authorization
 
@@ -7289,7 +7555,7 @@ Name | Type | Description  | Notes
 
 ## GetNugetHostedRepository
 
-> AbstractApiRepository GetNugetHostedRepository(ctx, repositoryName).Execute()
+> NugetHostedApiRepository GetNugetHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7302,7 +7568,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7315,7 +7581,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetNugetHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetNugetHostedRepository`: AbstractApiRepository
+	// response from `GetNugetHostedRepository`: NugetHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetNugetHostedRepository`: %v\n", resp)
 }
 ```
@@ -7339,7 +7605,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**NugetHostedApiRepository**](NugetHostedApiRepository.md)
 
 ### Authorization
 
@@ -7370,7 +7636,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7425,7 +7691,7 @@ Name | Type | Description  | Notes
 
 ## GetOciGroupRepository
 
-> AbstractApiRepository GetOciGroupRepository(ctx, repositoryName).Execute()
+> OciGroupApiRepository GetOciGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7438,7 +7704,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7451,7 +7717,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOciGroupRepository`: AbstractApiRepository
+	// response from `GetOciGroupRepository`: OciGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciGroupRepository`: %v\n", resp)
 }
 ```
@@ -7475,7 +7741,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**OciGroupApiRepository**](OciGroupApiRepository.md)
 
 ### Authorization
 
@@ -7493,7 +7759,7 @@ Name | Type | Description  | Notes
 
 ## GetOciHostedRepository
 
-> AbstractApiRepository GetOciHostedRepository(ctx, repositoryName).Execute()
+> OciHostedApiRepository GetOciHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7506,7 +7772,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7519,7 +7785,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOciHostedRepository`: AbstractApiRepository
+	// response from `GetOciHostedRepository`: OciHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciHostedRepository`: %v\n", resp)
 }
 ```
@@ -7543,7 +7809,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**OciHostedApiRepository**](OciHostedApiRepository.md)
 
 ### Authorization
 
@@ -7561,7 +7827,7 @@ Name | Type | Description  | Notes
 
 ## GetOciProxyRepository
 
-> AbstractApiRepository GetOciProxyRepository(ctx, repositoryName).Execute()
+> OciProxyApiRepository GetOciProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7574,7 +7840,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7587,7 +7853,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetOciProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetOciProxyRepository`: AbstractApiRepository
+	// response from `GetOciProxyRepository`: OciProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetOciProxyRepository`: %v\n", resp)
 }
 ```
@@ -7611,7 +7877,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**OciProxyApiRepository**](OciProxyApiRepository.md)
 
 ### Authorization
 
@@ -7629,7 +7895,7 @@ Name | Type | Description  | Notes
 
 ## GetP2ProxyRepository
 
-> AbstractApiRepository GetP2ProxyRepository(ctx, repositoryName).Execute()
+> P2ProxyApiRepository GetP2ProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7642,7 +7908,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7655,7 +7921,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetP2ProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetP2ProxyRepository`: AbstractApiRepository
+	// response from `GetP2ProxyRepository`: P2ProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetP2ProxyRepository`: %v\n", resp)
 }
 ```
@@ -7679,7 +7945,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**P2ProxyApiRepository**](P2ProxyApiRepository.md)
 
 ### Authorization
 
@@ -7697,7 +7963,7 @@ Name | Type | Description  | Notes
 
 ## GetPubGroupRepository
 
-> AbstractApiRepository GetPubGroupRepository(ctx, repositoryName).Execute()
+> PubGroupApiRepository GetPubGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7710,7 +7976,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7723,7 +7989,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubGroupRepository`: AbstractApiRepository
+	// response from `GetPubGroupRepository`: PubGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubGroupRepository`: %v\n", resp)
 }
 ```
@@ -7747,7 +8013,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**PubGroupApiRepository**](PubGroupApiRepository.md)
 
 ### Authorization
 
@@ -7765,7 +8031,7 @@ Name | Type | Description  | Notes
 
 ## GetPubHostedRepository
 
-> AbstractApiRepository GetPubHostedRepository(ctx, repositoryName).Execute()
+> PubHostedApiRepository GetPubHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7778,7 +8044,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7791,7 +8057,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubHostedRepository`: AbstractApiRepository
+	// response from `GetPubHostedRepository`: PubHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubHostedRepository`: %v\n", resp)
 }
 ```
@@ -7815,7 +8081,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**PubHostedApiRepository**](PubHostedApiRepository.md)
 
 ### Authorization
 
@@ -7833,7 +8099,7 @@ Name | Type | Description  | Notes
 
 ## GetPubProxyRepository
 
-> AbstractApiRepository GetPubProxyRepository(ctx, repositoryName).Execute()
+> PubProxyApiRepository GetPubProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7846,7 +8112,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7859,7 +8125,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPubProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPubProxyRepository`: AbstractApiRepository
+	// response from `GetPubProxyRepository`: PubProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPubProxyRepository`: %v\n", resp)
 }
 ```
@@ -7883,7 +8149,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**PubProxyApiRepository**](PubProxyApiRepository.md)
 
 ### Authorization
 
@@ -7914,7 +8180,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7969,7 +8235,7 @@ Name | Type | Description  | Notes
 
 ## GetPypiHostedRepository
 
-> AbstractApiRepository GetPypiHostedRepository(ctx, repositoryName).Execute()
+> PypiHostedApiRepository GetPypiHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -7982,7 +8248,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -7995,7 +8261,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetPypiHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetPypiHostedRepository`: AbstractApiRepository
+	// response from `GetPypiHostedRepository`: PypiHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetPypiHostedRepository`: %v\n", resp)
 }
 ```
@@ -8019,7 +8285,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**PypiHostedApiRepository**](PypiHostedApiRepository.md)
 
 ### Authorization
 
@@ -8050,7 +8316,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8105,7 +8371,7 @@ Name | Type | Description  | Notes
 
 ## GetRGroupRepository
 
-> AbstractApiRepository GetRGroupRepository(ctx, repositoryName).Execute()
+> RGroupApiRepository GetRGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8118,7 +8384,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8131,7 +8397,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRGroupRepository`: AbstractApiRepository
+	// response from `GetRGroupRepository`: RGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRGroupRepository`: %v\n", resp)
 }
 ```
@@ -8155,7 +8421,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RGroupApiRepository**](RGroupApiRepository.md)
 
 ### Authorization
 
@@ -8173,7 +8439,7 @@ Name | Type | Description  | Notes
 
 ## GetRHostedRepository
 
-> AbstractApiRepository GetRHostedRepository(ctx, repositoryName).Execute()
+> RHostedApiRepository GetRHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8186,7 +8452,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8199,7 +8465,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRHostedRepository`: AbstractApiRepository
+	// response from `GetRHostedRepository`: RHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRHostedRepository`: %v\n", resp)
 }
 ```
@@ -8223,7 +8489,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RHostedApiRepository**](RHostedApiRepository.md)
 
 ### Authorization
 
@@ -8241,7 +8507,7 @@ Name | Type | Description  | Notes
 
 ## GetRProxyRepository
 
-> AbstractApiRepository GetRProxyRepository(ctx, repositoryName).Execute()
+> RProxyApiRepository GetRProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8254,7 +8520,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8267,7 +8533,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRProxyRepository`: AbstractApiRepository
+	// response from `GetRProxyRepository`: RProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRProxyRepository`: %v\n", resp)
 }
 ```
@@ -8291,7 +8557,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RProxyApiRepository**](RProxyApiRepository.md)
 
 ### Authorization
 
@@ -8322,7 +8588,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8390,7 +8656,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8458,7 +8724,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8513,7 +8779,7 @@ Name | Type | Description  | Notes
 
 ## GetRepositories
 
-> GetRepositories(ctx, repositoryName).Execute()
+> RepositoryXO GetRepositories(ctx, repositoryName).Execute()
 
 Get repository details
 
@@ -8526,7 +8792,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8534,11 +8800,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background(), repositoryName).Execute()
+	resp, r, err := apiClient.RepositoryManagementAPI.GetRepositories(context.Background(), repositoryName).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRepositories``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetRepositories`: RepositoryXO
+	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRepositories`: %v\n", resp)
 }
 ```
 
@@ -8561,7 +8829,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**RepositoryXO**](RepositoryXO.md)
 
 ### Authorization
 
@@ -8570,7 +8838,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -8579,7 +8847,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsGroupRepository
 
-> AbstractApiRepository GetRubygemsGroupRepository(ctx, repositoryName).Execute()
+> RubyGemsGroupApiRepository GetRubygemsGroupRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8592,7 +8860,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8605,7 +8873,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsGroupRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsGroupRepository`: AbstractApiRepository
+	// response from `GetRubygemsGroupRepository`: RubyGemsGroupApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsGroupRepository`: %v\n", resp)
 }
 ```
@@ -8629,7 +8897,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RubyGemsGroupApiRepository**](RubyGemsGroupApiRepository.md)
 
 ### Authorization
 
@@ -8647,7 +8915,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsHostedRepository
 
-> AbstractApiRepository GetRubygemsHostedRepository(ctx, repositoryName).Execute()
+> RubyGemsHostedApiRepository GetRubygemsHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8660,7 +8928,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8673,7 +8941,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsHostedRepository`: AbstractApiRepository
+	// response from `GetRubygemsHostedRepository`: RubyGemsHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsHostedRepository`: %v\n", resp)
 }
 ```
@@ -8697,7 +8965,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RubyGemsHostedApiRepository**](RubyGemsHostedApiRepository.md)
 
 ### Authorization
 
@@ -8715,7 +8983,7 @@ Name | Type | Description  | Notes
 
 ## GetRubygemsProxyRepository
 
-> AbstractApiRepository GetRubygemsProxyRepository(ctx, repositoryName).Execute()
+> RubyGemsProxyApiRepository GetRubygemsProxyRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8728,7 +8996,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8741,7 +9009,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetRubygemsProxyRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetRubygemsProxyRepository`: AbstractApiRepository
+	// response from `GetRubygemsProxyRepository`: RubyGemsProxyApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetRubygemsProxyRepository`: %v\n", resp)
 }
 ```
@@ -8765,7 +9033,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**RubyGemsProxyApiRepository**](RubyGemsProxyApiRepository.md)
 
 ### Authorization
 
@@ -8796,7 +9064,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8851,7 +9119,7 @@ Name | Type | Description  | Notes
 
 ## GetSwiftHostedRepository
 
-> AbstractApiRepository GetSwiftHostedRepository(ctx, repositoryName).Execute()
+> SwiftHostedApiRepository GetSwiftHostedRepository(ctx, repositoryName).Execute()
 
 Get repository
 
@@ -8864,7 +9132,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -8877,7 +9145,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.GetSwiftHostedRepository``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `GetSwiftHostedRepository`: AbstractApiRepository
+	// response from `GetSwiftHostedRepository`: SwiftHostedApiRepository
 	fmt.Fprintf(os.Stdout, "Response from `RepositoryManagementAPI.GetSwiftHostedRepository`: %v\n", resp)
 }
 ```
@@ -8901,7 +9169,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**AbstractApiRepository**](AbstractApiRepository.md)
+[**SwiftHostedApiRepository**](SwiftHostedApiRepository.md)
 
 ### Authorization
 
@@ -8932,7 +9200,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9000,7 +9268,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9068,7 +9336,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9136,7 +9404,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9204,7 +9472,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9272,7 +9540,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9340,7 +9608,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9408,7 +9676,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9467,7 +9735,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9535,7 +9803,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9603,7 +9871,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9673,7 +9941,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9743,7 +10011,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9813,7 +10081,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9881,7 +10149,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -9949,7 +10217,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10017,7 +10285,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10085,7 +10353,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10153,7 +10421,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10221,7 +10489,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10274,6 +10542,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UpdateComposerGroupRepository
+
+> UpdateComposerGroupRepository(ctx, repositoryName).ComposerGroupRepositoryApiRequest(composerGroupRepositoryApiRequest).Execute()
+
+Update composer group repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	composerGroupRepositoryApiRequest := *sonatyperepo.NewComposerGroupRepositoryApiRequest(*sonatyperepo.NewGroupAttributes([]string{"MemberNames_example"}), "internal", true, *sonatyperepo.NewStorageAttributes("default", true)) // ComposerGroupRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateComposerGroupRepository(context.Background(), repositoryName).ComposerGroupRepositoryApiRequest(composerGroupRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateComposerGroupRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateComposerGroupRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **composerGroupRepositoryApiRequest** | [**ComposerGroupRepositoryApiRequest**](ComposerGroupRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UpdateComposerHostedRepository
+
+> UpdateComposerHostedRepository(ctx, repositoryName).ComposerHostedRepositoryApiRequest(composerHostedRepositoryApiRequest).Execute()
+
+Update composer hosted repository
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	repositoryName := "repositoryName_example" // string | Name of the repository to update
+	composerHostedRepositoryApiRequest := *sonatyperepo.NewComposerHostedRepositoryApiRequest("internal", true, *sonatyperepo.NewHostedStorageAttributes("default", true, "ALLOW_ONCE")) // ComposerHostedRepositoryApiRequest | 
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	r, err := apiClient.RepositoryManagementAPI.UpdateComposerHostedRepository(context.Background(), repositoryName).ComposerHostedRepositoryApiRequest(composerHostedRepositoryApiRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `RepositoryManagementAPI.UpdateComposerHostedRepository``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**repositoryName** | **string** | Name of the repository to update | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUpdateComposerHostedRepositoryRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+ **composerHostedRepositoryApiRequest** | [**ComposerHostedRepositoryApiRequest**](ComposerHostedRepositoryApiRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UpdateComposerProxyRepository
 
 > UpdateComposerProxyRepository(ctx, repositoryName).ComposerProxyRepositoryApiRequest(composerProxyRepositoryApiRequest).Execute()
@@ -10289,7 +10693,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10357,7 +10761,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10425,7 +10829,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10493,7 +10897,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10561,7 +10965,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10629,7 +11033,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10697,7 +11101,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10765,7 +11169,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10833,7 +11237,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10901,7 +11305,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -10969,7 +11373,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11037,7 +11441,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11105,7 +11509,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11173,7 +11577,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11241,7 +11645,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11309,7 +11713,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11377,7 +11781,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11445,7 +11849,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11513,7 +11917,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11581,7 +11985,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11649,7 +12053,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11717,7 +12121,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11785,7 +12189,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11853,7 +12257,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11921,7 +12325,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -11989,7 +12393,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12057,7 +12461,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12125,7 +12529,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12193,7 +12597,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12261,7 +12665,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12329,7 +12733,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12397,7 +12801,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12465,7 +12869,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12533,7 +12937,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12601,7 +13005,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12669,7 +13073,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12737,12 +13141,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
+	pypiProxyRepositoryApiRequest := *sonatyperepo.NewPypiProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // PypiProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -12805,7 +13209,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12873,7 +13277,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -12941,7 +13345,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13009,7 +13413,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13077,7 +13481,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13145,7 +13549,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13213,7 +13617,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13281,7 +13685,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13349,7 +13753,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13417,7 +13821,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13485,7 +13889,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13553,7 +13957,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13621,7 +14025,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13689,7 +14093,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13761,12 +14165,12 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
+	terraformProxyRepositoryApiRequest := *sonatyperepo.NewTerraformProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // TerraformProxyRepositoryApiRequest | Updated configuration for the Terraform proxy repository
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -13829,7 +14233,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13897,7 +14301,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -13965,7 +14369,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

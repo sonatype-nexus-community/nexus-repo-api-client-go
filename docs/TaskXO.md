@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **StartDate** | Pointer to **time.Time** | The start date for scheduled tasks (ISO 8601 format) | [optional] 
 **TimeZoneOffset** | Pointer to **string** | Time zone offset for cron schedules | [optional] 
 **Type** | Pointer to **string** | The type identifier of the task | [optional] 
+**TypeName** | Pointer to **string** | The human-readable name of the task type | [optional] 
 
 ## Methods
 
@@ -465,6 +466,31 @@ SetType sets Type field to given value.
 `func (o *TaskXO) HasType() bool`
 
 HasType returns a boolean if a field has been set.
+
+### GetTypeName
+
+`func (o *TaskXO) GetTypeName() string`
+
+GetTypeName returns the TypeName field if non-nil, zero value otherwise.
+
+### GetTypeNameOk
+
+`func (o *TaskXO) GetTypeNameOk() (*string, bool)`
+
+GetTypeNameOk returns a tuple with the TypeName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetTypeName
+
+`func (o *TaskXO) SetTypeName(v string)`
+
+SetTypeName sets TypeName field to given value.
+
+### HasTypeName
+
+`func (o *TaskXO) HasTypeName() bool`
+
+HasTypeName returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

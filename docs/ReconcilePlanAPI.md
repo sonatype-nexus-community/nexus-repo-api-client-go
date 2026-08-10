@@ -12,6 +12,7 @@ Method | HTTP request | Description
 [**GetPlan**](ReconcilePlanAPI.md#GetPlan) | **Get** /v1/plan/{planId} | Get single reconciliation plan with details
 [**ListPlan**](ReconcilePlanAPI.md#ListPlan) | **Get** /v1/plan | Get list of currently available plans
 [**ListPlanDetails**](ReconcilePlanAPI.md#ListPlanDetails) | **Get** /v1/plan/details | Get reconciliation plan details
+[**ListPlanSummary**](ReconcilePlanAPI.md#ListPlanSummary) | **Get** /v1/plan/summary | Get aggregate summary of available reconciliation plans
 
 
 
@@ -30,7 +31,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -104,7 +105,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -161,7 +162,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -227,7 +228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -284,7 +285,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -337,7 +338,7 @@ Name | Type | Description  | Notes
 
 ## GetPlan
 
-> GetPlan(ctx, planId).Repository(repository).ContinuationToken(continuationToken).Execute()
+> ReconcilePlanWithDetailsXO GetPlan(ctx, planId).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 Get single reconciliation plan with details
 
@@ -350,7 +351,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -360,11 +361,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ReconcilePlanAPI.GetPlan(context.Background(), planId).Repository(repository).ContinuationToken(continuationToken).Execute()
+	resp, r, err := apiClient.ReconcilePlanAPI.GetPlan(context.Background(), planId).Repository(repository).ContinuationToken(continuationToken).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.GetPlan``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetPlan`: ReconcilePlanWithDetailsXO
+	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.GetPlan`: %v\n", resp)
 }
 ```
 
@@ -389,7 +392,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**ReconcilePlanWithDetailsXO**](ReconcilePlanWithDetailsXO.md)
 
 ### Authorization
 
@@ -398,7 +401,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -407,7 +410,7 @@ Name | Type | Description  | Notes
 
 ## ListPlan
 
-> ListPlan(ctx).ContinuationToken(continuationToken).Execute()
+> Page ListPlan(ctx).ContinuationToken(continuationToken).Execute()
 
 Get list of currently available plans
 
@@ -420,7 +423,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -428,11 +431,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ReconcilePlanAPI.ListPlan(context.Background()).ContinuationToken(continuationToken).Execute()
+	resp, r, err := apiClient.ReconcilePlanAPI.ListPlan(context.Background()).ContinuationToken(continuationToken).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.ListPlan``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListPlan`: Page
+	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.ListPlan`: %v\n", resp)
 }
 ```
 
@@ -451,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Page**](Page.md)
 
 ### Authorization
 
@@ -460,7 +465,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -469,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## ListPlanDetails
 
-> ListPlanDetails(ctx).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
+> Page ListPlanDetails(ctx).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 Get reconciliation plan details
 
@@ -482,7 +487,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -493,11 +498,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.ReconcilePlanAPI.ListPlanDetails(context.Background()).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
+	resp, r, err := apiClient.ReconcilePlanAPI.ListPlanDetails(context.Background()).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.ListPlanDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListPlanDetails`: Page
+	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.ListPlanDetails`: %v\n", resp)
 }
 ```
 
@@ -519,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**Page**](Page.md)
 
 ### Authorization
 
@@ -528,7 +535,66 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListPlanSummary
+
+> ReconcilePlanSummaryXO ListPlanSummary(ctx).Execute()
+
+Get aggregate summary of available reconciliation plans
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.ReconcilePlanAPI.ListPlanSummary(context.Background()).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.ListPlanSummary``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListPlanSummary`: ReconcilePlanSummaryXO
+	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.ListPlanSummary`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+This endpoint does not need any parameter.
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListPlanSummaryRequest struct via the builder pattern
+
+
+### Return type
+
+[**ReconcilePlanSummaryXO**](ReconcilePlanSummaryXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -8,13 +8,14 @@ Method | HTTP request | Description
 [**DeleteSecurityRoles**](SecurityManagementRolesAPI.md#DeleteSecurityRoles) | **Delete** /v1/security/roles/{id} | Delete role
 [**GetSecurityRoles**](SecurityManagementRolesAPI.md#GetSecurityRoles) | **Get** /v1/security/roles/{id} | Get role
 [**ListSecurityRoles**](SecurityManagementRolesAPI.md#ListSecurityRoles) | **Get** /v1/security/roles | List roles
+[**ListSecurityRolesAssignable**](SecurityManagementRolesAPI.md#ListSecurityRolesAssignable) | **Get** /v1/security/roles/assignable | Get assignable roles
 [**UpdateSecurityRoles**](SecurityManagementRolesAPI.md#UpdateSecurityRoles) | **Put** /v1/security/roles/{id} | Update role
 
 
 
 ## CreateSecurityRoles
 
-> CreateSecurityRoles(ctx).RoleXORequest(roleXORequest).Execute()
+> RoleXOResponse CreateSecurityRoles(ctx).RoleXORequest(roleXORequest).Execute()
 
 Create role
 
@@ -27,7 +28,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -35,11 +36,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).RoleXORequest(roleXORequest).Execute()
+	resp, r, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).RoleXORequest(roleXORequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.CreateSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `CreateSecurityRoles`: RoleXOResponse
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.CreateSecurityRoles`: %v\n", resp)
 }
 ```
 
@@ -58,7 +61,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**RoleXOResponse**](RoleXOResponse.md)
 
 ### Authorization
 
@@ -67,7 +70,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -89,7 +92,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -142,7 +145,7 @@ Name | Type | Description  | Notes
 
 ## GetSecurityRoles
 
-> GetSecurityRoles(ctx, id).Source(source).Execute()
+> RoleXOResponse GetSecurityRoles(ctx, id).Source(source).Execute()
 
 Get role
 
@@ -155,7 +158,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -164,11 +167,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.GetSecurityRoles(context.Background(), id).Source(source).Execute()
+	resp, r, err := apiClient.SecurityManagementRolesAPI.GetSecurityRoles(context.Background(), id).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.GetSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetSecurityRoles`: RoleXOResponse
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.GetSecurityRoles`: %v\n", resp)
 }
 ```
 
@@ -192,7 +197,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**RoleXOResponse**](RoleXOResponse.md)
 
 ### Authorization
 
@@ -201,7 +206,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -210,7 +215,7 @@ Name | Type | Description  | Notes
 
 ## ListSecurityRoles
 
-> ListSecurityRoles(ctx).Source(source).Execute()
+> []RoleXOResponse ListSecurityRoles(ctx).Source(source).Execute()
 
 List roles
 
@@ -223,7 +228,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -231,11 +236,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.ListSecurityRoles(context.Background()).Source(source).Execute()
+	resp, r, err := apiClient.SecurityManagementRolesAPI.ListSecurityRoles(context.Background()).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.ListSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityRoles`: []RoleXOResponse
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.ListSecurityRoles`: %v\n", resp)
 }
 ```
 
@@ -254,7 +261,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]RoleXOResponse**](RoleXOResponse.md)
 
 ### Authorization
 
@@ -263,7 +270,71 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSecurityRolesAssignable
+
+> []RoleXOResponse ListSecurityRolesAssignable(ctx).Source(source).Execute()
+
+Get assignable roles
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	source := "source_example" // string | The id of the user source to filter the roles by, if supplied. Otherwise roles from default user source will be returned. Available sources can be fetched using the 'User Sources' endpoint. (optional) (default to "default")
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SecurityManagementRolesAPI.ListSecurityRolesAssignable(context.Background()).Source(source).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.ListSecurityRolesAssignable``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSecurityRolesAssignable`: []RoleXOResponse
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementRolesAPI.ListSecurityRolesAssignable`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSecurityRolesAssignableRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source** | **string** | The id of the user source to filter the roles by, if supplied. Otherwise roles from default user source will be returned. Available sources can be fetched using the &#39;User Sources&#39; endpoint. | [default to &quot;default&quot;]
+
+### Return type
+
+[**[]RoleXOResponse**](RoleXOResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -285,7 +356,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {

@@ -1,304 +1,252 @@
-# CleanupPolicyXO
+# CleanupPolicyResourceXO
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CriteriaAssetRegex** | Pointer to **string** |  | [optional] 
-**CriteriaLastBlobUpdated** | Pointer to **int64** |  | [optional] 
-**CriteriaLastDownloaded** | Pointer to **int64** |  | [optional] 
-**CriteriaReleaseType** | Pointer to **string** |  | [optional] 
-**Format** | **string** |  | 
-**InUseCount** | Pointer to **int32** |  | [optional] 
-**Name** | **string** |  | 
-**Notes** | Pointer to **string** |  | [optional] 
-**Repositories** | Pointer to **[]string** |  | [optional] 
-**Retain** | Pointer to **int32** |  | [optional] 
-**SortBy** | Pointer to **string** |  | [optional] 
+**CriteriaAssetRegex** | Pointer to **string** | asset name matcher (Remove components that have at least one asset name matching the following regular expression pattern:) | [optional] 
+**CriteriaLastBlobUpdated** | Pointer to **int64** | component age (Components published over “x” days ago (e.g 1-999)) | [optional] 
+**CriteriaLastDownloaded** | Pointer to **int64** | component usage (Components downloaded in “x” amount of days (e.g 1-999)) | [optional] 
+**CriteriaReleaseType** | Pointer to **string** | release type (Remove components that are of the following release type:) | [optional] 
+**Format** | **string** | repository format | 
+**Name** | **string** | policy name | 
+**Notes** | Pointer to **string** | description | [optional] 
+**Repositories** | Pointer to **[]string** | Repositories to attach this policy to. When provided on update, replaces the existing attachment set. | [optional] 
+**Retain** | Pointer to **int32** | keep the latest \&quot;x\&quot; number of versions | [optional] 
 
 ## Methods
 
-### NewCleanupPolicyXO
+### NewCleanupPolicyResourceXO
 
-`func NewCleanupPolicyXO(format string, name string, ) *CleanupPolicyXO`
+`func NewCleanupPolicyResourceXO(format string, name string, ) *CleanupPolicyResourceXO`
 
-NewCleanupPolicyXO instantiates a new CleanupPolicyXO object
+NewCleanupPolicyResourceXO instantiates a new CleanupPolicyResourceXO object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewCleanupPolicyXOWithDefaults
+### NewCleanupPolicyResourceXOWithDefaults
 
-`func NewCleanupPolicyXOWithDefaults() *CleanupPolicyXO`
+`func NewCleanupPolicyResourceXOWithDefaults() *CleanupPolicyResourceXO`
 
-NewCleanupPolicyXOWithDefaults instantiates a new CleanupPolicyXO object
+NewCleanupPolicyResourceXOWithDefaults instantiates a new CleanupPolicyResourceXO object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCriteriaAssetRegex
 
-`func (o *CleanupPolicyXO) GetCriteriaAssetRegex() string`
+`func (o *CleanupPolicyResourceXO) GetCriteriaAssetRegex() string`
 
 GetCriteriaAssetRegex returns the CriteriaAssetRegex field if non-nil, zero value otherwise.
 
 ### GetCriteriaAssetRegexOk
 
-`func (o *CleanupPolicyXO) GetCriteriaAssetRegexOk() (*string, bool)`
+`func (o *CleanupPolicyResourceXO) GetCriteriaAssetRegexOk() (*string, bool)`
 
 GetCriteriaAssetRegexOk returns a tuple with the CriteriaAssetRegex field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriteriaAssetRegex
 
-`func (o *CleanupPolicyXO) SetCriteriaAssetRegex(v string)`
+`func (o *CleanupPolicyResourceXO) SetCriteriaAssetRegex(v string)`
 
 SetCriteriaAssetRegex sets CriteriaAssetRegex field to given value.
 
 ### HasCriteriaAssetRegex
 
-`func (o *CleanupPolicyXO) HasCriteriaAssetRegex() bool`
+`func (o *CleanupPolicyResourceXO) HasCriteriaAssetRegex() bool`
 
 HasCriteriaAssetRegex returns a boolean if a field has been set.
 
 ### GetCriteriaLastBlobUpdated
 
-`func (o *CleanupPolicyXO) GetCriteriaLastBlobUpdated() int64`
+`func (o *CleanupPolicyResourceXO) GetCriteriaLastBlobUpdated() int64`
 
 GetCriteriaLastBlobUpdated returns the CriteriaLastBlobUpdated field if non-nil, zero value otherwise.
 
 ### GetCriteriaLastBlobUpdatedOk
 
-`func (o *CleanupPolicyXO) GetCriteriaLastBlobUpdatedOk() (*int64, bool)`
+`func (o *CleanupPolicyResourceXO) GetCriteriaLastBlobUpdatedOk() (*int64, bool)`
 
 GetCriteriaLastBlobUpdatedOk returns a tuple with the CriteriaLastBlobUpdated field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriteriaLastBlobUpdated
 
-`func (o *CleanupPolicyXO) SetCriteriaLastBlobUpdated(v int64)`
+`func (o *CleanupPolicyResourceXO) SetCriteriaLastBlobUpdated(v int64)`
 
 SetCriteriaLastBlobUpdated sets CriteriaLastBlobUpdated field to given value.
 
 ### HasCriteriaLastBlobUpdated
 
-`func (o *CleanupPolicyXO) HasCriteriaLastBlobUpdated() bool`
+`func (o *CleanupPolicyResourceXO) HasCriteriaLastBlobUpdated() bool`
 
 HasCriteriaLastBlobUpdated returns a boolean if a field has been set.
 
 ### GetCriteriaLastDownloaded
 
-`func (o *CleanupPolicyXO) GetCriteriaLastDownloaded() int64`
+`func (o *CleanupPolicyResourceXO) GetCriteriaLastDownloaded() int64`
 
 GetCriteriaLastDownloaded returns the CriteriaLastDownloaded field if non-nil, zero value otherwise.
 
 ### GetCriteriaLastDownloadedOk
 
-`func (o *CleanupPolicyXO) GetCriteriaLastDownloadedOk() (*int64, bool)`
+`func (o *CleanupPolicyResourceXO) GetCriteriaLastDownloadedOk() (*int64, bool)`
 
 GetCriteriaLastDownloadedOk returns a tuple with the CriteriaLastDownloaded field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriteriaLastDownloaded
 
-`func (o *CleanupPolicyXO) SetCriteriaLastDownloaded(v int64)`
+`func (o *CleanupPolicyResourceXO) SetCriteriaLastDownloaded(v int64)`
 
 SetCriteriaLastDownloaded sets CriteriaLastDownloaded field to given value.
 
 ### HasCriteriaLastDownloaded
 
-`func (o *CleanupPolicyXO) HasCriteriaLastDownloaded() bool`
+`func (o *CleanupPolicyResourceXO) HasCriteriaLastDownloaded() bool`
 
 HasCriteriaLastDownloaded returns a boolean if a field has been set.
 
 ### GetCriteriaReleaseType
 
-`func (o *CleanupPolicyXO) GetCriteriaReleaseType() string`
+`func (o *CleanupPolicyResourceXO) GetCriteriaReleaseType() string`
 
 GetCriteriaReleaseType returns the CriteriaReleaseType field if non-nil, zero value otherwise.
 
 ### GetCriteriaReleaseTypeOk
 
-`func (o *CleanupPolicyXO) GetCriteriaReleaseTypeOk() (*string, bool)`
+`func (o *CleanupPolicyResourceXO) GetCriteriaReleaseTypeOk() (*string, bool)`
 
 GetCriteriaReleaseTypeOk returns a tuple with the CriteriaReleaseType field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCriteriaReleaseType
 
-`func (o *CleanupPolicyXO) SetCriteriaReleaseType(v string)`
+`func (o *CleanupPolicyResourceXO) SetCriteriaReleaseType(v string)`
 
 SetCriteriaReleaseType sets CriteriaReleaseType field to given value.
 
 ### HasCriteriaReleaseType
 
-`func (o *CleanupPolicyXO) HasCriteriaReleaseType() bool`
+`func (o *CleanupPolicyResourceXO) HasCriteriaReleaseType() bool`
 
 HasCriteriaReleaseType returns a boolean if a field has been set.
 
 ### GetFormat
 
-`func (o *CleanupPolicyXO) GetFormat() string`
+`func (o *CleanupPolicyResourceXO) GetFormat() string`
 
 GetFormat returns the Format field if non-nil, zero value otherwise.
 
 ### GetFormatOk
 
-`func (o *CleanupPolicyXO) GetFormatOk() (*string, bool)`
+`func (o *CleanupPolicyResourceXO) GetFormatOk() (*string, bool)`
 
 GetFormatOk returns a tuple with the Format field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetFormat
 
-`func (o *CleanupPolicyXO) SetFormat(v string)`
+`func (o *CleanupPolicyResourceXO) SetFormat(v string)`
 
 SetFormat sets Format field to given value.
 
 
-### GetInUseCount
-
-`func (o *CleanupPolicyXO) GetInUseCount() int32`
-
-GetInUseCount returns the InUseCount field if non-nil, zero value otherwise.
-
-### GetInUseCountOk
-
-`func (o *CleanupPolicyXO) GetInUseCountOk() (*int32, bool)`
-
-GetInUseCountOk returns a tuple with the InUseCount field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetInUseCount
-
-`func (o *CleanupPolicyXO) SetInUseCount(v int32)`
-
-SetInUseCount sets InUseCount field to given value.
-
-### HasInUseCount
-
-`func (o *CleanupPolicyXO) HasInUseCount() bool`
-
-HasInUseCount returns a boolean if a field has been set.
-
 ### GetName
 
-`func (o *CleanupPolicyXO) GetName() string`
+`func (o *CleanupPolicyResourceXO) GetName() string`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *CleanupPolicyXO) GetNameOk() (*string, bool)`
+`func (o *CleanupPolicyResourceXO) GetNameOk() (*string, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *CleanupPolicyXO) SetName(v string)`
+`func (o *CleanupPolicyResourceXO) SetName(v string)`
 
 SetName sets Name field to given value.
 
 
 ### GetNotes
 
-`func (o *CleanupPolicyXO) GetNotes() string`
+`func (o *CleanupPolicyResourceXO) GetNotes() string`
 
 GetNotes returns the Notes field if non-nil, zero value otherwise.
 
 ### GetNotesOk
 
-`func (o *CleanupPolicyXO) GetNotesOk() (*string, bool)`
+`func (o *CleanupPolicyResourceXO) GetNotesOk() (*string, bool)`
 
 GetNotesOk returns a tuple with the Notes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNotes
 
-`func (o *CleanupPolicyXO) SetNotes(v string)`
+`func (o *CleanupPolicyResourceXO) SetNotes(v string)`
 
 SetNotes sets Notes field to given value.
 
 ### HasNotes
 
-`func (o *CleanupPolicyXO) HasNotes() bool`
+`func (o *CleanupPolicyResourceXO) HasNotes() bool`
 
 HasNotes returns a boolean if a field has been set.
 
 ### GetRepositories
 
-`func (o *CleanupPolicyXO) GetRepositories() []string`
+`func (o *CleanupPolicyResourceXO) GetRepositories() []string`
 
 GetRepositories returns the Repositories field if non-nil, zero value otherwise.
 
 ### GetRepositoriesOk
 
-`func (o *CleanupPolicyXO) GetRepositoriesOk() (*[]string, bool)`
+`func (o *CleanupPolicyResourceXO) GetRepositoriesOk() (*[]string, bool)`
 
 GetRepositoriesOk returns a tuple with the Repositories field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRepositories
 
-`func (o *CleanupPolicyXO) SetRepositories(v []string)`
+`func (o *CleanupPolicyResourceXO) SetRepositories(v []string)`
 
 SetRepositories sets Repositories field to given value.
 
 ### HasRepositories
 
-`func (o *CleanupPolicyXO) HasRepositories() bool`
+`func (o *CleanupPolicyResourceXO) HasRepositories() bool`
 
 HasRepositories returns a boolean if a field has been set.
 
 ### GetRetain
 
-`func (o *CleanupPolicyXO) GetRetain() int32`
+`func (o *CleanupPolicyResourceXO) GetRetain() int32`
 
 GetRetain returns the Retain field if non-nil, zero value otherwise.
 
 ### GetRetainOk
 
-`func (o *CleanupPolicyXO) GetRetainOk() (*int32, bool)`
+`func (o *CleanupPolicyResourceXO) GetRetainOk() (*int32, bool)`
 
 GetRetainOk returns a tuple with the Retain field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRetain
 
-`func (o *CleanupPolicyXO) SetRetain(v int32)`
+`func (o *CleanupPolicyResourceXO) SetRetain(v int32)`
 
 SetRetain sets Retain field to given value.
 
 ### HasRetain
 
-`func (o *CleanupPolicyXO) HasRetain() bool`
+`func (o *CleanupPolicyResourceXO) HasRetain() bool`
 
 HasRetain returns a boolean if a field has been set.
-
-### GetSortBy
-
-`func (o *CleanupPolicyXO) GetSortBy() string`
-
-GetSortBy returns the SortBy field if non-nil, zero value otherwise.
-
-### GetSortByOk
-
-`func (o *CleanupPolicyXO) GetSortByOk() (*string, bool)`
-
-GetSortByOk returns a tuple with the SortBy field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetSortBy
-
-`func (o *CleanupPolicyXO) SetSortBy(v string)`
-
-SetSortBy sets SortBy field to given value.
-
-### HasSortBy
-
-`func (o *CleanupPolicyXO) HasSortBy() bool`
-
-HasSortBy returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

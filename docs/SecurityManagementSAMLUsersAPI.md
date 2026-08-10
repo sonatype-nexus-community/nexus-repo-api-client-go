@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -89,7 +89,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## GetSecuritySamlUsers
 
-> GetSecuritySamlUsers(ctx, userId).Execute()
+> SamlUserXO GetSecuritySamlUsers(ctx, userId).Execute()
 
 Retrieve a SAML user by userId.
 
@@ -155,7 +155,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -163,11 +163,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers(context.Background(), userId).Execute()
+	resp, r, err := apiClient.SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers(context.Background(), userId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetSecuritySamlUsers`: SamlUserXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSAMLUsersAPI.GetSecuritySamlUsers`: %v\n", resp)
 }
 ```
 
@@ -190,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**SamlUserXO**](SamlUserXO.md)
 
 ### Authorization
 
@@ -199,7 +201,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -208,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## ListSecuritySamlUsers
 
-> ListSecuritySamlUsers(ctx).UserId(userId).Execute()
+> []SamlUserXO ListSecuritySamlUsers(ctx).UserId(userId).Execute()
 
 Retrieve a list of SAML users. The response is limited to 1,000 users.
 
@@ -221,7 +223,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -229,11 +231,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers(context.Background()).UserId(userId).Execute()
+	resp, r, err := apiClient.SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers(context.Background()).UserId(userId).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySamlUsers`: []SamlUserXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSAMLUsersAPI.ListSecuritySamlUsers`: %v\n", resp)
 }
 ```
 
@@ -252,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**[]SamlUserXO**](SamlUserXO.md)
 
 ### Authorization
 
@@ -261,7 +265,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -283,7 +287,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v3"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
