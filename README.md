@@ -436,6 +436,7 @@ Class | Method | HTTP request | Description
 *SecurityManagementAnonymousAccessAPI* | [**ListSecurityAnonymous**](docs/SecurityManagementAnonymousAccessAPI.md#listsecurityanonymous) | **Get** /v1/security/anonymous | Get Anonymous Access settings
 *SecurityManagementAnonymousAccessAPI* | [**UpdateSecurityAnonymous**](docs/SecurityManagementAnonymousAccessAPI.md#updatesecurityanonymous) | **Put** /v1/security/anonymous | Update Anonymous Access settings
 *SecurityManagementApiKeysPrincipalsEncryptionAPI* | [**UpdateApikeysEncryptionReEncrypt**](docs/SecurityManagementApiKeysPrincipalsEncryptionAPI.md#updateapikeysencryptionreencrypt) | **Put** /v1/apikeys/encryption/re-encrypt | Re-encrypt api keys principals using the specified configuration
+*SecurityManagementJWTAPI* | [**UpdateSecurityJwt**](docs/SecurityManagementJWTAPI.md#updatesecurityjwt) | **Put** /v1/security/jwt | Reset JWT secret (note that session will be expired for the all logged-in users)
 *SecurityManagementLDAPAPI* | [**CreateSecurityLdap**](docs/SecurityManagementLDAPAPI.md#createsecurityldap) | **Post** /v1/security/ldap | Create LDAP server
 *SecurityManagementLDAPAPI* | [**CreateSecurityLdapChangeOrder**](docs/SecurityManagementLDAPAPI.md#createsecurityldapchangeorder) | **Post** /v1/security/ldap/change-order | Change LDAP server order
 *SecurityManagementLDAPAPI* | [**CreateSecurityLdapVerifyConnection**](docs/SecurityManagementLDAPAPI.md#createsecurityldapverifyconnection) | **Post** /v1/security/ldap/verify-connection | 
@@ -497,6 +498,9 @@ Class | Method | HTTP request | Description
 *SecurityManagementUsersAPI* | [**ListSecurityUsers**](docs/SecurityManagementUsersAPI.md#listsecurityusers) | **Get** /v1/security/users | Retrieve a list of users. For SAML user sources a limit of 1000 users will be applied.
 *SecurityManagementUsersAPI* | [**UpdateSecurityUsers**](docs/SecurityManagementUsersAPI.md#updatesecurityusers) | **Put** /v1/security/users/{userId} | Update an existing user.
 *SecurityManagementUsersAPI* | [**UpdateSecurityUsersChangePassword**](docs/SecurityManagementUsersAPI.md#updatesecurityuserschangepassword) | **Put** /v1/security/users/{userId}/change-password | Change a user&#39;s password.
+*SecurityOAuth2OIDCAPI* | [**DeleteSecurityOauth2**](docs/SecurityOAuth2OIDCAPI.md#deletesecurityoauth2) | **Delete** /v1/security/oauth2 | Remove OAuth2/OIDC configuration
+*SecurityOAuth2OIDCAPI* | [**ListSecurityOauth2**](docs/SecurityOAuth2OIDCAPI.md#listsecurityoauth2) | **Get** /v1/security/oauth2 | Retrieve the current OAuth2/OIDC configuration
+*SecurityOAuth2OIDCAPI* | [**UpdateSecurityOauth2**](docs/SecurityOAuth2OIDCAPI.md#updatesecurityoauth2) | **Put** /v1/security/oauth2 | Create or update OAuth2/OIDC configuration
 *StagingAPI* | [**CreateStagingDelete**](docs/StagingAPI.md#createstagingdelete) | **Post** /v1/staging/delete | Delete components
 *StagingAPI* | [**CreateStagingMove**](docs/StagingAPI.md#createstagingmove) | **Post** /v1/staging/move/{destination} | Move components
 *StatusAPI* | [**GetStatusCheck**](docs/StatusAPI.md#getstatuscheck) | **Get** /beta/status/check/{nodeId} | Health check endpoint that returns the results of the system status checks of specified Node
@@ -727,6 +731,7 @@ Class | Method | HTTP request | Description
  - [NugetHostedRepositoryApiRequest](docs/NugetHostedRepositoryApiRequest.md)
  - [NugetProxyApiRepository](docs/NugetProxyApiRepository.md)
  - [NugetProxyRepositoryApiRequest](docs/NugetProxyRepositoryApiRequest.md)
+ - [OAuth2OidcConfigurationXO](docs/OAuth2OidcConfigurationXO.md)
  - [OciAttributes](docs/OciAttributes.md)
  - [OciCosignConfiguration](docs/OciCosignConfiguration.md)
  - [OciGroupApiRepository](docs/OciGroupApiRepository.md)

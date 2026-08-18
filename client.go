@@ -115,6 +115,8 @@ type APIClient struct {
 
 	SecurityManagementApiKeysPrincipalsEncryptionAPI *SecurityManagementApiKeysPrincipalsEncryptionAPIService
 
+	SecurityManagementJWTAPI *SecurityManagementJWTAPIService
+
 	SecurityManagementLDAPAPI *SecurityManagementLDAPAPIService
 
 	SecurityManagementPrivilegesAPI *SecurityManagementPrivilegesAPIService
@@ -134,6 +136,8 @@ type APIClient struct {
 	SecurityManagementUserTokensAPI *SecurityManagementUserTokensAPIService
 
 	SecurityManagementUsersAPI *SecurityManagementUsersAPIService
+
+	SecurityOAuth2OIDCAPI *SecurityOAuth2OIDCAPIService
 
 	StagingAPI *StagingAPIService
 
@@ -199,6 +203,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SecurityManagementAPIAccessAPI = (*SecurityManagementAPIAccessAPIService)(&c.common)
 	c.SecurityManagementAnonymousAccessAPI = (*SecurityManagementAnonymousAccessAPIService)(&c.common)
 	c.SecurityManagementApiKeysPrincipalsEncryptionAPI = (*SecurityManagementApiKeysPrincipalsEncryptionAPIService)(&c.common)
+	c.SecurityManagementJWTAPI = (*SecurityManagementJWTAPIService)(&c.common)
 	c.SecurityManagementLDAPAPI = (*SecurityManagementLDAPAPIService)(&c.common)
 	c.SecurityManagementPrivilegesAPI = (*SecurityManagementPrivilegesAPIService)(&c.common)
 	c.SecurityManagementRealmsAPI = (*SecurityManagementRealmsAPIService)(&c.common)
@@ -209,6 +214,7 @@ func NewAPIClient(cfg *Configuration) *APIClient {
 	c.SecurityManagementSecretsEncryptionAPI = (*SecurityManagementSecretsEncryptionAPIService)(&c.common)
 	c.SecurityManagementUserTokensAPI = (*SecurityManagementUserTokensAPIService)(&c.common)
 	c.SecurityManagementUsersAPI = (*SecurityManagementUsersAPIService)(&c.common)
+	c.SecurityOAuth2OIDCAPI = (*SecurityOAuth2OIDCAPIService)(&c.common)
 	c.StagingAPI = (*StagingAPIService)(&c.common)
 	c.StatusAPI = (*StatusAPIService)(&c.common)
 	c.SupportAPI = (*SupportAPIService)(&c.common)
