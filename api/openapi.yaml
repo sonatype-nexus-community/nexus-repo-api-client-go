@@ -892,6 +892,12 @@ paths:
       operationId: listCleanupPolicies
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                items:
+                  $ref: "#/components/schemas/CleanupPolicyResourceXO"
+                type: array
           description: The list of existing policies
       summary: Get a list of existing policies
       tags:
@@ -945,6 +951,10 @@ paths:
         style: simple
       responses:
         "200":
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/CleanupPolicyResourceXO"
           description: Policy if exists
       summary: Get a policy by name
       tags:

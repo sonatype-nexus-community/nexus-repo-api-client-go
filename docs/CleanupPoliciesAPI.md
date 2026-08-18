@@ -142,7 +142,7 @@ Name | Type | Description  | Notes
 
 ## GetCleanupPolicies
 
-> GetCleanupPolicies(ctx, name).Execute()
+> CleanupPolicyResourceXO GetCleanupPolicies(ctx, name).Execute()
 
 Get a policy by name
 
@@ -163,11 +163,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicies(context.Background(), name).Execute()
+	resp, r, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicies(context.Background(), name).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.GetCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `GetCleanupPolicies`: CleanupPolicyResourceXO
+	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.GetCleanupPolicies`: %v\n", resp)
 }
 ```
 
@@ -190,7 +192,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**CleanupPolicyResourceXO**](CleanupPolicyResourceXO.md)
 
 ### Authorization
 
@@ -199,7 +201,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -208,7 +210,7 @@ Name | Type | Description  | Notes
 
 ## ListCleanupPolicies
 
-> ListCleanupPolicies(ctx).Execute()
+> []CleanupPolicyResourceXO ListCleanupPolicies(ctx).Execute()
 
 Get a list of existing policies
 
@@ -228,11 +230,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.CleanupPoliciesAPI.ListCleanupPolicies(context.Background()).Execute()
+	resp, r, err := apiClient.CleanupPoliciesAPI.ListCleanupPolicies(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `CleanupPoliciesAPI.ListCleanupPolicies``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListCleanupPolicies`: []CleanupPolicyResourceXO
+	fmt.Fprintf(os.Stdout, "Response from `CleanupPoliciesAPI.ListCleanupPolicies`: %v\n", resp)
 }
 ```
 
@@ -247,7 +251,7 @@ Other parameters are passed through a pointer to a apiListCleanupPoliciesRequest
 
 ### Return type
 
- (empty response body)
+[**[]CleanupPolicyResourceXO**](CleanupPolicyResourceXO.md)
 
 ### Authorization
 
@@ -256,7 +260,7 @@ Other parameters are passed through a pointer to a apiListCleanupPoliciesRequest
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

@@ -216,7 +216,7 @@ type ApiGetCleanupPoliciesRequest struct {
 	name string
 }
 
-func (r ApiGetCleanupPoliciesRequest) Execute() (*http.Response, error) {
+func (r ApiGetCleanupPoliciesRequest) Execute() (*CleanupPolicyResourceXO, *http.Response, error) {
 	return r.ApiService.GetCleanupPoliciesExecute(r)
 }
 
@@ -236,16 +236,18 @@ func (a *CleanupPoliciesAPIService) GetCleanupPolicies(ctx context.Context, name
 }
 
 // Execute executes the request
-func (a *CleanupPoliciesAPIService) GetCleanupPoliciesExecute(r ApiGetCleanupPoliciesRequest) (*http.Response, error) {
+//  @return CleanupPolicyResourceXO
+func (a *CleanupPoliciesAPIService) GetCleanupPoliciesExecute(r ApiGetCleanupPoliciesRequest) (*CleanupPolicyResourceXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  *CleanupPolicyResourceXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CleanupPoliciesAPIService.GetCleanupPolicies")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/cleanup-policies/{name}"
@@ -265,7 +267,7 @@ func (a *CleanupPoliciesAPIService) GetCleanupPoliciesExecute(r ApiGetCleanupPol
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -274,19 +276,19 @@ func (a *CleanupPoliciesAPIService) GetCleanupPoliciesExecute(r ApiGetCleanupPol
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -294,10 +296,19 @@ func (a *CleanupPoliciesAPIService) GetCleanupPoliciesExecute(r ApiGetCleanupPol
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiListCleanupPoliciesRequest struct {
@@ -305,7 +316,7 @@ type ApiListCleanupPoliciesRequest struct {
 	ApiService *CleanupPoliciesAPIService
 }
 
-func (r ApiListCleanupPoliciesRequest) Execute() (*http.Response, error) {
+func (r ApiListCleanupPoliciesRequest) Execute() ([]CleanupPolicyResourceXO, *http.Response, error) {
 	return r.ApiService.ListCleanupPoliciesExecute(r)
 }
 
@@ -323,16 +334,18 @@ func (a *CleanupPoliciesAPIService) ListCleanupPolicies(ctx context.Context) Api
 }
 
 // Execute executes the request
-func (a *CleanupPoliciesAPIService) ListCleanupPoliciesExecute(r ApiListCleanupPoliciesRequest) (*http.Response, error) {
+//  @return []CleanupPolicyResourceXO
+func (a *CleanupPoliciesAPIService) ListCleanupPoliciesExecute(r ApiListCleanupPoliciesRequest) ([]CleanupPolicyResourceXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
+		localVarReturnValue  []CleanupPolicyResourceXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CleanupPoliciesAPIService.ListCleanupPolicies")
 	if err != nil {
-		return nil, &GenericOpenAPIError{error: err.Error()}
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
 	localVarPath := localBasePath + "/v1/cleanup-policies"
@@ -351,7 +364,7 @@ func (a *CleanupPoliciesAPIService) ListCleanupPoliciesExecute(r ApiListCleanupP
 	}
 
 	// to determine the Accept header
-	localVarHTTPHeaderAccepts := []string{}
+	localVarHTTPHeaderAccepts := []string{"application/json"}
 
 	// set Accept header
 	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
@@ -360,19 +373,19 @@ func (a *CleanupPoliciesAPIService) ListCleanupPoliciesExecute(r ApiListCleanupP
 	}
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
-		return nil, err
+		return localVarReturnValue, nil, err
 	}
 
 	localVarHTTPResponse, err := a.client.callAPI(req)
 	if err != nil || localVarHTTPResponse == nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
 	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
-		return localVarHTTPResponse, err
+		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
 	if localVarHTTPResponse.StatusCode >= 300 {
@@ -380,10 +393,19 @@ func (a *CleanupPoliciesAPIService) ListCleanupPoliciesExecute(r ApiListCleanupP
 			body:  localVarBody,
 			error: localVarHTTPResponse.Status,
 		}
-		return localVarHTTPResponse, newErr
+		return localVarReturnValue, localVarHTTPResponse, newErr
 	}
 
-	return localVarHTTPResponse, nil
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
 type ApiUpdateCleanupPoliciesRequest struct {

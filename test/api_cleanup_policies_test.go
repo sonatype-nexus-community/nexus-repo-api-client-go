@@ -52,9 +52,10 @@ func Test_v395_CleanupPoliciesAPIService(t *testing.T) {
 
 		var name string
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicies(context.Background(), name).Execute()
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.GetCleanupPolicies(context.Background(), name).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -63,9 +64,10 @@ func Test_v395_CleanupPoliciesAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.CleanupPoliciesAPI.ListCleanupPolicies(context.Background()).Execute()
+		resp, httpRes, err := apiClient.CleanupPoliciesAPI.ListCleanupPolicies(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
