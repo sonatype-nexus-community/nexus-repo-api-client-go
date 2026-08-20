@@ -22,6 +22,7 @@ var _ MappedNullable = &PyPiProxyApiRepository{}
 // PyPiProxyApiRepository struct for PyPiProxyApiRepository
 type PyPiProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Firewall *FirewallAttributes `json:"firewall,omitempty"`
 	Format string `json:"format"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	// A unique identifier for this repository
@@ -101,6 +102,38 @@ func (o *PyPiProxyApiRepository) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *PyPiProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetFirewall returns the Firewall field value if set, zero value otherwise.
+func (o *PyPiProxyApiRepository) GetFirewall() FirewallAttributes {
+	if o == nil || IsNil(o.Firewall) {
+		var ret FirewallAttributes
+		return ret
+	}
+	return *o.Firewall
+}
+
+// GetFirewallOk returns a tuple with the Firewall field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PyPiProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool) {
+	if o == nil || IsNil(o.Firewall) {
+		return nil, false
+	}
+	return o.Firewall, true
+}
+
+// HasFirewall returns a boolean if a field has been set.
+func (o *PyPiProxyApiRepository) HasFirewall() bool {
+	if o != nil && !IsNil(o.Firewall) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirewall gets a reference to the given FirewallAttributes and assigns it to the Firewall field.
+func (o *PyPiProxyApiRepository) SetFirewall(v FirewallAttributes) {
+	o.Firewall = &v
 }
 
 // GetFormat returns the Format field value
@@ -419,6 +452,9 @@ func (o PyPiProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
+	}
+	if !IsNil(o.Firewall) {
+		toSerialize["firewall"] = o.Firewall
 	}
 	toSerialize["format"] = o.Format
 	toSerialize["httpClient"] = o.HttpClient

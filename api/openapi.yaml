@@ -24702,6 +24702,8 @@ components:
           policyNames:
           - policyNames
           - policyNames
+        firewall:
+          mode: QUARANTINE
         pypi:
           indexPath: /simple
         name: name
@@ -24709,6 +24711,8 @@ components:
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
+        firewall:
+          $ref: "#/components/schemas/FirewallAttributes"
         format:
           default: pypi
           type: string
