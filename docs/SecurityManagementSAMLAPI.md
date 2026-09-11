@@ -130,7 +130,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlRequest st
 
 ## ListSecuritySamlMetadata
 
-> ListSecuritySamlMetadata(ctx).Execute()
+> string ListSecuritySamlMetadata(ctx).Execute()
 
 Get service provider metadata XML document
 
@@ -150,11 +150,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlMetadata(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlMetadata(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLAPI.ListSecuritySamlMetadata``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySamlMetadata`: string
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSAMLAPI.ListSecuritySamlMetadata`: %v\n", resp)
 }
 ```
 
@@ -169,7 +171,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlMetadataRe
 
 ### Return type
 
- (empty response body)
+**string**
 
 ### Authorization
 
@@ -178,7 +180,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlMetadataRe
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/xml
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -187,7 +189,7 @@ Other parameters are passed through a pointer to a apiListSecuritySamlMetadataRe
 
 ## ListSecuritySamlPem
 
-> ListSecuritySamlPem(ctx).Type_(type_).Execute()
+> string ListSecuritySamlPem(ctx).Type_(type_).Execute()
 
 Get service provider signing or decryption certificate in PEM format
 
@@ -208,11 +210,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlPem(context.Background()).Type_(type_).Execute()
+	resp, r, err := apiClient.SecurityManagementSAMLAPI.ListSecuritySamlPem(context.Background()).Type_(type_).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementSAMLAPI.ListSecuritySamlPem``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecuritySamlPem`: string
+	fmt.Fprintf(os.Stdout, "Response from `SecurityManagementSAMLAPI.ListSecuritySamlPem`: %v\n", resp)
 }
 ```
 
@@ -231,7 +235,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+**string**
 
 ### Authorization
 
@@ -240,7 +244,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/x-pem-file
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

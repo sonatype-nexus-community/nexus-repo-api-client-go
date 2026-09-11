@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
 **RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
+**Xet** | Pointer to [**HuggingFaceXetAttributes**](HuggingFaceXetAttributes.md) |  | [optional] 
 
 ## Methods
 
@@ -253,6 +254,31 @@ and a boolean to check if the value has been set.
 
 SetStorage sets Storage field to given value.
 
+
+### GetXet
+
+`func (o *HuggingFaceProxyRepositoryApiRequest) GetXet() HuggingFaceXetAttributes`
+
+GetXet returns the Xet field if non-nil, zero value otherwise.
+
+### GetXetOk
+
+`func (o *HuggingFaceProxyRepositoryApiRequest) GetXetOk() (*HuggingFaceXetAttributes, bool)`
+
+GetXetOk returns a tuple with the Xet field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetXet
+
+`func (o *HuggingFaceProxyRepositoryApiRequest) SetXet(v HuggingFaceXetAttributes)`
+
+SetXet sets Xet field to given value.
+
+### HasXet
+
+`func (o *HuggingFaceProxyRepositoryApiRequest) HasXet() bool`
+
+HasXet returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **AccountName** | **string** | Account name found under Access keys for the storage account. | 
 **Authentication** | [**AzureBlobStoreApiAuthentication**](AzureBlobStoreApiAuthentication.md) |  | 
 **ContainerName** | **string** | The name of an existing container to be used for storage. | 
+**PreSignedUrlEnabled** | Pointer to **bool** | Whether direct download via SAS URLs is enabled. | [optional] 
 
 ## Methods
 
@@ -86,6 +87,31 @@ and a boolean to check if the value has been set.
 
 SetContainerName sets ContainerName field to given value.
 
+
+### GetPreSignedUrlEnabled
+
+`func (o *AzureBlobStoreApiBucketConfiguration) GetPreSignedUrlEnabled() bool`
+
+GetPreSignedUrlEnabled returns the PreSignedUrlEnabled field if non-nil, zero value otherwise.
+
+### GetPreSignedUrlEnabledOk
+
+`func (o *AzureBlobStoreApiBucketConfiguration) GetPreSignedUrlEnabledOk() (*bool, bool)`
+
+GetPreSignedUrlEnabledOk returns a tuple with the PreSignedUrlEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPreSignedUrlEnabled
+
+`func (o *AzureBlobStoreApiBucketConfiguration) SetPreSignedUrlEnabled(v bool)`
+
+SetPreSignedUrlEnabled sets PreSignedUrlEnabled field to given value.
+
+### HasPreSignedUrlEnabled
+
+`func (o *AzureBlobStoreApiBucketConfiguration) HasPreSignedUrlEnabled() bool`
+
+HasPreSignedUrlEnabled returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ListMonthlyMetrics
 
-> ListMonthlyMetrics(ctx).Execute()
+> []MonthlyMetricXO ListMonthlyMetrics(ctx).Execute()
 
 Get the last 12 months of metrics.
 
@@ -30,11 +30,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.MonthlyMetricsAPI.ListMonthlyMetrics(context.Background()).Execute()
+	resp, r, err := apiClient.MonthlyMetricsAPI.ListMonthlyMetrics(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `MonthlyMetricsAPI.ListMonthlyMetrics``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListMonthlyMetrics`: []MonthlyMetricXO
+	fmt.Fprintf(os.Stdout, "Response from `MonthlyMetricsAPI.ListMonthlyMetrics`: %v\n", resp)
 }
 ```
 
@@ -49,7 +51,7 @@ Other parameters are passed through a pointer to a apiListMonthlyMetricsRequest 
 
 ### Return type
 
- (empty response body)
+[**[]MonthlyMetricXO**](MonthlyMetricXO.md)
 
 ### Authorization
 
@@ -58,7 +60,7 @@ Other parameters are passed through a pointer to a apiListMonthlyMetricsRequest 
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

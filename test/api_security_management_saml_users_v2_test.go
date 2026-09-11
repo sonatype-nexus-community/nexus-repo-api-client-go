@@ -1,7 +1,7 @@
 /*
 Sonatype Nexus Repository Manager
 
-Testing SecurityManagementJWTAPIService
+Testing SecurityManagementSAMLUsersV2APIService
 
 */
 
@@ -17,16 +17,16 @@ import (
 	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
-func Test_v395_SecurityManagementJWTAPIService(t *testing.T) {
+func Test_v395_SecurityManagementSAMLUsersV2APIService(t *testing.T) {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
 
-	t.Run("Test SecurityManagementJWTAPIService UpdateSecurityJwt", func(t *testing.T) {
+	t.Run("Test SecurityManagementSAMLUsersV2APIService ListSecuritySamlUsersV2", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.SecurityManagementJWTAPI.UpdateSecurityJwt(context.Background()).Execute()
+		httpRes, err := apiClient.SecurityManagementSAMLUsersV2API.ListSecuritySamlUsersV2(context.Background()).Execute()
 
 		require.Nil(t, err)
 		assert.Equal(t, 200, httpRes.StatusCode)

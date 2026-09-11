@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 ## ListUsageHistory
 
-> ListUsageHistory(ctx).Metric(metric).Period(period).Execute()
+> UsageHistoryXO ListUsageHistory(ctx).Metric(metric).Period(period).Execute()
 
 Get usage history for sparklines
 
@@ -34,11 +34,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.UsageHistoryAPI.ListUsageHistory(context.Background()).Metric(metric).Period(period).Execute()
+	resp, r, err := apiClient.UsageHistoryAPI.ListUsageHistory(context.Background()).Metric(metric).Period(period).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsageHistoryAPI.ListUsageHistory``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListUsageHistory`: UsageHistoryXO
+	fmt.Fprintf(os.Stdout, "Response from `UsageHistoryAPI.ListUsageHistory`: %v\n", resp)
 }
 ```
 
@@ -58,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
- (empty response body)
+[**UsageHistoryXO**](UsageHistoryXO.md)
 
 ### Authorization
 
@@ -67,7 +69,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

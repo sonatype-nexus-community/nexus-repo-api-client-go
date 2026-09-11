@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 ## CreateSecurityRoles
 
-> RoleXOResponse CreateSecurityRoles(ctx).RoleXORequest(roleXORequest).Execute()
+> RoleXOResponse CreateSecurityRoles(ctx).RoleXORequest(roleXORequest).Source(source).Execute()
 
 Create role
 
@@ -33,10 +33,11 @@ import (
 
 func main() {
 	roleXORequest := *sonatyperepo.NewRoleXORequest("Id_example", "Name_example") // RoleXORequest | A role configuration
+	source := "source_example" // string | The id of the user source to create the role in. Available sources can be fetched using the 'User Sources' endpoint. (optional) (default to "default")
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).RoleXORequest(roleXORequest).Execute()
+	resp, r, err := apiClient.SecurityManagementRolesAPI.CreateSecurityRoles(context.Background()).RoleXORequest(roleXORequest).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.CreateSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,6 +59,7 @@ Other parameters are passed through a pointer to a apiCreateSecurityRolesRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **roleXORequest** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
+ **source** | **string** | The id of the user source to create the role in. Available sources can be fetched using the &#39;User Sources&#39; endpoint. | [default to &quot;default&quot;]
 
 ### Return type
 
@@ -79,7 +81,7 @@ Name | Type | Description  | Notes
 
 ## DeleteSecurityRoles
 
-> DeleteSecurityRoles(ctx, id).Execute()
+> DeleteSecurityRoles(ctx, id).Source(source).Execute()
 
 Delete role
 
@@ -97,10 +99,11 @@ import (
 
 func main() {
 	id := "id_example" // string | The id of the role to delete
+	source := "source_example" // string | The id of the user source that contains the role. Available sources can be fetched using the 'User Sources' endpoint. (optional) (default to "default")
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.DeleteSecurityRoles(context.Background(), id).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.DeleteSecurityRoles(context.Background(), id).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.DeleteSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -124,6 +127,7 @@ Other parameters are passed through a pointer to a apiDeleteSecurityRolesRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **source** | **string** | The id of the user source that contains the role. Available sources can be fetched using the &#39;User Sources&#39; endpoint. | [default to &quot;default&quot;]
 
 ### Return type
 
@@ -343,7 +347,7 @@ Name | Type | Description  | Notes
 
 ## UpdateSecurityRoles
 
-> UpdateSecurityRoles(ctx, id).RoleXORequest(roleXORequest).Execute()
+> UpdateSecurityRoles(ctx, id).RoleXORequest(roleXORequest).Source(source).Execute()
 
 Update role
 
@@ -362,10 +366,11 @@ import (
 func main() {
 	id := "id_example" // string | The id of the role to update
 	roleXORequest := *sonatyperepo.NewRoleXORequest("Id_example", "Name_example") // RoleXORequest | A role configuration
+	source := "source_example" // string | The id of the user source that contains the role. Available sources can be fetched using the 'User Sources' endpoint. (optional) (default to "default")
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementRolesAPI.UpdateSecurityRoles(context.Background(), id).RoleXORequest(roleXORequest).Execute()
+	r, err := apiClient.SecurityManagementRolesAPI.UpdateSecurityRoles(context.Background(), id).RoleXORequest(roleXORequest).Source(source).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementRolesAPI.UpdateSecurityRoles``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -390,6 +395,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
  **roleXORequest** | [**RoleXORequest**](RoleXORequest.md) | A role configuration | 
+ **source** | **string** | The id of the user source that contains the role. Available sources can be fetched using the &#39;User Sources&#39; endpoint. | [default to &quot;default&quot;]
 
 ### Return type
 

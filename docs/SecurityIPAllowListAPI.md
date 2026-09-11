@@ -327,7 +327,7 @@ Other parameters are passed through a pointer to a apiListSecurityIpAllowlistReq
 
 ## ListSecurityIpAllowlistCurrentIp
 
-> ListSecurityIpAllowlistCurrentIp(ctx).Execute()
+> CurrentIpXO ListSecurityIpAllowlistCurrentIp(ctx).Execute()
 
 Get the current user's IP address and whether it is in the allow list
 
@@ -347,11 +347,13 @@ func main() {
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityIPAllowListAPI.ListSecurityIpAllowlistCurrentIp(context.Background()).Execute()
+	resp, r, err := apiClient.SecurityIPAllowListAPI.ListSecurityIpAllowlistCurrentIp(context.Background()).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityIPAllowListAPI.ListSecurityIpAllowlistCurrentIp``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
+	// response from `ListSecurityIpAllowlistCurrentIp`: CurrentIpXO
+	fmt.Fprintf(os.Stdout, "Response from `SecurityIPAllowListAPI.ListSecurityIpAllowlistCurrentIp`: %v\n", resp)
 }
 ```
 
@@ -366,7 +368,7 @@ Other parameters are passed through a pointer to a apiListSecurityIpAllowlistCur
 
 ### Return type
 
- (empty response body)
+[**CurrentIpXO**](CurrentIpXO.md)
 
 ### Authorization
 
@@ -375,7 +377,7 @@ Other parameters are passed through a pointer to a apiListSecurityIpAllowlistCur
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

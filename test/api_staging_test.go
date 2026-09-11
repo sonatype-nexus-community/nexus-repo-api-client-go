@@ -26,9 +26,10 @@ func Test_v395_StagingAPIService(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
-		httpRes, err := apiClient.StagingAPI.CreateStagingDelete(context.Background()).Execute()
+		resp, httpRes, err := apiClient.StagingAPI.CreateStagingDelete(context.Background()).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})
@@ -39,9 +40,10 @@ func Test_v395_StagingAPIService(t *testing.T) {
 
 		var destination string
 
-		httpRes, err := apiClient.StagingAPI.CreateStagingMove(context.Background(), destination).Execute()
+		resp, httpRes, err := apiClient.StagingAPI.CreateStagingMove(context.Background(), destination).Execute()
 
 		require.Nil(t, err)
+		require.NotNil(t, resp)
 		assert.Equal(t, 200, httpRes.StatusCode)
 
 	})

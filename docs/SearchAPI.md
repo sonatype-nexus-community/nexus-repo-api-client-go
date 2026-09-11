@@ -7,7 +7,9 @@ Method | HTTP request | Description
 [**ListSearch**](SearchAPI.md#ListSearch) | **Get** /v1/search | Search components
 [**ListSearchAssets**](SearchAPI.md#ListSearchAssets) | **Get** /v1/search/assets | Search assets
 [**ListSearchAssetsDownload**](SearchAPI.md#ListSearchAssetsDownload) | **Get** /v1/search/assets/download | Search and download asset
+[**ListSearchRepositories**](SearchAPI.md#ListSearchRepositories) | **Get** /v1/search/repositories | 
 [**ListSearchSuggest**](SearchAPI.md#ListSearchSuggest) | **Get** /v1/search/suggest | Get search suggestions for autocomplete
+[**ListSearchVersions**](SearchAPI.md#ListSearchVersions) | **Get** /v1/search/versions | Browse the distinct versions of a component
 
 
 
@@ -679,6 +681,76 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## ListSearchRepositories
+
+> RepositoriesForVersionResponse ListSearchRepositories(ctx).Format(format).Namespace(namespace).Name(name).Version(version).Execute()
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	format := "format_example" // string |  (optional)
+	namespace := "namespace_example" // string |  (optional)
+	name := "name_example" // string |  (optional)
+	version := "version_example" // string |  (optional)
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SearchAPI.ListSearchRepositories(context.Background()).Format(format).Namespace(namespace).Name(name).Version(version).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SearchAPI.ListSearchRepositories``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSearchRepositories`: RepositoriesForVersionResponse
+	fmt.Fprintf(os.Stdout, "Response from `SearchAPI.ListSearchRepositories`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSearchRepositoriesRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string** |  | 
+ **namespace** | **string** |  | 
+ **name** | **string** |  | 
+ **version** | **string** |  | 
+
+### Return type
+
+[**RepositoriesForVersionResponse**](RepositoriesForVersionResponse.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## ListSearchSuggest
 
 > []SuggestXO ListSearchSuggest(ctx).Q(q).Format(format).Limit(limit).Execute()
@@ -734,6 +806,84 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**[]SuggestXO**](SuggestXO.md)
+
+### Authorization
+
+[BasicAuth](../README.md#BasicAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## ListSearchVersions
+
+> ComponentVersionsPageXO ListSearchVersions(ctx).Format(format).Name(name).Group(group).Version(version).Page(page).Size(size).Sort(sort).Direction(direction).Execute()
+
+Browse the distinct versions of a component
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+)
+
+func main() {
+	format := "format_example" // string | Component format (e.g., maven2, npm, nuget)
+	name := "name_example" // string | Component name
+	group := "group_example" // string | Component namespace or group; omit for formats without one (optional)
+	version := "version_example" // string | Filter to versions containing this substring (optional)
+	page := int32(56) // int32 | Zero-based page index (optional) (default to 0)
+	size := int32(56) // int32 | Page size, 1 to 250 (optional) (default to 20)
+	sort := "sort_example" // string | Sort key: version, lastUpdated, or repositories (optional) (default to "version")
+	direction := "direction_example" // string | Sort direction: asc or desc (optional) (default to "desc")
+
+	configuration := sonatyperepo.NewConfiguration()
+	apiClient := sonatyperepo.NewAPIClient(configuration)
+	resp, r, err := apiClient.SearchAPI.ListSearchVersions(context.Background()).Format(format).Name(name).Group(group).Version(version).Page(page).Size(size).Sort(sort).Direction(direction).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `SearchAPI.ListSearchVersions``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+	// response from `ListSearchVersions`: ComponentVersionsPageXO
+	fmt.Fprintf(os.Stdout, "Response from `SearchAPI.ListSearchVersions`: %v\n", resp)
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiListSearchVersionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **format** | **string** | Component format (e.g., maven2, npm, nuget) | 
+ **name** | **string** | Component name | 
+ **group** | **string** | Component namespace or group; omit for formats without one | 
+ **version** | **string** | Filter to versions containing this substring | 
+ **page** | **int32** | Zero-based page index | [default to 0]
+ **size** | **int32** | Page size, 1 to 250 | [default to 20]
+ **sort** | **string** | Sort key: version, lastUpdated, or repositories | [default to &quot;version&quot;]
+ **direction** | **string** | Sort direction: asc or desc | [default to &quot;desc&quot;]
+
+### Return type
+
+[**ComponentVersionsPageXO**](ComponentVersionsPageXO.md)
 
 ### Authorization
 

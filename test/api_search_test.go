@@ -57,11 +57,35 @@ func Test_v395_SearchAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SearchAPIService ListSearchRepositories", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SearchAPI.ListSearchRepositories(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SearchAPIService ListSearchSuggest", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test
 
 		resp, httpRes, err := apiClient.SearchAPI.ListSearchSuggest(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test SearchAPIService ListSearchVersions", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		resp, httpRes, err := apiClient.SearchAPI.ListSearchVersions(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)
