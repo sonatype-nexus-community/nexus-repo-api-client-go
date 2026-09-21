@@ -22,6 +22,7 @@ var _ MappedNullable = &RawProxyApiRepository{}
 // RawProxyApiRepository struct for RawProxyApiRepository
 type RawProxyApiRepository struct {
 	Cleanup *CleanupPolicyAttributes `json:"cleanup,omitempty"`
+	Firewall *FirewallAttributes `json:"firewall,omitempty"`
 	Format string `json:"format"`
 	HttpClient HttpClientAttributes `json:"httpClient"`
 	// A unique identifier for this repository
@@ -64,7 +65,7 @@ func NewRawProxyApiRepository(format string, httpClient HttpClientAttributes, na
 // but it doesn't guarantee that properties required by API are set
 func NewRawProxyApiRepositoryWithDefaults() *RawProxyApiRepository {
 	this := RawProxyApiRepository{}
-	var format string = "pypi"
+	var format string = "raw"
 	this.Format = format
 	var type_ string = "raw"
 	this.Type = type_
@@ -101,6 +102,38 @@ func (o *RawProxyApiRepository) HasCleanup() bool {
 // SetCleanup gets a reference to the given CleanupPolicyAttributes and assigns it to the Cleanup field.
 func (o *RawProxyApiRepository) SetCleanup(v CleanupPolicyAttributes) {
 	o.Cleanup = &v
+}
+
+// GetFirewall returns the Firewall field value if set, zero value otherwise.
+func (o *RawProxyApiRepository) GetFirewall() FirewallAttributes {
+	if o == nil || IsNil(o.Firewall) {
+		var ret FirewallAttributes
+		return ret
+	}
+	return *o.Firewall
+}
+
+// GetFirewallOk returns a tuple with the Firewall field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *RawProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool) {
+	if o == nil || IsNil(o.Firewall) {
+		return nil, false
+	}
+	return o.Firewall, true
+}
+
+// HasFirewall returns a boolean if a field has been set.
+func (o *RawProxyApiRepository) HasFirewall() bool {
+	if o != nil && !IsNil(o.Firewall) {
+		return true
+	}
+
+	return false
+}
+
+// SetFirewall gets a reference to the given FirewallAttributes and assigns it to the Firewall field.
+func (o *RawProxyApiRepository) SetFirewall(v FirewallAttributes) {
+	o.Firewall = &v
 }
 
 // GetFormat returns the Format field value
@@ -419,6 +452,9 @@ func (o RawProxyApiRepository) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if !IsNil(o.Cleanup) {
 		toSerialize["cleanup"] = o.Cleanup
+	}
+	if !IsNil(o.Firewall) {
+		toSerialize["firewall"] = o.Firewall
 	}
 	toSerialize["format"] = o.Format
 	toSerialize["httpClient"] = o.HttpClient

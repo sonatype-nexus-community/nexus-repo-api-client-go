@@ -25907,7 +25907,7 @@ components:
         negativeCache:
           timeToLive: 1440
           enabled: true
-        format: pypi
+        format: raw
         raw:
           forwardQueryParameters: true
           contentDisposition: ATTACHMENT
@@ -25930,13 +25930,17 @@ components:
           policyNames:
           - policyNames
           - policyNames
+        firewall:
+          mode: QUARANTINE
         name: name
         online: true
       properties:
         cleanup:
           $ref: "#/components/schemas/CleanupPolicyAttributes"
+        firewall:
+          $ref: "#/components/schemas/FirewallAttributes"
         format:
-          default: pypi
+          default: raw
           type: string
         httpClient:
           $ref: "#/components/schemas/HttpClientAttributes"

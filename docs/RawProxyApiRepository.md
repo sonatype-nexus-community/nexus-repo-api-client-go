@@ -5,7 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
-**Format** | **string** |  | [default to "pypi"]
+**Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
+**Format** | **string** |  | [default to "raw"]
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
@@ -61,6 +62,31 @@ SetCleanup sets Cleanup field to given value.
 `func (o *RawProxyApiRepository) HasCleanup() bool`
 
 HasCleanup returns a boolean if a field has been set.
+
+### GetFirewall
+
+`func (o *RawProxyApiRepository) GetFirewall() FirewallAttributes`
+
+GetFirewall returns the Firewall field if non-nil, zero value otherwise.
+
+### GetFirewallOk
+
+`func (o *RawProxyApiRepository) GetFirewallOk() (*FirewallAttributes, bool)`
+
+GetFirewallOk returns a tuple with the Firewall field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetFirewall
+
+`func (o *RawProxyApiRepository) SetFirewall(v FirewallAttributes)`
+
+SetFirewall sets Firewall field to given value.
+
+### HasFirewall
+
+`func (o *RawProxyApiRepository) HasFirewall() bool`
+
+HasFirewall returns a boolean if a field has been set.
 
 ### GetFormat
 
