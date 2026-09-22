@@ -1373,7 +1373,7 @@ func (r ApiListComponentsRequest) ContinuationToken(continuationToken string) Ap
 	return r
 }
 
-func (r ApiListComponentsRequest) Execute() (*Page, *http.Response, error) {
+func (r ApiListComponentsRequest) Execute() (*PageComponentXO, *http.Response, error) {
 	return r.ApiService.ListComponentsExecute(r)
 }
 
@@ -1391,13 +1391,13 @@ func (a *ComponentsAPIService) ListComponents(ctx context.Context) ApiListCompon
 }
 
 // Execute executes the request
-//  @return Page
-func (a *ComponentsAPIService) ListComponentsExecute(r ApiListComponentsRequest) (*Page, *http.Response, error) {
+//  @return PageComponentXO
+func (a *ComponentsAPIService) ListComponentsExecute(r ApiListComponentsRequest) (*PageComponentXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Page
+		localVarReturnValue  *PageComponentXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ComponentsAPIService.ListComponents")

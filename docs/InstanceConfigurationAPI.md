@@ -346,7 +346,7 @@ Name | Type | Description  | Notes
 
 ## ListConfigurationAssets
 
-> Page ListConfigurationAssets(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
+> PageAssetXO ListConfigurationAssets(ctx).XNexusMigrationProtocolVersion(xNexusMigrationProtocolVersion).Repository(repository).ContinuationToken(continuationToken).NewerThan(newerThan).OlderThan(olderThan).Execute()
 
 List assets
 
@@ -376,7 +376,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `InstanceConfigurationAPI.ListConfigurationAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListConfigurationAssets`: Page
+	// response from `ListConfigurationAssets`: PageAssetXO
 	fmt.Fprintf(os.Stdout, "Response from `InstanceConfigurationAPI.ListConfigurationAssets`: %v\n", resp)
 }
 ```
@@ -400,7 +400,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Page**](Page.md)
+[**PageAssetXO**](PageAssetXO.md)
 
 ### Authorization
 

@@ -835,7 +835,7 @@ func (r ApiListConfigurationAssetsRequest) OlderThan(olderThan int64) ApiListCon
 	return r
 }
 
-func (r ApiListConfigurationAssetsRequest) Execute() (*Page, *http.Response, error) {
+func (r ApiListConfigurationAssetsRequest) Execute() (*PageAssetXO, *http.Response, error) {
 	return r.ApiService.ListConfigurationAssetsExecute(r)
 }
 
@@ -853,13 +853,13 @@ func (a *InstanceConfigurationAPIService) ListConfigurationAssets(ctx context.Co
 }
 
 // Execute executes the request
-//  @return Page
-func (a *InstanceConfigurationAPIService) ListConfigurationAssetsExecute(r ApiListConfigurationAssetsRequest) (*Page, *http.Response, error) {
+//  @return PageAssetXO
+func (a *InstanceConfigurationAPIService) ListConfigurationAssetsExecute(r ApiListConfigurationAssetsRequest) (*PageAssetXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Page
+		localVarReturnValue  *PageAssetXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "InstanceConfigurationAPIService.ListConfigurationAssets")

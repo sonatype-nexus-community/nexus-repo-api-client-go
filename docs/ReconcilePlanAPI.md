@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ## ListPlan
 
-> Page ListPlan(ctx).ContinuationToken(continuationToken).Execute()
+> PageReconcilePlanXO ListPlan(ctx).ContinuationToken(continuationToken).Execute()
 
 Get list of currently available plans
 
@@ -436,7 +436,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.ListPlan``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListPlan`: Page
+	// response from `ListPlan`: PageReconcilePlanXO
 	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.ListPlan`: %v\n", resp)
 }
 ```
@@ -456,7 +456,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Page**](Page.md)
+[**PageReconcilePlanXO**](PageReconcilePlanXO.md)
 
 ### Authorization
 
@@ -474,7 +474,7 @@ Name | Type | Description  | Notes
 
 ## ListPlanDetails
 
-> Page ListPlanDetails(ctx).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
+> PageReconcilePlanDetailsXO ListPlanDetails(ctx).PlanId(planId).State(state).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 Get reconciliation plan details
 
@@ -503,7 +503,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ReconcilePlanAPI.ListPlanDetails``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListPlanDetails`: Page
+	// response from `ListPlanDetails`: PageReconcilePlanDetailsXO
 	fmt.Fprintf(os.Stdout, "Response from `ReconcilePlanAPI.ListPlanDetails`: %v\n", resp)
 }
 ```
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Page**](Page.md)
+[**PageReconcilePlanDetailsXO**](PageReconcilePlanDetailsXO.md)
 
 ### Authorization
 

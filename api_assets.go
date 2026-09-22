@@ -233,7 +233,7 @@ func (r ApiListAssetsRequest) ContinuationToken(continuationToken string) ApiLis
 	return r
 }
 
-func (r ApiListAssetsRequest) Execute() (*Page, *http.Response, error) {
+func (r ApiListAssetsRequest) Execute() (*PageAssetXO, *http.Response, error) {
 	return r.ApiService.ListAssetsExecute(r)
 }
 
@@ -251,13 +251,13 @@ func (a *AssetsAPIService) ListAssets(ctx context.Context) ApiListAssetsRequest 
 }
 
 // Execute executes the request
-//  @return Page
-func (a *AssetsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*Page, *http.Response, error) {
+//  @return PageAssetXO
+func (a *AssetsAPIService) ListAssetsExecute(r ApiListAssetsRequest) (*PageAssetXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Page
+		localVarReturnValue  *PageAssetXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AssetsAPIService.ListAssets")

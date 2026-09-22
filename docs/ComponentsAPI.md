@@ -367,7 +367,7 @@ Name | Type | Description  | Notes
 
 ## ListComponents
 
-> Page ListComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+> PageComponentXO ListComponents(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 List components
 
@@ -394,7 +394,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `ComponentsAPI.ListComponents``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListComponents`: Page
+	// response from `ListComponents`: PageComponentXO
 	fmt.Fprintf(os.Stdout, "Response from `ComponentsAPI.ListComponents`: %v\n", resp)
 }
 ```
@@ -415,7 +415,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Page**](Page.md)
+[**PageComponentXO**](PageComponentXO.md)
 
 ### Authorization
 

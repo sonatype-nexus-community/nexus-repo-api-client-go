@@ -677,7 +677,7 @@ func (r ApiListPlanRequest) ContinuationToken(continuationToken string) ApiListP
 	return r
 }
 
-func (r ApiListPlanRequest) Execute() (*Page, *http.Response, error) {
+func (r ApiListPlanRequest) Execute() (*PageReconcilePlanXO, *http.Response, error) {
 	return r.ApiService.ListPlanExecute(r)
 }
 
@@ -695,13 +695,13 @@ func (a *ReconcilePlanAPIService) ListPlan(ctx context.Context) ApiListPlanReque
 }
 
 // Execute executes the request
-//  @return Page
-func (a *ReconcilePlanAPIService) ListPlanExecute(r ApiListPlanRequest) (*Page, *http.Response, error) {
+//  @return PageReconcilePlanXO
+func (a *ReconcilePlanAPIService) ListPlanExecute(r ApiListPlanRequest) (*PageReconcilePlanXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Page
+		localVarReturnValue  *PageReconcilePlanXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReconcilePlanAPIService.ListPlan")
@@ -803,7 +803,7 @@ func (r ApiListPlanDetailsRequest) ContinuationToken(continuationToken string) A
 	return r
 }
 
-func (r ApiListPlanDetailsRequest) Execute() (*Page, *http.Response, error) {
+func (r ApiListPlanDetailsRequest) Execute() (*PageReconcilePlanDetailsXO, *http.Response, error) {
 	return r.ApiService.ListPlanDetailsExecute(r)
 }
 
@@ -821,13 +821,13 @@ func (a *ReconcilePlanAPIService) ListPlanDetails(ctx context.Context) ApiListPl
 }
 
 // Execute executes the request
-//  @return Page
-func (a *ReconcilePlanAPIService) ListPlanDetailsExecute(r ApiListPlanDetailsRequest) (*Page, *http.Response, error) {
+//  @return PageReconcilePlanDetailsXO
+func (a *ReconcilePlanAPIService) ListPlanDetailsExecute(r ApiListPlanDetailsRequest) (*PageReconcilePlanDetailsXO, *http.Response, error) {
 	var (
 		localVarHTTPMethod   = http.MethodGet
 		localVarPostBody     interface{}
 		formFiles            []formFile
-		localVarReturnValue  *Page
+		localVarReturnValue  *PageReconcilePlanDetailsXO
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ReconcilePlanAPIService.ListPlanDetails")

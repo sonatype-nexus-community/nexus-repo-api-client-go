@@ -146,7 +146,7 @@ Name | Type | Description  | Notes
 
 ## ListAssets
 
-> Page ListAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
+> PageAssetXO ListAssets(ctx).Repository(repository).ContinuationToken(continuationToken).Execute()
 
 List assets
 
@@ -173,7 +173,7 @@ func main() {
 		fmt.Fprintf(os.Stderr, "Error when calling `AssetsAPI.ListAssets``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
 	}
-	// response from `ListAssets`: Page
+	// response from `ListAssets`: PageAssetXO
 	fmt.Fprintf(os.Stdout, "Response from `AssetsAPI.ListAssets`: %v\n", resp)
 }
 ```
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Page**](Page.md)
+[**PageAssetXO**](PageAssetXO.md)
 
 ### Authorization
 

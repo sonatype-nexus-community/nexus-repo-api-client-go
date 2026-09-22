@@ -235,7 +235,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Page"
+                $ref: "#/components/schemas/PageAssetXO"
           description: Assets returned
         "403":
           description: Insufficient permissions to list assets
@@ -1012,7 +1012,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Page"
+                $ref: "#/components/schemas/PageComponentXO"
           description: Components returned
         "403":
           description: Insufficient permissions to list components
@@ -1235,7 +1235,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Page"
+                $ref: "#/components/schemas/PageAssetXO"
           description: Successful Operation
         "400":
           content:
@@ -1895,7 +1895,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Page"
+                $ref: "#/components/schemas/PageReconcilePlanXO"
           description: List of plans found
         "401":
           description: Authentication required
@@ -2034,7 +2034,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Page"
+                $ref: "#/components/schemas/PageReconcilePlanDetailsXO"
           description: Reconciliation plan details found
         "401":
           description: Authentication required
@@ -24444,11 +24444,6 @@ components:
       - storage
       type: object
     Page:
-      example:
-        items:
-        - "{}"
-        - "{}"
-        continuationToken: continuationToken
       properties:
         continuationToken:
           type: string
@@ -24620,6 +24615,29 @@ components:
           type: array
       type: object
     PageReconcilePlanDetailsXO:
+      example:
+        items:
+        - path: path
+          reason: reason
+          blobId: blobId
+          action: action
+          assetName: assetName
+          planId: 6
+          id: 0
+          state: state
+          repository: repository
+          datePathRef: datePathRef
+        - path: path
+          reason: reason
+          blobId: blobId
+          action: action
+          assetName: assetName
+          planId: 6
+          id: 0
+          state: state
+          repository: repository
+          datePathRef: datePathRef
+        continuationToken: continuationToken
       properties:
         continuationToken:
           type: string
@@ -24629,6 +24647,25 @@ components:
           type: array
       type: object
     PageReconcilePlanXO:
+      example:
+        items:
+        - configuration:
+            key: configuration
+          created: 2000-01-23T04:56:07.000+00:00
+          started: 2000-01-23T04:56:07.000+00:00
+          id: 0
+          state: state
+          blobStore: blobStore
+          repository: repository
+        - configuration:
+            key: configuration
+          created: 2000-01-23T04:56:07.000+00:00
+          started: 2000-01-23T04:56:07.000+00:00
+          id: 0
+          state: state
+          blobStore: blobStore
+          repository: repository
+        continuationToken: continuationToken
       properties:
         continuationToken:
           type: string
@@ -26378,7 +26415,7 @@ components:
           state: state
           repository: repository
           datePathRef: datePathRef
-        id: 1
+        id: 0
         state: state
         repository: repository
         continuationToken: continuationToken
@@ -26405,6 +26442,15 @@ components:
           type: string
       type: object
     ReconcilePlanXO:
+      example:
+        configuration:
+          key: configuration
+        created: 2000-01-23T04:56:07.000+00:00
+        started: 2000-01-23T04:56:07.000+00:00
+        id: 0
+        state: state
+        blobStore: blobStore
+        repository: repository
       properties:
         blobStore:
           type: string
