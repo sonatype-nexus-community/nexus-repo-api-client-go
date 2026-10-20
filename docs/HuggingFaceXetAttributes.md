@@ -4,10 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**Enabled** | Pointer to **bool** |  | [optional] 
 **XetCasUrl** | Pointer to **string** |  | [optional] 
-**XetCasUrlOrDefault** | Pointer to **string** |  | [optional] 
+**XetCasUrlOrDefault** | Pointer to **string** |  | [optional] [readonly] 
 **XetTransferHostAllowList** | Pointer to **[]string** |  | [optional] 
-**XetTransferHostAllowListOrDefault** | Pointer to **[]string** |  | [optional] 
+**XetTransferHostAllowListOrDefault** | Pointer to **[]string** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -27,6 +28,31 @@ will change when the set of required properties is changed
 NewHuggingFaceXetAttributesWithDefaults instantiates a new HuggingFaceXetAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
+
+### GetEnabled
+
+`func (o *HuggingFaceXetAttributes) GetEnabled() bool`
+
+GetEnabled returns the Enabled field if non-nil, zero value otherwise.
+
+### GetEnabledOk
+
+`func (o *HuggingFaceXetAttributes) GetEnabledOk() (*bool, bool)`
+
+GetEnabledOk returns a tuple with the Enabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEnabled
+
+`func (o *HuggingFaceXetAttributes) SetEnabled(v bool)`
+
+SetEnabled sets Enabled field to given value.
+
+### HasEnabled
+
+`func (o *HuggingFaceXetAttributes) HasEnabled() bool`
+
+HasEnabled returns a boolean if a field has been set.
 
 ### GetXetCasUrl
 

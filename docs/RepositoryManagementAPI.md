@@ -1487,7 +1487,7 @@ import (
 )
 
 func main() {
-	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
+	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -11106,7 +11106,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
+	condaProxyRepositoryApiRequest := *sonatyperepo.NewCondaProxyRepositoryApiRequest("internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // CondaProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

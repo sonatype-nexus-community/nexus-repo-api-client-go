@@ -33,7 +33,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 	repositoryName := "repositoryName_example" // string | Repository name to import assets to
 
 	configuration := sonatyperepo.NewConfiguration()
@@ -63,7 +63,7 @@ Other parameters are passed through a pointer to a apiCreateConfigurationAssetsI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
 
 
 ### Return type
@@ -103,7 +103,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 	body := "body_example" // string | Cipher password as plain text
 
 	configuration := sonatyperepo.NewConfiguration()
@@ -129,7 +129,7 @@ Other parameters are passed through a pointer to a apiCreateConfigurationCipherR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
  **body** | **string** | Cipher password as plain text | 
 
 ### Return type
@@ -169,7 +169,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 	transferCompleteXO := *sonatyperepo.NewTransferCompleteXO() // TransferCompleteXO | Transfer completion notification data
 
 	configuration := sonatyperepo.NewConfiguration()
@@ -195,7 +195,7 @@ Other parameters are passed through a pointer to a apiCreateConfigurationTransfe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
  **transferCompleteXO** | [**TransferCompleteXO**](TransferCompleteXO.md) | Transfer completion notification data | 
 
 ### Return type
@@ -235,7 +235,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -260,7 +260,7 @@ Other parameters are passed through a pointer to a apiDeleteConfigurationCipherR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
 
 ### Return type
 
@@ -299,7 +299,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -324,7 +324,7 @@ Other parameters are passed through a pointer to a apiListConfigurationRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
 
 ### Return type
 
@@ -363,7 +363,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 	repository := "repository_example" // string | Repository from which you would like to retrieve assets.
 	continuationToken := "continuationToken_example" // string | A token returned by a prior request. If present, the next page of results are returned (optional)
 	newerThan := int64(789) // int64 | Unix timestamp (milliseconds since epoch). Return assets last updated after this timestamp (optional)
@@ -392,7 +392,7 @@ Other parameters are passed through a pointer to a apiListConfigurationAssetsReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
  **repository** | **string** | Repository from which you would like to retrieve assets. | 
  **continuationToken** | **string** | A token returned by a prior request. If present, the next page of results are returned | 
  **newerThan** | **int64** | Unix timestamp (milliseconds since epoch). Return assets last updated after this timestamp | 
@@ -435,7 +435,7 @@ import (
 )
 
 func main() {
-	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version (must be '1')
+	xNexusMigrationProtocolVersion := "xNexusMigrationProtocolVersion_example" // string | Migration protocol version spoken by the calling migration tool, for example '2'. A version this instance cannot serve is rejected with 400.
 	instanceConfigurationXO := *sonatyperepo.NewInstanceConfigurationXO() // InstanceConfigurationXO |  (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
@@ -461,7 +461,7 @@ Other parameters are passed through a pointer to a apiUpdateConfigurationRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **xNexusMigrationProtocolVersion** | **string** | Migration protocol version (must be &#39;1&#39;) | 
+ **xNexusMigrationProtocolVersion** | **string** | Migration protocol version spoken by the calling migration tool, for example &#39;2&#39;. A version this instance cannot serve is rejected with 400. | 
  **instanceConfigurationXO** | [**InstanceConfigurationXO**](InstanceConfigurationXO.md) |  | 
 
 ### Return type

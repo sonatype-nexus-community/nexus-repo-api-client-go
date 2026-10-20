@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
-**HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
+**HttpClient** | Pointer to [**HttpClientAttributesWithPreemptiveAuth**](HttpClientAttributesWithPreemptiveAuth.md) |  | [optional] 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 
 ### NewCondaProxyRepositoryApiRequest
 
-`func NewCondaProxyRepositoryApiRequest(httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *CondaProxyRepositoryApiRequest`
+`func NewCondaProxyRepositoryApiRequest(name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *CondaProxyRepositoryApiRequest`
 
 NewCondaProxyRepositoryApiRequest instantiates a new CondaProxyRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -86,23 +86,28 @@ HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
-`func (o *CondaProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributes`
+`func (o *CondaProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributesWithPreemptiveAuth`
 
 GetHttpClient returns the HttpClient field if non-nil, zero value otherwise.
 
 ### GetHttpClientOk
 
-`func (o *CondaProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributes, bool)`
+`func (o *CondaProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributesWithPreemptiveAuth, bool)`
 
 GetHttpClientOk returns a tuple with the HttpClient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpClient
 
-`func (o *CondaProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributes)`
+`func (o *CondaProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributesWithPreemptiveAuth)`
 
 SetHttpClient sets HttpClient field to given value.
 
+### HasHttpClient
+
+`func (o *CondaProxyRepositoryApiRequest) HasHttpClient() bool`
+
+HasHttpClient returns a boolean if a field has been set.
 
 ### GetName
 

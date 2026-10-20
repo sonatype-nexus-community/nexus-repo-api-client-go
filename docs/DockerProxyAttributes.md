@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **ForeignLayerUrlWhitelist** | Pointer to **[]string** | Regular expressions used to identify URLs that are allowed for foreign layer requests | [optional] 
 **IndexType** | **string** | Type of Docker Index | 
 **IndexUrl** | Pointer to **string** | Url of Docker Index to use | [optional] 
+**LayerDownloadTimeoutMinutes** | Pointer to **int32** | Maximum time to wait for each container image layer to download during Firewall scanning (minutes) | [optional] 
 
 ## Methods
 
@@ -148,6 +149,31 @@ SetIndexUrl sets IndexUrl field to given value.
 `func (o *DockerProxyAttributes) HasIndexUrl() bool`
 
 HasIndexUrl returns a boolean if a field has been set.
+
+### GetLayerDownloadTimeoutMinutes
+
+`func (o *DockerProxyAttributes) GetLayerDownloadTimeoutMinutes() int32`
+
+GetLayerDownloadTimeoutMinutes returns the LayerDownloadTimeoutMinutes field if non-nil, zero value otherwise.
+
+### GetLayerDownloadTimeoutMinutesOk
+
+`func (o *DockerProxyAttributes) GetLayerDownloadTimeoutMinutesOk() (*int32, bool)`
+
+GetLayerDownloadTimeoutMinutesOk returns a tuple with the LayerDownloadTimeoutMinutes field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLayerDownloadTimeoutMinutes
+
+`func (o *DockerProxyAttributes) SetLayerDownloadTimeoutMinutes(v int32)`
+
+SetLayerDownloadTimeoutMinutes sets LayerDownloadTimeoutMinutes field to given value.
+
+### HasLayerDownloadTimeoutMinutes
+
+`func (o *DockerProxyAttributes) HasLayerDownloadTimeoutMinutes() bool`
+
+HasLayerDownloadTimeoutMinutes returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

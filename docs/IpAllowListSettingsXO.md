@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**EffectiveMode** | Pointer to **string** | Effective mode after applying forceDisable and feature flag overrides. May differ from &#39;mode&#39; when the feature is force-disabled or the feature flag is off. | [optional] 
+**EffectiveMode** | Pointer to **string** | The mode currently being applied. May differ from &#39;mode&#39; when the feature is force-disabled, or when the mode is ENFORCE with an empty allow list (which is not enforced, as it would deny all requests). | [optional] 
 **FeatureEnabled** | Pointer to **bool** | Whether the IP Allow List feature is currently enabled | [optional] 
 **Ipv4AddressesCovered** | Pointer to **int64** | Number of individual IPv4 addresses covered by IPv4 and CIDR_IPV4 entries | [optional] 
 **Ipv6AddressesCovered** | Pointer to **int64** | Number of individual IPv6 addresses covered by IPv6 and CIDR_IPV6 entries | [optional] 

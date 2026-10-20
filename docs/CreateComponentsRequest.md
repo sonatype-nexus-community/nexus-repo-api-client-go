@@ -4,27 +4,30 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**AlpineAsset** | Pointer to ***os.File** | alpine Asset  | [optional] 
+**AlpineAsset** | Pointer to ***os.File** | alpine Asset | [optional] 
 **AlpineRepository** | Pointer to **string** | alpine Repository | [optional] 
 **AlpineTag** | Pointer to **string** | alpine Tag | [optional] 
 **AlpineVersion** | Pointer to **string** | alpine Alpine Version | [optional] 
-**AnsiblegalaxyAsset** | Pointer to ***os.File** | ansiblegalaxy Asset  | [optional] 
+**AnsiblegalaxyAsset** | Pointer to ***os.File** | ansiblegalaxy Asset | [optional] 
 **AnsiblegalaxyName** | Pointer to **string** | ansiblegalaxy Name | [optional] 
 **AnsiblegalaxyNamespace** | Pointer to **string** | ansiblegalaxy Namespace | [optional] 
 **AnsiblegalaxyTag** | Pointer to **string** | ansiblegalaxy Tag | [optional] 
 **AnsiblegalaxyVersion** | Pointer to **string** | ansiblegalaxy Version | [optional] 
-**AptAsset** | Pointer to ***os.File** | apt Asset  | [optional] 
+**AptAsset** | Pointer to ***os.File** | apt Asset | [optional] 
 **AptTag** | Pointer to **string** | apt Tag | [optional] 
+**ComposerAsset** | Pointer to ***os.File** | composer Asset | [optional] 
+**ComposerTag** | Pointer to **string** | composer Tag | [optional] 
+**ComposerVersion** | Pointer to **string** | composer Version | [optional] 
 **CondaArch** | Pointer to **string** | conda Architecture | [optional] 
-**CondaAsset** | Pointer to ***os.File** | conda Asset  | [optional] 
+**CondaAsset** | Pointer to ***os.File** | conda Asset | [optional] 
 **CondaBuild** | Pointer to **string** | conda Build String | [optional] 
 **CondaFilename** | Pointer to **string** | conda Filename | [optional] 
 **CondaTag** | Pointer to **string** | conda Tag | [optional] 
 **CondaVersion** | Pointer to **string** | conda Version | [optional] 
-**GoAsset** | Pointer to ***os.File** | go Asset  | [optional] 
+**GoAsset** | Pointer to ***os.File** | go Asset | [optional] 
 **GoTag** | Pointer to **string** | go Tag | [optional] 
 **GoVersion** | Pointer to **string** | go Version | [optional] 
-**HelmAsset** | Pointer to ***os.File** | helm Asset  | [optional] 
+**HelmAsset** | Pointer to ***os.File** | helm Asset | [optional] 
 **HelmTag** | Pointer to **string** | helm Tag | [optional] 
 **Maven2ArtifactId** | Pointer to **string** | maven2 Artifact ID | [optional] 
 **Maven2Asset1** | Pointer to ***os.File** | maven2 Asset 1 | [optional] 
@@ -41,18 +44,18 @@ Name | Type | Description | Notes
 **Maven2Packaging** | Pointer to **string** | maven2 Packaging | [optional] 
 **Maven2Tag** | Pointer to **string** | maven2 Tag | [optional] 
 **Maven2Version** | Pointer to **string** | maven2 Version | [optional] 
-**NpmAsset** | Pointer to ***os.File** | npm Asset  | [optional] 
+**NpmAsset** | Pointer to ***os.File** | npm Asset | [optional] 
 **NpmTag** | Pointer to **string** | npm Tag | [optional] 
-**NugetAsset** | Pointer to ***os.File** | nuget Asset  | [optional] 
+**NugetAsset** | Pointer to ***os.File** | nuget Asset | [optional] 
 **NugetTag** | Pointer to **string** | nuget Tag | [optional] 
-**PubAsset** | Pointer to ***os.File** | pub Asset  | [optional] 
+**PubAsset** | Pointer to ***os.File** | pub Asset | [optional] 
 **PubName** | Pointer to **string** | pub Package Name | [optional] 
 **PubTag** | Pointer to **string** | pub Tag | [optional] 
 **PubVersion** | Pointer to **string** | pub Version | [optional] 
-**PypiAsset** | Pointer to ***os.File** | pypi Asset  | [optional] 
+**PypiAsset** | Pointer to ***os.File** | pypi Asset | [optional] 
 **PypiTag** | Pointer to **string** | pypi Tag | [optional] 
-**RAsset** | Pointer to ***os.File** | r Asset  | [optional] 
-**RAssetPathId** | Pointer to **string** | r Asset  Package Path | [optional] 
+**RAsset** | Pointer to ***os.File** | r Asset | [optional] 
+**RAssetPathId** | Pointer to **string** | r Asset Package Path | [optional] 
 **RTag** | Pointer to **string** | r Tag | [optional] 
 **RawAsset1** | Pointer to ***os.File** | raw Asset 1 | [optional] 
 **RawAsset1Filename** | Pointer to **string** | raw Asset 1 Filename | [optional] 
@@ -62,15 +65,15 @@ Name | Type | Description | Notes
 **RawAsset3Filename** | Pointer to **string** | raw Asset 3 Filename | [optional] 
 **RawDirectory** | Pointer to **string** | raw Directory | [optional] 
 **RawTag** | Pointer to **string** | raw Tag | [optional] 
-**RubygemsAsset** | Pointer to ***os.File** | rubygems Asset  | [optional] 
+**RubygemsAsset** | Pointer to ***os.File** | rubygems Asset | [optional] 
 **RubygemsTag** | Pointer to **string** | rubygems Tag | [optional] 
-**SwiftAsset** | Pointer to ***os.File** | swift Asset  | [optional] 
+**SwiftAsset** | Pointer to ***os.File** | swift Asset | [optional] 
 **SwiftName** | Pointer to **string** | swift Name | [optional] 
 **SwiftScope** | Pointer to **string** | swift Scope | [optional] 
 **SwiftTag** | Pointer to **string** | swift Tag | [optional] 
 **SwiftVersion** | Pointer to **string** | swift Version | [optional] 
 **TerraformArchitecture** | Pointer to **string** | terraform Architecture | [optional] 
-**TerraformAsset** | Pointer to ***os.File** | terraform Asset  | [optional] 
+**TerraformAsset** | Pointer to ***os.File** | terraform Asset | [optional] 
 **TerraformName** | Pointer to **string** | terraform Module Name | [optional] 
 **TerraformNamespace** | Pointer to **string** | terraform Namespace | [optional] 
 **TerraformOs** | Pointer to **string** | terraform Operating System | [optional] 
@@ -79,8 +82,8 @@ Name | Type | Description | Notes
 **TerraformType** | Pointer to **string** | terraform Provider Type | [optional] 
 **TerraformUploadType** | Pointer to **string** | terraform Upload Type | [optional] 
 **TerraformVersion** | Pointer to **string** | terraform Version | [optional] 
-**YumAsset** | Pointer to ***os.File** | yum Asset  | [optional] 
-**YumAssetFilename** | Pointer to **string** | yum Asset  Filename | [optional] 
+**YumAsset** | Pointer to ***os.File** | yum Asset | [optional] 
+**YumAssetFilename** | Pointer to **string** | yum Asset Filename | [optional] 
 **YumDirectory** | Pointer to **string** | yum Directory | [optional] 
 **YumTag** | Pointer to **string** | yum Tag | [optional] 
 
@@ -377,6 +380,81 @@ SetAptTag sets AptTag field to given value.
 `func (o *CreateComponentsRequest) HasAptTag() bool`
 
 HasAptTag returns a boolean if a field has been set.
+
+### GetComposerAsset
+
+`func (o *CreateComponentsRequest) GetComposerAsset() *os.File`
+
+GetComposerAsset returns the ComposerAsset field if non-nil, zero value otherwise.
+
+### GetComposerAssetOk
+
+`func (o *CreateComponentsRequest) GetComposerAssetOk() (**os.File, bool)`
+
+GetComposerAssetOk returns a tuple with the ComposerAsset field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComposerAsset
+
+`func (o *CreateComponentsRequest) SetComposerAsset(v *os.File)`
+
+SetComposerAsset sets ComposerAsset field to given value.
+
+### HasComposerAsset
+
+`func (o *CreateComponentsRequest) HasComposerAsset() bool`
+
+HasComposerAsset returns a boolean if a field has been set.
+
+### GetComposerTag
+
+`func (o *CreateComponentsRequest) GetComposerTag() string`
+
+GetComposerTag returns the ComposerTag field if non-nil, zero value otherwise.
+
+### GetComposerTagOk
+
+`func (o *CreateComponentsRequest) GetComposerTagOk() (*string, bool)`
+
+GetComposerTagOk returns a tuple with the ComposerTag field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComposerTag
+
+`func (o *CreateComponentsRequest) SetComposerTag(v string)`
+
+SetComposerTag sets ComposerTag field to given value.
+
+### HasComposerTag
+
+`func (o *CreateComponentsRequest) HasComposerTag() bool`
+
+HasComposerTag returns a boolean if a field has been set.
+
+### GetComposerVersion
+
+`func (o *CreateComponentsRequest) GetComposerVersion() string`
+
+GetComposerVersion returns the ComposerVersion field if non-nil, zero value otherwise.
+
+### GetComposerVersionOk
+
+`func (o *CreateComponentsRequest) GetComposerVersionOk() (*string, bool)`
+
+GetComposerVersionOk returns a tuple with the ComposerVersion field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComposerVersion
+
+`func (o *CreateComponentsRequest) SetComposerVersion(v string)`
+
+SetComposerVersion sets ComposerVersion field to given value.
+
+### HasComposerVersion
+
+`func (o *CreateComponentsRequest) HasComposerVersion() bool`
+
+HasComposerVersion returns a boolean if a field has been set.
 
 ### GetCondaArch
 

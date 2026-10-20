@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DeleteSecurityUserTokens**](SecurityManagementUserTokensAPI.md#DeleteSecurityUserTokens) | **Delete** /v1/security/user-tokens | 
 [**ListSecurityUserTokens**](SecurityManagementUserTokensAPI.md#ListSecurityUserTokens) | **Get** /v1/security/user-tokens | Show if the user token capability is enabled or not
-[**ListSecurityUserTokensTokens**](SecurityManagementUserTokensAPI.md#ListSecurityUserTokensTokens) | **Get** /v1/security/user-tokens/tokens | List user tokens or look up a token owner by namecode
+[**ListSecurityUserTokensTokens**](SecurityManagementUserTokensAPI.md#ListSecurityUserTokensTokens) | **Get** /v1/security/user-tokens/tokens | List user tokens or look up a token owner by nameCode
 [**UpdateSecurityUserTokens**](SecurityManagementUserTokensAPI.md#UpdateSecurityUserTokens) | **Put** /v1/security/user-tokens | 
 
 
@@ -129,9 +129,9 @@ Other parameters are passed through a pointer to a apiListSecurityUserTokensRequ
 
 ## ListSecurityUserTokensTokens
 
-> ListSecurityUserTokensTokens200Response ListSecurityUserTokensTokens(ctx).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+> ListSecurityUserTokensTokens200Response ListSecurityUserTokensTokens(ctx).Realm(realm).UserId(userId).NameCode(nameCode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 
-List user tokens or look up a token owner by namecode
+List user tokens or look up a token owner by nameCode
 
 
 
@@ -148,16 +148,16 @@ import (
 )
 
 func main() {
-	realm := "realm_example" // string | Filter by realm (optional). Also acts as a realm constraint in namecode lookup mode. (optional)
-	userId := "userId_example" // string | Filter by user ID (optional). Ignored when 'namecode' is provided. (optional)
-	namecode := "namecode_example" // string | Look up the token owner by nameCode. When present, the endpoint resolves a single token and returns 404 if not found. Expired tokens are always included in lookup results. (optional)
-	includeExpired := true // bool | Include expired tokens in list results (default: false). Ignored in namecode lookup mode — expired tokens are always included. (optional)
+	realm := "realm_example" // string | Filter by realm (optional). Also acts as a realm constraint in nameCode lookup mode. (optional)
+	userId := "userId_example" // string | Filter by user ID (optional). Ignored when 'nameCode' is provided. (optional)
+	nameCode := "nameCode_example" // string | Look up the token owner by nameCode. When present, the endpoint resolves a single token and returns 404 if not found. Expired tokens are always included in lookup results. (optional)
+	includeExpired := true // bool | Include expired tokens in list results (default: false). Ignored in nameCode lookup mode — expired tokens are always included. (optional)
 	skip := int32(56) // int32 | Number of items to skip for pagination (default: 0). Ignored in lookup mode. (optional)
 	limit := int32(56) // int32 | Maximum number of items to return (default: 25, max: 100). Ignored in lookup mode. (optional)
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
-	resp, r, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens(context.Background()).Realm(realm).UserId(userId).Namecode(namecode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
+	resp, r, err := apiClient.SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens(context.Background()).Realm(realm).UserId(userId).NameCode(nameCode).IncludeExpired(includeExpired).Skip(skip).Limit(limit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUserTokensAPI.ListSecurityUserTokensTokens``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -178,10 +178,10 @@ Other parameters are passed through a pointer to a apiListSecurityUserTokensToke
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **realm** | **string** | Filter by realm (optional). Also acts as a realm constraint in namecode lookup mode. | 
- **userId** | **string** | Filter by user ID (optional). Ignored when &#39;namecode&#39; is provided. | 
- **namecode** | **string** | Look up the token owner by nameCode. When present, the endpoint resolves a single token and returns 404 if not found. Expired tokens are always included in lookup results. | 
- **includeExpired** | **bool** | Include expired tokens in list results (default: false). Ignored in namecode lookup mode — expired tokens are always included. | 
+ **realm** | **string** | Filter by realm (optional). Also acts as a realm constraint in nameCode lookup mode. | 
+ **userId** | **string** | Filter by user ID (optional). Ignored when &#39;nameCode&#39; is provided. | 
+ **nameCode** | **string** | Look up the token owner by nameCode. When present, the endpoint resolves a single token and returns 404 if not found. Expired tokens are always included in lookup results. | 
+ **includeExpired** | **bool** | Include expired tokens in list results (default: false). Ignored in nameCode lookup mode — expired tokens are always included. | 
  **skip** | **int32** | Number of items to skip for pagination (default: 0). Ignored in lookup mode. | 
  **limit** | **int32** | Maximum number of items to return (default: 25, max: 100). Ignored in lookup mode. | 
 

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **BucketSecurity** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 **Encryption** | Pointer to [**S3BlobStoreApiEncryption**](S3BlobStoreApiEncryption.md) |  | [optional] 
 **FailoverBuckets** | Pointer to [**[]S3BlobStoreApiFailoverBucket**](S3BlobStoreApiFailoverBucket.md) | A list of secondary buckets which have bidirectional replication enabled and should be used when Nexus is running in the region | [optional] 
-**PreSignedUrlEnabled** | Pointer to **bool** | Whether pre assigned URL is enabled or not. | [optional] 
+**PreSignedUrlEnabled** | Pointer to **bool** | Enables redirecting downloads to S3 pre-signed URLs. (Pro feature) | [optional] 
 **Security** | Pointer to [**S3BlobStoreApiBucketSecurity**](S3BlobStoreApiBucketSecurity.md) |  | [optional] 
 
 ## Methods

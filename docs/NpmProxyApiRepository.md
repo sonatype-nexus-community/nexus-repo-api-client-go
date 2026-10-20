@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
+**Npm** | Pointer to [**NpmAttributes**](NpmAttributes.md) |  | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
@@ -166,6 +167,31 @@ and a boolean to check if the value has been set.
 
 SetNegativeCache sets NegativeCache field to given value.
 
+
+### GetNpm
+
+`func (o *NpmProxyApiRepository) GetNpm() NpmAttributes`
+
+GetNpm returns the Npm field if non-nil, zero value otherwise.
+
+### GetNpmOk
+
+`func (o *NpmProxyApiRepository) GetNpmOk() (*NpmAttributes, bool)`
+
+GetNpmOk returns a tuple with the Npm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNpm
+
+`func (o *NpmProxyApiRepository) SetNpm(v NpmAttributes)`
+
+SetNpm sets Npm field to given value.
+
+### HasNpm
+
+`func (o *NpmProxyApiRepository) HasNpm() bool`
+
+HasNpm returns a boolean if a field has been set.
 
 ### GetOnline
 

@@ -4,7 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**IndexPath** | Pointer to **string** | Remote Index Path | [optional] 
+**RemoveQuarantinedVersions** | Pointer to **bool** | Deprecated legacy PCCS toggle. On responses this is derived from firewall.mode (true when PCCS). Use firewall.mode instead. | [optional] 
+**Suffix** | Pointer to **string** | Remote index path suffix appended to the remote URL for PyPI Simple API access. Defaults to /simple when absent or empty. | [optional] 
 
 ## Methods
 
@@ -25,30 +26,55 @@ NewPyPiProxyAttributesWithDefaults instantiates a new PyPiProxyAttributes object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
-### GetIndexPath
+### GetRemoveQuarantinedVersions
 
-`func (o *PyPiProxyAttributes) GetIndexPath() string`
+`func (o *PyPiProxyAttributes) GetRemoveQuarantinedVersions() bool`
 
-GetIndexPath returns the IndexPath field if non-nil, zero value otherwise.
+GetRemoveQuarantinedVersions returns the RemoveQuarantinedVersions field if non-nil, zero value otherwise.
 
-### GetIndexPathOk
+### GetRemoveQuarantinedVersionsOk
 
-`func (o *PyPiProxyAttributes) GetIndexPathOk() (*string, bool)`
+`func (o *PyPiProxyAttributes) GetRemoveQuarantinedVersionsOk() (*bool, bool)`
 
-GetIndexPathOk returns a tuple with the IndexPath field if it's non-nil, zero value otherwise
+GetRemoveQuarantinedVersionsOk returns a tuple with the RemoveQuarantinedVersions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetIndexPath
+### SetRemoveQuarantinedVersions
 
-`func (o *PyPiProxyAttributes) SetIndexPath(v string)`
+`func (o *PyPiProxyAttributes) SetRemoveQuarantinedVersions(v bool)`
 
-SetIndexPath sets IndexPath field to given value.
+SetRemoveQuarantinedVersions sets RemoveQuarantinedVersions field to given value.
 
-### HasIndexPath
+### HasRemoveQuarantinedVersions
 
-`func (o *PyPiProxyAttributes) HasIndexPath() bool`
+`func (o *PyPiProxyAttributes) HasRemoveQuarantinedVersions() bool`
 
-HasIndexPath returns a boolean if a field has been set.
+HasRemoveQuarantinedVersions returns a boolean if a field has been set.
+
+### GetSuffix
+
+`func (o *PyPiProxyAttributes) GetSuffix() string`
+
+GetSuffix returns the Suffix field if non-nil, zero value otherwise.
+
+### GetSuffixOk
+
+`func (o *PyPiProxyAttributes) GetSuffixOk() (*string, bool)`
+
+GetSuffixOk returns a tuple with the Suffix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSuffix
+
+`func (o *PyPiProxyAttributes) SetSuffix(v string)`
+
+SetSuffix sets Suffix field to given value.
+
+### HasSuffix
+
+`func (o *PyPiProxyAttributes) HasSuffix() bool`
+
+HasSuffix returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -9,10 +9,10 @@ Name | Type | Description | Notes
 **HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
+**Npm** | Pointer to [**NpmAttributes**](NpmAttributes.md) |  | [optional] 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
 **Proxy** | [**ProxyAttributes**](ProxyAttributes.md) |  | 
 **Replication** | Pointer to [**ReplicationAttributes**](ReplicationAttributes.md) |  | [optional] 
-**RoutingRule** | Pointer to **string** |  | [optional] 
 **RoutingRuleName** | Pointer to **string** |  | [optional] 
 **Storage** | [**StorageAttributes**](StorageAttributes.md) |  | 
 
@@ -145,6 +145,31 @@ and a boolean to check if the value has been set.
 SetNegativeCache sets NegativeCache field to given value.
 
 
+### GetNpm
+
+`func (o *NpmProxyRepositoryApiRequest) GetNpm() NpmAttributes`
+
+GetNpm returns the Npm field if non-nil, zero value otherwise.
+
+### GetNpmOk
+
+`func (o *NpmProxyRepositoryApiRequest) GetNpmOk() (*NpmAttributes, bool)`
+
+GetNpmOk returns a tuple with the Npm field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNpm
+
+`func (o *NpmProxyRepositoryApiRequest) SetNpm(v NpmAttributes)`
+
+SetNpm sets Npm field to given value.
+
+### HasNpm
+
+`func (o *NpmProxyRepositoryApiRequest) HasNpm() bool`
+
+HasNpm returns a boolean if a field has been set.
+
 ### GetOnline
 
 `func (o *NpmProxyRepositoryApiRequest) GetOnline() bool`
@@ -209,31 +234,6 @@ SetReplication sets Replication field to given value.
 `func (o *NpmProxyRepositoryApiRequest) HasReplication() bool`
 
 HasReplication returns a boolean if a field has been set.
-
-### GetRoutingRule
-
-`func (o *NpmProxyRepositoryApiRequest) GetRoutingRule() string`
-
-GetRoutingRule returns the RoutingRule field if non-nil, zero value otherwise.
-
-### GetRoutingRuleOk
-
-`func (o *NpmProxyRepositoryApiRequest) GetRoutingRuleOk() (*string, bool)`
-
-GetRoutingRuleOk returns a tuple with the RoutingRule field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetRoutingRule
-
-`func (o *NpmProxyRepositoryApiRequest) SetRoutingRule(v string)`
-
-SetRoutingRule sets RoutingRule field to given value.
-
-### HasRoutingRule
-
-`func (o *NpmProxyRepositoryApiRequest) HasRoutingRule() bool`
-
-HasRoutingRule returns a boolean if a field has been set.
 
 ### GetRoutingRuleName
 
