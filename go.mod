@@ -1,4 +1,4 @@
-module github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395
+module github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397
 
 go 1.23
 
@@ -10,3 +10,4 @@ require (
 )
 
 retract v3.94.0 // shipped with extensive generator-output breaking changes relative to v3.93.2 (renamed operationIds/methods, renamed model types, pointer-vs-value field changes) that were never intended for release; predates the /v395 import path
+retract v395.97.0 // generated from NXRM 3.97.0 and published on the /v395 import path, but NXRM 3.97.0 introduces generator-output breaking changes for Go; superseded by the /v397 import path (v397.97.1 onwards)

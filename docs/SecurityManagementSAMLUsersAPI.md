@@ -27,7 +27,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 )
 
 func main() {
@@ -89,7 +89,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 )
 
 func main() {
@@ -155,7 +155,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 )
 
 func main() {
@@ -223,7 +223,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 )
 
 func main() {
@@ -287,7 +287,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 )
 
 func main() {

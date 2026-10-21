@@ -1,8 +1,8 @@
-# Go API client for v395
+# Go API client for v397
 
 ## Version Generation Notice
 
-This client's Go module major version (`/v395` in the import
+This client's Go module major version (`/v397` in the import
 path) does not track NXRM's own version number one-to-one. See the ["Go module versioning is
 special-cased"](https://github.com/sonatype-nexus-community/nexus-repo-api-client#go-module-versioning-is-special-cased)
 section of the generator repository's README for the full rationale and scheme, and this module's
@@ -31,7 +31,7 @@ go get golang.org/x/net/context
 Put the package under your project folder and add the following in import:
 
 ```go
-import v395 "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
+import v397 "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
 ```
 
 To use a proxy, set the environment variable `HTTP_PROXY`:
@@ -46,18 +46,18 @@ Default configuration comes with `Servers` field that contains server objects as
 
 ### Select Server Configuration
 
-For using other server than the one defined on index 0 set context value `v395.ContextServerIndex` of type `int`.
+For using other server than the one defined on index 0 set context value `v397.ContextServerIndex` of type `int`.
 
 ```go
-ctx := context.WithValue(context.Background(), v395.ContextServerIndex, 1)
+ctx := context.WithValue(context.Background(), v397.ContextServerIndex, 1)
 ```
 
 ### Templated Server URL
 
-Templated server URL is formatted using default variables from configuration or from context value `v395.ContextServerVariables` of type `map[string]string`.
+Templated server URL is formatted using default variables from configuration or from context value `v397.ContextServerVariables` of type `map[string]string`.
 
 ```go
-ctx := context.WithValue(context.Background(), v395.ContextServerVariables, map[string]string{
+ctx := context.WithValue(context.Background(), v397.ContextServerVariables, map[string]string{
 	"basePath": "v2",
 })
 ```
@@ -68,13 +68,13 @@ Note, enum values are always validated and all unused variables are silently ign
 
 Each operation can use different server URL defined using `OperationServers` map in the `Configuration`.
 An operation is uniquely identified by `"{classname}Service.{nickname}"` string.
-Similar rules for overriding default operation server index and variables applies by using `v395.ContextOperationServerIndices` and `v395.ContextOperationServerVariables` context maps.
+Similar rules for overriding default operation server index and variables applies by using `v397.ContextOperationServerIndices` and `v397.ContextOperationServerVariables` context maps.
 
 ```go
-ctx := context.WithValue(context.Background(), v395.ContextOperationServerIndices, map[string]int{
+ctx := context.WithValue(context.Background(), v397.ContextOperationServerIndices, map[string]int{
 	"{classname}Service.{nickname}": 2,
 })
-ctx = context.WithValue(context.Background(), v395.ContextOperationServerVariables, map[string]map[string]string{
+ctx = context.WithValue(context.Background(), v397.ContextOperationServerVariables, map[string]map[string]string{
 	"{classname}Service.{nickname}": {
 		"port": "8443",
 	},
@@ -929,7 +929,7 @@ Authentication schemes defined for the API:
 Example
 
 ```go
-auth := context.WithValue(context.Background(), v395.ContextBasicAuth, v395.BasicAuth{
+auth := context.WithValue(context.Background(), v397.ContextBasicAuth, v397.BasicAuth{
 	UserName: "username",
 	Password: "password",
 })
