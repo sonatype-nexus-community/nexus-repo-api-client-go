@@ -4091,7 +4091,7 @@ import (
 )
 
 func main() {
-	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
+	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewSwiftHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)
@@ -13962,7 +13962,7 @@ import (
 
 func main() {
 	repositoryName := "repositoryName_example" // string | Name of the repository to update
-	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
+	swiftProxyRepositoryApiRequest := *sonatyperepo.NewSwiftProxyRepositoryApiRequest(*sonatyperepo.NewSwiftHttpClientAttributes(), "internal", *sonatyperepo.NewNegativeCacheAttributes(true, int32(1440)), true, *sonatyperepo.NewProxyAttributes(int32(1440), int32(1440), "https://remote.repository.com"), *sonatyperepo.NewStorageAttributes("default", true)) // SwiftProxyRepositoryApiRequest | 
 
 	configuration := sonatyperepo.NewConfiguration()
 	apiClient := sonatyperepo.NewAPIClient(configuration)

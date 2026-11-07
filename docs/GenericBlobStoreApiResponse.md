@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **AvailableSpaceInBytes** | Pointer to **int64** |  | [optional] 
 **BlobCount** | Pointer to **int64** |  | [optional] 
+**GlobalDistributionEnabled** | Pointer to **bool** |  | [optional] 
 **Name** | Pointer to **string** |  | [optional] 
 **SoftQuota** | Pointer to [**BlobStoreApiSoftQuota**](BlobStoreApiSoftQuota.md) |  | [optional] 
 **SoftQuotaAttributes** | Pointer to [**BlobStoreConfiguration**](BlobStoreConfiguration.md) |  | [optional] 
@@ -81,6 +82,31 @@ SetBlobCount sets BlobCount field to given value.
 `func (o *GenericBlobStoreApiResponse) HasBlobCount() bool`
 
 HasBlobCount returns a boolean if a field has been set.
+
+### GetGlobalDistributionEnabled
+
+`func (o *GenericBlobStoreApiResponse) GetGlobalDistributionEnabled() bool`
+
+GetGlobalDistributionEnabled returns the GlobalDistributionEnabled field if non-nil, zero value otherwise.
+
+### GetGlobalDistributionEnabledOk
+
+`func (o *GenericBlobStoreApiResponse) GetGlobalDistributionEnabledOk() (*bool, bool)`
+
+GetGlobalDistributionEnabledOk returns a tuple with the GlobalDistributionEnabled field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGlobalDistributionEnabled
+
+`func (o *GenericBlobStoreApiResponse) SetGlobalDistributionEnabled(v bool)`
+
+SetGlobalDistributionEnabled sets GlobalDistributionEnabled field to given value.
+
+### HasGlobalDistributionEnabled
+
+`func (o *GenericBlobStoreApiResponse) HasGlobalDistributionEnabled() bool`
+
+HasGlobalDistributionEnabled returns a boolean if a field has been set.
 
 ### GetName
 

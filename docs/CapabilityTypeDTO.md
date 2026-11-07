@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **FormFields** | Pointer to [**[]FormFieldDTO**](FormFieldDTO.md) | Form fields configuration for this capability type | [optional] 
 **Id** | Pointer to **string** | Capability type identifier | [optional] 
 **Name** | Pointer to **string** | Display name of the capability type | [optional] 
+**RequiresSettingsUpdate** | Pointer to **bool** | Whether managing a capability of this type additionally requires the nexus:settings:update permission because it activates or configures a security realm | [optional] 
 
 ## Methods
 
@@ -127,6 +128,31 @@ SetName sets Name field to given value.
 `func (o *CapabilityTypeDTO) HasName() bool`
 
 HasName returns a boolean if a field has been set.
+
+### GetRequiresSettingsUpdate
+
+`func (o *CapabilityTypeDTO) GetRequiresSettingsUpdate() bool`
+
+GetRequiresSettingsUpdate returns the RequiresSettingsUpdate field if non-nil, zero value otherwise.
+
+### GetRequiresSettingsUpdateOk
+
+`func (o *CapabilityTypeDTO) GetRequiresSettingsUpdateOk() (*bool, bool)`
+
+GetRequiresSettingsUpdateOk returns a tuple with the RequiresSettingsUpdate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRequiresSettingsUpdate
+
+`func (o *CapabilityTypeDTO) SetRequiresSettingsUpdate(v bool)`
+
+SetRequiresSettingsUpdate sets RequiresSettingsUpdate field to given value.
+
+### HasRequiresSettingsUpdate
+
+`func (o *CapabilityTypeDTO) HasRequiresSettingsUpdate() bool`
+
+HasRequiresSettingsUpdate returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -62,6 +62,21 @@ func Test_v397_SecurityManagementUsersAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test SecurityManagementUsersAPIService DeleteSecurityUsersFormatTokens", func(t *testing.T) {
+
+		t.Skip("skip test")  // remove to run test
+
+		var userId string
+		var realm string
+		var format string
+
+		httpRes, err := apiClient.SecurityManagementUsersAPI.DeleteSecurityUsersFormatTokens(context.Background(), userId, realm, format).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test SecurityManagementUsersAPIService DeleteSecurityUsersUserToken", func(t *testing.T) {
 
 		t.Skip("skip test")  // remove to run test

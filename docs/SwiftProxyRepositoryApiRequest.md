@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Firewall** | Pointer to [**FirewallAttributes**](FirewallAttributes.md) |  | [optional] 
-**HttpClient** | [**HttpClientAttributes**](HttpClientAttributes.md) |  | 
+**HttpClient** | [**SwiftHttpClientAttributes**](SwiftHttpClientAttributes.md) |  | 
 **Name** | **string** | A unique identifier for this repository | 
 **NegativeCache** | [**NegativeCacheAttributes**](NegativeCacheAttributes.md) |  | 
 **Online** | **bool** | Whether this repository accepts incoming requests | 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewSwiftProxyRepositoryApiRequest
 
-`func NewSwiftProxyRepositoryApiRequest(httpClient HttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *SwiftProxyRepositoryApiRequest`
+`func NewSwiftProxyRepositoryApiRequest(httpClient SwiftHttpClientAttributes, name string, negativeCache NegativeCacheAttributes, online bool, proxy ProxyAttributes, storage StorageAttributes, ) *SwiftProxyRepositoryApiRequest`
 
 NewSwiftProxyRepositoryApiRequest instantiates a new SwiftProxyRepositoryApiRequest object
 This constructor will assign default values to properties that have it defined,
@@ -87,20 +87,20 @@ HasFirewall returns a boolean if a field has been set.
 
 ### GetHttpClient
 
-`func (o *SwiftProxyRepositoryApiRequest) GetHttpClient() HttpClientAttributes`
+`func (o *SwiftProxyRepositoryApiRequest) GetHttpClient() SwiftHttpClientAttributes`
 
 GetHttpClient returns the HttpClient field if non-nil, zero value otherwise.
 
 ### GetHttpClientOk
 
-`func (o *SwiftProxyRepositoryApiRequest) GetHttpClientOk() (*HttpClientAttributes, bool)`
+`func (o *SwiftProxyRepositoryApiRequest) GetHttpClientOk() (*SwiftHttpClientAttributes, bool)`
 
 GetHttpClientOk returns a tuple with the HttpClient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetHttpClient
 
-`func (o *SwiftProxyRepositoryApiRequest) SetHttpClient(v HttpClientAttributes)`
+`func (o *SwiftProxyRepositoryApiRequest) SetHttpClient(v SwiftHttpClientAttributes)`
 
 SetHttpClient sets HttpClient field to given value.
 
