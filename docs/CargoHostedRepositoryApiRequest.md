@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Cargo** | Pointer to [**CargoAttributes**](CargoAttributes.md) |  | [optional] 
 **Cleanup** | Pointer to [**CleanupPolicyAttributes**](CleanupPolicyAttributes.md) |  | [optional] 
 **Component** | Pointer to [**ComponentAttributes**](ComponentAttributes.md) |  | [optional] 
 **Name** | **string** | A unique identifier for this repository | 
@@ -29,31 +28,6 @@ will change when the set of required properties is changed
 NewCargoHostedRepositoryApiRequestWithDefaults instantiates a new CargoHostedRepositoryApiRequest object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
-
-### GetCargo
-
-`func (o *CargoHostedRepositoryApiRequest) GetCargo() CargoAttributes`
-
-GetCargo returns the Cargo field if non-nil, zero value otherwise.
-
-### GetCargoOk
-
-`func (o *CargoHostedRepositoryApiRequest) GetCargoOk() (*CargoAttributes, bool)`
-
-GetCargoOk returns a tuple with the Cargo field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetCargo
-
-`func (o *CargoHostedRepositoryApiRequest) SetCargo(v CargoAttributes)`
-
-SetCargo sets Cargo field to given value.
-
-### HasCargo
-
-`func (o *CargoHostedRepositoryApiRequest) HasCargo() bool`
-
-HasCargo returns a boolean if a field has been set.
 
 ### GetCleanup
 

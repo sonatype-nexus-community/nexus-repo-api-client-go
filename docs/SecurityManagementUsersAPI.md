@@ -7,7 +7,6 @@ Method | HTTP request | Description
 [**CreateSecurityUsers**](SecurityManagementUsersAPI.md#CreateSecurityUsers) | **Post** /v1/security/users | Create a new user in the default source.
 [**CreateSecurityUsersUserToken**](SecurityManagementUsersAPI.md#CreateSecurityUsersUserToken) | **Post** /v1/security/users/{userId}/{realm}/user-token | Create a user token for the given user.
 [**DeleteSecurityUsers**](SecurityManagementUsersAPI.md#DeleteSecurityUsers) | **Delete** /v1/security/users/{userId} | Delete a user.
-[**DeleteSecurityUsersFormatTokens**](SecurityManagementUsersAPI.md#DeleteSecurityUsersFormatTokens) | **Delete** /v1/security/users/{userId}/{realm}/format-tokens/{format} | Reset the token of a single format for the given user.
 [**DeleteSecurityUsersUserToken**](SecurityManagementUsersAPI.md#DeleteSecurityUsersUserToken) | **Delete** /v1/security/users/{userId}/{realm}/user-token | Delete the user token for the given user.
 [**DeleteSecurityUsersUserTokenReset**](SecurityManagementUsersAPI.md#DeleteSecurityUsersUserTokenReset) | **Delete** /v1/security/users/{userId}/{realm}/user-token-reset | Reset the user token for the given user.
 [**GetSecurityUsersUserToken**](SecurityManagementUsersAPI.md#GetSecurityUsersUserToken) | **Get** /v1/security/users/{userId}/{realm}/user-token | Get user token metadata for the given user.
@@ -32,7 +31,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -98,7 +97,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -169,7 +168,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -222,80 +221,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## DeleteSecurityUsersFormatTokens
-
-> DeleteSecurityUsersFormatTokens(ctx, userId, realm, format).Execute()
-
-Reset the token of a single format for the given user.
-
-
-
-### Example
-
-```go
-package main
-
-import (
-	"context"
-	"fmt"
-	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
-)
-
-func main() {
-	userId := "userId_example" // string | The userId of the user to reset the token for
-	realm := "realm_example" // string | The realm of the user to reset the token for
-	format := "format_example" // string | The format whose token is reset: conan, docker, huggingface, npm, nuget, oci or terraform
-
-	configuration := sonatyperepo.NewConfiguration()
-	apiClient := sonatyperepo.NewAPIClient(configuration)
-	r, err := apiClient.SecurityManagementUsersAPI.DeleteSecurityUsersFormatTokens(context.Background(), userId, realm, format).Execute()
-	if err != nil {
-		fmt.Fprintf(os.Stderr, "Error when calling `SecurityManagementUsersAPI.DeleteSecurityUsersFormatTokens``: %v\n", err)
-		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-	}
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**userId** | **string** | The userId of the user to reset the token for | 
-**realm** | **string** | The realm of the user to reset the token for | 
-**format** | **string** | The format whose token is reset: conan, docker, huggingface, npm, nuget, oci or terraform | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiDeleteSecurityUsersFormatTokensRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[BasicAuth](../README.md#BasicAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## DeleteSecurityUsersUserToken
 
 > DeleteSecurityUsersUserToken(ctx, userId, realm).Execute()
@@ -313,7 +238,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -384,7 +309,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -455,7 +380,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -526,7 +451,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -592,7 +517,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
@@ -660,7 +585,7 @@ import (
 	"context"
 	"fmt"
 	"os"
-	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v397"
+	sonatyperepo "github.com/sonatype-nexus-community/nexus-repo-api-client-go/v395"
 )
 
 func main() {
