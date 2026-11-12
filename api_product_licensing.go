@@ -16,6 +16,7 @@ import (
 	"io"
 	"net/http"
 	"net/url"
+	"os"
 )
 
 
@@ -25,11 +26,11 @@ type ProductLicensingAPIService service
 type ApiCreateSystemLicenseRequest struct {
 	ctx context.Context
 	ApiService *ProductLicensingAPIService
-	body *map[string]interface{}
+	body *os.File
 }
 
-func (r ApiCreateSystemLicenseRequest) Body(body map[string]interface{}) ApiCreateSystemLicenseRequest {
-	r.body = &body
+func (r ApiCreateSystemLicenseRequest) Body(body *os.File) ApiCreateSystemLicenseRequest {
+	r.body = body
 	return r
 }
 
